@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아자스쿨</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+
+    <!-- plugin / 기존 파일 그대로 사용 -->
+    <link rel="stylesheet" href="plugin/Swiper-slider/css/swiper.min.css">
+</head>
+<body>
+    <div id="wrap">
+        <!--header (head.sub.php)-->
+        <div id="header">
+            <header>
+                <div class="h_top" id="page">
+                    <div class="h_menu"><a href="#menu"><img src="images/icon/btn_menu.png" alt="회원정보"></a></div>
+                    <h1 class="h_logo"><a href="/"><img src="images/logo.png" title="체험교육 플랫폼 아자스쿨"></a></h1>
+                    <a class="h_search" href="#"><img src="images/icon/btn_search.png" alt="검색"></a>
+                </div>	
+            </header>        
+            <nav class="m_navi scroll_wrapper">
+                <ul class="nav_wrapper">
+                    <li class="nav_link active"><a href="#">아자탐구생활</a></li>
+                    <li class="nav_link"><a href="#">맞춤검색</a></li>
+                    <li class="nav_link"><a href="#">체험교구</a></li>
+                    <li class="nav_link"><a href="#">쿠폰/이벤트</a></li> 
+                    <li class="nav_link"><a href="#">학교전용(단체용)</a></li>	
+                    <li class="nav_link"><a href="#">공지사항</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!--//header-->
+        <!--content-->
+        <div id="content" class="m_wrap">
+            <!--S: hero banner-->
+            <section class="hero_wrapper">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper hero_banner_list">
+                        <div class="swiper-slide"><a href="#"><img src="images/banner/main_slideBn_01.jpg" alt="hero banner"></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="images/banner/main_slideBn_02.jpg" alt="hero banner"></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="images/banner/main_slideBn_03.jpg" alt="hero banner"></a></div>
+                    </div>
+                    <!-- Add Pagination -->
+                    <div class="hero_pagi_wrap modal_btn" data-modal="hero_modal">
+                        <div class="swiper-pagination hero_pagination"  class="modal_btn"></div>
+                    </div>
+                </div>
+            </section>
+            <!--E: hero banner-->
+            <!--S: category-->
+            <section class="m_section">
+                <div class="scroll_wrapper ctg_wrapper">
+                    <div class="ctg_col">
+                        <ul class="category_list">
+                        <li><a href="/shop/list.php?ca_id=99">
+                            <div class="ctg_thumbnail">
+                                <img src='images/category/ico_main_ctg_01.jpg' alt="BEST">
+                            </div>
+                            <p class="ctg_name">BEST</p>
+                        </a></li>
+                        <li><a href="/shop/list.php?ca_id=40">
+                            <div class="ctg_thumbnail">
+                                <img src='images/category/ico_main_ctg_06.jpg' alt="교과연계">
+                            </div>
+                            <p class="ctg_name">교과연계</p>
+                        </a></li>
+                        </ul>
+                    </div>
+                    <div class="ctg_col">
+                        <ul class="category_list">
+                        <li><a href="/shop/life_of_research.php?ca_id=94">
+                            <div class="ctg_thumbnail">
+                                <img src='images/category/ico_main_ctg_02.jpg' alt="탐구생활">
+                            </div>
+                            <p class="ctg_name">탐구생활</p>
+                        </a></li>
+                        <li><a href="/shop/list.php?ca_id=99">
+                            <div class="ctg_thumbnail">
+                                <img src='images/category/ico_main_ctg_07.jpg' alt="진로직업">
+                            </div>
+                            <p class="ctg_name">진로직업</p>
+                        </a></li>
+                        </ul>
+                    </div>
+                    <div class="ctg_col">
+                        <ul class="category_list">
+                            <li><a href="/shop/list.php?ca_id=50">
+                                <div class="ctg_thumbnail">
+                                    <img src='images/category/ico_main_ctg_03.jpg' alt="역사">
+                                </div>
+                                <p class="ctg_name">역사</p>
+                            </a></li>
+                            <li><a href="/shop/list.php?ca_id=80">
+                                <div class="ctg_thumbnail">
+                                    <img src='images/category/ico_main_ctg_08.jpg' alt="액티비티">
+                                </div>
+                                <p class="ctg_name">액티비티</p>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="ctg_col">
+                        <ul class="category_list">
+                            <li><a href="/shop/list.php?ca_id=10">
+                                <div class="ctg_thumbnail">
+                                    <img src='images/category/ico_main_ctg_04.jpg' alt="문화예술">
+                                </div>
+                                <p class="ctg_name">문화예술</p>
+                            </a></li>
+                            <li><a href="/shop/list.php?ca_id=99">
+                                <div class="ctg_thumbnail">
+                                    <img src='images/category/ico_main_ctg_09.jpg' alt="애니센터">
+                                </div>
+                                <p class="ctg_name">애니센터</p>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="ctg_col">
+                        <ul class="category_list">
+                            <li><a href="/shop/list.php?ca_id=20">
+                                <div class="ctg_thumbnail">
+                                    <img src='images/category/ico_main_ctg_05.jpg' alt="과학IT">
+                                </div>
+                                <p class="ctg_name">과학IT</p>
+                            </a></li>
+                            <li><a href="/shop/list.php?ca_id=70">
+                                <div class="ctg_thumbnail">
+                                    <img src='images/category/ico_main_ctg_10.jpg' alt="제주">
+                                </div>
+                                <p class="ctg_name">제주</p>
+                            </a></li>
+                        </ul>
+                    </div>						
+                </div>
+            </section>
+            <!--E: category-->
+            <!--S: BEST 체험-->
+            <section class="m_section">
+                <div class="m_scroll_wrapper">
+                    <div class="m_title_wrapper link_title">
+                        <a href="/shop/list.php?ca_id=99&return_url=/shop/list.php?ca_id=99&ca_id2=99">
+                            <p class="title_txt">이 체험 어때요?</p>
+                            <span class="item_more"><img src='images/icon/btn_more_black.png'
+                                    alt="더보기"></span>
+                        </a>
+                    </div>
+                    <div class="item_wrapper">
+                        <ul class="m_item_scroll horizontal_item_list">
+                            <li><a href="#">
+                                    <div class="item_thumb">
+                                        <img src="images/sample/sample-01.jpg" alt="">
+                                    </div>
+                                    <div class="item_info">
+                                        <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                                        <div class="item_price">
+                                            <!--할인율-->
+                                            <span class='sale_percent'>50%</span>
+                                            <!--원가-->
+                                            <span class='origin_price'>26800</span>
+                                            <!--판매가-->
+                                            <span class='main_price'>12900</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a href="#">
+                                <div class="item_thumb">
+                                    <img src="images/sample/sample-02.png" alt="">
+                                </div>
+                                <div class="item_info">
+                                    <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                                    <div class="item_price">
+                                        <!--할인율-->
+                                        <span class='sale_percent'>50%</span>
+                                        <!--원가-->
+                                        <span class='origin_price'>26800</span>
+                                        <!--판매가-->
+                                        <span class='main_price'>12900</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!--E: BEST 체험-->
+            <!--S: 신규 OPEN 체험  (더보기 link x)-->
+            <section class="m_section">
+                <div class="m_scroll_wrapper">
+                    <div class="m_title_wrapper">
+                        <p class="title_txt">신규 OPEN 체험</p>
+                    </div>
+                    <div class="item_wrapper">
+                        <ul class="m_item_scroll square_item_list">
+                            <li><a href="#">
+                                <div class="item_thumb">
+                                    <img src="images/sample/sample-01.jpg" alt="">
+                                </div>
+                                <div class="item_info">
+                                    <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                                    <div class="item_price right_align">
+                                        <!--원가-->
+                                        <p class='origin_price'>26800</p>
+                                        <!--할인율-->
+                                        <span class='sale_percent'>50%</span>
+                                        <!--판매가-->
+                                        <span class='main_price'>12900</span>
+                                    </div>
+                                </div>
+                                </a>
+                            </li>
+                            <li><a href="#">
+                                <div class="item_thumb">
+                                    <img src="images/sample/sample-02.png" alt="">
+                                </div>
+                                <div class="item_info">
+                                    <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                                    <div class="item_price right_align">
+                                        <!--원가-->
+                                        <p class='origin_price'>26800</p>
+                                        <!--할인율-->
+                                        <span class='sale_percent'>50%</span>
+                                        <!--판매가-->
+                                        <span class='main_price'>12900</span>
+                                    </div>
+                                </div>
+                                </a>
+                            </li>
+                            <li><a href="#">
+                                <div class="item_thumb">
+                                    <img src="images/sample/sample-03.jpg" alt="">
+                                </div>
+                                <div class="item_info">
+                                    <p class="item_title">마인드컬러링 AR(색칠공부 2종)dsfsdfsdfgsdfsgg</p>
+                                    <div class="item_price right_align">
+                                        <!--원가-->
+                                        <p class='origin_price'>26800</p>
+                                        <!--할인율-->
+                                        <span class='sale_percent'>50%</span>
+                                        <!--판매가-->
+                                        <span class='main_price'>12900</span>
+                                    </div>
+                                </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!--E: 신규 OPEN 체험-->
+            <!--S: 무료 검사 3가지 (꿈 검사, 감성, 적성)-->
+            <section class="m_section">
+                <div>
+                    <div class="m_title_wrapper">
+                        <p class="title_txt">무료 검사 3가지</p>
+                    </div>
+                    <div class="m_banner_wrapper">
+                        <div class="swiper-container1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide m_section_p">
+                                    <a href="../dream/job.php"><img src='images/banner/bn_main_3set_01.png'
+                                            alt="우리아이 성향 검사하기"></a>
+                                </div>
+                                <div class="swiper-slide m_section_p">
+                                    <a href="/shop/aptitude_F_test.php"><img
+                                            src='images/banner/bn_main_3set_02.png' alt="우리아이 성향 검사하기"></a>
+                                </div>
+                                <div class="swiper-slide m_section_p">
+                                    <a href="/shop/emotion_F_test.php"><img
+                                            src='images/banner/bn_main_3set_03.png' alt="우리아이 성향 검사하기"></a>
+                                </div>
+                            </div>
+                            <!-- Add Pagination -->
+                            <div class="swiper-pagination1 round_pagi exam_pagi"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+	        <!--E: 무료 검사 3가지 (꿈 검사, 감성, 적성)-->
+            <!--S: 신나는 아자탐구생활-->
+            <section class="m_section">
+                <div class="m_scroll_wrapper">
+                    <div class="m_title_wrapper link_title">
+                        <a href="/shop/life_of_research.php?ca_id=94">
+                            <p class="title_txt">신나는 아자탐구생활</p>
+                            <span class="item_more"><img src='images/icon/btn_more_black.png'
+                                    alt="더보기"></span>
+                        </a>
+                    </div>
+                    <div class="item_wrapper">
+                        <ul class="m_item_scroll vertical_item_list aja_center">
+                            <li>
+                                <a href="/shop/life_of_research_list.php?ca_id=94&area=eland_songpa">
+                                    <img src='images/banner/bn_main_tg_01.jpg' alt="송파점 | 친구들과 신나는 과학체험">
+                                    <p class="center_txt">NC백화점 송파점 6층</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/life_of_research_list.php?ca_id=94&area=eland_ilsan">
+                                    <img src='images/banner/bn_main_tg_02.jpg' alt="일산점 | 오늘은 내가 슈퍼모델!">
+                                    <p class="center_txt">NC백화점 일산점 8층</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/life_of_research_list.php?ca_id=94&area=eland_pyeongtaek">
+                                    <img src='images/banner/bn_main_tg_03.jpg' alt="평택점 | 체럼 전문 쌤과 함께해요">
+                                    <p class="center_txt">NC백화점 평택점 11층</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!--E: 신나는 아자탐구생활-->
+            <!-- S: 실제 체험 후기 -->
+            <section class="m_section">
+                <div class="m_scroll_wrapper">
+                    <div class="m_title_wrapper link_title">
+                        <a href="/shop/epilogue.php?bo_table=epilogue">
+                            <p class="title_txt">실제 체험 후기</p>
+                            <span class="item_more"><img src='images/icon/btn_more_black.png'
+                                    alt="더보기"></span>
+                        </a>
+                    </div>
+                    <div class="item_wrapper">
+                        <ul class="m_item_scroll vertical_item_list item_review">
+                            <li>
+                                <a href="#">
+                                    <div class="item_thumb">
+                                        <img src='images/sample/sample-01.jpg' alt="리뷰 사진">
+                                    </div>
+                                    <div class="item_info">
+                                        <div class="review_rank">
+                                            <span class="rank_num">4.8</span>
+                                            <div class="star_rating">
+                                                <span class="rating_active" style="width: 96%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="review_info">
+                                            <p class="review_title">마인트컬러링AR(색칠공부 2종) 마인트컬러링AR(색칠공부 2종) 마인트컬러링AR(색칠공부 2종)</p>
+                                            <p class="review_desc">되는 피가 일월과 피고 것이 피고, 듣는다. 인간은 청춘이 바이며, 인간이 속잎나고, 평화스러운 때까지 피부가
+                                                교향악이다. 할지라도 방황하였으며, 그들의 않는 실로 꽃이 풍부하게 이성은 그리하였는가? 고행을 뜨거운지라, 동산에는 뿐이다. 창공에 꽃 이상을 끓는
+                                                아름답고 많이 무엇이 있는가? 같지 소담스러운 같으며, 가장 가치를 가는 말이다. 바이며, 찾아다녀도</p>
+                                            <p class="review_date">2021. 03. 25</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <div class="item_thumb">
+                                        <img src='images/sample/sample-03.jpg' alt="리뷰 사진">
+                                    </div>
+                                    <div class="item_info">
+                                        <div class="review_rank">
+                                            <span class="rank_num">4.5</span>
+                                            <div class="star_rating">
+                                                <span class="rating_active" style="width: 90%;"></span>
+                                            </div>
+                                        </div>
+                                        <div class="review_info">
+                                            <p class="review_title">마인트컬러링AR(색칠공부 2종) 마인트컬러링AR(색칠공부 2종) 마인트컬러링AR(색칠공부 2종)</p>
+                                            <p class="review_desc">되는 피가 일월과 피고 것이 피고, 듣는다. 인간은 청춘이 바이며, 인간이 속잎나고, 평화스러운 때까지 피부가
+                                                교향악이다. 할지라도 방황하였으며, 그들의 않는 실로 꽃이 풍부하게 이성은 그리하였는가? 고행을 뜨거운지라, 동산에는 뿐이다. 창공에 꽃 이상을 끓는
+                                                아름답고 많이 무엇이 있는가? 같지 소담스러운 같으며, 가장 가치를 가는 말이다. 바이며, 찾아다녀도</p>
+                                            <p class="review_date">2021. 03. 25</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- E: 실제 체험 후기 -->
+            <!-- S: 어디로 체험갈까 -->
+            <section class="m_section">
+                <div class="m_scroll_wrapper">
+                    <div class="m_title_wrapper link_title">
+                        <a href="/shop/region_menu.php">
+                            <p class="title_txt">어디로 체험갈까</p>
+                            <span class="item_more"><img src='images/icon/btn_more_black.png'
+                                    alt="더보기"></span>
+                        </a>
+                    </div>
+                    <div class="item_wrapper">
+                        <ul class="m_item_scroll square_item_list region_list">
+                            <li>
+                                <a href="/shop/region_list.php?sel_region=서울">
+                                    <img src='images/region/bn_main_region_01.png' alt="서울특별시">
+                                    <p class="region_txt">서울특별시</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/region_list.php?sel_region=경기">
+                                    <img src='images/region/bn_main_region_02.png' alt="경기">
+                                    <p class="region_txt">경기도</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/region_list.php?sel_region=부산">
+                                    <img src='images/region/bn_main_region_03.png' alt="부산">
+                                    <p class="region_txt">부산광역시</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/region_list.php?sel_region=인천">
+                                    <img src='images/region/bn_main_region_04.png' alt="인천">
+                                    <p class="region_txt">인천광역시</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/region_list.php?sel_region=대구">
+                                    <img src='images/region/bn_main_region_05.png' alt="대구">
+                                    <p class="region_txt">대구광역시</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/region_list.php?sel_region=광주">
+                                    <img src='images/region/bn_main_region_06.png' alt="광주">
+                                    <p class="region_txt">광주광역시</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/region_list.php?sel_region=울산">
+                                    <img src='images/region/bn_main_region_07.png' alt="울산">
+                                    <p class="region_txt">울산광역시</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/region_list.php?sel_region=충남">
+                                    <img src='images/region/bn_main_region_08.png' alt="충남">
+                                    <p class="region_txt">충청남도</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/region_list.php?sel_region=충북">
+                                    <img src='images/region/bn_main_region_09.png' alt="충북">
+                                    <p class="region_txt">충청북도</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/region_list.php?sel_region=경남">
+                                    <img src='images/region/bn_main_region_10.png' alt="경남">
+                                    <p class="region_txt">경상남도</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/region_list.php?sel_region=경북">
+                                    <img src='images/region/bn_main_region_11.png' alt="경북">
+                                    <p class="region_txt">경상북도</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/shop/region_list.php?sel_region=전북">
+                                    <img src='images/region/bn_main_region_12.png' alt="전북">
+                                    <p class="region_txt">전라북도</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- E: 어디로 체험갈까 -->
+            <!--S: 하단 입점 문의-->
+            <section class="partner_banner_wrapper">
+                <div class="m_section_p">
+                    <a href="#">
+                        <img src='images/banner/bn_main_business.png' alt="입점 문의| 교육기관의 입점을 환영해요">
+                    </a>
+                </div>
+            </section>
+            <!--E: 하단 입점 문의-->
+            <!--S: 하단 slider banner-->
+	        <section>
+		        <div class="btm_banner">
+			<div class="m_banner_wrapper">
+				<div class="swiper-container2">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide m_section_p">
+							<a href="/bbs/board.php?bo_table=notice&wr_idx=43"><img src='images/banner/ico_main_stock_01.jpg' alt="Dreamplus 라이프스타일 분야 스타트업 선정"></a>
+						</div>
+						<div class="swiper-slide m_section_p">
+							<a href="/bbs/board.php?bo_table=notice&wr_idx=43"><img src='images/banner/ico_main_stock_02.jpg' alt="Dreamplus 라이프스타일 분야 스타트업 선정"></a>
+						</div>
+						<div class="swiper-slide m_section_p">
+							<a href="/bbs/board.php?bo_table=notice&wr_idx=43"><img src='images/banner/ico_main_stock_03.jpg' alt="Dreamplus 라이프스타일 분야 스타트업 선정"></a>
+						</div>
+					</div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination2 round_pagi"></div>
+				</div>
+			</div>
+		</div>
+	        </section>
+	        <!--E: 하단 slider banner-->
+        </div>
+        <!--E:content-->
+        <!--footer (tail.php) -->
+        <div class='footer' id="footer">
+            <footer>
+                <!--사업자 정보-->
+                <div class="company_info_wrap">
+                    <div class="info_header">
+                        <h6 class="info_title">아자스쿨(주) 사업자 정보 <span class="slide_arrow"><img src='images/icon/btn_more_gray.png' alt="화살표"></span></h6>
+                    </div>
+                    <!--slide info-->
+                    <div class="info_body">
+                        <ul class="info_list">
+                            <li>서울특별시 마포구 마포대로 122 프론트원(FRONT1) 15F</li>
+                            <li>대표이사 : 황선하 / 사업자등록번호 : 548-87-00240</li>
+                            <li>통신판매업신고 : 2018-서울서초-01708 호</li>
+                            <li><a href="#" data-modal="business_information" class="modal_btn">사업자정보 ▶</a></li>
+                        </ul>
+                        <div class="call_info_box">
+                            <ul class="info_list">
+                                <li><span class="f_bold">전화문의 가능시간</span></li>
+                                <li><span class="f_bold">고객센터 </span> <a href="tel:02-866-7977">02-866-7977</a> / <a
+                                        href="mailto:help@ajaschool.co.kr">help@ajaschool.co.kr</a></li>
+                                <li><span class="f_bold">평일 :</span> 10:00 ~ 18:30 (점심시간: 12:30 ~ 13:30)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- fnb list -->
+                <div>
+                    <ul class="fnb_wrap">
+                        <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=privacy">개인정보 취급방침</a></li>
+                        <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=provision">이용약관</a></li>
+                        <li class="fnb_link"><a href="#" data-modal="business_information" class="modal_btn">사업자 정보</a></li>
+                        <li class="fnb_link"><a href="#" data-modal="kakao_inquiry" class="modal_btn">문의사항</a></li>
+                    </ul>
+                </div>
+                <!--copyright-->
+                <div class="cpr_wrap">
+                    <p class="f_copyright">ⓒ 아자스쿨 주식회사</p>
+                </div>
+            </footer>
+        </div>
+        <!--footer-->
+        <!--S: 위로가기 / 하단 바 (tail.php)-->
+        <div id="navi-area"> <!-- 보일때 -->
+            <!-- <div id="navi-area" style="height:55px">  감춰져 있을때 -->
+                <button type="button" class="ico-top" style="display: none;">위로 가기</button>
+                <div class="m_action_bar">
+                    <ul class="action_icon_list">
+                        <li><a href="<?=G5_URL?>"><img src="images/icon/ico_botm_home.png" alt="홈"></a></li>
+                        <li><a href="#" data-modal="kakao_inquiry" class="modal_btn"><img src="images/icon/ico_botm_call.png" alt="문의"></a></li>
+                        <li><a href="#"><img src="images/icon/ico_botm_my.png" alt=마이페이지"></a></li>
+                        <li><a href="#menu"><img src="images/icon/ico_botm_search.png" alt="검색"></a></li>
+                        <li class="item_like"><a href="<?=G5_URL?>/shop/interest_list.php"><span class="num">1</span><img src="images/icon/ico_botm_select.png" alt="찜하기"></a></li>
+                    </ul>
+                </div>
+        </div>
+        <!--E: 위로가기 / 하단 바-->
+    </div>
+    <!-- 1:1 문의 iframe open -->
+	<div id="kakao_inquiry" class="modal iframe_modal popup">
+		<div class="modal_content">
+			<div class="modal_header rounded_header">
+				<span class="modal_close modal_back"></span>
+				<p class="modal_title">문의하기</p>
+			</div>
+			<div class="modal_body">
+				<iframe src="https://pf.kakao.com/_xmEiFC" name="kakao_inquiry"></iframe>
+			</div>
+		</div>
+	</div>
+	<!-- 1:1 문의 iframe open -->
+	<div id="business_information" class="modal iframe_modal popup">
+		<div class="modal_content">
+			<div class="modal_header rounded_header">
+				<span class="modal_close modal_back"></span>
+				<p class="modal_title">사업자 정보</p>
+			</div>
+			<div class="modal_body">
+				<iframe src="https://www.ftc.go.kr/www/bizCommView.do?key=232&apv_perm_no=2018322016230201708&pageUnit=10&searchCnd=wrkr_no&searchKrwd=5488700240&pageIndex=1"></iframe>
+			</div>
+		</div>
+	</div>
+    <!-- 메인 배너 모두보기 modal -->
+    <div id="hero_modal" class="modal">
+        <div class="modal_content">
+            <div class="modal_header">
+                <span class="modal_close">&times;</span>
+            </div>
+            <div class="modal_body">
+                <div class="banner_content">
+                    <!--배너 목록-->
+                    <div><a href="#"><img src="images/banner/main_slideBn_01.jpg" alt="hero banner"></a></div>
+                    <div><a href="#"><img src="images/banner/main_slideBn_02.jpg" alt="hero banner"></a></div>
+                    <div><a href="#"><img src="images/banner/main_slideBn_03.jpg" alt="hero banner"></a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="plugin/Swiper-slider/js/swiper.min.js"></script>
+    <!-- 위로가기 / 기존 소스  -->
+    <script>
+        $(document).ready(function() {
+			$(window).scroll(function() {
+				if ($(this).scrollTop() > 0) {
+					$(".ico-top").fadeIn();
+				} else {
+					$(".ico-top").fadeOut();
+				}
+			});
+			$(".ico-top").click(function() {
+				$('html, body').animate({scrollTop: 0}, 450);
+				return false;
+			});
+		});
+    </script>
+
+    <!--20210413 스크립트 추가-->
+	<script>
+		$(document).ready(function(){
+			$('.info_title').click(function(){
+				$('.info_body').slideToggle();
+				$(this).find('.slide_arrow').toggleClass('active');
+			});
+		});
+	</script>
+	<!--modal show/hide js-->
+	<script>
+		$(document).ready(function(){
+			$('.modal_close').click(function(){
+				$(".modal").hide();
+			});
+
+			$('.modal_btn').click(function(){
+				var modal = $(this).data('modal');
+				$("#"+ modal).show();
+			});
+
+		});
+	</script>
+    <!-- swiper js -->
+    <script>
+        $(document).ready(function () {
+            // hero banner js
+            var swiper = new Swiper('.swiper-container', {
+                autoHeight: true,
+                spaceBetween: 0,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 3500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'fraction',
+                },
+                loop: true,
+            });
+
+            // 무료 적성 3가지 banner js
+            var swiper1 = new Swiper('.swiper-container1', {
+			    autoplay: {
+				    delay: 1500,
+				    disableOnInteraction: false,
+			    },
+			    pagination: {
+				    el: '.swiper-pagination1',
+			    },
+			    loop: true,
+		    });
+
+            var swiper2 = new Swiper('.swiper-container2', {
+		        autoplay: {
+			        delay: 1500,
+			        disableOnInteraction: false,
+		        },
+		        pagination: {
+			        el: '.swiper-pagination2',
+		        },
+		        loop: true,
+	        });
+
+            var swiper3 = new Swiper('.swiper-container3', {
+		        autoplay: {
+			        delay: 2000,
+			        disableOnInteraction: false,
+		        },
+		        pagination: {
+			        el: '.swiper-pagination3',
+		        },
+		        loop: true,
+	        });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'CookieRun';
+  src: url('./font/CookieRun-Regular.eot');
+  src: url('./font/CookieRun-Regular.eot?#iefix') format('embedded-opentype'),
+    url('./font/CookieRun-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
