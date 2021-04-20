@@ -345,12 +345,21 @@ caption {
   color: #ff3d55;
 }
 
-.page_title_area {
+.page_title_area,
+.item_title_wrap {
   position: relative;
   background-color: #fff;
   padding: 1.3rem 0;
   border-bottom: 1px solid #e0e0e0;
   z-index: 99;
+}
+
+.item_title_wrap {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  align-items: center;
+  padding: 0.9rem 1.4rem;
 }
 
 .page_title_area .page_title {
@@ -361,11 +370,31 @@ caption {
   vertical-align: middle;
 }
 
+.item_title_wrap .product_title {
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  vertical-align: middle;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 1rem;
+  position: relative;
+  top: -0.05rem;
+}
+
+.item_title_wrap .search_i {
+  width: 1.5rem;
+}
+
 .page_title_area .back_btn {
   position: absolute;
   top: 1.3rem;
-  left: 1.5rem;
+  left: 1.3rem;
   width: 1.5rem;
+}
+
+.item_title_wrap .back_btn {
+  width: 1.4rem;
 }
 
 .fixed_btn_wrapper {
@@ -377,7 +406,7 @@ caption {
   z-index: 999;
   background-color: #fff;
   border-top: 1px solid #e0e0e0;
-  padding: 0.8em;
+  padding: 0.5rem;
 }
 
 .lg_btn {
@@ -396,6 +425,27 @@ caption {
 
 .lg_btn span {
   font-weight: bold;
+}
+
+.solid_btn {
+  font-size: 0.95rem;
+  background-color: #ff8611;
+  color: #fff;
+  padding: 0.95rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.solid_btn:focus {
+  outline: none;
+  border: 1px solid #ff8611;
+}
+
+.solid_btn.light {
+  background-color: #fff;
+  color: #232323;
+  border: 1px solid #e0e0e0;
 }
 
 /* input group */
@@ -441,11 +491,42 @@ caption {
 
 .input_title {
   display: block;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #0d0d0d;
   letter-spacing: 0.5px;
   margin-bottom: 0.5em;
+}
+
+.box_select {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.65rem 0.5rem;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+.input_group .box_select {
+  margin-top: 0.5rem;
+}
+
+.input_group .info_txt {
+  font-size: 0.9rem;
+  margin-top: 0.7rem;
+}
+
+.input_flex_group {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.input_flex_group .input_title {
+  margin-bottom: 0;
 }
 
 .form_danger_txt {
@@ -614,7 +695,7 @@ input[type='checkbox']:checked {
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 9999;
   left: 0;
   top: 0;
   width: 100%;
@@ -701,6 +782,28 @@ input[type='checkbox']:checked {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background-color: #fff;
+}
+
+/* round_modal*/
+.modal.round_modal .modal_content {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-top-left-radius: 3rem;
+  border-top-right-radius: 3rem;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 2.5rem 1rem 0.5rem;
+}
+
+.modal.round_modal .modal_footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal.round_modal .modal_footer .solid_btn {
+  width: 49%;
 }
 /* iframe 모달*/
 .iframe_modal .modal_content {
@@ -822,6 +925,7 @@ input[type='checkbox']:checked {
 
 #content {
   background-color: #fff;
+  padding-top: 0;
 }
 
 .m_section {
@@ -1050,7 +1154,7 @@ input[type='checkbox']:checked {
   word-break: break-all;
 }
 
-.m_item_scroll .item_info .item_title {
+.item_info .item_title {
   width: 100%;
   display: block;
   font-size: 0.9375rem;
@@ -1063,30 +1167,39 @@ input[type='checkbox']:checked {
   white-space: normal;
 }
 
-.m_item_scroll .item_info .item_price .sale_percent {
+.sale_percent {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.25rem;
   color: #ff3d55;
   font-weight: 500;
   letter-spacing: -0.3px;
-  margin-right: 5px;
 }
 
-.m_item_scroll .item_info .item_price .main_price {
+.origin_price {
   font-family: 'Roboto', sans-serif;
-  font-size: 1.25rem;
-  color: #232323;
-  font-weight: 500;
-  letter-spacing: -0.3px;
-  margin-right: 3px;
-}
-
-.m_item_scroll .item_info .item_price .origin_price {
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.815rem;
   color: #aaaaaa;
   text-decoration: line-through;
   margin-bottom: 0.3em;
+}
+
+.main_price {
+  font-family: 'Roboto', sans-serif;
+  color: #232323;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+}
+
+.item_info .item_price .sale_percent {
+  font-size: 1.25rem;
+  margin-right: 5px;
+}
+
+.item_info .item_price .main_price {
+  font-size: 1.25rem;
+  margin-right: 3px;
+}
+
+.item_info .item_price .origin_price {
+  font-size: 0.815rem;
   margin-right: 3px;
 }
 
