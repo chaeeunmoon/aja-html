@@ -1069,7 +1069,7 @@ input[type='checkbox']:checked {
   color: #ff3d55;
   font-weight: 500;
   letter-spacing: -0.3px;
-  margin-right: 5px;
+  margin-right: 6px;
 }
 
 .m_item_scroll .item_info .item_price .main_price {
@@ -1077,13 +1077,13 @@ input[type='checkbox']:checked {
   font-size: 1.25rem;
   color: #232323;
   font-weight: 500;
-  letter-spacing: -0.3px;
+  letter-spacing: 0.1px;
   margin-right: 3px;
 }
 
 .m_item_scroll .item_info .item_price .origin_price {
   font-family: 'Roboto', sans-serif;
-  font-size: 0.815rem;
+  font-size: 0.95rem;
   color: #aaaaaa;
   text-decoration: line-through;
   margin-bottom: 0.3em;
