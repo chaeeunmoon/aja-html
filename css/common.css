@@ -355,9 +355,15 @@ caption {
 }
 
 .item_title_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 0.9rem 1.4rem;
 }
@@ -376,6 +382,7 @@ caption {
   vertical-align: middle;
   white-space: nowrap;
   overflow: hidden;
+  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   margin: 0 1rem;
   position: relative;
@@ -538,9 +545,15 @@ caption {
 }
 
 .input_flex_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   padding: 1rem 0;
 }
@@ -818,8 +831,18 @@ input[type='checkbox']:checked {
 }
 
 .modal.round_modal .modal_footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+}
+
+.modal.round_modal .modal_footer.center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .modal.round_modal .modal_footer .solid_btn {
@@ -919,6 +942,46 @@ input[type='checkbox']:checked {
   text-align: right !important;
   margin-bottom: 0.4rem;
   padding-right: 1.25rem;
+}
+
+/* sns 공유 모달  */
+#sns_share .sns_share_wrap {
+  padding: 0rem 1rem 3rem;
+  text-align: center;
+}
+
+#sns_share .sns_share_wrap .title {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0d0d0d;
+  text-align: center;
+  border-bottom: 2px solid #0d0d0d;
+  padding: 0.5rem 0.3rem;
+  margin: 0 auto 1.5rem;
+}
+
+#sns_share .sns_list {
+  margin: 0 auto;
+}
+
+#sns_share .sns_list li {
+  display: inline-block;
+  width: 23%;
+  margin-left: 1%;
+}
+
+#sns_share .sns_list li.url_sns img {
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+}
+
+#sns_share .sns_list li:last-child {
+  margin-left: 0;
+}
+
+#sns_share .sns_list li img {
+  width: 100%;
 }
 
 /* scroll wrapper */
@@ -1141,8 +1204,13 @@ input[type='checkbox']:checked {
 .list_item_wrap {
   width: 100%;
   padding: 0.5rem 0.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 

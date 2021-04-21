@@ -39,7 +39,7 @@
             padding-bottom: 100%;
         }
 
-        .product_thumb_wrap>img {
+        .product_thumb_wrap > img {
             width: 100%;
             margin-bottom: 0;
             position: absolute;
@@ -51,10 +51,16 @@
         }
 
         .product_detail_wrap .sale_time_block {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             vertical-align: middle;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             background-color: #ff8611;
             width: 100%;
             padding: 0.7rem 0;
@@ -114,8 +120,12 @@
         }
 
         .product_price_block {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
             padding: 0.5rem 0;
         }
 
@@ -151,16 +161,26 @@
         }
 
         .info_btn_box {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
             padding: 1rem 0 0.7rem;
         }
 
         .info_btn_box .i_btn {
             width: 48%;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             vertical-align: middle;
             padding: 0.8rem 0;
             font-size: 0.875rem;
@@ -198,10 +218,16 @@
         }
 
         .opt_list {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
             vertical-align: middle;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             margin-bottom: 0.7rem;
         }
 
@@ -227,10 +253,16 @@
         .opt_price_wrap {
             border-top: 1px solid #e0e0e0;
             padding: 1rem 0 1.5rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: space-between;
+            -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                    justify-content: space-between;
             vertical-align: middle;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
         }
 
         .opt_price_wrap .opt_title {
@@ -255,9 +287,14 @@
         }
 
         .tab_nav_wrap {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex: 1;
-            box-sizing: border-box;
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
         }
 
         .tab_nav_wrap li a {
@@ -265,6 +302,8 @@
             font-size: 0.9rem !important;
             font-weight: 600 !important;
             color: #0d0d0d !important;
+            -webkit-transition: all 0.3s;
+            -o-transition: all 0.3s;
             transition: all 0.3s;
         }
 
@@ -285,10 +324,16 @@
         }
 
         .more_btn {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
             vertical-align: middle;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             font-size: 1rem;
         }
 
@@ -370,10 +415,28 @@
                             <div class="info_btn_box">
                                 <!-- 찜하기 버튼 경우, active toggle -->
                                 <button class="i_btn active"><span class="like_ico"></span> 찜하기</button>
-                                <button class="i_btn"><img src="images/icon/btn_share.svg" alt="찜하기"> 공유하기</button>
+                                <button class="i_btn modal_btn" data-modal="sns_share"><img src="images/icon/btn_share.svg" alt="찜하기"> 공유하기</button>
                             </div>
-                            <!-- sns 공유 -->
-                            <div></div>
+                            <!--S: sns 공유-->
+                            <div id="sns_share" class="modal round_modal">
+                                <div class="modal_content">
+                                    <div class="modal_body">
+                                        <div class="sns_share_wrap">
+                                            <p class="title">SNS로 공유하세요</p>
+                                            <ul class="sns_list">
+                                                <li><a href="#"><img src="images/sns/ico_facebook.png" alt="페이스북 공유하기"></a></li>
+                                                <li><a href="#"><img src="images/sns/ico_twitter.png" alt="트위터 공유하기"></a></li>
+                                                <li><a href="#"><img src="images/sns/ico_kakao.png" alt="카카오톡 공유하기"></a></li>
+                                                <li class="url_sns"><a href="#"><img src="images/sns/ico_url.png" alt="링크 공유하기"></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="modal_footer center">
+                                        <button class="solid_btn light modal_close">닫기</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--E: sns 공유-->
                             <!-- 옵션창 -->
                             <div id="product_option" class="modal round_modal">
                                 <div class="modal_content">
