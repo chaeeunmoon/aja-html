@@ -26,12 +26,12 @@
 
         .theme_header {
             padding: 2rem 0;
-            height: 27vh;
+            height: 25vh;
             vertical-align: middle;
         }
 
         .theme_body {
-            min-height: 73vh;
+            min-height: 75vh;
             background-color: #fff;
             overflow: hidden;
             border-top-left-radius: 3rem;
@@ -39,7 +39,7 @@
         }
 
         .login_wrap .theme_header {
-            padding: 1.5rem 2rem; 
+            padding: 3rem 2rem 1.5rem; 
             display: -webkit-box; 
             display: -ms-flexbox; 
             display: flex;
@@ -98,7 +98,38 @@
         }
 
         .login_input_wrap {
-            margin-top: 15%;
+            margin-top: 13%;
+        }
+
+        .mb_0 {
+            margin-bottom: 0 !important;
+        }
+
+        .login_ck_wrap {
+            padding: 0.7rem 0 2rem;
+        }
+
+        .login_ck_wrap label {
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            font-weight: 400;
+        }
+
+        .login_find_wrap {
+            text-align: center;
+            padding: 2rem 0 1rem;
+        }
+
+        .login_find_wrap a {
+            font-size: 0.95rem;
+            letter-spacing: 0.1px;
+            color: #5e5e5e;
+            font-weight: 400;
+            margin-right: 1rem;
+        }
+
+        .login_find_wrap a:last-child {
+            margin-right: 0;
         }
     </style>
 </head>
@@ -129,11 +160,17 @@
                             <span class="bar"></span>
                             <label>아이디 (이메일)</label>
                           </div> 
-                          <div class="line_input_group login_input">      
+                          <div class="line_input_group login_input mb_0">      
                             <input type="password" required>
                             <span class="highlight"></span>
                             <span class="bar"></span>
                             <label>8자리 이상 비밀번호를 입력해주세요</label>
+                          </div>
+                          <div class="login_ck_wrap">
+                            <div class="ck_flex_wrap">
+                                <input class="custom_cb" type="checkbox" name="auto_login" id="auto_login" />
+                                <label for="auto_login">자동 로그인</label>
+                            </div>
                           </div>
                         <div>
                             <button class="solid_btn lg">로그인</button>
@@ -149,6 +186,10 @@
                 </div>
                 <div>
                     <a href="register_form.html" class="outline_btn lg">회원가입</a>
+                </div>
+                <div class="login_find_wrap">
+                    <a href="">아이디 찾기</a>
+                    <a href="">비밀번호 찾기</a>
                 </div>
             </div>
         </div>

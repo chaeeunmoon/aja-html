@@ -800,6 +800,16 @@ input[type='checkbox']:checked {
 }
 
 /* custom checkbox */
+.ck_flex_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 .custom_cb {
   position: absolute;
   opacity: 0;
@@ -810,6 +820,7 @@ input[type='checkbox']:checked {
   cursor: pointer;
   padding: 0;
   font-size: 1rem;
+  line-height: 1.3rem;
 }
 
 .custom_cb + label:before {
