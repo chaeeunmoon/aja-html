@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,9 @@
     <title>상품 상세페이지</title>
     <!--font 추가 (NotoSansKr, Roboto)-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
     <!--기존 css-->
     <link rel="stylesheet" href="css/default.css">
     <!-- 추가 css-->
@@ -25,9 +28,26 @@
             width: 100%;
         }
 
-        .product_thumb_wrap > img {
+        .product_thumb_wrap {
+            position:relative;
+            overflow: hidden;
+        }
+
+        .product_thumb_wrap:after {
+            content: '';
+            display: block;
+            padding-bottom: 100%;
+        }
+
+        .product_thumb_wrap>img {
             width: 100%;
             margin-bottom: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
         }
 
         .product_detail_wrap .sale_time_block {
@@ -39,6 +59,7 @@
             width: 100%;
             padding: 0.7rem 0;
             text-align: center;
+            border: none;
         }
 
         .product_detail_wrap .sale_time_block .time_icon img {
@@ -85,7 +106,7 @@
             margin-bottom: 0.7rem;
         }
 
-        .product_info_block  .sub_title {
+        .product_info_block .sub_title {
             font-size: 0.88rem;
             color: #828282;
             font-weight: 500;
@@ -97,7 +118,7 @@
             justify-content: space-between;
             padding: 0.5rem 0;
         }
-        
+
         .product_price_block .sale_percent {
             font-size: 1.7rem;
             font-weight: 600;
@@ -150,7 +171,7 @@
         .info_btn_box .i_btn .like_ico {
             display: inline-block;
             width: 1.1rem;
-            height:1.1rem;
+            height: 1.1rem;
             background-image: url(images/icon/btn_heart.svg);
             background-size: cover;
             margin-right: 0.3rem;
@@ -161,7 +182,7 @@
         }
 
         .info_btn_box .i_btn:focus {
-            outline: none; 
+            outline: none;
             border: 1px solid #ff8611;
         }
 
@@ -174,7 +195,7 @@
         .opt_list_wrap {
             border-top: 1px solid #e0e0e0;
             padding: 0.8rem 0;
-        }    
+        }
 
         .opt_list {
             display: flex;
@@ -188,10 +209,11 @@
             margin-bottom: 0;
         }
 
-        .opt_list .opt_title, .opt_list .opt_price {
-            font-size: 0.9rem;  
-            color: #888; 
-            font-weight: 400; 
+        .opt_list .opt_title,
+        .opt_list .opt_price {
+            font-size: 0.9rem;
+            color: #888;
+            font-weight: 400;
         }
 
         .opt_list .opt_price {
@@ -227,8 +249,88 @@
             font-family: 'Noto Sans KR', sans-serif;
         }
 
+
+        .sticky_nav {
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .tab_nav_wrap {
+            display: flex;
+            flex: 1;
+            box-sizing: border-box;
+        }
+
+        .tab_nav_wrap li a {
+            border-bottom: 2px solid #fff !important;
+            font-size: 0.9rem !important;
+            font-weight: 600 !important;
+            color: #0d0d0d !important;
+            transition: all 0.3s;
+        }
+
+        .tab_nav_wrap li.on a {
+            border-bottom: 2px solid #ff8611 !important;
+        }
+
+        .rm_wrap {
+            padding: 0.9rem;
+            height: 700px;
+            overflow: hidden;
+        }
+
+        .rm_btn_wrap {
+            width: 100%;
+            background-color: #fff;
+            padding: 0.8rem 0.9rem;
+        }
+
+        .more_btn {
+            display: flex;
+            justify-content: center;
+            vertical-align: middle;
+            align-items: center;
+            font-size: 1rem;
+        }
+
+        .more_btn .arrow img {
+            position: relative;
+            top: 0;
+            width: 1rem;
+            margin-left: 0.5rem;
+        }
+
+        .more_btn .arrow.active img {
+            top: -0.17rem;
+            -webkit-transform: rotate(180deg);
+            -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+        }
+
+        .more_btn .toggle_txt {
+            font-weight: 500;
+        }
+
+        .border_block {
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .reco_title_block {
+            padding: 1.5rem 0.9rem 1rem;
+        }
+
+        .reco_title_block .title {
+            font-size: 1.375rem;
+            font-weight: bold;
+            color: #0d0d0d;
+            letter-spacing: 0.5px;
+        }
+
+        .sub_info_wrap {
+            padding: 1rem 0.95rem;
+        }
     </style>
 </head>
+
 <body>
     <div id="wrap">
         <!--header none-->
@@ -237,8 +339,9 @@
             <!-- mobile/skin/shop/renewal/item.form.skin.php -->
             <div class="search_area">
                 <div class="item_title_wrap">
-                    <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
-                    <h2 class="product_title">[특가할인] 대형 종이집 만들기 구름집fdfdfd</h2>  
+                    <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg"
+                            alt="뒤로가기" /></a>
+                    <h2 class="product_title">[특가할인] 대형 종이집 만들기 구름집fdfdfd</h2>
                     <a class="search_i" href="/shop/search.php"><img src="images/icon/btn_search.png" alt="검색하기" /></a>
                 </div>
                 <div class="product_detail_wrap">
@@ -300,9 +403,12 @@
                                         <div class="input_flex_group">
                                             <p class="input_title">신청인원</p>
                                             <span class="rounded_cnt">
-                                                <button type="button" class="ico-down btn-spinner-minus cnt_minus" alt="감 소">빼기</button>
-                                                <input type="number" name="od_cnt1" id="od_cnt1v" value="0" maxlength="4" >	
-                                                <button type="button" class="ico-up btn-spinner-plus cnt_plus" alt="증 가" >더하기</button>
+                                                <button type="button" class="ico-down btn-spinner-minus cnt_minus"
+                                                    alt="감 소">빼기</button>
+                                                <input type="number" name="od_cnt1" id="od_cnt1v" value="0"
+                                                    maxlength="4">
+                                                <button type="button" class="ico-up btn-spinner-plus cnt_plus"
+                                                    alt="증 가">더하기</button>
                                             </span>
                                         </div>
                                         <div class="opt_list_wrap">
@@ -329,59 +435,111 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <style>
-
-                        .sticky_nav {
-                            border-bottom: 1px solid #e0e0e0;
-                        }
-
-                        .tab_nav_wrap {
-                            display: flex;
-                            flex: 1;
-                            box-sizing: border-box;
-                        }
-
-                        .tab_nav_wrap li a {
-                            border-bottom: 2px solid #fff !important;
-                            font-size: 0.9rem !important;
-                            font-weight: 600 !important;
-                            color: #0d0d0d !important;
-                            transition: all 0.3s;
-                        }
-
-                        .tab_nav_wrap li.on a {
-                            border-bottom: 2px solid #ff8611 !important;
-                        }
-                    </style>
-
                     <!-- 상품 상세정보 탭 -->
                     <!-- mobile/skin/shop/renewal/item.form.info.skin.php -->
                     <div class='product_tab_wrap'>
                         <div class='tab-area type03 sticky_nav'>
                             <ul id="tab-content-menu" class="tab_nav_wrap">
-                                <li class="menu"><a href="javascript:void(0)">상세정보</a></li>
-				                <li class="menu on"><a href="javascript:void(0);">교육후기<span>(52)</span></a></li>
-				                <li class="menu"><a href="javascript:void(0);">취소/환불</a></li>
-				                <li class="menu"><a href="javascript:void(0);">교육문의</a></li>
+                                <li class="menu on"><a href="javascript:void(0)">상세정보</a></li>
+                                <li class="menu"><a href="javascript:void(0);">교육후기<span>(52)</span></a></li>
+                                <li class="menu"><a href="javascript:void(0);">취소/환불</a></li>
+                                <li class="menu"><a href="javascript:void(0);">교육문의</a></li>
                             </ul>
                         </div>
                         <!-- 상세정보 -->
-                        <div class="tab-content">
-                            <div class="">
-                                보내는 보는 것이 인간에 불러 그들에게 얼마나 때문이다. 새가 동산에는 용감하고 칼이다. 몸이 풍부하게 그들의 봄날의 피어나는 청춘은 있을 그림자는 철환하였는가? 불어 천하를 인생을 꾸며 생의 아니다. 그러므로 우리 싹이 눈이 지혜는 인간은 힘차게 붙잡아 보라. 넣는 보는 그들은 이는 얼마나 얼음 위하여서. 사는가 못할 인생에 얼마나 대고, 그리하였는가? 가지에 풍부하게 웅대한 우리 커다란 봄바람을 있는 것이다. 위하여, 기쁘며, 발휘하기 인류의 위하여서 생명을 산야에 구하지 보이는 위하여서. 이성은 이상의 가슴에 자신과 그와 밝은 듣는다. 대고, 장식하는 되려니와, 품에 같지 사막이다
+                        <div class="tab-content tab_wrap">
+                            <div class="rm_wrap" style="height: 700px;">
+                                <!--상세내역-->
+                                <div class="img_wrap">
+                                    <img src="images/sample/detail-sample.png" alt="상세페이지 샘플">
+                                </div>
+                            </div>
+                            <div class="rm_btn_wrap">
+                                <button class="more_btn outline_btn lg" onclick="readMore()"><span
+                                        class="toggle_txt">상세정보 더보기</span><span class="arrow"><img
+                                            src="images/icon/btn_more_main.png" alt=""></span></button>
                             </div>
                         </div>
-                        <!-- 교육후기 -->
-                        <div class=""></div>
-                        <!-- 취소/환불 -->
-                        <div class=""></div>
-                        <!-- 교육문의 -->
-                        <div class=""></div>
+                        <!-- 교육후기 (스타일 동의)-->
+                        <div class="tab-content" style="display: none;">
+                            <div>교육후기 탭</div>
+                        </div>
+
+                        <!-- 취소/환불 (스타일 동일)-->
+                        <div class="tab-content" style="display: none;">
+                            <div>취소/환불 탭</div>
+                        </div>
+
+                        <!-- 교육문의 (스타일 동일)-->
+                        <div class="tab-content" style="display: none;">
+                            <div>교육문의 탭</div>
+                        </div>
+                        <!--tab content end-->
+                        <!-- 추가 정보 -->
+                        <div class="content_wrap border_block">
+                            <div class="sub_info_wrap">
+                                <!--디자인 통일-->
+                                <div class=" edu-noti">
+                                    <p class="title">★ 교구재정보</p>
+                                    <div class="detail-txt type01">
+                                        <ul>
+                                            <li><span class="title">업체명</span></li>
+                                            <li><span class="title">업체명</span></li>
+                                            <li><span class="title">업체명</span></li>
+                                            <li><span class="title">업체명</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--추천 상품-->
+                        <div class="reco_wrap border_block">
+                            <div class="reco_title_block">
+                                <p class="title">추천 교육</p>
+                            </div>
+                            <div class="reco_item">
+                                <ul class="list_item_wrap square_item_list">
+                                    <li><a href="#">
+                                            <div class="item_thumb">
+                                                <img src="images/sample/sample-02.png" alt="">
+                                            </div>
+                                            <div class="item_info">
+                                                <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                                                <div class="item_price right_align">
+                                                    <!--원가-->
+                                                    <p class='origin_price'>26800</p>
+                                                    <!--할인율-->
+                                                    <span class='sale_percent'>50%</span>
+                                                    <!--판매가-->
+                                                    <span class='main_price'>12900</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                    <li><a href="#">
+                                            <div class="item_thumb">
+                                                <img src="images/sample/sample-02.png" alt="">
+                                            </div>
+                                            <div class="item_info">
+                                                <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                                                <div class="item_price right_align">
+                                                    <!--원가-->
+                                                    <p class='origin_price'>26800</p>
+                                                    <!--할인율-->
+                                                    <span class='sale_percent'>50%</span>
+                                                    <!--판매가-->
+                                                    <span class='main_price'>12900</span>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <!-- 옵션창 open 버튼 -->
                     <div class="fixed_btn_wrapper">
-                        <button class="lg_btn modal_btn" data-modal="product_option">교구 구매하기</button>  
+                        <button class="lg_btn modal_btn" data-modal="product_option">교구 구매하기</button>
                     </div>
                 </div>
             </div>
@@ -393,7 +551,8 @@
                 <!--사업자 정보-->
                 <div class="company_info_wrap">
                     <div class="info_header">
-                        <h6 class="info_title">아자스쿨(주) 사업자 정보 <span class="slide_arrow"><img src='images/icon/btn_more_gray.png' alt="화살표"></span></h6>
+                        <h6 class="info_title">아자스쿨(주) 사업자 정보 <span class="slide_arrow"><img
+                                    src='images/icon/btn_more_gray.png' alt="화살표"></span></h6>
                     </div>
                     <!--slide info-->
                     <div class="info_body">
@@ -418,7 +577,8 @@
                     <ul class="fnb_wrap">
                         <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=privacy">개인정보 취급방침</a></li>
                         <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=provision">이용약관</a></li>
-                        <li class="fnb_link"><a href="#" data-modal="business_information" class="modal_btn">사업자 정보</a></li>
+                        <li class="fnb_link"><a href="#" data-modal="business_information" class="modal_btn">사업자 정보</a>
+                        </li>
                         <li class="fnb_link"><a href="#" data-modal="kakao_inquiry" class="modal_btn">문의사항</a></li>
                     </ul>
                 </div>
@@ -428,11 +588,12 @@
                 </div>
             </footer>
             <!--S: 위로가기 / 하단 바 (tail.php)-->
-            <div id="navi-area"> <!-- 보일때 -->
-            <!-- <div id="navi-area" style="height:55px">  감춰져 있을때 -->
+            <div id="navi-area">
+                <!-- 보일때 -->
+                <!-- <div id="navi-area" style="height:55px">  감춰져 있을때 -->
                 <button type="button" class="ico-top" style="display: none;">위로 가기</button>
             </div>
-        <!--E: 위로가기 / 하단 바-->
+            <!--E: 위로가기 / 하단 바-->
         </div>
         <!--footer-->
     </div>
@@ -440,24 +601,24 @@
     <script src="js/jquery-1.8.3.min.js"></script>
     <!-- 위로가기 / 기존 소스  -->
     <script>
-        $(document).ready(function() {
-			$(window).scroll(function() {
-				if ($(this).scrollTop() > 0) {
-					$(".ico-top").fadeIn();
-				} else {
-					$(".ico-top").fadeOut();
-				}
-			});
-			$(".ico-top").click(function() {
-				$('html, body').animate({scrollTop: 0}, 450);
-				return false;
-			});
-		});
-    </script>   
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 0) {
+                    $(".ico-top").fadeIn();
+                } else {
+                    $(".ico-top").fadeOut();
+                }
+            });
+            $(".ico-top").click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 450);
+                return false;
+            });
+        });
+    </script>
     <!-- 탭 / 기존 소스 -->
     <script type="text/javascript">
-        $(document).ready(function() {
-            $(document).on("click", "#tab-content-menu > li.menu", function() {
+        $(document).ready(function () {
+            $(document).on("click", "#tab-content-menu > li.menu", function () {
                 $("#tab-content-menu > li").removeClass("on");
                 $(".tab-content").hide();
                 var idx = $(this).index();
@@ -469,52 +630,76 @@
         });
     </script>
     <!--20210413 스크립트 추가-->
-	<script>
-		$(document).ready(function(){
-			$('.info_title').click(function(){
-				$('.info_body').slideToggle();
-				$(this).find('.slide_arrow').toggleClass('active');
-			});
-		});
-	</script>
+    <script>
+        $(document).ready(function () {
+            $('.info_title').click(function () {
+                $('.info_body').slideToggle();
+                $(this).find('.slide_arrow').toggleClass('active');
+            });
+        });
+    </script>
     <!--modal show/hide js-->
-	<script>
-		$(document).ready(function(){
-			$('.modal_close').click(function(){
-				$(".modal").hide();
-			});
+    <script>
+        $(document).ready(function () {
+            $('.modal_close').click(function () {
+                $(".modal").hide();
+            });
 
-			$('.modal_btn').click(function(){
-				var modal = $(this).data('modal');
-				$("#"+ modal).show();
-			});
+            $('.modal_btn').click(function () {
+                var modal = $(this).data('modal');
+                $("#" + modal).show();
+            });
 
-		});
-	</script>
+        });
+    </script>
     <!-- sticky_nav js -->
-	<script>
-		$(document).ready(function(){
-			var nav = $('.sticky_nav');
-			var navY = nav.offset().top;
+    <script>
+        $(document).ready(function () {
+            var nav = $('.sticky_nav');
+            var navY = nav.offset().top;
 
-			$(window).scroll(function(){
-				if( window.pageYOffset > navY ){
-					nav.css({
-                    	'position': 'fixed',
-                    	'top': 0,
-						'left': 0,
-						'width': '100%',
-						'z-index': '999'
-                	});
-				} else {
-					nav.css({
-                    	'position': 'static',
-                    	'top': ''
-                	});
-				}
-			});
-		});
-	</script>
-	<!-- sticky_nav js-->
+            $(window).scroll(function () {
+                if (window.pageYOffset > navY) {
+                    nav.css({
+                        'position': 'fixed',
+                        'top': 0,
+                        'left': 0,
+                        'width': '100%',
+                        'z-index': '999'
+                    });
+                } else {
+                    nav.css({
+                        'position': 'static',
+                        'top': ''
+                    });
+                }
+            });
+        });
+    </script>
+    <!-- sticky_nav js-->
+    <!-- read more js -->
+    <script>
+        function readMore() {
+            var wrapper = $('.rm_wrap');
+            // 더보기 전 높이 설정
+            var minHeight = 700;
+
+            if (wrapper.innerHeight() <= minHeight) {
+                wrapper.css({
+                    'height': 'auto'
+                });
+                $('.more_btn .toggle_txt').html('상세정보 접기');
+                $('.more_btn .arrow').toggleClass('active');
+            } else {
+                wrapper.css({
+                    'height': minHeight + 'px'
+                });
+                $('.more_btn .toggle_txt').html('상세정보 더보기');
+                $('.more_btn .arrow').toggleClass('active');
+            }
+        }
+    </script>
+    <!-- read more js -->
 </body>
+
 </html>
