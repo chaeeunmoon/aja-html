@@ -1715,3 +1715,14 @@ input[type='checkbox']:checked {
   text-align: center !important;
 }
 /* E: index css */
+
+.theme_wrapper {
+  width: 100%;
+  background-color: #ff8611;
+}
+
+.theme_wrapper .theme_body {
+  background-color: #fff;
+  overflow: hidden;
+  border-top-left-radius: 3rem;
+}
