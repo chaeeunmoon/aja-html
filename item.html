@@ -302,6 +302,7 @@
             font-size: 0.9rem !important;
             font-weight: 600 !important;
             color: #0d0d0d !important;
+            padding: 1rem 0 !important;
             -webkit-transition: all 0.3s;
             -o-transition: all 0.3s;
             transition: all 0.3s;
@@ -312,9 +313,18 @@
         }
 
         .rm_wrap {
+            width: 100%;
             padding: 0.9rem;
             height: 700px;
             overflow: hidden;
+        }
+
+        .rm_wrap .img_wrap {
+            width: 100%;
+        }
+
+        .rm_wrap .img_wrap img {
+            width: 100%;
         }
 
         .rm_btn_wrap {
@@ -516,6 +526,50 @@
                                 <div class="img_wrap">
                                     <img src="images/sample/detail-sample.png" alt="상세페이지 샘플">
                                 </div>
+                                <!-- 지도 -->
+						        <div class="detail-map">
+                                <div id="bottomMap" style="border:1px solid #000; width:100%; height:400px; margin:auto;"></div>
+                                <script>
+                                    var mapContainer = document.getElementById('bottomMap'), // 지도를 표시할 div 
+                                    mapOption = {
+                                        center: new daum.maps.LatLng(37.545603009882846, 126.95252894821037), // 지도의 중심좌표
+                                        level: 3 // 지도의 확대 레벨
+                                    };  
+            
+                                    // 지도를 생성합니다    
+                                    var map = new daum.maps.Map(mapContainer, mapOption); 
+                                    var coords = new daum.maps.LatLng(37.545603009882846, 126.95252894821037);
+    
+                                    // 결과값으로 받은 위치를 마커로 표시합니다
+                                    var marker = new daum.maps.Marker({
+                                        map: map,
+                                        position: coords
+                                    });
+    
+    
+                                    // 주소-좌표 변환 객체를 생성합니다
+                                    geocoder = new daum.maps.services.Geocoder();
+    
+                                    // 주소로 좌표를 검색합니다
+                                    geocoder.addressSearch('<?=$addr_url?>', function(result, status) {
+    
+                                    // 정상적으로 검색이 완료됐으면 
+                                     if (status === daum.maps.services.Status.OK) {
+    
+                                        var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+    
+                                        // 결과값으로 받은 위치를 마커로 표시합니다
+                                        var marker = new daum.maps.Marker({
+                                            map: map,
+                                            position: coords
+                                        });
+    
+                                        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                        map.setCenter(coords);
+                                        } 
+                                    });    
+                                </script>
+                                </div>
                             </div>
                             <div class="rm_btn_wrap">
                                 <button class="more_btn outline_btn lg" onclick="readMore()"><span
@@ -525,17 +579,15 @@
                         </div>
                         <!-- 교육후기 (스타일 동의)-->
                         <div class="tab-content" style="display: none;">
-                            <div>교육후기 탭</div>
+                            <div style="height: 100px; font-size: 2rem; line-height: 100px;">교육후기 탭</div>
                         </div>
-
                         <!-- 취소/환불 (스타일 동일)-->
                         <div class="tab-content" style="display: none;">
-                            <div>취소/환불 탭</div>
+                            <div style="height: 100px; font-size: 2rem; line-height: 100px;">취소/환불 탭</div>
                         </div>
-
                         <!-- 교육문의 (스타일 동일)-->
                         <div class="tab-content" style="display: none;">
-                            <div>교육문의 탭</div>
+                            <div style="height: 100px; font-size: 2rem; line-height: 100px;">교육문의 탭</div>
                         </div>
                         <!--tab content end-->
                         <!-- 추가 정보 -->
@@ -602,6 +654,8 @@
                     </div>
                     <!-- 옵션창 open 버튼 -->
                     <div class="fixed_btn_wrapper">
+                        <!--교육 마감시 .btn_end 추가-->
+                        <!-- <button class="lg_btn modal_btn btn_end" data-modal="product_option">교구 구매하기</button> -->
                         <button class="lg_btn modal_btn" data-modal="product_option">교구 구매하기</button>
                     </div>
                 </div>

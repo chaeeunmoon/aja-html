@@ -500,6 +500,11 @@ caption {
   outline: none;
 }
 
+.btn_end {
+  background-color: #878787 !important;
+  color: #fff !important;
+}
+
 /* input group */
 .line_input_group {
   margin-bottom: 2em;
