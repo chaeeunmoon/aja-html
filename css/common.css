@@ -98,7 +98,7 @@ caption {
 }
 
 #header .h_top {
-  padding: 0.9rem 1.4rem 0.5rem;
+  padding: 0.9rem 1.4rem 0.9rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,7 +145,7 @@ caption {
 }
 
 #header .nav_wrapper {
-  padding: 0.9rem 1.5rem;
+  padding: 0.3rem 1.5rem 0.9rem;
 }
 
 #header .m_navi .nav_link {
@@ -1108,6 +1108,7 @@ input[type='checkbox']:checked {
 #hero_modal .modal_body,
 #hero_modal .modal_header {
   background-color: transparent;
+  border-bottom: none;
 }
 
 #hero_modal .modal_header {
@@ -1235,7 +1236,7 @@ input[type='checkbox']:checked {
 
 /* hero banner */
 .hero_wrapper {
-  padding: 1em 1.7em;
+  padding: 1rem 1.7em;
 }
 
 .swiper-container {
@@ -1528,7 +1529,7 @@ input[type='checkbox']:checked {
 }
 
 .item_info .item_price .origin_price {
-  font-size: 0.85rem;
+  font-size: 0.87rem;
   margin-right: 3px;
 }
 
