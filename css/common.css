@@ -349,7 +349,7 @@ caption {
 .item_title_wrap {
   position: relative;
   background-color: #fff;
-  padding: 1rem 0;
+  padding: 1.2rem 0;
   border-bottom: 1px solid #e0e0e0;
   z-index: 99;
 }
@@ -403,7 +403,7 @@ caption {
 
 .page_title_area .back_btn {
   position: absolute;
-  top: 0.95rem;
+  top: 1rem;
   left: 1.5rem;
   width: 1.5rem;
 }
@@ -417,7 +417,7 @@ caption {
 .theme_wrapper .page_title_area .back_btn,
 .page_title_area.round .back_btn {
   position: absolute;
-  top: 0.95rem;
+  top: 1rem;
   left: 1.5rem;
   width: 1.5rem;
   height: 1.5rem;
@@ -518,6 +518,17 @@ caption {
   position: absolute;
   bottom: 0.5rem;
   right: 0;
+}
+
+.flex_input_block {
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  align-items: center;
+}
+
+.flex_input_block .flex_btn {
+  margin-left: 0.8rem;
 }
 
 .line_input_group label,
@@ -909,7 +920,8 @@ input[type='checkbox']:checked {
   cursor: pointer;
   padding: 0;
   font-size: 1rem;
-  line-height: 1.3rem;
+  line-height: 1.2rem;
+  vertical-align: middle;
 }
 
 .custom_cb + label:before {

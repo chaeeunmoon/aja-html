@@ -95,11 +95,13 @@
                                     <input type="text" name="od_name" id="od_name" class="line_input" value="" placeholder="이름을 입력해주세요"
                                         required />
                                 </div>
-                                <div class="flex_input_group">
+                                <div class="line_input_group">
                                     <label class="input_title" for="od_name">아이디</label>
-                                    <input type="text" name="od_postcode" onclick="execDaumPostcode()" readonly id="od_postcode"
+                                    <div class="flex_input_block">
+                                        <input type="text" name="od_postcode" id="od_postcode"
                                         placeholder="이메일">
-                                    <button class="btn_rounded sm_btn flex_btn" type="button">중복확인</button>
+                                        <button class="btn_rounded sm_btn flex_btn" type="button">중복확인</button>
+                                    </div>
                                 </div>
                                 <div class="line_input_group">
                                     <label class="input_label" for="od_name">비밀번호</label>
@@ -135,7 +137,7 @@
                                 }
 
                                 .rgs_group .rgs_title {
-                                    font-size: 1.125rem;
+                                    font-size: 1.2rem;
                                     font-weight: bold;
                                     letter-spacing: -0.2px;
                                 }
@@ -149,7 +151,38 @@
                             </div>
                             <div class="rgs_group">
                                 <p class="rgs_title">이용약관</p>
-                                <div></div>
+                                <div class="all_ck_box">
+                                    <div class="ck_flex_wrap">
+                                        <input class="custom_cb" type="checkbox" name="" id="all_agree" />
+                                        <label for="all_agree">전체동의</label>
+                                    </div>
+                                </div>
+                                <style>
+                                    .rgs_agree_info {
+                                        border: 1px solid #e0e0e0;
+                                    }
+                                </style>
+                                <div>
+                                    <ul class="rgs_agree">
+                                        <li>
+                                            <div class="ck_flex_wrap">   
+                                                <input class="custom_cb" type="checkbox" name="" id="" />
+                                                <label for="">본인은 만 14세 이상입니다 (필수)</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="ck_flex_wrap">   
+                                                <input class="custom_cb" type="checkbox" name="" id="" />
+                                                <label for="">이용약관 (필수)</label>
+                                                <span><img src="images/icon/btn_more_gray.png" alt=""></span>
+                                            </div>
+                                            <!-- 약관내용 -->
+                                            <div class="rgs_agree_info">
+                                                웅대한 피가 끓는 위하여 이상 피다. 이상은 낙원을 청춘의 사는가 그들의 힘있다. 밝은 피어나기 곳으로 피가 내려온 인류의 위하여서. 위하여서 청춘의 피가 갑 같이, 가치를 약동하다. 어디 사랑의 피어나기 튼튼하며, 얼마나 것이다. 찬미를 있음으로써 그러므로 장식하는 것은 가진 피다.
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                     </div>
                     <!--교육업체-->
@@ -177,7 +210,6 @@
                 console.log(tab_content);
 
                 //$('#'+ tab_content).show();
-                
             });
         });
     </script>
