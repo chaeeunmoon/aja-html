@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!--mypage inline css-->
+    <style>
+        .mypage_header {
+            display: flex;
+            justify-content:space-between;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 0.9rem 1.25rem 0.9rem 0.8rem;
+        }
+
+        .mypage_header .logo_img {
+            width: 130px;
+        }
+
+        .account_info {
+            padding: 1.5rem 1.3rem 1.5rem 2rem;
+        }
+
+        .account_info .account_name,
+        .account_info .account_name span {
+            font-family: 'CookieRun';
+            font-size: 1.4375rem;
+            color: #232323;
+        }
+
+        .account_info .account_name span {
+            font-size: 1.1rem;
+            margin-left: 4px;
+        }
+
+        .account_info .id_email {
+            font-family: 'Roboto', sans-serif;
+            font-size: 0.9375rem;
+            margin-top: 0.8rem;
+            color: #0d0d0d;
+        }
+
+        .account_menu {
+            margin-top: 2rem;
+            padding: 0 1.3rem;
+            background-color: #f6f5f3;
+            border-top-left-radius: 1.3rem;
+            border-top-right-radius: 1.3rem;
+        }
+
+        .state_list_wrap {
+            position: relative;
+            top: -1.9rem;
+            background-color: #fd9925;
+            padding: 1.2rem 0;
+            display: flex;
+            flex: 1;
+            border-radius: 1.3rem;
+            -webkit-box-shadow: 2px 2px 6px 2px #e0e0e0;
+            box-shadow: 2px 2px 6px 2px #e0e0e0;
+        }
+
+        .state_box {
+            width: 40%;
+            border-right: 1px solid #ffb975;
+        }
+
+        .state_box .state_title,
+        .state_box  .state_num {
+            font-size: 0.9375rem;
+            text-align: center;
+            color: #fff;
+            font-weight: 400;
+            letter-spacing: 0.1px;
+        }
+
+        .state_box .state_num {
+            font-family: 'Roboto', sans-serif;
+            margin-top: 0.8rem;
+        }
+
+        .border_box,
+        .shadow_box {
+            background-color: #fff;
+            padding: 1rem;
+            border-radius: 1.5rem;
+        }
+
+        .shadow_box {
+            -webkit-box-shadow: 2px 2px 6px 2px #e0e0e0;
+            box-shadow: 2px 2px 6px 2px #e0e0e0;
+        }
+
+        .border_box {
+            border: 1px solid #e0e0e0;
+        }
+
+        .shadow_box.main_border {
+            border: 2px solid #ff8611;
+        }
+
+        .account_txt {
+            color: #ff8611;
+        }
+
+        .point_list_wrap {
+            padding-bottom: 1.5rem;
+        }
+
+        .point_list_wrap .shadow_box {
+            width: 47%;
+        }
+
+        .img_title {
+            display: flex;
+            flex: 1;
+            vertical-align: middle;
+            align-items: center;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .img_title.center {
+            justify-content: center;
+        }
+
+        .img_title img {
+            width: 1.875rem;
+            padding-right: 0.5rem;
+        }
+
+        .point_list_wrap .img_title {
+            padding-bottom: 0.8rem;
+        }
+
+        .account_txt {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .account_txt .black {
+            color: #0d0d0d;
+            font-weight: bold;
+        }
+
+        .account_txt.center {
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 마이페이지 -->
+    <div class="wrapper">
+        <div class="mypage_header">
+            <img class="logo_img" src="images/logo.png" alt="ajaschool">
+            <a href="javascript:history.back();">x</a>
+        </div>
+        <div class="mypage_body">
+            <div class="account_info">
+                <div class="flex_block">
+                    <h4 class="account_name">김순이<span>님</span></h4>
+                    <a href="#" class="capsule_btn gray sm">정보수정</a>
+                </div>  
+                <p class="id_email">wwww3434@gmail.com</p>
+            </div>
+            <div class="account_menu">
+                <div class="state_list_wrap">
+                    <div class="state_box">
+                        <p class="state_title">결제완료</p>
+                        <p class="state_num">25</p>
+                    </div>
+                    <div class="state_box">
+                        <p class="state_title">교육종료</p>
+                        <p class="state_num">25</p>
+                    </div>
+                    <div class="state_box">
+                        <p class="state_title">취소</p>
+                        <p class="state_num">25</p>
+                    </div>
+                </div>
+                <div class="point_list_wrap flex_block">
+                    <div class="shadow_box main_border">
+                        <p class="img_title center"><img src="images/icon/ico_my_point.png" alt=""> 포인트</p>
+                        <p class="account_txt center">24000<span class="black">P</span></p>
+                    </div>
+                    <div class="shadow_box main_border">
+                        <p class="img_title center"><img src="images/icon/ico_my_coupon.png" alt=""> 쿠폰</p>
+                        <p class="account_txt center">3<span class="black">건</span></p>
+                    </div>
+                </div>
+                <style>
+                    .ac_menu_list {
+                        padding: 1rem 1.2rem;
+                    }
+                    
+                    .ac_menu_list li {
+                        display: flex;
+                        padding: 1rem 0.5rem;
+                        border-bottom: 1px solid #e3e3e3;
+                    }
+
+                    .ac_menu_list li:last-child {
+                        border: none;
+                    }
+
+                    .ac_menu_list li .account_txt {
+                        position: relative;
+                        top: 1px;
+                    }
+                </style>
+                <div class="ac_menu_wrap">
+                    <ul class="shadow_box ac_menu_list">
+                        <li>
+                            <div class="img_title"><img src="images/icon/ico_my_select.png" alt="">찜한 교육</div>
+                            <p class="account_txt"><a href="#">26<span class="black">건</span></a></p>
+                        </li>
+                        <li>
+                            <div class="img_title"><img src="images/icon/ico_my_portfolio.png" alt="">포트폴리오</div>
+                            <p class="account_txt"><a href="#">17<span class="black">건</span></a></p>
+                        </li>
+                        <li>
+                            <div class="img_title"><img src="images/icon/ico_my_test.png" alt="">적성검사</div>
+                            <p class="account_txt"><a href="#">3<span class="black">건</span></a></p>
+                        </li>
+                        <li>
+                            <div class="img_title"><img src="images/icon/ico_my_dream.png" alt="">나의 꿈 체험</div>
+                            <p class="account_txt"><a href="#">빅데이터전문가</a></p>
+                        </li>
+                    </ul>
+                </div>
+                <style>
+                    .aca_menu_wrap {
+                        padding: 1.5rem 0;
+                    }
+
+                    .aca_menu {
+                        width: 30%;
+                        padding: 0.5rem;
+                    }
+
+                    .aca_menu .border_box {
+                        padding: 1.3rem;
+                    }
+                    
+                    .aca_menu .aca_menu_txt {
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        text-align: center;
+                        margin-top: 0.7rem;
+                    }
+                </style>
+                <div class="aca_menu_wrap">
+                    <div class="flex_block">        
+                        <div class="aca_menu">
+                            <a href="#">
+                                <div class="border_box">
+                                    <img src="images/icon/ico_my_store.png" alt="">
+                                </div>
+                                <p class="aca_menu_txt">입점문의</p>
+                            </a>
+                        </div>
+                        <div class="aca_menu">
+                            <a href="#">
+                                <div class="border_box">
+                                    <img src="images/icon/ico_my_call.png" alt="">
+                                </div>
+                                <p class="aca_menu_txt">1:1 문의</p>
+                            </a>
+                        </div>
+                        <div class="aca_menu">
+                            <a href="#">
+                                <div class="border_box">
+                                    <img src="images/icon/ico_my_event.png" alt="">
+                                </div>
+                                <p class="aca_menu_txt">이벤트</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -500,6 +500,20 @@ caption {
   outline: none;
 }
 
+.capsule_btn.gray {
+  border: 1px solid #e1e1e1;
+  background-color: #fff;
+  color: #828282 !important;
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 3rem;
+}
+
+.capsule_btn.sm {
+  padding: 0.4rem 0.7rem;
+  font-size: 0.8rem;
+}
+
 .btn_end {
   background-color: #878787 !important;
   color: #fff !important;
@@ -520,7 +534,8 @@ caption {
   right: 0;
 }
 
-.flex_input_block {
+.flex_input_block,
+.flex_block {
   display: flex;
   justify-content: space-between;
   vertical-align: middle;
