@@ -1110,11 +1110,13 @@ input[type='checkbox']:checked {
   width: 49%;
 }
 /* iframe 모달*/
+.iframe_modal {
+  background-color: #ff8711;
+}
 .iframe_modal .modal_content {
   max-width: 100%;
   width: 100%;
   height: 100vh;
-  background-color: #ff8711;
 }
 
 .iframe_modal iframe {
@@ -1143,6 +1145,7 @@ input[type='checkbox']:checked {
   padding-top: 0.8rem;
   border-top-left-radius: 60px;
   overflow: hidden;
+  background-color: #fff;
 }
 
 .iframe_modal iframe::-webkit-scrollbar {
@@ -1387,13 +1390,13 @@ input[type='checkbox']:checked {
 }
 
 .category_list li .ctg_thumbnail {
-  border-radius: 8px;
+  border-radius: 1.3rem;
   overflow: hidden;
 }
 
 .category_list li .ctg_thumbnail > img {
   width: 100%;
-  border-radius: 18px;
+  border-radius: 1.3rem;
 }
 
 .category_list li .ctg_name {
@@ -1900,3 +1903,7 @@ input[type='checkbox']:checked {
 .sns_login_wrap .sns_login_list li:last-child {
   margin-right: 0;
 }
+
+/* S: category menu css */
+
+/* E: category menu css */
