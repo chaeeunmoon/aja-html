@@ -13,114 +13,10 @@
     <!-- 추가 css-->
     <link rel="stylesheet" href="css/font-style.css">
     <link rel="stylesheet" href="css/common.css">
-    <!-- menu inline css -->
-    <style>
-        .m_menu_wrap {
-            width: 100vw;
-            min-height: 100vh;
-            background-color: #fff;
-            padding-bottom: 3rem;
-        }
-
-        .menu_icon_section {
-            border-bottom: 1px solid #e1e1e1;
-            padding: 1.875rem 0;
-            display: flex;
-            flex: 1;
-            justify-content: center;
-        }
-
-        .menu_icon_section .menu_icon_box {
-           position: relative;
-           width: 25%;
-           text-align: center;
-        }
-
-        .menu_icon_section .menu_icon_box:last-child {
-            border-right: none;
-        }
-
-        .menu_icon_section .menu_icon_box:after {
-           content: '';
-           position: absolute;
-           bottom: 0;
-           right: 0;
-           height: 80%;
-           border-right: 1px solid #e1e1e1;
-        }
-
-        .menu_icon_section .menu_icon_box:last-child:after {
-           content: '';
-           border-right: none;
-        }
-
-        .menu_icon_section .menu_icon_box img {
-            width: 2.375rem;
-        }
-
-        .menu_icon_section .menu_icon_box .menu_icon_txt {
-            font-size: 0.875rem;
-            font-weight: 500;
-            text-align: center;
-            margin-top: 0.5rem;
-        }
-
-        .menu_section {
-            border-bottom: 1px solid #e1e1e1;
-            padding: 1.875rem 1.25rem;
-        }
-
-        .menu_section .title_block {
-            margin-bottom: 1.7rem;
-        }
-
-        .menu_section .menu_title {
-            font-family: 'CookieRun';
-            font-size: 1.2rem;
-        }
-
-        .menu_ctg_wrap .category_list {
-            display: block;
-        }
-
-        .menu_ctg_wrap .category_list li {
-            display: inline-block;
-            width: 24%;
-        }
-
-        .menu_nav_list li {
-            margin-bottom: 1.5rem;
-        }
-
-        .menu_nav_list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .menu_nav_list li a {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .menu_nav_list li a .img_title {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #0d0d0d;
-            vertical-align: middle;
-        }
-
-        .menu_nav_list li a .img_title img {
-            width: 1.8rem;
-        }
-
-        .menu_nav_list li a .nav_arrow img {
-            height: 0.85rem;
-        }
-    </style>
 </head>
 <body>
     <div class="m_menu_wrap" id="menu">
         <div class='page_title_area'>
-            <a class="back_btn" href="javascript:history.back();"><img src="images/icon//prev-arrow.svg" alt="뒤로가기" /></a>
             <h2 class="page_title">전체메뉴</h2>
             <a  class="close_btn" href="javascript:history.back();"><img src="images/icon/btn_close.png" alt="닫기"></a>
         </div>
@@ -151,7 +47,7 @@
             </div>
         </div>
         <!--카테고리-->
-        <div class="menu_section">
+        <div class="menu_ctg_section">
             <div class="title_block">
                 <p class="menu_title">카테고리</p>
             </div>
@@ -250,55 +146,21 @@
             </div>
             <div class="menu_nav_wrap">
                 <ul class="menu_nav_list">
-                    <li><a href="#">
+                    <li><a href="/shop/life_of_research_list.php?ca_id=94&area=eland_ilsan">
                         <p class="img_title"><img src="images/icon/ico_sitemap_tglife_01.png" alt="">일산 캠퍼스</p>
                         <span class="nav_arrow"><img src="images/icon/btn_next_gray.png" alt="이동"></span>
                     </a></li>
-                    <li><a href="#">
-                        <p class="img_title"><img src="images/icon/ico_sitemap_tglife_02.png" alt="">송도 캠퍼스</p>
+                    <li><a href="/shop/life_of_research_list.php?ca_id=94&area=eland_songpas">
+                        <p class="img_title"><img src="images/icon/ico_sitemap_tglife_02.png" alt="">송파 캠퍼스</p>
                         <span class="nav_arrow"><img src="images/icon/btn_next_gray.png" alt="이동"></span>
                     </a></li>
-                    <li><a href="#">
+                    <li><a href="/shop/life_of_research_list.php?ca_id=94&area=eland_pyeongtaek">
                         <p class="img_title"><img src="images/icon/ico_sitemap_tglife_03.png" alt="">평택 캠퍼스</p>
                         <span class="nav_arrow"><img src="images/icon/btn_next_gray.png" alt="이동"></span>
                     </a></li>
                 </ul>
             </div>
         </div>
-        <style>
-            .region_list_wrap {
-                width: 100%;
-            }
-
-            .label_list_wrap {
-                width: 100%;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-
-            .label_list_wrap li {
-                width: 31%;
-                text-align: center;
-            }
-
-            .label_list_wrap.counsel_list li {
-                border: 1px solid #e1e1e1;
-            }
-
-            .label_list_wrap.counsel_list li a {
-                
-            }
-
-            .label_list_wrap.region_list li {
-                background-color: #f8f8fa;
-                font-size: 0.82rem;
-                color: #828282;
-                padding: 1rem;
-                border-radius: 2rem;
-                margin-bottom: 0.7rem;
-            }
-        </style>
         <!--무료검사-->
         <div class="menu_section">
             <div class="title_block">
@@ -306,9 +168,9 @@
             </div>
             <div class="counsel_list_wrap">
                 <ul class="label_list_wrap counsel_list">
-                    <li><a href="#">나의 꿈 체험</a></li>
-                    <li><a href="#">아이성향검사</a></li>
-                    <li><a href="#">감성역량</a></li>
+                    <li><a href="/dream/job.php">나의 꿈 체험</a></li>
+                    <li><a href="/shop/aptitude_F_test.php">아이성향검사</a></li>
+                    <li><a href="/shop/emotion_F_test.php">감성역량</a></li>
                 </ul>
             </div>
         </div>
@@ -319,18 +181,18 @@
             </div>
             <div class="region_list_wrap">
                 <ul class="label_list_wrap region_list">
-                    <li><a href="#">서울특별시</a></li>
-                    <li><a href="#">경기도</a></li>
-                    <li><a href="#">부산광역시</a></li>
-                    <li><a href="#">인천광역시</a></li>
-                    <li><a href="#">대구광역시</a></li>
-                    <li><a href="#">광주광역시</a></li>
-                    <li><a href="#">울산광역시</a></li>
-                    <li><a href="#">충청남도</a></li>
-                    <li><a href="#">충청북도</a></li>
-                    <li><a href="#">경상남도</a></li>
-                    <li><a href="#">경상북도</a></li>
-                    <li><a href="#">전라북도</a></li>
+                    <li><a href="/shop/region_list.php?sel_region=서울">서울특별시</a></li>
+                    <li><a href="/shop/region_list.php?sel_region=경기">경기도</a></li>
+                    <li><a href="/shop/region_list.php?sel_region=부산">부산광역시</a></li>
+                    <li><a href="/shop/region_list.php?sel_region=인천">인천광역시</a></li>
+                    <li><a href="/shop/region_list.php?sel_region=대구">대구광역시</a></li>
+                    <li><a href="/shop/region_list.php?sel_region=광주">광주광역시</a></li>
+                    <li><a href="/shop/region_list.php?sel_region=울산">울산광역시</a></li>
+                    <li><a href="/shop/region_list.php?sel_region=충남">충청남도</a></li>
+                    <li><a href="/shop/region_list.php?sel_region=충북">충청북도</a></li>
+                    <li><a href="/shop/region_list.php?sel_region=경남">경상남도</a></li>
+                    <li><a href="/shop/region_list.php?sel_region=경북">경상북도</a></li>
+                    <li><a href="/shop/region_list.php?sel_region=전북">전라북도</a></li>
                 </ul>
             </div>
         </div>
@@ -341,11 +203,11 @@
             </div>
             <div class="menu_nav_wrap">
                 <ul class="menu_nav_list">
-                    <li><a href="#">
+                    <li><a href="/bbs/board.php?bo_table=notice">
                         <p class="img_title">공지사항</p>
                         <span class="nav_arrow"><img src="images/icon/btn_next_gray.png" alt="이동"></span>
                     </a></li>
-                    <li><a href="#">
+                    <li><a href="/bbs/board.php?bo_table=event">
                         <p class="img_title">이벤트</p>
                         <span class="nav_arrow"><img src="images/icon/btn_next_gray.png" alt="이동"></span>
                     </a></li>
@@ -353,15 +215,15 @@
                         <p class="img_title">입점문의</p>
                         <span class="nav_arrow"><img src="images/icon/btn_next_gray.png" alt="이동"></span>
                     </a></li>
-                    <li><a href="#">
+                    <li><a href="#" class="modal_btn" data-modal="kakao_inquiry">
                         <p class="img_title">1:1문의</p>
                         <span class="nav_arrow"><img src="images/icon/btn_next_gray.png" alt="이동"></span>
                     </a></li>
-                    <li><a href="#">
+                    <li><a href="/bbs/content.php?co_id=privacy">
                         <p class="img_title">개인정보이용방침</p>
                         <span class="nav_arrow"><img src="images/icon/btn_next_gray.png" alt="이동"></span>
                     </a></li>
-                    <li><a href="#">
+                    <li><a href="/bbs/content.php?co_id=provision">
                         <p class="img_title">이용약관</p>
                         <span class="nav_arrow"><img src="images/icon/btn_next_gray.png" alt="이동"></span>
                     </a></li>
@@ -369,5 +231,33 @@
             </div>
         </div>
     </div>
+    <!-- 1:1 문의 iframe open -->
+	<div id="kakao_inquiry" class="modal iframe_modal popup">
+		<div class="modal_content">
+			<div class="modal_header rounded_header">
+				<span class="modal_close modal_back"></span>
+				<p class="modal_title">문의하기</p>
+			</div>
+			<div class="modal_body">
+				<iframe src="https://pf.kakao.com/_xmEiFC" name="kakao_inquiry"></iframe>
+			</div>
+		</div>
+	</div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--modal show/hide js-->
+	<script>
+		$(document).ready(function(){
+			$('.modal_close').click(function(){
+				$(".modal").hide();
+			});
+
+			$('.modal_btn').click(function(){
+				var modal = $(this).data('modal');
+				$("#"+ modal).show();
+			});
+
+		});
+	</script>
 </body>
 </html>
