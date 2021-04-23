@@ -2125,6 +2125,7 @@ input[type='checkbox']:checked {
 .label_list_wrap li {
   width: 31%;
   text-align: center;
+  padding: 0;
 }
 
 .label_list_wrap li a {
@@ -2137,17 +2138,27 @@ input[type='checkbox']:checked {
   border: 1px solid #e1e1e1;
   font-size: 0.875rem;
   color: #0d0d0d;
-  padding: 1.5rem 0;
   border-radius: 3rem;
   letter-spacing: 0.3px;
+}
+
+.label_list_wrap.counsel_list li a {
+  display: inline-block;
+  width: 100%;
+  padding: 1.5rem 0;
 }
 
 .label_list_wrap.region_list li {
   background-color: #f8f8fa;
   font-size: 0.82rem;
   color: #828282;
-  padding: 1rem;
   border-radius: 2rem;
   margin-bottom: 0.7rem;
+}
+
+.label_list_wrap.region_list li a {
+  display: inline-block;
+  width: 100%;
+  padding: 1rem;
 }
 /* E: category menu css */

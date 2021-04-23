@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>검색화면</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!--inline css-->
+    <style>
+        .search_wrapper {
+            padding: 1.5rem 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .search_form {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            vertical-align: middle;
+            align-items: center;
+            border-bottom: 2px solid #0d0d0d;
+            padding: 0.6rem 0.7rem;
+        }
+
+        .search_form input {
+            width: 85%;
+        }
+
+        .search_form input:focus {
+            outline: none;
+        }
+
+        .search_form input::placeholder {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #828282;
+        }
+
+        .search_form .search_btn img {
+            width: 1.3rem;
+        }
+
+        .search_form .search_btn:focus {
+            outline: none;
+        }
+
+        .search_content_wrap {
+            margin-top: 3rem;
+        }
+
+        .search_content_wrap .title {
+            font-size: 0.9375rem;
+            font-weight: bold;
+        }
+
+        /* 인기검색어 목록 */
+        .popular_search_list {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .search_word {
+            position: relative;
+            display: inline-block;
+            font-size: 0.9375rem;
+            border: 1.5px solid #e1e1e1;
+            color: #828282;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            border-radius: 3rem;
+            margin: 0.3rem;
+        }  
+
+        .search_word a {
+            display: inline-block;
+            width: 100%;
+            font-weight: 500;
+            padding: 0.5rem 1.1rem;
+        }
+
+        .search_word.top_word {
+            border: 1.5px solid #ff8611;
+            color: #ff8611;
+        } 
+
+        .search_word.top_word .rank {
+            position: absolute;
+            top: -0.7rem;
+            left: 0.3rem;
+            width: 1.1rem;
+            height: 1.1rem;
+            line-height: 1.1rem;
+            font-size: 0.5rem;
+            text-align: center;
+            color: #fff;
+            background: url(images/icon/ico_search_rank.png) no-repeat center center;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <!-- S: header -->
+        <div id="header">
+            <header>
+                <div class="h_top" id="page">
+                    <div class="h_menu"><a href="menu.html"><img src="images/icon/btn_menu.png" alt="회원정보"></a></div>
+                    <h1 class="h_logo"><a href="/"><img src="images/logo.png" title="체험교육 플랫폼 아자스쿨"></a></h1>
+                    <a class="h_search" href="#"><img src="images/icon/btn_search.png" alt="검색"></a>
+                </div>	
+            </header>        
+            <nav class="m_navi scroll_wrapper" style="display: none;">
+                <ul class="nav_wrapper">
+                    <li class="nav_link active"><a href="#">아자탐구생활</a></li>
+                    <li class="nav_link"><a href="#">맞춤검색</a></li>
+                    <li class="nav_link"><a href="#">체험교구</a></li>
+                    <li class="nav_link"><a href="#">쿠폰/이벤트</a></li> 
+                    <li class="nav_link"><a href="#">학교전용(단체용)</a></li>	
+                    <li class="nav_link"><a href="#">공지사항</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- E: header -->
+        <!-- S: content -->
+        <div class="search_wrapper">
+            <div class="search_form_wrap">
+                <div class="search_form">
+                    <input type="text" placeholder="어떤 체험을 찾으시나요?">
+                    <button class="search_btn"><img src="images/icon/ico_botm_search.png" alt=""></button>
+                </div>
+            </div>
+            <div class="search_content_wrap">
+                <p class="title">인기 검색어</p>
+                <!--인기 검색어 목록-->
+                <div class="popular_search_list">
+                    <!--1,2,3 등-->
+                    <div class="search_word top_word">
+                        <span class="rank">1</span>
+                        <a href="#">송파점</a>
+                    </div>
+                    <div class="search_word top_word">
+                        <span class="rank">2</span>
+                        <a href="#">덕수궁 야외체험</a>
+                    </div>
+                    <div class="search_word top_word">
+                        <span class="rank">3</span>
+                        <a href="#">일산점</a>
+                    </div>
+                    <!--기본 검색어-->
+                    <div class="search_word">
+                        <a href="#">창덕궁 야외체험</a>
+                    </div>
+                    <div class="search_word">
+                        <a href="#">아자탐구생활</a>
+                    </div>
+                    <div class="search_word">
+                        <a href="#">온라인 체험학습</a>
+                    </div>
+                    <div class="search_word">
+                        <a href="#">집에서 즐기는 체험</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- E: content -->
+        <!-- S: footer -->
+        <div class='footer' id="footer">
+            <footer>
+                <!--사업자 정보-->
+                <div class="company_info_wrap">
+                    <div class="info_header">
+                        <h6 class="info_title">아자스쿨(주) 사업자 정보 <span class="slide_arrow"><img src='images/icon/btn_more_gray.png' alt="화살표"></span></h6>
+                    </div>
+                    <!--slide info-->
+                    <div class="info_body">
+                        <ul class="info_list">
+                            <li>서울특별시 마포구 마포대로 122 프론트원(FRONT1) 15F</li>
+                            <li>대표이사 : 황선하 / 사업자등록번호 : 548-87-00240</li>
+                            <li>통신판매업신고 : 2018-서울서초-01708 호</li>
+                            <li><a href="#" data-modal="business_information" class="modal_btn">사업자정보 ▶</a></li>
+                        </ul>
+                        <div class="call_info_box">
+                            <ul class="info_list">
+                                <li><span class="f_bold">전화문의 가능시간</span></li>
+                                <li><span class="f_bold">고객센터 </span> <a href="tel:02-866-7977">02-866-7977</a> / <a
+                                        href="mailto:help@ajaschool.co.kr">help@ajaschool.co.kr</a></li>
+                                <li><span class="f_bold">평일 :</span> 10:00 ~ 18:30 (점심시간: 12:30 ~ 13:30)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- fnb list -->
+                <div>
+                    <ul class="fnb_wrap">
+                        <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=privacy">개인정보 취급방침</a></li>
+                        <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=provision">이용약관</a></li>
+                        <li class="fnb_link"><a href="#" data-modal="business_information" class="modal_btn">사업자 정보</a></li>
+                        <li class="fnb_link"><a href="#" data-modal="kakao_inquiry" class="modal_btn">문의사항</a></li>
+                    </ul>
+                </div>
+                <!--copyright-->
+                <div class="cpr_wrap">
+                    <p class="f_copyright">ⓒ 아자스쿨 주식회사</p>
+                </div>
+            </footer>
+        </div>
+        <!-- E: footer -->
+    </div>
+</body>
+</html>
