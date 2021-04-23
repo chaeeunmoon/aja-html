@@ -2162,3 +2162,99 @@ input[type='checkbox']:checked {
   padding: 1rem;
 }
 /* E: category menu css */
+/* S: search css */
+.search_wrapper {
+  padding: 1.5rem 1.25rem;
+  margin-bottom: 2rem;
+  min-height: 80vh;
+}
+
+.search_form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  vertical-align: middle;
+  align-items: center;
+  border-bottom: 2px solid #0d0d0d;
+  padding: 0.6rem 0.7rem;
+}
+
+.search_form input {
+  width: 85%;
+}
+
+.search_form input:focus {
+  outline: none;
+}
+
+.search_form input::placeholder {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #828282;
+}
+
+.search_form .search_btn img {
+  width: 1.3rem;
+}
+
+.search_form .search_btn:focus {
+  outline: none;
+}
+
+.search_content_wrap {
+  margin-top: 3rem;
+}
+
+.search_content_wrap .title {
+  font-size: 0.9375rem;
+  font-weight: bold;
+}
+
+.search_content_wrap .title span {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* 인기검색어 목록 */
+.popular_search_list {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.search_word {
+  position: relative;
+  display: inline-block;
+  font-size: 0.9375rem;
+  border: 1.5px solid #e1e1e1;
+  color: #828282;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  border-radius: 3rem;
+  margin: 0.3rem;
+}
+
+.search_word a {
+  display: inline-block;
+  width: 100%;
+  font-weight: 500;
+  padding: 0.5rem 1.1rem;
+}
+
+.search_word.top_word {
+  border: 1.5px solid #ff8611;
+  color: #ff8611;
+}
+
+.search_word.top_word .rank {
+  position: absolute;
+  top: -0.7rem;
+  left: 0.3rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  line-height: 1.1rem;
+  font-size: 0.5rem;
+  text-align: center;
+  color: #fff;
+  background: url(../images/icon/ico_search_rank.png) no-repeat center center;
+  background-size: contain;
+}
+/* E: search css */
