@@ -1923,6 +1923,10 @@ input[type='checkbox']:checked {
   border-radius: 1.5rem;
 }
 
+.t_center {
+  text-align: center;
+}
+
 .shadow_box {
   -webkit-box-shadow: 2px 2px 6px 2px #e0e0e0;
   box-shadow: 2px 2px 6px 2px #e0e0e0;
