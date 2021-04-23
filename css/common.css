@@ -388,6 +388,7 @@ caption {
   letter-spacing: 0.5px;
   text-align: center;
   vertical-align: middle;
+  color: #232323;
 }
 
 .item_title_wrap .product_title {
@@ -401,6 +402,7 @@ caption {
   margin: 0 1rem;
   position: relative;
   top: -0.05rem;
+  color: #232323;
 }
 
 .item_title_wrap .search_i {
@@ -412,6 +414,13 @@ caption {
   top: 1rem;
   left: 1.5rem;
   width: 1.5rem;
+}
+
+.page_title_area .close_btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  width: 1rem;
 }
 
 .item_title_wrap .back_btn {
@@ -1903,6 +1912,54 @@ input[type='checkbox']:checked {
 .sns_login_wrap .sns_login_list li:last-child {
   margin-right: 0;
 }
+/* S: mypage css */
+.border_box,
+.shadow_box {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1.5rem;
+}
+
+.shadow_box {
+  -webkit-box-shadow: 2px 2px 6px 2px #e0e0e0;
+  box-shadow: 2px 2px 6px 2px #e0e0e0;
+}
+
+.border_box {
+  border: 1px solid #e0e0e0;
+}
+
+.shadow_box.main_border {
+  border: 2px solid #ff8611;
+}
+
+.img_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.img_title.center {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.img_title img {
+  width: 1.875rem;
+  padding-right: 0.5rem;
+}
+/* E: mypage css */
 
 /* S: category menu css */
 
