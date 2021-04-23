@@ -16,14 +16,26 @@
     <!--mypage inline css-->
     <style>
         .mypage_header {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            justify-content:space-between;
+            -webkit-box-pack:justify;
+                -ms-flex-pack:justify;
+                    justify-content:space-between;
             border-bottom: 1px solid #e0e0e0;
-            padding: 0.9rem 1.25rem 0.9rem 0.8rem;
+            padding: 0.9rem 1.2rem 0.9rem 0.8rem;
         }
 
         .mypage_header .logo_img {
-            width: 130px;
+            width: 135px;
+            -o-object-fit: contain;
+               object-fit: contain;
+        }
+
+        .mypage_header .btn_close {
+            width: 1.1rem;
+            position: relative;
+            top: 0.2rem;
         }
 
         .account_info {
@@ -50,6 +62,7 @@
         }
 
         .account_menu {
+            min-height: 80vh;
             margin-top: 2rem;
             padding: 0 1.3rem;
             background-color: #f6f5f3;
@@ -62,8 +75,12 @@
             top: -1.9rem;
             background-color: #fd9925;
             padding: 1.2rem 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex: 1;
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
             border-radius: 1.3rem;
             -webkit-box-shadow: 2px 2px 6px 2px #e0e0e0;
             box-shadow: 2px 2px 6px 2px #e0e0e0;
@@ -121,17 +138,25 @@
         }
 
         .img_title {
+            display: -webkit-box;
+            display: -ms-flexbox;
             display: flex;
-            flex: 1;
+            -webkit-box-flex: 1;
+                -ms-flex: 1;
+                    flex: 1;
             vertical-align: middle;
-            align-items: center;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
             text-align: center;
             font-size: 1rem;
             font-weight: 500;
         }
 
         .img_title.center {
-            justify-content: center;
+            -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                    justify-content: center;
         }
 
         .img_title img {
@@ -141,6 +166,10 @@
 
         .point_list_wrap .img_title {
             padding-bottom: 0.8rem;
+        }
+
+        .point_list_wrap .img_title img {
+            width: 2.2rem;
         }
 
         .account_txt {
@@ -158,6 +187,58 @@
             text-align: center;
         }
 
+        .ac_menu_list {
+            padding: 1rem 1.2rem;
+        }
+                    
+        .ac_menu_list li {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            padding: 1rem 0.5rem;
+            border-bottom: 1px solid #e3e3e3;
+        }
+
+        .ac_menu_list li:last-child {
+            border: none;
+        }
+
+        .ac_menu_list li .account_txt {
+            position: relative;
+            top: 1px;
+        }
+
+        .ac_menu_wrap .img_title img {
+            width: 1.7rem;
+        }
+
+        .ac_btn_wrap {
+            padding: 1.5rem 0;
+        }
+
+        .ac_btn_list {
+            padding: 0.3rem 0.8rem;
+        }
+
+        .ac_btn {
+            width: 32%;
+            padding: 0.5rem;
+        }
+
+        .ac_btn .border_box {
+            padding: 1.3rem;
+        }
+                    
+        .ac_btn .ac_btn_label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-align: center;
+            margin-top: 0.7rem;
+        }
+
+        .logout_btn_wrap {
+            padding: 0.5rem 0 2rem;
+        }
     </style>
 </head>
 <body>
@@ -165,7 +246,7 @@
     <div class="wrapper">
         <div class="mypage_header">
             <img class="logo_img" src="images/logo.png" alt="ajaschool">
-            <a href="javascript:history.back();">x</a>
+            <a href="javascript:history.back();" class="btn_close"><img src="images/icon/btn_close.png" alt="닫기"></a>
         </div>
         <div class="mypage_body">
             <div class="account_info">
@@ -200,26 +281,6 @@
                         <p class="account_txt center">3<span class="black">건</span></p>
                     </div>
                 </div>
-                <style>
-                    .ac_menu_list {
-                        padding: 1rem 1.2rem;
-                    }
-                    
-                    .ac_menu_list li {
-                        display: flex;
-                        padding: 1rem 0.5rem;
-                        border-bottom: 1px solid #e3e3e3;
-                    }
-
-                    .ac_menu_list li:last-child {
-                        border: none;
-                    }
-
-                    .ac_menu_list li .account_txt {
-                        position: relative;
-                        top: 1px;
-                    }
-                </style>
                 <div class="ac_menu_wrap">
                     <ul class="shadow_box ac_menu_list">
                         <li>
@@ -240,54 +301,36 @@
                         </li>
                     </ul>
                 </div>
-                <style>
-                    .aca_menu_wrap {
-                        padding: 1.5rem 0;
-                    }
-
-                    .aca_menu {
-                        width: 30%;
-                        padding: 0.5rem;
-                    }
-
-                    .aca_menu .border_box {
-                        padding: 1.3rem;
-                    }
-                    
-                    .aca_menu .aca_menu_txt {
-                        font-size: 0.9rem;
-                        font-weight: 500;
-                        text-align: center;
-                        margin-top: 0.7rem;
-                    }
-                </style>
-                <div class="aca_menu_wrap">
-                    <div class="flex_block">        
-                        <div class="aca_menu">
+                <div class="ac_btn_wrap">
+                    <div class="flex_block ac_btn_list">        
+                        <div class="ac_btn">
                             <a href="#">
                                 <div class="border_box">
                                     <img src="images/icon/ico_my_store.png" alt="">
                                 </div>
-                                <p class="aca_menu_txt">입점문의</p>
+                                <p class="ac_btn_label">입점문의</p>
                             </a>
                         </div>
-                        <div class="aca_menu">
+                        <div class="ac_btn">
                             <a href="#">
                                 <div class="border_box">
                                     <img src="images/icon/ico_my_call.png" alt="">
                                 </div>
-                                <p class="aca_menu_txt">1:1 문의</p>
+                                <p class="ac_btn_label">1:1 문의</p>
                             </a>
                         </div>
-                        <div class="aca_menu">
+                        <div class="ac_btn">
                             <a href="#">
                                 <div class="border_box">
                                     <img src="images/icon/ico_my_event.png" alt="">
                                 </div>
-                                <p class="aca_menu_txt">이벤트</p>
+                                <p class="ac_btn_label">이벤트</p>
                             </a>
                         </div>
                     </div>
+                </div>
+                <div class="logout_btn_wrap">
+                    <button class="capsule_btn lg t_black gray">로그아웃</button>
                 </div>
             </div>
         </div>

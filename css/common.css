@@ -1,6 +1,12 @@
 /* font responsive */
 html {
-  font-size: 16px;
+  font-size: 17px;
+}
+
+@media (max-width: 375px) {
+  html {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 320px) {
@@ -512,6 +518,18 @@ caption {
 .capsule_btn.sm {
   padding: 0.4rem 0.7rem;
   font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.capsule_btn.lg {
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
+  padding: 0.7rem 0;
+}
+
+.capsule_btn.t_black {
+  color: #0d0d0d !important;
 }
 
 .btn_end {
