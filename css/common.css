@@ -388,6 +388,9 @@ caption {
   letter-spacing: 0.5px;
   text-align: center;
   vertical-align: middle;
+}
+
+.page_title_area .page_title.t_black {
   color: #232323;
 }
 
