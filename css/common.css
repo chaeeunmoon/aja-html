@@ -722,7 +722,7 @@ caption {
 
 .line_input_group.login_input input {
   font-family: 'Noto Sans KR', sans-serif;
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   padding: 0.4rem 0.4rem 0.4rem 0.3rem;
   display: block;
   width: 100%;
@@ -732,7 +732,7 @@ caption {
 
 .line_input_group.login_input input:focus {
   outline: none;
-  border-bottom: 1px solid #757575;
+  border-bottom: 2px solid #757575;
 }
 
 .line_input_group.login_input input:valid {
@@ -742,12 +742,13 @@ caption {
 /* LABEL ======================================= */
 .line_input_group.login_input label {
   color: #999;
-  font-size: 1.12rem;
-  font-weight: normal;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
   position: absolute;
   pointer-events: none;
   left: 5px;
-  top: 10px;
+  top: 0.65rem;
   -o-transition: 0.2s ease all;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
