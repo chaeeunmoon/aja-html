@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제하기</title>
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        /* 결제 페이지 */
+        .order_wrapper {
+          background-color: #f7f6f4;
+          padding: 1.5em 1.3em;
+          padding-bottom: 5rem;
+        }
+        
+        .order_box {
+          width: 100%;
+          background-color: #fff;
+          -webkit-box-shadow: 2px 2px 6px 2px #e0e0e0;
+          box-shadow: 2px 2px 6px 2px #e0e0e0;
+          border-radius: 12px;
+          padding: 1.8em 2em 2em;
+          margin-bottom: 1em;
+        }
+        
+        .order_box.black_border { border: 2px solid #0d0d0d; }
+        
+        .order_box.main_border { border: 2px solid #ff8611; }
+        
+        .order_box_header { position: relative; }
+        
+        .order_box .order_title {
+          display: flex;
+          vertical-align: middle;
+          align-items: center;
+          font-size: 1.2rem;
+          font-weight: 600;
+          letter-spacing: -0.2px;
+          color: #0d0d0d;
+          cursor: pointer;
+          vertical-align: top;
+        }
+        
+        .order_box .order_title > img {
+          width: 1.4rem;
+          margin-right: 0.5rem;
+        }
+        
+        .order_box .title_arrow {
+          position: absolute;
+          top: 0.2rem;
+          right: 0;
+          width: 1rem;
+          cursor: pointer;
+          -webkit-transform: rotate(-180deg);
+          -ms-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+          -webkit-transition: all ease 0.5s;
+          -o-transition: all ease 0.5s;
+          transition: all ease 0.5s;
+        }
+        
+        .order_box .title_arrow.active {
+          top: 0.3rem;
+          -webkit-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          transform: rotate(0deg);
+        }
+        
+        .order_box .sub_order_title {
+          font-size: 1rem;
+          font-weight: 600;
+          letter-spacing: -0.2px;
+          color: #0d0d0d;
+        }
+        
+        .order_dropdown[data-display='none'] .order_body { display: none; }
+        
+        .order_dropdown[data-display='block'] .order_body { display: block; }
+        
+        .order_box_body { margin-top: 2.5em; }
+        
+        .btn_radio {
+          padding: 1em 0;
+          text-align: center;
+        }
+        
+        .btn_radio input[type='radio'] {
+          opacity: 0;
+          position: fixed;
+          width: 0;
+        }
+        
+        .btn_radio label {
+          display: inline-block;
+          background-color: #fff;
+          padding: 0.8em 0;
+          width: 34vw;
+          font-size: 0.9rem;
+          font-weight: bold;
+          border: 1px solid #e0e0e0;
+          border-radius: 30px;
+          text-align: center;
+          margin-left: 2vw;
+        }
+        
+        .btn_radio label:nth-of-type(2n) { margin-left: 2vw; }
+        
+        .btn_radio label:hover { border-color: #ff8611; }
+        
+        .btn_radio input[type='radio']:focus + label {
+          border: 1px solid #ff8611;
+          color: #ff8611;
+        }
+        
+        .btn_radio input[type='radio']:checked + label { border-color: #ff8611; }
+        
+        .btn_input_wrap {
+          position: relative;
+        }
+        
+        .btn_input_wrap .btn_rounded {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+        
+        .payment_wrap {
+          text-align: center;
+        }
+        
+        .payment_wrap li {
+          display: inline-block;
+        }
+        
+        .agree_ck_wrap .ck_flex_wrap {
+           display: flex;
+           vertical-align: middle;
+           align-items: center;
+        }
+        
+        .agree_ck_wrap input[type='checkbox'] {
+          border: 1px solid #e0e0e0;
+          border-radius: 4px;
+          width: 1.3rem;
+          height: 1.3rem;
+          text-align: center;
+        }
+        
+        .agree_ck_wrap input[type='checkbox']:checked {
+           background-color: #ff8611;
+        }
+        
+        .agree_ck_wrap label {
+          font-size: 0.85rem;
+          margin-left: 0.5em;
+        }
+        
+        /* product info */
+        .product_info_wrap {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          position: relative;
+          vertical-align: middle;
+          align-items: center;
+        }
+        
+        .product_info_wrap .product_thumb {
+          position: relative;
+          width: 33%;
+          height: auto;
+          border-radius: 8px;
+          overflow: hidden;
+        }
+        
+        .product_info_wrap .product_thumb > img {
+          -o-object-fit: cover;
+          object-fit: cover;
+          min-width: 100%;
+          margin: 0;
+          border-radius: 8px;
+        }
+        
+        .product_info_wrap .product_info {
+          width: 67%;
+          padding-left: 1em;
+        }
+
+        .opt_wrapper {
+            margin-top: 0.8rem;
+            padding-top: 0.8rem;
+            padding-bottom: 0.8rem;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .product_info_wrap .product_info .product_title {
+          font-size: 0.95rem;
+          line-height: 1.2;
+          letter-spacing: 0.3px;
+          margin-bottom: 0.5em;
+          word-break: normal;
+        }
+        
+        .product_info_wrap .product_info .product_opt,
+        .opt_wrapper .product_opt {
+          font-size: 0.85rem;
+          color: #ff8611;
+          margin-bottom: 0.5em;
+          line-height: 1.2;
+        }
+        
+        .product_info_wrap .product_info .product_info_txt,
+        .opt_wrapper .product_info_txt {
+          font-size: 0.85rem;
+          color: #0d0d0d;
+          margin-bottom: 0.5em;
+          line-height: 1.2;
+        }
+        
+        .product_info_wrap .product_info .price {
+          margin-bottom: 0.5em;
+        }
+        
+        .product_info_wrap .product_info .product_price_txt,
+        .product_info_wrap .product_info .won {
+          font-size: 1rem;
+          font-weight: 600;
+          letter-spacing: 0.3px;
+        }
+        
+        .product_info_wrap .product_info .price_divider {
+          font-size: 1rem;
+          color: #e0e0e0;
+          position: relative;
+          top: -1px;
+        }
+        
+        .product_info_wrap .product_info .before_price {
+          font-size: 0.8rem;
+          text-decoration: line-through;
+          color: #828282;
+        }
+        
+        .product_info_wrap .product_info .product_info_percent {
+          font-size: 0.8rem;
+          margin-top: 1em;
+          color: #ff8611;
+        }
+        /* product info */
+        
+        .content_footer {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+          padding: 1.2em 0;
+          border-top: 1px solid #e0e0e0;
+          margin-top: 1em;
+        }
+        
+        .content_footer p,
+        .content_footer span {
+          font-size: 1rem;
+          letter-spacing: 0.3px;
+          font-weight: 600;
+        }
+        
+        .content_footer .f_title {
+          width: 50%;
+          color: #0d0d0d;
+        }
+        
+        .content_footer .f_main,
+        .content_footer .f_main span {
+          font-size: 1.1rem;
+          width: 50%;
+          color: #ff8611;
+          text-align: right;
+        }
+        
+        /* sub title */
+        .order_box .order_sub_title {
+          display: block;
+          font-size: 1rem;
+          font-weight: 600;
+          color: #0d0d0d;
+          letter-spacing: 0.3px;
+          margin-bottom: 1.2em;
+        }
+        
+        /* 포인트 / 쿠폰 */
+        .point_wrap {
+          margin-bottom: 2em;
+        }
+        
+        .point_input_box {
+          color: #ff8611;
+          font-size: 1.2rem;
+          font-weight: 600;
+          padding: 0.2em 0 0.5em;
+        }
+        
+        .point_input_box input {
+          width: 90%;
+          text-align: right;
+          border-radius: 8px;
+          border: 1px solid #e0e0e0;
+          font-size: 1rem;
+          padding: 0.5em 0.5em;
+          margin-right: 5px;
+        }
+        
+        .point_wrap .point_info_txt {
+          font-size: 0.88rem;
+          margin-bottom: 0.7em;
+        }
+        
+        .point_wrap .point_info_txt .point_main {
+          color: #ff8611;
+        }
+        
+        .point_input_box input:focus {
+          outline: none;
+          border-color: #ff8611;
+        }
+        
+        .pay_info_list {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          margin-bottom: 1em;
+          font-size: 0.88rem;
+        }
+        
+        .pay_info_list .p_txt,
+        .pay_info_list .p_main {
+          text-align: right;
+        }
+        
+        .pay_info_list .p_main {
+          color: #ff8611;
+        }
+        
+        .payment_info_title {
+          font-size: 0.9rem;
+          font-weight: 500;
+          letter-spacing: 0.3px;
+          color: #828282;
+          padding: 0 0 1em;
+          background-color: #F5F5F5;
+          padding: 0.4rem 0.6rem;
+          border: 1px solid #ddd;
+          border-radius: 1rem;
+        }
+        
+        .payment_info_title .title_arrow {
+           display: inline-block;
+           position: static;
+           width: 0.85rem;
+           position:relative;
+           top: 0.1rem;
+           margin-left: 0.3rem;
+        }
+        
+        .payment_info_title .title_arrow.active {
+           top: -0.05rem;
+        }
+        
+        .payment_info_title .p_main {
+          font-weight: 400;
+          color: #ff8611;
+        }
+        
+        .payment_info_body {
+          padding: 1em 0.1em;
+        }
+        
+        .payment_info_body p {
+           font-size: 0.85rem;
+           color: #0d0d0d;
+           font-weight: 500;
+           margin-bottom: 0.5em;
+           line-height: 1.2;
+        }
+        
+        .payment_info_body .p_gray {
+           color: #828282;
+        }
+        
+        .payment_info_body .p_danger {
+           color: #ff3d55;
+        }
+        
+        .payment_info_body .bank_info_txt li {
+           font-size: 0.85rem;
+           color: #828282;
+           line-height: 1.2;
+           margin-bottom: 0.5em;
+        }
+        
+        .payment_info_body .bank_info_txt li span {
+           color: #ff8611;
+        }
+        
+        .payment_info_body .bank_info_txt li:before {
+           content: '-';
+           font-size: 1rem;
+           margin-right: 0.3em;
+           color: #ff8611;
+        }
+        
+        .payment_info_body .bank_info_box {
+           margin: 1em 0 ;
+        }
+        
+        .payment_info_body .bank_info_box .title {
+           font-size: 0.9rem;
+           font-weight: 600;
+        }
+        
+        .payment_info_body .bank_info_box ul li {
+           font-size: 0.85rem;
+           color: #828282;
+           line-height: 1.2;
+           margin-bottom: 0.5em;
+        }
+        
+        .payment_info_body .bank_info_box li:before {
+           content: '-';
+           font-size: 1rem;
+           margin-right: 0.3em;
+           color: #ff8611;
+           font-weight: 600;
+        }
+        
+        .payment_info_body .bank_info_box ul li span {
+           color: #ff8611;
+        }
+        
+        /* coupon style */
+        .coupon_box .coupon_btn {
+           font-size: 0.85rem;
+        }
+        
+        .coupon_box .coupon_btn:before {
+           top: 30%;
+        }
+        
+        .coupon_price {
+           font-size: 0.9rem;
+        }
+        
+        .coupon_info .point-info {
+           font-size: 0.9rem !important;
+        }
+        
+        .pay-system .pay-system-content>div.card,
+        .pay-system .pay-system-content>div.vbank {
+           min-height: auto;
+           padding: 0.7rem;
+        }
+        
+        /* 휴대폰 정보 입력 */
+        .phone_input_box {
+           padding: 1em 0;
+           width: 100%;
+           display: -webkit-box;
+           display: -ms-flexbox;
+           display: flex;
+           justify-content: space-between;
+           vertical-align: middle;
+           -webkit-box-align: center;
+               -ms-flex-align: center;
+                   align-items: center;
+        }
+        
+        .phone_input_box input { 
+          display: inline-block;
+          width: 35%;
+          padding: 0.65rem 0.3rem;      
+          border: 1px solid #e0e0e0;
+          border-radius: 8px;
+        }
+        
+        .phone_input_box select {
+          width: 30%;
+          border: 1px solid #e0e0e0;
+          border-radius: 8px;
+          padding: 0.6rem 0.3rem;
+          -webkit-appearance: button;
+          -moz-appearance: button;
+          appearance: button;
+        }
+        
+        .phone_input_box select:focus {
+          outline: none;
+          border-color: #ff8611;
+        }
+        
+        .phone_input_box .h {
+           font-size: 1.2rem;
+           margin: 0 0.5rem;
+           font-weight: 500;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="layer-popup-area page mm-page">
+        <form name="forderform" id="forderform" method="post" action="<?php echo $order_action_url; ?>" onsubmit="return false;">
+            <div class="page_title_area">
+                <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
+                <h2 class="page_title">신청/결제하기</h2>
+             </div>
+            <div class="order_wrapper step">
+                <!-- 프로그램 정보 / 싱품 정보 -->
+                <div class="order_box order_dropdown" data-display="block">
+                    <!-- 제목 -->
+                    <div class="order_box_header order_header">
+                        <p class="order_title"><img src="images/icon/pay_ico_01.png" /> 상품 정보</p>
+                        <span class="title_arrow active"><img src="images/icon/dropdown_btn.svg" /></span>
+                    </div>
+                    <!-- 내용 -->
+                    <div class="order_box_body order_body">
+                        <div class="product_info_wrap">
+                            <div class="product_thumb">
+                                <img src="images/sample/sample-01.jpg" alt="">
+                            </div>
+                            <div class="product_info">
+                                <div class="title"><p class="product_title">덕수궁 달빛 동행, 근대역사기행</p></div>
+                                <div class="sub-title">
+                                    <p class="price">
+                                        <span class="product_price_txt" id="info_sell_price">250000</span>
+                                        <span class="won">원</span>
+                                        <span class="price_divider"> | </span>
+                                        <span id="info_qty_cnt" class="product_info_txt">2</span>
+                                        <span class="product_info_txt">명</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="opt_wrapper" style="width: 100%">
+                                <ul>
+                                    <li class="product_info_txt">교육일자: 2021-05-01 (토) 18시 ~ 19시 30분</li>
+                                    <li class='product_opt'>옵션 : 1인권(초등 ~ 성인)</li>
+                                    <li class="product_info_txt"><span class="title">- 보험금액 : </span> <span class="cont"><span id="info_send_cost">0</span>원</span></li>
+                                </ul>
+                            </div>
+                        </div> 
+                    </div>   
+                </div>   
+            </div>   
+        </form>
+    </div>
+</body>
+</html>
