@@ -13,53 +13,121 @@
     <!-- 추가 css-->
     <link rel="stylesheet" href="css/font-style.css">
     <link rel="stylesheet" href="css/common.css">
-    
+    <!--inline css-->
     <style>
-        .tab_content {
-            display: none;
-        }
-
-        .tab_content[data-display='none'] {
-            display: none;
-        }
-
-        .tab_content[data-display='block'] {
-            display: block;
-        }
-
-        .tab_nav_wrap {
-            padding: 0 1.8rem;
-        }
-
-        .tab_nav_wrap .tab_nav_item {
-            width: 50%;
-            padding: 1rem 1.8rem;
-            font-size: 1rem;
-            font-weight: bold;
-            letter-spacing: 0.3px;
-            border: 1px solid #e0e0e0;
-            text-align: center;
-        }
-
-        .tab_nav_wrap .tab_nav_item:focus {
-            outline: none;
-            border: 1px solid #ff8611;
-        }
-
-        .tab_nav_wrap .tab_nav_item.active {
-            border: 1px solid #ff8611;
-            color: #ff8611;
-        }
-
-        .tab_nav_list {
-            display: flex;
-            justify-content: center;
+        .join_wrapper {
+            padding-bottom: 3.5rem;
         }
 
         .rgs_wrapper {
-            padding: 2rem 1.8rem;
+            width: 100%;
+            padding: 0 1.3rem;
         }
 
+        .rgs_group {
+            width: 100%;
+            padding: 1rem 0;
+        }
+
+        .rgs_group .rgs_title_block {
+            margin-bottom: 1.5rem;
+        }
+
+        .rgs_group .rgs_title {
+            font-size: 1.25rem;
+            font-weight: bold;
+            letter-spacing: -0.2px;
+        }
+
+        .rgs_group .rgs_sub_title {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #ff8611;
+            letter-spacing: -0.1px;
+            margin-top: 0.7rem;
+        }
+
+        .all_ck_box {
+            background-color: #f8f8fa;
+            padding: 0.7rem;
+            border-radius: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .all_ck_box label {
+            font-weight: 600;
+        }
+
+        .rgs_agree_list li {
+            margin-bottom: 0.8rem;
+        }
+
+        .rgs_agree_list li .rgs_more {
+            width: 0.8rem;
+            cursor: pointer;
+            text-align: right;
+        }
+
+        .rgs_info_wrap {
+            display: none;
+            width: 100%;
+            padding: 1rem 0;
+        }
+
+        .rgs_info_wrap .rgs_agree_info {
+            width: 100%;
+            border: 1px solid #e0e0e0;
+            border-radius: 0.5rem;
+            padding: 0.7rem;
+            font-size: 0.85rem;
+        }
+
+        /*table*/
+        .rgs_program_table {
+            width: 100%;
+            border: 1px solid #e6e6e7;
+            border-collapse: collapse;
+            border-spacing: 0px;
+        }
+
+        .rgs_program_table thead,
+        .rgs_program_table tbody {
+            width: 100%;
+        }
+
+        .rgs_program_table thead th {
+            width: 25%;
+            padding: 1rem 0.7rem;
+            border-right: 1px solid #e6e6e7;
+            font-size: 0.875rem;
+            text-align: center;
+            background-color: #f7f7f7;
+            color: #333; 
+            font-weight: 600;
+        }
+
+        .rgs_program_table tr {
+            width: 100%;
+            font-size: 0.9rem;
+            font-weight: 400;
+            border-bottom: 1px solid #e6e6e7;
+        }
+
+        .rgs_program_table td {
+            width: 25% !important;
+            padding: 1rem 0.5rem;
+            border-right: 1px solid #e6e6e7;
+        }
+
+        .rgs_program_table td input {
+            width: 100%;
+            font-size: 0.85rem;
+        }
+
+        .rgs_btn_wrap {
+            padding: 0.7rem 0;
+            text-align: right;
+        }
     </style>
 </head>
 <body>
@@ -86,33 +154,31 @@
                             <button type="button" value="교육업체" class="tab_nav_item" data-tab="education_tab">교육업체</button>
                         </div>
                     </div>
-                    <!--일반-->
-                    <div class="tab_content" data-display="block" id="general_tab">
-                        <div class="rgs_wrapper">
-                            <div class="rgs_group">
-                                <div class="line_input_group">
-                                    <label class="input_label" for="od_name">이름</label>
-                                    <input type="text" name="od_name" id="od_name" class="line_input" value="" placeholder="이름을 입력해주세요"
-                                        required />
+                    <!--필수정보-->
+                    <div class="rgs_wrapper">
+                        <div class="rgs_group">
+                            <!-- 교육업체일 경우 이름 display:none;-->
+                            <div class="line_input_group">
+                                <label class="input_label" for="mb_gen_name">이름</label>
+                                <input type="text" name="mb_gen_name" id="mb_gen_name" placeholder="이름을 입력해주세요" value="">
+                            </div>
+                            <div class="line_input_group">
+                                <label class="input_title" for="reg_mb_id">아이디</label>
+                                <div class="flex_input_block">
+                                    <input type="text" name="mb_id" id="reg_mb_id" maxlength="100" onkeyup="emailon()" placeholder="아이디(이메일)" value="">
+                                    <button class="btn_rounded sm_btn flex_btn" type="button">중복확인</button>
                                 </div>
-                                <div class="line_input_group">
-                                    <label class="input_title" for="od_name">아이디</label>
-                                    <div class="flex_input_block">
-                                        <input type="text" name="od_postcode" id="od_postcode"
-                                        placeholder="이메일">
-                                        <button class="btn_rounded sm_btn flex_btn" type="button">중복확인</button>
-                                    </div>
-                                </div>
-                                <div class="line_input_group">
-                                    <label class="input_label" for="od_name">비밀번호</label>
-                                    <input type="text" name="od_name" id="od_name" class="line_input" value="" placeholder="8자리 이상 비밀번호를 입력해주세요"
-                                        required />
-                                </div>
-                                <div class="input_group">
-                                    <label for="frm-id" class="info-title input_title">휴대폰</label>
+                            </div>
+                            <div class="line_input_group">
+                                <label class="input_label" for="reg_mb_password">비밀번호</label>
+                                <input type="password" name="mb_password" id="reg_mb_password" maxlength="20" minlength="3" placeholder="비밀번호(8자리 이상)">
+                            </div>
+                            <div class="input_group">
+                                <label for="" class="info-title input_title">휴대폰</label>
+                                <div class="flex_block">
                                     <div class="phone_input_box">
                                         <!-- 010 -->
-                                        <select class="select_number" id="ph_select">
+                                        <select class="select_number" id="">
                                             <option value="010">010</option>
                                             <option value="011">011</option>
                                             <option value="016">016</option>
@@ -126,72 +192,373 @@
                                         <span class="h">-</span>
                                         <!--끝 번호-->
                                         <input type="number" id="ph_last" minlength="4" maxlength="4" oninput="numberMaxLength(this);">
-                                        <button type="button" class="btn_rounded sm_btn" style="margin-left: 0.8rem;">인증</button>
+                                    </div>
+                                    <button type="button" class="btn_rounded sm_btn" style="margin-left: 0.8rem;">인증</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--일반-->
+                    <div class="tab_content general_tab" data-display="block">
+                        <div class="rgs_wrapper">
+                            <div class="rgs_group">
+                                <div class="rgs_title_block">
+                                    <p class="rgs_title">관심분야</p>
+                                    <p class="rgs_sub_title">선택하시면 교육을 추천해드립니다 (복수선택가능)</p>
+                                </div>
+                                <!--관심분야-->
+                                <div class="rgs_ctg_wrapper">
+                                    <div class="rgs_ctg_list">
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1i" id="reg_mb_1i" value="Y"> <label for="reg_mb_1i">
+                                                &nbsp; 탐구생활&nbsp;</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1e" id="reg_mb_1e" value="Y"> <label for="reg_mb_1e">
+                                                &nbsp;&nbsp;&nbsp;역사 &nbsp;</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1a" id="reg_mb_1a" value="Y"> <label for="reg_mb_1a">
+                                                문화예술</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1b" id="reg_mb_1b" value="Y"> <label for="reg_mb_1b">
+                                                과학IT</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1b" id="reg_mb_1j" value="Y"> <label for="reg_mb_1j">
+                                                애니센터</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1d" id="reg_mb_1d" value="Y"> <label for="reg_mb_1d">
+                                                교과연계</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1c" id="reg_mb_1c" value="Y"> <label for="reg_mb_1c">
+                                                진로직업</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1h" id="reg_mb_1h" value="Y"> <label for="reg_mb_1h">
+                                                액티비티</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1g" id="reg_mb_1g" value="Y"> <label
+                                                for="reg_mb_1g">교구</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1g" id="reg_mb_1k" value="Y"> <label
+                                                for="reg_mb_1k">단체</label></div>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>    
+                    </div>
+                    <!--교육업체-->
+                    <div class="tab_content education_tab" data-display="none">
+                        <div class="rgs_wrapper">
+                            <div class="rgs_group">
+                                <div class="line_input_group">
+                                    <label class="input_label" for="mb_cmp_name">대표자명</label>
+                                    <input type="text" id="mb_cmp_name" name="mb_cmp_name" placeholder="이름 (대표자)" value="">
+                                </div>
+                                <div class="line_input_group">
+                                    <label class="input_title" for="mb_7c">회사명(ID)</label>
+                                    <input type="text" id="mb_7c" name="mb_7c" placeholder="회사명(ID)" value="">
+                                </div>
+                                <div class="input_group">
+                                    <div class="btn_radio">
+                                        <input type="radio" id="mb_gubun1" name="mb_11" class="mb_11" value="corporate">
+                                        <label for="mb_gubun1">법인사업자</label>
+                                        <input type="radio" id="mb_gubun2" name="mb_11" class="mb_11" value="individual" checked="">
+                                        <label for="mb_gubun2">개인사업자</label>
+                                    </div>
+                                </div>
+                                <div class="line_input_group">
+                                    <label class="input_title" for="mb_7d">설립연도</label>
+                                    <input type="text" id="mb_7d" name="mb_7d" placeholder="예)2016.06" value="">
+                                </div>
+                                <div class="line_input_group">
+                                    <label class="input_title" for="mb_7d">주소</label>	
+                                    <div class="flex_input_block" style="margin-bottom: 1em;">
+                                        <input type="text" style="width: 60%;" name="mb_zip" id="reg_mb_zip" value="" maxlength="6" placeholder="우편번호">
+                                        <button type="button" class="btn_rounded sm_btn flex_btn" onclick="win_zip('fregisterform', 'mb_zip', 'mb_addr1', 'mb_addr2', 'mb_addr3', 'mb_addr_jibeon');">주소 검색</button>
+                                    </div>			
+                                    <input type="text" name="mb_addr1" id="reg_mb_addr1" value="" placeholder="주소">
+                                    <!-- <input type="text" name="mb_addr3" value="" id="reg_mb_addr3" readonly="readonly"> -->
+							        <!-- <input type="hidden" name="mb_addr_jibeon" value=""> -->
+							        <input type="text" name="mb_addr2" value="" id="reg_mb_addr2" placeholder="상세주소를 입력하세요">
+                                </div>
+                                <div class="flex_block">
+                                    <div class="line_input_group">
+                                        <label class="input_title" for="mb_6a">업종</label>
+                                        <input type="text" name="mb_6a" placeholder="업종" value="">
+                                    </div>
+                                    <div class="line_input_group">
+                                        <label class="input_title" for="mb_6b">업태</label>
+                                        <input type="text" name="mb_6b" placeholder="업태" value="">
+                                    </div>
+                                </div>
+                                <div class="line_input_group">
+                                    <label class="input_title" for="mb_7a">담당자명</label>
+                                    <input type="text" name="mb_7a" placeholder="담당자명" value="">
+                                </div>
+                                <div class="input_group">
+                                    <label for="" class="info-title input_title">사업자번호</label>
+                                        <div class="phone_input_box">
+                                            <input type="text" id="mb_5a" name="mb_5a" placeholder="123" value="" maxlength="3">
+                                            <span class="h">-</span>
+                                            <!--중간 번호-->
+                                            <input type="number" id="mb_5b" name="mb_5b" placeholder="12" maxlength="2" oninput="numberMaxLength(this);">
+                                            <span class="h">-</span>
+                                            <!--끝 번호-->
+                                            <input type="number" id="mb_5c" name="mb_5c" placeholder="12345" maxlength="5" oninput="numberMaxLength(this);">
+                                        </div>
+                                </div>
+                                <div class="input_group">
+                                    <label for="" class="info-title input_title">담당자 휴대폰</label>
+                                        <div class="phone_input_box">
+                                            <!-- 010 -->
+                                            <select class="select_number" id="">
+                                                <option value="010">010</option>
+                                                <option value="011">011</option>
+                                                <option value="016">016</option>
+                                                <option value="017">017</option>
+                                                <option value="018">018</option>
+                                                <option value="019">019</option>
+                                            </select>
+                                            <span class="h">-</span>
+                                            <!--중간 번호-->
+                                            <input type="number" minlength="4" maxlength="4" oninput="numberMaxLength(this);">
+                                            <span class="h">-</span>
+                                            <!--끝 번호-->
+                                            <input type="number" minlength="4" maxlength="4" oninput="numberMaxLength(this);">
+                                        </div>
+                                </div>
+                                <div class="line_input_group">
+                                    <label class="input_title" for="reg_mb_homepage">홈페이지</label>
+                                    <input type="text" name="mb_homepage" id="reg_mb_homepage" placeholder="(예: http://www.ajaschool.com)" value="" maxlength="255">
+                                </div>
+                            </div>
+                            <!--체험교육 카테고리-->
+                            <div class="rgs_group">
+                                <div class="rgs_title_block">
+                                    <p class="rgs_title">체험교육 카테고리</p>
+                                </div>
+                                <div class="rgs_ctg_wrapper">
+                                    <div class="rgs_ctg_list">
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1i" id="reg_mb_1i" value="Y"> <label for="reg_mb_1i">
+                                            &nbsp; 탐구생활&nbsp;</label></div>
+                                    <div class="btn_radio"><input type="checkbox" name="mb_1e" id="reg_mb_1e" value="Y"> <label for="reg_mb_1e">
+                                            &nbsp;&nbsp;&nbsp;역사 &nbsp;</label></div>
+                                    <div class="btn_radio"><input type="checkbox" name="mb_1a" id="reg_mb_1a" value="Y"> <label for="reg_mb_1a">
+                                            문화예술</label></div>
+                                    <div class="btn_radio"><input type="checkbox" name="mb_1b" id="reg_mb_1b" value="Y"> <label for="reg_mb_1b">
+                                            과학IT</label></div>
+                                    <div class="btn_radio"><input type="checkbox" name="mb_1b" id="reg_mb_1j" value="Y"> <label for="reg_mb_1j">
+                                            애니센터</label></div>
+                                    <div class="btn_radio"><input type="checkbox" name="mb_1d" id="reg_mb_1d" value="Y"> <label for="reg_mb_1d">
+                                            교과연계</label></div>
+                                    <div class="btn_radio"><input type="checkbox" name="mb_1c" id="reg_mb_1c" value="Y"> <label for="reg_mb_1c">
+                                            진로직업</label></div>
+                                    <div class="btn_radio"><input type="checkbox" name="mb_1h" id="reg_mb_1h" value="Y"> <label for="reg_mb_1h">
+                                            액티비티</label></div>
+                                    <div class="btn_radio"><input type="checkbox" name="mb_1g" id="reg_mb_1g" value="Y"> <label
+                                            for="reg_mb_1g">교구</label></div>
+                                    <div class="btn_radio"><input type="checkbox" name="mb_1g" id="reg_mb_1k" value="Y"> <label
+                                            for="reg_mb_1k">단체</label></div>
                                     </div>
                                 </div>
                             </div>
-
-                            <style>
-                                .rgs_group {
-                                    padding: 1rem 0;
-                                }
-
-                                .rgs_group .rgs_title {
-                                    font-size: 1.2rem;
-                                    font-weight: bold;
-                                    letter-spacing: -0.2px;
-                                }
-                            </style>
+                            <!--교육대상-->
                             <div class="rgs_group">
-                                <p class="rgs_title">관심분야</p>
-                                <!--관심분야(디자인 유지)-->
-                                <div class="">
-                                    
+                                <div class="rgs_title_block">
+                                    <p class="rgs_title">교육대상</p>
+                                </div>
+                                <div class="rgs_ctg_wrapper">
+                                    <div class="rgs_ctg_list">
+                                        <div class="btn_radio"><input type="checkbox" name="mb_12a" id="reg_mb_12a" value="Y"> <label for="reg_mb_12a">
+                                                미취학</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_12b" id="reg_mb_12b" value="Y"> <label for="reg_mb_12b">
+                                                유치원</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_12c" id="reg_mb_12c" value="Y"> <label for="reg_mb_12c">
+                                                초등학생</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_12d" id="reg_mb_12d" value="Y"> <label for="reg_mb_12d">
+                                                중학생</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_12e" id="reg_mb_12e" value="Y"> <label for="reg_mb_12e">
+                                                고등학생</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_12f" id="reg_mb_12f" value="Y"> <label for="reg_mb_12f">
+                                                대학생/성인</label></div>
+                                    </div>
                                 </div>
                             </div>
+                            <!--교육가능지역-->
                             <div class="rgs_group">
+                                <div class="rgs_title_block">
+                                    <p class="rgs_title">교육가능지역</p>
+                                </div>
+                                <div class="rgs_ctg_wrapper">
+                                    <div class="rgs_ctg_list region_list">
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13a" id="reg_mb_13a" value="Y"> <label for="reg_mb_13a">
+                                                서울</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13b" id="reg_mb_13b" value="Y"> <label for="reg_mb_13b">
+                                                부산</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13c" id="reg_mb_13c" value="Y"> <label for="reg_mb_13c">
+                                                대구</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13d" id="reg_mb_13d" value="Y"> <label for="reg_mb_13d">
+                                                인천</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13e" id="reg_mb_13e" value="Y"> <label for="reg_mb_13e">
+                                                광주</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13f" id="reg_mb_13f" value="Y"> <label for="reg_mb_13f">
+                                                대전</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13g" id="reg_mb_13g" value="Y"> <label for="reg_mb_13g">
+                                                울산</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13h" id="reg_mb_13h" value="Y"> <label for="reg_mb_13h">
+                                                세종</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13i" id="reg_mb_13i" value="Y"> <label for="reg_mb_13i">
+                                                경기</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13j" id="reg_mb_13j" value="Y"> <label for="reg_mb_13j">
+                                                강원</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13k" id="reg_mb_13k" value="Y"> <label for="reg_mb_13k">
+                                                충북</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13l" id="reg_mb_13l" value="Y"> <label for="reg_mb_13l">
+                                                충남</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13m" id="reg_mb_13m" value="Y"> <label for="reg_mb_13m">
+                                                전북</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13n" id="reg_mb_13n" value="Y"> <label for="reg_mb_13n">
+                                                전남</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13o" id="reg_mb_13o" value="Y"> <label for="reg_mb_13o">
+                                                경북</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13p" id="reg_mb_13p" value="Y"> <label for="reg_mb_13p">
+                                                경남</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13q" id="reg_mb_13q" value="Y"> <label for="reg_mb_13q">
+                                                제주</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_13r" id="reg_mb_13r" value="Y"> <label for="reg_mb_13r">
+                                                전국</label></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--체험프로그램(안)-->
+                            <div class="rgs_group">
+                                <div class="rgs_title_block">
+                                    <p class="rgs_title">체험교육 프로그램(안)</p>
+                                </div>
+                                <div style="width: 100%">
+                                    <table class="rgs_program_table">
+                                        <colgroup>
+                                            <col width="43%">
+                                            <col width="17%">
+                                            <col width="22%">
+                                            <col width="18%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th>프로그램명</th>
+                                                <th>대상</th>
+                                                <th>교육시간</th>
+                                                <th>금액</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="program_list">
+                                            <tr>
+                                                <td>
+                                                    <input type="text" name="mb_program_name[]" placeholder="예) 미래직업군 체험 4차 산업체험" value="" maxlength="255">
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="mb_program_target[]" placeholder="초등5" value="" maxlength="255">
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="mb_program_hour[]" placeholder="7시간" value="" maxlength="255" style="text-align: center;">
+                                                </td>
+                                                <td>
+                                                    <input type="text" name="mb_program_price[]" placeholder="110,000원" value="" maxlength="255">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="rgs_btn_wrap">
+                                        <a href="javascript:addT();" class="btn_rounded sm_btn">교육추가</a>
+                                    </div>
+                                </div>
+                            </div>   
+                            <!--사업자등록증 파일업로드-->
+                            <div class="rgs_group">
+                                <div class="rgs_title_block">
+                                    <p class="rgs_title">사업자등록증 파일업로드</p>
+                                </div>
+                                <div class="line_input_group">
+                                    <div class="flex_input_block">
+                                        <input type="text" name="mb_14" id="mb_14" disabled>
+                                        <input type="file" id="file_mb_14" name="file_mb_14" class="inline" style="display:none;" onchange="onchangeFile(this,'mb_14')">
+                                        <a href="javascript:void(0);" class="btn_rounded sm_btn flex_btn" onclick="addImageView('mb_14')">파일찾기</a>
+                                    </div>
+                                </div>
+                            </div> 
+                            <!--통장사본 파일업로드-->
+                            <div class="rgs_group">
+                                <div class="rgs_title_block">
+                                    <p class="rgs_title">통장사본 파일업로드</p>
+                                </div>
+                                <div class="line_input_group">
+                                    <div class="flex_input_block">
+                                        <input type="text" name="mb_15" id="mb_15" disabled>
+                                        <input type="file" id="file_mb_15" name="file_mb_15" class="inline" style="display:none;" onchange="onchangeFile(this,'mb_15')">
+                                        <a href="javascript:void(0);" class="btn_rounded sm_btn flex_btn" onclick="addImageView('mb_15')">파일찾기</a>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                    <!--이용약관-->
+                    <div class="rgs_wrapper">
+                        <div class="rgs_group">
+                            <div class="rgs_title_block">
                                 <p class="rgs_title">이용약관</p>
-                                <div class="all_ck_box">
-                                    <div class="ck_flex_wrap">
-                                        <input class="custom_cb" type="checkbox" name="" id="all_agree" />
-                                        <label for="all_agree">전체동의</label>
-                                    </div>
+                            </div>
+                            <div class="all_ck_box">
+                                <div class="ck_flex_wrap">
+                                    <input class="custom_cb" type="checkbox" name="all_check" id="all_check" />
+                                    <label for="all_check">전체동의</label>
                                 </div>
-                                <style>
-                                    .rgs_agree_info {
-                                        border: 1px solid #e0e0e0;
-                                    }
-                                </style>
-                                <div>
-                                    <ul class="rgs_agree">
-                                        <li>
-                                            <div class="ck_flex_wrap">   
-                                                <input class="custom_cb" type="checkbox" name="" id="" />
-                                                <label for="">본인은 만 14세 이상입니다 (필수)</label>
+                            </div>
+                            <div>
+                                <ul class="rgs_agree_list">
+                                    <li>
+                                        <div class="ck_flex_wrap">   
+                                            <input class="custom_cb" type="checkbox" name="cf_14_years_old" id="cf_14_years_old" />
+                                            <label for="cf_14_years_old">본인은 만 14세 이상입니다 (필수)</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex_block">
+                                            <div class="ck_flex_wrap">
+                                                <input class="custom_cb" type="checkbox" name="cf_stipulation" id="cf_stipulation" />
+                                                <label for="cf_stipulation">이용약관 (필수)</label>
                                             </div>
-                                        </li>
-                                        <li>
-                                            <div class="ck_flex_wrap">   
-                                                <input class="custom_cb" type="checkbox" name="" id="" />
-                                                <label for="">이용약관 (필수)</label>
-                                                <span><img src="images/icon/btn_more_gray.png" alt=""></span>
-                                            </div>
-                                            <!-- 약관내용 -->
+                                            <span class="rgs_more" data-content="dropdow01"><img src="images/icon/btn_more_gray.png" alt=""></span>
+                                        </div>
+                                        <!-- 약관내용 -->
+                                        <div class="rgs_info_wrap dropdow01">
                                             <div class="rgs_agree_info">
                                                 웅대한 피가 끓는 위하여 이상 피다. 이상은 낙원을 청춘의 사는가 그들의 힘있다. 밝은 피어나기 곳으로 피가 내려온 인류의 위하여서. 위하여서 청춘의 피가 갑 같이, 가치를 약동하다. 어디 사랑의 피어나기 튼튼하며, 얼마나 것이다. 찬미를 있음으로써 그러므로 장식하는 것은 가진 피다.
                                             </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="flex_block">
+                                            <div class="ck_flex_wrap">
+                                                <input class="custom_cb" type="checkbox" name="cf_privacy" id="cf_privacy" />
+                                                <label for="cf_privacy">개인정보 수집 및 이용 (필수)</label>
+                                            </div>
+                                            <span class="rgs_more" data-content="dropdow02"><img src="images/icon/btn_more_gray.png" alt=""></span>
+                                        </div>
+                                        <!-- 약관내용 -->
+                                        <div class="rgs_info_wrap dropdow02">
+                                            <div class="rgs_agree_info">
+                                                웅대한 피가 끓는 위하여 이상 피다. 이상은 낙원을 청춘의 사는가 그들의 힘있다. 밝은 피어나기 곳으로 피가 내려온 인류의 위하여서. 위하여서 청춘의 피가 갑 같이, 가치를 약동하다. 어디 사랑의 피어나기 튼튼하며, 얼마나 것이다. 찬미를 있음으로써 그러므로 장식하는 것은 가진 피다.
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ck_flex_wrap">   
+                                            <input class="custom_cb" type="checkbox" name="chk-location" id="chk-location" />
+                                            <label for="chk-location">위치정보 이용약관 (선택)</label>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="ck_flex_wrap">   
+                                            <input class="custom_cb" type="checkbox" name="chk-event" id="chk-event" />
+                                            <label for="chk-event">이벤트, 프로모션 정보 수신 (선택)</label>
+                                        </div>
+                                    </li>
+                                </ul>
                             </div>
+                        </div>
                     </div>
-                    <!--교육업체-->
-                    <div class="tab_content" id="education_tab">
-                        <div class="rgs_wrapper"></div>
-                    </div>
-                    <div class="fixed_btn_wrapper">
-                        <button>취소</button>
-                        <button>회원가입</button>
+                    <!--btn wrapper-->
+                    <div class="fixed_btn_wrapper flex_type">
+                        <a class="solid_btn sm btn_end" href="javascript:history.back();">취소</a>
+                        <button class="solid_btn lg">회원가입</button>
                     </div>
                 </form>
             </div>
@@ -206,10 +573,18 @@
                 $('.tab_content').hide();
                 $(".tab_nav_item").removeClass('active');
                 $(this).addClass('active');
-                var tab_content =  $(this).data();
-                console.log(tab_content);
-
-                //$('#'+ tab_content).show();
+                var tab_content =  $(this).data('tab');
+                $('.'+ tab_content).show();
+            });
+        });
+    </script>
+    <!--약관 show/hide-->
+    <script>
+        $(document).ready(function(){
+            $('.rgs_more').click(function(){
+                var content = $(this).data('content');
+                $(this).toggleClass('active');
+                $('.'+ content).slideToggle();
             });
         });
     </script>

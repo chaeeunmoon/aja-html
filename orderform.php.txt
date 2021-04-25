@@ -1,0 +1,1988 @@
+<?php
+if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
+
+
+//2017.05. 바우처 포인트 사용
+$is_voupoint_use=true;
+ob_start();
+
+
+/* 본인인증 사용 X, 문자인증 사용
+
+   $sitecode = "AB648";            // NICE로부터 부여받은 사이트 코드
+   $sitepasswd = "NTLlvQTiPUMI";         // NICE로부터 부여받은 사이트 패스워드
+
+   // 2019-02-13 모듈 업그레이드
+   // NICE평가정보로부터 받은 암호화 프로그램의 위치 (절대경로+모듈명)
+   $cb_encode_path = "/home/ajaschool/www/plugin/nice/CPClient";
+
+    $authtype = "";            // 없으면 기본 선택화면, X: 공인인증서, M: 핸드폰, C: 카드
+
+   $popgubun    = "N";         //Y : 취소버튼 있음 / N : 취소버튼 없음
+   $customize    = "";         //없으면 기본 웹페이지 / Mobile : 모바일페이지
+      
+   $gender = "";               // 없으면 기본 선택화면, 0: 여자, 1: 남자
+   
+   $reqseq = shell_exec("$cb_encode_path SEQ $sitecode");
+
+
+    // CheckPlus(본인인증) 처리 후, 결과 데이타를 리턴 받기위해 다음예제와 같이 http부터 입력합니다.
+   // 리턴url은 인증 전 인증페이지를 호출하기 전 url과 동일해야 합니다. ex) 인증 전 url : http://www.~ 리턴 url : http://www.~
+   $returnurl = "http://www.ajaschool.com/plugin/nice/checkplus_success_order.php";   // 성공시 이동될 URL
+   $errorurl = "http://www.ajaschool.com/plugin/nice/checkplus_fail.php";      // 실패시 이동될 URL
+   
+
+    // reqseq값은 성공페이지로 갈 경우 검증을 위하여 세션에 담아둔다.    
+    $_SESSION["REQ_SEQ"] = $reqseq;
+
+    // 입력될 plain 데이타를 만든다.
+    $plaindata = "7:REQ_SEQ" . strlen($reqseq) . ":" . $reqseq .
+             "8:SITECODE" . strlen($sitecode) . ":" . $sitecode .
+             "9:AUTH_TYPE" . strlen($authtype) . ":". $authtype .
+             "7:RTN_URL" . strlen($returnurl) . ":" . $returnurl .
+             "7:ERR_URL" . strlen($errorurl) . ":" . $errorurl .
+             "11:POPUP_GUBUN" . strlen($popgubun) . ":" . $popgubun .
+             "9:CUSTOMIZE" . strlen($customize) . ":" . $customize .
+             "6:GENDER" . strlen($gender) . ":" . $gender ;
+
+
+   $enc_data = shell_exec("$cb_encode_path ENC $sitecode $sitepasswd $plaindata");
+
+    if( $enc_data == -1 )
+    {
+        $returnMsg = "암/복호화 시스템 오류입니다.";
+        $enc_data = "";
+    }
+    else if( $enc_data== -2 )
+    {
+        $returnMsg = "암호화 처리 오류입니다.";
+        $enc_data = "";
+    }
+    else if( $enc_data== -3 )
+    {
+        $returnMsg = "암호화 데이터 오류 입니다.";
+        $enc_data = "";
+    }
+    else if( $enc_data== -9 )
+    {
+        $returnMsg = "입력값 오류 입니다.";
+        $enc_data = "";
+    }
+*/
+?>
+<style>
+/* 결제 페이지 */
+.order_wrapper {
+  background-color: #f7f6f4;
+  padding: 1.5em 1.3em;
+  padding-bottom: 5rem;
+}
+
+.order_box {
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 2px 6px 2px #e0e0e0;
+  box-shadow: 2px 2px 6px 2px #e0e0e0;
+  border-radius: 12px;
+  padding: 1.8em 2em 2em;
+  margin-bottom: 1em;
+}
+
+.order_box.black_border { border: 2px solid #0d0d0d; }
+
+.order_box.main_border { border: 2px solid #ff8611; }
+
+.order_box_header { position: relative; }
+
+.order_box .order_title {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: #0d0d0d;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+.order_box .order_title > img {
+  width: 1.4rem;
+  margin-right: 0.5rem;
+}
+
+.order_box .title_arrow {
+  position: absolute;
+  top: 0.2rem;
+  right: 0;
+  width: 1rem;
+  cursor: pointer;
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  -webkit-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.order_box .title_arrow.active {
+  top: 0.3rem;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.order_box .sub_order_title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: #0d0d0d;
+}
+
+.order_dropdown[data-display='none'] .order_body { display: none; }
+
+.order_dropdown[data-display='block'] .order_body { display: block; }
+
+.order_box_body { margin-top: 2.5em; }
+
+.btn_radio {
+  padding: 1em 0;
+  text-align: center;
+}
+
+.btn_radio input[type='radio'] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.btn_radio label {
+  display: inline-block;
+  background-color: #fff;
+  padding: 0.8em 0;
+  width: 34vw;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: 1px solid #e0e0e0;
+  border-radius: 30px;
+  text-align: center;
+  margin-left: 2vw;
+}
+
+.btn_radio label:nth-of-type(2n) { margin-left: 2vw; }
+
+.btn_radio label:hover { border-color: #ff8611; }
+
+.btn_radio input[type='radio']:focus + label {
+  border: 1px solid #ff8611;
+  color: #ff8611;
+}
+
+.btn_radio input[type='radio']:checked + label { border-color: #ff8611; }
+
+.btn_input_wrap {
+  position: relative;
+}
+
+.btn_input_wrap .btn_rounded {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.payment_wrap {
+  text-align: center;
+}
+
+.payment_wrap li {
+  display: inline-block;
+}
+
+.agree_ck_wrap .ck_flex_wrap {
+   display: flex;
+   vertical-align: middle;
+   align-items: center;
+}
+
+.agree_ck_wrap input[type='checkbox'] {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  width: 1.3rem;
+  height: 1.3rem;
+  text-align: center;
+}
+
+.agree_ck_wrap input[type='checkbox']:checked {
+   background-color: #ff8611;
+}
+
+.agree_ck_wrap label {
+  font-size: 0.85rem;
+  margin-left: 0.5em;
+}
+
+/* product info */
+.product_info_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.product_info_wrap .product_thumb {
+  position: relative;
+  width: 33%;
+  height: auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product_info_wrap .product_thumb > img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  min-width: 100%;
+  marign: 0;
+  border-radius: 8px;
+}
+
+.product_info_wrap .product_info {
+  width: 67%;
+  padding-left: 1em;
+}
+
+.product_info_wrap .product_info .product_title {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.5em;
+  word-break: normal;
+}
+
+.product_info_wrap .product_info .product_opt {
+  font-size: 0.85rem;
+  color: #ff8611;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+.product_info_wrap .product_info .product_info_txt {
+  font-size: 0.85rem;
+  color: #0d0d0d;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+.product_info_wrap .product_info .price {
+  margin-bottom: 0.5em;
+}
+
+.product_info_wrap .product_info .product_price_txt,
+.product_info_wrap .product_info .won {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.product_info_wrap .product_info .price_divider {
+  font-size: 1rem;
+  color: #e0e0e0;
+  position: relative;
+  top: -1px;
+}
+
+.product_info_wrap .product_info .before_price {
+  font-size: 0.8rem;
+  text-decoration: line-through;
+  color: #828282;
+}
+
+.product_info_wrap .product_info .product_info_percent {
+  font-size: 0.8rem;
+  margin-top: 1em;
+  color: #ff8611;
+}
+/* product info */
+
+.content_footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1.2em 0;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 1em;
+}
+
+.content_footer p,
+.content_footer span {
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+}
+
+.content_footer .f_title {
+  width: 50%;
+  color: #0d0d0d;
+}
+
+.content_footer .f_main,
+.content_footer .f_main span {
+  font-size: 1.1rem;
+  width: 50%;
+  color: #ff8611;
+  text-align: right;
+}
+
+/* sub title */
+.order_box .order_sub_title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0d0d0d;
+  letter-spacing: 0.3px;
+  margin-bottom: 1.2em;
+}
+
+/* 포인트 / 쿠폰 */
+.point_wrap {
+  margin-bottom: 2em;
+}
+
+.point_input_box {
+  color: #ff8611;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.2em 0 0.5em;
+}
+
+.point_input_box input {
+  width: 90%;
+  text-align: right;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  padding: 0.5em 0.5em;
+  margin-right: 5px;
+}
+
+.point_wrap .point_info_txt {
+  font-size: 0.88rem;
+  margin-bottom: 0.7em;
+}
+
+.point_wrap .point_info_txt .point_main {
+  color: #ff8611;
+}
+
+.point_input_box input:focus {
+  outline: none;
+  border-color: #ff8611;
+}
+
+.pay_info_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  font-size: 0.88rem;
+}
+
+.pay_info_list .p_txt,
+.pay_info_list .p_main {
+  text-align: right;
+}
+
+.pay_info_list .p_main {
+  color: #ff8611;
+}
+
+.payment_info_title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: #828282;
+  padding: 0 0 1em;
+  background-color: #F5F5F5;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+}
+
+.payment_info_title .title_arrow {
+   display: inline-block;
+   position: static;
+   width: 0.85rem;
+   position:relative;
+   top: 0.1rem;
+   margin-left: 0.3rem;
+}
+
+.payment_info_title .title_arrow.active {
+   top: -0.05rem;
+}
+
+.payment_info_title .p_main {
+  font-weight: 400;
+  color: #ff8611;
+}
+
+.payment_info_body {
+  padding: 1em 0.1em;
+}
+
+.payment_info_body p {
+   font-size: 0.85rem;
+   color: #0d0d0d;
+   font-weight: 500;
+   margin-bottom: 0.5em;
+   line-height: 1.2;
+}
+
+.payment_info_body .p_gray {
+   color: #828282;
+}
+
+.payment_info_body .p_danger {
+   color: #ff3d55;
+}
+
+.payment_info_body .bank_info_txt li {
+   font-size: 0.85rem;
+   color: #828282;
+   line-height: 1.2;
+   margin-bottom: 0.5em;
+}
+
+.payment_info_body .bank_info_txt li span {
+   color: #ff8611;
+}
+
+.payment_info_body .bank_info_txt li:before {
+   content: '-';
+   font-size: 1rem;
+   margin-right: 0.3em;
+   color: #ff8611;
+}
+
+.payment_info_body .bank_info_box {
+   margin: 1em 0 ;
+}
+
+.payment_info_body .bank_info_box .title {
+   font-size: 0.9rem;
+   font-weight: 600;
+}
+
+.payment_info_body .bank_info_box ul li {
+   font-size: 0.85rem;
+   color: #828282;
+   line-height: 1.2;
+   margin-bottom: 0.5em;
+}
+
+.payment_info_body .bank_info_box li:before {
+   content: '-';
+   font-size: 1rem;
+   margin-right: 0.3em;
+   color: #ff8611;
+   font-weight: 600;
+}
+
+.payment_info_body .bank_info_box ul li span {
+   color: #ff8611;
+}
+
+/* coupon style */
+.coupon_box .coupon_btn {
+   font-size: 0.85rem;
+}
+
+.coupon_box .coupon_btn:before {
+   top: 30%;
+}
+
+.coupon_price {
+   font-size: 0.9rem;
+}
+
+.coupon_info .point-info {
+   font-size: 0.9rem !important;
+}
+
+.pay-system .pay-system-content>div.card,
+.pay-system .pay-system-content>div.vbank {
+   min-height: auto;
+   padding: 0.7rem;
+}
+
+/* 휴대폰 정보 입력 */
+.phone_input_box {
+   padding: 1em 0;
+   width: 100%;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   justify-content: space-between;
+   vertical-align: middle;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+}
+
+.phone_input_box input { 
+  display: inline-block;
+  width: 35%;
+  padding: 0.65rem 0.3rem;      
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.phone_input_box select {
+  width: 30%;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.6rem 0.3rem;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+.phone_input_box select:focus {
+  outline: none;
+  border-color: #ff8611;
+}
+
+.phone_input_box .h {
+   font-size: 1.2rem;
+   margin: 0 0.5rem;
+   font-weight: 500;
+}
+
+</style>
+
+
+<form name="form_chk" method="post">
+<!--   <input type="hidden" name="m" value="auth_mobile_main">                  <!-- 필수 데이타로, 누락하시면 안됩니다. -->
+<input type="hidden" name="m" value="checkplusSerivce">                  <!-- 필수 데이타로, 누락하시면 안됩니다. -->
+<input type="hidden" name="EncodeData" value="<?= $enc_data ?>">      <!-- 위에서 업체정보를 암호화 한 데이타입니다. -->
+
+<!-- 업체에서 응답받기 원하는 데이타를 설정하기 위해 사용할 수 있으며, 인증결과 응답시 해당 값을 그대로 송신합니다.
+    해당 파라미터는 추가하실 수 없습니다. -->
+<!--
+<input type="hidden" name="param_r1" value="">
+<input type="hidden" name="param_r2" value="">
+<input type="hidden" name="param_r3" value="">
+-->
+<!--a href="javascript:fnPopup();"> CheckPlus 안심본인인증 Click</a-->
+</form>
+
+<div class="layer-popup-area page">
+   <form name="forderform" id="forderform" method="post" action="<?php echo $order_action_url; ?>" onsubmit="return false;">
+   <input type="hidden" id="j_check" name="j_check" value="" />
+   <input type="hidden" id="mb_adult" name="mb_adult" value="" />
+   <input type="hidden" id="od_mobile" name="od_mobile" value="1" />
+
+   <!-- <div class="page-title-area orange">
+         <h2 class="page-title">신청/결제하기</h2>
+         <a href="" class="ico-close dark">닫기</a>
+      </div>
+       -->
+      
+      <div class="page_title_area">
+         <a class="back_btn" href="javascript:history.back();"><img src="<?=G5_THEME_URL?>/img/icon/prev-arrow.svg" alt="뒤로가기" /></a>
+         <h2 class="page_title">신청/결제하기</h2>
+      </div>
+      
+      <div class="step order_wrapper">
+      <!-- <div class="page-content step order_wrapper"> -->
+         <!-- step -->
+         <!--div class="content-box-white">
+            <div class="step-area-blue ea3">
+               <ul>
+                  <li class="on this"><span>1</span><strong>교육정보 확인</strong></li>
+                  <li><span>2</span><strong>수강생정보 입력</strong></li>
+                  <li><span>3</span><strong>금액확인</strong></li>
+               </ul>
+            </div>
+         </div-->
+         <!-- 알림 -->
+         <!-- <div class="content-box-white">
+            <p class="noti">주문 전에 확인하세요</p>
+            <div class="detail-txt dash">
+               <ul>
+                  <li>상황에 따라 교육이 변동될 수 있으며 품절인 경우 교육신청이 불가 합니다.</li>
+                  <li>로그인 후 신청한 교육은 PC와 모바일 상호 연동됩니다.</li>
+               </ul>
+            </div>
+         </div> -->
+<?php
+   $it_cp_count = 0;
+   $sql = " select a.ct_id, a.it_id, a.it_name, a.ct_price, a.ct_point, a.ct_qty, a.ct_status, a.ct_send_cost, a.it_sc_type,
+            a.another,
+            b.it_option_data,
+            b.it_option_data2,
+            b.it_option_data3,
+            b.it_option_data4,
+            b.it_option_data5,
+            b.it_option_data6,
+            b.it_option_data7,
+            b.it_option_data8,
+            b.it_option_data9,
+            b.it_option_data10,
+            b.ca_id, b.ca_id2, b.ca_id3, b.it_3, b.it_2_subj, b.it_3_subj, b.it_9_subj, b.it_ajatime, b.it_notax,b.it_teaching_aid,b.it_15_subj,b.it_16_subj
+         from {$g5['g5_shop_cart_table']} a left join {$g5['g5_shop_item_table']} b on ( a.it_id = b.it_id )
+         where a.od_id = '$s_cart_id' and a.ct_select = '1' ";
+   $sql .= " group by a.it_id ";
+   $sql .= " order by a.ct_id ";
+   
+   $result = sql_query($sql);
+   $var_it_id = '';
+   for ($i=0; $row=sql_fetch_array($result); $i++) {
+      $var_it_id = $row['it_id']; // 
+      $it_teaching_aid = $row['it_teaching_aid']; // 교구재판매
+      $it_15_subj = $row['it_15_subj']; //아자!홈트레이닝
+      $it_16_subj = $row['it_16_subj']; //교구재+인강 (일반교육이나 주소를 받아야 할 교육)
+      //echo $it_15_subj;
+      //echo $it_teaching_aid;
+      // 합계금액 계산
+      $sql = " select SUM(IF(io_type = 1, (io_price * ct_qty), ((ct_price + io_price ) * ct_qty))) as price, SUM(ct_point * ct_qty) as point, SUM(ct_qty) as qty 
+      from {$g5['g5_shop_cart_table']} 
+      where it_id = '{$row['it_id']}' and od_id = '$s_cart_id' ";
+      $sum = sql_fetch($sql);
+      $sell_price = $sum['price'];
+
+      // 쿠폰
+      if($is_member) {
+         $cp_button = '';
+         $cp_count = 0;
+
+         $sql = "select cp_id
+               from {$g5['g5_shop_coupon_table']}
+               where mb_id IN ( '{$member['mb_id']}', '전체회원' ) and cp_start <= '".G5_TIME_YMD."' and cp_end >= '".G5_TIME_YMD."' and cp_minimum <= '$sell_price' 
+               and ( 
+                  ( cp_method = '0' and cp_target = '{$row['it_id']}' ) 
+                  OR 
+                  ( cp_method = '1' and ( cp_target IN ( '{$row['ca_id']}', '{$row['ca_id2']}', '{$row['ca_id3']}' ) ) ) 
+               ) ";
+         $res = sql_query($sql);
+
+         for($k=0; $cp=sql_fetch_array($res); $k++) {
+            if(is_used_coupon($member['mb_id'], $cp['cp_id']))
+               continue;
+            $cp_count++;
+         }
+         if($cp_count) {
+            $it_cp_count++;
+         }
+      }
+   }
+?>         
+
+         <!-- 상품정보 -->
+
+         <!-- 프로그램 정보 / 싱품 정보 -->
+         <div class="order_box order_dropdown" data-display="none">
+            <!-- 제목 -->
+            <div class="order_box_header order_header">
+               <p class="order_title"><img src="<?=G5_THEME_URL?>/img/icon/pay_ico_01.png" /> 상품 정보</p>
+               <span class="title_arrow active"><img src="<?=G5_THEME_URL?>/img/icon/dropdown_btn.svg" /></span>
+            </div>
+            <!-- 내용 -->
+            <div class="order_box_body order_body">
+<?php
+   $tot_point = 0;
+   $tot_sell_price = 0;
+   $goods = $goods_it_id = "";
+   $goods_count = -1;
+   // $s_cart_id 로 현재 장바구니 자료 쿼리
+
+   $sql = " select a.ct_id, a.it_id, a.it_name, a.ct_price, a.ct_point, a.ct_qty, a.ct_status, a.ct_send_cost, a.it_sc_type, a.io_price,
+            a.another, a.ct_opt_subject,  a.ct_opt_date, a.ct_opt_subject2,  a.ct_opt_date2, a.ct_carecost , 
+            b.it_buy_max_qty,
+            case when a.another = 0 then b.it_stock_qty else (select io_stock_qty from g5_shop_item_aja where io_no=a.another) end as io_stock_qty,
+            b.it_edu_information,
+            b.it_edu_sub_information01,
+            b.it_edu_sub_information02,
+            b.it_edu_sub_information03,
+            b.it_edu_sub_information04,
+            b.it_option_data,
+            b.it_option_data2,
+            b.it_option_data3,
+            b.it_option_data4,
+            b.it_option_data5,
+            b.it_option_data6,
+            b.it_option_data7,
+            b.it_option_data8,
+            b.it_option_data9,
+            b.it_option_data10,
+            b.ca_id, b.ca_id2, b.ca_id3, b.it_3, b.it_2_subj, b.it_3_subj, b.it_9_subj, b.it_ajatime, b.it_notax, b.it_temporarily, b.admin_id, b.it_img1, b.it_nocoupon, b.it_nopoint
+         from {$g5['g5_shop_cart_table']} a left join {$g5['g5_shop_item_table']} b on ( a.it_id = b.it_id )
+         where a.od_id = '$s_cart_id' and a.ct_select = '1' ";
+   $sql .= " group by a.it_id ";
+   $sql .= " order by a.ct_id ";
+   $result = sql_query($sql);
+
+   $good_info = '';
+   $it_send_cost = 0;
+   $it_cp_count = 0;
+
+   $comm_tax_mny = 0; // 과세금액
+   $comm_vat_mny = 0; // 부가세
+   $comm_free_mny = 0; // 면세금액
+   $tot_tax_mny = 0;
+   $item_nocoupon = '0';
+        for ($i=0; $row=sql_fetch_array($result); $i++) {
+         $item_it_5_subj = $row['it_5_subj'];
+         $item_nocoupon = $row['it_nocoupon'];
+         $item_nopoint = $row['it_nopoint'];
+         $it_temporarily = $row['it_temporarily'];
+         $it_buy_max_qty = $row['it_buy_max_qty'];
+         $io_stock_qty = $row['io_stock_qty'];
+         $it_edu_information = $row['it_edu_information'];
+         $it_edu_sub_information01 = $row['it_edu_sub_information01'];
+         $it_edu_sub_information02 = $row['it_edu_sub_information02'];
+         $it_edu_sub_information03 = $row['it_edu_sub_information03'];
+         $it_edu_sub_information04 = $row['it_edu_sub_information04'];
+
+         $vou_admin_id = $row['admin_id'];
+            // 합계금액 계산
+            $sql = " select SUM(IF(io_type = 1, (io_price * ct_qty), ((ct_price + io_price ) * ct_qty))) as price, SUM(ct_point * ct_qty) as point, SUM(ct_qty) as qty 
+         from {$g5['g5_shop_cart_table']} 
+         where it_id = '{$row['it_id']}' and od_id = '$s_cart_id' ";
+            $sum = sql_fetch($sql);
+            if (!$goods) {
+                //$goods = addslashes($row[it_name]);
+                //$goods = get_text($row[it_name]);
+                $goods = preg_replace("/\'|\"|\||\,|\&|\;/", "", $row['it_name']);
+                $goods_it_id = $row['it_id'];
+                $goods_it_3 = $row['it_3'];
+            $it_9_subj= $row['it_9_subj'];
+
+// 2017.09. 보험료 사용자가 선택 S //////////////////
+//            if($goods_it_3 =="Y"){
+//               $carecost=str_replace(",", "", "$row[it_2_subj]"); //"[여행자보험]";
+//            }else{
+//               $carecost=str_replace(",", "", "$row[it_3_subj]"); // "[행사보험]";
+//            }
+            $carecost=$row['ct_carecost'];
+
+            $go_price=$row['ct_price'];
+         }
+            $goods_count++;
+
+            // 에스크로 상품정보
+            if($default['de_escrow_use']) {
+                if ($i>0) $good_info .= chr(30);
+                $good_info .= "seq=".($i+1).chr(31);
+                $good_info .= "ordr_numb={$od_id}_".sprintf("%04d", $i).chr(31);
+                $good_info .= "good_name=".addslashes($row['it_name']).chr(31);
+                $good_info .= "good_cntx=".$row['ct_qty'].chr(31);
+                $good_info .= "good_amtx=".$row['ct_price'].chr(31);
+            }
+
+            $image = "<img src='".G5_URL."/data/item/".$row['it_img1']."' />";
+         $kg_name =  stripslashes($row['it_name']) ;      
+         $kg_name = str_replace('"', '\"', $kg_name);
+         $kg_name = str_replace("'", "\'", $kg_name);           
+         //$it_name = '<p style=padding-top:20px;>교육명 :' . stripslashes($row['it_name'])."</p>";
+         //$it_name = '<div style=width:425px;height:108px;display:table-cell;vertical-align:middle;line-height:30px;><span style="font-weight:bold">교육명 :' . stripslashes($row['it_name']).'</span>';
+         $it_name = stripslashes($row['it_name']) ;   
+         
+         if($it_9_subj!="Y"){
+            if($row[another]>0){
+               $a_row = sql_fetch(" select * FROM  g5_shop_item_aja where io_no='".$row[another]."'" );
+//               $it_name.= "<p>교육일자 : ". $a_row[io_ajatime]."</p>";
+               $it_ajatime = $a_row[io_ajatime];
+            } else {
+//               $it_name.= "<p>교육일자 : ". $row[it_ajatime]."</p>";
+               $it_ajatime = $row[it_ajatime];
+            }   
+         } 
+         if($it_9_subj == "Y") { $it_ajatime = "방문교육일 주문시 직접입력"; }
+         
+            //$it_options = print_item_options($row['it_id'], $s_cart_id);
+
+            if($it_options) {
+                $it_name .= '<div class="sod_opt">'.$it_options.'</div>';
+            }
+
+            // 복합과세금액
+            if($default['de_tax_flag_use']) {
+                if($row['it_notax']) {
+                    $comm_free_mny += $sum['price'];
+                } else {
+                    $tot_tax_mny += $sum['price'];
+                }
+            }
+            $point      = $sum['point'];
+            $sell_price = $sum['price'];
+
+            // 쿠폰
+            if($is_member && !$item_nocoupon) {
+                $cp_button = '';
+                $cp_count = 0;
+
+                $sql = "select cp_id
+                  from {$g5['g5_shop_coupon_table']}
+                  where mb_id IN ( '{$member['mb_id']}', '전체회원' ) and cp_start <= '".G5_TIME_YMD."' and cp_end >= '".G5_TIME_YMD."' and cp_minimum <= '$sell_price' 
+                  and ( 
+                     ( cp_method = '0' and cp_target = '{$row['it_id']}' ) 
+                     OR 
+                     ( cp_method = '1' and ( cp_target IN ( '{$row['ca_id']}', '{$row['ca_id2']}', '{$row['ca_id3']}' ) ) ) 
+                  ) ";
+                $res = sql_query($sql);
+
+                for($k=0; $cp=sql_fetch_array($res); $k++) {
+                    if(is_used_coupon($member['mb_id'], $cp['cp_id']))
+                        continue;
+                    $cp_count++;
+                }
+                if($cp_count) {
+               $cp_button = '<img src="'.G5_THEME_URL.'/img/btn_order_coupun_reg.png" class="cp_btn btn_frmline pointer"/>';
+                    $it_cp_count++;
+                }
+            }
+
+            // 배송비
+            switch($row['ct_send_cost']) {
+                case 1:
+                    $ct_send_cost = '착불';
+                    break;
+                case 2:
+                    $ct_send_cost = '무료';
+                    break;
+                default:
+                    $ct_send_cost = '선불';
+                    break;
+            }
+            // 조건부무료
+            if($row['it_sc_type'] == 2) {
+                $sendcost = get_item_sendcost($row['it_id'], $sum['price'], $sum['qty'], $s_cart_id);
+                if($sendcost == 0) $ct_send_cost = '무료';
+            }
+        ?>
+               
+               <div class="product_info_wrap">
+                  <div class="product_thumb">
+                     <?php echo $image; ?>
+                  </div>
+                  <div class="product_info">
+                  <div class="title">
+                  <!-- <p class="little-title"><?=stripslashes($row['it_name2'])?></p> -->
+                  <p class="product_title"><?=stripslashes($row['it_name'])?></p>
+                  <div class="sub-title">
+                     <ul>
+                     <? 
+                        if ($it_teaching_aid == "Y") { // 교구재 
+                        } else {
+                     ?>
+                        <li class="product_info_txt">- 교육일자: <?=$it_ajatime?></li>
+                     <?
+                        }   
+                     ?>
+<?php
+         //2017.08. 옵션
+         if($row['ct_opt_subject']!=""){
+            if($row['ct_opt_date']!="0000-00-00")      $opt_value = $row['ct_opt_date']."&nbsp;&nbsp;";
+            $opt_value .= $row['ct_opt_subject'];
+
+               echo "<li class='product_opt'>- ".$opt_value."</li>";
+         }
+
+?>
+
+<?php
+         //2020.08.30 옵션2
+         if($row['ct_opt_subject2']!=""){
+            if($row['ct_opt_date2']!="0000-00-00")      $opt_value2 = $row['ct_opt_date2']."&nbsp;&nbsp;";
+            $opt_value2 .= $row['ct_opt_subject2'];
+
+               echo "<li class='product_opt'>- ".$opt_value2."</li>";
+         }
+
+?>
+                     </ul>
+                  </div>
+               </div>
+
+               <!-- 상품명 / 옵션명 -->
+
+<?
+if($it_9_subj!="Y"){
+   if($row[another]>0){
+      $a_row = sql_fetch(" select * FROM  g5_shop_item_aja where io_no='".$row[another]."'" );
+?>
+   <input type="hidden" name="it_ajatime[<?php echo $i; ?>]"    value="<?php echo $a_row[io_ajatime]; ?>">
+<?
+   } else{
+?>
+   <input type="hidden" name="it_ajatime[<?php echo $i; ?>]"    value="<?php echo $row[it_ajatime]; ?>">
+<?
+}
+}
+?>
+   <input type="hidden" name="ct_send_cost[<?php echo $i; ?>]"    value="<?php echo $carecost; ?>">            <!-- 1인 배송비 -->
+   <input type="hidden" name="ct_price[<?php echo $i; ?>]"    value="<?php echo $row['ct_price']; ?>">         <!-- 1인 교육비 -->
+   <input type="hidden" id="it_id" name="it_id[<?php echo $i; ?>]"    value="<?php echo $row['it_id']; ?>">               <!-- 교육 코드 -->
+   <input type="hidden" id="ca_id" name="ca_id[<?php echo $i; ?>]"    value="<?php echo $row['ca_id']; ?>">               <!-- 카테고리 코드 -->
+   <input type="hidden" name="it_name[<?php echo $i; ?>]"  value="<?php echo get_text($row['it_name']); ?>">      <!-- 교육명 -->
+   <input type="hidden" name="it_price[<?php echo $i; ?>]" value="<?php echo $sell_price; ?>">               <!-- 1차 총 교육비 -->
+   <input type="hidden" name="cp_id[<?php echo $i; ?>]" value="">                                    <!-- 개별 할인 쿠폰 id -->
+   <input type="hidden" name="cp_price[<?php echo $i; ?>]" value="0">                                 <!-- 개별 할인 쿠폰 (유동) -->
+<?php if($default['de_tax_flag_use']) { ?>
+   <input type="hidden" name="it_notax[<?php echo $i; ?>]" value="<?php echo $row['it_notax']; ?>">
+<?php } ?>                     
+                     <div>
+                        <ul>
+                           <!-- <li><span class="cont"><span id="info_qty_cnt"><?php echo number_format($sum['qty']); ?></span><? if ($it_teaching_aid == "Y") { // 교구재?>개<?} else {?>명<?}?></span></li> -->
+                           <? 
+                              if ($it_teaching_aid == "Y") { // 교구재
+                              } else {
+                           ?>
+                           <li class="product_info_txt"><span class="title">- 보험금액 : </span> <span class="cont"><span id="info_send_cost"><?php echo number_format($sum['qty']*$carecost);?></span>원</span></li>
+                           <?
+                              }   
+                           ?>
+                           <li>
+                           <?
+                           $sqlc = "select it_cust_price,it_1 from g5_shop_item where it_id='{$row[it_id]}';";
+                           $resc = sql_query($sqlc);
+                           $rowc=sql_fetch_array($resc);
+                           ?>
+                           <input type="hidden" id="cust_price" name="cust_price" value="<?=$rowc[it_cust_price]?>" />
+                              <span class="cont"></span>
+                                 <span class="price">
+                                    <p class="price">
+                                           <span class="product_price_txt" id="info_sell_price"><?php echo number_format($sum['qty']*$row['ct_price']); ?></span>
+                                          <span class="won">원</span>
+                                          <span class="price_divider"> | </span>
+                                          <span id="info_qty_cnt" class="product_info_txt"><?php echo number_format($sum['qty']); ?></span> 
+                                          <span class="product_info_txt"><? if ($it_teaching_aid == "Y") { // 교구재?>개<?} else {?>명<?}?></span>
+                                    </p>
+                                    
+                                 
+                                 <span class="price-info">
+                                    <?php
+                                       if($row['it_9_subj']=="Y" && $row[it_price] == 0) {
+                                    ?>
+                                       <span class="before_price"><span class="sale-price"><span id="info_cust_price"><?=number_format($sum['qty']*$rowc[it_cust_price])?></span> 원</span></span><span>(문의)</span>
+                                    <?php
+                                       } else {
+                                    ?>
+                                       <span class="before_price"><span class="sale-price"><span id="info_cust_price"><?=number_format($sum['qty']*$rowc[it_cust_price])?></span> 원</span></span>
+                                    <?php
+                                       }
+                                    ?>
+                                 </span>
+                              </span>
+                              <?php
+                                    if ($rowc[it_1] > 0) {
+                                 ?>
+                                 <span class="product_info_percent">(<?=round($rowc[it_1])?>%할인)</span>
+                                 <?php
+                                    }
+                                 ?>
+                                 </span>            
+
+                              <!--p id="btn_cp"><?php echo $cp_button; ?></p-->
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+      <?php
+         $tot_point      += $point;
+         $tot_sell_price += $sell_price;
+      } // for 끝
+      if ($i == 0) {
+         //echo '<tr><td colspan="7" class="empty_table">장바구니에 담긴 상품이 없습니다.</td></tr>';
+         alert('장바구니가 비어 있습니다.', G5_SHOP_URL.'/cart.php');
+      } else {
+         // 배송비 계산
+         $send_cost = get_sendcost($s_cart_id);
+      }
+      // 복합과세처리
+      if($default['de_tax_flag_use']) {
+         $comm_tax_mny = round(($tot_tax_mny + $send_cost) / 1.1);
+         $comm_vat_mny = ($tot_tax_mny + $send_cost) - $comm_tax_mny;
+      }
+      $send_cost=$sum['qty']*$carecost;
+
+?>
+      <?php if ($goods_count) $goods .= ' 외 '.$goods_count.'건'; ?>
+
+      <!-- } 주문상품 확인 끝 -->
+      <!-- 주문상품 합계 시작 { -->
+      <?php $tot_price = $tot_sell_price + $send_cost; // 총계 = 주문상품금액합계 + 보험료 ?>
+      <input type="hidden" name="od_price" id="od_price" value="<?php echo $tot_sell_price; ?>"> <!-- 유동적 교육비 (할인적용)-->
+      <input type="hidden" name="org_od_price" id="org_od_price" value="<?php echo $tot_sell_price; ?>"> <!-- 교육비 -->
+      <input type="hidden" name="od_send_cost" id="od_send_cost" value="<?php echo $send_cost; ?>">   <!-- 보험료 (배송비를 보험료로 대신 사용함)-->
+      <input type="hidden" name="od_send_cost2" id="od_send_cost2" value="0">
+      <input type="hidden" name="item_coupon" id="item_coupon" value="0">
+      <input type="hidden" name="od_coupon" id="od_coupon" value="0">
+      <input type="hidden" name="od_send_coupon" id="od_send_coupon" value="0">
+
+               </div>
+            </div><!-- //내용 -->
+         </div><!-- //프로그램 정보 / 상품 정보-->
+
+
+         <!-- 구매자 정보 -->
+         <div class="order_box order_dropdown">
+            <!-- 제목 -->
+            <div class="order_box_header order_header">
+               <p class="order_title"><img src="<?=G5_THEME_URL?>/img/icon/pay_ico_02.png" /> 구매자 정보</p>
+               <span class="title_arrow"><img src="<?=G5_THEME_URL?>/img/icon/dropdown_btn.svg" /></span>
+            </div>
+
+            <div class="order_box_body order_body">
+               <div class="line_input_group">
+                  <label class="input_label" for="od_name">이름</label>
+                  <input type="text" name="od_name" id="od_name"  class="line_input" value="<?php echo get_text($member['mb_name']); ?>" required />
+               </div>
+               <p class="form_danger_txt">※ 구매자 이름에 실명을 넣어주세요<br /><span style="padding-left:16px;">실명이 아닐 시 주문내역 확인이 어려울 수 있습니다.</span></p>
+<!-- 문자 인증 -->
+<?php
+// 인증 여부
+if ($member['mb_certify']) {
+   $scheck_result = "Y";
+} else {
+   $scheck_result = "";
+}
+?>
+               <input type="hidden" id="cert_type" name="cert_type" value="<?php echo $member['mb_certify']; ?>" />
+               <input type="hidden" id="scheck_code" name="scheck_code" value="">
+               <input type="hidden" id="request_seq" name="request_seq" value="">
+               <input type="hidden" id="response_seq" name="response_seq" value="">
+               <input type="hidden" id="scheck_result" name="scheck_result" value="<?php echo $scheck_result; ?>">
+               <style>
+                  
+               </style>
+               <div class="input_group">
+                  <label for="frm-id" class="info-title input_title">휴대폰</label>
+                  <input type="text" style="margin-bottom: 5px; display: none;"  name="od_tel" id="reg_mb_hp" class="info-cont cfm_read" value="<?=get_text($member['mb_hp'])?>" />
+                  <div class="phone_input_box">
+                     <!-- 010 -->
+                           <select class="select_number" id="ph_select">
+                        <option value="011">011</option>
+                        <option value="010">010</option>
+                        <option value="016">016</option>
+                        <option value="017">017</option>
+                        <option value="018">018</option>
+                        <option value="019">019</option>
+                     </select>
+                     <span class="h">-</span>
+                     <!--중간 번호-->
+                     <input type="number" id="ph_middle" minlength="4" maxlength="4">
+                     <span class="h">-</span>
+                     <!--끝 번호-->
+                     <input type="number" id="ph_last" minlength="4" maxlength="4">
+                       </div>
+                  <script>
+                     function inPhoneNum(){
+                        var phoneInput = $("#reg_mb_hp");
+                        var phoneInputValue = $("#reg_mb_hp").val();
+                        console.log( phoneInput.val());
+
+                        // 번호 나누기
+                        var num = phoneInputValue.split('-');                        
+
+                        $("#ph_select").val(num[0]);
+
+                        $('#ph_middle').val(num[1]);
+                        $('#ph_last').val(num[2]);
+                     }
+
+                     function outPhoneNum(){
+                        var first = $("#ph_select").val();
+                        var middle = $('#ph_middle').val();
+                        var last = $('#ph_last').val();
+
+
+
+                     }
+
+                     $(window).load(function(){
+                        inPhoneNum();
+                     });
+                     
+                  </script>
+
+<?php if (!$member['mb_certify']) { // 미인증시 인증버튼 출력 ?>
+
+                  <button type="button" class="confirm" style="margin: -2px 5px; line-height: 10px; background-color: #444;" onclick="request_scheck()">인증</button>
+
+<?php } ?>
+               </div>
+
+<?php if (!$member['mb_certify']) { // 미인증시 인증버튼 출력 ?>
+
+               <div class="line_input_group">
+                  <label for="auth_no" class="info-title">인증번호</label>
+                  <input type="text" id="auth_no" name="auth_no" class="info-cont" style="width:47%;" />
+                  <button type="button" class="confirm" style="margin: -2px 5px; line-height: 10px; " onclick="response_scheck()">확인</button>
+               </div>
+
+<?php } ?>
+
+               <div class="cfm_ok line_input_group">
+                  <label class="info-title" for="od_birth">생년월일</label>
+                  <input type="text" id="mb_birth" style="display: none;" name="mb_birth" placeholder="예)1980-01-01" value="<?=$member['mb_birth']?>" />
+                  <div class="birth_box">
+                           <select name="mb_year" id="mb_year" title="년도" class="birth_year"></select>
+                             <select name="mb_month" id="mb_month" title="월" class="birth_month"></select>
+                             <select name="mb_day" id="mb_day" title="일" class="birth_day"></select>
+                       </div>
+               </div>
+
+
+               <div class="input_group">
+                  <label class="info-title input_title" for="od_sex">성별</label>
+                  <div class="btn_radio">
+                     <input type="radio" id="mb_sex_m" name="mb_sex" <? if($member['mb_sex'] == "M"){ echo "checked='checked'";} ?> value="M" />
+                     <label for="mb_sex_m">남</label> &nbsp; 
+
+                     <input type="radio" id="mb_sex_w" name="mb_sex" <? if($member['mb_sex'] == "W"){ echo "checked='checked'";} ?> value="W" />
+                     <label for="mb_sex_w">여</label>
+                  </div>
+               </div>
+               <div class="line_input_group">
+                  <label class="info-title" for="orderman-email">이메일</label>
+                  <input type="email" name="od_email" id="od_email" class="info-cont required cfm_read" value="<?=$member['mb_email']?>" required />
+               </div>
+            <?php// } ?>
+
+            </div>
+         </div>
+         <input type="hidden" name="od_b_name" id="od_b_name" value="<?php echo get_text($member['mb_name']); ?>" /> 
+         <input type="hidden" name="od_b_tel" id="od_b_tel" value="<?=get_text($member['mb_hp']); ?>" /> 
+         <input type="hidden" name="od_b_email" id="od_b_email" value="<?=$member['mb_email']; ?>" /> 
+         <input type="hidden" name="od_mb_sex" id="od_mb_sex" value="<?=$member['mb_sex']; ?>" /> 
+         <input type="hidden" name="it_15_subj" id="it_15_subj" value="<?=$it_15_subj; ?>" />
+
+         <div class="order_box order_dropdown">
+            <div class="order_header order_box_header">
+<?if($carecost>0){?>
+            <p class="program-title">보험가입 신청</p>
+            <div class="form-radio big ">
+               <div class="f"><input type="checkbox" name="aa" id="aa-01"><label for="aa-01">보험가입에 동의합니다.</div>
+            </div>
+<?}else{?>
+            <p class="order_title"><img src="<?=G5_THEME_URL?>/img/icon/pay_ico_03.png" /> <? if ($it_teaching_aid == "Y") { // 교구재?>구매수량<?} else {?>체험생 정보<?}?></p>
+<?}?>         
+               <span class="title_arrow"><img src="<?=G5_THEME_URL?>/img/icon/dropdown_btn.svg" /></span>
+            </div>
+            <div class="order_body order_box_body">
+            <div class="pay_info_list">
+               <div class="p_txt"><? if ($it_teaching_aid == "Y") { // 교구재?>수량<?} else {?>교육신청 인원수<?}?></div>
+               <span class="rounded_cnt">
+                  <button type="button" onclick="goupdate('od_cnt1','m');" class="ico-down btn-spinner-minus cnt_minus" alt="감 소">빼기</button>
+                  <input type="number" name="od_cnt1" id="od_cnt1v" value="<?echo $sum['qty'];?>" maxlength="4" >   
+                  <button type="button" onclick="goupdate('od_cnt1','p');" class="ico-up btn-spinner-plus cnt_plus" alt="증 가" >더하기</button>
+               </span>
+            </div>
+
+
+
+<?if($carecost>0){?>
+            <div class="box-in">
+               <p class="noti-02">
+                  상기 체험교육 프로그램은 수강하기 위해서는 <span class="orange"><?if($goods_it_3=="Y"){echo "[여행자보험]";}else{echo "[행사보험]";}?> 가입을 신청</span> 하셔야합니다.
+               </p>
+            </div>
+<?}?>
+
+            <!-- 동반수강생 정보 -->
+<?
+      if ($it_edu_information == "Y") { // 체험교육생 정보 유무 "Y" 일 경우
+?>
+
+         <div>
+            <div class="join-member">
+               <ul id="chagemv">                  
+               <?for($i=0;$i < $sum['qty'];$i++){
+                  if ($i == 0) {
+                     $aca_nume = get_text($member['mb_name']);
+                     $aca_age = $member['mb_birth'];
+                     $aca_sex = $member['mb_sex'];
+                  } else {
+                     $aca_nume = "";
+                     $aca_age = "";
+                     $aca_sex = "";
+                  }
+               ?>
+                  <li class="join-box">
+                     <div class="input-box">
+                        <div>
+                           <div class="line_input_group">
+                              <label for="aca_nume<?=$i?>">이름</label>
+                              <input type="text" class="info-cont aca_nume" name="aca_nume[<?$i?>]" id="aca_nume<?=$i?>" required placeholder="이름을 입력해주세요">
+                           </div>
+                        <? if ($it_edu_sub_information02 == "Y") {?>
+                           <div class="input_group">
+                              <label class="input_title" for="join-member-age">생년월일</label>
+                              <input type="text" style="display: none;" class="info-cont aca_age" name="aca_age[<?$i?>]" id="join-member-age" required placeholder="예)1980-01-01">
+                              <div class="birth_box">
+                                       <select name="year" title="년도" class="birth_year"></select>
+                                         <select name="month" title="월" class="birth_month"></select>
+                                         <select name="day" title="일" class="birth_day"></select>
+                                   </div>
+                           </div>
+                        <?   
+                           }
+                        ?>   
+                            
+                        <?                               
+                           if ($it_edu_sub_information04 == "Y") {?>
+                           <div class="input_group">
+                              <div class="input_title">성별</div>
+                              <div class="btn_radio">
+                                 <input type="radio" name="aca_sex<?=$i?>" id="r5<?=$i?>" value="M"><label for="r5<?=$i?>">남</label>
+                                 <input type="radio" name="aca_sex<?=$i?>" id="r6<?=$i?>" value="F"><label for="r6<?=$i?>">여</label>
+                              </div>
+                           </div>
+                        <?   
+                           }
+                        ?>
+                        </div>
+                     </div>
+                  </li>
+                   <?}?>
+               </ul>
+            </div>
+         </div>
+<?
+      } else { // 체험교육생 정보 유무 "N" 일 경우
+?>
+         <div class="content-box-white" style="display:none">
+            <p class="program-title">체험생 정보</p>
+            <div class="join-member">
+               <ul id="chagemv">                  
+               <?for($i=0;$i < $sum['qty'];$i++){
+                  if ($i == 0) {
+                     $aca_nume = get_text($member['mb_name']);
+                     $aca_age = $member['mb_birth'];
+                     $aca_sex = $member['mb_sex'];
+                  } else {
+                     $aca_nume = "";
+                     $aca_age = "";
+                     $aca_sex = "";
+                  }
+               ?>
+                  <li class="join-box">
+                     <div class="input-box">
+                        <div>
+                           <div class="line_input_group">
+                              <label for="aca_nume<?=$i?>">이름</label>
+                              <input type="text" class="info-cont aca_nume" name="aca_nume[<?$i?>]" id="aca_nume<?=$i?>" required placeholder="이름을 입력해주세요">
+                           </div>
+
+                        <? if ($it_edu_sub_information02 == "Y") {?>
+                           <div class="input_group">
+                              <label class="input_title" for="join-member-age">생년월일</label>
+                              <input type="text" style="display: none;" class="info-cont aca_age" name="aca_age[<?$i?>]" id="join-member-age" required placeholder="예)1980-01-01">
+                              <div class="birth_box">
+                                       <select name="year" title="년도" class="birth_year"></select>
+                                         <select name="month" title="월" class="birth_month"></select>
+                                         <select name="day" title="일" class="birth_day"></select>
+                                   </div>
+                           </div>
+                        <?   
+                           }
+                            
+                           if ($it_edu_sub_information03 == "Y") {?>
+                           <div class="line_input_group">
+                              <label for="join-member-level">학년</label>
+                              <input type="text" class="info-cont aca_school" name="aca_school[<?$i?>]" id="join-member-level" required placeholder="예)초등 4학년">
+                           </div>
+                        <?   
+                           }
+                            
+                           if ($it_edu_sub_information04 == "Y") {?>
+                           <div class="input_group">
+                              <div class="input_title">성별</div>
+                              <div class="info-cont">
+                                 <ul class="btn_radio">
+                                    <li class="f"><input type="radio" name="aca_sex<?=$i?>" id="r5<?=$i?>" value="M"><label for="r5<?=$i?>">남</label></li>
+                                    <li class="f"><input type="radio" name="aca_sex<?=$i?>" id="r6<?=$i?>" value="F"><label for="r6<?=$i?>">여</label></li>
+                                 </ul>
+                              </div>
+                           </div>
+                        <?   
+                           }
+                        ?>
+                        </div>
+                     </div>
+                  </li>
+                   <?}?>
+               </ul>
+            </div>
+         </div>
+<?
+      }
+?>
+         </div>
+         </div>
+
+
+
+
+
+<?if($it_9_subj=="Y"){?>      
+         <div class="content-box-white">
+            <!-- 제목 -->
+            <p class="program-title">방문(체험)일 작성</p>
+            <div>
+               <div class="line_input_group"><label class="info-title" for="od_b_addr1">희망일자</label><input type="text" name="od_b_addr1" id="od_b_addr1" required class="info-cont" maxlength="20"></div>
+               <div class="line_input_group"><label class="info-title" for="od_b_addr3">지정장소</label><input type="text" name="od_b_addr3" id="od_b_addr3" required class="info-cont" maxlength="20"></div>
+            </div>
+         </div>
+<?}?>
+
+
+
+<?
+   if ($it_teaching_aid == "Y" || $it_16_subj == "Y") { // 교육재 또는 교구재+인간
+?>
+         <div class="order_box order_dropdown">
+            <!-- 제목 -->
+            <div class="order_box_header order_header">
+               <p class="order_title"><img src="<?=G5_THEME_URL?>/img/icon/pay_ico_08.png" /> 배송지</p>
+               <span class="title_arrow"><img src="<?=G5_THEME_URL?>/img/icon/dropdown_btn.svg" /></span>
+            </div>
+            <div class="order_box_body order_body">   
+               <div class="line_input_group">
+                  <div class="btn_input_wrap">
+                     <input type="text" name="od_postcode" onclick="execDaumPostcode()" readonly id="od_postcode" placeholder="우편번호">
+                     <input  class="btn_rounded sm_btn" type="button" onclick="execDaumPostcode()" value="우편번호 찾기">
+                  </div>
+                  <input type="text" name="od_address" onclick="execDaumPostcode()" readonly id="od_address" placeholder="주소">
+                  <input type="text" name="od_detailAddress" id="od_detailAddress" placeholder="상세주소">
+                  <input type="text" name="od_extraAddress" id="od_extraAddress" placeholder="참고항목" onclick="execDaumPostcode()" readonly>   
+               </div>
+            </div>
+            <!-- 주소찾기 popup -->
+            <div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
+               <img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
+            </div>
+         </div>
+<?
+   }
+?>
+
+
+
+         <div class="order_box order_dropdown">
+            <!-- 제목 -->
+            <div class="order_box_header order_header">
+               <p class="order_title"><img src="<?=G5_THEME_URL?>/img/icon/pay_ico_04.png" /> <? if ($it_teaching_aid == "Y") { // 교구재 ?>특이사항<?} else {?>체험생 특이사항<?}?></p>
+               <span class="title_arrow"><img src="<?=G5_THEME_URL?>/img/icon/dropdown_btn.svg" /></span>
+            </div>
+            <div class="order_box_body order_body">
+               <div class="info-line2"><textarea id="od_memo2" name="od_memo2" style="height:70px;width: 100%; border:1px solid #dadada; border-radius: 8px;"></textarea></div>
+            </div>
+         </div>
+
+            
+<!-- 결제정보 입력 시작 { -->
+    <?php
+    $oc_cnt = $sc_cnt = 0;
+    if($is_member && !$item_nocoupon) {
+
+      $sql_item = " select a.ct_id, a.it_id, b.it_5_subj, b.ca_id
+            from {$g5['g5_shop_cart_table']} a left join {$g5['g5_shop_item_table']} b on ( a.it_id = b.it_id )
+            where a.od_id = '$s_cart_id' and a.ct_select = '1' ";
+      $sql_item .= " group by a.it_id ";
+      $sql_item .= " order by a.ct_id ";
+      $result_item = sql_query($sql_item);
+      $row_item=sql_fetch_array($result_item); 
+
+      $sql = " select cp_id
+      from {$g5['g5_shop_coupon_table']}
+      where mb_id IN ( '{$member['mb_id']}', '전체회원' )
+      and cp_method in ('2', '5', '4')";
+      
+      $sql .= "and cp_start <= '".G5_TIME_YMD."'
+      and cp_end >= '".G5_TIME_YMD."'
+      and cp_minimum <= '$tot_sell_price'";
+
+      $sql .= "
+         union all
+         select cp_id from g5_shop_coupon_print where mb_id = '{$member['mb_id']}' and cp_method in ('9')
+         and cp_start <= '".G5_TIME_YMD."'
+         and cp_end >= '".G5_TIME_YMD."'
+         and cp_target like '%{$var_it_id}%'
+         and cp_minimum <= '$tot_sell_price' and cp_target like '%{$row['it_id']}%'
+      ";   
+//      if ($_SERVER['REMOTE_ADDR'] == '59.16.102.40')   echo $sql;
+
+
+        $res = sql_query($sql);
+
+        for($k=0; $cp=sql_fetch_array($res); $k++) {
+            if(is_used_coupon($member['mb_id'], $cp['cp_id']))
+                continue;
+               $oc_cnt++;
+        }
+
+        if($send_cost > 0) {
+            // 배송비쿠폰
+            $sql = " select cp_id
+                        from {$g5['g5_shop_coupon_table']}
+                        where mb_id IN ( '{$member['mb_id']}', '전체회원' )
+                          and cp_method = '3'
+                          and cp_start <= '".G5_TIME_YMD."'
+                          and cp_end >= '".G5_TIME_YMD."'
+                          and cp_minimum <= '$tot_sell_price' ";
+            $res = sql_query($sql);
+
+            for($k=0; $cp=sql_fetch_array($res); $k++) {
+                if(is_used_coupon($member['mb_id'], $cp['cp_id']))
+                    continue;
+                $sc_cnt++;
+            }
+        }
+    }
+    ?>
+<?php
+   
+   if (!$default['de_card_point'])
+   // echo '<p id="sod_frm_pt_alert"><strong>무통장입금</strong> 이외의 결제 수단으로 결제하시는 경우 포인트를 적립해드리지 않습니다.</p>';
+   $multi_settle == 0;
+   $escrow_title = "";
+   if ($default['de_escrow_use']) {
+      $escrow_title = "에스크로 ";
+   }
+
+   $temp_point = 0;
+   // 회원이면서 포인트사용이면
+   if ($is_member && $config['cf_use_point']) {
+      if ($member['mb_point'] < $default['de_settle_min_point']) { // 포인트 결제 사용 포인트보다 회원의 포인트가 작다면
+         $temp_point = 0; //(int)$member['mb_point'];
+//         $multi_settle++;
+      } else if ($member['mb_point'] >= $default['de_settle_min_point']) { // 포인트 결제 사용 포인트보다 회원의 포인트가 크다면
+         $temp_point = (int)$default['de_settle_max_point'];
+         if($temp_point > (int)$tot_sell_price) $temp_point = (int)$tot_sell_price;
+         if($temp_point > (int)$member['mb_point']) $temp_point = (int)$member['mb_point'];
+         $point_unit = (int)$default['de_settle_point_unit'];
+         $temp_point = (int)((int)($temp_point / $point_unit) * $point_unit);
+         $multi_settle++;
+      }
+   }
+?>         
+         <!-- 쿠폰 / 포인트 -->
+         <div class="order_box order_dropdown">
+            <div class="order_box_header order_header">
+               <p class="order_title"><img src="<?=G5_THEME_URL?>/img/icon/pay_ico_06.png" /> 쿠폰 / 포인트</p>
+               <span class="title_arrow"><img src="<?=G5_THEME_URL?>/img/icon/dropdown_btn.svg" /></span>
+            </div>
+            <div class="order_box_body order_body">
+               <div>
+               
+               <?
+                  if ($item_nopoint   == 1) {// 포인트 사용안함
+               ?>
+                              <div class="point_wrap">
+                                 <div class="order_sub_title">포인트</div>
+                                 <div class="point_input_box"><input type="text" name="od_temp_point" id="od_temp_point" size="10" value="0" onclick="ch_temp_no_point(this.value);" onkeydown="ch_temp_no_point(this.value);" onkeyup="ch_temp_no_point(this.value);"  readonly> P</div>
+                                 <div class="pay-cont">
+                                    <!--button class="btn-pay-point">적용/변경</button-->
+                                    <p class="point_info_txt">
+                                       <span>보유포인트 <span class="black"><?php echo display_point($member['mb_point']); ?></span></span>
+                                    </p>
+                                    <p class="point_info_txt">
+                                       <span>최대 <span><span class="point_main" id="span_max_point"><?php echo display_point($temp_point); ?></span></span> 사용가능</span>
+                                    </p>
+                                    <p class='point_info_txt'>
+                                       <span>포인트 사용은 최소 <span class="point_main"><?=display_point($default['de_settle_min_point'])?></span> 점부터 사용가능</span>
+                                    </p>
+                                 </div>
+                              </div>
+               <?
+                  } else {
+               ?>
+                              
+                              <div class="point_wrap">
+                                 <div class="order_sub_title">포인트</div>
+                                 <div class="point_input_box"><input type="text" name="od_temp_point" id="od_temp_point" size="10" value="0"  onkeydown="ch_temp_point(this.value);" onkeyup="ch_temp_point(this.value);">P</div>
+                                 <div class="pay-cont">
+                                    <!--button class="btn-pay-point">적용/변경</button-->
+                                    <p class="point_info_txt">
+                                       <span>보유포인트 <span class="black"><?php echo display_point($member['mb_point']); ?></span></span><br>
+                                    </p>
+                                    <p class="point_info_txt">
+                                       <span>최대 <span><span id="span_max_point" class="point_main"><?php echo display_point($temp_point); ?></span></span> 사용가능</span>
+                                    </p>
+                                    <p class="point_info_txt">
+                                       <span>포인트 사용은 최소 <span class="point_main"><?=display_point($default['de_settle_min_point'])?></span> 점부터 사용가능</span>
+                                    </p>
+                                 </div>
+                              </div>
+                              
+               <?
+                  }
+               ?>
+               
+               
+                           </div>
+
+                           <div id="itemcoupon_div">
+                              <p class="order_sub_title">쿠폰</p>
+                              <div class="pay_info_list">
+                                 <p>개별할인쿠폰</p>
+                                 <div class="pay-cont">
+                                    <p class="p_main">
+                                       <span><?php echo $cp_count; ?>개</span>
+                                    </p>
+                                    <?php if($it_cp_count > 0) {?>
+                                    <span id="btn_item_cp" class="coupon_box" style="line-height:28px;">
+                                       <a class="btn-pay-point coupon_btn cp_btn">쿠폰적용</a>
+                                       <a class="btn-pay-point coupon_btn cp_cancel" style="display:none;">쿠폰취소</a>
+                                    </span>
+                                    <?php }?>
+                                 </div>
+                              </div>
+                              <div class="right pay-money coupon_price" style="text-align: right;"><?php if($it_cp_count > 0) { ?><strong id="ct_tot_coupon">0</strong>원<?php } ?></div>
+                           </div>
+                           <div id="od_coupon_layer">
+                              <div class="pay_info_list">
+                                 <p>주문할인쿠폰</p>
+                                 <div class="pay-cont">
+                                    <p class="p_main">
+                                       <span><?php echo $oc_cnt; ?>개</span>
+                                    </p>
+                                    <?php if($oc_cnt > 0) { ?>
+                                       <span id="btn_od_cp" class="coupon_box" style="line-height:28px;">
+                                       <a class="btn-pay-point coupon_btn" id="od_coupon_btn" onclick="fun_od_coupon_btn();">쿠폰적용</a>                     
+                                       <a class="btn-pay-point coupon_btn" id="od_coupon_cancel" onclick="func_od_coupon_cancel();" style="display:none;">쿠폰취소</a>
+                                       </span><?php } ?>
+                                 </div>
+                              </div>
+                              <div class="right pay-money coupon_price" style="text-align: right;"><?php if($oc_cnt > 0) { ?><strong id="od_cp_price">0</strong>원 <input type="hidden" name="od_cp_id" value=""><?php } ?></div>
+                           </div>
+                           <div id="od_coupon_view" class="pay-info coupon_info" style="margin:0px; display:none;">
+                           </div>
+                           <div>
+                              <div class="content_footer">
+                                 <p class="f_title">총 할인금액</p>
+                                 <p class="f_main"><span class="span_tot_discount">0</span>원</p>
+                              </div>
+                           <input type="hidden" id="max_temp_point" name="max_temp_point" value="<?php echo $temp_point; ?>">
+                           <input type="hidden" id="my_temp_point" name="my_temp_point" value="<?php echo $temp_point; ?>">
+                           <input type="hidden" id="kg_cost" name="kg_cost" value="<?=$tot_price?>">
+                        </div>
+            </div>
+      </div>
+
+<?php
+   $save_settle_case      = '';
+   $save_settle_bank_name   = '';
+
+   $hide_kakaopay   = 'display:none;';
+   $hide_bank      = 'display:none;';
+   $hide_card      = 'display:none;';
+   $hide_vbank      = 'display:none;';
+   $hide_iche      = 'display:none;';
+   $hide_hp      = 'display:none;';
+   $hide_easy      = 'display:none;';
+
+   $checked_bank      = '';
+   $checked_kakaopay   = '';
+   $checked_card      = '';
+   $checked_vbank      = '';
+   $checked_iche      = '';
+   $checked_hp         = '';
+   $checked_easy      = '';
+
+   if ($member['last_settle_type'] == '') {
+      $save_settle_type = '';
+      $checked_card   = 'checked';
+      $hide_card      = '';
+   } else {
+      $save_settle_type = "checked";
+      $exp_settle_type = explode("|", $member['last_settle_type']);
+      $save_settle_case = $exp_settle_type[0];         // 결제 방식
+      $save_settle_bank_name = $exp_settle_type[1];   // 은행명, 카드명 
+      
+      if ($save_settle_case == "KAKAOPAY") {
+         $checked_kakaopay   = 'checked';
+         $hide_kakaopay      = '';
+      } else if ($save_settle_case == "신용카드") {
+         $checked_card   = 'checked';
+         $hide_card      = '';
+      } else if ($save_settle_case == "무통장") {
+         if ($default['de_bank_use'] && ($member['mb_id'] == 'help@ajaschool.co.kr')) {
+            $checked_bank   = 'checked';
+            $hide_bank      = '';
+         } else {
+            $checked_card   = 'checked';
+            $hide_card      = '';
+         }
+      } else if ($save_settle_case == "가상계좌") {
+         $checked_vbank = 'checked';
+         $hide_vbank      = '';
+      } else if ($save_settle_case == "계좌이체") {
+         $checked_iche = 'checked';
+         $hide_iche      = '';
+      } else if ($save_settle_case == "휴대폰") {
+         $checked_hp = 'checked';
+         $hide_hp      = '';
+      } else if ($save_settle_case == "간편결제") {
+         $checked_easy = 'checked';
+         $hide_easy      = '';
+      } else {
+         $checked_bank   = 'checked';
+         $hide_bank      = '';
+      }
+   }
+
+   if ($default['de_bank_use'] || $default['de_vbank_use'] || $default['de_iche_use'] || $default['de_card_use'] || $default['de_hp_use']) {
+?>
+         <!-- 결제수단 -->
+         <div class="order_box order_dropdown">
+            <div class="order_box_header order_header">
+               <p class="order_title"><img src="<?=G5_THEME_URL?>/img/icon/pay_ico_07.png" /> 결제수단</p>
+               <span class="title_arrow"><img src="<?=G5_THEME_URL?>/img/icon/dropdown_btn.svg" /></span>
+            </div>
+            <div class="pay-system order_box_body order_body">
+               <div class="form-box left ea3">
+                  <ul class="payment_wrap">
+<?php
+   // 신용카드 사용
+   if ($default['de_card_use']) {
+      $multi_settle++;
+      echo '<li class="btn_radio"><input type="radio" class="od_settle_radio" id="od_settle_card" name="od_settle_case"  value="신용카드" '.$checked_card.'> <label for="od_settle_card">신용카드</label></li>'.PHP_EOL;
+   }
+   
+   // 계좌이체 사용
+   if ($default['de_vbank_use']) {
+      $multi_settle++;
+      echo '<li class="btn_radio"><input type="radio" id="od_settle_vbank" name="od_settle_case" class="od_settle_radio" value="계좌이체" '.$checked_iche.'> <label for="od_settle_vbank">계좌이체</label></li>'.PHP_EOL;
+   } 
+   // 무통장입금 사용
+   if ($default['de_bank_use'] && ($member['mb_id'] == 'help@ajaschool.co.kr')) {
+      $multi_settle++;
+      echo '<li class="btn_radio"><input type="radio" id="od_settle_bank" name="od_settle_case" class="od_settle_radio" value="무통장" '.$checked_bank.'> <label for="od_settle_bank">무통장 입금</label></li>'.PHP_EOL;
+   } else {
+      echo '<li class="f" style="visibility:hidden"><input type="radio" id="od_settle_bank" name="od_settle_case" class="od_settle_radio" value="무통장" '.$checked_bank.'></li>'.PHP_EOL;
+   }   
+   
+?>
+
+                  </ul>
+               </div>
+               <div class="pay-system-content">
+      <!-- 신용카드 -->
+      <div class="card payment-type" style="<?=$hide_card?>" id="settle_card">   
+         <div class="order_dropdown" data-display='none'>
+            <div class="order_header">
+               <p class="payment_info_title">아이폰 및 아이패드 결제오류 해결 안내 <span class="title_arrow active"><img src="<?=G5_THEME_MOBILE_IMG_URL?>/icon/btn_more_gray.png" /></span></p>
+            </div>
+            <div class="order_body payment_info_body">
+               <p class="p_gray">아이폰 IOS 11.3 버전의 사파리 웹 브라우저에서 카드결제, 휴대폰 결제 오류를 겪으신 고객님들께선 아래의 방법으로 시도 부탁드립니다.</p>
+               <p>아래의 설정이 OFF로 되어있어도 결제가 불가능한 경우 <span class="p_danger">ON > OFF</span>로 재설정 후 결제 부탁드립니다.</p>
+               <img src="<?=G5_THEME_URL?>/img/settle_mobile_card_v2.jpg" />   
+            </div>
+         </div>
+      </div>
+      <div class="vbank payment-type" style="<?=$hide_iche?>" id="settle_vbank">
+         <div class="order_dropdown" data-display='none'>
+            <div class="order_header">
+               <p class="payment_info_title">실시간 계좌이체 안내 <span class="title_arrow active"><img src="<?=G5_THEME_MOBILE_IMG_URL?>/icon/btn_more_gray.png" /></span></p>
+            </div>
+            <div class="order_body payment_info_body">
+               <ul class="bank_info_txt">
+                  <li>실시간 이체결제 시 화면 아해 <span>'주문하기'</span> 버튼을 클릭하시면 실시간 이체 결제 창이 나타납니다.</li>
+                  <li>실시간 이체 결제 신청 시 승인 진행에 다소 시간이 소요될 수 있으므로 <span>'중지','새로고침'을 누르지 마시고</span> 교육시청 완료 화면이 나타날 때까지 기다려 주십시오.</li>
+               </ul>
+               <div class="bank_info_box">
+                  <p class="title">실시간 계좌 이체 서비스</p>
+                  <ul>
+                     <li><span>은행계좌만 있으면 누구나 이용</span>하는 서비스</li>
+                     <li>별도의 신청없이 사용가능</li>
+                     <li><span>자신의 거래은행의 계좌로부터 바로 지불</span>하는 서비스</li>
+                     <li><span>결제 시 공인인증서가 반드시 필요합니다.</span></li>
+                  </ul>
+               </div>
+            </div>
+         </div>   
+      </div>
+<?php   
+   if ($default['de_bank_use']) {
+      // 은행계좌를 배열로 만든후
+      $str = explode("\n", trim($default['de_bank_account']));
+?>
+                  <!-- 무통장입금 -->
+                  <div class="bank payment-type" style="<?=$hide_bank?>" id="settle_bank">
+                     <div class="bank-list">
+                        <ul>
+                           <li><span class="title">예금주</span><?php echo $default['de_admin_company_name']; ?></li>
+                           <li>
+                              <span class="title">계좌번호</span>
+<?php
+                  if (count($str) <= 1) {
+?>
+                        <div class="form-radio">
+                           <div class="f">
+                              <input type="hidden" id="od_bank_account" class="bank_account" name="od_bank_account" value="<?=$str[0]?>">
+                              <label for="<?=$str[0]?>"><?=$str[0]?></label>
+                           </div>
+                        </div>
+<?php                  
+                  } else {
+                     for ($i=0; $i<count($str); $i++) {
+                        $str2[$i] = explode(" ",$str[$i]);
+                        if ($save_settle_bank_name == '' && $i == 0) $checked = "checked";
+                        else $checked = "";
+
+                        if (trim($save_settle_bank_name) == trim($str[$i])) $checked = "checked";
+                     
+?>
+                              
+                              <div class="form-radio">
+                                 <div class="f">
+                                    <input type="radio" name="od_bank_account" id="<?=$str[$i]?>" value="<?=trim($str[$i])?>" class="bank_account"  onclick="bankselect();" <?=$checked?> style="display:block;">
+                                    <label for="<?=$str[$i]?>"><?=$str2[$i][0]?> <?=$str2[$i][1]?></label>
+                                 </div>
+                              </div>   
+<?php
+                     }
+                  }
+?>
+                           </li>
+                           <li>
+                           <span class="title">입금자명</span>
+                           <?php if ($member[mb_3] == '14') {?>
+                           <input type="text" name="od_deposit_name" id="od_deposit_name" maxlength="20" class="info-cont" placeholder="입금자명을 입력해주세요" value="<?=$member[child_name]?>">
+                           <?php } else {?>
+                           <input type="text" name="od_deposit_name" id="od_deposit_name" maxlength="20" class="info-cont" placeholder="입금자명을 입력해주세요" value="<?=$member[mb_name]?>">
+                           <?php } ?>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+<?php
+   }
+?>
+               </div>
+               
+               <!-- <div class="form-radio">
+                  <div class="f"><input class='order-check'type="checkbox" name="agree_payment" id="agree_payment"><label for="agree_payment"><? if ($it_teaching_aid == "Y") {?>위 구매상품,금액(할인),주소 정보에 동의합니다.<?} else {?>위 신청한 교육, 금액 할인, 체험생 정보에 동의합니다.<?}?></label></div>
+               </div> -->
+            </div>
+<?php
+}
+?>
+         </div>   
+
+
+
+         <!-- 최종 결제금액 -->
+         <div class="order_box black_border">
+            <div class="order_box_header">
+               <p class="order_title"><img src="<?=G5_THEME_URL?>/img/icon/pay_ico_05.png" /> 결제금액</p>
+            </div>
+            <div class="order_box_body">
+            <div class="pay_info_list">
+               <p>결제금액</p>
+               <p class="p_txt"><span id="span_tot_sell_price"><?php echo number_format($tot_sell_price); ?></span> 원</p>
+            </div>
+            <div class="pay_info_list">
+               <p>총 할인금액</p>
+               <p class="p_txt"><span  class="span_tot_discount">0</span>원</p>
+            </div>
+<?
+   if ($it_teaching_aid == "Y") {
+   } else {
+?>
+            <div class="pay_info_list">
+               <p>보험료</p>
+               <p class="p_txt"><span id="span_send_cost" ><?php echo number_format($send_cost); ?></p>
+            </div>
+<?
+   }   
+?>   
+            <div class="content_footer">
+               <p class="f_title">최종 결제금액</p>  
+               <p class="f_main"><span id="span_tot_price"><?php echo number_format($tot_price); ?></span>원</p>  
+            </div>
+            <input type="hidden" name="vou_amount" id="vou_amount" value="0">
+            </div>
+         </div>
+
+         <div class="order_box main_border">
+               <div class="agree_ck_wrap">
+                  <div class="ck_flex_wrap">
+                     <input class="custom_cb" type="checkbox" name="agree_payment" id="agree_payment" checked /><label for="agree_payment"><? if ($it_teaching_aid == "Y") {?>위 구매상품,금액(할인),주소 정보에 동의<?} else {?>위 신청한 교육, 금액 할인, 체험생 정보에 동의<?}?></label>
+                  </div>
+               </div>
+         </div>
+
+         <div id="display_pay_button_bank" class="fixed_btn_wrapper">
+            <!-- <a href="javascript:history.go(-1);" class="btn01 btn-full-gray"><span>취소</span></a>  -->
+            <a onclick="return forderform_check(this.form);" class="btn_submit btn-full-orange lg_btn"><span class="total_price" id="btn_total_price"><?php echo number_format($tot_price); ?></span><span>원 결제하기</span></a>  
+         </div>
+         <div id="display_pay_process" style="display:none; margin-top:30px;">
+            <img src="<?php echo G5_URL; ?>/shop/img/loading.gif" alt="">
+            <span>주문완료 중입니다. 잠시만 기다려 주십시오.</span>
+         </div>
+   </form>
+<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    // 우편번호 찾기 화면을 넣을 element
+    var element_layer = document.getElementById('layer');
+
+    function closeDaumPostcode() {
+        // iframe을 넣은 element를 안보이게 한다.
+        element_layer.style.display = 'none';
+    }
+
+    function execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 각 주소의 노출 규칙에 따라 주소를 조합한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var addr = ''; // 주소 변수
+                var extraAddr = ''; // 참고항목 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+
+                // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+                if(data.userSelectedType === 'R'){
+                    // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                    // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    // 건물명이 있고, 공동주택일 경우 추가한다.
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                    // 조합된 참고항목을 해당 필드에 넣는다.
+                    document.getElementById("od_extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("od_extraAddress").value = '';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('od_postcode').value = data.zonecode;
+                document.getElementById("od_address").value = addr;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("od_detailAddress").focus();
+
+                // iframe을 넣은 element를 안보이게 한다.
+                // (autoClose:false 기능을 이용한다면, 아래 코드를 제거해야 화면에서 사라지지 않는다.)
+                element_layer.style.display = 'none';
+            },
+            width : '100%',
+            height : '100%',
+            maxSuggestItems : 5
+        }).embed(element_layer);
+
+        // iframe을 넣은 element를 보이게 한다.
+        element_layer.style.display = 'block';
+
+        // iframe을 넣은 element의 위치를 화면의 가운데로 이동시킨다.
+        initLayerPosition();
+    }
+
+    // 브라우저의 크기 변경에 따라 레이어를 가운데로 이동시키고자 하실때에는
+    // resize이벤트나, orientationchange이벤트를 이용하여 값이 변경될때마다 아래 함수를 실행 시켜 주시거나,
+    // 직접 element_layer의 top,left값을 수정해 주시면 됩니다.
+    function initLayerPosition(){
+        var width = 300; //우편번호서비스가 들어갈 element의 width
+        var height = 400; //우편번호서비스가 들어갈 element의 height
+        var borderWidth = 5; //샘플에서 사용하는 border의 두께
+
+        // 위에서 선언한 값들을 실제 element에 넣는다.
+        element_layer.style.width = width + 'px';
+        element_layer.style.height = height + 'px';
+        element_layer.style.border = borderWidth + 'px solid';
+        // 실행되는 순간의 화면 너비와 높이 값을 가져와서 중앙에 뜰 수 있도록 위치를 계산한다.
+        element_layer.style.left = (((window.innerWidth || document.documentElement.clientWidth) - width)/2 - borderWidth) + 'px';
+        element_layer.style.top = (((window.innerHeight || document.documentElement.clientHeight) - height)/2 - borderWidth) + 'px';
+    }
+</script>
+<script>
+function bankselect(){
+   var a=$('#od_bank_account').val();
+
+   // 은행 선택 시 처리할 내용이 있다면 추가
+
+   //   //window.alert(a);   
+   //   var arrString = a.split(" ");
+   //
+   //   $('#bankview').text(arrString[1]); 
+   //   $('#label_account').text(arrString[0]); 
+}   
+$(function() {
+/*
+   개별 쿠폰 - 해당하는 교육상품에 적용되는 쿠폰
+*/
+   var $cp_btn_el;
+    var $cp_row_el;
+    var zipcode = "";
+   
+   $(document).on("click", ".cp_btn", function() {
+      var it_id = $("#it_id").val();
+
+      $("#cp_frm").remove();
+        $.post(
+            "/mobile/shop/orderitemcoupon_mobile.php",
+            { it_id: it_id,  sw_direct: "<?php echo $sw_direct; ?>" },
+            function(data) {
+                $("#itemcoupon_div").after(data);
+            }
+        );
+   });
+
+    $(document).on("click", ".cp_apply", function() {
+        var $el = $(this).closest("div");
+        var cp_id   = $el.find("input[name='f_cp_id[]']").val();
+        var subj   = $el.find("input[name='f_cp_subj[]']").val();
+        var price   = $el.find("input[name='f_cp_prc[]']").val();
+        var sell_price;
+        if(parseInt(price) == 0) {
+            if(!confirm(subj+"쿠폰의 할인 금액은 "+price+"원입니다.\n쿠폰을 적용하시겠습니까?")) {
+                return false;
+            }
+        }
+        // 이미 사용한 쿠폰이 있는지
+        var cp_dup = false;
+        var cp_dup_idx;
+        var $cp_dup_el;
+        $("input[name^=cp_id]").each(function(index) {
+            var id = $(this).val();
+            if(id == cp_id) {
+                cp_dup_idx = index;
+                cp_dup = true;
+                $cp_dup_el = $(this).closest("div");;
+                return false;
+            }
+        });
+        if(cp_dup) {
+            var it_name = $("input[name='it_name["+cp_dup_idx+"]']").val();
+            if(!confirm(subj+ "쿠폰은 "+i
