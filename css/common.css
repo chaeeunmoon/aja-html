@@ -741,7 +741,7 @@ caption {
 
 .phone_input_box select {
   width: 30%;
-  height: 100%;
+  height: 2.8rem;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 0.7rem 0.5rem;
@@ -1078,7 +1078,7 @@ input[type='checkbox']:checked {
 
 .custom_cb + label:before {
   content: '';
-  margin-right: 0.3em;
+  margin-right: 0.5em;
   display: inline-block;
   vertical-align: text-top;
   width: 1.3rem;
