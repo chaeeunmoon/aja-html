@@ -383,6 +383,11 @@
         .sub_info_wrap {
             padding: 1rem 0.95rem;
         }
+
+        .tab_inner_box .content-box-white {
+            padding: 1rem;
+            box-shadow: none;
+        }
     </style>
 </head>
 
@@ -424,7 +429,7 @@
                             </div>
                             <div class="info_btn_box">
                                 <!-- 찜하기 버튼 경우, active toggle -->
-                                <button class="i_btn active"><span class="like_ico"></span> 찜하기</button>
+                                <button class="i_btn"><span class="like_ico"></span> 찜하기</button>
                                 <button class="i_btn modal_btn" data-modal="sns_share"><img src="images/icon/btn_share.svg" alt="찜하기"> 공유하기</button>
                             </div>
                             <!--S: sns 공유-->
@@ -578,16 +583,159 @@
                             </div>
                         </div>
                         <!-- 교육후기 (스타일 동의)-->
-                        <div class="tab-content" style="display: none;">
-                            <div style="height: 100px; font-size: 2rem; line-height: 100px;">교육후기 탭</div>
-                        </div>
+                        <div class="tab-content tab_inner_box" style="display: none;">
+                            <!-- 후기 총점 -->
+                            <div class="content-box-white">
+                                <p class="program-title">후기 총점</p>
+                                <div class="total-star">
+                                    <p>총 <span class="orange">5</span>건의 교육후기가 있습니다.</p>
+                                    <span class="star"><span class="orange-star" style="width:85.60%;">별점</span></span>
+                                    <div class="total-star-num"><strong>86</strong>/100점</div>
+                                </div>
+                            </div>
+                            <!--교육후기-->
+                            <div class="content-box-white" id="content-box-white">
+                                <p class="program-title">교육후기</p>
+                                <div class="edu-detail-reply">
+                                    <div class="write-reply">
+                                                    <input type="text" class="txt-reply" name="" readonly="" placeholder="후기쓰기" onclick="shop_reply()">
+                                                </div>
+                            
+                                    <p class="edu-reply-noti">후기를 작성해주시면 <span class="orange">500point 적립!</span></p>
+                            
+                            
+                                    <div class="reply-list">
+                                        <ul>
+                            
+                                            <li>
+                                                <div><span class="star"><span class="orange-star" style="width:28%;">별점</span></span>
+                                                                                        
+                                                </div>
+                                                <div class="reply-info"><span class="name">*住</span><span class="date">2021.04.19</span></div>
+                                                <!--<button class="ico-reply-toggle">열기</button>-->
+                                                <div class="edu-reply list-tr">
+                                                    <p class="reply"><a href="javascript:void(0)">초등학생 프로그램에 미취학아동들이 많았네요.</a></p>
+                                                    
+                                                </div>
+                                                <div class="edu-reply content-tr">
+                                                    <div class="img-area" style="padding-top:10px;">
+                                                        <ul>
+                                                            <li><img src="/use_img/20210419100924.jpeg"></li>
+                                                            <li></li>
+                                                            <li></li>
+                                                        </ul>
+                                                    </div>
+                                                    <p class="reply"><a href="javascript:void(0)">4학년 아이가 미취학 아이들과 한조로 편성되어 있었네요. 다른 조에는 그나마 초등학생들이 있던거 같던데 사전에 인적사항 받으셨으면 고려하셨어야 한다고 생각합니다. 그리고 
+                            너프건으로 예매를 했는데 다른 프로그램이 진행되었습니다. 
+                            프로그램 운영에 문제가 있다고 봅니다.</a></p>
+                                                </div>
+                                                <!--div class="reply-02-num on"><a href="#none">답글<span>2</span></a></div>
+                                                <div class="reply-list-02">
+                                                    <ul>
+                                                        <li>
+                                                            <p class="reply-02">사는냐? 죽는냐? 그것이 문제로다!<br>To Be Or Not To Be!</p>
+                                                            <div class="reply-info"><span class="name">홍길동***</span><span class="date">2017-02-19</span></div>
+                                                        </li>
+                                                        <li>
+                                                            <p class="reply-02">그들은 하루 24시간을 바쁘게 살아가는 과정에서 문득자신이 행복하다는걸 깨닫는다.</p>
+                                                            <div class="reply-info"><span class="name">홍길동***</span><span class="date">2017-02-19</span></div>
+                                                        </li>
+                                                    </ul>
+                                                </div-->
+                                            </li>
+                                </div>
+                            </div>
+                            </div>
+                        </div>    
                         <!-- 취소/환불 (스타일 동일)-->
-                        <div class="tab-content" style="display: none;">
-                            <div style="height: 100px; font-size: 2rem; line-height: 100px;">취소/환불 탭</div>
+                        <div class="tab-content tab_inner_box" style="display: none;">
+                            <div class="content-box-white">
+                                <p class="program-title">취소환불정책</p>
+                                    <p style="font-size:14.6667px;line-height:1.8;"><span style="font-size:11pt;">5일 전 취소 : 전액 환불</span></p><p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;"><span style="line-height:1.8;font-size:11pt;">4일 전 취소 : 90% 환불</span><br><span style="line-height:1.8;font-size:11pt;">3일 전 취소 : 70% 환불</span></span></p><p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;">2일 전 취소 : 70% 환불<br><span style="line-height:1.8;font-size:11pt;"></span><span style="line-height:1.8;font-size:11pt;">1일 전 취소 : 환불 불가</span>&nbsp;</span></p><p style="font-size:14.6667px;line-height:1.8;"><span style="line-height:1.8;font-size:11pt;"></span></p><p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;"><span style="line-height:1.8;font-size:11pt;">&nbsp; 당일 취소 : 환불 불가</span></span></p><p><span style="font-size:14.6667px;">&nbsp;</span></p><p style="line-height:2;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">[취소수수료 계산 기준]</span></font></p><p style="line-height:2;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">· 취소수수료는 신청금액을 기준으로 계산됩니다.</span></font></p><p style="line-height:2;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">· 일정변경을 위한 결제 취소 시에도 취소수수료가 부과됩니다.</span></font></p><p style="line-height:2;"><span style="font-family:'돋움', dotum;font-size:14.6667px;">·</span><span style="font-family:'돋움', dotum;font-size:14.6667px;">&nbsp;</span><span style="font-size:14.6667px;">구매당일 취소시 전액환불됩니다.</span><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font></p><p style="line-height:1.8;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font></p><p style="line-height:2;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">· 전체취소 시</span></font></p><p style="line-height:2;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">쿠폰 사용금액 → 결제금액 → 포인트 사용금액 순으로 차감 처리됩니다.</span></font></p><p style="line-height:1.8;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font></p><p style="line-height:2;"><span style="font-family:'돋움', dotum;font-size:14.6667px;">· 부분취소 시</span></p><p style="line-height:2;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">결제금액 → 쿠폰 사용금액 → 포인트 사용금액 순으로 차감 처리 됩니다.</span></font></p><p><span style="line-height:1.8;font-size:11pt;">
+                &#8203;</span>&nbsp;</p>  
+                            </div>
                         </div>
                         <!-- 교육문의 (스타일 동일)-->
-                        <div class="tab-content" style="display: none;">
-                            <div style="height: 100px; font-size: 2rem; line-height: 100px;">교육문의 탭</div>
+                        <div class="tab-content tab_inner_box" style="display: none;">
+                            <div class="content-box-white">
+                                <p class="program-title">교육문의</p>
+                                <div class="edu-detail-reply">
+                                    <div class="write-reply">
+                                                    <input type="text" class="txt-reply" name="" readonly="" placeholder="문의쓰기" onclick="shop_itemqa_reply()">
+                                                </div>
+                                    <div class="reply-list">
+                                        <ul>
+                            
+                                            <li>
+                                                <div style="display:flex; justify-content:space-between; align-items:center">
+                                                                                                        <div style="margin:8px 0px 13px;">
+                                                            <span style="font-size:15px; color:#6f6f6f;">[ 답변전 ]</span>
+                                                        </div>
+                                                                            <div class="reply-info"><span class="name">이*정</span><span class="date">2021.04.18</span>
+                                                                            
+                                                    </div>
+                                                </div>
+                                                <div class="edu-reply list-tr" style="padding-bottom:20px;">
+                                                    <p class="reply" style="font-weight:bold;">키즈런 장소 <img src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif" alt="비밀글" border="0"><i class="icon i-new"></i></p>
+                                                </div>
+                                                <div class="edu-reply content-tr" style="padding-bottom:20px;">
+                                                    <p class="reply">비밀글로 보호된 문의입니다.</p>
+                                                </div>
+                            
+                            
+                            
+                                                <!-- 관리자 댓글 -->
+                                            
+                                            </li>
+                            
+                                            <li>
+                                                <div style="display:flex; justify-content:space-between; align-items:center">
+                                                                                                        <div style="margin:8px 0px 13px;">
+                                                            <span style="font-size:15px; color:#6f6f6f;">[ 답변전 ]</span>
+                                                        </div>
+                                                                            <div class="reply-info"><span class="name">안*소</span><span class="date">2021.04.17</span>
+                                                                            
+                                                    </div>
+                                                </div>
+                                                <div class="edu-reply list-tr" style="padding-bottom:20px;">
+                                                    <p class="reply" style="font-weight:bold;">아이들 학년문의요 <img src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif" alt="비밀글" border="0"><i class="icon i-new"></i></p>
+                                                </div>
+                                                <div class="edu-reply content-tr" style="padding-bottom:20px;">
+                                                    <p class="reply">비밀글로 보호된 문의입니다.</p>
+                                                </div>
+                            
+                            
+                            
+                                                <!-- 관리자 댓글 -->
+                                            
+                                            </li>
+                            
+                                            <li>
+                                                <div style="display:flex; justify-content:space-between; align-items:center">
+                                                                                <div style="margin:8px 0px 13px;">
+                                                            <span style="font-size:15px; color:#ff8711;">[ 답변완료 ]</span>
+                                                        </div>
+                                                                                                    <div class="reply-info"><span class="name">김*희</span><span class="date">2020.07.17</span>
+                                                                            
+                                                    </div>
+                                                </div>
+                                                <div class="edu-reply list-tr" style="padding-bottom:20px;">
+                                                    <p class="reply" style="font-weight:bold;">이용건번호문의 <img src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif" alt="비밀글" border="0"><i class="icon i-new"></i></p>
+                                                </div>
+                                                <div class="edu-reply content-tr" style="padding-bottom:20px;">
+                                                    <p class="reply">비밀글로 보호된 문의입니다.</p>
+                                                </div>
+                            
+                            
+                            
+                                                <!-- 관리자 댓글 -->
+                                            
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                             
+                            </div>
                         </div>
                         <!--tab content end-->
                         <!-- 추가 정보 -->
