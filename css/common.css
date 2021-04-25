@@ -732,7 +732,7 @@ caption {
 
 .line_input_group.login_input input:focus {
   outline: none;
-  border-bottom: 2px solid #757575;
+  border-bottom: 1.5px solid #757575;
 }
 
 .line_input_group.login_input input:valid {
