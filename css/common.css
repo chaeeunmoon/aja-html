@@ -717,17 +717,17 @@ caption {
 /* form starting stylings ------------------------------- */
 .line_input_group.login_input {
   position: relative;
-  margin-bottom: 45px;
+  margin-bottom: 2.5rem;
 }
 
 .line_input_group.login_input input {
   font-family: 'Noto Sans KR', sans-serif;
   font-size: 1.125rem;
-  padding: 10px 10px 10px 5px;
+  padding: 0.4rem 0.4rem 0.4rem 0.3rem;
   display: block;
   width: 100%;
   border: none;
-  border-bottom: 1px solid #757575;
+  border-bottom: 1.5px solid #757575;
 }
 
 .line_input_group.login_input input:focus {
@@ -742,7 +742,7 @@ caption {
 /* LABEL ======================================= */
 .line_input_group.login_input label {
   color: #999;
-  font-size: 1.125rem;
+  font-size: 1.12rem;
   font-weight: normal;
   position: absolute;
   pointer-events: none;
@@ -757,7 +757,7 @@ caption {
 /* active state */
 .line_input_group.login_input input:focus ~ label,
 .line_input_group.login_input input:valid ~ label {
-  top: -1.3rem;
+  top: -1.2rem;
   font-size: 0.875rem;
   color: #ff8611;
 }
