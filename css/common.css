@@ -297,6 +297,10 @@ caption {
   height: auto;
 }
 
+#navi-area .ico-top {
+  top: -7.5rem;
+}
+
 .m_action_bar {
   position: fixed;
   left: 0;
@@ -1404,6 +1408,7 @@ input[type='checkbox']:checked {
   overflow-y: hidden;
   white-space: nowrap;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .scroll_wrapper::-webkit-scrollbar {
@@ -1588,11 +1593,12 @@ input[type='checkbox']:checked {
 
 .m_item_scroll {
   width: 100%;
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
   padding: 0.7em 1.7em 0.7em;
   scrollbar-width: none;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 .m_item_scroll::-webkit-scrollbar {
