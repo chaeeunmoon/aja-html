@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1:1 문의하기</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <style>
+        .active {
+            overflow-x:auto;overflow-y:hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="iframe_wrapper theme_wrapper">
+            <div class="theme_header">
+                <div class="page_title_area">
+                    <a class="back_btn" href="javascript:history.back();">뒤로가기</a>
+                    <h2 class="page_title">문의하기</h2>
+                </div>
+            </div>
+            <div class="iframe_body theme_body">
+                <iframe src="https://pf.kakao.com/_xmEiFC" scrolling=yes name="kakao_inquiry"></iframe>
+            </div>
+        </div>
+        <!--footer-->
+        <!--S: 위로가기 / 하단 바 (tail.php)-->
+        <div id="navi-area"> <!-- 보일때 -->
+            <!-- <div id="navi-area" style="height:55px">  감춰져 있을때 -->
+                <button type="button" class="ico-top" style="display: none;">위로 가기</button>
+                <div class="m_action_bar">
+                    <ul class="action_icon_list">
+                        <li><a href="#"><img src="images/icon/ico_botm_home.png" alt="홈"></a></li>
+                        <li><a href="#" data-modal="kakao_inquiry" class="modal_btn"><img src="images/icon/ico_botm_call.png" alt="문의"></a></li>
+                        <li><a href="my_page.html"><img src="images/icon/ico_botm_my.png" alt=마이페이지"></a></li>
+                        <li><a href="search.html"><img src="images/icon/ico_botm_search.png" alt="검색"></a></li>
+                        <li class="item_like"><a href="<?=G5_URL?>/shop/interest_list.php"><span class="num">1</span><img src="images/icon/ico_botm_select.png" alt="찜하기"></a></li>
+                    </ul>
+                </div>
+        </div>
+        <!--E: 위로가기 / 하단 바-->
+    </div>
+</body>
+</html>

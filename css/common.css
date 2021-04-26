@@ -432,6 +432,7 @@ caption {
 }
 
 .rounded_header .modal_back,
+.iframe_header .modal_back,
 .page_title_wrap .page_arrow,
 .theme_wrapper .page_title_area .back_btn,
 .page_title_area.round .back_btn {
@@ -463,11 +464,11 @@ caption {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   padding: 0;
 }
-.fixed_btn_wrapper.flex_type > a, 
+.fixed_btn_wrapper.flex_type > a,
 .fixed_btn_wrapper.flex_type > button {
   border-radius: 0;
   padding: 1.1rem 2rem;
@@ -551,6 +552,7 @@ caption {
 
 .capsule_btn.lg {
   width: 100%;
+  display: block;
   text-align: center;
   font-weight: 500;
   padding: 0.7rem 0;
@@ -591,9 +593,13 @@ caption {
   margin-left: 2vw;
 }
 
-.btn_radio label:nth-of-type(2n) { margin-left: 2vw; }
+.btn_radio label:nth-of-type(2n) {
+  margin-left: 2vw;
+}
 
-.btn_radio label:hover { border-color: #ff8611; }
+.btn_radio label:hover {
+  border-color: #ff8611;
+}
 
 .btn_radio input[type='radio']:focus + label,
 .btn_radio input[type='checkbox']:focus + label,
@@ -603,7 +609,9 @@ caption {
   color: #ff8611;
 }
 
-.btn_radio input[type='radio']:checked + label { border-color: #ff8611; }
+.btn_radio input[type='radio']:checked + label {
+  border-color: #ff8611;
+}
 
 .rgs_ctg_list {
   width: 100%;
@@ -611,7 +619,7 @@ caption {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   margin: 0 auto;
 }
 
@@ -943,6 +951,7 @@ caption {
   color: #ff3d55;
   line-height: 1.2;
   margin-bottom: 1.3em;
+  word-break: break-all;
 }
 
 .btn_rounded {
@@ -1229,21 +1238,25 @@ input[type='checkbox']:checked {
   width: 49%;
 }
 /* iframe 모달*/
+
 .iframe_modal {
   background-color: #ff8711;
 }
+
 .iframe_modal .modal_content {
   max-width: 100%;
   width: 100%;
   height: 100vh;
 }
 
-.iframe_modal iframe {
+.iframe_modal iframe,
+.iframe_body iframe {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
-  width: 100%;
+  width: 1px;
+  min-width: 100%;
   height: 100vh;
-  border-top-left-radius: 60px;
+  border-top-left-radius: 3rem;
 }
 
 .iframe_modal .modal_header {
@@ -1265,12 +1278,18 @@ input[type='checkbox']:checked {
   border-top-left-radius: 60px;
   overflow: hidden;
   background-color: #fff;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
+.iframe_body::-webkit-scrollbar,
 .iframe_modal iframe::-webkit-scrollbar {
   display: none; /* Chrome, Safari, Opera*/
 }
 
+.iframe_wrapper {
+  position: relative;
+}
 /* hero_modal */
 #hero_modal .modal_body,
 #hero_modal .modal_header {
@@ -1952,7 +1971,8 @@ input[type='checkbox']:checked {
 }
 /* E: index css */
 
-.theme_wrapper {
+.theme_wrapper,
+.iframe_wrapper {
   width: 100%;
   background: rgb(255, 134, 17);
   background: -o-linear-gradient(
@@ -1964,7 +1984,8 @@ input[type='checkbox']:checked {
   );
   background: -webkit-gradient(
     linear,
-    left top, left bottom,
+    left top,
+    left bottom,
     from(rgba(255, 134, 17, 1)),
     color-stop(39%, rgba(255, 134, 17, 1)),
     color-stop(52%, rgba(255, 255, 255, 1)),
@@ -2069,7 +2090,7 @@ input[type='checkbox']:checked {
   width: auto !important;
   height: 1.5rem !important;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 /* E: mypage css */
@@ -2281,12 +2302,12 @@ input[type='checkbox']:checked {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   vertical-align: middle;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   border-bottom: 2px solid #0d0d0d;
   padding: 0.6rem 0.7rem;
 }
@@ -2437,7 +2458,7 @@ input[type='checkbox']:checked {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 /* tab_content */
