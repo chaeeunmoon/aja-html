@@ -20,6 +20,20 @@
 </head>
 <body>
     <div id="wrap">
+        <!-- 1:1 문의 iframe open -->
+	<div id="kakao_inquiry" class="modal iframe_modal popup show">
+		<div class="modal_content">
+			<div class="modal_header rounded_header">
+				<span class="modal_close modal_back"></span>
+				<p class="modal_title">문의하기</p>
+			</div>
+			<div class="modal_body">
+				<div id="url-wrapper">
+                    <iframe src="https://pf.kakao.com/_xmEiFC" name="kakao_inquiry"></iframe>
+                </div>
+			</div>
+		</div>
+	</div>
         <div class="iframe_wrapper theme_wrapper">
             <div class="theme_header">
                 <div class="page_title_area">
@@ -94,8 +108,10 @@
     <script type="text/javascript">
         $(document).ready(function() {
           if(navigator.userAgent.match(/(iPod|iPhone|iPad)/)){
+              //아이폰일때
             $("#url-wrapper iframe").attr("scrolling","no");
           }else{
+              //아닐때
             $("#url-wrapper iframe").attr("scrolling","yes");
           }
         });
