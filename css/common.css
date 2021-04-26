@@ -293,6 +293,10 @@ caption {
 }
 /*footer renewal (20210414) */
 /* action bar renewal (20210416)*/
+#navi-area {
+  height: auto;
+}
+
 .m_action_bar {
   position: fixed;
   left: 0;
