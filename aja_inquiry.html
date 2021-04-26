@@ -13,6 +13,10 @@
     <!-- 추가 css-->
     <link rel="stylesheet" href="css/font-style.css">
     <link rel="stylesheet" href="css/common.css">
+    <style>
+        #url-wrapper{overflow: auto; -webkit-overflow-scrolling:touch !important; height: 100%;  }
+        #url-wrapper iframe{height: 100%; width: 1px !important; min-width: 100% !important; *width: 100%;}
+    </style>
 </head>
 <body>
     <div id="wrap">
@@ -24,8 +28,51 @@
                 </div>
             </div>
             <div class="iframe_body theme_body">
-                <iframe src="https://pf.kakao.com/_xmEiFC" name="kakao_inquiry"></iframe>
+                <div id="url-wrapper">
+                    <iframe src="https://pf.kakao.com/_xmEiFC" name="kakao_inquiry"></iframe>
+                </div>
             </div>
+        </div>
+        <!--footer (tail.php) -->
+        <div class='footer' id="footer">
+            <footer>
+                <!--사업자 정보-->
+                <div class="company_info_wrap">
+                    <div class="info_header">
+                        <h6 class="info_title">아자스쿨(주) 사업자 정보 <span class="slide_arrow"><img src='images/icon/btn_more_gray.png' alt="화살표"></span></h6>
+                    </div>
+                    <!--slide info-->
+                    <div class="info_body">
+                        <ul class="info_list">
+                            <li>서울특별시 마포구 마포대로 122 프론트원(FRONT1) 15F</li>
+                            <li>대표이사 : 황선하 / 사업자등록번호 : 548-87-00240</li>
+                            <li>통신판매업신고 : 2018-서울서초-01708 호</li>
+                            <li><a href="business_information.html">사업자정보 ▶</a></li>
+                        </ul>
+                        <div class="call_info_box">
+                            <ul class="info_list">
+                                <li><span class="f_bold">전화문의 가능시간</span></li>
+                                <li><span class="f_bold">고객센터 </span> <a href="tel:02-866-7977">02-866-7977</a> / <a
+                                        href="mailto:help@ajaschool.co.kr">help@ajaschool.co.kr</a></li>
+                                <li><span class="f_bold">평일 :</span> 10:00 ~ 18:30 (점심시간: 12:30 ~ 13:30)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- fnb list -->
+                <div>
+                    <ul class="fnb_wrap">
+                        <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=privacy">개인정보 취급방침</a></li>
+                        <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=provision">이용약관</a></li>
+                        <li class="fnb_link"><a href="business_information.html">사업자 정보</a></li>
+                        <li class="fnb_link"><a href="#" data-modal="kakao_inquiry" class="modal_btn">문의사항</a></li>
+                    </ul>
+                </div>
+                <!--copyright-->
+                <div class="cpr_wrap">
+                    <p class="f_copyright">ⓒ 아자스쿨 주식회사</p>
+                </div>
+            </footer>
         </div>
         <!--footer-->
         <!--S: 위로가기 / 하단 바 (tail.php)-->
@@ -44,5 +91,14 @@
         </div>
         <!--E: 위로가기 / 하단 바-->
     </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+          if(navigator.userAgent.match(/(iPod|iPhone|iPad)/)){
+            $("#url-wrapper iframe").attr("scrolling","no");
+          }else{
+            $("#url-wrapper iframe").attr("scrolling","yes");
+          }
+        });
+        </script>
 </body>
 </html>

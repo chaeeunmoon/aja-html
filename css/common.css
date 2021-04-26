@@ -1418,7 +1418,7 @@ input[type='checkbox']:checked {
 /* S: index css */
 #wrap {
   position: relative;
-  padding-bottom: 3.8rem;
+  padding-bottom: 4.5rem;
 }
 
 .m_wrap {
@@ -2526,3 +2526,53 @@ input[type='checkbox']:checked {
   justify-content: center;
 }
 /* tab_content */
+/* S: list style */
+.list_wrapper {
+  /*padding: 1.5rem 1.25rem;*/
+  margin-top: 1rem;
+}
+
+.list_nav_wrap {
+  padding: 1rem 0;
+}
+
+.list_nav_wrap .scroll_wrapper {
+  padding: 0 1rem;
+}
+
+.list_nav_item {
+  display: inline-block;
+  border-radius: 3rem;
+  border: 1px solid #e1e1e1;
+  margin-right: 0.5rem;
+  color: #828282;
+}
+
+.list_nav_item.active {
+  background-color: #ff8611;
+  border-color: #ff8611;
+  color: #fff;
+}
+
+.list_nav_item a {
+  width: 100%;
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 400 !important;
+  letter-spacing: 0.5px;
+  padding: 0.7rem 1rem 0.8rem;
+}
+
+.list_wrapper .list_item_wrap {
+  padding: 0;
+}
+
+.list_wrapper .list_header,
+.list_wrapper .list_body {
+  padding: 0.5rem 1.25rem;
+}
+
+.list_wrapper .square_item_list.list_item_wrap li {
+  width: 47.5%;
+}
+/* E: list style */
