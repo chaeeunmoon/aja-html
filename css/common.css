@@ -1249,6 +1249,11 @@ input[type='checkbox']:checked {
   height: 100vh;
 }
 
+.iframe_body,
+.iframe_body iframe > html {
+  width: 100%;
+}
+
 .iframe_modal iframe,
 .iframe_body iframe {
   -ms-overflow-style: none; /* IE and Edge */
@@ -1404,7 +1409,7 @@ input[type='checkbox']:checked {
 /* S: index css */
 #wrap {
   position: relative;
-  padding-bottom: 5rem;
+  padding-bottom: 3.8rem;
 }
 
 .m_wrap {
