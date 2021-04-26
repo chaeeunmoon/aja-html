@@ -1637,21 +1637,37 @@ input[type='checkbox']:checked {
   display: block;
 }
 
+.block_box a {
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 0;
+}
+
+.block_box a .item_thumb,
+.block_box a .item_info {
+  width: 47.5%;
+}
+
 .m_item_scroll .item_thumb,
-.list_item_wrap .item_thumb {
+.list_item_wrap .item_thumb,
+.block_box a .item_thumb {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
 }
 
 .m_item_scroll .item_thumb:after,
-.list_item_wrap .item_thumb:after {
+.list_item_wrap .item_thumb:after,
+.block_box a .item_thumb:after {
   content: '';
   display: block;
 }
 
 .m_item_scroll .item_thumb > img,
-.list_item_wrap .item_thumb > img {
+.list_item_wrap .item_thumb > img,
+.block_box a .item_thumb > img {
   width: 100%;
   position: absolute;
   top: 50%;
@@ -1669,6 +1685,28 @@ input[type='checkbox']:checked {
   word-break: break-all;
 }
 
+.info_label_block {
+  margin-bottom: 0.5rem;
+}
+
+.info_label_block .item_label,
+.item_info .item_label {
+  display: inline-block;
+  background-color: #f8f8fa;
+  border-radius: 0.5rem;
+  font-size: 0.87rem;
+  color: #686d71;
+  letter-spacing: 0.2px;
+  padding: 0.2rem 0.5rem 0.35rem;
+  text-align: center;
+  margin-right: 0.3rem;
+}
+
+.block_box .item_info .item_label {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.5rem 0.35rem;
+}
+
 .item_info .item_title {
   width: 100%;
   display: block;
@@ -1680,6 +1718,10 @@ input[type='checkbox']:checked {
   line-height: 1.35;
   margin-bottom: 0.8em;
   white-space: normal;
+}
+
+.block_box .item_info .item_title {
+  margin-bottom: 1.5rem;
 }
 
 .sale_percent {
@@ -1778,7 +1820,8 @@ input[type='checkbox']:checked {
   width: 48%;
 }
 
-.square_item_list .item_thumb:after {
+.square_item_list .item_thumb:after,
+.block_box a .item_thumb:after {
   padding-bottom: 100%;
 }
 
@@ -2378,12 +2421,18 @@ input[type='checkbox']:checked {
 
 .search_content_wrap .title span {
   font-family: 'Roboto', sans-serif;
+  position: relative;
+  top: -0.05rem;
 }
 
 /* 인기검색어 목록 */
 .popular_search_list {
   margin-top: 1.5rem;
   text-align: center;
+}
+
+.search_result_list {
+  margin-top: 0.8rem;
 }
 
 .search_word {
