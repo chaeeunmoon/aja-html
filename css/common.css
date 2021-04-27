@@ -619,7 +619,7 @@ caption {
   width: 34vw;
   font-size: 0.9rem;
   font-weight: bold;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e0e0e0 !important;
   border-radius: 30px;
   text-align: center;
   margin-left: 2vw;
@@ -629,23 +629,20 @@ caption {
   margin-left: 2vw;
 }
 
-.btn_radio label:hover {
-  border-color: #ff8611;
-}
-
-.btn_radio input[type='radio']:focus + label,
-.btn_radio input[type='checkbox']:focus + label,
 .btn_radio input[type='radio']:checked + label,
 .btn_radio input[type='checkbox']:checked + label {
-  /* border: 1px solid #ff8611;
-  color: #ff8611; */
   background-color: #ff8611 !important;
   color: #fff !important;
-  border-color: #ff8611 !important;
+  border: 1px solid #ff8611 !important;
 }
 
-.btn_radio input[type='radio']:checked + label {
-  border-color: #ff8611;
+.btn_radio input[type='radio']:not(:checked) + label,
+.btn_radio input[type='radio']:not(:checked) + label:hover,
+.btn_radio input[type='checkbox']:not(:checked) + label,
+.btn_radio input[type='checkbox']:not(:checked) + label:hover {
+  border: 1px solid #e0e0e0 !important;
+  background-color: #fff !important;
+  color: #828282 !important;
 }
 
 .rgs_ctg_list {
@@ -2184,6 +2181,10 @@ input[type='checkbox']:checked {
   object-fit: contain;
 }
 
+.account_txt .black,
+.account_txt span {
+  margin-left: 0.2rem;
+}
 /* E: mypage css */
 
 /* S: category menu css */
@@ -2530,7 +2531,7 @@ input[type='checkbox']:checked {
 }
 
 .tab_nav_wrap {
-  padding: 0 1.8rem 2rem;
+  padding: 2.5rem 1.8rem 2rem;
 }
 
 .tab_nav_wrap .tab_nav_item {
