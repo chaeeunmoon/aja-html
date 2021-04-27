@@ -548,6 +548,10 @@ caption {
   padding: 0.9rem 0;
 }
 
+.outline_btn:focus {
+  outline: none;
+}
+
 .outline_btn.lg,
 .solid_btn.lg {
   width: 100%;
@@ -555,17 +559,7 @@ caption {
   display: block;
 }
 
-.outline_btn.secondary {
-  background-color: #fff;
-  border: 1px solid #e1e1e1;
-  border-radius: 3rem;
-  font-size: 0.9rem;
-  color: #232323 !important;
-  font-weight: 500;
-  padding: 0.65rem 0 0.75rem;
-}
-
-.outline_btn.secondary .more_icon {
+.capsule_btn.gray .more_icon {
   height: 0.8rem;
   transform: rotate(90deg);
   margin-left: 1rem;
@@ -573,16 +567,12 @@ caption {
   top: 0.1rem;
 }
 
-.outline_btn:focus {
-  outline: none;
-}
-
 .capsule_btn.gray {
   border: 1px solid #e1e1e1;
   background-color: #fff;
   color: #828282 !important;
   font-size: 1rem;
-  padding: 0.5rem;
+  padding: 0.5rem 0 0.6rem;
   border-radius: 3rem;
 }
 
@@ -2124,7 +2114,6 @@ input[type='checkbox']:checked {
 
 .sns_login_wrap .sns_login_list {
   text-align: center;
-  margin: 1rem 0 0;
 }
 
 .sns_login_wrap .sns_login_list li {
