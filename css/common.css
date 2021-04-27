@@ -45,6 +45,21 @@ body {
   box-sizing: border-box;
 }
 
+/* 모바일 클릭시 파란 박스 없애기 */
+a:active,
+a:hover,
+a:visited,
+a:focus,
+button:active,
+button:hover,
+button:focus,
+button:visited {
+  outline: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+/* 모바일 클릭시 파란 박스 없애기 */
+
 h1,
 h2,
 h3,
@@ -632,8 +647,11 @@ caption {
 .btn_radio input[type='checkbox']:focus + label,
 .btn_radio input[type='radio']:checked + label,
 .btn_radio input[type='checkbox']:checked + label {
-  border: 1px solid #ff8611;
-  color: #ff8611;
+  /* border: 1px solid #ff8611;
+  color: #ff8611; */
+  background-color: #ff8611 !important;
+  color: #fff !important;
+  border-color: #ff8611 !important;
 }
 
 .btn_radio input[type='radio']:checked + label {
