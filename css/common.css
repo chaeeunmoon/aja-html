@@ -1556,19 +1556,23 @@ input[type='checkbox']:checked {
   padding-bottom: 0;
 }
 
-.category_list li .ctg_thumbnail {
+.category_list li .ctg_thumbnail,
+.ctg_nav_item .ctg_thumbnail {
   border-radius: 1.3rem;
   overflow: hidden;
 }
 
-.category_list li .ctg_thumbnail > img {
+.category_list li .ctg_thumbnail > img,
+.ctg_nav_item .ctg_thumbnail > img {
   width: 100%;
-  border-radius: 1.3rem;
+  /* border-radius: 1.3rem; */
 }
 
-.category_list li .ctg_name {
+.category_list li .ctg_name,
+.ctg_nav_item .ctg_name {
   width: 100%;
   font-size: 0.82rem;
+  color: #0d0d0d;
   text-align: center;
   font-weight: 500;
   -o-text-overflow: ellipsis;
@@ -1576,6 +1580,11 @@ input[type='checkbox']:checked {
   white-space: nowrap;
   overflow: hidden;
   margin-top: 1em;
+}
+
+.ctg_nav_item .ctg_name {
+  margin-top: 0.5rem;
+  font-weight: 400;
 }
 
 .m_title_wrapper {
@@ -2464,8 +2473,6 @@ input[type='checkbox']:checked {
 .search_content_wrap .title span,
 .list_wrapper .title span {
   font-family: 'Roboto', sans-serif;
-  position: relative;
-  top: -0.05rem;
   font-weight: 500;
 }
 
@@ -2571,10 +2578,17 @@ input[type='checkbox']:checked {
 
 .list_nav_wrap {
   padding: 1rem 0 1.2rem;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
-.list_nav_wrap .scroll_wrapper {
+.list_nav_wrap .scroll_wrapper,
+.list_nav_wrap ul {
+  width: auto;
   padding: 0 1rem;
+  overflow-x: visible;
+  white-space:nowrap;
 }
 
 .list_nav_item {
@@ -2598,6 +2612,20 @@ input[type='checkbox']:checked {
   font-weight: 400 !important;
   letter-spacing: 0.5px;
   padding: 0.6rem 1rem 0.7rem;
+}
+
+.ctg_nav_item {
+  display: inline-block;
+  width: 18%;
+  margin-right: 1.1rem;
+}
+
+.ctg_nav_item.active .ctg_thumbnail {
+  border: 3px solid #ff8611;
+}
+
+.ctg_nav_item.active .ctg_name {
+  color: #ff8611;
 }
 
 .list_wrapper .list_item_wrap {
