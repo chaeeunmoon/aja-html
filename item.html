@@ -417,16 +417,29 @@
                                 <button class="i_btn modal_btn" data-modal="sns_share"><img src="images/icon/btn_share.svg" alt="찜하기"> 공유하기</button>
                             </div>
                             <!--S: sns 공유(디자인 유지)-->
-                            <div class="layer-popup-area" id="sns_share" style="display: none;">
+                            <div class="layer-popup-area" style="display:none ;">
                                 <div class="popup-content">
-                                    
-                                            <div class="share-popup">
+                                    <div class="search-area result">
+                                        <div class="range">			
+                                            <a href="javascript:void(0)" class="ico-popup-menu">아이콘</a>				
+                                            <div class="center" style="margin-left: 10px;"><p>
+                                                <!-- <?php echo stripslashes($it['it_name']); ?> -->
+                                            </p></div>
+                                        </div>
+                                    </div>
+                                    <!-- <?php
+                                        $http_host = $_SERVER['HTTP_HOST'];
+                                        $request_uri = $_SERVER['REQUEST_URI'];
+                                        $SNS_URL = 'http://' . $http_host . $request_uri;
+                                    ?> -->
+                                    <div class="share-popup">
                                         <div class="share-title">SNS로 공유하세요</div>
                                         <div class="share-ico-list">
                                             <ul>
-                                            <li><a class="ico-sns-big-facebook" href="javascript:facebook_send('키즈런 파크레이스 (전지점 사용 가능) | 아자스쿨 체험학습 플랫폼', 'http%3A%2F%2Fwww.ajaschool.com%2Fshop%2Fitem.php%3Fit_id%3DH1589792211');">페이스북</a></li>  <li><a href="https://twitter.com/share?url=http%3A%2F%2Fwww.ajaschool.com%2Fshop%2Fitem.php%3Fit_id%3DH1589792211&amp;text=%ED%82%A4%EC%A6%88%EB%9F%B0+%ED%8C%8C%ED%81%AC%EB%A0%88%EC%9D%B4%EC%8A%A4+%28%EC%A0%84%EC%A7%80%EC%A0%90+%EC%82%AC%EC%9A%A9+%EA%B0%80%EB%8A%A5%29+%7C+%EC%95%84%EC%9E%90%EC%8A%A4%EC%BF%A8+%EC%B2%B4%ED%97%98%ED%95%99%EC%8A%B5+%ED%94%8C%EB%9E%AB%ED%8F%BC" class="ico-sns-big-twitter share-twitter" target="_blank"><img src="http://www.ajaschool.com/skin/shop/renewal/img/tw.jpg" alt="트위터에 공유" width="34" border="0"></a></li>  <li><a class="ico-sns-big-kakao share-kakaotalk" href="javascript:kakaolink_send('%ED%82%A4%EC%A6%88%EB%9F%B0 %ED%8C%8C%ED%81%AC%EB%A0%88%EC%9D%B4%EC%8A%A4 %28%EC%A0%84%EC%A7%80%EC%A0%90 %EC%82%AC%EC%9A%A9 %EA%B0%80%EB%8A%A5%29 %7C %EC%95%84%EC%9E%90%EC%8A%A4%EC%BF%A8 %EC%B2%B4%ED%97%98%ED%95%99%EC%8A%B5 %ED%94%8C%EB%9E%AB%ED%8F%BC', 'http%3A%2F%2Fwww.ajaschool.com%2Fshop%2Fitem.php%3Fit_id%3DH1589792211');" id="img_kakao_link">카카오톡</a></li>  				<li>
-                                                <a class="ico-sns-big-url btn-copy" id="btnCopyClip" style="display: none;">url</a>
-                                                <a id="txtCopyClip" class="ico-sns-big-url" style="" onclick="not_copy();"></a>					
+                                            <!-- <?php echo $sns_share_links; ?> -->
+                                            <li>
+                                                <a class="ico-sns-big-url btn-copy" id="btnCopyClip">url</a>
+                                                <a id="txtCopyClip" class="ico-sns-big-url" style="display: none;" onclick="not_copy();"></a>					
                                             </li>
                             
                             
@@ -440,12 +453,38 @@
                                                 <li><a class="ico-sns-big-url" href="#none">url</a></li-->
                                             </ul>
                                         </div>
-                                        <p style="color:#fff;"><a id="clipURL" href="http://www.ajaschool.com/shop/item.php?it_id=H1589792211" style="display: block; border: 1px solid silver; padding: 10px;" onclick="return false;">http://www.ajaschool.com/shop/item.php?it_id=H1589792211</a></p>
+                                        <p style="color:#fff;"><a id="clipURL" href="<?=$SNS_URL?>" style="display:none; border: 1px solid silver; padding: 10px;" onclick="return false;"><?=$SNS_URL?></a></p>
                                     </div>
                                 </div>
                                 <a href="javascript:void(0)" class="ico-popup-close" style="top: 75px !important;">닫기</a>
                                 <div class="deam"></div>
                             </div>
+                            <script type="text/javascript">
+                                $(document).ready(function() {
+                                    $(".ico-share").click(function() {
+                                        $(".layer-popup-area").show();
+                                        $('.layer-popup-area').css({'width':$(window).width(),'height':$(window).height()});
+                                    });
+                                    $(".ico-popup-close").click(function() {
+                                        $(".layer-popup-area").hide();
+                                    });
+                                    
+                                    $(window).resize(function(){ //창 사이즈 변환시
+                                        $('.layer-popup-area').css({'width':$(window).width(),'height':$(window).height()});
+                                    });
+                                    $(window).scroll(function(){
+                                        $('.layer-popup-area').css({'top':$(window).scrollTop(),'left':$(window).scrollLeft()});
+                                    });
+                            
+                                });
+                            
+                            //	function copy_clip() {
+                            //		var strData = location.href;
+                            //		clipboardData.setData("Text", strData);
+                            //		alert("클립보드로 복사되었습니다.");
+                            //	}
+                            //-->
+                            </script>
                             <!--E: sns 공유-->
                             <!-- 옵션창 -->
                             <div id="product_option" class="modal round_modal">

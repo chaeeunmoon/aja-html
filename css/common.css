@@ -1644,9 +1644,15 @@ input[type='checkbox']:checked {
 }
 
 .block_box a {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 0.8rem 0;
 }
@@ -2528,7 +2534,6 @@ input[type='checkbox']:checked {
 /* tab_content */
 /* S: list style */
 .list_wrapper {
-  /*padding: 1.5rem 1.25rem;*/
   margin-top: 1rem;
 }
 
