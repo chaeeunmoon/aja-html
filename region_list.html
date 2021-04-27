@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>목록</title>
+    <title>지역별 목록</title>
     <!--font 추가 (NotoSansKr, Roboto)-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -53,84 +53,90 @@
       <!--content-->
       <div id="content" class="m_wrap">
         <div class="list_wrapper">
-            <div class="list_nav_wrap">
-                <ul class="scroll_wrapper">
-                  <li class="list_nav_item"><a href="#">서울특별시</a></li>
-                  <li class="list_nav_item active"><a href="#">경기도</a></li>
-                  <li class="list_nav_item"><a href="#">부산광역시</a></li>
-                  <li class="list_nav_item"><a href="#">인천광역시</a></li>
-                  <li class="list_nav_item"><a href="#">대구광역시</a></li>
-                  <li class="list_nav_item"><a href="#">광주광역시</a></li>
-                  <li class="list_nav_item"><a href="#">울산광역시</a></li>
-                  <li class="list_nav_item"><a href="#">충청남도</a></li>
-                  <li class="list_nav_item"><a href="#">경상남도</a></li>
-                  <li class="list_nav_item"><a href="#">경상북도</a></li>
-                  <li class="list_nav_item"><a href="#">전라북도</a></li>
-                </ul>
-            </div>
+          <div class="list_nav_wrap">
+            <ul class="scroll_wrapper">
+              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=서울">서울특별시</a></li>
+              <li class="list_nav_item active"><a href="/shop/region_list.php?sel_region=경기">경기도</a></li>
+              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=부산">부산광역시</a></li>
+              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=인천">인천광역시</a></li>
+              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=대구">대구광역시</a></li>
+              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=광주">광주광역시</a></li>
+              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=울산">울산광역시</a></li>
+              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=충남">충청남도</a></li>
+              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=충북">충청북도</a></li>
+              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=경남">경상남도</a></li>
+              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=경북">경상북도</a></li>
+              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=전북">전라북도</a></li>
+            </ul>
+          </div>
             <div class="list_header">
               <div class="list_banner_wrapper">
-                <img src="images/region/bn_region_01.png" alt="베스트 체험" />
+                <img src="images/region/bn_region_02.png" alt="경기도 체험" />
               </div>
             </div>
           <div class="list_body">
             <p class="title">전체 <span>510</span>개</p>
-            <ul class="list_item_wrap square_item_list">
-              <li>
-                <a href="#">
-                  <div class="item_thumb">
-                    <img src="images/sample/sample-02.png" alt="" />
-                  </div>
-                  <div class="item_info">
-                    <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
-                    <div class="item_price right_align">
-                      <!--원가-->
-                      <p class="origin_price">26800</p>
-                      <!--할인율-->
-                      <span class="sale_percent">50%</span>
-                      <!--판매가-->
-                      <span class="main_price">12900</span>
+            <div class="list_content">
+              <ul class="list_item_wrap square_item_list">
+                <li>
+                  <a href="#">
+                    <div class="item_thumb">
+                      <img src="images/sample/sample-02.png" alt="" />
                     </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="item_thumb">
-                    <img src="images/sample/sample-02.png" alt="" />
-                  </div>
-                  <div class="item_info">
-                    <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
-                    <div class="item_price right_align">
-                      <!--원가-->
-                      <p class="origin_price">26800</p>
-                      <!--할인율-->
-                      <span class="sale_percent">50%</span>
-                      <!--판매가-->
-                      <span class="main_price">12900</span>
+                    <div class="item_info">
+                      <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                      <div class="item_price right_align">
+                        <!--할인율-->
+                        <span class="sale_percent">50%</span>
+                        <!--판매가-->
+                        <span class="main_price">12900</span>
+                        <!--원가-->
+                        <p class="origin_price">26800</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <div class="item_thumb">
-                    <img src="images/sample/sample-04.png" alt="" />
-                  </div>
-                  <div class="item_info">
-                    <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
-                    <div class="item_price right_align">
-                      <!--원가-->
-                      <p class="origin_price">26800</p>
-                      <!--할인율-->
-                      <span class="sale_percent">50%</span>
-                      <!--판매가-->
-                      <span class="main_price">12900</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="item_thumb">
+                      <img src="images/sample/sample-02.png" alt="" />
                     </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
+                    <div class="item_info">
+                      <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                      <div class="item_price right_align">
+                        <!--할인율-->
+                        <span class="sale_percent">50%</span>
+                        <!--판매가-->
+                        <span class="main_price">12900</span>
+                        <!--원가-->
+                        <p class="origin_price">26800</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <div class="item_thumb">
+                      <img src="images/sample/sample-04.png" alt="" />
+                    </div>
+                    <div class="item_info">
+                      <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                      <div class="item_price right_align">
+                        <!--할인율-->
+                        <span class="sale_percent">50%</span>
+                        <!--판매가-->
+                        <span class="main_price">12900</span>
+                        <!--원가-->
+                        <p class="origin_price">26800</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+              <div class="btn_wrapper">
+                <a href="javascript:void(0)" class="outline_btn secondary lg">더보기 <img class="more_icon" src="images/icon/btn_more_black.png" alt=""> </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

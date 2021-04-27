@@ -537,6 +537,25 @@ caption {
 .solid_btn.lg {
   width: 100%;
   font-size: 1rem;
+  display: block;
+}
+
+.outline_btn.secondary {
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 3rem;
+  font-size: 0.9rem;
+  color: #232323 !important;
+  font-weight: 500;
+  padding: 0.65rem 0 0.75rem;
+}
+
+.outline_btn.secondary .more_icon {
+  height: 0.8rem;
+  transform: rotate(90deg);
+  margin-left: 1rem;
+  position: relative;
+  top: 0.1rem;
 }
 
 .outline_btn:focus {
@@ -1748,6 +1767,7 @@ input[type='checkbox']:checked {
   color: #aaaaaa;
   text-decoration: line-through;
   margin-bottom: 0.3em;
+  margin-top: 0.2rem;
 }
 
 .main_price {
@@ -2426,15 +2446,18 @@ input[type='checkbox']:checked {
   margin-top: 3rem;
 }
 
-.search_content_wrap .title {
+.search_content_wrap .title,
+.list_wrapper .title {
   font-size: 0.9375rem;
-  font-weight: bold;
+  font-weight: 500;
 }
 
-.search_content_wrap .title span {
+.search_content_wrap .title span,
+.list_wrapper .title span {
   font-family: 'Roboto', sans-serif;
   position: relative;
   top: -0.05rem;
+  font-weight: 500;
 }
 
 /* 인기검색어 목록 */
@@ -2534,11 +2557,11 @@ input[type='checkbox']:checked {
 /* tab_content */
 /* S: list style */
 .list_wrapper {
-  margin-top: 1rem;
+  margin-top: 1.1rem;
 }
 
 .list_nav_wrap {
-  padding: 1rem 0;
+  padding: 1rem 0 1.2rem;
 }
 
 .list_nav_wrap .scroll_wrapper {
@@ -2577,7 +2600,24 @@ input[type='checkbox']:checked {
   padding: 0.5rem 1.25rem;
 }
 
+.list_banner_wrapper,
+.list_banner_wrapper img {
+  width: 100%;
+}
+
+.list_content {
+  margin-top: 1.5rem;
+}
+
+.list_content .list_item_wrap li {
+  padding-bottom: 0.9rem;
+}
+
 .list_wrapper .square_item_list.list_item_wrap li {
   width: 47.5%;
+}
+
+.list_wrapper .btn_wrapper {
+  margin: 0.5rem 0;
 }
 /* E: list style */
