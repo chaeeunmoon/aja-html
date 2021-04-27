@@ -314,6 +314,7 @@ caption {
 
 #navi-area .ico-top {
   top: -7.5rem;
+  background-color: #fff;
 }
 
 .m_action_bar {
@@ -517,7 +518,7 @@ caption {
 
 .solid_btn {
   font-size: 0.95rem;
-  background-color: #ff8611;
+  background-color: #ff8611 !important;
   color: #fff;
   padding: 0.95rem 2rem;
   border-radius: 8px;
@@ -531,7 +532,7 @@ caption {
 }
 
 .solid_btn.light {
-  background-color: #fff;
+  background-color: #fff !important;
   color: #232323;
   border: 1px solid #e0e0e0;
 }
