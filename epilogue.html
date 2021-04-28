@@ -48,33 +48,144 @@
         </div>
         <!--//header-->
         <!--content-->
+        <style>
+
+            .epilogue_padding {
+                padding-left: 0.5rem !important;
+                padding-right: 0.5rem !important;
+            }
+
+            .epilogue_padding .title {
+              padding-left: 0.8rem !important;
+              padding-right: 0.8rem !important;
+            }
+
+            .masonry_wrapper {
+              display: flex;
+              flex-wrap: nowrap;
+              justify-content: flex-start;
+            }
+
+            .masonry_wrapper .grid-item {
+                width: 50%;
+                display: inline-block;
+                padding: 0rem 0.7rem 2rem;
+                box-sizing: border-box;
+                padding-bottom: 2rem;
+            }
+
+            .grid-item a {
+              display: block;
+              width: 100%;
+            }
+
+            .grid-item .item_thumb {
+              border-radius: 1.15rem;
+              overflow: hidden;
+            }
+
+            .grid-item.active .item_thumb {
+              border: 3px solid #ff8611;
+            }
+
+        </style>
         <div id="content" class="m_wrap">
           <div class="list_wrapper">
-            <div class="list_body">
+            <div class="list_body epilogue_padding">
               <div class="flex_block">
                 <p class="title">전체 <span>510</span>개</p>
-                <ul class="filter_wrap">
+                <!--리스트 필터링-->
+                <!-- <ul class="filter_wrap">
                     <li class="filter_nav active"><a href="#">신규순</a></li>
                     <li class="filter_nav"><a href="#">후기순</a></li>
-                </ul>
+                </ul> -->
               </div> 
               <div class="list_content">
                 <div class="masonry_wrapper grid">
                     <div class="grid-item">
                         <a href="#">
-                            <div class="review_thumb">
+                            <div class="item_thumb">
                                 <img src="images/sample/sample-01.jpg" alt="후기 이미지">
                             </div>
-                            <div class="review_txt">
-                                <div class="review_rank">
-                                    <span class="rank_num">4.8</span>
-                                    <div class="star_rating">
-                                        <span class="rating_active" style="width: 96%;"></span>
-                                    </div>
+                            <div class="item_info">
+                              <div class="review_rank">
+                                <span class="rank_num">4.8</span>
+                                <div class="star_rating">
+                                  <span class="rating_active" style="width: 96%;"></span>
                                 </div>
+                              </div>
+                              <div class="review_info">
+                                <p class="review_desc">되는 피가 일월과 피고 것이 피고, 듣는다. 인간은 청춘이 바이며, 인간이 속잎나고, 평화스러운 때까지 피부가
+                                  교향악이다. 할지라도 방황하였으며, 그들의 않는 실로 꽃이 풍부하게 이성은 그리하였는가? 고행을 뜨거운지라, 동산에는 뿐이다. 창공에 꽃 이상을 끓는
+                                  아름답고 많이 무엇이 있는가? 같지 소담스러운 같으며, 가장 가치를 가는 말이다. 바이며, 찾아다녀도</p>
+                                <p class="review_date">2021. 03. 25</p>
+                              </div>
                             </div>
                         </a>
                     </div>
+                    <div class="grid-item">
+                      <a href="#">
+                          <div class="item_thumb">
+                              <img src="images/sample/review-sample.jpg" alt="후기 이미지">
+                          </div>
+                          <div class="item_info">
+                            <div class="review_rank">
+                              <span class="rank_num">4.8</span>
+                              <div class="star_rating">
+                                <span class="rating_active" style="width: 96%;"></span>
+                              </div>
+                            </div>
+                            <div class="review_info">
+                              <p class="review_desc">되는 피가 일월과 피고 것이 피고, 듣는다. 인간은 청춘이 바이며, 인간이 속잎나고, 평화스러운 때까지 피부가
+                                교향악이다. 할지라도 방황하였으며, 그들의 않는 실로 꽃이 풍부하게 이성은 그리하였는가? 고행을 뜨거운지라, 동산에는 뿐이다. 창공에 꽃 이상을 끓는
+                                아름답고 많이 무엇이 있는가? 같지 소담스러운 같으며, 가장 가치를 가는 말이다. 바이며, 찾아다녀도</p>
+                              <p class="review_date">2021. 03. 25</p>
+                            </div>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="grid-item">
+                    <a href="#">
+                        <div class="item_thumb">
+                            <img src="images/sample/sample-03.jpg" alt="후기 이미지">
+                        </div>
+                        <div class="item_info">
+                          <div class="review_rank">
+                            <span class="rank_num">4.8</span>
+                            <div class="star_rating">
+                              <span class="rating_active" style="width: 96%;"></span>
+                            </div>
+                          </div>
+                          <div class="review_info">
+                            <p class="review_desc">되는 피가 일월과 피고 것이 피고, 듣는다. 인간은 청춘이 바이며, 인간이 속잎나고, 평화스러운 때까지 피부가
+                              교향악이다. 할지라도 방황하였으며, 그들의 않는 실로 꽃이 풍부하게 이성은 그리하였는가? 고행을 뜨거운지라, 동산에는 뿐이다. 창공에 꽃 이상을 끓는
+                              아름답고 많이 무엇이 있는가? 같지 소담스러운 같으며, 가장 가치를 가는 말이다. 바이며, 찾아다녀도</p>
+                            <p class="review_date">2021. 03. 25</p>
+                          </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid-item">
+                  <a href="#">
+                      <div class="item_thumb">
+                          <img src="images/sample/sample-02.png" alt="후기 이미지">
+                      </div>
+                      <div class="item_info">
+                        <div class="review_rank">
+                          <span class="rank_num">4.8</span>
+                          <div class="star_rating">
+                            <span class="rating_active" style="width: 96%;"></span>
+                          </div>
+                        </div>
+                        <div class="review_info">
+                          <p class="review_desc">되는 피가 일월과 피고 것이 피고, 듣는다. 인간은 청춘이 바이며, 인간이 속잎나고, 평화스러운 때까지 피부가
+                            교향악이다. 할지라도 방황하였으며, 그들의 않는 실로 꽃이 풍부하게 이성은 그리하였는가? 고행을 뜨거운지라, 동산에는 뿐이다. 창공에 꽃 이상을 끓는
+                            아름답고 많이 무엇이 있는가? 같지 소담스러운 같으며, 가장 가치를 가는 말이다. 바이며, 찾아다녀도</p>
+                          <p class="review_date">2021. 03. 25</p>
+                        </div>
+                      </div>
+                  </a>
+              </div>
                 </div>  
                 <div class="btn_wrapper">
                   <a href="javascript:void(0)" class="capsule_btn lg t_black gray">더보기 <img class="more_icon" src="images/icon/btn_more_black.png" alt=""> </a>
@@ -193,6 +304,8 @@
         </div>
         <!--E: 위로가기 / 하단 바-->
       </div>
+      <!-- plugin js (기존 plugin 파일과 동일)-->
+      <script src="js/jquery-1.8.3.min.js"></script>
       <!--추가 plugin (masonry)-->
       <script src="plugin/Masonry/masonry.pkgd.min.js"></script>
       <script>
@@ -200,7 +313,6 @@
                 $('.grid').masonry({
                     // options
                     itemSelector: '.grid-item',
-                    columnWidth: 200
                 });
             });
       </script>

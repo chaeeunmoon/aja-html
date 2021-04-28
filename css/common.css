@@ -1987,6 +1987,15 @@ input[type='checkbox']:checked {
   margin-right: 1rem;
 }
 
+.grid-item .review_rank {
+  margin-top: 0.8rem;
+}
+
+.grid-item .review_rank .rank_num {
+  margin-right: 0.5rem;
+  font-size: 1.1rem;
+}
+
 .star_rating {
   width: 6.5rem;
   height: 1.3rem;
@@ -2008,6 +2017,13 @@ input[type='checkbox']:checked {
   background-size: 6.5rem;
 }
 
+.grid-item .star_rating,
+.star_rating .rating_active {
+  width: 6rem;
+  height: 1.1rem;
+  background-size: 6rem;
+}
+
 .item_review .review_title {
   width: 100%;
   display: block;
@@ -2027,7 +2043,8 @@ input[type='checkbox']:checked {
   -webkit-box-orient: vertical;
 }
 
-.item_review .review_desc {
+.item_review .review_desc,
+.grid-item .review_desc {
   word-break: break-all;
   word-wrap: normal;
   white-space: normal;
@@ -2043,7 +2060,14 @@ input[type='checkbox']:checked {
   -webkit-box-orient: vertical;
 }
 
-.item_review .review_date {
+.grid-item .review_desc {
+  height: 3.3rem;
+  -webkit-line-clamp: 3;
+  margin-top: 0.5rem;
+}
+
+.item_review .review_date,
+.grid-item .review_date {
   font-family: 'Roboto', sans-serif;
   word-break: break-all;
   word-wrap: normal;
@@ -2645,6 +2669,7 @@ input[type='checkbox']:checked {
 
 .list_wrapper .list_header,
 .list_wrapper .list_body {
+  width: 100%;
   padding: 0.5rem 1.25rem;
 }
 
@@ -2654,6 +2679,7 @@ input[type='checkbox']:checked {
 }
 
 .list_content {
+  width: 100%;
   margin-top: 1.5rem;
 }
 
