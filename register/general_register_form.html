@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일반 회원가입</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="../css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="../css/font-style.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <!--inline css-->
+    
+</head>
+<body>
+    <div class="join_wrapper register_wrap">
+        <div class="theme_wrapper">
+            <div class="theme_header">
+                <div class="page_title_area">
+                    <a class="back_btn" href="javascript:history.back();">뒤로가기</a>
+                    <h2 class="page_title">일반 회원가입</h2>
+                </div>
+            </div>
+            <div class="theme_body">
+                <!-- <div class="sns_login_wrap">
+                    <p class="title">SNS 계정으로 회원가입</p>
+                    <ul class="sns_login_list">
+                        <li><a href="#"><img src="../images/sns/ico_naver.png" alt="네이버 아이디로 회원가입하기"></a></li>
+                        <li><a href="#"><img src="../images/sns/ico_kakao.png" alt="카카오 아이디로 회원가입하기"></a></li>
+                    </ul>
+                </div> -->
+                <div class="rgs_form_wrapper">
+                    <form action="">
+                        <div class="tab_nav_wrap" style="display:none">
+                            <div class="tab_nav_list">
+                                <input type="radio" value="일반" checked></input>
+                                <label for="">일반</label>
+                                <input type="radio" value="교육업체"></input>
+                                <label for="">교육업체</label>
+                            </div>
+                        </div>
+                        <!--필수정보-->
+                        <div class="rgs_wrapper">
+                            <div class="rgs_group">
+                                <!-- 교육업체일 경우 이름 display:none;-->
+                                <div class="line_input_group">
+                                    <label class="input_label" for="mb_gen_name">이름</label>
+                                    <input type="text" name="mb_gen_name" id="mb_gen_name" placeholder="이름을 입력해주세요" value="">
+                                </div>
+                                <div class="line_input_group">
+                                    <label class="input_title" for="reg_mb_id">아이디</label>
+                                    <div class="flex_input_block">
+                                        <input type="text" name="mb_id" id="reg_mb_id" maxlength="100" onkeyup="emailon()"
+                                            placeholder="아이디(이메일)" value="">
+                                        <button class="btn_rounded sm_btn flex_btn" type="button">중복확인</button>
+                                    </div>
+                                </div>
+                                <div class="line_input_group">
+                                    <label class="input_label" for="reg_mb_password">비밀번호</label>
+                                    <input type="password" name="mb_password" id="reg_mb_password" maxlength="20" minlength="3"
+                                        placeholder="비밀번호(8자리 이상)">
+                                </div>
+                                <div class="input_group">
+                                    <label for="" class="info-title input_title">휴대폰</label>
+                                    <input type="text" name="mb_hp" id="reg_mb_hp" style="display:none;" maxlength="100" placeholder="휴대폰번호 ('-'뺀 숫자만)" onchange="chg_cert()" value="">
+                                    <div class="flex_block">
+                                        <div class="phone_input_box">
+                                            <!-- 010 -->
+                                            <select class="select_number" id="">
+                                                <option value="010">010</option>
+                                                <option value="011">011</option>
+                                                <option value="016">016</option>
+                                                <option value="017">017</option>
+                                                <option value="018">018</option>
+                                                <option value="019">019</option>
+                                            </select>
+                                            <span class="h">-</span>
+                                            <!--중간 번호-->
+                                            <input type="number" id="ph_middle" minlength="4" maxlength="4"
+                                                oninput="numberMaxLength(this);">
+                                            <span class="h">-</span>
+                                            <!--끝 번호-->
+                                            <input type="number" id="ph_last" minlength="4" maxlength="4"
+                                                oninput="numberMaxLength(this);">
+                                        </div>
+                                        <button type="button" class="btn_rounded sm_btn" style="margin-left: 0.8rem;">인증</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--일반-->
+                        <div class="rgs_wrapper">
+                            <div class="rgs_group">
+                                <div class="rgs_title_block">
+                                    <p class="rgs_title">관심분야</p>
+                                    <p class="rgs_sub_title">선택하시면 교육을 추천해드립니다 (복수선택가능)</p>
+                                </div>
+                                <!--관심분야-->
+                                <div class="rgs_ctg_wrapper">
+                                    <div class="rgs_ctg_list">
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1i" id="reg_mb_1i" value="Y"> <label
+                                                for="reg_mb_1i">
+                                                &nbsp; 탐구생활&nbsp;</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1e" id="reg_mb_1e" value="Y"> <label
+                                                for="reg_mb_1e">
+                                                &nbsp;&nbsp;&nbsp;역사 &nbsp;</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1a" id="reg_mb_1a" value="Y"> <label
+                                                for="reg_mb_1a">
+                                                문화예술</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1b" id="reg_mb_1b" value="Y"> <label
+                                                for="reg_mb_1b">
+                                                과학IT</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1b" id="reg_mb_1j" value="Y"> <label
+                                                for="reg_mb_1j">
+                                                애니센터</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1d" id="reg_mb_1d" value="Y"> <label
+                                                for="reg_mb_1d">
+                                                교과연계</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1c" id="reg_mb_1c" value="Y"> <label
+                                                for="reg_mb_1c">
+                                                진로직업</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1h" id="reg_mb_1h" value="Y"> <label
+                                                for="reg_mb_1h">
+                                                액티비티</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1g" id="reg_mb_1g" value="Y"> <label
+                                                for="reg_mb_1g">교구</label></div>
+                                        <div class="btn_radio"><input type="checkbox" name="mb_1g" id="reg_mb_1k" value="Y"> <label
+                                                for="reg_mb_1k">단체</label></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--이용약관-->
+                        <div class="rgs_wrapper">
+                            <div class="rgs_group">
+                                <div class="rgs_title_block">
+                                    <p class="rgs_title">이용약관</p>
+                                </div>
+                                <div class="all_ck_box">
+                                    <div class="ck_flex_wrap">
+                                        <input class="custom_cb" type="checkbox" name="all_check" id="all_check" />
+                                        <label for="all_check">전체동의</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <ul class="rgs_agree_list">
+                                        <li>
+                                            <div class="ck_flex_wrap">
+                                                <input class="custom_cb" type="checkbox" name="cf_14_years_old" id="cf_14_years_old" />
+                                                <label for="cf_14_years_old">본인은 만 14세 이상입니다 (필수)</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="flex_block">
+                                                <div class="ck_flex_wrap">
+                                                    <input class="custom_cb" type="checkbox" name="cf_stipulation"
+                                                        id="cf_stipulation" />
+                                                    <label for="cf_stipulation">이용약관 (필수)</label>
+                                                </div>
+                                                <span class="rgs_more" data-content="dropdow01"><img
+                                                        src="../images/icon/btn_more_gray.png" alt=""></span>
+                                            </div>
+                                            <!-- 약관내용 -->
+                                            <div class="rgs_info_wrap dropdow01">
+                                                <div class="rgs_agree_info">
+                                                    웅대한 피가 끓는 위하여 이상 피다. 이상은 낙원을 청춘의 사는가 그들의 힘있다. 밝은 피어나기 곳으로 피가 내려온 인류의 위하여서. 위하여서 청춘의
+                                                    피가 갑 같이, 가치를 약동하다. 어디 사랑의 피어나기 튼튼하며, 얼마나 것이다. 찬미를 있음으로써 그러므로 장식하는 것은 가진 피다.
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="flex_block">
+                                                <div class="ck_flex_wrap">
+                                                    <input class="custom_cb" type="checkbox" name="cf_privacy" id="cf_privacy" />
+                                                    <label for="cf_privacy">개인정보 수집 및 이용 (필수)</label>
+                                                </div>
+                                                <span class="rgs_more" data-content="dropdow02"><img
+                                                        src="../images/icon/btn_more_gray.png" alt=""></span>
+                                            </div>
+                                            <!-- 약관내용 -->
+                                            <div class="rgs_info_wrap dropdow02">
+                                                <div class="rgs_agree_info">
+                                                    웅대한 피가 끓는 위하여 이상 피다. 이상은 낙원을 청춘의 사는가 그들의 힘있다. 밝은 피어나기 곳으로 피가 내려온 인류의 위하여서. 위하여서 청춘의
+                                                    피가 갑 같이, 가치를 약동하다. 어디 사랑의 피어나기 튼튼하며, 얼마나 것이다. 찬미를 있음으로써 그러므로 장식하는 것은 가진 피다.
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="ck_flex_wrap">
+                                                <input class="custom_cb" type="checkbox" name="chk-location" id="chk-location" />
+                                                <label for="chk-location">위치정보 이용약관 (선택)</label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="ck_flex_wrap">
+                                                <input class="custom_cb" type="checkbox" name="chk-event" id="chk-event" />
+                                                <label for="chk-event">이벤트, 프로모션 정보 수신 (선택)</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--btn wrapper-->
+                        <div class="fixed_btn_wrapper flex_type">
+                            <a class="solid_btn sm btn_end" href="javascript:history.back();">취소</a>
+                            <button class="solid_btn lg">회원가입</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="../js/jquery-1.8.3.min.js"></script>
+    <!--전체동의 js(기존 css)-->
+    <script>
+        $(document).on("click", "#all_check", function() {
+			if ($(this).attr("checked") == "checked") {
+				$("#cf_14_years_old").prop("checked", "checked");
+				$("#cf_stipulation").prop("checked", "checked");
+				$("#cf_privacy").prop("checked", "checked");
+				$("#chk-location").prop("checked", "checked");
+				$("#chk-event").prop("checked", "checked");
+			} else {
+				$("#cf_14_years_old").prop("checked", "");
+				$("#cf_stipulation").prop("checked", "");
+				$("#cf_privacy").prop("checked", "");
+				$("#chk-location").prop("checked", "");
+				$("#chk-event").prop("checked", "");
+			}
+		});
+    </script>
+    <!--콘텐츠 탭 js-->
+    <script>
+        $(document).ready(function(){
+            $(".tab_nav_item").click(function(){
+                // 탭 콘텐트 초기화
+                $('.tab_content').hide();
+                $(".tab_nav_item").removeClass('active');
+                $(this).addClass('active');
+                var tab_content =  $(this).data('tab');
+                $('.'+ tab_content).show();
+            });
+        });
+    </script>
+    <!--약관 show/hide-->
+    <script>
+        $(document).ready(function(){
+            $('.rgs_more').click(function(){
+                var content = $(this).data('content');
+                $(this).toggleClass('active');
+                $('.'+ content).slideToggle();
+            });
+        });
+    </script>
+    <!---->
+    <script>
+
+    </script>  
+</body>
+</html>
