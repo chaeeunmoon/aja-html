@@ -2715,6 +2715,50 @@ input[type='checkbox']:checked {
 .filter_wrap .filter_nav.active {
   color: #ff8611;
 }
+
+.epilogue_padding {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+
+.epilogue_padding .title {
+  padding-left: 0.8rem !important;
+  padding-right: 0.8rem !important;
+}
+
+.masonry_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.masonry_wrapper .grid-item {
+  width: 50%;
+  display: inline-block;
+  padding: 0rem 0.75rem 2rem;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding-bottom: 2rem;
+}
+
+.grid-item a {
+  display: block;
+  width: 100%;
+}
+
+.grid-item .item_thumb {
+  border-radius: 1.15rem;
+  overflow: hidden;
+}
+
+.grid-item.active .item_thumb {
+  border: 3px solid #ff8611;
+}
 /* E: epilogue style */
 /* S: login/rgs style */
 .join_wrapper {
@@ -2848,6 +2892,8 @@ input[type='checkbox']:checked {
   background-color: #e1e1e1;
   border-radius: 50%;
   margin-right: 0.5rem;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
   transition: all 0.3s;
 }
 
@@ -2878,11 +2924,13 @@ input[type='checkbox']:checked {
   overflow: hidden;
   min-width: 100vw;
   -webkit-transition: 0.3s all ease;
+  -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
   -webkit-transform: translate(0px) scale(1);
   -ms-transform: translate(0px) scale(1);
   transform: translate(0px) scale(1);
   -webkit-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
   transition: 0.5s all ease;
 }
 
