@@ -2632,7 +2632,7 @@ input[type='checkbox']:checked {
 }
 
 .ctg_nav_item.active .ctg_thumbnail {
-  border: 3px solid #ff8611;
+  border: 4px solid #ff8611;
 }
 
 .ctg_nav_item.active .ctg_name {
