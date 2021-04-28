@@ -54,7 +54,7 @@
       <div id="content" class="m_wrap">
         <div class="list_wrapper">
           <div class="list_nav_wrap">
-            <ul class="scroll_wrapper">
+            <ul class="nav_scroll_list">
               <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=서울">서울특별시</a></li>
               <li class="list_nav_item active"><a href="/shop/region_list.php?sel_region=경기">경기도</a></li>
               <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=부산">부산광역시</a></li>
@@ -250,5 +250,26 @@
       </div>
       <!--E: 위로가기 / 하단 바-->
     </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--카테고리 순서 js-->
+    <script>
+      function scrollNav(contentBlock, scrollWrapper, navItem) {
+         $(contentBlock).each(function () {
+          var _length = $(this).length,
+            _index = $(this).find('.active').index()
+            _nav_item_width = $(this).find(navItem).width();
+          
+          // 스크롤 크기  
+          var scrollLeft = _nav_item_width * _index;
+
+          $(scrollWrapper).scrollLeft(scrollLeft);
+
+        });
+      }
+      $(document).ready(function(){   
+         scrollNav('.nav_scroll_list', '.list_nav_wrap', 'li');
+      });
+    </script>
   </body>
 </html>

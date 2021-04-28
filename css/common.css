@@ -562,6 +562,8 @@ caption {
 
 .capsule_btn.gray .more_icon {
   height: 0.8rem;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
   transform: rotate(90deg);
   margin-left: 1rem;
   position: relative;
@@ -2577,18 +2579,27 @@ input[type='checkbox']:checked {
 }
 
 .list_nav_wrap {
-  padding: 1rem 0 1.2rem;
-  width: 100%;
+  padding: 1rem 1.2rem 1.2rem;
+  /* width: 100%; */
   overflow-x: scroll;
   overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
-.list_nav_wrap .scroll_wrapper,
-.list_nav_wrap ul {
-  width: auto;
-  padding: 0 1rem;
+.list_nav_wrap::-webkit-scrollbar {
+  display: none; /* 스크롤 노출 유무 (작동엔 영향 없음) */
+}
+
+.list_nav_wrap .nav_scroll_list {
+  width: 100%;
   overflow-x: visible;
-  white-space:nowrap;
+  white-space: nowrap;
+}
+
+.list_nav_wrap .nav_scroll_list .ctg_nav_item {
+  width: 4rem;
+  display: inline-block;
 }
 
 .list_nav_item {
