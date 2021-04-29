@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>지역별 목록</title>
+    <title>이벤트 공지사항</title>
     <!--font 추가 (NotoSansKr, Roboto)-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -49,104 +49,97 @@
           </ul>
         </nav>
       </div>
-      <!--//header-->
-      <!--content-->
+      <!--header-->
+      <!--content (bbs/board.php)-->
       <div id="content" class="m_wrap">
-        <div class="list_wrapper">
-          <div class="list_nav_wrap">
-            <ul class="nav_scroll_list">
-              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=서울">서울특별시</a></li>
-              <li class="list_nav_item active"><a href="/shop/region_list.php?sel_region=경기">경기도</a></li>
-              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=부산">부산광역시</a></li>
-              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=인천">인천광역시</a></li>
-              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=대구">대구광역시</a></li>
-              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=광주">광주광역시</a></li>
-              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=울산">울산광역시</a></li>
-              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=충남">충청남도</a></li>
-              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=충북">충청북도</a></li>
-              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=경남">경상남도</a></li>
-              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=경북">경상북도</a></li>
-              <li class="list_nav_item"><a href="/shop/region_list.php?sel_region=전북">전라북도</a></li>
-            </ul>
-          </div>
-            <div class="list_header">
-              <div class="list_banner_wrapper">
-                <img src="images/region/bn_region_02.png" alt="경기도 체험" />
-              </div>
+            <div class="item_title_wrap board_title">
+                <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
+                <h2 class="product_title">애니메이션으로 떠나는 콘텐츠 테마 여행gfgdgd</h2>
             </div>
-          <div class="list_body">
-            <div class="flex_block">
-              <p class="title">전체 <span>510</span>개</p>
-              <!--리스트 정렬-->
-              <!-- <ul class="filter_wrap">
-                  <li class="filter_nav active"><a href="#">신규순</a></li>
-                  <li class="filter_nav"><a href="#">후기순</a></li>
-                  <li class="filter_nav"><a href="#">추천순</a></li>
-              </ul> -->
-            </div> 
-            <div class="list_content">
-              <ul class="list_item_wrap square_item_list">
-                <li>
-                  <a href="#">
-                    <div class="item_thumb">
-                      <img src="images/sample/sample-02.png" alt="" />
+            <div class="board_view_wrapper">
+                <!--게시글 내용-->
+                <div class="board_content_block">
+                    <div>
+                        <img src="images/sample/event-detail-sample.png" alt="">
                     </div>
-                    <div class="item_info">
-                      <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
-                      <div class="item_price right_align">
-                        <!--할인율-->
-                        <span class="sale_percent">50%</span>
-                        <!--판매가-->
-                        <span class="main_price">12900</span>
-                        <!--원가-->
-                        <p class="origin_price">26800</p>
-                      </div>
+                    <!--sns 공유-->
+                    <div class="board_sns_block">
+                        <span class="sns_link"><a href="#"><img src="images/sns/ico_kakao.png" alt="카카오톡으로 공유"></a></span>
+                        <span class="sns_link"><a href="#"><img src="images/sns/ico_facebook.png" alt="페이스북으로 공유"></a></span>
                     </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="item_thumb">
-                      <img src="images/sample/sample-02.png" alt="" />
+                </div>
+                <!--게시판 댓글-->
+                <div class="board_comment_block">
+                    <div class="title_box">
+                        <p class="txt">댓글 <span class="num">50</span></p>
                     </div>
-                    <div class="item_info">
-                      <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
-                      <div class="item_price right_align">
-                        <!--할인율-->
-                        <span class="sale_percent">50%</span>
-                        <!--판매가-->
-                        <span class="main_price">12900</span>
-                        <!--원가-->
-                        <p class="origin_price">26800</p>
-                      </div>
+                    <div class="comment_form">
+                        <form action="">
+                            <div class="comment_input_block">
+                                <textarea id="wr_content" class="comment_input" name="wr_content" required="" title="댓글 내용" placeholder="로그인을 하신 후 참여댓글을 남겨주세요." onclick="javascript: go_login()"></textarea>
+                                <button type="submit" class="solid_btn flex_btn">작성</button>
+                            </div>
+                            <div class="ck_flex_wrap">
+                                <input class="custom_cb" type="checkbox" name="auto_login" id="auto_login" />
+                                <label for="auto_login">비밀글</label>
+                            </div>
+                        </form>
                     </div>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <div class="item_thumb">
-                      <img src="images/sample/sample-04.png" alt="" />
+                    <div class="comment_list">
+                        <div class="comment_box">
+                            <p class="author_txt"><span>홍*동</span><span class="date">2021-04-20</span></p>
+                            <div class="comment_desc">
+                                <p>두손을 것은 인도하겠다는 실현에 타오르고 것이다. 불러 되는 때까지 아니한 위하여서 그들의 않는 이상 얼마나 것이다.</p>
+                            </div>
+                            <div class="comment_btn">
+                                <a href="#" class="capsule_btn xs gray">답글</a>
+                                <a href="#" class="capsule_btn xs gray">수정</a>
+                                <a href="#" class="capsule_btn xs secondary">삭제</a>
+                            </div>
+                            <div class="reply_box">
+                                <div class="reply_icon">
+                                    <img src="images/icon/icon_ctct_arrow.png" alt="">
+                                </div>
+                                <div class="">
+                                    <p class="author_txt"><span>홍*동</span><span class="date">2021-04-20</span></p>
+                                    <div class="comment_desc">
+                                        <p>두손을 것은 인도하겠다는 실현에 타오르고 것이다. 불러 되는 때까지 아니한 위하여서 그들의 않는 이상 얼마나 것이다.</p>
+                                    </div>
+                                    <div class="comment_btn">
+                                        <a href="#" class="capsule_btn xs gray">답글</a>
+                                        <a href="#" class="capsule_btn xs gray">수정</a>
+                                        <a href="#" class="capsule_btn xs secondary">삭제</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="comment_box">
+                            <p class="author_txt"><span>고*동</span><span class="date">2021-04-20</span></p>
+                            <div class="comment_desc">
+                                <p>두손을 것은 인도하겠다는 실현에 타오르고 것이다.</p>
+                            </div>
+                            <div class="comment_btn">
+                                <a href="#" class="capsule_btn xs gray">답글</a>
+                                <a href="#" class="capsule_btn xs gray">수정</a>
+                                <a href="#" class="capsule_btn xs secondary">삭제</a>
+                            </div>
+                            <!--답글 클릭시 show-->
+                            <div class="reply_form">
+                                <form action="">
+                                    <div class="comment_input_block">
+                                        <textarea id="wr_content" class="comment_input" name="wr_content" required="" title="댓글 내용" placeholder="로그인을 하신 후 참여댓글을 남겨주세요." onclick="javascript: go_login()"></textarea>
+                                        <button type="submit" class="solid_btn flex_btn">작성</button>
+                                    </div>
+                                    <div class="ck_flex_wrap">
+                                        <input class="custom_cb" type="checkbox" name="auto_login" id="auto_login" />
+                                        <label for="auto_login">비밀글</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
-                    <div class="item_info">
-                      <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
-                      <div class="item_price right_align">
-                        <!--할인율-->
-                        <span class="sale_percent">50%</span>
-                        <!--판매가-->
-                        <span class="main_price">12900</span>
-                        <!--원가-->
-                        <p class="origin_price">26800</p>
-                      </div>
-                    </div>
-                  </a>
-                </li>
-              </ul>
-              <div class="btn_wrapper">
-                <a href="javascript:void(0)" class="capsule_btn lg t_black gray">더보기 <img class="more_icon" src="images/icon/btn_more_black.png" alt=""> </a>
-              </div>
+                </div>
             </div>
-          </div>
-        </div>
       </div>
       <!--content-->
       <!--footer (tail.php) -->
@@ -258,42 +251,5 @@
       </div>
       <!--E: 위로가기 / 하단 바-->
     </div>
-    <!-- plugin js (기존 plugin 파일과 동일)-->
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <!--카테고리 순서 js-->
-    <script>
-      function scrollNav(contentBlock, scrollWrapper, navItem) {
-         $(contentBlock).each(function () {
-          var _length = $(this).length,
-            _index = $(this).find('.active').index()
-            _nav_item_width = $(this).find(navItem).width();
-          
-          // 스크롤 크기  
-          var scrollLeft = _nav_item_width * _index;
-
-          $(scrollWrapper).scrollLeft(scrollLeft);
-
-        });
-      }
-      $(document).ready(function(){   
-         scrollNav('.nav_scroll_list', '.list_nav_wrap', 'li');
-      });
-    </script>
-    <!-- sticky_nav js -->
-    <script>
-      $(document).ready(function () {
-          var nav = $('.list_nav_wrap');
-          var navY = nav.offset().top;
-          var name = 'sticky';
-
-          $(window).scroll(function () {
-              if (window.pageYOffset > navY) {
-                  nav.addClass(name);
-              } else {
-                nav.removeClass(name);
-              }
-          });
-      });
-  </script>
   </body>
 </html>

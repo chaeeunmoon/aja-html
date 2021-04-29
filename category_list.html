@@ -326,5 +326,21 @@
          scrollNav('.nav_scroll_list', '.list_nav_wrap', 'li');
       });
     </script>
+    <!-- sticky_nav js -->
+    <script>
+      $(document).ready(function () {
+          var nav = $('.list_nav_wrap');
+          var navY = nav.offset().top;
+          var name = 'sticky';
+
+          $(window).scroll(function () {
+              if (window.pageYOffset > navY) {
+                  nav.addClass(name);
+              } else {
+                nav.removeClass(name);
+              }
+          });
+      });
+  </script>
   </body>
 </html>
