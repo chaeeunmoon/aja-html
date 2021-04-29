@@ -49,30 +49,24 @@
                                         <!--필수정보-->
                                         <div class="rgs_wrapper">
                                             <div class="rgs_group">
-                                                <!-- 교육업체일 경우 이름 display:none;-->
-                                                <div class="line_input_group">
-                                                    <label class="input_label" for="mb_gen_name">이름</label>
-                                                    <input type="text" name="mb_gen_name" id="mb_gen_name" placeholder="이름을 입력해주세요"
-                                                        value="">
-                                                </div>
                                                 <div class="line_input_group">
                                                     <label class="input_title" for="reg_mb_id">아이디</label>
                                                     <div class="flex_input_block">
                                                         <input type="text" name="mb_id" id="reg_mb_id" maxlength="100"
-                                                            onkeyup="emailon()" placeholder="아이디(이메일)" value="">
+                                                            onkeyup="emailon()" placeholder="아이디(이메일)" value="" required>
                                                         <button class="btn_rounded sm_btn flex_btn" type="button">중복확인</button>
                                                     </div>
                                                 </div>
                                                 <div class="line_input_group">
                                                     <label class="input_label" for="reg_mb_password">비밀번호</label>
                                                     <input type="password" name="mb_password" id="reg_mb_password" maxlength="20"
-                                                        minlength="3" placeholder="비밀번호(8자리 이상)">
+                                                        minlength="3" placeholder="비밀번호(8자리 이상)" required>
                                                 </div>
                                                 <div class="input_group">
                                                     <label for="" class="info-title input_title">휴대폰</label>
                                                     <input type="text" name="mb_hp" id="reg_mb_hp" style="display:none;"
                                                         maxlength="100" placeholder="휴대폰번호 ('-'뺀 숫자만)" onchange="chg_cert()"
-                                                        value="">
+                                                        value="" required>
                                                     <div class="flex_block">
                                                         <div class="phone_input_box">
                                                             <!-- 010 -->
@@ -599,14 +593,9 @@
                 var step_content = $('.step_content');
                 var slider_width = 100 * step_content.length;
                 var wrapper = $('.slider');
-                var index;
-                var height;
+                var index, height;
 
-                $('.step_nav_list').each(function () {
-                    index = $(this).find('.active').index() + 1;
-                    // console.log('nav_index '+index);
-                });
-
+                $('.step_nav_list').each(function () { index = $(this).find('.active').index() + 1; });
                 height = step_content.eq(index-1).height();
                 wrapper.css('height', height + 'px');
                 wrapper.css('width', slider_width + 'vw');
@@ -615,43 +604,33 @@
             function nextStep(){
                 var step_content = $('.step_content');
                 var slider_width = 100 * step_content.length;
+                var nav_list = $('.step_nav_list');
                 var index;
-                var nav_active = $('.step_nav_list');
 
-
-                $(nav_active).each(function () {
-                    index = $(this).find('.active').index() + 1;
-                });
-
+                $(nav_list).each(function () { index = $(this).find('.active').index() + 1;});
                 $('.slider').css('transform','translate(-'+ 100 * index + 'vw)');
-
+                // active 초기화
                 $('.step_nav').removeClass('active');
                 $('.step_nav').eq(index).addClass('active');
-                
                 autoSize();
             }
 
             function prevStep(){
                 var step_content = $('.step_content');
                 var slider_width = 100 * step_content.length;
+                var nav_list = $('.step_nav_list');
                 var index;
-                var height;
-                var nav_active = $('.step_nav_list');
 
-
-                $(nav_active).each(function () {
-                    index = $(this).find('.active').index() - 1;
-                    console.log('nav_index ' + index);
-                });
+                $(nav_list).each(function () {index = $(this).find('.active').index() - 1;});
 
                 $('.slider').css('transform','translate(-'+ 100 * index + 'vw)');
-
+                // active 초기화
                 $('.step_nav').removeClass('active');
                 $('.step_nav').eq(index).addClass('active');
-                
                 autoSize();
             }
 
+            //height 초기화
             autoSize();
 
             $('.next_step').click(function(e){

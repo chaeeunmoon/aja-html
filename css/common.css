@@ -2721,7 +2721,8 @@ input[type='checkbox']:checked {
   padding-right: 0.5rem !important;
 }
 
-.epilogue_padding .title {
+.epilogue_padding .title,
+.epilogue_padding .btn_wrapper {
   padding-left: 0.8rem !important;
   padding-right: 0.8rem !important;
 }

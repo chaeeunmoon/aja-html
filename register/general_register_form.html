@@ -46,7 +46,6 @@
                         <!--필수정보-->
                         <div class="rgs_wrapper">
                             <div class="rgs_group">
-                                <!-- 교육업체일 경우 이름 display:none;-->
                                 <div class="line_input_group">
                                     <label class="input_label" for="mb_gen_name">이름</label>
                                     <input type="text" name="mb_gen_name" id="mb_gen_name" placeholder="이름을 입력해주세요" value="">
@@ -235,18 +234,6 @@
 			}
 		});
     </script>
-    <!--콘텐츠 탭 js-->
-    <script>
-        $(document).ready(function(){
-            $(".tab_nav_item").click(function(){
-                // 탭 콘텐트 초기화
-                $('.tab_content').hide();
-                $(".tab_nav_item").removeClass('active');
-                $(this).addClass('active');
-                var tab_content =  $(this).data('tab');
-                $('.'+ tab_content).show();
-            });
-        });
     </script>
     <!--약관 show/hide-->
     <script>
@@ -258,9 +245,5 @@
             });
         });
     </script>
-    <!---->
-    <script>
-
-    </script>  
 </body>
 </html>
