@@ -408,8 +408,8 @@ caption {
   padding: 0.9rem 1.4rem;
 }
 
-.item_title_wrap.board_title {
-  padding: 1.2rem 1.4rem;
+.item_title_wrap.board_type {
+  padding: 1rem 1.4rem;
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
@@ -3017,9 +3017,57 @@ input[type='checkbox']:checked {
   margin-top: 0.5rem;
 }
 /*-------event board--------*/
+/*-------board--------*/
+.board_wrapper {
+  padding: 0 1.25rem;
+}
+
+.board_list li {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.board_box {
+  position: relative;
+  padding: 1rem 0.3rem;
+}
+
+.board_box .next_arrow {
+  position: absolute;
+  top: 50%;
+  right: 0.5rem;
+  transform: translateY(-50%) rotate(-90deg);
+}
+
+.board_box .next_arrow img {
+  width: 13px;
+}
+
+.board_title {
+  font-size: 0.93rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.8rem;
+}
+
+.board_title .main {
+  color: #ff8611;
+  margin-right: 0.3rem;
+}
+
+.board_box .board_date {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.85rem;
+  color: #a6a6a6;
+  letter-spacing: 0.3px;
+}
 /*-------board view--------*/
 .board_content_block {
   border-bottom: 1.5px solid #d9d9d9;
+}
+
+.board_content_block .board_detail {
+  width: 100%;
 }
 
 .board_sns_block {
