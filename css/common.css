@@ -3215,3 +3215,22 @@ input[type='checkbox']:checked {
   padding: 1.5rem 0 1rem;
 }
 /* E: board style */
+/* S: item style */
+.more_btn .arrow img {
+  animation-duration: 0.3s;
+  animation-name: up-down;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+/* E: item style */
+/* S: keyframe */
+@keyframes up-down {
+  0% {
+    transform: translateY(-3px);
+  }
+
+  100% {
+    transform: translateY(2px);
+  }
+}
+/* E: keyframe */
