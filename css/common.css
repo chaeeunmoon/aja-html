@@ -2359,6 +2359,17 @@ input[type='checkbox']:checked {
   margin-bottom: 1.5rem;
 }
 
+.menu_nav_list.col_type {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.menu_nav_list.col_type li {
+  width: 49%;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
 .menu_nav_list li:last-child {
   margin-bottom: 0;
 }
