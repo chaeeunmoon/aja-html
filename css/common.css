@@ -2370,8 +2370,9 @@ input[type='checkbox']:checked {
   box-sizing: border-box;
 }
 
-.menu_nav_list li:last-child {
-  margin-bottom: 0;
+.menu_nav_list li:last-child,
+.mb_0 {
+  margin-bottom: 0 !important;
 }
 
 .menu_nav_list li a {
