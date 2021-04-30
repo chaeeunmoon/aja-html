@@ -2044,7 +2044,7 @@ input[type='checkbox']:checked {
 }
 
 .grid-item .star_rating,
-.star_rating .rating_active {
+.grid-item .star_rating .rating_active {
   width: 6rem;
   height: 1.1rem;
   background-size: 6rem;
