@@ -3053,13 +3053,13 @@ input[type='checkbox']:checked {
 }
 
 .rgs_divider_wrapper {
-  padding: 1rem;
+  padding: 1rem 1.25rem;
 }
 
 .rgs_divider_wrapper .rgs_divider {
   border-bottom: 1px solid #e0e0ee;
   text-align: center;
-  margin: 1rem auto;
+  margin: 1rem auto 1.5rem;
 }
 
 .rgs_divider_wrapper .rgs_divider .txt {
