@@ -27,46 +27,131 @@
             </header>   
         </div>
         <!-- E: header -->
+        <style>
+            .search_block {
+                padding: 2rem 1.25rem;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            /* .search_block .rgs_ctg_list {
+                justify-content: space-between;
+            }
+
+            .search_block .rgs_ctg_list .btn_radio {
+                width: 23%;
+                padding: 0.4rem 0rem;
+            }
+
+            .search_block .rgs_ctg_list .btn_radio label {
+                font-size: 0.85rem;
+            } */
+
+            .search_block .rgs_ctg_list .btn_radio label {
+                font-size: 0.85rem;
+            }
+        </style>
         <!-- S: content -->
-        <div class="search_wrapper">
-            <div class="search_form_wrap">
-                <div class="search_form">
-                    <input type="text" placeholder="어떤 체험을 찾으시나요?">
-                    <a href="search_result.html" class="search_btn"><img src="images/icon/ico_botm_search.png" alt=""></a>
-                </div>
-            </div>
-            <div class="search_content_wrap">
-                <p class="title">인기 검색어</p>
-                <!--인기 검색어 목록-->
-                <div class="popular_search_list">
-                    <!--1,2,3 등-->
-                    <div class="search_word top_word">
-                        <span class="rank">1</span>
-                        <a href="#">송파점</a>
-                    </div>
-                    <div class="search_word top_word">
-                        <span class="rank">2</span>
-                        <a href="#">덕수궁 야외체험</a>
-                    </div>
-                    <div class="search_word top_word">
-                        <span class="rank">3</span>
-                        <a href="#">일산점</a>
-                    </div>
-                    <!--기본 검색어-->
-                    <div class="search_word">
-                        <a href="#">창덕궁 야외체험</a>
-                    </div>
-                    <div class="search_word">
-                        <a href="#">아자탐구생활</a>
-                    </div>
-                    <div class="search_word">
-                        <a href="#">온라인 체험학습</a>
-                    </div>
-                    <div class="search_word">
-                        <a href="#">집에서 즐기는 체험</a>
+        <div class="">
+            <section class="search_block">
+                <div class="search_form_wrap">
+                    <div class="search_form">
+                        <input type="text" placeholder="어떤 체험을 찾으시나요?">
+                        <a href="search_result.html" class="search_btn"><img src="images/icon/ico_botm_search.png" alt=""></a>
                     </div>
                 </div>
-            </div>
+                <div class="search_content_wrap">
+                    <p class="title">인기 검색어</p>
+                    <!--인기 검색어 목록-->
+                    <div class="popular_search_list">
+                        <!--1,2,3 등-->
+                        <div class="search_word top_word">
+                            <span class="rank">1</span>
+                            <a href="#">송파점</a>
+                        </div>
+                        <div class="search_word top_word">
+                            <span class="rank">2</span>
+                            <a href="#">덕수궁 야외체험</a>
+                        </div>
+                        <div class="search_word top_word">
+                            <span class="rank">3</span>
+                            <a href="#">일산점</a>
+                        </div>
+                        <!--기본 검색어-->
+                        <div class="search_word">
+                            <a href="#">창덕궁 야외체험</a>
+                        </div>
+                        <div class="search_word">
+                            <a href="#">아자탐구생활</a>
+                        </div>
+                        <div class="search_word">
+                            <a href="#">온라인 체험학습</a>
+                        </div>
+                        <div class="search_word">
+                            <a href="#">집에서 즐기는 체험</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--교육대상-->
+            <section class="search_block">
+                <p class="title">교육대상</p>
+                <!--관심분야-->
+                <div class="rgs_ctg_wrapper">
+                    <div class="rgs_ctg_list region_list">
+                        <div class="btn_radio"><input type="checkbox" name="target[]" id="who-01" class="target" value="미취학"><label for="who-01">미취학</label></div>
+                        <div class="btn_radio"><input type="checkbox" name="target[]" id="who-02" class="target" value="초등"><label for="who-02">초등</label></div>
+                        <div class="btn_radio"><input type="checkbox" name="target[]" id="who-03" class="target" value="청소년"><label for="who-03">청소년</label></div>
+                        <div class="btn_radio"><input type="checkbox" name="target[]" id="who-04" class="target" value="대학/성인"><label for="who-04">대학/성인</label></div>
+                    </div>
+                </div>
+            </section>
+            <!-- 교육일시 -->
+            <section class="search_block">
+                <p class="title">교육일시</p>
+                <!--관심분야-->
+                <div class="rgs_ctg_wrapper">
+                    <div class="rgs_ctg_list region_list">
+                        <div class="btn_radio"><input type="checkbox" name="" id="who-01" class="target" value="미취학"><label
+                                for="who-01">일주일</label></div>
+                        <div class="btn_radio"><input type="checkbox" name="" id="who-02" class="target" value="초등"><label
+                                for="who-02">한달</label></div>
+                        <div class="btn_radio"><input type="checkbox" name="" id="who-03" class="target" value="청소년"><label
+                                for="who-03">오늘</label></div>
+                        <div class="btn_radio"><input type="checkbox" name="" id="who-04" class="target"
+                                value="대학/성인"><label for="who-04">기간설정</label></div>
+                    </div>
+                </div>
+            </section>
+            <!--카테고리-->
+            <section class="search_block">
+                <p class="title">카테고리</p>
+                <!--관심분야-->
+                <div class="rgs_ctg_wrapper">
+                    <div class="rgs_ctg_list">
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-01" class="category" value=""><label for="cate-01">전체</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-02" class="category" value="10"><label for="cate-02">문화예술</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-03" class="category" value="20"><label for="cate-03">과학IT</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-04" class="category" value="30"><label for="cate-04">진로직업</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-05" class="category" value="40"><label for="cate-05">교과연계</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-06" class="category" value="50"><label for="cate-06">역사</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-07" class="category" value="60"><label for="cate-07">제주</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-08" class="category" value="70"><label for="cate-08">액티비티</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-09" class="category" value="00"><label for="cate-09">무료교육</label></div>
+                    </div>
+                </div>
+            </section>
+            <!--교육지역-->
+            <section class="search_block">
+                <p class="title">교육지역</p>
+                <!--관심분야-->
+                <div class="rgs_ctg_wrapper">
+                    <div class="rgs_ctg_list">
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-01" class="category" value=""><label
+                                for="cate-01">전체</label></div>
+            
+                    </div>
+                </div>
+            </section>
         </div>
         <!-- E: content -->
         <!-- S: footer -->

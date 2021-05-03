@@ -1743,13 +1743,19 @@ input[type='checkbox']:checked {
 .m_item_scroll .item_thumb > img,
 .list_item_wrap .item_thumb > img,
 .block_box a .item_thumb > img {
-  width: 100%;
+  min-height: 100%;
+  min-width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.square_item_list .item_thumb > img {
+  height: 100%;
+  max-width: 200% !important;
 }
 
 .m_item_scroll .item_info,
@@ -2532,9 +2538,17 @@ input[type='checkbox']:checked {
 }
 
 .search_content_wrap .title,
+.search_block .title,
 .list_wrapper .title {
   font-size: 0.9375rem;
   font-weight: 500;
+}
+
+.search_content_wrap .title,
+.search_block .title {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 .search_content_wrap .title span,
@@ -2545,7 +2559,6 @@ input[type='checkbox']:checked {
 
 /* 인기검색어 목록 */
 .popular_search_list {
-  margin-top: 1.5rem;
   text-align: center;
 }
 
@@ -3068,7 +3081,7 @@ input[type='checkbox']:checked {
 
 .rgs_divider_wrapper .rgs_divider .txt {
   background-color: #fff;
-  font-size: 1rem;
+  font-size: 0.85rem;
   text-align: center;
   color: #828282;
   position: relative;
