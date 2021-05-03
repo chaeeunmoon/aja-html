@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +8,16 @@
     <title>회원가입</title>
     <!--font 추가 (NotoSansKr, Roboto)-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
     <!--기존 css-->
     <link rel="stylesheet" href="css/default.css">
     <!-- 추가 css-->
     <link rel="stylesheet" href="css/font-style.css">
     <link rel="stylesheet" href="css/common.css">
 </head>
+
 <body>
     <div class="join_wrapper register_wrap">
         <div class="theme_wrapper">
@@ -26,20 +30,18 @@
             <div class="theme_body">
                 <div class="rgs_form_wrapper">
                     <div class="rgs_type_wrapper">
-                        <ul class="rgs_type">
-                            <li>
-                                <a href="register/general_register_form.html">
-                                    <img src="" alt="">
-                                    <p>일반</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="register/general_register_form.html">
-                                    <img src="data:image/svg+xml;base64,PHN2ZyBpZD0iX3gzMV9fcHgiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDI0IDI0IiBoZWlnaHQ9IjUxMiIgdmlld0JveD0iMCAwIDI0IDI0IiB3aWR0aD0iNTEyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGlkPSJYTUxJRF8xXyI+PHBhdGggZD0ibTE0IDkuMDkgOC44MSAxLjc1Yy43MS4xNSAxLjE5Ljc1IDEuMTkgMS40NnYxMC4yYzAgLjgzLS42NyAxLjUtMS41IDEuNWgtOWMuMjggMCAuNS0uMjIuNS0uNXYtLjVoOC41Yy4yNyAwIC41LS4yMi41LS41di0xMC4yYzAtLjIzLS4xNi0uNDQtLjM5LS40OWwtOC42MS0xLjd6Ii8+PHBhdGggZD0ibTE5LjUgMTRjLjI4IDAgLjUuMjIuNS41cy0uMjIuNS0uNS41aC0yYy0uMjggMC0uNS0uMjItLjUtLjVzLjIyLS41LjUtLjV6Ii8+PHBhdGggZD0ibTE5LjUgMTdjLjI4IDAgLjUuMjIuNS41cy0uMjIuNS0uNS41aC0yYy0uMjggMC0uNS0uMjItLjUtLjVzLjIyLS41LjUtLjV6Ii8+PHBhdGggZD0ibTE5LjUgMjBjLjI4IDAgLjUuMjIuNS41cy0uMjIuNS0uNS41aC0yYy0uMjggMC0uNS0uMjItLjUtLjVzLjIyLS41LjUtLjV6Ii8+PHBhdGggZD0ibTE0IDIzLjVjMCAuMjgtLjIyLjUtLjUuNXMtLjUtLjIyLS41LS41di0uNS0xMy41YzAtLjE1LjA3LS4yOS4xOC0uMzkuMTItLjA5LjI3LS4xMy40Mi0uMWwuNC4wOHYxLjAyIDEyLjg5eiIvPjxwYXRoIGQ9Im0xMyAyM3YuNWMwIC4yOC4yMi41LjUuNWgtNGMuMjggMCAuNS0uMjIuNS0uNXYtLjV6Ii8+PHBhdGggZD0ibTEwLjUgNWMuMjggMCAuNS4yMi41LjVzLS4yMi41LS41LjVoLTJjLS4yOCAwLS41LS4yMi0uNS0uNXMuMjItLjUuNS0uNXoiLz48cGF0aCBkPSJtMTEgOC41YzAgLjI4LS4yMi41LS41LjVoLTJjLS4yOCAwLS41LS4yMi0uNS0uNXMuMjItLjUuNS0uNWgyYy4yOCAwIC41LjIyLjUuNXoiLz48cGF0aCBkPSJtMTAuNSAxMWMuMjggMCAuNS4yMi41LjVzLS4yMi41LS41LjVoLTJjLS4yOCAwLS41LS4yMi0uNS0uNXMuMjItLjUuNS0uNXoiLz48cGF0aCBkPSJtMTAuNSAxNGMuMjggMCAuNS4yMi41LjVzLS4yMi41LS41LjVoLTJjLS4yOCAwLS41LS4yMi0uNS0uNXMuMjItLjUuNS0uNXoiLz48cGF0aCBkPSJtNiAxNC41YzAgLjI4LS4yMi41LS41LjVoLTJjLS4yOCAwLS41LS4yMi0uNS0uNXMuMjItLjUuNS0uNWgyYy4yOCAwIC41LjIyLjUuNXoiLz48cGF0aCBkPSJtNS41IDVjLjI4IDAgLjUuMjIuNS41cy0uMjIuNS0uNS41aC0yYy0uMjggMC0uNS0uMjItLjUtLjVzLjIyLS41LjUtLjV6Ii8+PHBhdGggZD0ibTUuNSA4Yy4yOCAwIC41LjIyLjUuNXMtLjIyLjUtLjUuNWgtMmMtLjI4IDAtLjUtLjIyLS41LS41cy4yMi0uNS41LS41eiIvPjxwYXRoIGQ9Im01LjUgMTFjLjI4IDAgLjUuMjIuNS41cy0uMjIuNS0uNS41aC0yYy0uMjggMC0uNS0uMjItLjUtLjVzLjIyLS41LjUtLjV6Ii8+PHBhdGggZD0ibTkgMTguNWMwLS4yOC0uMjMtLjUtLjUtLjVoLTNjLS4yOCAwLS41LjIyLS41LjV2NC41aC0xdi00LjVjMC0uODMuNjctMS41IDEuNS0xLjVoM2MuODMgMCAxLjUuNjcgMS41IDEuNXY0LjVoLTF6Ii8+PHBhdGggZD0ibTUgMjNoNCAxdi41YzAgLjI4LS4yMi41LS41LjVoLTVjLS4yOCAwLS41LS4yMi0uNS0uNXYtLjV6Ii8+PHBhdGggZD0ibTEuNzUuMiAxMC45OSAxLjY3Yy43My4xMiAxLjI2Ljc0IDEuMjYgMS40OHY1Ljc0bC0uNC0uMDhjLS4xNS0uMDMtLjMuMDEtLjQyLjEtLjExLjEtLjE4LjI0LS4xOC4zOXYtNi4xNWMwLS4yNS0uMTgtLjQ2LS40Mi0uNWwtMTAuOTktMS42NmMtLjAzLS4wMS0uMDYtLjAxLS4wOS0uMDEtLjEyIDAtLjIzLjA0LS4zMi4xMi0uMTIuMS0uMTguMjMtLjE4LjM4djIwLjgyYzAgLjI4LjIzLjUuNS41aDIuNXYuNWMwIC4yOC4yMi41LjUuNWgtM2MtLjgzIDAtMS41LS42Ny0xLjUtMS41di0yMC44MmMwLS40NC4xOS0uODYuNTMtMS4xNC4zNC0uMjkuNzgtLjQxIDEuMjItLjM0eiIvPjwvZz48L3N2Zz4=" />
-                                    <p>교육업체</p>
-                                </a>
-                            </li>
-                        </ul>
+                        <div class="rgs_type_box">
+                            <a href="register/general_register_form.html">
+                                <p class="img_title user"><img src="images/icon/ico_botm_my.png" alt="">일반 회원가입</p>
+                                <span class="rgs_type_arrow"><img src="images/icon/btn_more_black.png" alt="일반 회원가입 하기"></span>
+                            </a>
+                        </div>
+                        <div class="rgs_type_box">
+                            <a href="register/company_register_form.html">
+                                <p class="img_title"><img src="images/icon/ico_company.png" alt="">교육업체 회원가입</p>
+                                <span class="rgs_type_arrow"><img src="images/icon/btn_more_black.png" alt="교육업체 회원가입하기"></span>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -48,4 +50,5 @@
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="js/jquery-1.8.3.min.js"></script>
 </body>
+
 </html>
