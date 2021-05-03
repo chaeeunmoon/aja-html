@@ -79,7 +79,14 @@ textarea {
   appearance: none;
   border-radius: 0;
   font-size: 0.9rem;
+  outline: none;
 }
+
+select:active,
+select:focus {
+  border: 1px solid #ff8611;
+}
+
 input::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
   padding-top: 4px;
@@ -763,7 +770,7 @@ caption {
   display: block;
   width: 100%;
   border-bottom: 1px solid #9e9e9e;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 0.5em 0.5em;
   margin-bottom: 1em;
 }
@@ -845,6 +852,7 @@ caption {
 
 .box_select {
   width: 100%;
+  min-height: 2rem;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 0.65rem 0.5rem;
@@ -3654,7 +3662,6 @@ input[type='checkbox']:checked {
 
 .rm_wrap {
   width: 100%;
-  padding: 0.9rem;
   height: 700px;
   overflow: hidden;
 }
@@ -3741,6 +3748,17 @@ input[type='checkbox']:checked {
   animation-iteration-count: infinite;
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
+}
+
+/* modal style */
+#product_option .modal_content {
+  border-top-left-radius: 2rem;
+  border-top-right-radius: 2rem;
+  padding: 2rem 0.7rem 0.5rem;
+}
+
+#product_option .modal_content .modal_body {
+  padding: 0 0.7rem;
 }
 /* E: item style */
 /* S: keyframe */
