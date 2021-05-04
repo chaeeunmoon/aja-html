@@ -3847,13 +3847,13 @@ input[type='checkbox']:checked {
   display: inline-block;
   width: 1.1rem;
   height: 1.1rem;
-  background-image: url('../images/icon/btn_heart.svg');
+  background-image: url('../images/icon/btn_heart.svg') !important;
   background-size: cover;
   margin-right: 0.3rem;
 }
 
 .info_btn_box .i_btn.active .like_ico {
-  background-image: url('../images/icon/btn_heart_active.svg');
+  background-image: url('../images/icon/btn_heart_active.svg') !important;
 }
 
 .info_btn_box .i_btn:focus {
