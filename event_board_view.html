@@ -96,7 +96,7 @@
                                 <a href="#" class="capsule_btn xs gray">수정</a>
                                 <a href="#" class="capsule_btn xs secondary">삭제</a>
                             </div>
-                            <div class="reply_box">
+                            <!-- <div class="reply_box">
                                 <div class="reply_icon">
                                     <img src="images/icon/icon_ctct_arrow.png" alt="">
                                 </div>
@@ -111,7 +111,36 @@
                                         <a href="#" class="capsule_btn xs secondary">삭제</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
+                        </div>
+                        <div class="comment_box" style="padding-left: 50px !important;">
+                          <div class="reply_icon">
+                            <img src="images/icon/icon_ctct_arrow.png" alt="">
+                          </div>
+                          <p class="author_txt"><span>홍*동</span><span class="date">2021-04-20</span></p>
+                          <div class="comment_desc">
+                            <p>두손을 것은 인도하겠다는 실현에 타오르고 것이다. 불러 되는 때까지 아니한 위하여서 그들의 않는 이상 얼마나 것이다.</p>
+                          </div>
+                          <div class="comment_btn">
+                            <a href="#" class="capsule_btn xs gray">답글</a>
+                            <a href="#" class="capsule_btn xs gray">수정</a>
+                            <a href="#" class="capsule_btn xs secondary">삭제</a>
+                          </div>
+                          <span id="edit_1054" style="margin-top: 20px;">
+                            <form name="fviewcomment" action="./write_comment_update.php" onsubmit="return fviewcomment_submit(this);"
+                              method="post" autocomplete="off">
+                              <div class="comment_input_block">
+                                <textarea id="wr_content" name="wr_content" class="comment_input" required="" title="댓글 내용" placeholder=""
+                                  onclick=""></textarea>
+                                <button type="submit" onclick="javascript: document.fviewcomment.submit(); "
+                                  class="solid_btn flex_btn">작성</button>
+                              </div>
+                              <div class="ck_flex_wrap">
+                                <input type="checkbox" id="wr_secret" name="wr_secret" class="custom_cb" value="secret">
+                                <label for="wr_secret">비밀글</label>
+                              </div>
+                            </form>
+                          </span>
                         </div>
                         <div class="comment_box">
                             <p class="author_txt"><span>고*동</span><span class="date">2021-04-20</span></p>
@@ -122,19 +151,6 @@
                                 <a href="#" class="capsule_btn xs gray">답글</a>
                                 <a href="#" class="capsule_btn xs gray">수정</a>
                                 <a href="#" class="capsule_btn xs secondary">삭제</a>
-                            </div>
-                            <!--답글 클릭시 show-->
-                            <div class="reply_form">
-                                <form action="">
-                                    <div class="comment_input_block">
-                                        <textarea id="wr_content" class="comment_input" name="wr_content" required="" title="댓글 내용" placeholder="로그인을 하신 후 참여댓글을 남겨주세요." onclick="javascript: go_login()"></textarea>
-                                        <button type="submit" class="solid_btn flex_btn">작성</button>
-                                    </div>
-                                    <div class="ck_flex_wrap">
-                                        <input class="custom_cb" type="checkbox" name="auto_login" id="auto_login" />
-                                        <label for="auto_login">비밀글</label>
-                                    </div>
-                                </form>
                             </div>
                         </div>
                     </div>

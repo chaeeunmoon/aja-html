@@ -32,7 +32,7 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: normal;
-  line-height: 1em;
+  line-height: 1.4;
   word-wrap: break-word;
   word-break: keep-all;
   padding: 0;
@@ -3630,6 +3630,7 @@ input[type='checkbox']:checked {
 }
 
 .comment_box {
+  position: relative;
   padding: 1rem 0;
   border-bottom: 1px solid #d9d9d9;
 }
@@ -3664,27 +3665,25 @@ input[type='checkbox']:checked {
   margin-top: 0.8rem;
 }
 
-.reply_box {
-  padding: 1.5rem 1.5rem 0.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  vertical-align: middle;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 .reply_icon {
+  position: absolute;
+  transform: translateX(-1.5rem);
   margin-right: 0.8rem;
 }
 
 .reply_icon img {
-  width: 30px;
+  width: 0.8rem;
 }
 
-.reply_form {
-  padding: 1.5rem 0 1rem;
+.comment_box *[id^='edit_'],
+.comment_box *[id^='reply_'] {
+  display: inline-block;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.comment_box .s_cmt {
+  color: #828282;
 }
 /* E: board style */
 /* S: item style */
