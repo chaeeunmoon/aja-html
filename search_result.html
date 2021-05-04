@@ -17,24 +17,19 @@
 <body>
     <div class="wrap">
         <!-- S: header -->
-        <div id="header">
-            <header>
-                <div class="h_top" id="page">
-                    <div class="h_menu"><a href="menu.html"><img src="images/icon/btn_menu.png" alt="회원정보"></a></div>
-                    <h1 class="h_logo"><a href="/"><img src="images/logo.png" title="체험교육 플랫폼 아자스쿨"></a></h1>
-                    <a class="h_search" href="#"><img src="images/icon/btn_search.png" alt="검색"></a>
-                </div>	
-            </header>   
+        <div class="page_title_area">
+            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기"></a>
+            <h2 class="page_title">맞춤검색</h2>
+            <a class="close_btn" href="javascript:history.back();"><img src="images/icon/btn_close.png" alt="닫기"></a>
         </div>
         <!-- E: header -->
         <!-- S: content -->
+        <div class="search_label_wrapper scroll_wrapper">
+            <span class="search_label">초등</span>
+            <span class="search_label">한달</span>
+            <span class="search_label">교과연계</span>
+        </div>
         <div class="search_wrapper">
-            <div class="search_form_wrap">
-                <div class="search_form">
-                    <input type="text" placeholder="어떤 체험을 찾으시나요?">
-                    <button class="search_btn"><img src="images/icon/ico_botm_search.png" alt=""></button>
-                </div>
-            </div>
             <div class="search_content_wrap">
                 <p class="title">전체 <span>510</span>개</p>
                 <!--검색 결과 목록-->
@@ -87,48 +82,6 @@
             </div>
         </div>
         <!-- E: content -->
-        <!-- S: footer -->
-        <div class='footer' id="footer">
-            <footer>
-                <!--사업자 정보-->
-                <div class="company_info_wrap">
-                    <div class="info_header">
-                        <h6 class="info_title">아자스쿨(주) 사업자 정보 <span class="slide_arrow"><img src='images/icon/btn_more_gray.png' alt="화살표"></span></h6>
-                    </div>
-                    <!--slide info-->
-                    <div class="info_body">
-                        <ul class="info_list">
-                            <li>서울특별시 마포구 마포대로 122 프론트원(FRONT1) 15F</li>
-                            <li>대표이사 : 황선하 / 사업자등록번호 : 548-87-00240</li>
-                            <li>통신판매업신고 : 2018-서울서초-01708 호</li>
-                            <li><a href="#" data-modal="business_information" class="modal_btn">사업자정보 ▶</a></li>
-                        </ul>
-                        <div class="call_info_box">
-                            <ul class="info_list">
-                                <li><span class="f_bold">전화문의 가능시간</span></li>
-                                <li><span class="f_bold">고객센터 </span> <a href="tel:02-866-7977">02-866-7977</a> / <a
-                                        href="mailto:help@ajaschool.co.kr">help@ajaschool.co.kr</a></li>
-                                <li><span class="f_bold">평일 :</span> 10:00 ~ 18:30 (점심시간: 12:30 ~ 13:30)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- fnb list -->
-                <div>
-                    <ul class="fnb_wrap">
-                        <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=privacy">개인정보 취급방침</a></li>
-                        <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=provision">이용약관</a></li>
-                        <li class="fnb_link"><a href="#" data-modal="business_information" class="modal_btn">사업자 정보</a></li>
-                        <li class="fnb_link"><a href="#" data-modal="kakao_inquiry" class="modal_btn">문의사항</a></li>
-                    </ul>
-                </div>
-                <!--copyright-->
-                <div class="cpr_wrap">
-                    <p class="f_copyright">ⓒ 아자스쿨 주식회사</p>
-                </div>
-            </footer>
-        </div>
-        <!-- E: footer -->
     </div>
 </body>
 </html>

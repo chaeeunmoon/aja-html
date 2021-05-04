@@ -538,7 +538,7 @@ caption {
   color: #fff !important;
   padding: 0.95rem 2rem;
   border-radius: 8px;
-  font-weight: 600;
+  font-weight: 500;
   text-align: center;
 }
 
@@ -674,6 +674,15 @@ caption {
 .btn_radio input[type='checkbox']:not(:checked) + label:hover {
   border: 1px solid #e0e0e0 !important;
   background-color: #fff !important;
+  color: #828282 !important;
+}
+
+.secondary .btn_radio input[type='radio']:not(:checked) + label,
+.secondary .btn_radio input[type='radio']:not(:checked) + label:hover,
+.secondary .btn_radio input[type='checkbox']:not(:checked) + label,
+.secondary .btn_radio input[type='checkbox']:not(:checked) + label:hover {
+  border: 1px solid #f8f8fa !important;
+  background-color: #f8f8fa !important;
   color: #828282 !important;
 }
 
@@ -1810,6 +1819,7 @@ input[type='checkbox']:checked {
 }
 
 .block_box .item_info .item_title {
+  font-size: 1rem;
   margin-bottom: 1.5rem;
 }
 
@@ -2541,8 +2551,8 @@ input[type='checkbox']:checked {
   outline: none;
 }
 
-.search_content_wrap {
-  margin-top: 3rem;
+.search_form_wrap {
+  margin-bottom: 2.5rem;
 }
 
 .search_content_wrap .title,
@@ -2554,9 +2564,12 @@ input[type='checkbox']:checked {
 
 .search_content_wrap .title,
 .search_block .title {
-  margin-bottom: 1.5rem;
   font-size: 1rem;
   font-weight: 600;
+}
+
+.search_block .title {
+  margin-bottom: 1.5rem;
 }
 
 .search_content_wrap .title span,
@@ -2610,6 +2623,107 @@ input[type='checkbox']:checked {
   color: #fff;
   background: url(../images/icon/ico_search_rank.png) no-repeat center center;
   background-size: contain;
+}
+
+.search_block {
+  padding: 1.8rem 1.25rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.search_block:last-of-type {
+  border: none;
+}
+
+.search_block .rgs_ctg_list .btn_radio {
+  padding: 0.3rem 0.3rem;
+}
+
+.search_block .rgs_ctg_list .btn_radio label {
+  font-size: 0.85rem;
+}
+
+.search_btn_wrapper {
+  padding: 0.5rem 1.25rem 2rem;
+}
+.date_wrapper {
+  width: 100%;
+  margin-top: 0.8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.date_wrapper .dash {
+  font-size: 1rem;
+  color: #0d0d0d;
+  font-weight: 600;
+  padding: 0 0.4rem;
+}
+
+.date_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: 1px solid #e1e1e1;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.date_input input {
+  width: 80%;
+}
+
+.date_input input::-webkit-input-placeholder {
+  font-size: 0.85rem;
+  color: #828282;
+}
+
+.date_input input::-moz-placeholder {
+  font-size: 0.85rem;
+  color: #828282;
+}
+
+.date_input input:-ms-input-placeholder {
+  font-size: 0.85rem;
+  color: #828282;
+}
+
+.date_input input::-ms-input-placeholder {
+  font-size: 0.85rem;
+  color: #828282;
+}
+
+.date_input input::placeholder {
+  font-size: 0.85rem;
+  color: #828282;
+}
+
+.date_input .cal_img {
+  width: 1.3rem;
+  margin-right: 0.5rem;
+}
+
+.search_label_wrapper {
+  padding: 1.8rem 1.25rem 0.5rem;
+}
+.search_label {
+  display: inline-block;
+  border: 1px solid #ff8611;
+  border-radius: 1rem;
+  width: 80px;
+  font-size: 0.82rem;
+  color: #ff8611;
+  text-align: center;
+  padding: 0.6rem 0;
+  margin-right: 0.3rem;
 }
 /* E: search css */
 

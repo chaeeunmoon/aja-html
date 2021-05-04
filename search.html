@@ -13,45 +13,20 @@
     <!-- 추가 css-->
     <link rel="stylesheet" href="css/font-style.css">
     <link rel="stylesheet" href="css/common.css">
+    <!-- 날짜 선택 라이브러리 -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
 </head>
 <body>
     <div class="wrap">
         <!-- S: header -->
-        <div id="header">
-            <header>
-                <div class="h_top" id="page">
-                    <div class="h_menu"><a href="menu.html"><img src="images/icon/btn_menu.png" alt="회원정보"></a></div>
-                    <h1 class="h_logo"><a href="/"><img src="images/logo.png" title="체험교육 플랫폼 아자스쿨"></a></h1>
-                    <a class="h_search" href="#"><img src="images/icon/btn_search.png" alt="검색"></a>
-                </div>	
-            </header>   
+        <div class="page_title_area">
+            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기"></a>
+            <h2 class="page_title">맞춤검색</h2>
+            <a class="close_btn" href="javascript:history.back();"><img src="images/icon/btn_close.png" alt="닫기"></a>
         </div>
         <!-- E: header -->
-        <style>
-            .search_block {
-                padding: 2rem 1.25rem;
-                border-bottom: 1px solid #e0e0e0;
-            }
-
-            /* .search_block .rgs_ctg_list {
-                justify-content: space-between;
-            }
-
-            .search_block .rgs_ctg_list .btn_radio {
-                width: 23%;
-                padding: 0.4rem 0rem;
-            }
-
-            .search_block .rgs_ctg_list .btn_radio label {
-                font-size: 0.85rem;
-            } */
-
-            .search_block .rgs_ctg_list .btn_radio label {
-                font-size: 0.85rem;
-            }
-        </style>
         <!-- S: content -->
-        <div class="">
+        <div>
             <section class="search_block">
                 <div class="search_form_wrap">
                     <div class="search_form">
@@ -111,15 +86,17 @@
                 <!--관심분야-->
                 <div class="rgs_ctg_wrapper">
                     <div class="rgs_ctg_list region_list">
-                        <div class="btn_radio"><input type="checkbox" name="" id="who-01" class="target" value="미취학"><label
-                                for="who-01">일주일</label></div>
-                        <div class="btn_radio"><input type="checkbox" name="" id="who-02" class="target" value="초등"><label
-                                for="who-02">한달</label></div>
-                        <div class="btn_radio"><input type="checkbox" name="" id="who-03" class="target" value="청소년"><label
-                                for="who-03">오늘</label></div>
-                        <div class="btn_radio"><input type="checkbox" name="" id="who-04" class="target"
-                                value="대학/성인"><label for="who-04">기간설정</label></div>
+                        <div class="btn_radio"><input type="radio" name="date" id="when-01" class="target" value="금주주말"><label for="when-01">금주주말</label></div>
+                        <div class="btn_radio"><input type="radio" name="date" id="when-02" class="target" value="2주"><label for="when-02">2주</label></div>
+                        <div class="btn_radio"><input type="radio" name="date" id="when-03" class="target" value="한달"><label for="when-03">한달</label></div>
                     </div>
+                </div>
+                <div class="date_wrapper"> 
+                    <span class="date_input"><button type="button" class="cal_img" onclick="picker('start_date');"><img src="images/icon/ico_calendar.png" alt="달력보기"></button><input type="text" name="start_date" id="start_date" class="condition_picker" readonly="readonly"
+                        placeholder="날짜 선택" value=""></span>
+                    <span class="dash">~</span>
+                    <span class="date_input"><button type="button" class="cal_img" onclick="picker('end_date');"><img src="images/icon/ico_calendar.png" alt="달력보기"></button><input type="text" name="end_date" id="end_date" class="condition_picker" readonly="readonly"
+                        placeholder="날짜 선택" value=""></span>
                 </div>
             </section>
             <!--카테고리-->
@@ -129,14 +106,17 @@
                 <div class="rgs_ctg_wrapper">
                     <div class="rgs_ctg_list region_list">
                         <div class="btn_radio"><input type="radio" name="category" id="cate-01" class="category" value=""><label for="cate-01">전체</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-10" class="category" value=""><label for="cate-10">탐구생활</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-11" class="category" value=""><label for="cate-11">애니센터</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-06" class="category" value="50"><label for="cate-06">역사</label></div>
                         <div class="btn_radio"><input type="radio" name="category" id="cate-02" class="category" value="10"><label for="cate-02">문화예술</label></div>
                         <div class="btn_radio"><input type="radio" name="category" id="cate-03" class="category" value="20"><label for="cate-03">과학IT</label></div>
-                        <div class="btn_radio"><input type="radio" name="category" id="cate-04" class="category" value="30"><label for="cate-04">진로직업</label></div>
                         <div class="btn_radio"><input type="radio" name="category" id="cate-05" class="category" value="40"><label for="cate-05">교과연계</label></div>
-                        <div class="btn_radio"><input type="radio" name="category" id="cate-06" class="category" value="50"><label for="cate-06">역사</label></div>
-                        <div class="btn_radio"><input type="radio" name="category" id="cate-07" class="category" value="60"><label for="cate-07">제주</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-04" class="category" value="30"><label for="cate-04">진로직업</label></div>
                         <div class="btn_radio"><input type="radio" name="category" id="cate-08" class="category" value="70"><label for="cate-08">액티비티</label></div>
-                        <div class="btn_radio"><input type="radio" name="category" id="cate-09" class="category" value="00"><label for="cate-09">무료교육</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-12" class="category" value="70"><label for="cate-12">교구</label></div>
+                        <div class="btn_radio"><input type="radio" name="category" id="cate-13" class="category" value="70"><label for="cate-13">단체</label></div>
+                        <!-- <div class="btn_radio"><input type="radio" name="category" id="cate-09" class="category" value="00"><label for="cate-09">무료교육</label></div> -->
                     </div>
                 </div>
             </section>
@@ -145,7 +125,7 @@
                 <p class="title">교육지역</p>
                 <!--관심분야-->
                 <div class="rgs_ctg_wrapper">
-                    <div class="rgs_ctg_list region_list">
+                    <div class="rgs_ctg_list region_list secondary">
                         <div class="btn_radio"><input type="checkbox" name="region[]" id="local-01" class="region" value="서울"><label for="local-01">서울</label></div>
                         <div class="btn_radio"><input type="checkbox" name="region[]" id="local-02" class="region" value="서울"><label for="local-02">경기</label></div>
                         <div class="btn_radio"><input type="checkbox" name="region[]" id="local-03" class="region" value="서울"><label for="local-03">인천</label></div>
@@ -165,50 +145,36 @@
                     </div>
                 </div>
             </section>
+            <div class="search_btn_wrapper">
+                <a href="javascript:frm_submit();" class="solid_btn lg">맞춤검색하기</a>
+            </div>
         </div>
         <!-- E: content -->
-        <!-- S: footer -->
-        <div class='footer' id="footer">
-            <footer>
-                <!--사업자 정보-->
-                <div class="company_info_wrap">
-                    <div class="info_header">
-                        <h6 class="info_title">아자스쿨(주) 사업자 정보 <span class="slide_arrow"><img src='images/icon/btn_more_gray.png' alt="화살표"></span></h6>
-                    </div>
-                    <!--slide info-->
-                    <div class="info_body">
-                        <ul class="info_list">
-                            <li>서울특별시 마포구 마포대로 122 프론트원(FRONT1) 15F</li>
-                            <li>대표이사 : 황선하 / 사업자등록번호 : 548-87-00240</li>
-                            <li>통신판매업신고 : 2018-서울서초-01708 호</li>
-                            <li><a href="#" data-modal="business_information" class="modal_btn">사업자정보 ▶</a></li>
-                        </ul>
-                        <div class="call_info_box">
-                            <ul class="info_list">
-                                <li><span class="f_bold">전화문의 가능시간</span></li>
-                                <li><span class="f_bold">고객센터 </span> <a href="tel:02-866-7977">02-866-7977</a> / <a
-                                        href="mailto:help@ajaschool.co.kr">help@ajaschool.co.kr</a></li>
-                                <li><span class="f_bold">평일 :</span> 10:00 ~ 18:30 (점심시간: 12:30 ~ 13:30)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- fnb list -->
-                <div>
-                    <ul class="fnb_wrap">
-                        <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=privacy">개인정보 취급방침</a></li>
-                        <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=provision">이용약관</a></li>
-                        <li class="fnb_link"><a href="#" data-modal="business_information" class="modal_btn">사업자 정보</a></li>
-                        <li class="fnb_link"><a href="#" data-modal="kakao_inquiry" class="modal_btn">문의사항</a></li>
-                    </ul>
-                </div>
-                <!--copyright-->
-                <div class="cpr_wrap">
-                    <p class="f_copyright">ⓒ 아자스쿨 주식회사</p>
-                </div>
-            </footer>
-        </div>
-        <!-- E: footer -->
     </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+    <!--달력 js (기존 스크립트)-->
+    <script>
+        $.datepicker.setDefaults({
+            dateFormat: 'yy-mm-dd',
+            prevText: '이전 달',
+            nextText: '다음 달',
+            monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+            dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+            showMonthAfterYear: true,
+            yearSuffix: 'Year'
+        });
+
+        $(function () {
+            $(".condition_picker").datepicker();
+        });
+        function picker(id) {
+            $("#" + id).datepicker().datepicker("show");
+        }
+    </script>
 </body>
 </html>
