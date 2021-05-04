@@ -2211,6 +2211,180 @@ input[type='checkbox']:checked {
   margin-right: 0;
 }
 /* S: mypage css */
+.mypage_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 0.9rem 1.2rem 0.9rem 0.8rem;
+}
+
+.mypage_header .logo_img {
+  height: 1.5rem;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
+.mypage_header .btn_close {
+  width: 1.1rem;
+  position: relative;
+  top: 0.2rem;
+}
+
+.account_info {
+  padding: 1.5rem 1.3rem 1.5rem 2rem;
+}
+
+.account_info .account_name,
+.account_info .account_name span {
+  font-family: 'CookieRun';
+  font-size: 1.4375rem;
+  color: #232323;
+}
+
+.account_info .account_name span {
+  font-size: 1.1rem;
+  margin-left: 4px;
+}
+
+.account_info .id_email {
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.9375rem;
+  margin-top: 0.8rem;
+  color: #0d0d0d;
+}
+
+.account_menu {
+  min-height: 80vh;
+  margin-top: 2rem;
+  padding: 0 1.3rem;
+  background-color: #f6f5f3;
+  border-top-left-radius: 1.3rem;
+  border-top-right-radius: 1.3rem;
+}
+
+.state_list_wrap {
+  position: relative;
+  top: -1.9rem;
+  background-color: #fd9925;
+  padding: 1.2rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 1.3rem;
+  -webkit-box-shadow: 2px 2px 6px 2px #e0e0e0;
+  box-shadow: 2px 2px 6px 2px #e0e0e0;
+}
+
+.state_box {
+  width: 100%;
+  border-right: 1px solid #ffb975;
+}
+
+.state_box .state_title,
+.state_box .state_num {
+  font-size: 0.9375rem;
+  text-align: center;
+  color: #fff;
+  font-weight: 400;
+  letter-spacing: 0.1px;
+}
+
+.state_box .state_num {
+  font-family: 'Roboto', sans-serif;
+  margin-top: 0.8rem;
+}
+
+.account_txt {
+  color: #ff8611;
+}
+
+.point_list_wrap {
+  padding-bottom: 1.5rem;
+}
+
+.point_list_wrap .shadow_box {
+  width: 47%;
+}
+
+.point_list_wrap .img_title {
+  padding-bottom: 0.8rem;
+}
+
+.point_list_wrap .img_title img {
+  width: 2.2rem;
+}
+
+.account_txt {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.account_txt .black {
+  color: #0d0d0d;
+  font-weight: bold;
+}
+
+.account_txt.center {
+  text-align: center;
+}
+
+.ac_menu_list {
+  padding: 1rem 1.2rem;
+}
+
+.ac_menu_list li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.ac_menu_list li:last-child {
+  border: none;
+}
+
+.ac_menu_list li .account_txt {
+  position: relative;
+  top: 1px;
+}
+
+.ac_menu_wrap .img_title img {
+  width: 1.7rem;
+}
+
+.ac_btn_wrap {
+  padding: 1.5rem 0;
+}
+
+.ac_btn_list {
+  padding: 0.3rem 0.8rem;
+}
+
+.ac_btn {
+  width: 32%;
+  padding: 0.5rem;
+}
+
+.ac_btn .border_box {
+  padding: 1.3rem;
+}
+
+.ac_btn .ac_btn_label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0.7rem;
+}
+
+.logout_btn_wrap {
+  padding: 0.5rem 0 2rem;
+}
 .border_box,
 .shadow_box {
   background-color: #fff;
@@ -2272,6 +2446,24 @@ input[type='checkbox']:checked {
 .account_txt .black,
 .account_txt span {
   margin-left: 0.2rem;
+}
+
+.mypage_link_wrap {
+  position: relative;
+  top: -1rem;
+  text-align: right;
+}
+
+.mypage_link_wrap .mypage_link {
+  font-size: 0.85rem;
+  margin-right: 0.5rem;
+}
+
+.mypage_link img {
+  height: 0.7rem;
+  margin-left: 0.2rem;
+  position: relative;
+  top: 1px;
 }
 /* E: mypage css */
 
