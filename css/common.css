@@ -428,6 +428,7 @@ caption {
   letter-spacing: 0.5px;
   text-align: center;
   vertical-align: middle;
+  line-height: 1;
 }
 
 .page_title_area .page_title.t_black {
