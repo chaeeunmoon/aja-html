@@ -3304,8 +3304,12 @@ input[type='checkbox']:checked {
 }
 
 .step_btn_wrapper {
-  padding: 0.8rem 1.25rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 0.4rem 0.8rem;
   text-align: right;
+  border-top: 1px solid #e0e0e0;
 }
 
 .slide_step_container {

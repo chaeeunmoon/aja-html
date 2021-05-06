@@ -93,9 +93,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="step_btn_wrapper">
-                                            <button class="solid_btn next_step">다음</button>
-                                        </div>
                                     </div>
                                     <!--사업자정보-->
                                     <div class="step_content">
@@ -140,12 +137,6 @@
                                                     <input type="text" name="mb_addr2" value="" id="reg_mb_addr2"
                                                         placeholder="상세주소를 입력하세요">
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="step_btn_wrapper">
-                                            <div class="flex_block">
-                                                <a href="javascript:void(0);" type="button" class="solid_btn light prev_step">이전</a>
-                                                <a href="javascript:void(0);" type="button" class="solid_btn second next_step">다음</a>
                                             </div>
                                         </div>
                                     </div>
@@ -210,12 +201,6 @@
                                                     <input type="text" name="mb_homepage" id="reg_mb_homepage"
                                                         placeholder="(예: http://www.ajaschool.com)" value="" maxlength="255">
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="step_btn_wrapper">
-                                            <div class="flex_block">
-                                                <a href="javascript:void(0);" type="button" class="solid_btn light prev_step">이전</a>
-                                                <a href="javascript:void(0);" type="button" class="solid_btn second next_step">다음</a>
                                             </div>
                                         </div>
                                     </div>
@@ -288,12 +273,6 @@
                                                                 대학생/성인</label></div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="step_btn_wrapper">
-                                            <div class="flex_block">
-                                                <a href="javascript:void(0);" type="button" class="solid_btn light prev_step">이전</a>
-                                                <a href="javascript:void(0);" type="button" class="solid_btn second next_step">다음</a>
                                             </div>
                                         </div>
                                     </div>
@@ -413,12 +392,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="step_btn_wrapper">
-                                            <div class="flex_block">
-                                                <a href="javascript:void(0);" type="button" class="solid_btn light prev_step">이전</a>
-                                                <a href="javascript:void(0);" type="button" class="solid_btn second next_step">다음</a>
-                                            </div>
-                                        </div>
                                     </div>
                                     <!--사업자 등록증-->
                                     <div class="step_content">
@@ -523,12 +496,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="step_btn_wrapper">
-                                            <div class="flex_block">
-                                                <a href="javascript:void(0);" type="button" class="solid_btn light prev_step">이전</a>
-                                                <button type="submit" class="solid_btn">회원가입</button>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -538,11 +505,23 @@
                             <a class="solid_btn sm btn_end" href="javascript:history.back();">취소</a>
                             <button class="solid_btn lg">회원가입</button>
                         </div> -->
+                        <div class="step_btn_wrapper flex_block">
+                            <a href="javascript:void(0);" class="solid_btn light prev_step disable">이전</a>
+                            <!--회원가입버튼 class (new_next text-center btn white bold bg-orange)-->
+                            <a href="javascript:fregisterform_submit();" id="btn_submit" style="display:none;" class="solid_btn"
+                                accesskey="s">회원가입</a>
+                            <a href="javascript:void(0);" class="solid_btn next_step">다음</a>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <style>
+        .solid_btn.disable {
+            background-color: #ddd !;
+        }
+    </style>
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="../js/jquery-1.8.3.min.js"></script>
     <!--전체동의 js(기존 css)-->
@@ -608,11 +587,24 @@
                 var index;
 
                 $(nav_list).each(function () { index = $(this).find('.active').index() + 1;});
-                $('.slider').css('transform','translate(-'+ 100 * index + 'vw)');
-                // active 초기화
-                $('.step_nav').removeClass('active');
-                $('.step_nav').eq(index).addClass('active');
-                autoSize();
+
+                if( index == step_content.length - 1 ){
+                    $('.next_step').hide();
+                    $('#btn_submit').show();
+                    $('.slider').css('transform', 'translate(-' + 100 * index + 'vw)');
+                    // active 초기화
+                    $('.step_nav').removeClass('active');
+                    $('.step_nav').eq(index).addClass('active');
+                    autoSize();
+                } else {
+                    $('.next_step').show();
+                    $('#btn_submit').hide();
+                    $('.slider').css('transform', 'translate(-' + 100 * index + 'vw)');
+                    // active 초기화
+                    $('.step_nav').removeClass('active');
+                    $('.step_nav').eq(index).addClass('active');
+                    autoSize();
+                }
             }
 
             function prevStep(){
@@ -628,6 +620,32 @@
                 $('.step_nav').removeClass('active');
                 $('.step_nav').eq(index).addClass('active');
                 autoSize();
+
+                if (index == step_content.length - 1) {
+                    $('.next_step').show();
+                    $('#btn_submit').hide();
+                    $('.prev_step').removeClass('disable');
+                    $('.prev_step').removeClass('prev_step');
+                    $('.slider').css('transform', 'translate(-' + 100 * index + 'vw)');
+                    // active 초기화
+                    $('.step_nav').removeClass('active');
+                    $('.step_nav').eq(index).addClass('active');
+                    autoSize();
+                } else if( index == step_content.length ){
+                    console.log(index);
+                    return $('.prev_step').addClass('disable');
+                    $('.prev_step').addClass('prev_step');
+                } else {
+                    $('.next_step').show();
+                    $('#btn_submit').hide();
+                     $('.prev_step').removeClass('disable');
+                     $('.prev_step').removeClass('prev_step');
+                    $('.slider').css('transform', 'translate(-' + 100 * index + 'vw)');
+                    // active 초기화
+                    $('.step_nav').removeClass('active');
+                    $('.step_nav').eq(index).addClass('active');
+                    autoSize();
+                }
             }
 
             //height 초기화
