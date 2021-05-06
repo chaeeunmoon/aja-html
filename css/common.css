@@ -1,4 +1,3 @@
-/*
 /* font responsive */
 html {
   font-size: 17px;
@@ -4097,3 +4096,46 @@ input[type='checkbox']:checked {
   }
 }
 /* E: keyframe */
+/* S: password */
+.pw_wrappr {
+  min-height: 65vh;
+  padding: 1.5rem 1.25rem 1rem;
+}
+
+.pw_wrappr .pw_title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.pw_wrappr .pw_desc {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #828282;
+  padding: 1rem 0.5rem;
+}
+
+.pw_wrappr .pw_desc strong {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.pw_wrappr .line_input_group {
+  margin-top: 1.5rem;
+}
+
+.pw_back {
+  display: inline-block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+}
+
+.pw_back img {
+  width: 1.1rem;
+  margin-right: 0.3rem;
+  position: relative;
+  top: 0.2rem;
+}
+/* E: password */
