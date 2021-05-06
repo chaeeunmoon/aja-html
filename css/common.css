@@ -2905,17 +2905,16 @@ input[type='checkbox']:checked {
 }
 
 .search_label_wrapper {
-  padding: 1.8rem 1.25rem 0.5rem;
+  padding: 1.8rem 1.25rem 0rem;
 }
 .search_label {
   display: inline-block;
   border: 1px solid #ff8611;
-  border-radius: 1rem;
-  width: 80px;
+  border-radius: 2rem;
   font-size: 0.82rem;
   color: #ff8611;
   text-align: center;
-  padding: 0.6rem 0;
+  padding: 0.6rem 1rem;
   margin-right: 0.3rem;
 }
 /* E: search css */
