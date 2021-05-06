@@ -3974,6 +3974,7 @@ input[type='checkbox']:checked {
   width: 100%;
   height: 700px;
   overflow: hidden;
+  padding: 0.9rem;
 }
 
 .rm_wrap .img_wrap {
