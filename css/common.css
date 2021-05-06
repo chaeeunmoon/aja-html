@@ -32,7 +32,7 @@ body {
   font-family: 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: normal;
-  line-height: 1.4;
+  line-height: 1em;
   word-wrap: break-word;
   word-break: keep-all;
   padding: 0;
@@ -1611,7 +1611,7 @@ input[type='checkbox']:checked {
 .category_list li .ctg_thumbnail > img,
 .ctg_nav_item .ctg_thumbnail > img {
   width: 100%;
-  /* border-radius: 1.3rem; */
+  border-radius: 1.3rem;
 }
 
 .category_list li .ctg_name,
@@ -3678,9 +3678,12 @@ input[type='checkbox']:checked {
 
 .comment_box *[id^='edit_'],
 .comment_box *[id^='reply_'] {
-  display: inline-block;
   width: 100%;
-  margin: 1rem 0;
+}
+
+.comment_box *[id^='edit_'] .comment_input_block,
+.comment_box *[id^='reply_'] .comment_input_block {
+  padding-top: 1rem;
 }
 
 .comment_box .s_cmt {
