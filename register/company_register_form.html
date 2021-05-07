@@ -349,46 +349,30 @@
                                                 <div class="rgs_title_block">
                                                     <p class="rgs_title">체험교육 프로그램(안)</p>
                                                 </div>
-                                                <div style="width: 100%">
-                                                    <table class="rgs_program_table">
-                                                        <colgroup>
-                                                            <col width="43%">
-                                                            <col width="17%">
-                                                            <col width="22%">
-                                                            <col width="18%">
-                                                        </colgroup>
-                                                        <thead>
-                                                            <tr>
-                                                                <th>프로그램명</th>
-                                                                <th>대상</th>
-                                                                <th>교육시간</th>
-                                                                <th>금액</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody id="program_list">
-                                                            <tr>
-                                                                <td>
-                                                                    <input type="text" name="mb_program_name[]" placeholder="예) 미래직업군 체험 4차 산업체험" value=""
-                                                                        maxlength="255">
-                                                                </td>
-                                                                <td>
-                                                                    <input type="text" name="mb_program_target[]" placeholder="초등5" value=""
-                                                                        maxlength="255">
-                                                                </td>
-                                                                <td>
-                                                                    <input type="text" name="mb_program_hour[]" placeholder="7시간" value="" maxlength="255"
-                                                                        style="text-align: center;">
-                                                                </td>
-                                                                <td>
-                                                                    <input type="text" name="mb_program_price[]" placeholder="110,000원" value=""
-                                                                        maxlength="255">
-                                                                </td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <div class="rgs_btn_wrap">
-                                                        <a href="javascript:addT();" class="btn_rounded sm_btn">교육추가</a>
+                                                <div id="program_list">
+                                                    <div class="rgs_program_box">
+                                                        <div class="line_input_group">
+                                                            <label for="">프로그램명</label>
+                                                            <input type="text" name="mb_program_name[]" placeholder="예) 미래직업군 체험 4차 산업체험" value="" maxlength="255">
+                                                        </div>
+                                                        <div class="flex_block">
+                                                            <div class="line_input_group">
+                                                                <label for="">교육시간</label>
+                                                                <input type="text" name="mb_program_hour[]" placeholder="7시간" value="" maxlength="255">
+                                                            </div>
+                                                            <div class="line_input_group">
+                                                                <label for="">대상</label>
+                                                                <input type="text" name="mb_program_target[]" placeholder="초등5" value="" maxlength="255">
+                                                            </div>
+                                                            <div class="line_input_group">
+                                                                <label for="">금액</label>
+                                                                <input type="text" name="mb_program_price[]" placeholder="110,000원" value="" maxlength="255">
+                                                            </div>
+                                                        </div>
                                                     </div>
+                                                </div>
+                                                <div class="rgs_btn_wrap">
+                                                    <a href="javascript:addT();" class="btn_rounded sm_btn">교육추가</a>
                                                 </div>
                                             </div>
                                         </div>
