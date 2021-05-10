@@ -18,7 +18,12 @@
     <link rel="stylesheet" href="css/common.css">
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="js/jquery-1.8.3.min.js"></script>
+    <!--fancybox css-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css"
+        integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg=="
+        crossorigin="anonymous" />
 </head>
+
 <body>
     <div id="wrap">
         <!--header none-->
@@ -58,18 +63,20 @@
                             <div class="info_btn_box">
                                 <!-- 찜하기 버튼 경우, active toggle -->
                                 <button class="i_btn"><span class="like_ico"></span> 찜하기</button>
-                                <button class="i_btn modal_btn" data-modal="sns_share"><img src="images/icon/btn_share.svg" alt="찜하기"> 공유하기</button>
+                                <button class="i_btn modal_btn" data-modal="sns_share"><img
+                                        src="images/icon/btn_share.svg" alt="찜하기"> 공유하기</button>
                             </div>
                             <!--S: sns 공유(디자인 유지)-->
                             <div class="layer-popup-area" style="display:none ;">
                                 <div class="popup-content">
                                     <div class="search-area result">
-                                        <div class="range">			
-                                            <a href="javascript:void(0)" class="ico-popup-menu">아이콘</a>				
-                                            <div class="center" style="margin-left: 10px;"><p>
-                                                <!-- <?php echo stripslashes($it['it_name']); ?> -->
-                                            </p>
-                                        </div>
+                                        <div class="range">
+                                            <a href="javascript:void(0)" class="ico-popup-menu">아이콘</a>
+                                            <div class="center" style="margin-left: 10px;">
+                                                <p>
+                                                    <!-- <?php echo stripslashes($it['it_name']); ?> -->
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- <?php
@@ -81,11 +88,12 @@
                                         <div class="share-title">SNS로 공유하세요</div>
                                         <div class="share-ico-list">
                                             <ul>
-                                            <!-- <?php echo $sns_share_links; ?> -->
-                                            <li>
-                                                <a class="ico-sns-big-url btn-copy" id="btnCopyClip">url</a>
-                                                <a id="txtCopyClip" class="ico-sns-big-url" style="display: none;" onclick="not_copy();"></a>					
-                                            </li>
+                                                <!-- <?php echo $sns_share_links; ?> -->
+                                                <li>
+                                                    <a class="ico-sns-big-url btn-copy" id="btnCopyClip">url</a>
+                                                    <a id="txtCopyClip" class="ico-sns-big-url" style="display: none;"
+                                                        onclick="not_copy();"></a>
+                                                </li>
                                                 <!--li><a class="ico-sns-big-facebook" href="#none">페이스북</a></li>
                                                 <li><a class="ico-sns-big-story" href="#none">스토리</a></li>
                                                 <li><a class="ico-sns-big-kakao" href="#none">카카오톡</a></li>
@@ -96,12 +104,17 @@
                                                 <li><a class="ico-sns-big-url" href="#none">url</a></li-->
                                             </ul>
                                         </div>
-                                        <p style="color:#fff;"><a id="clipURL" href="<?=$SNS_URL?>" style="display:none; border: 1px solid silver; padding: 10px;" onclick="return false;"><?=$SNS_URL?></a></p>
+                                        <p style="color:#fff;"><a id="clipURL" href="<?=$SNS_URL?>"
+                                                style="display:none; border: 1px solid silver; padding: 10px;"
+                                                onclick="return false;">
+                                                <?=$SNS_URL?>
+                                            </a></p>
                                     </div>
                                 </div>
-                                <a href="javascript:void(0)" class="ico-popup-close" style="top: 75px !important;">닫기</a>
+                                <a href="javascript:void(0)" class="ico-popup-close"
+                                    style="top: 75px !important;">닫기</a>
                                 <div class="deam"></div>
-                            </div>             
+                            </div>
                             <!--E: sns 공유-->
                             <!-- 옵션창 -->
                             <div id="product_option" class="modal round_modal">
@@ -183,48 +196,49 @@
                                     <img src="images/sample/detail-sample.png" alt="상세페이지 샘플">
                                 </div>
                                 <!-- 지도 -->
-						        <div class="detail-map">
-                                <div id="bottomMap" style="border:1px solid #000; width:100%; height:400px; margin:auto;"></div>
-                                <script>
-                                    var mapContainer = document.getElementById('bottomMap'), // 지도를 표시할 div 
-                                    mapOption = {
-                                        center: new daum.maps.LatLng(37.545603009882846, 126.95252894821037), // 지도의 중심좌표
-                                        level: 3 // 지도의 확대 레벨
-                                    };  
-            
-                                    // 지도를 생성합니다    
-                                    var map = new daum.maps.Map(mapContainer, mapOption); 
-                                    var coords = new daum.maps.LatLng(37.545603009882846, 126.95252894821037);
-    
-                                    // 결과값으로 받은 위치를 마커로 표시합니다
-                                    var marker = new daum.maps.Marker({
-                                        map: map,
-                                        position: coords
-                                    });
-    
-    
-                                    // 주소-좌표 변환 객체를 생성합니다
-                                    geocoder = new daum.maps.services.Geocoder();
-    
-                                    // 주소로 좌표를 검색합니다
-                                    geocoder.addressSearch('<?=$addr_url?>', function(result, status) {
-    
-                                    // 정상적으로 검색이 완료됐으면 
-                                     if (status === daum.maps.services.Status.OK) {
-    
-                                        var coords = new daum.maps.LatLng(result[0].y, result[0].x);
-    
+                                <div class="detail-map">
+                                    <div id="bottomMap"
+                                        style="border:1px solid #000; width:100%; height:400px; margin:auto;"></div>
+                                    <script>
+                                        var mapContainer = document.getElementById('bottomMap'), // 지도를 표시할 div 
+                                            mapOption = {
+                                                center: new daum.maps.LatLng(37.545603009882846, 126.95252894821037), // 지도의 중심좌표
+                                                level: 3 // 지도의 확대 레벨
+                                            };
+
+                                        // 지도를 생성합니다    
+                                        var map = new daum.maps.Map(mapContainer, mapOption);
+                                        var coords = new daum.maps.LatLng(37.545603009882846, 126.95252894821037);
+
                                         // 결과값으로 받은 위치를 마커로 표시합니다
                                         var marker = new daum.maps.Marker({
                                             map: map,
                                             position: coords
                                         });
-    
-                                        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-                                        map.setCenter(coords);
-                                        } 
-                                    });    
-                                </script>
+
+
+                                        // 주소-좌표 변환 객체를 생성합니다
+                                        geocoder = new daum.maps.services.Geocoder();
+
+                                        // 주소로 좌표를 검색합니다
+                                        geocoder.addressSearch('<?=$addr_url?>', function (result, status) {
+
+                                            // 정상적으로 검색이 완료됐으면 
+                                            if (status === daum.maps.services.Status.OK) {
+
+                                                var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+
+                                                // 결과값으로 받은 위치를 마커로 표시합니다
+                                                var marker = new daum.maps.Marker({
+                                                    map: map,
+                                                    position: coords
+                                                });
+
+                                                // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                                map.setCenter(coords);
+                                            }
+                                        });
+                                    </script>
                                 </div>
                             </div>
                             <div class="rm_btn_wrap">
@@ -236,74 +250,290 @@
                         <!-- 교육후기 (스타일 동의)-->
                         <div class="tab-content tab_inner_box" style="display: none;">
                             <!-- 후기 총점 -->
-                            <div class="content-box-white">
-                                <p class="program-title">후기 총점</p>
-                                <div class="total-star">
-                                    <p>총 <span class="orange">5</span>건의 교육후기가 있습니다.</p>
-                                    <span class="star"><span class="orange-star" style="width:85.60%;">별점</span></span>
-                                    <div class="total-star-num"><strong>86</strong>/100점</div>
+                            <style>
+                                .tab_inner_box {
+                                    padding-top: 0.8rem;
+                                }
+
+                                .tab_inner_box .content-box-white {
+                                    padding: 1rem 1.25rem;
+                                }
+
+                                .item_review_box {
+                                    border-bottom: 1px solid #e0e0e0;
+                                }
+
+                                .item_title_block {
+                                    margin-bottom: 1.5rem;
+                                }
+
+                                .item_title {
+                                    font-size: 1.25rem;
+                                    font-weight: 600;
+                                    color: #0d0d0d;
+                                }
+
+                                .num {
+                                    margin-left: 3px;
+                                    font-family: 'Roboto', sans-serif;
+                                    color: #ff8611;
+                                    font-weight: 600;
+                                }
+
+                                .total_star_num {
+                                    font-family: 'Roboto', sans-serif;
+                                    font-size: 1rem;
+                                    color: #828282;
+                                    font-weight: 500;
+                                    margin-left: 0.5rem;
+                                    line-height: 2rem;
+                                }
+
+                                .item_rating .star_rating {
+                                    width: 8rem;
+                                }
+
+                                .item_rating .star_rating,
+                                .item_rating .star_rating .rating_active {
+                                    background-size: 8rem;
+                                }
+
+                                .item_review_info {
+                                    font-size: 0.95rem;
+                                    color: #0d0d0d;
+                                    text-align: center;
+                                    margin: 1.5rem auto 0.8rem;
+                                }
+
+                                .review_block {
+                                    border-top: none !important;
+                                    border-bottom: 1px solid #e0e0e0;
+                                    padding: 1.2rem 0 !important;
+                                }
+
+                                .review_block:last-child {
+                                    border-bottom: none;
+                                }
+
+                                .review_block .item_rating {
+                                    width: 6.5rem;
+                                }
+
+                                .review_block .item_rating .star_rating,
+                                .review_block .item_rating .star_rating .rating_active {
+                                    background-size: 6.5rem;
+                                }
+
+                                .review_block .review_title {
+                                    margin: 0.8rem 0;
+                                }
+
+                                .review_block .review_title a {
+                                    font-size: 1rem;
+                                    color: #0d0d0d;
+                                    font-weight: 500;
+                                    letter-spacing: 0.3px;
+                                }
+
+                                .review_block .review_desc a {
+                                    font-size: 0.875rem;
+                                    line-height: 1.4;
+                                }
+
+                                .review_block .review_desc {
+                                    margin-bottom: 0.5rem
+                                }
+
+                                .item_review_author {
+                                    font-size: 0.9rem;
+                                    color: #aaaaaa;
+                                    font-weight: 400;
+                                    line-height: 1.5rem;
+                                }
+
+                                .review_date {
+                                    font-family: 'Roboto', sans-serif;
+                                }
+
+                                .review_date::before {
+                                    content: '·';
+                                    margin: 0 0.25rem;
+                                }
+
+                                .review_block .review_img {
+                                    margin-top: 0.8rem;
+                                    margin-bottom: 0.3rem;
+                                }
+
+                                .review_block .review_img img {
+                                    border-radius: 1rem !important;
+                                }
+                            </style>
+                            <div class="content-box-white item_review_box">
+                                <div class="flex_block item_title_block">
+                                    <p class="item_title">후기 <span class="num">5</span></p>
+                                    <div class="flex_block item_rating">
+                                        <div class="star_rating">
+                                            <span class="rating_active" style="width:86%">별점</span>
+                                        </div>
+                                        <span class="total_star_num">86</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- <input type="text" class="outline_btn" name="" readonly="" placeholder="후기쓰기" onclick="shop_reply()"> -->
+                                    <a href="javascript:void(0)" onclick="shop_reply()" class="outline_btn lg">후기
+                                        작성하기</a>
+                                    <p class="item_review_info">후기를 작성해주시면 <span class="orange">500point 적립!</span></p>
                                 </div>
                             </div>
                             <!--교육후기-->
                             <div class="content-box-white" id="content-box-white">
-                                <p class="program-title">교육후기</p>
                                 <div class="edu-detail-reply">
-                                    <div class="write-reply">
-                                                    <input type="text" class="txt-reply" name="" readonly="" placeholder="후기쓰기" onclick="shop_reply()">
-                                                </div>
-                            
-                                    <p class="edu-reply-noti">후기를 작성해주시면 <span class="orange">500point 적립!</span></p>
-                            
-                            
-                                    <div class="reply-list">
+                                    <div class="reply-list item_review_list">
                                         <ul>
-                            
-                                            <li>
-                                                <div><span class="star"><span class="orange-star" style="width:28%;">별점</span></span>
-                                                                                        
+                                            <li class="review_block">
+                                                <div class="flex_block">
+                                                    <div class="flex_block item_rating">
+                                                        <div class="star_rating">
+                                                            <span class="rating_active" style="width:86%">별점</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item_review_author"><span class="name">홍*동</span><span
+                                                            class="review_date">2021.04.19.</span></div>
                                                 </div>
-                                                <div class="reply-info"><span class="name">*住</span><span class="date">2021.04.19</span></div>
                                                 <!--<button class="ico-reply-toggle">열기</button>-->
                                                 <div class="edu-reply list-tr">
-                                                    <p class="reply"><a href="javascript:void(0)">초등학생 프로그램에 미취학아동들이 많았네요.</a></p>
-                                                    
+                                                    <p class="reply review_title"><a href="javascript:void(0)">초등학생
+                                                            프로그램에 미취학아동들이 많았네요.</a></p>
                                                 </div>
                                                 <div class="edu-reply content-tr">
-                                                    <div class="img-area" style="padding-top:10px;">
-                                                        <ul>
-                                                            <li><img src="/use_img/20210419100924.jpeg"></li>
-                                                            <li></li>
-                                                            <li></li>
-                                                        </ul>
+                                                    <div class="edu-reply content-tr">
+                                                        <p class="reply review_desc"><a href="javascript:void(0)">4학년
+                                                                아이가 미취학 아이들과 한조로 편성되어 있었네요. 다른 조에는 그나마 초등학생들이 있던거 같던데
+                                                                사전에 인적사항
+                                                                받으셨으면 고려하셨어야 한다고 생각합니다. 그리고
+                                                                너프건으로 예매를 했는데 다른 프로그램이 진행되었습니다.
+                                                                프로그램 운영에 문제가 있다고 봅니다.</a></p>
+                                                        <!--img-area-->        
+                                                        <div class="img-area review_img">
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="images/sample/sample-09.jpg"
+                                                                        data-fancybox>
+                                                                        <img
+                                                                            src="images/sample/sample-09.jpg"></a>
+                                                                </li>
+                                                                <li></li>
+                                                                <li></li>
+                                                            </ul>
+                                                        </div>
                                                     </div>
-                                                    <p class="reply"><a href="javascript:void(0)">4학년 아이가 미취학 아이들과 한조로 편성되어 있었네요. 다른 조에는 그나마 초등학생들이 있던거 같던데 사전에 인적사항 받으셨으면 고려하셨어야 한다고 생각합니다. 그리고 
-                            너프건으로 예매를 했는데 다른 프로그램이 진행되었습니다. 
-                            프로그램 운영에 문제가 있다고 봅니다.</a></p>
-                                                </div>
-                                                <!--div class="reply-02-num on"><a href="#none">답글<span>2</span></a></div>
-                                                <div class="reply-list-02">
-                                                    <ul>
-                                                        <li>
-                                                            <p class="reply-02">사는냐? 죽는냐? 그것이 문제로다!<br>To Be Or Not To Be!</p>
-                                                            <div class="reply-info"><span class="name">홍길동***</span><span class="date">2017-02-19</span></div>
-                                                        </li>
-                                                        <li>
-                                                            <p class="reply-02">그들은 하루 24시간을 바쁘게 살아가는 과정에서 문득자신이 행복하다는걸 깨닫는다.</p>
-                                                            <div class="reply-info"><span class="name">홍길동***</span><span class="date">2017-02-19</span></div>
-                                                        </li>
-                                                    </ul>
-                                                </div-->
                                             </li>
+                                            <li class="review_block">
+                                                <div class="flex_block">
+                                                    <div class="flex_block item_rating">
+                                                        <div class="star_rating">
+                                                            <span class="rating_active" style="width:86%">별점</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item_review_author"><span class="name">홍*동</span><span class="review_date">2021.04.19.</span></div>
+                                                </div>
+                                                <!--<button class="ico-reply-toggle">열기</button>-->
+                                                <div class="edu-reply list-tr">
+                                                    <p class="reply review_title"><a href="javascript:void(0)">초등학생
+                                                            프로그램에 미취학아동들이 많았네요.</a></p>
+                                                </div>
+                                                <div class="edu-reply content-tr">
+                                                    <div class="edu-reply content-tr">
+                                                        <p class="reply review_desc"><a href="javascript:void(0)">4학년
+                                                                아이가 미취학 아이들과 한조로 편성되어 있었네요. 다른 조에는 그나마 초등학생들이 있던거 같던데
+                                                                사전에 인적사항
+                                                                받으셨으면 고려하셨어야 한다고 생각합니다. 그리고
+                                                                너프건으로 예매를 했는데 다른 프로그램이 진행되었습니다.
+                                                                프로그램 운영에 문제가 있다고 봅니다.</a></p>
+                                                        <!--img-area-->
+                                                        <div class="img-area review_img">
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="images/sample/sample-09.jpg" data-fancybox><img src="images/sample/sample-09.jpg"></a>
+                                                                </li>
+                                                                <li></li>
+                                                                <li></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                            </li>
+                                    </div>
                                 </div>
                             </div>
-                            </div>
-                        </div>    
+                        </div>
                         <!-- 취소/환불 (스타일 동일)-->
                         <div class="tab-content tab_inner_box" style="display: none;">
                             <div class="content-box-white">
                                 <p class="program-title">취소환불정책</p>
-                                    <p style="font-size:14.6667px;line-height:1.8;"><span style="font-size:11pt;">5일 전 취소 : 전액 환불</span></p><p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;"><span style="line-height:1.8;font-size:11pt;">4일 전 취소 : 90% 환불</span><br><span style="line-height:1.8;font-size:11pt;">3일 전 취소 : 70% 환불</span></span></p><p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;">2일 전 취소 : 70% 환불<br><span style="line-height:1.8;font-size:11pt;"></span><span style="line-height:1.8;font-size:11pt;">1일 전 취소 : 환불 불가</span>&nbsp;</span></p><p style="font-size:14.6667px;line-height:1.8;"><span style="line-height:1.8;font-size:11pt;"></span></p><p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;"><span style="line-height:1.8;font-size:11pt;">&nbsp; 당일 취소 : 환불 불가</span></span></p><p><span style="font-size:14.6667px;">&nbsp;</span></p><p style="line-height:2;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">[취소수수료 계산 기준]</span></font></p><p style="line-height:2;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">· 취소수수료는 신청금액을 기준으로 계산됩니다.</span></font></p><p style="line-height:2;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">· 일정변경을 위한 결제 취소 시에도 취소수수료가 부과됩니다.</span></font></p><p style="line-height:2;"><span style="font-family:'돋움', dotum;font-size:14.6667px;">·</span><span style="font-family:'돋움', dotum;font-size:14.6667px;">&nbsp;</span><span style="font-size:14.6667px;">구매당일 취소시 전액환불됩니다.</span><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font></p><p style="line-height:1.8;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font></p><p style="line-height:2;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">· 전체취소 시</span></font></p><p style="line-height:2;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">쿠폰 사용금액 → 결제금액 → 포인트 사용금액 순으로 차감 처리됩니다.</span></font></p><p style="line-height:1.8;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font></p><p style="line-height:2;"><span style="font-family:'돋움', dotum;font-size:14.6667px;">· 부분취소 시</span></p><p style="line-height:2;"><font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">결제금액 → 쿠폰 사용금액 → 포인트 사용금액 순으로 차감 처리 됩니다.</span></font></p><p><span style="line-height:1.8;font-size:11pt;">
-                &#8203;</span>&nbsp;</p>  
+                                <p style="font-size:14.6667px;line-height:1.8;"><span style="font-size:11pt;">5일 전 취소 :
+                                        전액 환불</span></p>
+                                <p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;"><span
+                                            style="line-height:1.8;font-size:11pt;">4일 전 취소 : 90% 환불</span><br><span
+                                            style="line-height:1.8;font-size:11pt;">3일 전 취소 : 70% 환불</span></span></p>
+                                <p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;">2일 전 취소 :
+                                        70% 환불<br><span style="line-height:1.8;font-size:11pt;"></span><span
+                                            style="line-height:1.8;font-size:11pt;">1일 전 취소 : 환불 불가</span>&nbsp;</span>
+                                </p>
+                                <p style="font-size:14.6667px;line-height:1.8;"><span
+                                        style="line-height:1.8;font-size:11pt;"></span></p>
+                                <p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;"><span
+                                            style="line-height:1.8;font-size:11pt;">&nbsp; 당일 취소 : 환불 불가</span></span>
+                                </p>
+                                <p><span style="font-size:14.6667px;">&nbsp;</span></p>
+                                <p style="line-height:2;">
+                                    <font face="dotum, sans-serif"><span
+                                            style="font-size:14.6667px;font-family:'돋움', dotum;">[취소수수료 계산 기준]</span>
+                                    </font>
+                                </p>
+                                <p style="line-height:2;">
+                                    <font face="dotum, sans-serif"><span
+                                            style="font-size:14.6667px;font-family:'돋움', dotum;">· 취소수수료는 신청금액을 기준으로
+                                            계산됩니다.</span></font>
+                                </p>
+                                <p style="line-height:2;">
+                                    <font face="dotum, sans-serif"><span
+                                            style="font-size:14.6667px;font-family:'돋움', dotum;">· 일정변경을 위한 결제 취소 시에도
+                                            취소수수료가 부과됩니다.</span></font>
+                                </p>
+                                <p style="line-height:2;"><span
+                                        style="font-family:'돋움', dotum;font-size:14.6667px;">·</span><span
+                                        style="font-family:'돋움', dotum;font-size:14.6667px;">&nbsp;</span><span
+                                        style="font-size:14.6667px;">구매당일 취소시 전액환불됩니다.</span>
+                                    <font face="dotum, sans-serif"><span
+                                            style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font>
+                                </p>
+                                <p style="line-height:1.8;">
+                                    <font face="dotum, sans-serif"><span
+                                            style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font>
+                                </p>
+                                <p style="line-height:2;">
+                                    <font face="dotum, sans-serif"><span
+                                            style="font-size:14.6667px;font-family:'돋움', dotum;">· 전체취소 시</span></font>
+                                </p>
+                                <p style="line-height:2;">
+                                    <font face="dotum, sans-serif"><span
+                                            style="font-size:14.6667px;font-family:'돋움', dotum;">쿠폰 사용금액 → 결제금액 → 포인트
+                                            사용금액 순으로 차감 처리됩니다.</span></font>
+                                </p>
+                                <p style="line-height:1.8;">
+                                    <font face="dotum, sans-serif"><span
+                                            style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font>
+                                </p>
+                                <p style="line-height:2;"><span style="font-family:'돋움', dotum;font-size:14.6667px;">·
+                                        부분취소 시</span></p>
+                                <p style="line-height:2;">
+                                    <font face="dotum, sans-serif"><span
+                                            style="font-size:14.6667px;font-family:'돋움', dotum;">결제금액 → 쿠폰 사용금액 → 포인트
+                                            사용금액 순으로 차감 처리 됩니다.</span></font>
+                                </p>
+                                <p><span style="line-height:1.8;font-size:11pt;">
+                                        &#8203;</span>&nbsp;</p>
                             </div>
                         </div>
                         <!-- 교육문의 (스타일 동일)-->
@@ -312,80 +542,93 @@
                                 <p class="program-title">교육문의</p>
                                 <div class="edu-detail-reply">
                                     <div class="write-reply">
-                                                    <input type="text" class="txt-reply" name="" readonly="" placeholder="문의쓰기" onclick="shop_itemqa_reply()">
-                                                </div>
+                                        <input type="text" class="txt-reply" name="" readonly="" placeholder="문의쓰기"
+                                            onclick="shop_itemqa_reply()">
+                                    </div>
                                     <div class="reply-list">
                                         <ul>
-                            
+
                                             <li>
-                                                <div style="display:flex; justify-content:space-between; align-items:center">
-                                                                                                        <div style="margin:8px 0px 13px;">
-                                                            <span style="font-size:15px; color:#6f6f6f;">[ 답변전 ]</span>
-                                                        </div>
-                                                                            <div class="reply-info"><span class="name">이*정</span><span class="date">2021.04.18</span>
-                                                                            
+                                                <div
+                                                    style="display:flex; justify-content:space-between; align-items:center">
+                                                    <div style="margin:8px 0px 13px;">
+                                                        <span style="font-size:15px; color:#6f6f6f;">[ 답변전 ]</span>
+                                                    </div>
+                                                    <div class="reply-info"><span class="name">이*정</span><span
+                                                            class="date">2021.04.18</span>
+
                                                     </div>
                                                 </div>
                                                 <div class="edu-reply list-tr" style="padding-bottom:20px;">
-                                                    <p class="reply" style="font-weight:bold;">키즈런 장소 <img src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif" alt="비밀글" border="0"><i class="icon i-new"></i></p>
+                                                    <p class="reply" style="font-weight:bold;">키즈런 장소 <img
+                                                            src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif"
+                                                            alt="비밀글" border="0"><i class="icon i-new"></i></p>
                                                 </div>
                                                 <div class="edu-reply content-tr" style="padding-bottom:20px;">
                                                     <p class="reply">비밀글로 보호된 문의입니다.</p>
                                                 </div>
-                            
-                            
-                            
+
+
+
                                                 <!-- 관리자 댓글 -->
-                                            
+
                                             </li>
-                            
+
                                             <li>
-                                                <div style="display:flex; justify-content:space-between; align-items:center">
-                                                                                                        <div style="margin:8px 0px 13px;">
-                                                            <span style="font-size:15px; color:#6f6f6f;">[ 답변전 ]</span>
-                                                        </div>
-                                                                            <div class="reply-info"><span class="name">안*소</span><span class="date">2021.04.17</span>
-                                                                            
+                                                <div
+                                                    style="display:flex; justify-content:space-between; align-items:center">
+                                                    <div style="margin:8px 0px 13px;">
+                                                        <span style="font-size:15px; color:#6f6f6f;">[ 답변전 ]</span>
+                                                    </div>
+                                                    <div class="reply-info"><span class="name">안*소</span><span
+                                                            class="date">2021.04.17</span>
+
                                                     </div>
                                                 </div>
                                                 <div class="edu-reply list-tr" style="padding-bottom:20px;">
-                                                    <p class="reply" style="font-weight:bold;">아이들 학년문의요 <img src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif" alt="비밀글" border="0"><i class="icon i-new"></i></p>
+                                                    <p class="reply" style="font-weight:bold;">아이들 학년문의요 <img
+                                                            src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif"
+                                                            alt="비밀글" border="0"><i class="icon i-new"></i></p>
                                                 </div>
                                                 <div class="edu-reply content-tr" style="padding-bottom:20px;">
                                                     <p class="reply">비밀글로 보호된 문의입니다.</p>
                                                 </div>
-                            
-                            
-                            
+
+
+
                                                 <!-- 관리자 댓글 -->
-                                            
+
                                             </li>
-                            
+
                                             <li>
-                                                <div style="display:flex; justify-content:space-between; align-items:center">
-                                                                                <div style="margin:8px 0px 13px;">
-                                                            <span style="font-size:15px; color:#ff8711;">[ 답변완료 ]</span>
-                                                        </div>
-                                                                                                    <div class="reply-info"><span class="name">김*희</span><span class="date">2020.07.17</span>
-                                                                            
+                                                <div
+                                                    style="display:flex; justify-content:space-between; align-items:center">
+                                                    <div style="margin:8px 0px 13px;">
+                                                        <span style="font-size:15px; color:#ff8711;">[ 답변완료 ]</span>
+                                                    </div>
+                                                    <div class="reply-info"><span class="name">김*희</span><span
+                                                            class="date">2020.07.17</span>
+
                                                     </div>
                                                 </div>
                                                 <div class="edu-reply list-tr" style="padding-bottom:20px;">
-                                                    <p class="reply" style="font-weight:bold;">이용건번호문의 <img src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif" alt="비밀글" border="0"><i class="icon i-new"></i></p>
+                                                    <p class="reply" style="font-weight:bold;">이용건번호문의 <img
+                                                            src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif"
+                                                            alt="비밀글" border="0"><i class="icon i-new"></i></p>
                                                 </div>
                                                 <div class="edu-reply content-tr" style="padding-bottom:20px;">
                                                     <p class="reply">비밀글로 보호된 문의입니다.</p>
                                                 </div>
-                            
-                            
-                            
+
+
+
                                                 <!-- 관리자 댓글 -->
-                                            
+
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
-                             
+
                             </div>
                         </div>
                         <!--tab content end-->
@@ -514,6 +757,10 @@
     </div>
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="js/jquery-1.8.3.min.js"></script>
+    <!--fancybox js-->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"
+        integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA=="
+        crossorigin="anonymous"></script>
     <!-- 위로가기 / 기존 소스  -->
     <script>
         $(document).ready(function () {
@@ -566,10 +813,10 @@
             });
 
             // When the user clicks anywhere outside of the modal, close it  
-            window.onclick = function(e){
+            window.onclick = function (e) {
                 var modal = document.querySelector('.modal');
-                if(modal){
-                    if(e.target == modal ){
+                if (modal) {
+                    if (e.target == modal) {
                         modal.style.display = "none";
                     }
                 }

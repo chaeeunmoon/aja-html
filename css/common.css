@@ -2077,6 +2077,7 @@ input[type='checkbox']:checked {
   line-height: 0;
   vertical-align: top;
   background-size: 6.5rem;
+  text-indent: -999999px;
 }
 
 .grid-item .star_rating,
