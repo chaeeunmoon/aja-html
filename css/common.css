@@ -554,6 +554,11 @@ caption {
   border: 1px solid #e0e0e0;
 }
 
+.solid_btn.disable {
+  background-color: #b2b2b2 !important;
+  color: #fff !important;
+}
+
 .outline_btn {
   display: inline-block;
   border: 1px solid #ff8611;

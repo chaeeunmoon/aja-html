@@ -501,11 +501,6 @@
             </div>
         </div>
     </div>
-    <style>
-        .solid_btn.disable {
-            background-color: #ddd !;
-        }
-    </style>
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="../js/jquery-1.8.3.min.js"></script>
     <!--전체동의 js(기존 css)-->
@@ -552,6 +547,7 @@
     <!--step js-->
     <script>
         $(document).ready(function () {
+            // height 동적 조절 js
             function autoSize(){
                 var step_content = $('.step_content');
                 var slider_width = 100 * step_content.length;
@@ -564,6 +560,7 @@
                 wrapper.css('width', slider_width + 'vw');
             }
 
+            // 다음 js
             function nextStep(){
                 var step_content = $('.step_content');
                 var slider_width = 100 * step_content.length;
@@ -575,59 +572,47 @@
                 if( index == step_content.length - 1 ){
                     $('.next_step').hide();
                     $('#btn_submit').show();
-                    $('.slider').css('transform', 'translate(-' + 100 * index + 'vw)');
-                    // active 초기화
-                    $('.step_nav').removeClass('active');
-                    $('.step_nav').eq(index).addClass('active');
-                    autoSize();
                 } else {
                     $('.next_step').show();
                     $('#btn_submit').hide();
-                    $('.slider').css('transform', 'translate(-' + 100 * index + 'vw)');
-                    // active 초기화
-                    $('.step_nav').removeClass('active');
-                    $('.step_nav').eq(index).addClass('active');
-                    autoSize();
                 }
+
+                $('.slider').css('transform', 'translate(-' + 100 * index + 'vw)');
+
+                // active 초기화
+                $('.step_nav').removeClass('active');
+                $('.step_nav').eq(index).addClass('active');
+                $('.prev_step').removeClass('disable');
+                autoSize();
             }
 
+            // 이전 js
             function prevStep(){
                 var step_content = $('.step_content');
                 var slider_width = 100 * step_content.length;
                 var nav_list = $('.step_nav_list');
                 var index;
 
-                $(nav_list).each(function () {index = $(this).find('.active').index() - 1;});
-
-                $('.slider').css('transform','translate(-'+ 100 * index + 'vw)');
-                // active 초기화
-                $('.step_nav').removeClass('active');
-                $('.step_nav').eq(index).addClass('active');
-                autoSize();
-
-                if (index == step_content.length - 1) {
-                    $('.next_step').show();
-                    $('#btn_submit').hide();
-                    $('.prev_step').removeClass('disable');
-                    $('.prev_step').removeClass('prev_step');
-                    $('.slider').css('transform', 'translate(-' + 100 * index + 'vw)');
-                    // active 초기화
-                    $('.step_nav').removeClass('active');
-                    $('.step_nav').eq(index).addClass('active');
-                    autoSize();
-                } else if( index == step_content.length ){
-                    console.log(index);
+                $(nav_list).each(function () {index = $(this).find('.active').index();});
+                
+                if( index == 0 ){
                     return $('.prev_step').addClass('disable');
-                    $('.prev_step').addClass('prev_step');
                 } else {
+                    //doing
+                    index = index - 1;
                     $('.next_step').show();
                     $('#btn_submit').hide();
-                     $('.prev_step').removeClass('disable');
-                     $('.prev_step').removeClass('prev_step');
+                    
+                    $('.prev_step').removeClass('disable');
+
+                    if (index == step_content.length - 1 || index == 0 ) {
+                        $('.prev_step').addClass('disable');
+                    } 
                     $('.slider').css('transform', 'translate(-' + 100 * index + 'vw)');
                     // active 초기화
                     $('.step_nav').removeClass('active');
                     $('.step_nav').eq(index).addClass('active');
+
                     autoSize();
                 }
             }
