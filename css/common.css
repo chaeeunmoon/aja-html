@@ -1408,6 +1408,10 @@ input[type='checkbox']:checked {
   background-color: transparent;
 }
 
+.main_popup .modal_body .swiper-wrapper {
+  background-color: #fff;
+}
+
 .main_popup .modal_footer {
   display: -webkit-box;
   display: -ms-flexbox;

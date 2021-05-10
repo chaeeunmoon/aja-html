@@ -604,6 +604,37 @@
             </div>
         </div>
     </div>
+    <!--메인 팝업 추가 코드-->
+    <!-- 메인 popup banner -->
+    <div id="main_popup" class="modal show main_popup">
+        <div class="modal_content bottom">
+            <div class="modal_body">
+                <div class="swiper-container4">
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination3 round_pagi popup_pagi"></div>
+                    <!-- content-->
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="images/banner/pop_01.jpg" alt="popup banner">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#">
+                                <img src="images/banner/pop_02.jpg" alt="popup banner">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal_footer">
+                <span class="ck_today"><input style="display: none;" type="checkbox" value="checkbox" name="chkbox"
+                        id="daily_check"><label for="daily_check"><img src="images/icon/btn_checkbox.png" alt="체크"> 오늘은
+                        그만보기</label></span>
+                <span class="modal_close">닫기</span>
+            </div>
+        </div>
+    </div>
 
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="js/jquery-1.8.3.min.js"></script>
@@ -710,6 +741,41 @@
 		        },
 		        loop: true,
 	        });
+        });
+    </script>
+    <!--메인 팝업 추가 코드-->
+    <script type="text/javascript"
+        src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            // 쿠키 체크 
+            var cook = $.cookie('mainPopup'); 
+
+            // 쿠키가 없으면 배너 노출 
+            if (cook == "hidden") {
+                $("#main_popup").hide(); 
+            } else {
+                 $("#main_popup").show(); 
+            } 
+
+             $("#daily_check").change(function () {
+
+                $("#main_popup").hide();
+
+                $.cookie('mainPopup', 'hidden', { expires: 1, path: '/' });
+            });
+
+            var swiper4 = new Swiper('.swiper-container4', {
+                autoplay: {
+                    delay: 1500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination3',
+                },
+                loop: true,
+            });
         });
     </script>
 </body>
