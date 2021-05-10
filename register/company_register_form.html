@@ -521,19 +521,6 @@
 			}
 		});
     </script>
-    <!--콘텐츠 탭 js-->
-    <script>
-        $(document).ready(function(){
-            $(".tab_nav_item").click(function(){
-                // 탭 콘텐트 초기화
-                $('.tab_content').hide();
-                $(".tab_nav_item").removeClass('active');
-                $(this).addClass('active');
-                var tab_content =  $(this).data('tab');
-                $('.'+ tab_content).show();
-            });
-        });
-    </script>
     <!--약관 show/hide-->
     <script>
         $(document).ready(function(){
