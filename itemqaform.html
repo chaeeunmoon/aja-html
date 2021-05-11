@@ -22,7 +22,7 @@
         </div>
         <style>
             .pw_wrappr .item_decs_box {
-                border-bottom: 1px solid #e0e0e0;
+                border-bottom: 1px solid #ff8611;
                 padding: 1rem 0.5rem;
             }
 
@@ -46,20 +46,19 @@
             .pw_textarea {
                 width: 100%;
                 margin-bottom: 1rem;
+                margin-top: 1rem;
             }
 
             .pw_textarea textarea {
                 width: 100%;
-                border: 1px solid #9e9e9e;
+                border: 1px solid #ADADAD;
                 border-radius: 8px;
                 padding: 0.5rem;
+                line-height: 1.4;
             }
 
             .pw_btn_wrapper {
                 width: 100%;
-                position: fixed;
-                left: 0;
-                bottom: 0;
             }
 
             .pw_btn_wrapper .lg {
@@ -76,19 +75,18 @@
                 <div class="pw_form_box">
                     <div class="line_input_group">
                         <label for="iq_subject">제목</label>
-                        <input id="iq_subject" name="iq_subject" type="text" placeholder="(최대25자)">
+                        <input id="iq_subject" name="iq_subject" type="text" placeholder="제목 (최대25자)">
                     </div>
                     <div class="pw_textarea">
-                        <label class="input_title" for="">내용</label>
                         <textarea cols="5" rows="10" placeholder="교육과 무관한 댓글, 악플은 삭제될 수 있습니다." name="iq_question" id="iq_question"></textarea>
                     </div>
                     <div class="ck_flex_wrap">
-                        <input class="custom_cb" type="checkbox" name="auto_login" id="auto_login" />
-                        <label for="auto_login">비밀글</label>
+                        <input class="custom_cb" type="checkbox" name="iq_check" id="iq_check" />
+                        <label for="iq_check">비밀글</label>
                     </div>
                 </div>
-                <div class="fixed_btn_wrapper pw_btn_wrapper flex_block">
-                    <a href="#" class="solid_btn light">취소</a>
+                <div class="fixed_btn_wrapper flex_block">
+                    <a href="#" class="solid_btn light lg">취소</a>
                     <a href="javascript:void(0)" onclick="fitemqa_submit();this.disabled=true;" class="solid_btn lg">문의하기</a>
                 </div>
             </form>

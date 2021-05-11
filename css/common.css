@@ -515,6 +515,10 @@ caption {
   padding: 1.1rem 2rem;
 }
 
+.fixed_btn_wrapper.flex_block .solid_btn:first-child {
+  margin-right: 0.4rem;
+}
+
 .lg_btn {
   width: 100%;
   display: block;
