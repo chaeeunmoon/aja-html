@@ -4018,10 +4018,11 @@ input[type='checkbox']:checked {
   width: 100%;
 }
 
-.rm_wrap .img_wrap * {
+.rm_wrap .img_wrap *,
+.txt_editor_wrap * {
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
   font-size: 0.95rem !important;
-  line-height: 1.4 !important;
-  text-align: center !important;
+  line-height: 1.5;
 }
 
 .rm_wrap .img_wrap img {
