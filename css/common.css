@@ -4018,6 +4018,12 @@ input[type='checkbox']:checked {
   width: 100%;
 }
 
+.rm_wrap .img_wrap * {
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important;
+  text-align: center !important;
+}
+
 .rm_wrap .img_wrap img {
   width: 100%;
 }
