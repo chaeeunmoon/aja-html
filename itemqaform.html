@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교육 문의하기</title>
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+    <div id="wrap" class="layer-popup-area page find">
+        <!--header-->
+        <div class='page_title_area'>
+            <h2 class="page_title">교육 문의하기</h2>
+            <a class="close_btn" href="<?php echo $return_url ?>"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <style>
+            .pw_wrappr .item_decs_box {
+                border-bottom: 1px solid #e0e0e0;
+                padding: 1rem 0.5rem;
+            }
+
+            .pw_wrappr .item_decs_box .title {
+                font-size: 1.1rem;
+                color: #0d0d0d;
+                font-weight: 500;
+                letter-spacing: 0.3px;
+            }
+
+            .pw_wrappr .item_decs_box .item_desc {
+                font-size: 0.9rem;
+                color: #828282;
+                margin-top: 0.5rem;
+            }
+
+            .pw_form_box {
+                padding: 0 1rem;
+            }
+
+            .pw_textarea {
+                width: 100%;
+                margin-bottom: 1rem;
+            }
+
+            .pw_textarea textarea {
+                width: 100%;
+                border: 1px solid #9e9e9e;
+                border-radius: 8px;
+                padding: 0.5rem;
+            }
+
+            .pw_btn_wrapper {
+                width: 100%;
+                position: fixed;
+                left: 0;
+                bottom: 0;
+            }
+
+            .pw_btn_wrapper .lg {
+                margin-left: 0.5rem;
+            }
+        </style>
+        <!--content-->
+        <div class="pw_wrappr">
+            <form action="">
+                <div class="item_decs_box">
+                    <h1 class="title">키즈런 파크레이스 (전지점 사용 가능)</h1>
+                    <p class="item_desc">엄마들이 더 좋아하는</p>
+                </div>
+                <div class="pw_form_box">
+                    <div class="line_input_group">
+                        <label for="iq_subject">제목</label>
+                        <input id="iq_subject" name="iq_subject" type="text" placeholder="(최대25자)">
+                    </div>
+                    <div class="pw_textarea">
+                        <label class="input_title" for="">내용</label>
+                        <textarea cols="5" rows="10" placeholder="교육과 무관한 댓글, 악플은 삭제될 수 있습니다." name="iq_question" id="iq_question"></textarea>
+                    </div>
+                    <div class="ck_flex_wrap">
+                        <input class="custom_cb" type="checkbox" name="auto_login" id="auto_login" />
+                        <label for="auto_login">비밀글</label>
+                    </div>
+                </div>
+                <div class="fixed_btn_wrapper pw_btn_wrapper flex_block">
+                    <a href="#" class="solid_btn light">취소</a>
+                    <a href="javascript:void(0)" onclick="fitemqa_submit();this.disabled=true;" class="solid_btn lg">문의하기</a>
+                </div>
+            </form>
+        </div>    
+        <!--E:content-->
+    </div>
+</body>
+
+</html>
