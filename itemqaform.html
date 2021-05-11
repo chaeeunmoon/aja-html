@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <div id="wrap" class="layer-popup-area page find">
+    <div id="wrap" class="layer-popup-area page">
         <!--header-->
         <div class='page_title_area'>
             <h2 class="page_title">교육 문의하기</h2>
@@ -22,25 +22,25 @@
         </div>
         <style>
             .pw_wrappr .item_decs_box {
-                border-bottom: 1px solid #ff8611;
                 padding: 1rem 0.5rem;
             }
 
             .pw_wrappr .item_decs_box .title {
                 font-size: 1.1rem;
                 color: #0d0d0d;
-                font-weight: 500;
+                font-weight: 600;
                 letter-spacing: 0.3px;
             }
 
             .pw_wrappr .item_decs_box .item_desc {
                 font-size: 0.9rem;
                 color: #828282;
+                font-weight: 500;
                 margin-top: 0.5rem;
             }
 
             .pw_form_box {
-                padding: 0 1rem;
+                padding: 1.3rem 0.7rem;
             }
 
             .pw_textarea {
@@ -51,18 +51,16 @@
 
             .pw_textarea textarea {
                 width: 100%;
-                border: 1px solid #ADADAD;
+                border: 1px solid #e0e0e0;
                 border-radius: 8px;
-                padding: 0.5rem;
+                padding: 0.8rem;
                 line-height: 1.4;
             }
 
-            .pw_btn_wrapper {
-                width: 100%;
-            }
-
-            .pw_btn_wrapper .lg {
-                margin-left: 0.5rem;
+            .box_input_group {
+                border: 1px solid #e0e0e0;
+                border-radius: 8px;
+                padding: 0.8rem;
             }
         </style>
         <!--content-->
@@ -73,8 +71,7 @@
                     <p class="item_desc">엄마들이 더 좋아하는</p>
                 </div>
                 <div class="pw_form_box">
-                    <div class="line_input_group">
-                        <label for="iq_subject">제목</label>
+                    <div class="box_input_group">
                         <input id="iq_subject" name="iq_subject" type="text" placeholder="제목 (최대25자)">
                     </div>
                     <div class="pw_textarea">

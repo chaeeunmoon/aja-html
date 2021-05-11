@@ -93,6 +93,12 @@ input::-webkit-input-placeholder {
   color: #9d9d9d;
   font-size: 0.9rem;
 }
+
+textarea::placeholder {
+  color: #9d9d9d;
+  font-size: 0.9rem;
+}
+
 img {
   max-width: 100%;
 }
@@ -509,6 +515,7 @@ caption {
   flex: 1;
   padding: 0;
 }
+
 .fixed_btn_wrapper.flex_type > a,
 .fixed_btn_wrapper.flex_type > button {
   border-radius: 0;
@@ -1171,6 +1178,7 @@ input[type='checkbox']:checked {
   font-size: 0.85rem;
   color: #333333;
   vertical-align: middle;
+  line-height: 1.3rem;
 }
 
 .custom_cb + label:before {
@@ -2975,6 +2983,8 @@ input[type='checkbox']:checked {
   padding: 1rem 1.8rem;
 }
 
+.tab_link_list.type01 .tab_link:first-child,
+.tab_link_list.type02 .tab_link:last-child,
 .tab_link_list .tab_link.active {
   border: 1px solid #ff8611;
   color: #ff8611;
