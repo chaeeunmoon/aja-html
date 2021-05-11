@@ -650,6 +650,7 @@ caption {
 
 /* btn input */
 .btn_radio {
+  width: 100%;
   padding: 1em 0;
   text-align: center;
 }
@@ -701,6 +702,10 @@ caption {
   border: 1px solid #f8f8fa !important;
   background-color: #f8f8fa !important;
   color: #828282 !important;
+}
+
+.btn_radio.sm label {
+  width: 40%;
 }
 
 .rgs_ctg_list {
@@ -770,11 +775,16 @@ caption {
 }
 
 .flex_block .btn_radio {
+  width: 100%;
   padding: 1em 0 0 !important;
 }
 
 .flex_block .line_input_group {
   width: 45%;
+}
+
+.flex_block .input_group {
+  width: 50%;
 }
 
 .flex_input_block .flex_btn {
@@ -1191,6 +1201,8 @@ input[type='checkbox']:checked {
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 4px;
+  position: relative;
+  top: -1.5px;
 }
 
 .custom_cb:focus + label:before {
@@ -4402,6 +4414,7 @@ input[type='checkbox']:checked {
   line-height: 1.4;
   color: #828282;
   padding: 1rem 0.5rem;
+  word-break: break-all;
 }
 
 .pw_wrappr .pw_desc strong {
