@@ -333,12 +333,20 @@
                                                             <ul>
                                                                 <li>
                                                                     <!--이미지 클릭 시 확대-->
-                                                                    <a href="images/sample/sample-09.jpg"
+                                                                    <a href="images/sample/event-detail-sample.png"
                                                                        data-lightbox="review_img">
+                                                                       <!--더보기 아이콘-->
+                                                                       <span class="review_more_icon">+</span>
                                                                         <img
-                                                                            src="images/sample/sample-09.jpg"></a>
+                                                                            src="images/sample/event-detail-sample.png"></a>
                                                                 </li>
-                                                                <li></li>
+                                                                <li>
+                                                                    <!--이미지 클릭 시 확대-->
+                                                                    <a href="images/sample/event-sample-01.jpg" data-lightbox="review_img">
+                                                                        <!--더보기 아이콘-->
+                                                                        <span class="review_more_icon">+</span>
+                                                                        <img src="images/sample/event-sample-01.jpg"></a>
+                                                                </li>
                                                                 <li></li>
                                                             </ul>
                                                         </div>
@@ -370,7 +378,10 @@
                                                         <div class="img-area review_img">
                                                             <ul>
                                                                 <li>
-                                                                    <a href="images/sample/sample-04.png" data-lightbox="review_img"><img src="images/sample/sample-04.png"></a>
+                                                                    <a href="images/sample/sample-04.png" data-lightbox="review_img">
+                                                                        <span class="review_more_icon">+</span>
+                                                                        <img src="images/sample/sample-04.png">
+                                                                    </a>
                                                                 </li>
                                                                 <li></li>
                                                                 <li></li>
@@ -382,12 +393,13 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- 취소/환불 (스타일 동일)-->
+                        <!-- 취소/환불 (스타일 수정)-->
                         <div class="tab-content tab_inner_box" style="display: none;">
                             <div class="content-box-white">
                                 <div class="item_title_block">
                                     <p class="item_title">취소환불정책</p>
                                 </div>
+                                <!--취소환불 내용-->
                                 <div class="txt_editor_wrap">
                                     <p style="font-size:14.6667px;line-height:1.8;"><span style="font-size:11pt;">5일 전 취소 :
                                             전액 환불</span></p>
@@ -444,94 +456,49 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- 교육문의 (스타일 동일)-->
+                        <!-- 교육문의 (스타일 수정)-->
                         <div class="tab-content tab_inner_box" style="display: none;">
+                            <div class="content-box-white item_review_box">
+                                <div class="item_title_block">
+                                    <p class="item_title">교육문의</p>
+                                </div>
+                                <div style="margin: 0.5rem 0 1rem;">
+                                    <!-- <input type="text" class="txt-reply" name="" readonly="" placeholder="문의쓰기" onclick="shop_itemqa_reply()"> -->
+                                    <a href="javascript:void(0)" onclick="shop_itemqa_reply()" class="outline_btn lg">문의하기</a>
+                                </div>
+                            </div>
                             <div class="content-box-white">
-                                <p class="program-title">교육문의</p>
                                 <div class="edu-detail-reply">
-                                    <div class="write-reply">
-                                        <input type="text" class="txt-reply" name="" readonly="" placeholder="문의쓰기"
-                                            onclick="shop_itemqa_reply()">
-                                    </div>
-                                    <div class="reply-list">
+                                    <div class="reply-list item_review_list">
                                         <ul>
-
-                                            <li>
-                                                <div
-                                                    style="display:flex; justify-content:space-between; align-items:center">
-                                                    <div style="margin:8px 0px 13px;">
-                                                        <span style="font-size:15px; color:#6f6f6f;">[ 답변전 ]</span>
-                                                    </div>
-                                                    <div class="reply-info"><span class="name">이*정</span><span
-                                                            class="date">2021.04.18</span>
-
-                                                    </div>
+                                            <li class="review_block">
+                                                <div class="flex_block" style="margin-bottom: 0.5rem;">
+                                                    <div class="item_review_author"><span class="name">홍*동</span><span class="review_date">2021.04.19.</span></div>
+                                                    <span class="inquiry_state_label">[ 답변전 ]</span>
                                                 </div>
-                                                <div class="edu-reply list-tr" style="padding-bottom:20px;">
-                                                    <p class="reply" style="font-weight:bold;">키즈런 장소 <img
-                                                            src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif"
-                                                            alt="비밀글" border="0"><i class="icon i-new"></i></p>
+                                                <div class="edu-reply list-tr">
+                                                    <p class="reply inquiry_title">
+                                                        <img src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif" alt="비밀글" border="0">
+                                                        키즈런 장소 <span class="new_label">N</span>
+                                                    </p>
                                                 </div>
-                                                <div class="edu-reply content-tr" style="padding-bottom:20px;">
-                                                    <p class="reply">비밀글로 보호된 문의입니다.</p>
+                                                <div class="edu-reply content-tr">
+                                                    <p class="reply review_desc">비밀글로 보호된 문의입니다.</p>
                                                 </div>
-
-
-
-                                                <!-- 관리자 댓글 -->
-
                                             </li>
-
-                                            <li>
-                                                <div
-                                                    style="display:flex; justify-content:space-between; align-items:center">
-                                                    <div style="margin:8px 0px 13px;">
-                                                        <span style="font-size:15px; color:#6f6f6f;">[ 답변전 ]</span>
-                                                    </div>
-                                                    <div class="reply-info"><span class="name">안*소</span><span
-                                                            class="date">2021.04.17</span>
-
-                                                    </div>
+                                            <li class="review_block">
+                                                <div class="flex_block" style="margin-bottom: 0.5rem;">
+                                                    <div class="item_review_author"><span class="name">홍*동</span><span class="review_date">2021.04.19.</span></div>
+                                                    <span class="inquiry_state_label complete">[ 답변완료 ]</span>
                                                 </div>
-                                                <div class="edu-reply list-tr" style="padding-bottom:20px;">
-                                                    <p class="reply" style="font-weight:bold;">아이들 학년문의요 <img
-                                                            src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif"
-                                                            alt="비밀글" border="0"><i class="icon i-new"></i></p>
+                                                <div class="edu-reply list-tr">
+                                                    <p class="reply inquiry_title">
+                                                        <img src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif" alt="비밀글" border="0">
+                                                         키즈런 장소 </p>
                                                 </div>
-                                                <div class="edu-reply content-tr" style="padding-bottom:20px;">
-                                                    <p class="reply">비밀글로 보호된 문의입니다.</p>
+                                                <div class="edu-reply content-tr">
+                                                    <p class="reply review_desc">비밀글로 보호된 문의입니다.</p>
                                                 </div>
-
-
-
-                                                <!-- 관리자 댓글 -->
-
-                                            </li>
-
-                                            <li>
-                                                <div
-                                                    style="display:flex; justify-content:space-between; align-items:center">
-                                                    <div style="margin:8px 0px 13px;">
-                                                        <span style="font-size:15px; color:#ff8711;">[ 답변완료 ]</span>
-                                                    </div>
-                                                    <div class="reply-info"><span class="name">김*희</span><span
-                                                            class="date">2020.07.17</span>
-
-                                                    </div>
-                                                </div>
-                                                <div class="edu-reply list-tr" style="padding-bottom:20px;">
-                                                    <p class="reply" style="font-weight:bold;">이용건번호문의 <img
-                                                            src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif"
-                                                            alt="비밀글" border="0"><i class="icon i-new"></i></p>
-                                                </div>
-                                                <div class="edu-reply content-tr" style="padding-bottom:20px;">
-                                                    <p class="reply">비밀글로 보호된 문의입니다.</p>
-                                                </div>
-
-
-
-                                                <!-- 관리자 댓글 -->
-
                                             </li>
                                         </ul>
                                     </div>
