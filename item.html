@@ -18,10 +18,6 @@
     <link rel="stylesheet" href="css/common.css">
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="js/jquery-1.8.3.min.js"></script>
-    <!--fancybox css-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.css"
-        integrity="sha512-nNlU0WK2QfKsuEmdcTwkeh+lhGs6uyOxuUs+n+0oXSYDok5qy0EI0lt01ZynHq6+p/tbgpZ7P+yUb+r71wqdXg=="
-        crossorigin="anonymous" />
 </head>
 
 <body>
@@ -247,128 +243,13 @@
                                             src="images/icon/btn_more_main.png" alt=""></span></button>
                             </div>
                         </div>
-                        <!-- 교육후기 (스타일 동의)-->
+                        <!-- 교육후기 (스타일 수정)-->
+                        <!--이미지 확대 라이브러리 (lightbox)-->
+                        <link rel="stylesheet" href="plugin/lightbox/css/lightbox.min.css">
+                        <script src="plugin/lightbox/js/lightbox.min.js"></script>
+                        <!--이미지 확대 라이브러리 (lightbox)-->
                         <div class="tab-content tab_inner_box" style="display: none;">
                             <!-- 후기 총점 -->
-                            <style>
-                                .tab_inner_box {
-                                    padding-top: 0.8rem;
-                                }
-
-                                .tab_inner_box .content-box-white {
-                                    padding: 1rem 1.25rem;
-                                }
-
-                                .item_review_box {
-                                    border-bottom: 1px solid #e0e0e0;
-                                }
-
-                                .item_title_block {
-                                    margin-bottom: 1.5rem;
-                                }
-
-                                .item_title {
-                                    font-size: 1.25rem;
-                                    font-weight: 600;
-                                    color: #0d0d0d;
-                                }
-
-                                .num {
-                                    margin-left: 3px;
-                                    font-family: 'Roboto', sans-serif;
-                                    color: #ff8611;
-                                    font-weight: 600;
-                                }
-
-                                .total_star_num {
-                                    font-family: 'Roboto', sans-serif;
-                                    font-size: 1rem;
-                                    color: #828282;
-                                    font-weight: 500;
-                                    margin-left: 0.5rem;
-                                    line-height: 2rem;
-                                }
-
-                                .item_rating .star_rating {
-                                    width: 8rem;
-                                }
-
-                                .item_rating .star_rating,
-                                .item_rating .star_rating .rating_active {
-                                    background-size: 8rem;
-                                }
-
-                                .item_review_info {
-                                    font-size: 0.95rem;
-                                    color: #0d0d0d;
-                                    text-align: center;
-                                    margin: 1.5rem auto 0.8rem;
-                                }
-
-                                .review_block {
-                                    border-top: none !important;
-                                    border-bottom: 1px solid #e0e0e0;
-                                    padding: 1.2rem 0 !important;
-                                }
-
-                                .review_block:last-child {
-                                    border-bottom: none;
-                                }
-
-                                .review_block .item_rating {
-                                    width: 6.5rem;
-                                }
-
-                                .review_block .item_rating .star_rating,
-                                .review_block .item_rating .star_rating .rating_active {
-                                    background-size: 6.5rem;
-                                }
-
-                                .review_block .review_title {
-                                    margin: 0.8rem 0;
-                                }
-
-                                .review_block .review_title a {
-                                    font-size: 1.1rem;
-                                    color: #0d0d0d;
-                                    font-weight: 500;
-                                    letter-spacing: 0.3px;
-                                }
-
-                                .review_block .review_desc a {
-                                    font-size: 0.875rem;
-                                    line-height: 1.4;
-                                }
-
-                                .review_block .review_desc {
-                                    margin-bottom: 0.5rem
-                                }
-
-                                .item_review_author {
-                                    font-size: 0.9rem;
-                                    color: #aaaaaa;
-                                    font-weight: 400;
-                                    line-height: 1.5rem;
-                                }
-
-                                .review_date {
-                                    font-family: 'Roboto', sans-serif;
-                                }
-
-                                .review_date::before {
-                                    content: '·';
-                                    margin: 0 0.25rem;
-                                }
-
-                                .review_block .review_img {
-                                    margin-top: 0.8rem;
-                                    margin-bottom: 0.3rem;
-                                }
-
-                                .review_block .review_img img {
-                                    border-radius: 1rem !important;
-                                }
-                            </style>
                             <div class="content-box-white item_review_box">
                                 <div class="flex_block item_title_block">
                                     <p class="item_title">후기 <span class="num">5</span></p>
@@ -386,7 +267,7 @@
                                     <p class="item_review_info">후기를 작성해주시면 <span class="orange">500point 적립!</span></p>
                                 </div>
                             </div>
-                            <!--교육후기-->
+                            <!--교육후기 목록-->
                             <div class="content-box-white" id="content-box-white">
                                 <div class="edu-detail-reply">
                                     <div class="reply-list item_review_list">
@@ -418,8 +299,9 @@
                                                         <div class="img-area review_img">
                                                             <ul>
                                                                 <li>
+                                                                    <!--이미지 클릭 시 확대-->
                                                                     <a href="images/sample/sample-09.jpg"
-                                                                        data-fancybox>
+                                                                       data-lightbox="review_img">
                                                                         <img
                                                                             src="images/sample/sample-09.jpg"></a>
                                                                 </li>
@@ -455,7 +337,7 @@
                                                         <div class="img-area review_img">
                                                             <ul>
                                                                 <li>
-                                                                    <a href="images/sample/sample-09.jpg" data-fancybox><img src="images/sample/sample-09.jpg"></a>
+                                                                    <a href="images/sample/sample-04.png" data-lightbox="review_img"><img src="images/sample/sample-04.png"></a>
                                                                 </li>
                                                                 <li></li>
                                                                 <li></li>
@@ -757,10 +639,6 @@
     </div>
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="js/jquery-1.8.3.min.js"></script>
-    <!--fancybox js-->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"
-        integrity="sha512-uURl+ZXMBrF4AwGaWmEetzrd+J5/8NRkWAvJx5sbPSSuOb0bZLqf+tOzniObO00BjHa/dD7gub9oCGMLPQHtQA=="
-        crossorigin="anonymous"></script>
     <!-- 위로가기 / 기존 소스  -->
     <script>
         $(document).ready(function () {
