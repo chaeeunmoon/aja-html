@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>신청/결제하기</title>
+  <!--기존 css-->
+  <link rel="stylesheet" href="css/default.css">
+  <!-- 추가 css-->
+  <link rel="stylesheet" href="css/font-style.css">
+  <link rel="stylesheet" href="css/common.css">
+</head>
+<body>
+  <div class="wrap">
+    <div>
+      <form>
+        <div class='page_title_area'>
+          <h2 class="page_title">신청/결제하기</h2>
+          <a class="close_btn" href="javascript:history.back();"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <div class="order_wrapper">
+          <div class="completed_txt_box">
+            <div class="card_icon shadow_box"><img src="images/icon/pay_ico_07.png" alt="카드 아이콘"></div>
+            <h5 class="oc_title">이수지님</h5>
+            <h5 class="oc_title">교육신청이 완료 되었습니다</h5>
+            <p class="oc_desc">즐거운 체험교육을 경험하세요</p>
+          </div>
+          <!-- 주문정보 -->
+          <div class="order_box order_dropdown" data-display="none">
+            <!-- 제목 -->
+            <div class="order_box_header order_header">
+              <p class="order_title">주문 정보</p>
+              <span class="title_arrow active"><img src="images/icon/dropdown_btn.svg" /></span>
+            </div>
+            <!-- 내용 -->
+            <div class="order_box_body order_body">
+              <div class="product_info_wrap">
+                <div class="product_thumb">
+                  <img src="images/sample/sample-01.jpg" alt="">
+                </div>
+                <div class="product_info">
+                  <p class="product_info_txt sub_txt">주문번호 : 2020090312342354</p>
+                  <p class="product_title bold_txt">초등한국사 단군 신화에서 가야까지</p>
+                  <p class="product_opt">2021-05-20 (목) 10시 ~ 12시</p>
+                </div>
+                <div class="opt_wrapper">
+                  <div class="pay_info_list">
+                    <p class="sub_txt">교육인원</p>
+                    <p class="p_txt">1명</p>
+                  </div>
+                  <div class="pay_info_list">
+                    <p class="sub_txt">옵션1</p>
+                    <p class="p_txt">2020-09-08 12시 - 13시 크리에이터</p>
+                  </div>
+                  <div class="pay_info_list">
+                    <p class="sub_txt">옵션2</p>
+                    <p class="p_txt">2020-09-08 12시 요리</p>
+                  </div>
+                  <div class="pay_info_list">
+                    <p class="sub_txt">신청자</p>
+                    <p class="p_txt">박지희 · 0100000000</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--결제정보-->
+          <div class="order_box order_dropdown" data-display="block">
+            <!-- 제목 -->
+            <div class="order_box_header order_header">
+              <p class="order_title">결제 정보</p>
+              <span class="title_arrow"><img src="images/icon/dropdown_btn.svg" alt="더보기" /></span>
+            </div>
+            <!-- 내용 -->
+            <div class="order_box_body order_body">
+              <div class="payment_info_box">
+                 <div class="pay_info_list">
+                   <p class="bold_txt">신용카드</p>
+                   <p class="p_txt"><span>19000</span>원</p>
+                 </div>
+              </div>
+              <div class="pay_info_list">
+                <p class="sub_txt">결제금액</p>
+                <p class="p_txt"><span>35,600</span>원</p>
+              </div>
+              <div class="pay_info_list">
+                <p class="sub_txt">총 할인금액</p>
+                <p class="p_txt"><span>35,600</span>원</p>
+              </div>
+              <div class="content_footer">
+                <p class="f_title">최종 결제금액</p>
+                <p class="f_main"><span>35,600</span>원</p>
+              </div>
+            </div>
+          </div>
+          <!--버튼-->
+          <div>
+              <div class="flex_block">
+                <a href="#" class="solid_btn disable lg">닫기</a>
+                <a href="#" class="solid_btn lg">교육계속 보기</a>
+              </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- plugin js (기존 plugin 파일과 동일)-->
+  <script src="js/jquery-1.8.3.min.js"></script>
+  <!-- 20210408 스크립트 추가  (결제 dropdown js)-->
+  <script>
+    $(document).ready(function () {
+      $('.order_dropdown .order_header').click(function () {
+        $(this).parent('.order_dropdown').find('.order_body').slideToggle(400);
+        $(this).find('.title_arrow').toggleClass('active');
+      });
+    });
+  </script>
+</body>
+</html>

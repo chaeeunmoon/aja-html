@@ -29,7 +29,7 @@ body {
 
 * {
   /* font-family:'Noto Sans Korean',sans-serif;  */
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1em;
@@ -94,6 +94,26 @@ input::-webkit-input-placeholder {
   font-size: 0.9rem;
 }
 
+textarea::-webkit-input-placeholder {
+  color: #9d9d9d;
+  font-size: 0.9rem;
+}
+
+textarea::-moz-placeholder {
+  color: #9d9d9d;
+  font-size: 0.9rem;
+}
+
+textarea:-ms-input-placeholder {
+  color: #9d9d9d;
+  font-size: 0.9rem;
+}
+
+textarea::-ms-input-placeholder {
+  color: #9d9d9d;
+  font-size: 0.9rem;
+}
+
 textarea::placeholder {
   color: #9d9d9d;
   font-size: 0.9rem;
@@ -116,6 +136,18 @@ a:visited {
 }
 caption {
   display: none;
+}
+
+.main_txt {
+  color: #ff8611 !important;
+}
+
+.sub_txt {
+  color: #828282 !important;
+}
+
+.bold_txt {
+  font-weight: 600 !important;
 }
 
 /* header */
@@ -522,8 +554,9 @@ caption {
   padding: 1.1rem 2rem;
 }
 
-.fixed_btn_wrapper.flex_block .solid_btn:first-child {
-  margin-right: 0.4rem;
+.fixed_btn_wrapper.flex_block .solid_btn:first-child,
+.flex_block .solid_btn:first-child {
+  margin-right: 0.7rem;
 }
 
 .lg_btn {
@@ -566,8 +599,13 @@ caption {
 }
 
 .solid_btn.disable {
-  background-color: #b2b2b2 !important;
+  background-color: #9a9a9a !important;
   color: #fff !important;
+}
+
+.solid_btn.disable:active,
+.solid_btn.disable:focus {
+  border: 1px solid #9a9a9a;
 }
 
 .outline_btn {
@@ -2186,12 +2224,13 @@ input[type='checkbox']:checked {
 .theme_wrapper,
 .iframe_wrapper {
   width: 100%;
+  min-height: 80vh;
   background: rgb(255, 134, 17);
   background: -o-linear-gradient(
     top,
     rgba(255, 134, 17, 1) 0%,
-    rgba(255, 134, 17, 1) 39%,
-    rgba(255, 255, 255, 1) 52%,
+    rgba(255, 134, 17, 1) 60%,
+    rgba(255, 255, 255, 1) 70%,
     rgba(255, 255, 255, 1) 100%
   );
   background: -webkit-gradient(
@@ -2199,18 +2238,23 @@ input[type='checkbox']:checked {
     left top,
     left bottom,
     from(rgba(255, 134, 17, 1)),
-    color-stop(39%, rgba(255, 134, 17, 1)),
-    color-stop(52%, rgba(255, 255, 255, 1)),
+    color-stop(60%, rgba(255, 134, 17, 1)),
+    color-stop(70%, rgba(255, 255, 255, 1)),
     to(rgba(255, 255, 255, 1))
   );
   background: linear-gradient(
     180deg,
     rgba(255, 134, 17, 1) 0%,
-    rgba(255, 134, 17, 1) 39%,
-    rgba(255, 255, 255, 1) 52%,
+    rgba(255, 134, 17, 1) 60%,
+    rgba(255, 255, 255, 1) 70%,
     rgba(255, 255, 255, 1) 100%
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ff8611",endColorstr="#ffffff",GradientType=1);
+}
+
+.theme_wrapper .theme_header {
+  background-color: #ff8611;
+  border: none;
 }
 
 .theme_wrapper .theme_body {
@@ -3844,7 +3888,7 @@ input[type='checkbox']:checked {
   top: -0.1rem;
 }
 
-.product_info_wrap {
+.product_detail_wrap .product_info_wrap {
   padding: 0.9rem 1.3rem 1em;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -4497,3 +4541,620 @@ input[type='checkbox']:checked {
   padding: 0.8rem;
 }
 /* E: item write form style */
+/* S: register completed style */
+.complete_wrapper {
+  width: 100%;
+}
+
+.complete_wrapper .complete_title {
+  font-family: 'CookieRun';
+  font-size: 1.75rem;
+  color: #fff;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.complete_wrapper .c_aja_icon {
+  width: 70%;
+  margin: 1rem auto 0;
+  text-align: center;
+}
+
+.complete_wrapper .theme_body {
+  border-top-right-radius: 3rem;
+  position: relative;
+  top: -2px;
+}
+
+.complete_desc {
+  padding: 1.5rem 1.25rem 1rem;
+}
+
+.complete_wrapper .user_greeting {
+  font-family: 'CookieRun';
+  font-size: 1.4375rem;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.complete_wrapper .user_greeting .main {
+  font-family: 'CookieRun';
+  color: #ff8611;
+}
+
+.complete_wrapper .complete_txt {
+  font-size: 0.92rem;
+  color: #828282;
+  text-align: center;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+
+.complete_wrapper .complete_txt .main {
+  color: #ff8611;
+}
+
+.complete_wrapper .c_btn_wrapper {
+  padding: 2rem;
+}
+/* E: register completed style */
+/* S: orderform styel */
+/* 결제 페이지 */
+.order_wrapper {
+  background-color: #f7f6f4;
+  padding: 1.5em 1.3em;
+  padding-bottom: 5rem;
+  min-height: 93.5vh;
+}
+
+.order_box {
+  width: 100%;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 2px 6px 2px #e0e0e0;
+  box-shadow: 2px 2px 6px 2px #e0e0e0;
+  border-radius: 12px;
+  padding: 1.8em 2em 2em;
+  margin-bottom: 1rem;
+}
+
+.order_box.black_border {
+  border: 2px solid #0d0d0d;
+}
+
+.order_box.main_border {
+  border: 2px solid #ff8611;
+}
+
+.order_box_header {
+  position: relative;
+}
+
+.order_box .order_title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: #0d0d0d;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+.order_box .order_title > img {
+  width: 1.4rem;
+  margin-right: 0.5rem;
+}
+
+.order_box .title_arrow {
+  position: absolute;
+  top: 0rem;
+  right: 0;
+  width: 1rem;
+  cursor: pointer;
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  -webkit-transition: all ease 0.5s;
+  -o-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+}
+
+.order_box .title_arrow.active {
+  top: 0.2rem;
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.order_box .sub_order_title {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  color: #0d0d0d;
+}
+
+.order_dropdown[data-display='none'] .order_body {
+  display: none;
+}
+
+.order_dropdown[data-display='block'] .order_body {
+  display: block;
+}
+
+.order_box_body {
+  margin-top: 2.5em;
+}
+
+.btn_input_wrap {
+  position: relative;
+}
+
+.btn_input_wrap .btn_rounded {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.payment_wrap {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.payment_wrap li {
+  display: inline-block;
+}
+
+.agree_ck_wrap .ck_flex_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.agree_ck_wrap input[type='checkbox'] {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  width: 1.3rem;
+  height: 1.3rem;
+  text-align: center;
+}
+
+.agree_ck_wrap input[type='checkbox']:checked {
+  background-color: #ff8611;
+}
+
+.agree_ck_wrap label {
+  font-size: 0.85rem;
+  margin-left: 0.5em;
+}
+
+/* product info */
+.order_box .product_info_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-top: 0.3rem;
+}
+
+.order_box .product_info_wrap .product_thumb {
+  position: relative;
+  width: 33%;
+  height: auto;
+  border-radius: 0.9rem;
+  overflow: hidden;
+}
+
+.order_box .product_info_wrap .product_thumb > img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  min-width: 100%;
+  margin: 0;
+}
+
+.order_box .product_info_wrap .product_info {
+  width: 67%;
+  padding-left: 1em;
+}
+
+.order_box .opt_wrapper {
+  width: 100%;
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px dashed #e0e0e0;
+  color: #828282 !important;
+}
+
+.order_box .opt_wrapper .p_txt {
+  color: #0d0d0d;
+}
+
+.order_box .product_info_wrap .product_info .product_title {
+  font-size: 1.05rem;
+  line-height: 1.3;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.5em;
+  word-break: normal;
+}
+
+.order_box .product_info_wrap .product_info .product_opt,
+.opt_wrapper .product_opt {
+  font-size: 0.9rem;
+  color: #ff8611;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+.order_box .product_info_wrap .product_info .product_info_txt,
+.opt_wrapper .product_info_txt {
+  font-size: 0.85rem;
+  color: #0d0d0d;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+.opt_wrapper .product_info_txt {
+  color: #828282;
+}
+
+.order_box .product_info_wrap .product_info .price {
+  margin-bottom: 0.5em;
+}
+
+.order_box .product_info_wrap .product_info .product_price_txt,
+.order_box .product_info_wrap .product_info .won {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.order_box .product_info_wrap .product_info .price_divider {
+  font-size: 1rem;
+  color: #e0e0e0;
+  position: relative;
+  top: -1px;
+}
+
+.order_box .product_info_wrap .product_info .before_price {
+  font-size: 0.8rem;
+  text-decoration: line-through;
+  color: #828282;
+}
+
+.order_box .product_info_wrap .product_info .product_info_percent {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff8611;
+}
+/* product info */
+
+.content_footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1.2em 0;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 1em;
+}
+
+.content_footer p,
+.content_footer span {
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  font-weight: 600;
+}
+
+.content_footer .f_title {
+  width: 50%;
+  color: #0d0d0d;
+}
+
+.content_footer .f_main,
+.content_footer .f_main span {
+  font-size: 1.1rem;
+  width: 50%;
+  color: #ff8611;
+  text-align: right;
+}
+
+/* sub title */
+.order_box .order_sub_title {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0d0d0d;
+  letter-spacing: 0.3px;
+  margin-bottom: 1.2em;
+}
+
+/* 포인트 / 쿠폰 */
+.point_wrap {
+  margin-bottom: 2em;
+}
+
+.point_input_box {
+  color: #ff8611;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.2em 0 0.5em;
+}
+
+.point_input_box input {
+  width: 90%;
+  text-align: right;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-size: 1rem;
+  padding: 0.5em 0.5em;
+  margin-right: 5px;
+}
+
+.point_wrap .point_info_txt {
+  font-size: 0.88rem;
+  margin-bottom: 0.7em;
+}
+
+.point_wrap .point_info_txt .point_main {
+  color: #ff8611;
+}
+
+.point_input_box input:focus {
+  outline: none;
+  border-color: #ff8611;
+}
+
+.pay_info_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  font-size: 0.88rem;
+}
+
+.pay_info_list .p_txt,
+.pay_info_list .p_main {
+  text-align: right;
+}
+
+.pay_info_list .p_main {
+  color: #ff8611;
+}
+
+.payment_info_title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  color: #828282;
+  padding: 0 0 1em;
+  background-color: #f5f5f5;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+}
+
+.payment_info_title .title_arrow {
+  display: inline-block;
+  position: static;
+  width: 0.85rem;
+  position: relative;
+  top: 0.1rem;
+  margin-left: 0.3rem;
+}
+
+.payment_info_title .title_arrow.active {
+  top: -0.05rem;
+}
+
+.payment_info_title .p_main {
+  font-weight: 400;
+  color: #ff8611;
+}
+
+.payment_info_body {
+  padding: 1em 0.1em;
+}
+
+.payment_info_body p {
+  font-size: 0.85rem;
+  color: #0d0d0d;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+}
+
+.payment_info_body .p_gray {
+  color: #828282;
+}
+
+.payment_info_body .p_danger {
+  color: #ff3d55;
+}
+
+.payment_info_body .bank_info_txt li {
+  font-size: 0.85rem;
+  color: #828282;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.payment_info_body .bank_info_txt li span {
+  color: #ff8611;
+}
+
+.payment_info_body .bank_info_txt li:before {
+  content: '-';
+  font-size: 1rem;
+  margin-right: 0.3em;
+  color: #ff8611;
+}
+
+.payment_info_body .bank_info_box {
+  margin: 1em 0;
+}
+
+.payment_info_body .bank_info_box .title {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.payment_info_body .bank_info_box ul li {
+  font-size: 0.85rem;
+  color: #828282;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+}
+
+.payment_info_body .bank_info_box li:before {
+  content: '-';
+  font-size: 1rem;
+  margin-right: 0.3em;
+  color: #ff8611;
+  font-weight: 600;
+}
+
+.payment_info_body .bank_info_box ul li span {
+  color: #ff8611;
+}
+
+/* coupon style */
+.coupon_box .coupon_btn {
+  font-size: 0.85rem;
+}
+
+.coupon_box .coupon_btn:before {
+  top: 30%;
+}
+
+.coupon_price {
+  font-size: 0.9rem;
+}
+
+.coupon_info .point-info {
+  font-size: 0.9rem !important;
+}
+
+.pay-system .pay-system-content > div.card,
+.pay-system .pay-system-content > div.vbank {
+  min-height: auto;
+  padding: 0.7rem;
+}
+
+/* 휴대폰 정보 입력 */
+.phone_input_box {
+  padding: 1em 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.phone_input_box input {
+  display: inline-block;
+  width: 35%;
+  padding: 0.65rem 0.3rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+}
+
+.phone_input_box select {
+  width: 30%;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 0.6rem 0.3rem;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+}
+
+.phone_input_box select:focus {
+  outline: none;
+  border-color: #ff8611;
+}
+
+.phone_input_box .h {
+  font-size: 1.2rem;
+  margin: 0 0.5rem;
+  font-weight: 500;
+}
+/* orderform */
+/* E: orderform styel */
+/* S: orderform completed style */
+.card_icon {
+  width: 7.5rem;
+  height: 7.5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 7.5rem;
+  margin: 0 auto 2rem;
+}
+
+.completed_txt_box {
+  padding: 1.5rem 0 2.5rem;
+}
+
+.completed_txt_box .oc_title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.completed_txt_box .oc_desc {
+  font-size: 0.82rem;
+  color: #828282;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.order_box .payment_info_box {
+  background-color: #f8f8fa;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.4rem;
+  border-radius: 0.9rem;
+}
+
+.order_box .payment_info_box .pay_info_list {
+  margin-bottom: 0;
+}
+/* E: orderform completed style */
