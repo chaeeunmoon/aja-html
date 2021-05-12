@@ -1564,6 +1564,10 @@ input[type='checkbox']:checked {
 }
 
 .m_wrap {
+  padding-bottom: 4rem;
+}
+
+#content.m_wrap {
   padding-bottom: 2rem;
 }
 
@@ -4615,7 +4619,7 @@ input[type='checkbox']:checked {
   -webkit-box-shadow: 2px 2px 6px 2px #e0e0e0;
   box-shadow: 2px 2px 6px 2px #e0e0e0;
   border-radius: 12px;
-  padding: 1.8em 2em 2em;
+  padding: 1.2rem 1.3rem 1.3rem;
   margin-bottom: 1rem;
 }
 

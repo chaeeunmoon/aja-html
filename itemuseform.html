@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교육 문의하기</title>
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <!--이미지 확대 라이브러리 (lightbox)-->
+    <link rel="stylesheet" href="plugin/lightbox/css/lightbox.min.css">
+    <!--기존 linke css-->
+    <style>
+        .webwidget_rating_sex {
+            padding: 0px;
+            margin: 0px;
+            float: left;
+        }
+    
+        .webwidget_rating_sex li {
+            line-height: 0px;
+            width: 19px;
+            height: 19px;
+            padding: 0px;
+            margin: 0px;
+            margin-left: 2px;
+            list-style: none;
+            float: left;
+            cursor: pointer;
+            border-bottom: 0px !important;
+        }
+    
+        .webwidget_rating_sex li span {
+            display: none;
+        }
+    
+        .webwidget_rating_sex ul {
+            list-style: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap m_wrap">
+        <!--header-->
+        <div class='page_title_area'>
+            <h2 class="page_title">교육후기 쓰기</h2>
+            <a class="close_btn" href="<?php echo $return_url ?>"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <!--content-->
+        <div class="pw_wrappr">
+            <form action="">
+                <div class="item_decs_box">
+                    <h1 class="title">키즈런 파크레이스 (전지점 사용 가능)</h1>
+                    <p class="item_desc">엄마들이 더 좋아하는</p>
+                </div>
+                <style>
+                    .pw_form_box.border_type {
+                        border-top: 1px solid #e0e0e0;
+                    }
+
+                    .pw_form_box .pw_form_title {
+                        font-size: 1.1rem;
+                        font-weight: 600;
+                        margin-bottom: 1rem;
+                    }
+
+                    .pw_textarea .byte {
+                        font-size: 0.82rem;
+                        color: #828282;
+                        text-align: right;
+                        margin-top: 0.5rem;
+                    }
+
+                    .reward_txt {
+                        font-size: 0.87rem;
+                        color: #828282;
+                        margin: 0.5rem 0 0.8rem;
+                    }
+                </style>
+                <div class="pw_form_box border_type">
+                    <p class="pw_form_title">별점주기</p>
+                    <ul class="score-list">
+                        <li>
+                            <span class="tit">내용의 유익성</span>
+                            <div class="star" style="border:0px !important;">
+                                <div>
+                                    <div class="review-star-trp-s"><input name="is_score1" value="<?=$is_score1?>" id="is_score1"
+                                            type="hidden">
+                                        <!--div class="review-star-orange-s" style="width:46px;"></div-->
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tit">강사의 전문성</span>
+                            <div class="star">
+                                <div>
+                                    <div class="review-star-trp-s"><input name="is_score2" value="<?=$is_score2?>" id="is_score2"
+                                            type="hidden">
+                                        <!--div class="review-star-orange-s" style="width:86px;"></div-->
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tit">교육의 흥미도</span>
+                            <div class="star">
+                                <div>
+                                    <div class="review-star-trp-s"><input name="is_score3" value="<?=$is_score3?>" id="is_score3"
+                                            type="hidden">
+                                        <!--div class="review-star-orange-s" style="width:86px;"></div-->
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tit">진행의 일괄성</span>
+                            <div class="star">
+                                <div>
+                                    <div class="review-star-trp-s"><input name="is_score4" value="<?=$is_score4?>" id="is_score4"
+                                            type="hidden">
+                                        <!--div class="review-star-orange-s" style="width:86px;"></div-->
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="tit">지인에게 추천</span>
+                            <div class="star">
+                                <div>
+                                    <div class="review-star-trp-s"><input name="is_score5" value="<?=$is_score5?>" id="is_score5"
+                                            type="hidden">
+                                        <!--div class="review-star-orange-s" style="width:86px;"></div-->
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                </div>
+                <div class="pw_form_box border_type">
+                    <p class="pw_form_title">후기쓰기</p>
+                    <p class="reward_txt">후기를 작성해주시면 <span class="main_txt">500point 적립!</span></p>
+                    <div class="box_input_group">
+                        <input id="is_subject" name="is_subject" type="text" placeholder="제목">
+                    </div>
+                    <div class="pw_textarea">
+                        <textarea cols="5" rows="10" placeholder="교육과 무관한 댓글, 악플은 삭제될 수 있습니다." name="is_content" id="is_content"></textarea>
+                        <p class="byte"><span>12</span>/ 600</p>
+                    </div>
+                </div>
+                <div class="pw_form_box border_type">
+                    <p class="pw_form_title">포트폴리오 타입선택</p>
+                    <div style="display: flex;">
+                        <div class="epot_radio">
+                            <label for="epot_type1">
+                                <img style="height:170px;" src="images/portfolio/port_skin01.jpg">
+                            </label>
+                            <input type="radio" name="epot_type" id="epot_type1" value="1"
+                                style="display:block !important;-webkit-appearance:radio;" checked="">
+                        </div>
+                        <div class="epot_radio">
+                            <label for="epot_type2"><img style="height:170px;" src="images/portfolio/port_skin02.jpg"></label>
+                            <input type="radio" name="epot_type" id="epot_type2" value="2"
+                                style="display:block !important;-webkit-appearance:radio">
+                        </div>
+                    </div>
+                </div>
+                <div class="pw_form_box border_type">
+                    <p class="pw_form_title">이미지 등록</p>
+                    <div class="edu-reply">
+                        <div class="img-area file">
+                            <ul>
+                                <li>
+                                    <input type="hidden" size="30" name="txt_img1" id="txt_img1" readonly="" class="attach txt_img"
+                                        value=""><img src="images/img-upload.png"
+                                        class="file_btn_upload"></li>
+                                <li><input type="hidden" size="30" name="txt_img2" id="txt_img2" readonly="" class="attach txt_img"
+                                        value=""><img src="images/img-upload.png"
+                                        class="file_btn_upload"></li>
+                                <li><input type="hidden" size="30" name="txt_img3" id="txt_img3" readonly="" class="attach txt_img"
+                                        value=""><img src="images/img-upload.png"
+                                        class="file_btn_upload"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="fixed_btn_wrapper flex_block">
+                    <a href="#" class="solid_btn light">취소</a>
+                    <a href="javascript:void(0)" onclick="fitemqa_submit();this.disabled=true;" class="solid_btn lg">후기쓰기</a>
+                </div>
+            </form>
+        </div>    
+        <!--E:content-->
+    </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!-- js (기존 파일과 동일)-->
+    <script src="js/rating_star.js"></script>
+    <!--이미지 확대 라이브러리 (lightbox)-->
+    <script src="plugin/lightbox/js/lightbox.min.js"></script>
+</body>
+
+</html>

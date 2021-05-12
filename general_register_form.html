@@ -98,6 +98,33 @@
                                 </div>
                             </div>
                         </div>
+                        <!--선택항목-->
+                        <div class="rgs_wrapper">
+                            <div class="rgs_group">
+                                <div class="rgs_title_block">
+                                    <p class="rgs_title">선택항목</p>
+                                </div>
+                                <div class="cfm_ok line_input_group">
+                                    <label class="info-title" for="od_birth">생년월일</label>
+                                    <input type="text" id="mb_birth" style="display: none;" name="mb_birth" placeholder="예)1980-01-01" value="" />
+                                    <div class="birth_box" onchange="outMbBirth()">
+                                        <select name="mb_year" id="mb_year" title="년도" class="birth_year"></select>
+                                        <select name="mb_month" id="mb_month" title="월" class="birth_month"></select>
+                                        <select name="mb_day" id="mb_day" title="일" class="birth_day"></select>
+                                    </div>
+                                </div>
+                                <div class="input_group">
+                                    <label class="info-title input_title" for="od_sex">성별</label>
+                                    <div class="btn_radio">
+                                        <input type="radio" id="mb_sex_m" name="mb_sex" value="M" />
+                                        <label for="mb_sex_m">남</label> &nbsp;
+                                
+                                        <input type="radio" id="mb_sex_w" name="mb_sex" />
+                                        <label for="mb_sex_w">여</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!--일반-->
                         <div class="rgs_wrapper">
                             <div class="rgs_group">
@@ -436,6 +463,49 @@
                 $('.'+ content).slideToggle();
             });
         });
+    </script>
+    <!-- 생년월일 selectbox js -->
+    <script>
+        $(document).ready(function () {
+            setDateBox();
+        });
+
+        // select box 연도 , 월 표시
+        function setDateBox() {
+            var dt = new Date();
+            var year = "";
+            var com_year = dt.getFullYear();
+            // 발행 뿌려주기
+            $(".birth_year").append("<option value=''>년도</option>");
+            // 올해 기준으로 -70년부터 +1년을 보여준다.
+            for (var y = (com_year - 70); y <= (com_year); y++) {
+                $(".birth_year").append("<option value='" + y + "'>" + y + " 년" + "</option>");
+            }
+
+            // 월 뿌려주기(1월부터 12월)
+            var month;
+            $(".birth_month").append("<option value=''>월</option>");
+            for (var i = 1; i <= 12; i++) {
+
+                if (i < 10) {
+                    $(".birth_month").append("<option value='" + '0' + i + "'>" + i + " 월" + "</option>");
+                } else {
+                    $(".birth_month").append("<option value='" + i + "'>" + i + " 월" + "</option>");
+                }
+            }
+
+            // 일 뿌려주기(1일부터 31일)
+            var day;
+            $(".birth_day").append("<option value=''>일</option>");
+            for (var i = 1; i <= 31; i++) {
+                if (i < 10) {
+                    $(".birth_day").append("<option value='" + "0" + i + "'>" + i + " 일" + "</option>");
+                } else {
+                    $(".birth_day").append("<option value='" + i + "'>" + i + " 일" + "</option>");
+                }
+            }
+
+        }
     </script>
 </body>
 </html>
