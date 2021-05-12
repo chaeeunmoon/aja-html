@@ -4606,7 +4606,7 @@ input[type='checkbox']:checked {
   background-color: #f7f6f4;
   padding: 1.5em 1.3em;
   padding-bottom: 5rem;
-  min-height: 93.5vh;
+  min-height: 94vh;
 }
 
 .order_box {
@@ -5119,14 +5119,18 @@ input[type='checkbox']:checked {
 /* orderform */
 /* E: orderform styel */
 /* S: orderform completed style */
-.card_icon {
+.completed_txt_box .card_icon {
   width: 7.5rem;
   height: 7.5rem;
   background-color: #fff;
   border-radius: 50%;
   text-align: center;
-  line-height: 7.5rem;
   margin: 0 auto 2rem;
+  padding: 2.1rem;
+}
+
+.completed_txt_box .card_icon img {
+  width: 3.3rem;
 }
 
 .completed_txt_box {
@@ -5134,7 +5138,7 @@ input[type='checkbox']:checked {
 }
 
 .completed_txt_box .oc_title {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
   text-align: center;
   margin-bottom: 0.5rem;
