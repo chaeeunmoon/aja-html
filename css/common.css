@@ -2261,6 +2261,82 @@ input[type='checkbox']:checked {
   border: none;
 }
 
+/*포인트 컬러*/
+.theme_wrapper.point_theme {
+  width: 100%;
+  min-height: 80vh;
+  background: rgb(255, 134, 17);
+  background: -o-linear-gradient(
+    top,
+    rgba(254, 153, 37, 1) 0%,
+    rgba(254, 153, 37, 1) 60%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(254, 153, 37, 1)),
+    color-stop(60%, rgba(254, 153, 37, 1)),
+    color-stop(70%, rgba(255, 255, 255, 1)),
+    to(rgba(255, 255, 255, 1))
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(254, 153, 37, 1) 0%,
+    rgba(254, 153, 37, 1) 60%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#fe9925",endColorstr="#ffffff",GradientType=1);
+}
+
+.theme_wrapper.point_theme .theme_header {
+  background-color: #fe9925;
+}
+
+/*쿠폰 컬러*/
+.theme_wrapper.coupon_theme {
+  width: 100%;
+  min-height: 80vh;
+  background: rgb(47, 186, 179);
+  background: -o-linear-gradient(
+    top,
+    rgba(47, 186, 179, 1) 0%,
+    rgba(47, 186, 179, 1) 60%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(47, 186, 179, 1)),
+    color-stop(60%, rgba(47, 186, 179, 1)),
+    color-stop(70%, rgba(255, 255, 255, 1)),
+    to(rgba(255, 255, 255, 1))
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(47, 186, 179, 1) 0%,
+    rgba(47, 186, 179, 1) 60%,
+    rgba(255, 255, 255, 1) 70%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#2fbab3",endColorstr="#ffffff",GradientType=1);
+}
+
+.theme_wrapper.coupon_theme .theme_header {
+  background-color: #2fbab3;
+}
+
+.theme_wrapper.point_theme .theme_body,
+.theme_wrapper.coupon_theme .theme_body {
+  border-top-right-radius: 3rem;
+  min-height: 50vh;
+}
+
 .theme_wrapper .theme_body {
   background-color: #fff;
   overflow: hidden;

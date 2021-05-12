@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="css/common.css">
     <!--이미지 확대 라이브러리 (lightbox)-->
     <link rel="stylesheet" href="plugin/lightbox/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+        integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+        crossorigin="anonymous" />
     <!--기존 linke css-->
     <style>
         .webwidget_rating_sex {
@@ -32,6 +35,7 @@
             float: left;
             cursor: pointer;
             border-bottom: 0px !important;
+            background-size: auto 19px;
         }
     
         .webwidget_rating_sex li span {
@@ -81,6 +85,10 @@
                         color: #828282;
                         margin: 0.5rem 0 0.8rem;
                     }
+
+                    .epot_radio {
+                        text-align: center;
+                    }
                 </style>
                 <div class="pw_form_box border_type">
                     <p class="pw_form_title">별점주기</p>
@@ -91,7 +99,13 @@
                                 <div>
                                     <div class="review-star-trp-s"><input name="is_score1" value="<?=$is_score1?>" id="is_score1"
                                             type="hidden">
-                                        <!--div class="review-star-orange-s" style="width:46px;"></div-->
+                                        <ul class="webwidget_rating_sex">
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>1</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>2</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>3</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>4</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>5</span></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +116,13 @@
                                 <div>
                                     <div class="review-star-trp-s"><input name="is_score2" value="<?=$is_score2?>" id="is_score2"
                                             type="hidden">
-                                        <!--div class="review-star-orange-s" style="width:86px;"></div-->
+                                        <ul class="webwidget_rating_sex">
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>1</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>2</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>3</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>4</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>5</span></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +133,13 @@
                                 <div>
                                     <div class="review-star-trp-s"><input name="is_score3" value="<?=$is_score3?>" id="is_score3"
                                             type="hidden">
-                                        <!--div class="review-star-orange-s" style="width:86px;"></div-->
+                                        <ul class="webwidget_rating_sex">
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>1</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>2</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>3</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>4</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>5</span></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -124,7 +150,13 @@
                                 <div>
                                     <div class="review-star-trp-s"><input name="is_score4" value="<?=$is_score4?>" id="is_score4"
                                             type="hidden">
-                                        <!--div class="review-star-orange-s" style="width:86px;"></div-->
+                                        <ul class="webwidget_rating_sex">
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>1</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>2</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>3</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>4</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>5</span></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +167,13 @@
                                 <div>
                                     <div class="review-star-trp-s"><input name="is_score5" value="<?=$is_score5?>" id="is_score5"
                                             type="hidden">
-                                        <!--div class="review-star-orange-s" style="width:86px;"></div-->
+                                        <ul class="webwidget_rating_sex">
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>1</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>2</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>3</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>4</span></li>
+                                            <li style="background-image:url(images/icon/review_out.png)"><span>5</span></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
@@ -154,18 +192,16 @@
                 </div>
                 <div class="pw_form_box border_type">
                     <p class="pw_form_title">포트폴리오 타입선택</p>
-                    <div style="display: flex;">
-                        <div class="epot_radio">
-                            <label for="epot_type1">
-                                <img style="height:170px;" src="images/portfolio/port_skin01.jpg">
-                            </label>
-                            <input type="radio" name="epot_type" id="epot_type1" value="1"
-                                style="display:block !important;-webkit-appearance:radio;" checked="">
+                    <div style='display:flex; height:200px;justify-content:center;'>
+                        <div style='height:100%;display:flex;flex-direction:column; align-items:center; margin-right:25px;'>
+                            <label for='epot_type1'><img style='height:170px;' src='images/portfolio/port_skin01.jpg'></label>
+                            <input type='radio' name='epot_type' id='epot_type1' value='1'
+                                style='display:block !important;-webkit-appearance:radio;'>
                         </div>
-                        <div class="epot_radio">
-                            <label for="epot_type2"><img style="height:170px;" src="images/portfolio/port_skin02.jpg"></label>
-                            <input type="radio" name="epot_type" id="epot_type2" value="2"
-                                style="display:block !important;-webkit-appearance:radio">
+                        <div style='height:100%;display:flex;flex-direction:column; align-items:center;margin-left:25px;'>
+                            <label for='epot_type2'><img style='height:170px;' src='images/portfolio/port_skin02.jpg'></label>
+                            <input type='radio' name='epot_type' id='epot_type2' value='2'
+                                style='display:block !important;-webkit-appearance:radio'>
                         </div>
                     </div>
                 </div>
@@ -198,6 +234,9 @@
     </div>
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+        integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+        crossorigin="anonymous"></script>
     <!-- js (기존 파일과 동일)-->
     <script src="js/rating_star.js"></script>
     <!--이미지 확대 라이브러리 (lightbox)-->

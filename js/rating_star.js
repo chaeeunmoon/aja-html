@@ -13,7 +13,7 @@
         g.next("ul").children("li").hover(function(){
             $(this).parent().children("li").css('background-position','0px 0px');
             var a=$(this).parent().children("li").index($(this));
-            $(this).parent().children("li").slice(0,a+1).css('background-position','0px -27px')
+            $(this).parent().children("li").slice(0,a+1).css('background-position','0px 0px')
             },function(){});
         g.next("ul").children("li").click(function(){
             var a=$(this).parent().children("li").index($(this));
@@ -28,7 +28,7 @@
             $(this).children("li").slice(0,f).css('background-position','0px 0px')
             }else{
             $(this).children("li").css('background-position','0px 0px');
-            $(this).children("li").slice(0,f).css('background-position','0px -27px')
+            $(this).children("li").slice(0,f).css('background-image','url(images/icon/review_over.png)')
             }
         });
 function init(){
@@ -37,13 +37,13 @@ function init(){
     var a=$("<ul>");
     a.addClass("webwidget_rating_sex");
     for(var i=1;i<=b;i++){
-        a.append('<li style="background-image:url('+d+'/use_star.png)"><span>'+i+'</span></li>')
+        a.append('<li style="background-image:url(images/icon/review_out.png)"><span>'+i+'</span></li>')
         }
         a.insertAfter(g);
     if(e!=""){
         f=e;
         g.val(e);
-        g.next("ul").children("li").slice(0,f).css('background-position','0px -27px')
+        g.next("ul").children("li").slice(0,f).css('background-image','url(images/icon/review_over.png)')
         }
     }
 }
