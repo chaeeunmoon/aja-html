@@ -614,20 +614,9 @@
                     <div class="swiper-pagination3 round_pagi popup_pagi"></div>
                     <!-- content-->
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <img src="images/banner/pop_01.jpg" alt="popup banner">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="#">
-                                <img src="images/banner/pop_02.jpg" alt="popup banner">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal_footer">
+                        <div class="swiper-slide"><a href="#"><img src="images/banner/pop_01.jpg" alt="popup banner"></a></div>
+                        <div class="swiper-slide"><a href="#"><img src="images/banner/pop_02.jpg" alt="popup banner"></a></div>
+                    </div></div> </div><div class="modal_footer">
                 <span class="ck_today"><input style="display: none;" type="checkbox" value="checkbox" name="chkbox"
                         id="daily_check"><label for="daily_check"><img src="images/icon/btn_checkbox.png" alt="체크"> 오늘은
                         그만보기</label></span>
@@ -766,16 +755,19 @@
                 $.cookie('mainPopup', 'hidden', { expires: 1, path: '/' });
             });
 
-            var swiper4 = new Swiper('.swiper-container4', {
-                autoplay: {
-                    delay: 2500,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination3',
-                },
-                loop: true,
-            });
+
+            if ($('.swiper-container4 .swiper-slide').length > 1) {
+                var swiper4 = new Swiper('.swiper-container4', {
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: '.swiper-pagination3',
+                    },
+                    loop: true,
+                });
+            }
         });
     </script>
 </body>

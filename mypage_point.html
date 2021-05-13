@@ -6,6 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>포인트</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
     <!--기존 css-->
     <link rel="stylesheet" href="css/default.css">
     <!-- 추가 css-->
@@ -22,43 +27,13 @@
             <a class="close_btn" href="<?php echo $return_url ?>"><img src="images/icon/btn_close.png" alt="닫기"></a>
         </div>
         <!--content-->
-        <style>
-             .theme_icon_block {
-                 padding: 2.5rem 2rem 1.5rem;
-             }
-
-             .theme_icon_block .theme_icon_box {
-                 width: 50%;
-                text-align:center;
-                border: 1px solid red;
-             }
-
-             .theme_icon_block .theme_icon_txt {
-                width: 50%;
-             }
-
-             .theme_icon_block .theme_icon_txt .title {
-                font-size: 0.9375rem;
-                font-weight: 600;
-                margin-bottom: 0.5rem;
-             }
-
-             .theme_icon_txt .point_txt {
-                font-size: 1.8rem;
-                color: #0d0d0d;
-             }
-
-             .theme_icon_txt .point_txt .num {
-                color: #fff;
-             }
-        </style>
         <div>
             <div class="theme_wrapper point_theme">
                 <div class="theme_header">
                     <div class="theme_icon_block">
                         <div class="flex_block">
                             <div class="theme_icon_box">
-                                <img src="images/icon/ico_my_point.png" alt="">
+                                <img src="images/icon/ico_point_big.png" alt="">
                             </div>
                             <div class="theme_icon_txt">
                                 <p class="title">사용가능 POINT</p>
@@ -66,81 +41,79 @@
                             </div>
                         </div>
                     </div>
-                    <style>
-                        .theme_state_wrap {
-                            padding: 1rem 1.25rem;
-                        }
-
-                        .theme_state_list {
-                            display: flex;
-                            flex: 1;
-                            background-color: #f48511;
-                            border-radius: 1rem;
-                        }
-
-                        .theme_state_list li {
-                            width: 100%;
-                        }
-
-                        .theme_state_list li p {
-                            font-size: 0.9rem;
-                            color: #fff;
-                            text-align: center;
-                            padding: 0.7rem;
-                        }
-
-                        .theme_state_list li p .num {
-                            color: #ffee79;
-                        }
-
-                    </style>
                     <!--현황-->
                     <div class="theme_state_wrap">
                         <ul class="theme_state_list">
-                            <li><p>총 적립 <span class="num">3178</span>p</p></li>
-                            <li><p>사용한 <span class="num">3178</span>p</p></li>
+                            <li><p class="state_txt">총 적립 <span class="num">3178</span>p</p></li>
+                            <li><p class="state_txt">사용한 <span class="num">3178</span>p</p></li>
                         </ul>
-                        <!-- <div>
-                            <p>총 적립 <span>3178</span>p</p>
-                        </div>
-                        <div>
-                            <p>사용한 <span>3178</span>p</p>
-                        </div> -->
                     </div>
                     <!--안내-->
-                    <div>
-                        <div>
-                            <p>· 안내: 교육 참여와 로그인. 설문 등을 통해 적립가능 <img src="images/icon/bt_dawn.png" alt="더보기"> </p>
+                    <div class="theme_info_wrap">
+                        <div class="theme_info_header">
+                            <p class="title">· 안내: 교육 참여와 로그인. 설문 등을 통해 적립가능 <span class="more_icon"><img src="images/icon/bt_dawn.png" alt="더보기"></span></p>
                         </div>
-                        <div>
-                                                            
+                        <div class="theme_info_body" style="display: none;">
+                            <div class="theme_info_title flex_block">
+                                <p class="title">포인트 안내</p>
+                                <span class="close_icon close_btn"><img src="images/icon/btn_close.png" alt="닫기"></span>
+                            </div> 
+                            <ul class="theme_info_list">
+                                <li><p class="info_txt">교육 참여와 로그인,설문 등을 통해 적립할 수 있습니다</p></li>
+                                <li><p class="info_txt">적립된 포인트는 아자스쿨에서 교육상품 구매시 교환하여 사용할 수 있습니다</p></li>
+                                <li><p class="info_txt">매일매일 로그인과 프로그램만 확인하여도 포인트를 쌓입니다</p></li>
+                            </ul>                         
                         </div>
                     </div>
                 </div>
                 <div class="theme_body">
-                    <div class="">
-                        <p class="">내 포인트 내역</p>
-                        <ul class="item_list">
-                            <li>
-                                <div>
-                                    <div>
-                                        <span>로그인</span><span>2021-05-06</span>
-                                        <p>2021-05-06 첫 로그인</p>
-                                    </div>
+                    <div class="theme_list_wrap">
+                        <div class="theme_list_title">
+                            <p class="title">내 포인트 내역</p>
+                        </div>
+                        <ul class="theme_list_item">
+                            <li class="theme_item_box middle">
+                                <div class="theme_item_txt">
+                                    <span class="item_state">로그인</span><span class="item_date">2021-05-06</span>
+                                    <p class="item_desc">2021-05-06 첫 로그인</p>
                                 </div>
                                 <div>
-                                    <div>
-                                        <p class=""><span>10</span>p</p>
-                                    </div>
+                                    <p class="point_coin"><span class="num">1000</span>p</p>
+                                </div>
+                            </li>
+                            <li class="theme_item_box middle">
+                                <div class="theme_item_txt">
+                                    <span class="item_state">추천</span><span class="item_date">2021-05-06</span>
+                                    <p class="item_desc">주문번호 20210423194223851결제ㅇㅇㄹㅇㄹㄹ주문번호</p>
+                                </div>
+                                <div>
+                                    <p class="point_coin"><span class="num">1</span>p</p>
                                 </div>
                             </li>
                         </ul>
+                        <div class="btn_wrapper">
+                            <a href="javascript:void(0)" class="capsule_btn lg t_black gray">더보기 <img class="more_icon"
+                                    src="images/icon/btn_more_black.png" alt=""> </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <!--E:content-->
     </div>
-</body>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--안내 내용 show/hide-->
+    <script>
+        $(document).ready(function(){
+            $('.theme_info_header').click(function(){
+                $('.theme_info_body').show();
+            });
 
+            $('.theme_info_title .close_btn').click(function () {
+                $('.theme_info_body').hide();
+            });
+        });
+    </script>
+</body>
 </html>

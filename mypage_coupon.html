@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>쿠폰</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+    <div class="wrap m_wrap">
+        <!--header-->
+        <div class='page_title_area'>
+            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
+            <h2 class="page_title">쿠폰함</h2>
+            <a class="close_btn" href="<?php echo $return_url ?>"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <!--content-->
+        <div>
+            <div class="theme_wrapper coupon_theme">
+                <div class="theme_header">
+                    <div class="theme_icon_block">
+                        <div class="flex_block">
+                            <div class="theme_icon_box">
+                                <img src="images/icon/ico_coupon_big.png" alt="쿠폰 아이콘">
+                            </div>
+                            <div class="theme_icon_txt">
+                                <ul class="coupon_state_list">
+                                    <li class="flex_block"><p class="coupon_txt">사용가능 쿠폰</p><p class="coupon_txt"><span class="num">6</span>장</p></li>
+                                    <li class="flex_block"><p class="coupon_txt">당월소멸예정 쿠폰</p><p class="coupon_txt"><span class="num">27</span>장</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!--쿠폰 등록-->
+                    <div class="coupon_input_form flex_block">
+                        <input type="text" name="couponin" maxlength="25" id="couponin" class="coupon-keyword" placeholder="쿠폰번호를 입력해주세요"
+                            style="ime-mode:inactive;">
+                        <button type="button" onclick="couponin_check();" class="coupon_btn">쿠폰등록</button>
+                    </div>
+                    <!--안내-->
+                    <div class="theme_info_wrap">
+                        <div class="theme_info_header">
+                            <p class="title">· 안내: 쿠폰번호 입력시 하이픈(-)까지 입력해주세요 <span class="more_icon"><img src="images/icon/bt_dawn.png" alt="더보기"></span></p>
+                        </div>
+                        <div class="theme_info_body" style="display: none;">
+                            <div class="theme_info_title flex_block">
+                                <p class="title">쿠폰 안내</p>
+                                <span class="close_icon close_btn"><img src="images/icon/btn_close.png" alt="닫기"></span>
+                            </div> 
+                            <ul class="theme_info_list">
+                                <li><p class="info_txt">오프라인 및 제휴사에서 받은 쿠폰번호를 입력하세요</p></li>
+                                <li><p class="info_txt">쿠폰번호 입력시 하이픈(-)까지 입력하시면 사용이 가능합니다</p></li>
+                                <li><p class="info_txt">쿠폰사용기준과 기간을 반드시 확인하세요 <br />(사용된 쿠폰은 주문취소 후 재발급 불가힙니다)</p></li>
+                            </ul>                         
+                        </div>
+                    </div>
+                </div>
+                <div class="theme_body">
+                    <div class="theme_list_wrap">
+                        <div class="theme_list_title flex_block">
+                            <p class="title">내 쿠폰 내역</p>
+                            <!--리스트 정렬-->
+                            <ul class="filter_wrap">
+                                <li class="filter_nav active"><a href="javascript:void(0)">신규</a></li>
+                                <li class="filter_nav"><a href="javascript:void(0)">마감임박순</a></li>
+                            </ul>
+                        </div>
+                        <ul class="theme_list_item">
+                            <li class="theme_item_box">
+                                <div>
+                                    <div class="theme_coupon_box">
+                                        <p class="img_coupon_txt"><span class="num">10</span>%</p>
+                                        <img src="images/icon/ico_coupon.png" alt="쿠폰 배경">
+                                    </div>
+                                </div>
+                                <div class="theme_item_txt">
+                                    <p class="coupon_title">아자탐구생활 현장구매 방문자 할인권</p>
+                                    <div class="coupon_info">
+                                        <dl><dt>발행일자 :</dt><dd>2021-02-16 19:32:33</dd></dl>
+                                        <dl><dt>사용기간 :</dt><dd>2021-02-16~2021-05-11</dd></dl>
+                                        <dl><dt>사용횟수 :</dt><dd>1회</dd></dl>
+                                        <dl><dt>적용교육 :</dt><dd>사용가능</dd></dl>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="theme_item_box">
+                                <div>
+                                    <div class="theme_coupon_box">
+                                        <p class="img_coupon_txt"><span class="num">1000</span>원</p>
+                                        <img src="images/icon/ico_coupon.png" alt="쿠폰 배경">
+                                    </div>
+                                </div>
+                                <div class="theme_item_txt">
+                                    <p class="coupon_title">NC백화점 송파 오픈 할인권 - 5천원</p>
+                                    <div class="coupon_info">
+                                        <dl><dt>발행일자 :</dt><dd>2021-02-16 19:32:33</dd></dl>
+                                        <dl><dt>사용기간 :</dt><dd>2021-02-16~2021-05-11</dd></dl>
+                                        <dl><dt>사용횟수 :</dt><dd>1회</dd></dl>
+                                        <dl><dt>적용교육 :</dt><dd>사용가능</dd></dl>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="btn_wrapper">
+                            <a href="javascript:void(0)" class="capsule_btn lg t_black gray">더보기 <img class="more_icon"
+                                    src="images/icon/btn_more_black.png" alt=""> </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--E:content-->
+    </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--안내 내용 show/hide-->
+    <script>
+        $(document).ready(function(){
+            $('.theme_info_header').click(function(){
+                $('.theme_info_body').show();
+            });
+
+            $('.theme_info_title .close_btn').click(function () {
+                $('.theme_info_body').hide();
+            });
+        });
+    </script>
+</body>
+</html>
