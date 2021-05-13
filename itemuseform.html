@@ -11,8 +11,6 @@
     <!-- 추가 css-->
     <link rel="stylesheet" href="css/font-style.css">
     <link rel="stylesheet" href="css/common.css">
-    <!--이미지 확대 라이브러리 (lightbox)-->
-    <link rel="stylesheet" href="plugin/lightbox/css/lightbox.min.css">
     <!--기존 linke css-->
     <style>
         .webwidget_rating_sex {
@@ -61,6 +59,7 @@
                 </div>
                 <div class="pw_form_box border_type">
                     <p class="pw_form_title">별점주기</p>
+                    <!--별점 (기존 스타일 유지)-->
                     <ul class="score-list">
                         <li>
                             <span class="tit">내용의 유익성</span>
@@ -137,11 +136,11 @@
                                     <div class="review-star-trp-s"><input name="is_score5" value="<?=$is_score5?>" id="is_score5"
                                             type="hidden">
                                         <ul class="webwidget_rating_sex">
-                                            <li style="background-image:url(images/icon/review_out.png)"><span>1</span></li>
-                                            <li style="background-image:url(images/icon/review_out.png)"><span>2</span></li>
-                                            <li style="background-image:url(images/icon/review_out.png)"><span>3</span></li>
-                                            <li style="background-image:url(images/icon/review_out.png)"><span>4</span></li>
-                                            <li style="background-image:url(images/icon/review_out.png)"><span>5</span></li>
+                                            <li style="background-image:url(/img//use_star.png)"><span>1</span></li>
+                                            <li style="background-image:url(/img//use_star.png)"><span>2</span></li>
+                                            <li style="background-image:url(/img//use_star.png)"><span>3</span></li>
+                                            <li style="background-image:url(/img//use_star.png)"><span>4</span></li>
+                                            <li style="background-image:url(/img//use_star.png)"><span>5</span></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -161,6 +160,7 @@
                 </div>
                 <div class="pw_form_box border_type">
                     <p class="pw_form_title">타입선택</p>
+                    <!--타입선택 (기존 스타일 유지)-->
                     <div style='display:flex; height:200px;justify-content:center;'>
                         <div style='height:100%;display:flex;flex-direction:column; align-items:center; margin-right:25px;'>
                             <label for='epot_type1'><img style='height:170px;' src='images/portfolio/port_skin01.jpg'></label>
@@ -176,6 +176,7 @@
                 </div>
                 <div class="pw_form_box border_type">
                     <p class="pw_form_title">이미지 등록</p>
+                    <!--이미지 등록 (기존 스타일 유지)-->
                     <div class="edu-reply">
                         <div class="img-area file">
                             <ul>
@@ -201,12 +202,6 @@
         </div>    
         <!--E:content-->
     </div>
-    <!-- plugin js (기존 plugin 파일과 동일)-->
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <!-- js (기존 파일과 동일)-->
-    <script src="js/rating_star.js"></script>
-    <!--이미지 확대 라이브러리 (lightbox)-->
-    <script src="plugin/lightbox/js/lightbox.min.js"></script>
 </body>
 
 </html>
