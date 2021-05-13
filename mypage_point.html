@@ -23,27 +23,91 @@
         </div>
         <!--content-->
         <style>
+             .theme_icon_block {
+                 padding: 2.5rem 2rem 1.5rem;
+             }
+
+             .theme_icon_block .theme_icon_box {
+                 width: 50%;
+                text-align:center;
+                border: 1px solid red;
+             }
+
+             .theme_icon_block .theme_icon_txt {
+                width: 50%;
+             }
+
+             .theme_icon_block .theme_icon_txt .title {
+                font-size: 0.9375rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+             }
+
+             .theme_icon_txt .point_txt {
+                font-size: 1.8rem;
+                color: #0d0d0d;
+             }
+
+             .theme_icon_txt .point_txt .num {
+                color: #fff;
+             }
         </style>
         <div>
             <div class="theme_wrapper point_theme">
                 <div class="theme_header">
-                    <div class="flex_block">
-                        <div class="theme_icon_box">
-                            <img src="images/icon/ico_my_point.png" alt="">
-                        </div>
-                        <div class="">
-                            <p>사용가능 POINT</p>
-                            <p><span>20810</span>P</p>
+                    <div class="theme_icon_block">
+                        <div class="flex_block">
+                            <div class="theme_icon_box">
+                                <img src="images/icon/ico_my_point.png" alt="">
+                            </div>
+                            <div class="theme_icon_txt">
+                                <p class="title">사용가능 POINT</p>
+                                <p class="point_txt"><span class="num">20,810</span>P</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="">
-                        <div>
+                    <style>
+                        .theme_state_wrap {
+                            padding: 1rem 1.25rem;
+                        }
+
+                        .theme_state_list {
+                            display: flex;
+                            flex: 1;
+                            background-color: #f48511;
+                            border-radius: 1rem;
+                        }
+
+                        .theme_state_list li {
+                            width: 100%;
+                        }
+
+                        .theme_state_list li p {
+                            font-size: 0.9rem;
+                            color: #fff;
+                            text-align: center;
+                            padding: 0.7rem;
+                        }
+
+                        .theme_state_list li p .num {
+                            color: #ffee79;
+                        }
+
+                    </style>
+                    <!--현황-->
+                    <div class="theme_state_wrap">
+                        <ul class="theme_state_list">
+                            <li><p>총 적립 <span class="num">3178</span>p</p></li>
+                            <li><p>사용한 <span class="num">3178</span>p</p></li>
+                        </ul>
+                        <!-- <div>
                             <p>총 적립 <span>3178</span>p</p>
                         </div>
                         <div>
                             <p>사용한 <span>3178</span>p</p>
-                        </div>
+                        </div> -->
                     </div>
+                    <!--안내-->
                     <div>
                         <div>
                             <p>· 안내: 교육 참여와 로그인. 설문 등을 통해 적립가능 <img src="images/icon/bt_dawn.png" alt="더보기"> </p>
