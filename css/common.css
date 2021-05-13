@@ -4620,6 +4620,33 @@ input[type='checkbox']:checked {
   border-radius: 8px;
   padding: 0.8rem;
 }
+
+.pw_form_box.border_type {
+  border-top: 1px solid #e0e0e0;
+}
+
+.pw_form_box .pw_form_title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.pw_textarea .byte {
+  font-size: 0.82rem;
+  color: #828282;
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.reward_txt {
+  font-size: 0.87rem;
+  color: #828282;
+  margin: 0.5rem 0 0.8rem;
+}
+
+.epot_radio {
+  text-align: center;
+}
 /* E: item write form style */
 /* S: register completed style */
 .complete_wrapper {
