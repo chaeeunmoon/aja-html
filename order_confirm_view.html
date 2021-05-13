@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교육신청</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!--header-->
+        <div class='page_title_area'>
+            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
+            <h2 class="page_title">결제 상세정보</h2>
+            <a class="close_btn" href="<?php echo $return_url ?>"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <!--content-->
+        <div class="order_wrapper receipt_wrapper">
+            <div class="flex_block">
+                <p class=""><span>결제</span><span>2020-09-03</span></p>
+                <a href="javascript:order_del('');" class="solid_btn light">취소<span class="close_icon"><img src="images/icon/btn_close.png" alt="취소하기"></span></a>
+            </div>
+            <div>
+
+            </div>
+        </div>
+        <!--E:content-->
+    </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+</body>
+</html>

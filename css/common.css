@@ -150,7 +150,8 @@ caption {
   color: #828282 !important;
 }
 
-.bold_txt {
+.bold_txt,
+.bold_txt a {
   font-weight: 600 !important;
 }
 
@@ -633,6 +634,7 @@ caption {
   width: 100%;
   font-size: 1rem;
   display: block;
+  padding: 0.95rem 2rem;
 }
 
 .capsule_btn.gray .more_icon {
@@ -4964,7 +4966,8 @@ input[type='checkbox']:checked {
   color: #0d0d0d;
 }
 
-.order_box .product_info_wrap .product_info .product_title {
+.order_box .product_info_wrap .product_info .product_title,
+.order_box .product_info_wrap .product_info .product_title a {
   font-size: 1.05rem;
   line-height: 1.3;
   letter-spacing: 0.3px;
@@ -4978,6 +4981,7 @@ input[type='checkbox']:checked {
   color: #ff8611;
   margin-bottom: 0.5em;
   line-height: 1.2;
+  word-break: break-all;
 }
 
 .order_box .product_info_wrap .product_info .product_info_txt,
@@ -5663,3 +5667,93 @@ input[type='checkbox']:checked {
   margin-bottom: 0.5rem;
 }
 /* E: mypage theme style */
+/* S: my page list style / confirm style */
+.confirm_wrapper {
+  padding: 1.25rem;
+}
+
+.confirm_state_block {
+  background-color: #ff8611;
+  padding: 1.25rem;
+  border-radius: 3rem;
+}
+
+.confirm_state_block .state_title {
+  font-size: 1.03rem;
+  color: #fff;
+}
+
+.confirm_state_block .state_txt {
+  font-size: 0.75rem;
+  color: #fff;
+}
+
+.confirm_state_block .state_txt .num {
+  font-size: 1rem;
+}
+
+.confirm_box_wrap {
+  margin-top: 1rem;
+}
+
+.confirm_box {
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 0.95rem;
+  margin-bottom: 1rem;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.confirm_box .confirm_header {
+  padding: 1rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.confirm_box .confirm_header .confirm_date,
+.confirm_box .confirm_header .more_txt {
+  font-size: 0.85rem;
+  color: #828282;
+  font-weight: 400;
+}
+
+.confirm_box .confirm_header .more_txt .arrow_icon img {
+  height: 0.83rem;
+  position: relative;
+  top: 0.1rem;
+  margin-left: 5px;
+}
+
+.confirm_box .confirm_body {
+  padding: 1.25rem;
+}
+
+.confirm_box .btn_wrapper {
+  margin: 1.25rem 0 0;
+}
+
+.confirm_box .btn_wrapper .lg {
+  padding: 0.85rem 2rem 0.75rem;
+  font-size: 0.95rem;
+}
+
+.confirm_box .btn_wrapper .lg:last-of-type {
+  margin-left: 0.8rem;
+}
+
+.confirm_box .product_info .product_price {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0d0d0d;
+  text-align: right;
+  margin-top: 0.8rem;
+}
+
+.confirm_box .product_info_wrap .product_info {
+  padding-left: 1.25rem;
+}
+
+.confirm_box .product_info_wrap .product_info .product_title {
+  margin-bottom: 0.3rem;
+}
+/* E: my page list style  */
