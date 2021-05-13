@@ -5629,7 +5629,7 @@ input[type='checkbox']:checked {
 .coupon_input_form .coupon_btn {
   background-color: #f9e34d;
   color: #0ba379;
-  padding: 0.95rem 1.5rem;
+  padding: 1rem 1.5rem;
   border-radius: 8px;
   font-size: 0.95rem;
   font-weight: 600;
