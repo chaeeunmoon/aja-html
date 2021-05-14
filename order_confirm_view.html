@@ -26,19 +26,340 @@
             <h2 class="page_title">결제 상세정보</h2>
             <a class="close_btn" href="<?php echo $return_url ?>"><img src="images/icon/btn_close.png" alt="닫기"></a>
         </div>
+        <style>
+            .receipt_wrapper {
+
+            }
+            /* top */
+            .receipt_wrapper .state_title_block .state_txt {
+                font-size: 0.9rem;
+                color: #0d0d0d;
+            }
+
+            .receipt_wrapper .state_title_block .state_txt .date:before {
+                content: '·';
+                display: inline-block;
+                margin: 0 0.2rem;
+            }
+
+            .receipt_wrapper .state_title_block .solid_btn {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.85rem;
+                text-indent: -1.5px; 
+            }
+
+            .receipt_wrapper .state_title_block .solid_btn .close_icon img{
+                width: 0.75rem;
+                margin-left: 0.5rem;
+            }
+            /* receipt  content */
+            .receipt_container {
+                margin-top: 1.25rem;
+            }
+            .receipt_container .receipt_header {
+                background-color: #fff;
+                border-radius: 1rem;
+                overflow: hidden;
+                padding: 0 !important;
+                /* border-bottom: 1px dashed #e1e1e1; */
+                margin-bottom: 0 !important;
+                /* position: relative;
+                z-index: 10; */
+            }
+
+            .receipt_header .receipt_label_block {
+                background-color: #ff8611;
+                padding: 1rem;
+            }
+
+            .receipt_header .receipt_label_block .receipt_label_txt {
+                font-size: 0.85rem;
+                color: #fff;
+                text-align: center;
+                letter-spacing: 0.5px;
+            }
+
+            .receipt_header .receipt_item_block {
+                padding: 1.25rem;   
+            }
+
+            .receipt_body {
+                background-color: #fff;
+                /* border-radius: 1rem; */
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                overflow: hidden;
+                /* position:relative;
+                z-index: 9; */
+            }
+        </style>
         <!--content-->
         <div class="order_wrapper receipt_wrapper">
-            <div class="flex_block">
-                <p class=""><span>결제</span><span>2020-09-03</span></p>
-                <a href="javascript:order_del('');" class="solid_btn light">취소<span class="close_icon"><img src="images/icon/btn_close.png" alt="취소하기"></span></a>
+            <div class="state_title_block flex_block">
+                <p class="state_txt">결제<span class="date">2020-09-03</span></p>
+                <a href="javascript:order_del('');" class="solid_btn light modal_btn" data-modal="refund_popup">취소<span class="close_icon"><img src="images/icon/btn_close.png" alt="취소하기"></span></a>
             </div>
-            <div>
+            <div class="receipt_container">
+                <div class="receipt_header order_box">
+                    <div class="receipt_label_block">
+                        <p class="receipt_label_txt">NO. 2020090312342354</p>
+                    </div>
+                    <!--상품 정보-->
+                    <div class="receipt_item_block">
+                        <div class="product_info_wrap">
+                            <div class="product_thumb">
+                                <a href="#">
+                                    <img src="images/sample/sample-01.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="product_info">
+                                <p class="product_title bold_txt"><a href="#">초등한국사 단군 신화에서 가야까지</a></p>
+                                <p class="product_origin_price">30000</p>
+                                <p class="product_price">95600</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    .receipt_body {
+                        position: relative;
+                        padding: 0 1.25rem;
+                        -webkit-box-shadow: 0px 2px 6px 2px #e0e0e0;
+                        box-shadow: 0px 2px 6px 2px #e0e0e0;
+                    }
 
+                    /* .receipt_body::after {
+                        content: '';
+                        position: relative;
+                        display: block;
+                        width: 100%;
+                        height: 1.5rem;
+                        background-size: 1.5rem;
+                        background-image: url('images/icon/bill_bg_03.png');
+                    } */
+
+                    .receipt_group {
+                        padding: 1.8rem 0;
+                        border-top: 1px dashed #e1e1e1;
+                    }
+
+                    .receipt_group .title {
+                        font-size: 1.125rem;
+                        color: #0d0d0d;
+                        font-weight: 600;
+                        margin-bottom: 1.5rem;
+                    }
+
+                    .receipt_desc .receipt_txt {
+                        font-size: 0.85rem;
+                        line-height: 1.7;
+                        font-weight: 400;
+                    }
+
+                    .receipt_footer {
+                        position:relative;
+                        /* padding: 0 1rem; */
+                        border-bottom-left-radius: 1rem;
+                        border-bottom-right-radius: 1rem;
+                        overflow: hidden;
+                        width: 100%;
+                        height: 1.8rem;
+                        /* background-size: 1.5rem;
+                        background-image: url('images/icon/bill_bg_01.png'); */
+                        z-index: 999;
+                    }
+
+                    .receipt_footer::after {
+                        content: '';
+                        display: block;
+                        width: 100%;
+                        height: 1.8rem;
+                        background-size: 1.8rem;
+                        background-image: url('images/icon/bill_bg_01.png');
+                    }
+                </style>
+                <div class="receipt_body">
+                    <div class="receipt_group">
+                        <p class="title">교육일자</p>
+                        <div class="receipt_desc">
+                            <div class="pay_info_list">
+                                <p class="sub_txt">교육인원</p>
+                                <p class="p_txt">1명</p>
+                            </div>
+                            <div class="pay_info_list">
+                                <p class="sub_txt">옵션1</p>
+                                <p class="p_txt">2020-09-08 12시 - 13시 크리에이터</p>
+                            </div>
+                            <div class="pay_info_list">
+                                <p class="sub_txt">옵션2</p>
+                                <p class="p_txt">2020-09-08 12시 요리</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="receipt_group">
+                        <p class="title">구매자 정보</p>
+                        <div class="receipt_desc">
+                            <div class="pay_info_list">
+                                <p class="sub_txt">이름</p>
+                                <p class="p_txt">김영희 / 010-8667-7977</p>
+                            </div>
+                            <div class="pay_info_list">
+                                <p class="sub_txt"></p>
+                                <p class="p_txt">hjaawetom@ajaschool.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="receipt_group">
+                        <p class="title">체험생 정보</p>
+                        <div class="receipt_desc">
+                            <div class="pay_info_list">
+                                <p class="sub_txt">체험생1</p>
+                                <p class="p_txt">박지희 · 여 · 2012 · 초3</p>
+                            </div>
+                            <div class="pay_info_list">
+                                <p class="sub_txt">체험생2</p>
+                                <p class="p_txt">박민희 · 여 · 2015 · 유치원생</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="receipt_group">
+                        <p class="title">체험생 특이사항</p>
+                        <div class="receipt_desc">
+                            <p class="receipt_txt">우리아이는 소극적이고 벌레를 상당히 무서워
+                            해요. 정해진 시간에 약을 먹어야해요. 땅콩, 딸기, 키위 알러지가 있어요.</p>
+                        </div>
+                    </div>
+                    <div class="receipt_group">
+                        <p class="title">결제정보</p>
+                        <div class="receipt_desc">
+                            <div class="pay_info_list">
+                                <p class="sub_txt">결제금액</p>
+                                <p class="p_txt"><span>20000</span> 원</p>
+                            </div>
+                            <div class="pay_info_list">
+                                <p class="sub_txt">총할인금액</p>
+                                <div class="p_txt">
+                                    <span class="main_txt">- 5000원</span>
+                                    <p class="p_sub_txt">포인트 <span class="main_txt">1000P</span> + 쿠폰 <span class="main_txt">4000원</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="receipt_footer"></div>
             </div>
         </div>
+        <style>
+            .theme_type01 .modal_content {
+                width: 90%;
+                border-radius: 1.5rem;
+                overflow: hidden;
+            }
+
+            .theme_type01 .modal_header {
+                padding: 1.5rem 0;
+                border-bottom: 3px solid #ff8611;
+            }
+
+            .theme_type01 .modal_body {
+                padding: 1.4rem 1.25rem 1rem;
+            }
+
+            .theme_type01 .btn_wrapper {
+                margin: 1rem 0;
+            }
+
+            .refund_request_form {
+
+            }
+        </style>
         <!--E:content-->
+        <!--취소/환불 팝업 -->
+        <div id="refund_popup" class="modal theme_type01" style="display: block;">
+            <div class="modal_content center">
+                <div class="modal_header">
+                    <h5 class="modal_title">취소/환불</h5>
+                </div>
+                <div class="modal_body">
+                    <!--취소 환불-->
+                    <style>
+                        .refund_request_form .box_input {
+                            display: block;
+                            padding: 0.6rem 0.8rem;
+                        }
+
+                        .refund_request_form .p_title:before {
+                            content: '·';
+                            margin: 0 3px;
+                        }
+                    </style>
+                    <div class="refund_request_form">
+                        <div class="pay_info_list">
+                            <p class="sub_txt p_title">상품명</p>
+                            <p class="p_txt">애니메이션 제작 KIT 우리 가족 모두감독</p>
+                        </div>
+                        <div class="pay_info_list">
+                            <p class="sub_txt p_title">교육일자</p>
+                            <p class="p_txt">2021-03-14 (수) 10시~12시</p>
+                        </div>
+                        <div class="pay_info_list middle">
+                            <label class="sub_txt p_title">환불수량</label>
+                            <p class="p_txt"><input type="text" class="box_input" /></p>
+                        </div>
+                        <div class="pay_info_list">
+                            <label class="sub_txt p_title">취소사유</label>
+                            <p class="p_txt">
+                                <select id="request_type" class="box_input" name="request_type" onchange="change_type(this.value)">
+                                    <option value="단순변심">단순변심</option>
+                                    <option value="교육지연">교육지연</option>
+                                    <option value="주문실수">주문실수</option>
+                                    <option value="서비스불만족">서비스불만족</option>
+                                    <option value="기타">기타(직접입력)</option>
+                                </select>
+                                <textarea class="" id="request_memo" name="request_memo"
+                                    style="margin-top:10px;border:1px solid #ccc;width: 100%;height:50px;"></textarea>
+                            </p>
+                        </div>
+                        <div id="order_refund" class="refund_info">
+                            <p>5일전 취소 : 전액 환불</p> 
+                            <p>3일전 취소 : 50% 환불</p>
+                            <p>2일 전 ~ 당일 취소 : 환불 불가</p>
+                        </div>
+                        <div class="btn_wrapper flex_block">
+                            <a href="javascript:void(0)" class="solid_btn lg disable">취소요청</a>
+                            <a href="javascript:void(0)" class="solid_btn lg modal_close">닫기</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--취소/환불 팝업 -->
     </div>
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="js/jquery-1.8.3.min.js"></script>
+    <!--modal show/hide js-->
+    <script>
+        $(document).ready(function () {
+            $('.modal_close').click(function () {
+                $(".modal").hide();
+            });
+
+            $('.modal_btn').click(function () {
+                var modal = $(this).data('modal');
+                $("#" + modal).show();
+            });
+
+            // When the user clicks anywhere outside of the modal, close it  
+            window.onclick = function (e) {
+                var modal = document.querySelector('.modal');
+                if (modal) {
+                    if (e.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            }
+
+        });
+    </script>
 </body>
 </html>

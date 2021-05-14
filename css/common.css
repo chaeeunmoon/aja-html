@@ -666,10 +666,11 @@ caption {
   padding: 0.4rem 0.7rem;
   font-size: 0.8rem;
   font-weight: 300;
+  margin-right: 0.4rem;
 }
 
 .capsule_btn.xs {
-  padding: 0.19rem 0.5rem 0.29rem;
+  padding: 0.2rem 0.5rem 0.29rem;
   font-size: 0.82rem;
   color: #666d73;
   margin-right: 0.3rem;
@@ -1471,11 +1472,11 @@ input[type='checkbox']:checked {
 
 /* main popup modal */
 .main_popup {
-  width: 100vw !important;
+  width: 100% !important;
 }
 .main_popup .modal_content,
 .main_popup .modal_body {
-  width: 100vw;
+  width: 100%;
   background-color: transparent;
 }
 
@@ -4263,7 +4264,7 @@ input[type='checkbox']:checked {
 
 .rm_wrap .img_wrap *,
 .txt_editor_wrap * {
-  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif !important;
   font-size: 0.95rem !important;
   line-height: 1.5;
 }
@@ -4409,6 +4410,10 @@ input[type='checkbox']:checked {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+.review_block .comment_btn {
+  margin-top: 1rem;
 }
 
 .tab_inner_box {
@@ -4683,7 +4688,8 @@ input[type='checkbox']:checked {
   line-height: 1.4;
 }
 
-.box_input_group {
+.box_input_group,
+.box_input {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 0.8rem;
@@ -5111,19 +5117,29 @@ input[type='checkbox']:checked {
   display: flex;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-bottom: 1em;
-  font-size: 0.88rem;
+  margin-bottom: 1rem;
+  font-size: 0.93rem;
+}
+
+.pay_info_list.middle {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .pay_info_list .p_txt,
 .pay_info_list .p_main {
   text-align: right;
+  margin-left: 1rem;
+}
+
+.pay_info_list .p_sub_txt {
+  font-size: 0.83rem;
+  color: #828282;
+  margin-top: 0.5rem;
 }
 
 .pay_info_list .p_main {
@@ -5756,4 +5772,6 @@ input[type='checkbox']:checked {
 .confirm_box .product_info_wrap .product_info .product_title {
   margin-bottom: 0.3rem;
 }
+
+/* receipt style */
 /* E: my page list style  */
