@@ -4568,6 +4568,25 @@ input[type='checkbox']:checked {
   top: -0.2rem;
   margin-left: 5px;
 }
+.inquir_answer_box {
+  padding: 1.5rem 1.25rem 1.25rem;
+  background-color: #f7f8fa;
+  margin-top: 1rem;
+  border-radius: 1rem;
+}
+
+.inquir_answer_box .answer_name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #0d0d0d;
+  margin-bottom: 1rem;
+}
+
+.inquir_answer_box .answer_desc > * {
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.4;
+}
 /* E: item style */
 /* S: keyframe */
 @-webkit-keyframes up-down {
@@ -5775,3 +5794,14 @@ input[type='checkbox']:checked {
 
 /* receipt style */
 /* E: my page list style  */
+/* S: content style */
+.content_wrapper .board .acc-area .acc-title p,
+.content_wrapper .board.terms-list strong {
+  font-size: 1rem !important;
+}
+
+.content_wrapper .terms-detail-content .terms-detail .terms-title {
+  font-size: 1rem !important;
+}
+
+/* E: content style */
