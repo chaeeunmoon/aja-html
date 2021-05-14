@@ -155,6 +155,12 @@ caption {
   font-weight: 600 !important;
 }
 
+.text_overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 /* header */
 /* header top renewal (20210414) */
 #header {
@@ -627,6 +633,11 @@ caption {
 
 .outline_btn:focus {
   outline: none;
+}
+
+.outline_btn.blue {
+  border: 1px solid #668fbd !important;
+  color: #668fbd !important;
 }
 
 .outline_btn.lg,
@@ -5009,6 +5020,17 @@ input[type='checkbox']:checked {
   padding-top: 0.3rem;
 }
 
+.confirm_box.order_box .product_info_wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  position: relative;
+  vertical-align: middle;
+  padding-top: 0.3rem;
+}
+
 .order_box .product_info_wrap .product_thumb {
   position: relative;
   width: 33%;
@@ -5043,7 +5065,7 @@ input[type='checkbox']:checked {
 
 .order_box .product_info_wrap .product_info .product_title,
 .order_box .product_info_wrap .product_info .product_title a {
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.3;
   letter-spacing: 0.3px;
   margin-bottom: 0.5em;
@@ -5052,10 +5074,10 @@ input[type='checkbox']:checked {
 
 .order_box .product_info_wrap .product_info .product_opt,
 .opt_wrapper .product_opt {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: #ff8611;
   margin-bottom: 0.5em;
-  line-height: 1.2;
+  line-height: 1.4;
   word-break: break-all;
 }
 
@@ -5759,7 +5781,7 @@ input[type='checkbox']:checked {
 
 .confirm_state_block {
   background-color: #ff8611;
-  padding: 1.25rem;
+  padding: 1.2rem;
   border-radius: 3rem;
 }
 
@@ -5791,7 +5813,7 @@ input[type='checkbox']:checked {
 }
 
 .confirm_box .confirm_header {
-  padding: 1rem;
+  padding: 0.9rem 1rem;
   border-bottom: 1px solid #e1e1e1;
 }
 
@@ -5813,17 +5835,23 @@ input[type='checkbox']:checked {
   padding: 1.25rem;
 }
 
-.confirm_box .btn_wrapper {
+.confirm_box .btn_wrapper,
+.confirm_box .single_btn_wrapper {
   margin: 1.25rem 0 0;
 }
 
-.confirm_box .btn_wrapper .lg {
+.confirm_box .btn_wrapper .lg,
+.confirm_box .single_btn_wrapper .lg {
   padding: 0.85rem 2rem 0.75rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
-.confirm_box .btn_wrapper .lg:last-of-type {
-  margin-left: 0.8rem;
+.confirm_box .flex_block .solid_btn {
+  margin-left: 0 !important;
+}
+
+.confirm_box .btn_wrapper.flex_block .lg:first-child {
+  margin-right: 0.7rem;
 }
 
 .confirm_box .product_info .product_price {

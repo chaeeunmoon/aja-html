@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>교육종료</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!--header-->
+        <div class='page_title_area'>
+            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
+            <h2 class="page_title">교육종료</h2>
+            <a class="close_btn" href="<?php echo $return_url ?>"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <!--content-->
+        <div class="order_wrapper confirm_wrapper">
+            <div class="confirm_state_block flex_block">
+                <span class="state_title">종료된 교육</span>
+                <p class="state_txt"><span class="num">2</span>건</p>
+            </div>
+            <div class="confirm_box_wrap">
+                <ul class="confirm_box_list">
+                    <li class="confirm_box order_box">
+                        <div class="confirm_header">
+                            <div class="flex_block">
+                                <span class="confirm_date">2021-05-23</span>
+                                <a href="#" class="more_txt">주문상세 <span class="arrow_icon"><img src="images/icon/btn_next_gray.png" alt="더보기"></span></a>
+                            </div>
+                        </div>
+                        <div class="confirm_body">
+                            <div class="product_info_wrap">
+                                <div class="product_thumb">
+                                    <a href="#">
+                                        <img src="images/sample/sample-01.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="product_info">
+                                    <p class="product_title bold_txt"><a href="#">초등한국사 단군 신화에서 가야까지</a></p>
+                                    <p class="product_opt sub_txt">2021-05-20 (목) 10시 ~ 12시</p>
+                                    <p class="product_price">95600</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="confirm_box order_box">
+                        <div class="confirm_header">
+                            <div class="flex_block">
+                                <span class="confirm_date">2021-05-23</span>
+                                <a href="#" class="more_txt">주문상세 <span class="arrow_icon"><img src="images/icon/btn_next_gray.png"
+                                            alt="더보기"></span></a>
+                            </div>
+                        </div>
+                        <div class="confirm_body">
+                            <div class="product_info_wrap">
+                                <div class="product_thumb">
+                                    <a href="#">
+                                        <img src="images/sample/sample-01.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="product_info">
+                                    <p class="product_title bold_txt"><a href="#">초등한국사 단군 신화에서 가야까지</a></p>
+                                    <p class="product_opt sub_txt">2021-05-20 (목) 10시 ~ 12시</p>
+                                    <p class="product_price">95600</p>
+                                </div>
+                            </div>
+                            <!--btn-->
+                            <div class="single_btn_wrapper">
+                                <a href="#" class="outline_btn lg">교육후기 작성</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--E:content-->
+    </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+</body>
+</html>
