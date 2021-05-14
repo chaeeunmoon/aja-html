@@ -3262,7 +3262,7 @@ input[type='checkbox']:checked {
   font-size: 0.95rem;
   font-weight: 400 !important;
   letter-spacing: 0.5px;
-  padding: 0.6rem 1rem 0.7rem;
+  padding: 0.75rem 1rem 0.7rem;
 }
 
 .ctg_nav_item {
@@ -3310,6 +3310,56 @@ input[type='checkbox']:checked {
 
 .list_wrapper .btn_wrapper {
   margin: 0.5rem 0;
+}
+/* lading style */
+.sr_only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.landing_banner {
+  margin-top: 0.8rem;
+}
+
+.landing_box {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 1rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.landing_box:last-of-type {
+  border-bottom: none;
+}
+
+.landing_box .lading_desc {
+  padding: 0 1.25rem;
+}
+
+.landing_address {
+  font-size: 0.88rem;
+  text-align: center;
+  color: #828282;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.landing_tag_list {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.landing_tag {
+  display: inline-block;
+  padding: 0.55rem 1rem 0.5rem;
+  font-size: 0.75rem;
+  color: #828282;
+  font-weight: 500;
+  background-color: #f8f8fa;
+  margin: 0.2rem 0.3rem;
+  border-radius: 1rem;
 }
 /* E: list style */
 /* S: epilogue style */
@@ -5833,5 +5883,4 @@ input[type='checkbox']:checked {
 .content_wrapper .content-box-white {
   box-shadow: none !important;
 }
-
 /* E: content style */
