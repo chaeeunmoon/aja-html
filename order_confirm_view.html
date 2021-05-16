@@ -26,73 +26,6 @@
             <h2 class="page_title">결제 상세정보</h2>
             <a class="close_btn" href="<?php echo $return_url ?>"><img src="images/icon/btn_close.png" alt="닫기"></a>
         </div>
-        <style>
-            .receipt_wrapper {
-
-            }
-            /* top */
-            .receipt_wrapper .state_title_block .state_txt {
-                font-size: 0.9rem;
-                color: #0d0d0d;
-            }
-
-            .receipt_wrapper .state_title_block .state_txt .date:before {
-                content: '·';
-                display: inline-block;
-                margin: 0 0.2rem;
-            }
-
-            .receipt_wrapper .state_title_block .solid_btn {
-                padding: 0.5rem 0.8rem;
-                font-size: 0.85rem;
-                text-indent: -1.5px; 
-            }
-
-            .receipt_wrapper .state_title_block .solid_btn .close_icon img{
-                width: 0.75rem;
-                margin-left: 0.5rem;
-            }
-            /* receipt  content */
-            .receipt_container {
-                margin-top: 1.25rem;
-            }
-            .receipt_container .receipt_header {
-                background-color: #fff;
-                border-radius: 1rem;
-                overflow: hidden;
-                padding: 0 !important;
-                /* border-bottom: 1px dashed #e1e1e1; */
-                margin-bottom: 0 !important;
-                /* position: relative;
-                z-index: 10; */
-            }
-
-            .receipt_header .receipt_label_block {
-                background-color: #ff8611;
-                padding: 1rem;
-            }
-
-            .receipt_header .receipt_label_block .receipt_label_txt {
-                font-size: 0.85rem;
-                color: #fff;
-                text-align: center;
-                letter-spacing: 0.5px;
-            }
-
-            .receipt_header .receipt_item_block {
-                padding: 1.25rem;   
-            }
-
-            .receipt_body {
-                background-color: #fff;
-                /* border-radius: 1rem; */
-                border-top-left-radius: 1rem;
-                border-top-right-radius: 1rem;
-                overflow: hidden;
-                /* position:relative;
-                z-index: 9; */
-            }
-        </style>
         <!--content-->
         <div class="order_wrapper receipt_wrapper">
             <div class="state_title_block flex_block">
@@ -114,70 +47,12 @@
                             </div>
                             <div class="product_info">
                                 <p class="product_title bold_txt"><a href="#">초등한국사 단군 신화에서 가야까지</a></p>
-                                <p class="product_origin_price">30000</p>
-                                <p class="product_price">95600</p>
+                                <p class="origin_price">30000</p>
+                                <p class="price">95600</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <style>
-                    .receipt_body {
-                        position: relative;
-                        padding: 0 1.25rem;
-                        -webkit-box-shadow: 0px 2px 6px 2px #e0e0e0;
-                        box-shadow: 0px 2px 6px 2px #e0e0e0;
-                    }
-
-                    /* .receipt_body::after {
-                        content: '';
-                        position: relative;
-                        display: block;
-                        width: 100%;
-                        height: 1.5rem;
-                        background-size: 1.5rem;
-                        background-image: url('images/icon/bill_bg_03.png');
-                    } */
-
-                    .receipt_group {
-                        padding: 1.8rem 0;
-                        border-top: 1px dashed #e1e1e1;
-                    }
-
-                    .receipt_group .title {
-                        font-size: 1.125rem;
-                        color: #0d0d0d;
-                        font-weight: 600;
-                        margin-bottom: 1.5rem;
-                    }
-
-                    .receipt_desc .receipt_txt {
-                        font-size: 0.85rem;
-                        line-height: 1.7;
-                        font-weight: 400;
-                    }
-
-                    .receipt_footer {
-                        position:relative;
-                        /* padding: 0 1rem; */
-                        border-bottom-left-radius: 1rem;
-                        border-bottom-right-radius: 1rem;
-                        overflow: hidden;
-                        width: 100%;
-                        height: 1.8rem;
-                        /* background-size: 1.5rem;
-                        background-image: url('images/icon/bill_bg_01.png'); */
-                        z-index: 999;
-                    }
-
-                    .receipt_footer::after {
-                        content: '';
-                        display: block;
-                        width: 100%;
-                        height: 1.8rem;
-                        background-size: 1.8rem;
-                        background-image: url('images/icon/bill_bg_01.png');
-                    }
-                </style>
                 <div class="receipt_body">
                     <div class="receipt_group">
                         <p class="title">교육일자</p>
@@ -243,56 +118,25 @@
                                     <p class="p_sub_txt">포인트 <span class="main_txt">1000P</span> + 쿠폰 <span class="main_txt">4000원</span></p>
                                 </div>
                             </div>
+                            <div class="content_footer">
+                                <p class="f_title">총 결제금액</p>
+                                <p class="f_main"><span>35,600</span>원</p>
+                              </div>
                         </div>
                     </div>
                 </div>
                 <div class="receipt_footer"></div>
             </div>
         </div>
-        <style>
-            .theme_type01 .modal_content {
-                width: 90%;
-                border-radius: 1.5rem;
-                overflow: hidden;
-            }
-
-            .theme_type01 .modal_header {
-                padding: 1.5rem 0;
-                border-bottom: 3px solid #ff8611;
-            }
-
-            .theme_type01 .modal_body {
-                padding: 1.4rem 1.25rem 1rem;
-            }
-
-            .theme_type01 .btn_wrapper {
-                margin: 1rem 0;
-            }
-
-            .refund_request_form {
-
-            }
-        </style>
         <!--E:content-->
         <!--취소/환불 팝업 -->
-        <div id="refund_popup" class="modal theme_type01" style="display: block;">
+        <div id="refund_popup" class="modal theme_type01" style="display: none;">
             <div class="modal_content center">
                 <div class="modal_header">
                     <h5 class="modal_title">취소/환불</h5>
                 </div>
                 <div class="modal_body">
                     <!--취소 환불-->
-                    <style>
-                        .refund_request_form .box_input {
-                            display: block;
-                            padding: 0.6rem 0.8rem;
-                        }
-
-                        .refund_request_form .p_title:before {
-                            content: '·';
-                            margin: 0 3px;
-                        }
-                    </style>
                     <div class="refund_request_form">
                         <div class="pay_info_list">
                             <p class="sub_txt p_title">상품명</p>
