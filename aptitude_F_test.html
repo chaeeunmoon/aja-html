@@ -22,7 +22,7 @@
         <div class='page_title_area'>
             <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
             <h2 class="page_title">아이성향검사</h2>
-            <a class="close_btn" href=/"><img src="images/icon/btn_close.png" alt="닫기"></a>
+            <a class="close_btn" href="/"><img src="images/icon/btn_close.png" alt="닫기"></a>
         </div>
         <div class="counsel_wrapper">
             <!--배너 이미지-->
@@ -85,21 +85,28 @@
                     <p class="question_number">Q.1</p>
                     <p class="question_desc">나는 기분이 달라지면 새롭게 하고 싶은일</p>
                     <div class="question_input flex_block btn_radio">
-                        <label class="q_radio btn_radio" for="q<?=$qrow[id]?>_1">
-                            <input type="radio" name="qut<?=$qrow[id]?>" value="1" id="q<?=$qrow[id]?>_1" checked>
-                            <!--<span class="num">그렇다</span>-->
+                        <label class="q_radio" for="q<?=$qrow[id]?>_1">
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="1" id="q<?=$qrow[id]?>_1">
                             <span><img src="images/icon/ico_checked.png" alt=""></span>
                         </label>
-                        <label class="q_radio btn_radio">
+                        <label class="q_radio">
                             <input type="radio" name="qut<?=$qrow[id]?>" value="2" id="q<?=$qrow[id]?>_2">
-                            <!--<span class="num">보통이다</span>-->
                         </label>
-                        <label class="q_radio btn_radio">
+                        <label class="q_radio">
                             <input type="radio" name="qut<?=$qrow[id]?>" value="3" id="q<?=$qrow[id]?>_3">
-                            <!--<span class="num">아니다</span>-->
                         </label>
+                        <!-- <label class="q_radio" for="q<?=$qrow[id]?>_1">
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="1" id="q<?=$qrow[id]?>_1">
+                            <span><img src="images/icon/ico_checked.png" alt=""></span>
+                        </label>
+                        <label class="q_radio">
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="2" id="q<?=$qrow[id]?>_2">
+                        </label>
+                        <label class="q_radio">
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="3" id="q<?=$qrow[id]?>_3">
+                        </label> -->
                     </div>
-                    <div class="flex_block">
+                    <div class="question_input_lable flex_block">
                         <div>그렇다</div>
                         <div><img src="images/icon/ico_arrowG_left.png"></div>
                         <div>보통이다</div>
