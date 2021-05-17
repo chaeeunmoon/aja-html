@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이성향검사</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+<body>
+    <div class="wrap m_wrap">
+        <!--header-->
+        <div class='page_title_area'>
+            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
+            <h2 class="page_title">아이성향검사</h2>
+            <a class="close_btn" href=/"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <div class="counsel_wrapper">
+            <!--배너 이미지-->
+            <div class="banner_wrapper">
+                <img src="images/banner/bn_test_01.jpg" alt="3분만에 알아보는 아이성향검사 | 1-24 문항에 아이 또는 내가 평소 가졌던 느낌대로 체크해주세요!">
+            </div>
+            <style>
+                .question_list_wrap {
+                    padding: 0 1.25rem;
+                }
+
+                .question_list_wrap .btn_wrapper {
+                    margin: 1rem auto;
+                }
+
+                .question_list_wrap .question_block {
+                    border-bottom: 2px solid #e1e1e1;
+                    padding: 1rem;
+                    text-align: center;
+                }
+
+                .question_list_wrap .question_block .question_number {
+                    display: inline-block;
+                    text-align: center;
+                    margin: 0.5rem auto;
+                    padding: 0.4rem 1rem 0.5rem;
+                    background-color: #f8f8fa;
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                    color: #0d0d0d;
+                    border-radius: 1rem;
+                }
+
+                .question_list_wrap .question_block .question_desc {
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    margin: 0.5rem auto;
+                    text-align: center;
+                }
+
+                .question_list_wrap .question_block .question_input {
+                    margin-top: 1rem;
+                }
+
+                .question_list_wrap .question_block .question_input .q_radio {
+                    border: 1px solid #e1e1e1;        
+                }
+
+                .question_list_wrap .question_block .question_input .q_radio:checked + label {
+                    background-color: #ff8611;
+                }
+                
+                .question_list_wrap .question_block .question_input .q_radio .num {
+                    text-indent: -99999px;
+                }
+            </style>
+            <!--검사 목록-->
+            <div class="question_list_wrap">
+                <div class="question_block">
+                    <p class="question_number">Q.1</p>
+                    <p class="question_desc">나는 기분이 달라지면 새롭게 하고 싶은일</p>
+                    <div class="question_input flex_block btn_radio">
+                        <label class="q_radio btn_radio" for="q<?=$qrow[id]?>_1">
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="1" id="q<?=$qrow[id]?>_1" checked>
+                            <!--<span class="num">그렇다</span>-->
+                            <span><img src="images/icon/ico_checked.png" alt=""></span>
+                        </label>
+                        <label class="q_radio btn_radio">
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="2" id="q<?=$qrow[id]?>_2">
+                            <!--<span class="num">보통이다</span>-->
+                        </label>
+                        <label class="q_radio btn_radio">
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="3" id="q<?=$qrow[id]?>_3">
+                            <!--<span class="num">아니다</span>-->
+                        </label>
+                    </div>
+                    <div class="flex_block">
+                        <div>그렇다</div>
+                        <div><img src="images/icon/ico_arrowG_left.png"></div>
+                        <div>보통이다</div>
+                        <div><img src="images/icon/ico_arrowG_right.png"></div>
+                        <div>아니다</div>
+                    </div>
+                </div>
+                <!--검사하기 버튼-->
+                <div class="btn_wrapper">
+                    <input type="submit" value="2페이지로" accesskey="s" class="solid_btn lg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--안내 내용 show/hide-->
+    <script>
+        $(document).ready(function () {
+            $('.theme_info_header').click(function () {
+                $('.theme_info_body').show();
+            });
+            $('.theme_info_title .close_btn').click(function () {
+                $('.theme_info_body').hide();
+            });
+        });
+    </script>
+</body>
+</html>

@@ -5990,7 +5990,6 @@ input[type='checkbox']:checked {
 .receipt_body .content_footer .f_main,
 .receipt_body .content_footer .f_main span {
   font-size: 1.125rem !important;
-  color: #fe3d5c !important;
 }
 
 .receipt_footer {
