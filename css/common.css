@@ -98,26 +98,10 @@ input::-webkit-input-placeholder {
   font-size: 0.9rem;
 }
 
-textarea::-webkit-input-placeholder {
-  color: #9d9d9d;
-  font-size: 0.9rem;
-}
-
-textarea::-moz-placeholder {
-  color: #9d9d9d;
-  font-size: 0.9rem;
-}
-
-textarea:-ms-input-placeholder {
-  color: #9d9d9d;
-  font-size: 0.9rem;
-}
-
-textarea::-ms-input-placeholder {
-  color: #9d9d9d;
-  font-size: 0.9rem;
-}
-
+textarea::-webkit-input-placeholder,
+textarea::-moz-placeholder,
+textarea:-ms-input-placeholder,
+textarea::-ms-input-placeholder,
 textarea::placeholder {
   color: #9d9d9d;
   font-size: 0.9rem;
@@ -156,6 +140,7 @@ caption {
 }
 
 .text_overflow {
+  -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -1505,6 +1490,8 @@ input[type='checkbox']:checked {
   padding: 1.25rem 1rem;
   background-color: #fff;
   border: none;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -3213,7 +3200,6 @@ input[type='checkbox']:checked {
 
 .list_nav_wrap {
   padding: 1rem 1.2rem 1.2rem;
-  /* width: 100%; */
   overflow-x: scroll;
   overflow-y: hidden;
   scrollbar-width: none;
@@ -5679,6 +5665,8 @@ input[type='checkbox']:checked {
   position: absolute;
   width: 100%;
   top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   text-align: center;
   font-size: 0.9rem;
@@ -5733,6 +5721,10 @@ input[type='checkbox']:checked {
   border-radius: 8px;
 }
 
+.coupon_input_form input::-webkit-input-placeholder,
+.coupon_input_form input::-moz-placeholder,
+.coupon_input_form input::-moz-placeholder,
+.coupon_input_form input::-ms-input-placeholder,
 .coupon_input_form input::placeholder {
   font-size: 0.85rem;
   color: #828282;
@@ -5810,6 +5802,7 @@ input[type='checkbox']:checked {
   border-radius: 0.95rem;
   margin-bottom: 1rem;
   padding: 0 !important;
+  -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
 
@@ -5879,54 +5872,57 @@ input[type='checkbox']:checked {
 /* receipt css */
 /* top */
 .receipt_wrapper .state_title_block .state_txt {
-    font-size: 0.9rem;
-    color: #0d0d0d;
+  font-size: 0.9rem;
+  color: #0d0d0d;
 }
 
 .receipt_wrapper .state_title_block .state_txt .date:before {
-    content: '·';
-    display: inline-block;
-    margin: 0 0.2rem;
+  content: '·';
+  display: inline-block;
+  margin: 0 0.2rem;
 }
 
 .receipt_wrapper .state_title_block .solid_btn {
-    padding: 0.3rem 0.8rem;
-    font-size: 0.85rem;
-    text-indent: -1.5px; 
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  text-indent: -1.5px;
 }
 
-.receipt_wrapper .state_title_block .solid_btn .close_icon img{
-    width: 0.75rem;
-    margin-left: 0.5rem;
+.receipt_wrapper .state_title_block .solid_btn .close_icon img {
+  width: 0.75rem;
+  margin-left: 0.5rem;
 }
 /* receipt  content */
 .receipt_container {
-    margin-top: 1.25rem;
+  margin-top: 1.25rem;
 }
 
 .receipt_container .receipt_header {
-    background-color: #fff;
-    border-radius: 1rem;
-    overflow: hidden;
-    padding: 0 !important;
-    margin-bottom: 0 !important;
-    box-shadow: none;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 1px solid #eeeded;
+  border-bottom: none;
 }
 
 .receipt_header .receipt_label_block {
-    background-color: #ff8611;
-    padding: 1rem;
+  background-color: #ff8611;
+  padding: 1rem;
 }
 
 .receipt_header .receipt_label_block .receipt_label_txt {
-    font-size: 0.85rem;
-    color: #fff;
-    text-align: center;
-    letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.5px;
 }
 
 .receipt_header .receipt_item_block {
-    padding: 1.25rem;   
+  padding: 1.25rem;
 }
 
 .receipt_header .receipt_item_block .product_thumb {
@@ -5938,41 +5934,28 @@ input[type='checkbox']:checked {
   padding-left: 1.25rem;
 }
 
-.receipt_header .receipt_item_block .origin_price{
+.receipt_header .receipt_item_block .origin_price {
   text-align: right;
   font-size: 0.9rem;
   margin-top: 1.2rem;
 }
 
-.receipt_header .receipt_item_block .price{
+.receipt_header .receipt_item_block .price {
   text-align: right;
   font-size: 1.7rem;
   font-weight: 500;
 }
 
 .receipt_body {
-    background-color: #fff;
-    /* border-radius: 1rem; */
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    overflow: hidden;
-    /* position:relative;
-    z-index: 9; */
-    position: relative;
-    padding: 0 1.25rem;
-    /* -webkit-box-shadow: 0px 2px 6px 2px #e0e0e0;
-    box-shadow: 0px 2px 6px 2px #e0e0e0; */
-}
-
-/* .receipt_body::after {
-  content: '';
+  background-color: #fff;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  overflow: hidden;
   position: relative;
-  display: block;
-  width: 100%;
-  height: 1.5rem;
-  background-size: 1.5rem;
-  background-image: url('images/icon/bill_bg_03.png');
-} */
+  padding: 0 1.25rem;
+  border-left: 1px solid #eeeded;
+  border-right: 1px solid #eeeded;
+}
 
 .receipt_group {
   padding: 1.8rem 0;
@@ -5995,27 +5978,29 @@ input[type='checkbox']:checked {
 .receipt_body .content_footer {
   border-top: 2px solid #ff8611;
   padding: 1.2rem 0 0;
-  font-size: 1.125rem  !important;
+  font-size: 1.125rem !important;
 }
 
 .receipt_body .content_footer .f_title {
-  font-size: 1.125rem  !important;
+  font-size: 1.125rem !important;
 }
 
 .receipt_body .content_footer .f_main,
 .receipt_body .content_footer .f_main span {
-  font-size: 1.125rem  !important;
+  font-size: 1.125rem !important;
   color: #fe3d5c !important;
 }
 
 .receipt_footer {
-  position:relative;
+  position: relative;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   overflow: hidden;
   width: 100%;
   height: 1.5rem;
   z-index: 999;
+  border-left: 1px solid #eeeded;
+  border-right: 1px solid #eeeded;
 }
 
 .receipt_footer::after {
@@ -6023,16 +6008,15 @@ input[type='checkbox']:checked {
   display: block;
   width: 100%;
   height: 1.5rem;
-  background-size: 1.5rem;
-  background-image: url('../images/icon/bill_bg_03.png');
+  background-size: 1.8rem;
+  background-image: url('../images/icon/bill_bg_02.png');
 }
-
 /* receipt style */
 
 /* receipt refund modal style */
 .theme_type01 .modal_content {
   width: 90%;
-  max-width: 350px;
+  max-width: 420px;
   border-radius: 1.5rem;
   overflow: hidden;
 }
@@ -6047,17 +6031,106 @@ input[type='checkbox']:checked {
 }
 
 .theme_type01 .btn_wrapper {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+}
+
+.theme_type01 .btn_wrapper.center {
+  text-align: center;
+}
+
+.theme_type01 .btn_wrapper.center .solid_btn {
+  width: 50% !important;
+  font-size: 0.95rem;
+  padding: 0.8rem 2rem;
+  margin: auto;
 }
 
 .refund_request_form .box_input {
   display: block;
-  padding: 0.6rem 0.8rem;
+  width: 100%;
+  height: 2.5rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.8rem;
 }
 
 .refund_request_form .p_title:before {
   content: '·';
   margin: 0 3px;
+}
+
+.refund_txt_wrapper {
+  padding: 1rem 0;
+}
+
+.refund_txt {
+  font-size: 0.95rem;
+  color: #828282;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 0.7rem;
+}
+
+.refund_form_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.refund_form_block.middle {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.refund_form_block .form_title {
+  width: 30%;
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.refund_form_block .form_title::before {
+  content: '·';
+  display: inline-block;
+  margin: 0 2px;
+}
+
+.refund_form_block .form_data {
+  width: 70%;
+  text-align: left;
+  padding-left: 1.25rem;
+  font-size: 0.875rem !important;
+  line-height: 1.4;
+}
+
+.refund_form_block .refund_memo {
+  width: 100% !important;
+  height: 100px;
+  overflow-y: scroll;
+  border: 1px solid #e1e1e1;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+
+.refund_info {
+  width: 100%;
+  max-height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #e1e1e1;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.refund_info > * {
+  font-size: 0.875rem !important;
+  line-height: 1.4 !important;
+  color: #828282 !important;
 }
 /* E: my page list style  */
 /* S: content style */
@@ -6097,6 +6170,7 @@ input[type='checkbox']:checked {
 }
 
 .content_wrapper .content-box-white {
+  -webkit-box-shadow: none !important;
   box-shadow: none !important;
 }
 /* E: content style */
