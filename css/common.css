@@ -722,11 +722,42 @@ caption {
   margin-left: 2vw;
 }
 
+.q_radio label {
+  display: inline-block;
+  width: 3rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  margin: 0 1rem;
+  padding: 0.4rem 0;
+  text-align: center;
+}
+
+.q_radio label img {
+  width: 1.2rem;
+}
+
+.q_radio input {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.q_radio input:checked + label {
+  background-color: #ff8611;
+  border: 1px solid #ff8611;
+}
+
+.q_radio input:checked + label,
 .btn_radio input[type='radio']:checked + label,
 .btn_radio input[type='checkbox']:checked + label {
   background-color: #ff8611 !important;
   color: #fff !important;
   border: 1px solid #ff8611 !important;
+}
+
+.q_radio input:not(:checked) + label {
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
 }
 
 .btn_radio input[type='radio']:not(:checked) + label,
@@ -6212,7 +6243,7 @@ input[type='checkbox']:checked {
   width: 100%;
 }
 
-.counsel_list_wrap {
+.counsel_wrapper .counsel_list_wrap {
   border-top: 1px solid #e1e1e1;
   margin-top: 2rem;
   padding: 1.25rem;
@@ -6283,5 +6314,72 @@ input[type='checkbox']:checked {
   content: '·';
   color: #d5d5d5;
   margin: 0 0.3rem;
+}
+
+/* question style */
+.question_list_wrap {
+  padding: 0 1.25rem;
+}
+
+.question_list_wrap .btn_wrapper {
+  margin: 1rem auto;
+}
+
+.question_list_wrap .question_block {
+  border-bottom: 1px solid #e1e1e1;
+  padding: 1rem;
+  text-align: center;
+}
+
+.question_list_wrap .question_block:first-of-type {
+  padding-top: 0;
+}
+
+.question_list_wrap .question_block .question_number {
+  display: inline-block;
+  text-align: center;
+  margin: 0.5rem auto;
+  padding: 0.4rem 1rem 0.5rem;
+  background-color: #f8f8fa;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #0d0d0d;
+  border-radius: 1rem;
+}
+
+.question_list_wrap .question_block .question_desc {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0.5rem auto;
+  text-align: center;
+}
+
+.question_list_wrap .question_block .question_input {
+  margin-top: 1rem;
+}
+
+.question_label {
+  margin: 1rem auto;
+}
+
+.question_label .q_label_txt {
+  width: 5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #828282;
+}
+
+.question_label .q_label_icon {
+  width: 1rem;
+}
+
+.question_btn_wrapper {
+  padding-top: 1.25rem;
+}
+
+.question_btn_wrapper .question_pagi {
+  font-size: 0.9rem;
+  margin: 1rem auto 1.3rem;
+  text-align: center;
 }
 /*E: counsel style */

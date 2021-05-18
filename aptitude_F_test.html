@@ -29,87 +29,70 @@
             <div class="banner_wrapper">
                 <img src="images/banner/bn_test_01.jpg" alt="3분만에 알아보는 아이성향검사 | 1-24 문항에 아이 또는 내가 평소 가졌던 느낌대로 체크해주세요!">
             </div>
-            <style>
-                .question_list_wrap {
-                    padding: 0 1.25rem;
-                }
-
-                .question_list_wrap .btn_wrapper {
-                    margin: 1rem auto;
-                }
-
-                .question_list_wrap .question_block {
-                    border-bottom: 2px solid #e1e1e1;
-                    padding: 1rem;
-                    text-align: center;
-                }
-
-                .question_list_wrap .question_block .question_number {
-                    display: inline-block;
-                    text-align: center;
-                    margin: 0.5rem auto;
-                    padding: 0.4rem 1rem 0.5rem;
-                    background-color: #f8f8fa;
-                    font-size: 0.9rem;
-                    font-weight: 500;
-                    color: #0d0d0d;
-                    border-radius: 1rem;
-                }
-
-                .question_list_wrap .question_block .question_desc {
-                    font-size: 1.1rem;
-                    font-weight: 500;
-                    margin: 0.5rem auto;
-                    text-align: center;
-                }
-
-                .question_list_wrap .question_block .question_input {
-                    margin-top: 1rem;
-                }
-
-                .question_list_wrap .question_block .question_input .q_radio {
-                    border: 1px solid #e1e1e1;        
-                }
-
-                .question_list_wrap .question_block .question_input .q_radio:checked + label {
-                    background-color: #ff8611;
-                }
-                
-                .question_list_wrap .question_block .question_input .q_radio .num {
-                    text-indent: -99999px;
-                }
-            </style>
             <!--검사 목록-->
             <div class="question_list_wrap">
                 <div class="question_block">
                     <p class="question_number">Q.1</p>
                     <p class="question_desc">나는 기분이 달라지면 새롭게 하고 싶은일</p>
-                    <div class="question_input flex_block btn_radio">
-                        <label class="q_radio btn_radio" for="q<?=$qrow[id]?>_1">
-                            <input type="radio" name="qut<?=$qrow[id]?>" value="1" id="q<?=$qrow[id]?>_1" checked>
-                            <!--<span class="num">그렇다</span>-->
-                            <span><img src="images/icon/ico_checked.png" alt=""></span>
-                        </label>
-                        <label class="q_radio btn_radio">
-                            <input type="radio" name="qut<?=$qrow[id]?>" value="2" id="q<?=$qrow[id]?>_2">
-                            <!--<span class="num">보통이다</span>-->
-                        </label>
-                        <label class="q_radio btn_radio">
-                            <input type="radio" name="qut<?=$qrow[id]?>" value="3" id="q<?=$qrow[id]?>_3">
-                            <!--<span class="num">아니다</span>-->
-                        </label>
+                    <!--기존소스-->
+                    <!-- <label class="radio">
+                        <input type="radio" name="qut<?=$qrow[id]?>" value="1" id="q<?=$qrow[id]?>_1">
+                        <span class="num">그렇다</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="qut<?=$qrow[id]?>" value="2" id="q<?=$qrow[id]?>_2">
+                        <span class="num">보통이다</span>
+                    </label>
+                    <label class="radio">
+                        <input type="radio" name="qut<?=$qrow[id]?>" value="3" id="q<?=$qrow[id]?>_3">
+                        <span class="num">아니다</span>
+                    </label> -->
+                    <!--새로운 소스-->
+                    <div class="question_input flex_block q_radio">
+                        
+                        <label for="q1_1"><img src="images/icon/ico_checked.png" alt=""></label>
+                        <input type="radio" id="q1_1" name="qut1" value="3">
+
+                        <label for="q1_2"><img src="images/icon/ico_checked.png" alt=""></label>
+                        <input type="radio" id="q1_2" name="qut1" value="2">
+
+                        <label for="q1_3"><img src="images/icon/ico_checked.png" alt=""></label>
+                        <input type="radio" id="q1_3" name="qut1" value="1">
                     </div>
-                    <div class="flex_block">
-                        <div>그렇다</div>
-                        <div><img src="images/icon/ico_arrowG_left.png"></div>
-                        <div>보통이다</div>
-                        <div><img src="images/icon/ico_arrowG_right.png"></div>
-                        <div>아니다</div>
+                    <div class="flex_block question_label">
+                        <span class="q_label_txt">그렇다</span>
+                        <span class="q_label_icon"><img src="images/icon/ico_arrowG_left.png"></span>
+                        <span class="q_label_txt">보통이다</span>
+                        <span class="q_label_icon"><img src="images/icon/ico_arrowG_right.png"></span>
+                        <span class="q_label_txt">아니다</span>
                     </div>
                 </div>
-                <!--검사하기 버튼-->
-                <div class="btn_wrapper">
-                    <input type="submit" value="2페이지로" accesskey="s" class="solid_btn lg">
+                <div class="question_block">
+                    <p class="question_number">Q.2</p>
+                    <p class="question_desc">운동을 직접하며 잘 하는 편이다.</p>
+                    <!--새로운 소스-->
+                    <div class="question_input flex_block q_radio">
+                
+                        <label for="q2_1"><img src="images/icon/ico_checked.png" alt=""></label>
+                        <input type="radio" id="q2_1" name="qut2" value="3">
+                
+                        <label for="q2_2"><img src="images/icon/ico_checked.png" alt=""></label>
+                        <input type="radio" id="q2_2" name="qut2" value="2">
+                
+                        <label for="q2_3"><img src="images/icon/ico_checked.png" alt=""></label>
+                        <input type="radio" id="q2_3" name="qut2" value="1">
+                    </div>
+                    <div class="flex_block question_label">
+                        <span class="q_label_txt">그렇다</span>
+                        <span class="q_label_icon"><img src="images/icon/ico_arrowG_left.png"></span>
+                        <span class="q_label_txt">보통이다</span>
+                        <span class="q_label_icon"><img src="images/icon/ico_arrowG_right.png"></span>
+                        <span class="q_label_txt">아니다</span>
+                    </div>
+                </div>
+                <div class="question_btn_wrapper">
+                    <p class="question_pagi"><span class="main_txt">1</span><span class="sub_txt"> · 4</span></p>
+                    <a href="#" class="solid_btn lg">2 페이지로</a>
                 </div>
             </div>
         </div>
