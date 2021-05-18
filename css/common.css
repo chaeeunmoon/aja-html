@@ -99,6 +99,11 @@ input::-webkit-input-placeholder {
   font-size: 0.9rem;
 }
 
+textarea::-webkit-input-placeholder {
+  color: #9d9d9d;
+  font-size: 0.9rem;
+}
+
 textarea::-webkit-input-placeholder,
 textarea::-moz-placeholder,
 textarea:-ms-input-placeholder,
@@ -5505,12 +5510,14 @@ input[type='checkbox']:checked {
 }
 
 .theme_icon_txt .point_txt {
+  width: 100%;
   font-size: 1.8rem;
   color: #0d0d0d;
 }
 
 .theme_icon_txt .point_txt .num {
   color: #fff;
+  margin-right: 0.2rem;
 }
 
 .theme_wrapper .theme_state_wrap {
@@ -5652,14 +5659,26 @@ input[type='checkbox']:checked {
 .theme_item_box .point_coin {
   width: 3.75rem;
   height: 3.75rem;
-  line-height: 3.75rem;
   font-size: 0.9375rem;
   color: #ff8611;
-  text-align: center;
+  text-align: center !important;
   background-color: #fff5ec;
   border: 1px solid #ff8611;
   border-radius: 50%;
   margin: 0 0.5rem;
+  padding: 1.3125rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: auto;
+  flex-shrink: auto;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  vertical-align: middle;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 .theme_item_box .point_coin .num {
@@ -5743,12 +5762,20 @@ input[type='checkbox']:checked {
 
 .theme_item_txt .coupon_info dl {
   margin-bottom: 0.4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .theme_item_txt .coupon_info dl dt,
 .theme_item_txt .coupon_info dl dd {
   display: inline-block;
   padding: 0 2px;
+  line-height: 1.4;
+}
+
+.theme_item_txt .coupon_info dl dd {
+  width: 70%;
 }
 
 .theme_item_txt .coupon_info dl:before {
@@ -5766,6 +5793,11 @@ input[type='checkbox']:checked {
   padding: 1rem;
   font-size: 0.8125rem;
   border-radius: 8px;
+}
+
+.coupon_input_form input::-webkit-input-placeholder {
+  font-size: 0.85rem;
+  color: #828282;
 }
 
 .coupon_input_form input::-webkit-input-placeholder,
@@ -6553,5 +6585,4 @@ input[type='checkbox']:checked {
   text-align: center;
   line-height: 1.4;
 }
-
 /*E: counsel style */
