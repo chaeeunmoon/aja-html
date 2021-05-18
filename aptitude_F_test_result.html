@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이성향검사</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+<body>
+    <div class="wrap">
+        <!--header-->
+        <div class='page_title_area'>
+            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
+            <h2 class="page_title">아이성향검사</h2>
+            <a class="close_btn" href=/"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <div class="counsel_wrapper">
+            <!--배너 이미지-->
+            <div class="banner_wrapper">
+                <img src="images/banner/bn_test_01.jpg" alt="3분만에 알아보는 아이성향검사 | 1-24 문항에 아이 또는 내가 평소 가졌던 느낌대로 체크해주세요!">
+            </div>
+            <!--검사결과-->
+            <div class="counsel_result_wrapper" id="tryouts_complete_view1">
+                <div class='counsel_result_title'>
+                    <p class="img_title"><img src="images/icon/ico_test_0101.png" alt="">검사결과</p>
+                </div>
+                <div class="answer_view" id="tryouts_complete_view3">
+                    <!--기존 소스-->
+                    <div class="mypage-aptitude-title margin-bottom-1"></div>
+                    <!--결과 내용(수정)-->
+                    <div class='counsel_result_title'>
+                        <p class="img_title"><img src="images/icon/ico_test_0102.png" alt="">축하합니다</p>
+                    </div>
+                    <div class="counsel_result_block">
+                        <div class="counsel_result_box">
+                            <p class="type_txt">우라이이는 자연친화적인</p>
+                            <p class="type_txt">"<span class="yellow_txt">미래형 인재</span>" 입니다!</p>
+                        </div>
+                        <div class="counsel_result_box outline">
+                            <p class="result_desc sub_txt">검사결과 당신의 자녀는 "<span class="main_txt">자연친화지능</span>", "<span class="green_txt">공간지능</span>","<span class="green_txt">자기성촬지능</span>"이
+                                뛰어납니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--안내 내용 show/hide-->
+    <script>
+        $(document).ready(function () {
+            $('.theme_info_header').click(function () {
+                $('.theme_info_body').show();
+            });
+            $('.theme_info_title .close_btn').click(function () {
+                $('.theme_info_body').hide();
+            });
+        });
+    </script>
+</body>
+</html>

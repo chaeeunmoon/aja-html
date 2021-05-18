@@ -6382,4 +6382,73 @@ input[type='checkbox']:checked {
   margin: 1rem auto 1.3rem;
   text-align: center;
 }
+
+.counsel_result_title {
+  padding: 0rem 1.25rem 1rem;
+}
+
+.counsel_result_title .img_title {
+  font-size: 1.07rem;
+  font-weight: 600;
+}
+
+.counsel_result_title .img_title img {
+  position: relative;
+  top: -1px;
+}
+
+.counsel_result_block {
+  padding: 0 1.25rem;
+}
+
+.counsel_result_box {
+  background-color: #ff8611;
+  border-radius: 1rem;
+  padding: 1.2rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.counsel_result_box.outline {
+  background-color: #fff;
+  border: 1px solid #ff8611;
+  padding: 1.5rem 1.25rem;
+}
+
+.counsel_result_box .type_txt {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.5rem;
+}
+
+.counsel_result_box .type_txt:last-of-type {
+  margin-bottom: 0;
+}
+
+.counsel_result_box .yellow_txt {
+  font-weight: 500;
+  margin: 0 2px;
+}
+
+.counsel_result_box .result_desc,
+.counsel_result_box .result_desc span {
+  font-size: 0.9375rem;
+  text-align: center;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.counsel_result_box .result_desc span {
+  margin: 0 2px;
+}
+
+.yellow_txt {
+  color: #fff05d;
+}
+
+.green_txt {
+  color: #3eb758;
+}
+
 /*E: counsel style */
