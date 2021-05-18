@@ -655,6 +655,11 @@ caption {
   border-radius: 3rem;
 }
 
+.capsule_btn.main {
+  color: #ff8611 !important;
+  border: 1px solid #ff8611 !important;
+}
+
 .capsule_btn.secondary {
   background-color: #f7f8fa;
   border-color: #f7f8fa;
@@ -722,14 +727,22 @@ caption {
   margin-left: 2vw;
 }
 
-.q_radio label {
+.q_radio .q_radio_lable {
   display: inline-block;
   width: 3rem;
   border: 1px solid #e1e1e1;
   border-radius: 8px;
   margin: 0 1rem;
   padding: 0.4rem 0;
+  font-size: 0.9375rem;
   text-align: center;
+}
+
+.q_radio.square .q_radio_lable {
+  width: 2rem;
+  height: auto;
+  margin: 0 !important;
+  padding: 0.5rem 0.5rem 0.45rem !important;
 }
 
 .q_radio label img {
@@ -742,12 +755,12 @@ caption {
   width: 0;
 }
 
-.q_radio input:checked + label {
+.q_radio input:checked + .q_radio_lable {
   background-color: #ff8611;
   border: 1px solid #ff8611;
+  color: #fff;
 }
 
-.q_radio input:checked + label,
 .btn_radio input[type='radio']:checked + label,
 .btn_radio input[type='checkbox']:checked + label {
   background-color: #ff8611 !important;
@@ -755,9 +768,10 @@ caption {
   border: 1px solid #ff8611 !important;
 }
 
-.q_radio input:not(:checked) + label {
+.q_radio input:not(:checked) + .q_radio_lable {
   background-color: #fff;
   border: 1px solid #e1e1e1;
+  color: #aaaaaa;
 }
 
 .btn_radio input[type='radio']:not(:checked) + label,
@@ -6217,7 +6231,7 @@ input[type='checkbox']:checked {
   display: inline-block;
   background-color: #f8f8fa;
   margin: 0.3rem;
-  padding: 0.6rem 1.3rem;
+  padding: 0.6rem 1.2rem;
   font-size: 0.85rem;
   border-radius: 1rem;
   font-weight: 500;
@@ -6316,6 +6330,23 @@ input[type='checkbox']:checked {
   margin: 0 0.3rem;
 }
 
+.counsel_list.single_line .counsel_result_txt {
+  margin: 0;
+}
+
+.counsel_list.single_line .order_box {
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
+}
+
+.counsel_list.single_line .capsule_btn {
+  display: inline-block;
+  width: auto !important;
+  font-size: 0.9375rem !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+}
+
 /* question style */
 .question_list_wrap {
   padding: 0 1.25rem;
@@ -6327,7 +6358,7 @@ input[type='checkbox']:checked {
 
 .question_list_wrap .question_block {
   border-bottom: 1px solid #e1e1e1;
-  padding: 1rem;
+  padding: 1rem 0;
   text-align: center;
 }
 
@@ -6350,12 +6381,13 @@ input[type='checkbox']:checked {
 .question_list_wrap .question_block .question_desc {
   font-size: 1.1rem;
   font-weight: 500;
+  line-height: 1.4;
   margin: 0.5rem auto;
   text-align: center;
 }
 
 .question_list_wrap .question_block .question_input {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .question_label {
@@ -6367,6 +6399,10 @@ input[type='checkbox']:checked {
   text-align: center;
   font-size: 0.85rem;
   color: #828282;
+}
+
+.question_label.auto .q_label_txt {
+  width: auto !important;
 }
 
 .question_label .q_label_icon {
@@ -6449,6 +6485,10 @@ input[type='checkbox']:checked {
 
 .green_txt {
   color: #3eb758;
+}
+
+.jop_wrapper {
+  padding: 0 1.25rem 4rem;
 }
 
 /*E: counsel style */

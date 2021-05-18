@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>아이성향검사</title>
+    <title>감성역량검사</title>
     <!--font 추가 (NotoSansKr, Roboto)-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -21,19 +21,20 @@
         <!--header-->
         <div class='page_title_area'>
             <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
-            <h2 class="page_title">아이성향검사</h2>
+            <h2 class="page_title">감성역량검사</h2>
             <a class="close_btn" href=/"><img src="images/icon/btn_close.png" alt="닫기"></a>
         </div>
         <div class="counsel_wrapper">
             <!--배너 이미지-->
             <div class="banner_wrapper">
-                <img src="images/banner/bn_test_01.jpg" alt="3분만에 알아보는 아이성향검사 | 1-24 문항에 아이 또는 내가 평소 가졌던 느낌대로 체크해주세요!">
+                <img src="images/banner/bn_test_02.jpg" alt="감성지능 높이기 프로젝트 | 온라인 무료 검사">
             </div>
             <!--검사 목록-->
             <div class="question_list_wrap">
                 <div class="question_block">
                     <p class="question_number">Q.1</p>
-                    <p class="question_desc">나는 기분이 달라지면 새롭게 하고 싶은일</p>
+                    <p class="question_desc">나는 기분이 달라지면 새롭게 하고
+                    나는 기분이 달라지면 새롭게 하고 싶은일싶은일</p>
                     <!--기존소스-->
                     <!-- <label class="radio">
                         <input type="radio" name="qut<?=$qrow[id]?>" value="1" id="q<?=$qrow[id]?>_1">
@@ -48,56 +49,89 @@
                         <span class="num">아니다</span>
                     </label> -->
                     <!--새로운 소스-->
-                    <div class="question_input flex_block q_radio">
+                    <div class="question_input flex_block q_radio square">
                         <label>
                             <input type="radio" name="qut<?=$qrow[id]?>" value="1" id="q<?=$qrow[id]?>_1">
-                            <span class="q_radio_lable"><img src="images/icon/ico_checked.png" alt=""></span>
+                            <span class="q_radio_lable">1</span>
                         </label>
                         <label>
                             <input type="radio" name="qut<?=$qrow[id]?>" value="2" id="q<?=$qrow[id]?>_2">
-                            <span class="q_radio_lable"><img src="images/icon/ico_checked.png" alt=""></span>
+                            <span class="q_radio_lable">2</span>
                         </label>
                         <label>
                             <input type="radio" name="qut<?=$qrow[id]?>" value="3" id="q<?=$qrow[id]?>_3">
-                            <span class="q_radio_lable"><img src="images/icon/ico_checked.png" alt=""></span>
+                            <span class="q_radio_lable">3</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="4" id="q<?=$qrow[id]?>_4">
+                            <span class="q_radio_lable">4</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="5" id="q<?=$qrow[id]?>_5">
+                            <span class="q_radio_lable">5</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="6" id="q<?=$qrow[id]?>_6">
+                            <span class="q_radio_lable">6</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="7" id="q<?=$qrow[id]?>_7">
+                            <span class="q_radio_lable">7</span>
                         </label>
                     </div>
-                    <div class="flex_block question_label">
-                        <span class="q_label_txt">그렇다</span>
+                    <div class="flex_block question_label auto">
+                        <span class="q_label_txt">매우 낮다</span>
                         <span class="q_label_icon"><img src="images/icon/ico_arrowG_left.png"></span>
-                        <span class="q_label_txt">보통이다</span>
+                        <span class="q_label_txt">보통</span>
                         <span class="q_label_icon"><img src="images/icon/ico_arrowG_right.png"></span>
-                        <span class="q_label_txt">아니다</span>
+                        <span class="q_label_txt">매우 높다</span>
                     </div>
                 </div>
                 <div class="question_block">
                     <p class="question_number">Q.2</p>
-                    <p class="question_desc">운동을 직접하며 잘 하는 편이다.</p>
+                    <p class="question_desc">나는 친구나 부모님께 나의 개인적인 문제를
+                    언제 이야기해야 할지를 압니다.</p>
                     <!--새로운 소스-->
-                    <div class="question_input flex_block q_radio">
+                    <div class="question_input flex_block q_radio square">
                         <label>
                             <input type="radio" name="qut<?=$qrow[id]?>" value="1" id="q<?=$qrow[id]?>_1">
-                            <span class="q_radio_lable"><img src="images/icon/ico_checked.png" alt=""></span>
+                            <span class="q_radio_lable">1</span>
                         </label>
                         <label>
                             <input type="radio" name="qut<?=$qrow[id]?>" value="2" id="q<?=$qrow[id]?>_2">
-                            <span class="q_radio_lable"><img src="images/icon/ico_checked.png" alt=""></span>
+                            <span class="q_radio_lable">2</span>
                         </label>
                         <label>
                             <input type="radio" name="qut<?=$qrow[id]?>" value="3" id="q<?=$qrow[id]?>_3">
-                            <span class="q_radio_lable"><img src="images/icon/ico_checked.png" alt=""></span>
+                            <span class="q_radio_lable">3</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="4" id="q<?=$qrow[id]?>_4">
+                            <span class="q_radio_lable">4</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="5" id="q<?=$qrow[id]?>_5">
+                            <span class="q_radio_lable">5</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="6" id="q<?=$qrow[id]?>_6">
+                            <span class="q_radio_lable">6</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="qut<?=$qrow[id]?>" value="7" id="q<?=$qrow[id]?>_7">
+                            <span class="q_radio_lable">7</span>
                         </label>
                     </div>
-                    <div class="flex_block question_label">
-                        <span class="q_label_txt">그렇다</span>
+                    <div class="flex_block question_label auto">
+                        <span class="q_label_txt">매우 낮다</span>
                         <span class="q_label_icon"><img src="images/icon/ico_arrowG_left.png"></span>
-                        <span class="q_label_txt">보통이다</span>
+                        <span class="q_label_txt">보통</span>
                         <span class="q_label_icon"><img src="images/icon/ico_arrowG_right.png"></span>
-                        <span class="q_label_txt">아니다</span>
+                        <span class="q_label_txt">매우 높다</span>
                     </div>
                 </div>
                 <div class="question_btn_wrapper">
-                    <p class="question_pagi"><span class="main_txt">1</span><span class="sub_txt"> · 4</span></p>
+                    <p class="question_pagi"><span class="main_txt">1</span><span class="sub_txt"> · 2</span></p>
                     <a href="#" class="solid_btn lg">2 페이지로</a>
                 </div>
             </div>

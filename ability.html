@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 꿈 체험</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+<body>
+    <div class="wrap">
+        <!--header-->
+        <div class='page_title_area'>
+            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg"
+                    alt="뒤로가기" /></a>
+            <h2 class="page_title">필요 역량</h2>
+            <a class="close_btn" href=/"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <div style="width:100%;border:0;padding:0;">
+            <img src="images/banner/dream_top_img.jpg" style="max-width:100%; height:auto;border:0" title="">
+        </div>
+        <!--디자인 유지 (소스 동일)-->
+        <div class="ability-search-area" style="background-color:#fff;">
+            <div class="ability-search-title" style="padding-left:10px;">운동선수의 역량을 확인하세요.</div>
+            <div style="position: absolute; width: 414px; height: 360px; z-index: 99; background-color: transparent;"
+                class="thisIsMyClass"></div>
+    
+            <!-- // 선택 안되도록 덧씌움 transparent -->
+            <!--<div style="position: absolute; width: 100%; height: 60%; z-index: 99; background-color: transparent;"></div>-->
+            <form name="schFrm" method="post">    
+                <div class="ability-list">
+                    <div id="form-box" class="form-box left ea2">
+                        <ul>
+                            <li class="f">
+                                <input type="checkbox" id="ability-0" name="chk_ability" value="1">
+                                <label for="ability-0" onclick="chg_img_val(0)">
+                                    <div id="div_ability0" style="display:inline">
+                                        <img src="../../_upload/dream_img/ability_icon_01.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        언어 지능
+                                    </div>
+                                    <div id="div_ability_on0" style="display:none">
+                                        <img src="../../_upload/dream_img/ability_icon_01_on.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        언어 지능
+                                    </div>
+                                </label>
+                            </li>
+        
+        
+                            <li class="f">
+                                <input type="checkbox" id="ability-1" name="chk_ability" value="2">
+                                <label for="ability-1" onclick="chg_img_val(1)">
+                                    <div id="div_ability1" style="display:inline">
+                                        <img src="../../_upload/dream_img/ability_icon_02.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        수리과학 지능
+                                    </div>
+                                    <div id="div_ability_on1" style="display:none">
+                                        <img src="../../_upload/dream_img/ability_icon_02_on.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        수리과학 지능
+                                    </div>
+                                </label>
+                            </li>
+        
+        
+                            <li class="f">
+                                <input type="checkbox" id="ability-2" name="chk_ability" value="3">
+                                <label for="ability-2" onclick="chg_img_val(2)">
+                                    <div id="div_ability2" style="display:inline">
+                                        <img src="../../_upload/dream_img/ability_icon_03.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        문화예술 지능
+                                    </div>
+                                    <div id="div_ability_on2" style="display:none">
+                                        <img src="../../_upload/dream_img/ability_icon_03_on.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        문화예술 지능
+                                    </div>
+                                </label>
+                            </li>
+        
+        
+                            <li class="f">
+                                <input type="checkbox" id="ability-3" name="chk_ability" value="4">
+                                <label for="ability-3" onclick="chg_img_val(3)">
+                                    <div id="div_ability3" style="display:inline">
+                                        <img src="../../_upload/dream_img/ability_icon_04.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        금융 지능
+                                    </div>
+                                    <div id="div_ability_on3" style="display:none">
+                                        <img src="../../_upload/dream_img/ability_icon_04_on.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        금융 지능
+                                    </div>
+                                </label>
+                            </li>
+        
+        
+                            <li class="f">
+                                <input type="checkbox" id="ability-4" name="chk_ability" value="5" checked="">
+                                <label for="ability-4" onclick="chg_img_val(4)">
+                                    <div id="div_ability4" style="display:none">
+                                        <img src="../../_upload/dream_img/ability_icon_05.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        운동 지능
+                                    </div>
+                                    <div id="div_ability_on4" style="display:inline">
+                                        <img src="../../_upload/dream_img/ability_icon_05_on.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        운동 지능
+                                    </div>
+                                </label>
+                            </li>
+        
+        
+                            <li class="f">
+                                <input type="checkbox" id="ability-5" name="chk_ability" value="6">
+                                <label for="ability-5" onclick="chg_img_val(5)">
+                                    <div id="div_ability5" style="display:inline">
+                                        <img src="../../_upload/dream_img/ability_icon_06.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        비판적 사고
+                                    </div>
+                                    <div id="div_ability_on5" style="display:none">
+                                        <img src="../../_upload/dream_img/ability_icon_06_on.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        비판적 사고
+                                    </div>
+                                </label>
+                            </li>
+        
+        
+                            <li class="f">
+                                <input type="checkbox" id="ability-6" name="chk_ability" value="7">
+                                <label for="ability-6" onclick="chg_img_val(6)">
+                                    <div id="div_ability6" style="display:inline">
+                                        <img src="../../_upload/dream_img/ability_icon_07.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        창의성
+                                    </div>
+                                    <div id="div_ability_on6" style="display:none">
+                                        <img src="../../_upload/dream_img/ability_icon_07_on.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        창의성
+                                    </div>
+                                </label>
+                            </li>
+        
+        
+                            <li class="f">
+                                <input type="checkbox" id="ability-7" name="chk_ability" value="8">
+                                <label for="ability-7" onclick="chg_img_val(7)">
+                                    <div id="div_ability7" style="display:inline">
+                                        <img src="../../_upload/dream_img/ability_icon_08.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        의사 소통
+                                    </div>
+                                    <div id="div_ability_on7" style="display:none">
+                                        <img src="../../_upload/dream_img/ability_icon_08_on.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        의사 소통
+                                    </div>
+                                </label>
+                            </li>
+        
+        
+                            <li class="f">
+                                <input type="checkbox" id="ability-8" name="chk_ability" value="9" checked="">
+                                <label for="ability-8" onclick="chg_img_val(8)">
+                                    <div id="div_ability8" style="display:none">
+                                        <img src="../../_upload/dream_img/ability_icon_09.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        협력
+                                    </div>
+                                    <div id="div_ability_on8" style="display:inline">
+                                        <img src="../../_upload/dream_img/ability_icon_09_on.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        협력
+                                    </div>
+                                </label>
+                            </li>
+        
+        
+                            <li class="f">
+                                <input type="checkbox" id="ability-9" name="chk_ability" value="10">
+                                <label for="ability-9" onclick="chg_img_val(9)">
+                                    <div id="div_ability9" style="display:inline">
+                                        <img src="../../_upload/dream_img/ability_icon_10.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        리더쉽
+                                    </div>
+                                    <div id="div_ability_on9" style="display:none">
+                                        <img src="../../_upload/dream_img/ability_icon_10_on.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        리더쉽
+                                    </div>
+                                </label>
+                            </li>
+        
+        
+                            <li class="f">
+                                <input type="checkbox" id="ability-10" name="chk_ability" value="11" checked="">
+                                <label for="ability-10" onclick="chg_img_val(10)">
+                                    <div id="div_ability10" style="display:none">
+                                        <img src="../../_upload/dream_img/ability_icon_11.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        끈기
+                                    </div>
+                                    <div id="div_ability_on10" style="display:inline">
+                                        <img src="../../_upload/dream_img/ability_icon_11_on.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        끈기
+                                    </div>
+                                </label>
+                            </li>
+        
+        
+                            <li class="f">
+                                <input type="checkbox" id="ability-11" name="chk_ability" value="12" checked="">
+                                <label for="ability-11" onclick="chg_img_val(11)">
+                                    <div id="div_ability11" style="display:none">
+                                        <img src="../../_upload/dream_img/ability_icon_12.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        적응력
+                                    </div>
+                                    <div id="div_ability_on11" style="display:inline">
+                                        <img src="../../_upload/dream_img/ability_icon_12_on.png" class="ability_img"
+                                            style="width:30px; height:30px;">
+                                        <br>
+                                        적응력
+                                    </div>
+                                </label>
+                            </li>
+        
+        
+                            <!--
+        						<li class="f"><input type="checkbox" name="sel_ability01" value="언어 지능"  id="ability-02"><label for="ability-01"><span></span><br>언어 지능</label></li>
+        						<li class="f"><input type="checkbox" name="sel_ability02" value="수리과학 지능"  id="ability-02"><label for="ability-02"><span></span><br>수리과학 지능</label></li>
+        						<li class="f"><input type="checkbox" name="sel_ability03" value="문화예술 지능"  id="ability-03"><label for="ability-03"><span></span><br>문화예술 지능</label></li>
+        						<li class="f"><input type="checkbox" name="sel_ability04" value="금융 지능"  id="ability-04"><label for="ability-04"><span></span><br>금융 지능</label></li>
+        						<li class="f"><input type="checkbox" name="sel_ability05" value="운동 지능"  id="ability-05"><label for="ability-05"><span></span><br>운동 지능</label></li>
+        						<li class="f"><input type="checkbox" name="sel_ability06" value="비판적 사고"  id="ability-06"><label for="ability-06"><span></span><br>비판적 사고</label></li>
+        						<li class="f"><input type="checkbox" name="sel_ability07" value="창의성"  id="ability-07"><label for="ability-07"><span></span><br>창의성</label></li>
+        						<li class="f"><input type="checkbox" name="sel_ability08" value="의사 소통"  id="ability-08"><label for="ability-08"><span></span><br>의사 소통</label></li>
+        						<li class="f"><input type="checkbox" name="sel_ability09" value="협력"  id="ability-09"><label for="ability-09"><span></span><br>협력</label></li>
+        						<li class="f"><input type="checkbox" name="sel_ability10" value="리더쉽"  id="ability-10"><label for="ability-10"><span></span><br>리더쉽</label></li>
+        						<li class="f"><input type="checkbox" name="sel_ability11" value="일관성"  id="ability-11"><label for="ability-11"><span></span><br>일관성</label></li>
+        						<li class="f"><input type="checkbox" name="sel_ability12" value="적응력"  id="ability-12"><label for="ability-12"><span></span><br>적응력</label></li>
+        -->
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        
+        
+        
+        </div>
+        <div class="input-wrap" style="background-color:#fff; z-index:100; margin-bottom:30px; padding: 0 15px;">
+            <div class="btn-area">
+                <!--class 변경-->
+                <a href="javascript: func_search();" class="solid_btn lg"><span>역량 키우기</span></a>
+            </div>
+        </div>
+    </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--안내 내용 show/hide-->
+    <script>
+        $(document).ready(function () {
+            $('.theme_info_header').click(function () {
+                $('.theme_info_body').show();
+            });
+            $('.theme_info_title .close_btn').click(function () {
+                $('.theme_info_body').hide();
+            });
+        });
+    </script>
+</body>
+
+</html>
