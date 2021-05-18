@@ -6347,6 +6347,11 @@ input[type='checkbox']:checked {
   margin: 0 !important;
 }
 
+.counsel_wrapper .result_graph {
+  margin-top: 0 !important;
+  border-style: solid;
+}
+
 /* question style */
 .question_list_wrap {
   padding: 0 1.25rem;
@@ -6489,6 +6494,64 @@ input[type='checkbox']:checked {
 
 .jop_wrapper {
   padding: 0 1.25rem 4rem;
+}
+
+.jop_item_wtap {
+  padding: 0 1.25rem;
+}
+
+.emotion_result_wrap {
+  margin-top: 1.5rem;
+}
+
+.emotion_result_block {
+  padding: 0.5rem 0;
+  margin-bottom: 1.3rem;
+}
+
+.emotion_result_box {
+  border: 1px solid #e1e1e1;
+  border-radius: 1rem;
+}
+
+.emotion_result_box .emotion_header {
+  padding: 0.7rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.emotion_result_box .emotion_header .emotion_header_box {
+  width: 50%;
+  text-align: center;
+}
+
+.emotion_result_box .emotion_header .emotion_header_box:first-of-type {
+  border-right: 1px solid #e1e1e1;
+}
+
+.emotion_result_box .emotion_body {
+  padding: 1rem;
+}
+
+.emotion_result_box .emotion_header_title {
+  font-size: 0.875rem;
+  color: #aaaaaa;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.emotion_result_box .emotion_header_txt {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #0d0d0d;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.emotion_result_box .emotion_result_desc {
+  font-size: 0.875rem;
+  text-align: center;
+  line-height: 1.4;
 }
 
 /*E: counsel style */

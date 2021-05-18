@@ -55,8 +55,6 @@
                     <label class="panel-label" for="panel-3-ctrl">가볼만한 곳</label>
                 </li>
             </ul>
-        
-        
             <!-- THE PANELS -->
             <article id="panels">
                 <!--추천 체험학습 수정-->
@@ -69,18 +67,53 @@
         -->
 
         
-                        <!-- 대상 전체 -->
-                        <div class="list-area">
-                            <div class="list-h">
-                                <ul>
-                                    <li>
-                                        <a
-                                            href="http://www.ajaschool.com/shop/item.php?it_id=E1493713255&amp;return_url=/dream/ability_info.php%3Fjob_no=2&amp;job_no=2">
-
-                                            
-                                        </a>
-                                    </li>
-                                </ul>
+                        <!-- 리뉴얼 추천 체험학습 목록)-->
+                        <div class="jop_item_wtap">
+                            <div class="search_result_list">
+                                <div class="block_box">
+                                    <a href="#">
+                                        <div class="item_thumb">
+                                            <img src="images/sample/sample-01.jpg" alt="">
+                                        </div>
+                                        <div class="item_info">
+                                            <div class="info_label_block">
+                                                <span class="item_label">서울</span>
+                                                <span class="item_label">초등</span>
+                                            </div>
+                                            <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                                            <div class="item_price right_align">
+                                                <!--원가-->
+                                                <p class='origin_price'>26800</p>
+                                                <!--할인율-->
+                                                <span class='sale_percent'>50%</span>
+                                                <!--판매가-->
+                                                <span class='main_price'>12900</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="block_box">
+                                    <a href="#">
+                                        <div class="item_thumb">
+                                            <img src="images/sample/sample-03.jpg" alt="">
+                                        </div>
+                                        <div class="item_info">
+                                            <div class="info_label_block">
+                                                <span class="item_label">서울</span>
+                                                <span class="item_label">초등</span>
+                                            </div>
+                                            <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                                            <div class="item_price right_align">
+                                                <!--원가-->
+                                                <p class='origin_price'>26800</p>
+                                                <!--할인율-->
+                                                <span class='sale_percent'>50%</span>
+                                                <!--판매가-->
+                                                <span class='main_price'>12900</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
                             </div>
                         </div>
         
@@ -270,6 +303,32 @@
                 $('.theme_info_body').hide();
             });
         });
+    </script>
+    <!--tab show/hide (기존 소스)-->
+    <script type="text/javascript">
+        $(function () {
+            $('.li-for-panel-01').click(function () {
+                $('#panel-2').hide();
+                $('#panel-3').hide();
+                $('#panel-1').show();
+            });
+            $('.li-for-panel-02').click(function () {
+                $('#panel-1').hide();
+                $('#panel-3').hide();
+                $('#panel-2').show();
+            });
+            $('.li-for-panel-03').click(function () {
+                $('#panel-1').hide();
+                $('#panel-2').hide();
+                $('#panel-3').show();
+            });
+        });
+
+        // 관련학과 
+        function open_url(val) {
+            window.location.reload(true);
+            window.open(val, '_blank');
+        }
     </script>
 </body>
 
