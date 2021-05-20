@@ -1584,7 +1584,14 @@ input[type='checkbox']:checked {
 }
 
 .main_popup .modal_body .swiper-wrapper {
+  width: 100%;
   background-color: #fff;
+}
+
+.main_popup .modal_body .swiper-wrapper .swiper-slide a {
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .main_popup .modal_footer {
@@ -1698,7 +1705,7 @@ input[type='checkbox']:checked {
 }
 
 .m_section {
-  padding: 1.7em 0;
+  padding: 1.2rem 0;
 }
 
 /* hero banner */
@@ -1706,13 +1713,20 @@ input[type='checkbox']:checked {
   padding: 1rem 1.7em;
 }
 
-.swiper-container {
+.swiper-container,
+.swiper-container4 {
   width: 100% !important;
   height: 100%;
+  list-style: none;
   position: relative;
-  border-radius: 25px !important;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.swiper-container {
+  border-radius: 25px !important;
 }
 
 .swiper-slide {
@@ -1857,6 +1871,10 @@ input[type='checkbox']:checked {
 
 .item_wrapper {
   margin: 0.9em 0;
+}
+
+.m_section.item_wrapper {
+  margin: 0.9em 0 0;
 }
 
 .m_section_p {
@@ -2757,7 +2775,7 @@ input[type='checkbox']:checked {
 
 /* S: category menu css */
 .m_menu_wrap {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   background-color: #fff;
   padding-bottom: 3rem;
@@ -3755,7 +3773,7 @@ input[type='checkbox']:checked {
 
 .slider {
   overflow: hidden;
-  min-width: 100vw;
+  min-width: 100%;
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
@@ -6004,8 +6022,9 @@ input[type='checkbox']:checked {
 
 .confirm_box .btn_wrapper .lg,
 .confirm_box .single_btn_wrapper .lg {
-  padding: 0.85rem 2rem 0.75rem;
+  padding: 0.85rem 0 0.75rem;
   font-size: 0.9rem;
+  text-align: center;
 }
 
 .confirm_box .flex_block .solid_btn {
@@ -6102,13 +6121,19 @@ input[type='checkbox']:checked {
 }
 
 .lecture_view_block .lecture_view_title {
-  width: 65%;
+  width: 60%;
 }
 
 .lecture_view_block .title,
 .lecture_view_info .time {
   font-size: 0.85rem;
   line-height: 1.4;
+}
+
+.lecture_view_title .time {
+  display: inline-block;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
 }
 
 .lecture_view_info .outline_btn {
@@ -6124,8 +6149,8 @@ input[type='checkbox']:checked {
 }
 
 .outline_btn .play_icon img {
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 0.75rem;
+  height: 0.75rem;
   top: 2px;
   position: relative;
   margin-left: 0.3rem;
