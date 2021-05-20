@@ -839,6 +839,23 @@ caption {
 }
 
 /* input group */
+.input_required {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin: 0 0.3rem;
+  font-size: 0.9375rem;
+  color: transparent;
+}
+
+.input_required:before {
+  display: inline-block;
+  color: #ff2500;
+  content: '*';
+}
+
 .line_input_group {
   margin-bottom: 2em;
 }
