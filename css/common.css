@@ -2580,6 +2580,8 @@ input[type='checkbox']:checked {
 
 .state_box .state_num {
   font-family: 'Roboto', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
   margin-top: 0.8rem;
 }
 
@@ -2742,6 +2744,7 @@ input[type='checkbox']:checked {
 .mypage_link_wrap .mypage_link {
   font-size: 0.85rem;
   margin-right: 0.5rem;
+  text-decoration: underline;
 }
 
 .mypage_link img {
@@ -4493,6 +4496,8 @@ input[type='checkbox']:checked {
 
 .sub_info_wrap .detail-txt li {
   margin-bottom: 0.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -6072,8 +6077,50 @@ input[type='checkbox']:checked {
   width: 67% !important;
 }
 
+.lecture_info_wrap .lecture_title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 0.8rem;
+}
+
+.lecture_info_wrap .lecture_desc {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
 .lecture_view_block {
   border-top: 1px solid #e0e0e0;
+  padding: 1.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.lecture_view_block .lecture_view_title {
+  width: 65%;
+}
+
+.lecture_view_block .title,
+.lecture_view_info .time {
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.lecture_view_info .outline_btn {
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin-left: 0.3rem;
+  padding: 0.25rem 0.6rem;
+}
+
+.lecture_view_info .outline_btn .play_icon img {
+  width: 0.6rem;
+  height: 0.6rem;
 }
 
 .outline_btn .play_icon img {
@@ -6082,6 +6129,38 @@ input[type='checkbox']:checked {
   top: 2px;
   position: relative;
   margin-left: 0.3rem;
+}
+
+.lecture_content_info .timeline {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.lecture_content_info .timeline .time:before {
+  content: '·';
+  color: #828282;
+  margin: 0 0.25rem;
+}
+
+.lecture_content_info .timeline .timeline_txt {
+  font-size: 0.82rem;
+}
+
+.lecture_content_info .info_txt_block {
+  padding: 1.25rem;
+}
+
+.lecture_content_info .info_txt_block .title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 0.7rem;
+}
+
+.lecture_content_info .info_txt_block .desc {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #aaaaaa;
 }
 /* receipt css */
 /* top */
