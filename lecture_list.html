@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의보기</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!--header-->
+        <div class='page_title_area'>
+            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
+            <h2 class="page_title">나만의 스톱모션 애니메이션 만들기 1</h2>
+            <a class="close_btn" href="<?php echo $return_url ?>"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <!--content-->
+        <div class="order_wrapper confirm_wrapper">
+            <div class="confirm_state_block flex_block">
+                <span class="state_title">총 강의 수</span>
+                <p class="state_txt"><span class="num">2</span>건</p>
+            </div>
+            <div class="confirm_box_wrap">
+                <ul class="confirm_box_list">
+                    <li class="confirm_box order_box">
+                        <div class="confirm_body">
+                            <div class='lecture_info_wrap'>
+                                <p class="lecture_title">나만의 스톱모션 애니메이션 만들기 1</p>
+                                <p class="lecture_desc sub_txt">강사 소개 | 메이크업 아티스트란? | 메이크업의 목적 |
+                                    메이크업의 기본 업무 프로세스</p>
+                            </div>
+                        </div>
+                        <div class="lecture_view_list">
+                            <ul>
+                                <li class="lecture_view_block flex_block">
+                                    <div>
+                                        <p>1.1Prologue</p>
+                                    </div>
+                                    <div>
+                                        <span class="sub_txt">7min</span>
+                                        <a href="#" class="outline_btn xs">view <span>
+                                            <img src="images/icon/ico_view" alt="" aria-hidden="true">
+                                        </span></a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--E:content-->
+    </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+</body>
+</html>

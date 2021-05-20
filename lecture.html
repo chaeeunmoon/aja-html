@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의보기</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!--header-->
+        <div class='page_title_area'>
+            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
+            <h2 class="page_title">진로찾기 프로젝트</h2>
+            <a class="close_btn" href="<?php echo $return_url ?>"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <!--content-->
+        <div class="order_wrapper confirm_wrapper">
+            <div class="confirm_state_block flex_block">
+                <span class="state_title">총 강의 수</span>
+                <p class="state_txt"><span class="num">2</span>건</p>
+            </div>
+            <div class="confirm_box_wrap">
+                <ul class="confirm_box_list">
+                    <li class="confirm_box order_box">
+                        <div class="confirm_header">
+                            <div class="flex_block">
+                                <span class="confirm_date black_txt">직업특강 01</span>
+                                <p class="more_txt">총 8강</p>
+                            </div>
+                        </div>
+                        <div class="confirm_body lecture_list">
+                            <div class="product_info_wrap">
+                                <div class="product_thumb">
+                                    <a href="#">
+                                        <img src="images/sample/sample-01.jpg" alt="">
+                                    </a>
+                                </div>
+                                <div class="product_info">
+                                    <p class="product_title bold_txt"><a href="#">나만의 스톱모션 애니메이션 만들기 1</a></p>
+                                    <div class="lecture_info">
+                                        <dl class="product_info_list sub_txt">
+                                            <dt>전체 강의시간 :</dt>
+                                            <dd>2시간 34분 35초</dd>
+                                        </dl>
+                                        <dl class="product_info_list sub_txt">
+                                            <dt>강사 :</dt>
+                                            <dd>김영희</dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--btn-->
+                            <div class="single_btn_wrapper">
+                                <a href="#" class="outline_btn lg">강의 듣기 
+                                    <span class="play_icon"><img src="images/icon/ico_view.png" alt="" aria-hidden="true"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--E:content-->
+    </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+</body>
+</html>

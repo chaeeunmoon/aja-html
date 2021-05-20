@@ -88,6 +88,75 @@
             </div>
         </div>
         <!--E:content-->
+        <div id="refund_popup" class="modal theme_type01" style="display: block;">
+            <div id="pop-request-02" class="modal_content center" style="display:block;">
+                <div id="pop">
+                    <div class="modal_header">
+                        <h5 class="modal_title">취소/환불</h5>
+                    </div>
+                    <div class="modal_body">
+                        <!--취소 환불-->
+                        <div class="refund_form_block ">
+                            <p class="sub_txt form_title">상품명</p>
+                            <p class="form_data">애니메이션 제작 KIT 우리 가족 모두감독</p>
+                        </div>
+                        <div class="refund_form_block">
+                            <p class="sub_txt form_title">교육일자</p>
+                            <p class="form_data">2021-03-14 (수) 10시~12시</p>
+                        </div>
+                        <div class="refund_form_block middle">
+                            <p class="sub_txt form_title">은행명</p>
+                            <div class="form_data">
+                                <div id="od_ct_qty"><input type="text" class="box_input" id="refund_bank_name" name="refund_bank_name"
+                                        placeholder="은행명을 입력하세요."></div>
+                            </div>
+                        </div>
+                        <div class="refund_form_block middle">
+                            <p class="sub_txt form_title">환불계좌</p>
+                            <div class="form_data">
+                                <div id="od_ct_qty"><input type="text" class="box_input" id="refund_bank_number" name="refund_bank_number" placeholder="환불계좌를 입력하세요.">
+                                </div>
+                            </div>
+                        </div>   
+                        <div class="refund_form_block middle">
+                            <p class="sub_txt form_title">예금주</p>
+                            <div class="form_data">
+                                <div id="od_ct_qty"><input type="text" class="box_input" id="refund_bank_owner" name="refund_bank_owner" placeholder="예금주를 입력하세요.">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn_wrapper flex_block">
+                            <a href="javascript:close_layer_pop();" class="solid_btn lg modal_close">취소</a>
+                            <a href="javascript:go_response();" class="solid_btn lg disable">취소요청</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        
+            <div id="pop-response" class="modal_content center" style="display:none;">
+                <div id="pop">
+                    <div class="modal_header">
+                        <h5 class="modal_title">취소/환불</h5>
+                    </div>
+        
+                    <div class="modal_body">
+                        <!--취소 환불-->
+                        <div class="refund_request_form">
+                            <div class="refund_txt_wrapper">
+                                <p class="refund_txt">취소/환불 요청이 신청되었습니다</p>
+                                <p class="refund_txt">확인 후 관리자가 처리해 드리겠습니다</p>
+                            </div>
+        
+                            <div class="btn_wrapper flex_block">
+                                <a href="javascript:confirm_response_pop()" class="solid_btn lg disable">취소요청</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
     </div>
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="js/jquery-1.8.3.min.js"></script>
