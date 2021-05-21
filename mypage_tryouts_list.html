@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미니 다중지능 검사</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+<body>
+    <div class="wrap">
+        <!--header-->
+        <div class='page_title_area'>
+            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg"
+                    alt="뒤로가기" /></a>
+            <h2 class="page_title">미니 다중지능 검사</h2>
+            <a class="close_btn" href="/"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <div class="counsel_wrapper">
+            <!--배너 이미지-->
+            <div class="banner_wrapper">
+                <img src="images/banner/bn_test_01.jpg" alt="3분만에 알아보는 아이성향검사 | 1-24 문항에 아이 또는 내가 평소 가졌던 느낌대로 체크해주세요!">
+            </div>
+            <div>
+                <ul class="counsel_tag_list">
+                    <li class="counsel_tag">자기성찰</li>
+                    <li class="counsel_tag">자연친화</li>
+                    <li class="counsel_tag">음악지능</li><br />
+                    <li class="counsel_tag">신체운동</li>
+                    <li class="counsel_tag">논리수학</li><br />
+                    <li class="counsel_tag">공간지능</li>
+                    <li class="counsel_tag">언어지능</li>
+                    <li class="counsel_tag">인간친화</li>
+                </ul>
+            </div>
+            <!--검사 목록-->
+            <div class="counsel_list_wrap">
+                <div class="counsel_list_title">
+                    <p class="title">나의 검사 이력</p>
+                </div>
+                <ul class="counsel_list">
+                    <li class="counsel_item">
+                        <p class="counsel_info"><span class="num">no.4</span><span class="date">2020-04-23</span></p>
+                        <div class="order_box">
+                            <p class="counsel_result_txt">나의 다중지능<span class="tag_txt main_txt">인간친화지능</span></p>
+                            <div class="btn_wrapper">
+                                <a href=\"javascript:tryouts_complete_view('$row_m[id]')\" class='capsule_btn'>결과보기</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="counsel_item">
+                        <p class="counsel_info"><span class="num">no.3</span><span class="date">2020-04-23</span></p>
+                        <div class="order_box">
+                            <p class="counsel_result_txt">나의 다중지능<span class="tag_txt main_txt">공간지능</span></p>
+                            <div class="btn_wrapper">
+                                <a href=\"javascript:tryouts_complete_view('$row_m[id]')\" class='capsule_btn'>결과보기</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="counsel_item">
+                        <p class="counsel_info"><span class="num">no.2</span><span class="date">2020-04-23</span></p>
+                        <div class="order_box">
+                            <p class="counsel_result_txt">나의 다중지능<span class="tag_txt main_txt">자연친화지능</span></p>
+                            <div class="btn_wrapper">
+                                <a href=\"javascript:tryouts_complete_view('$row_m[id]')\" class='capsule_btn'>결과보기</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="counsel_item">
+                        <p class="counsel_info"><span class="num">no.1</span><span class="date">2020-04-23</span></p>
+                        <div class="order_box">
+                            <p class="counsel_result_txt">나의 다중지능<span class="tag_txt main_txt">자기성찰지능</span></p>
+                            <div class="btn_wrapper">
+                                <a href=\"javascript:tryouts_complete_view('$row_m[id]')\" class='capsule_btn'>결과보기</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--검사하기 버튼-->
+                <div class="btn_wrapper">
+                    <a href="javascript:tryouts_complete_list('2')" class="solid_btn lg">검사하기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--안내 내용 show/hide-->
+    <script>
+        $(document).ready(function () {
+            $('.theme_info_header').click(function () {
+                $('.theme_info_body').show();
+            });
+            $('.theme_info_title .close_btn').click(function () {
+                $('.theme_info_body').hide();
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>미니 다중지능 검사</title>
+    <!--font 추가 (NotoSansKr, Roboto)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
+        rel="stylesheet">
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+<body>
+    <div class="wrap m_wrap">
+        <!--header-->
+        <div class='page_title_area'>
+            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
+            <h2 class="page_title">미니 다중지능 검사</h2>
+            <a class="close_btn" href=/"><img src="images/icon/btn_close.png" alt="닫기"></a>
+        </div>
+        <div class="counsel_wrapper">
+            <!--배너 이미지-->
+            <div class="banner_wrapper">
+                <img src="images/banner/bn_test_02.jpg" alt="감성지능 높이기 프로젝트 | 온라인 무료 검사">
+            </div>
+            <!--검사결과-->
+            <div class="counsel_result_wrapper" id="tryouts_complete_view2">
+                <div class='counsel_result_title'>
+                    <p class="img_title"><img src="images/icon/ico_test_0201.png" alt="">감성역량 그래프</p>
+                </div>
+                <div class="counsel_result_block">
+                    <!--기존 소스-->
+                    <div class="result_graph">
+                        <p style="width:100%;height:auto;">
+                        <div class="chartjs-size-monitor">
+                            <div class="chartjs-size-monitor-expand">
+                                <div class=""></div>
+                            </div>
+                            <div class="chartjs-size-monitor-shrink">
+                                <div class=""></div>
+                            </div>
+                        </div>
+                        <canvas id="myChart" width="1152" height="1152" style="display: block; height: 384px; width: 384px;"
+                            class="chartjs-render-monitor"></canvas>
+                        </p>
+                    </div>
+                </div>
+                <!--결과 리스트-->
+                <div class="result_wrap2 emotion_result_wrap">
+
+                    <div class="emotion_result_block">
+                        <div class='counsel_result_title'>
+                            <p class="img_title"><img src="images/icon/ico_test_0202.png" alt="">관계영역</p>
+                        </div>
+                        <div class='counsel_result_block'>
+                            <div class="emotion_result_box">
+                                <div class="flex_block emotion_header">
+                                    <div class="emotion_header_box">
+                                        <p class='emotion_header_title'>점수</p>
+                                        <p class="emotion_header_txt main_txt">6</p>
+                                    </div>
+                                    <div class="emotion_header_box">
+                                        <p class='emotion_header_title'>추천유형</p>
+                                        <p class="emotion_header_txt">직업실무체험</p>
+                                    </div>
+                                </div>
+                                <div class="emotion_body">
+                                    <p class="emotion_result_desc">자신을 솔직하게 표현하고, 친구들과
+                                        친밀한 관계를 형성할 수 있는 잠재력이높습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="emotion_result_block">
+                        <div class='counsel_result_title'>
+                            <p class="img_title"><img src="images/icon/ico_test_0203.png" alt="">자기인식</p>
+                        </div>
+                        <div class='counsel_result_block'>
+                            <div class="emotion_result_box">
+                                <div class="flex_block emotion_header">
+                                    <div class="emotion_header_box">
+                                        <p class='emotion_header_title'>점수</p>
+                                        <p class="emotion_header_txt main_txt">6</p>
+                                    </div>
+                                    <div class="emotion_header_box">
+                                        <p class='emotion_header_title'>추천유형</p>
+                                        <p class="emotion_header_txt">직업실무체험</p>
+                                    </div>
+                                </div>
+                                <div class="emotion_body">
+                                    <p class="emotion_result_desc">자신을 솔직하게 표현하고, 친구들과
+                                        친밀한 관계를 형성할 수 있는 잠재력이높습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="emotion_result_block">
+                        <div class='counsel_result_title'>
+                            <p class="img_title"><img src="images/icon/ico_test_0204.png" alt="">공감영역</p>
+                        </div>
+                        <div class='counsel_result_block'>
+                            <div class="emotion_result_box">
+                                <div class="flex_block emotion_header">
+                                    <div class="emotion_header_box">
+                                        <p class='emotion_header_title'>점수</p>
+                                        <p class="emotion_header_txt main_txt">6</p>
+                                    </div>
+                                    <div class="emotion_header_box">
+                                        <p class='emotion_header_title'>추천유형</p>
+                                        <p class="emotion_header_txt">직업실무체험</p>
+                                    </div>
+                                </div>
+                                <div class="emotion_body">
+                                    <p class="emotion_result_desc">자신을 솔직하게 표현하고, 친구들과
+                                        친밀한 관계를 형성할 수 있는 잠재력이높습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="emotion_result_block">
+                        <div class='counsel_result_title'>
+                            <p class="img_title"><img src="images/icon/ico_test_0205.png" alt="">자기관리</p>
+                        </div>
+                        <div class='counsel_result_block'>
+                            <div class="emotion_result_box">
+                                <div class="flex_block emotion_header">
+                                    <div class="emotion_header_box">
+                                        <p class='emotion_header_title'>점수</p>
+                                        <p class="emotion_header_txt main_txt">6</p>
+                                    </div>
+                                    <div class="emotion_header_box">
+                                        <p class='emotion_header_title'>추천유형</p>
+                                        <p class="emotion_header_txt">직업실무체험</p>
+                                    </div>
+                                </div>
+                                <div class="emotion_body">
+                                    <p class="emotion_result_desc">자신을 솔직하게 표현하고, 친구들과
+                                        친밀한 관계를 형성할 수 있는 잠재력이높습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="emotion_result_block">
+                        <div class='counsel_result_title'>
+                            <p class="img_title"><img src="images/icon/ico_test_0206.png" alt="">감정활용</p>
+                        </div>
+                        <div class='counsel_result_block'>
+                            <div class="emotion_result_box">
+                                <div class="flex_block emotion_header">
+                                    <div class="emotion_header_box">
+                                        <p class='emotion_header_title'>점수</p>
+                                        <p class="emotion_header_txt main_txt">6</p>
+                                    </div>
+                                    <div class="emotion_header_box">
+                                        <p class='emotion_header_title'>추천유형</p>
+                                        <p class="emotion_header_txt">직업실무체험</p>
+                                    </div>
+                                </div>
+                                <div class="emotion_body">
+                                    <p class="emotion_result_desc">자신을 솔직하게 표현하고, 친구들과
+                                        친밀한 관계를 형성할 수 있는 잠재력이높습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="counsel_result_block">
+                    <a href="javascript:tryouts_complete_list(1)" class="solid_btn lg">목록보기</a>
+                </div>
+            </div>    
+        </div>
+    </div>
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <!--안내 내용 show/hide-->
+    <script>
+        $(document).ready(function () {
+            $('.theme_info_header').click(function () {
+                $('.theme_info_body').show();
+            });
+            $('.theme_info_title .close_btn').click(function () {
+                $('.theme_info_body').hide();
+            });
+        });
+    </script>
+</body>
+</html>
