@@ -1601,7 +1601,6 @@ input[type='checkbox']:checked {
 
 .main_popup .modal_body .swiper-wrapper {
   width: 100%;
-  background-color: #fff;
 }
 
 .main_popup .modal_body .swiper-wrapper .swiper-slide {
@@ -6770,13 +6769,18 @@ input[type='checkbox']:checked {
   margin-bottom: 1rem;
 }
 
+.counsel_result_box.round {
+  border-radius: 30rem;
+}
+
 .counsel_result_box.outline {
   background-color: #fff;
   border: 1px solid #ff8611;
   padding: 1.5rem 1.25rem;
 }
 
-.counsel_result_box .type_txt {
+.counsel_result_box .type_txt,
+.consel_result_header .type_txt {
   font-size: 1.05rem;
   font-weight: 500;
   color: #fff;
@@ -6786,11 +6790,16 @@ input[type='checkbox']:checked {
   line-height: 1.4;
 }
 
+.consel_result_header .type_txt {
+  color: #0d0d0d;
+}
+
 .counsel_result_box .type_txt:last-of-type {
   margin-bottom: 0;
 }
 
-.counsel_result_box .yellow_txt {
+.counsel_result_box .yellow_txt,
+.consel_result_header .main_txt {
   font-weight: 500;
   margin: 0 2px;
 }
@@ -6806,8 +6815,78 @@ input[type='checkbox']:checked {
   margin: 0 2px;
 }
 
-.yellow_txt {
-  color: #fff05d;
+.consel_line_box {
+  border: 1px solid #e1e1e1;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.consel_line_box.main {
+  border: 1px solid #ff8611;
+}
+
+.consel_line_box .consel_line_block {
+  padding: 1rem 1.2rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.consel_line_box .consel_line_block .consel_line_title {
+  font-size: 1.04rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
+.consel_line_box .consel_line_block .consel_line_title::before {
+  content: '·';
+  margin-right: 0.2rem;
+  font-size: 2rem;
+  color: #ff8611;
+  position: relative;
+  top: 0.3rem;
+}
+
+.consel_line_desc .desc_txt {
+  font-size: 0.85rem;
+  color: #828282;
+  line-height: 1.6;
+}
+
+.consel_result_header {
+  background-color: #f8f8fa;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.consel_result_header .type_txt {
+  margin-bottom: 0;
+}
+
+.consel_result_body {
+  padding: 0.8rem;
+}
+
+.type_tag_title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  margin: 0.5rem auto;
+  text-align: center;
+}
+
+.type_tag_list {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.type_tag {
+  display: inline-block;
+  background-color: #f8f8fa;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.93rem;
+  margin: 0.3rem 0.1rem;
+  color: #ff8611;
+  font-weight: 500;
 }
 
 .green_txt {

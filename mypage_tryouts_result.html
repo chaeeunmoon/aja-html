@@ -27,151 +27,106 @@
         <div class="counsel_wrapper">
             <!--배너 이미지-->
             <div class="banner_wrapper">
-                <img src="images/banner/bn_test_02.jpg" alt="감성지능 높이기 프로젝트 | 온라인 무료 검사">
+                <img src="images/banner/bn_test_01.jpg" alt="3분만에 알아보는 아이성향검사 | 1-24 문항에 아이 또는 내가 평소 가졌던 느낌대로 체크해주세요!">
             </div>
             <!--검사결과-->
-            <div class="counsel_result_wrapper" id="tryouts_complete_view2">
+            <div class="counsel_result_wrapper" id="tryouts_complete_view1">
                 <div class='counsel_result_title'>
-                    <p class="img_title"><img src="images/icon/ico_test_0201.png" alt="">감성역량 그래프</p>
+                    <p class="img_title"><img src="images/icon/ico_test_0101.png" alt="">검사결과</p>
                 </div>
-                <div class="counsel_result_block">
+                <div class="answer_view" id="tryouts_complete_view3">
                     <!--기존 소스-->
-                    <div class="result_graph">
-                        <p style="width:100%;height:auto;">
-                        <div class="chartjs-size-monitor">
-                            <div class="chartjs-size-monitor-expand">
-                                <div class=""></div>
-                            </div>
-                            <div class="chartjs-size-monitor-shrink">
-                                <div class=""></div>
-                            </div>
-                        </div>
-                        <canvas id="myChart" width="1152" height="1152" style="display: block; height: 384px; width: 384px;"
-                            class="chartjs-render-monitor"></canvas>
-                        </p>
+                    <div class="mypage-aptitude-title margin-bottom-1"></div>
+                    <!--결과 내용(수정)-->
+                    <div class='counsel_result_title'>
+                        <p class="img_title"><img src="images/icon/ico_test_0102.png" alt="">축하합니다</p>
                     </div>
-                </div>
-                <!--결과 리스트-->
-                <div class="result_wrap2 emotion_result_wrap">
+                    <style>
 
-                    <div class="emotion_result_block">
-                        <div class='counsel_result_title'>
-                            <p class="img_title"><img src="images/icon/ico_test_0202.png" alt="">관계영역</p>
+                    </style>
+                    <div class="counsel_result_block">
+                        <div class="consel_line_box">
+                            <div class="consel_result_header">
+                                <p class="type_txt">당신은 "<span span class="main_txt">인가친화지능</span>"이 <br /> 가장 높은 성향의 사람입니다</p>
+                            </div>
+                            <div class="consel_result_body">
+                                <p class="type_tag_title">나의 감정 다중지능</p>
+                                <ul class="type_tag_list">
+                                    <li class="type_tag">1. 인간친화지능</li>
+                                    <li class="type_tag">2. 언어지능</li>
+                                    <li class="type_tag">3. 자기성찰지능</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class='counsel_result_block'>
-                            <div class="emotion_result_box">
-                                <div class="flex_block emotion_header">
-                                    <div class="emotion_header_box">
-                                        <p class='emotion_header_title'>점수</p>
-                                        <p class="emotion_header_txt main_txt">6</p>
-                                    </div>
-                                    <div class="emotion_header_box">
-                                        <p class='emotion_header_title'>추천유형</p>
-                                        <p class="emotion_header_txt">직업실무체험</p>
-                                    </div>
+                        <div class="counsel_result_box round">
+                            <p class="type_txt">CEO, 사회 운동가, 영업사원 -<span class="yellow_txt">인간친화지능</span></p>
+                        </div>
+                        <div class="consel_line_box">
+                            <div class="consel_line_block">
+                                <p class="consel_line_title">특징</p>
+                                <div class="consel_line_desc">
+                                    <p class="desc_txt">1 다른 사람에 대한 감정 이입이 뛰어나다. <br />
+                                        2 또래들 사이에서 인기가 높다.<br />
+                                        3 또래나 나이가 더 많은 사람이나 똑같이 잘 사귄다.<br />
+                                        4 리더십을 보여 준다.<br />
+                                        5 다른 사람과 협동하여 일하는 데 능숙하다.<br />
+                                        6 다른 사람의 느낌에 민감하다.<br />
+                                        7 중개인이나 카운슬러 역할을 자주 한다.
+                                    </p>
                                 </div>
-                                <div class="emotion_body">
-                                    <p class="emotion_result_desc">자신을 솔직하게 표현하고, 친구들과
-                                        친밀한 관계를 형성할 수 있는 잠재력이높습니다.</p>
+                            </div>
+                            <div class="consel_line_block">
+                                <p class="consel_line_title">잘하는 일</p>
+                                <div class="consel_line_desc">
+                                    <p class="desc_txt">집단 작업, 연극, 대화, 운동, 클럽, 단체 행동, 단체
+                                    지도, 합의 결정 등</p>
+                                </div>
+                            </div>
+                            <div class="consel_line_block">
+                                <p class="consel_line_title">직업군</p>
+                                <div class="consel_line_desc">
+                                    <p class="desc_txt">사회학자, 학교 교장, 정치가, 종교 지도자, 사회
+                                    운동가, 웨딩 플래너, 사회 단체 위원, 기업 경영자,
+                                    호텔 경영자, 정신과 의사, 카운슬러, 법조인, 배우,
+                                    이벤트 사업가, 외교관, 정치가, 호텔리어, 방송 프로
+                                    듀서, 간호사, 사회 복지사, 교사, 개인 사업가 (상업,
+                                    중소 기업), 회사원(인사관련), 영업 사원, 개그맨,
+                                    유치원이나 어린이집 교사, 경찰관, 비서 등</p>
+                                </div>
+                            </div>
+                            <div class="consel_line_block">
+                                <p class="consel_line_title">직업군</p>
+                                <div class="consel_line_desc">
+                                    <p class="desc_txt">사회학자, 학교 교장, 정치가, 종교 지도자, 사회
+                                        운동가, 웨딩 플래너, 사회 단체 위원, 기업 경영자,
+                                        호텔 경영자, 정신과 의사, 카운슬러, 법조인, 배우,
+                                        이벤트 사업가, 외교관, 정치가, 호텔리어, 방송 프로
+                                        듀서, 간호사, 사회 복지사, 교사, 개인 사업가 (상업,
+                                        중소 기업), 회사원(인사관련), 영업 사원, 개그맨,
+                                        유치원이나 어린이집 교사, 경찰관, 비서 등</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="consel_line_box main" style="margin-bottom: 2rem;">
+                            <div class="consel_line_block">
+                                <p class="consel_line_title">다중지능 기르기</p>
+                                <div class="consel_line_desc">
+                                    <p class="desc_txt">• 친구들과 스터디 그룹 만들어 공부하기<br />
+                                    • 새로 배운 지식이 왜 다른 사람들에게 중요한
+                                    문제인지 이해하기<br />
+                                    • 친구 또는 동생이 이해할 때까지 가르쳐 주기<br />
+                                    • 팀을 만들어 협동 작업을 하거나 경쟁하기<br />
+                                    • 자신을 뛰어난 전문가로 가정하고 공부하기<br />
+                                    • 배운 내용을 극본으로 구성해 보기<br />
+                                    • 다른 사람이 설명하는 것을 중간에 자르거나 반박
+                                    하지 않고 잘 들어주기</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="emotion_result_block">
-                        <div class='counsel_result_title'>
-                            <p class="img_title"><img src="images/icon/ico_test_0203.png" alt="">자기인식</p>
-                        </div>
-                        <div class='counsel_result_block'>
-                            <div class="emotion_result_box">
-                                <div class="flex_block emotion_header">
-                                    <div class="emotion_header_box">
-                                        <p class='emotion_header_title'>점수</p>
-                                        <p class="emotion_header_txt main_txt">6</p>
-                                    </div>
-                                    <div class="emotion_header_box">
-                                        <p class='emotion_header_title'>추천유형</p>
-                                        <p class="emotion_header_txt">직업실무체험</p>
-                                    </div>
-                                </div>
-                                <div class="emotion_body">
-                                    <p class="emotion_result_desc">자신을 솔직하게 표현하고, 친구들과
-                                        친밀한 관계를 형성할 수 있는 잠재력이높습니다.</p>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="counsel_result_block">
+                        <a href="javascript:tryouts_complete_list(1)" class="solid_btn lg">목록보기</a>
                     </div>
-                    <div class="emotion_result_block">
-                        <div class='counsel_result_title'>
-                            <p class="img_title"><img src="images/icon/ico_test_0204.png" alt="">공감영역</p>
-                        </div>
-                        <div class='counsel_result_block'>
-                            <div class="emotion_result_box">
-                                <div class="flex_block emotion_header">
-                                    <div class="emotion_header_box">
-                                        <p class='emotion_header_title'>점수</p>
-                                        <p class="emotion_header_txt main_txt">6</p>
-                                    </div>
-                                    <div class="emotion_header_box">
-                                        <p class='emotion_header_title'>추천유형</p>
-                                        <p class="emotion_header_txt">직업실무체험</p>
-                                    </div>
-                                </div>
-                                <div class="emotion_body">
-                                    <p class="emotion_result_desc">자신을 솔직하게 표현하고, 친구들과
-                                        친밀한 관계를 형성할 수 있는 잠재력이높습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="emotion_result_block">
-                        <div class='counsel_result_title'>
-                            <p class="img_title"><img src="images/icon/ico_test_0205.png" alt="">자기관리</p>
-                        </div>
-                        <div class='counsel_result_block'>
-                            <div class="emotion_result_box">
-                                <div class="flex_block emotion_header">
-                                    <div class="emotion_header_box">
-                                        <p class='emotion_header_title'>점수</p>
-                                        <p class="emotion_header_txt main_txt">6</p>
-                                    </div>
-                                    <div class="emotion_header_box">
-                                        <p class='emotion_header_title'>추천유형</p>
-                                        <p class="emotion_header_txt">직업실무체험</p>
-                                    </div>
-                                </div>
-                                <div class="emotion_body">
-                                    <p class="emotion_result_desc">자신을 솔직하게 표현하고, 친구들과
-                                        친밀한 관계를 형성할 수 있는 잠재력이높습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="emotion_result_block">
-                        <div class='counsel_result_title'>
-                            <p class="img_title"><img src="images/icon/ico_test_0206.png" alt="">감정활용</p>
-                        </div>
-                        <div class='counsel_result_block'>
-                            <div class="emotion_result_box">
-                                <div class="flex_block emotion_header">
-                                    <div class="emotion_header_box">
-                                        <p class='emotion_header_title'>점수</p>
-                                        <p class="emotion_header_txt main_txt">6</p>
-                                    </div>
-                                    <div class="emotion_header_box">
-                                        <p class='emotion_header_title'>추천유형</p>
-                                        <p class="emotion_header_txt">직업실무체험</p>
-                                    </div>
-                                </div>
-                                <div class="emotion_body">
-                                    <p class="emotion_result_desc">자신을 솔직하게 표현하고, 친구들과
-                                        친밀한 관계를 형성할 수 있는 잠재력이높습니다.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="counsel_result_block">
-                    <a href="javascript:tryouts_complete_list(1)" class="solid_btn lg">목록보기</a>
                 </div>
             </div>    
         </div>
