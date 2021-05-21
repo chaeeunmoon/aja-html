@@ -1602,14 +1602,19 @@ input[type='checkbox']:checked {
 .main_popup .modal_body .swiper-wrapper {
   width: 100%;
   background-color: #fff;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  overflow: hidden;
 }
 
 .main_popup .modal_body .swiper-wrapper .swiper-slide {
-  background: #fff;
   font-size: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.main_popup .modal_body .swiper-wrapper .swiper-slide img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .main_popup .modal_body .swiper-wrapper .swiper-slide a {
@@ -1617,6 +1622,8 @@ input[type='checkbox']:checked {
   margin: 0;
   padding: 0;
   font-size: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .main_popup .modal_footer {
