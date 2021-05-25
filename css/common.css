@@ -1947,10 +1947,12 @@ input[type='checkbox']:checked {
   margin-bottom: 0.3rem;
 }
 
+.scroll_wrapper.active,
+.list_nav_wrap.active,
 .m_item_scroll.active {
   cursor: grabbing;
   cursor: -webkit-grabbing;
-  transform: scale(1);
+  scroll-snap-type: unset;
 }
 
 .m_item_scroll::-webkit-scrollbar {

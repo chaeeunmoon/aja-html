@@ -1012,6 +1012,79 @@
         }
       });
     </script>
+    <style>
+
+    </style>
     <!--pc horizontal scroll js-->
+    <script>
+        // pc scroll
+        function desktopScroll(selector) {
+            const slider = document.querySelector(selector);
+            const preventClick = (e) => {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+            }
+
+            let isDown = false;
+            let isDragged = false;
+            let startX;
+            let scrollLeft;
+
+            slider.addEventListener("mousedown", e => {
+                isDown = true;
+                slider.classList.add("active");
+                startX = e.pageX - slider.offsetLeft;
+                scrollLeft = slider.scrollLeft;
+            });
+
+            slider.addEventListener("mouseleave", () => {
+                isDown = false;
+                slider.classList.remove("active");
+            });
+
+            slider.addEventListener("mouseup", (e) => {
+                isDown = false;
+                const elements = document.querySelectorAll("a");
+                if (isDragged) {
+                    for (let i = 0; i < elements.length; i++) {
+                        elements[i].addEventListener("click", preventClick);
+                    }
+                }
+                else {
+                    for (let i = 0; i < elements.length; i++) {
+                        elements[i].removeEventListener("click", preventClick);
+                    }
+                }
+                slider.classList.remove("active");
+                isDragged = false;
+            });
+
+            slider.addEventListener("mousemove", e => {
+                if (!isDown) return;
+                isDragged = true;
+                e.preventDefault();
+                const x = e.pageX - slider.offsetLeft;
+                const walk = (x - startX) * 2;
+                slider.scrollLeft = scrollLeft - walk;
+                console.log(walk);
+            });
+        }
+
+        //카테고리
+        desktopScroll('.ctg_wrapper');
+        // 이 체험 어때요
+        desktopScroll('.m_item_scroll.horizontal_item_list');
+        // 신규 open 체험
+        desktopScroll('.m_item_scroll.square_item_list');
+        // 신나는 아자탐구생활
+        desktopScroll('.aja_center');
+        // 체험 후기
+        desktopScroll('.item_review');
+        // 어디로 체험갈까
+        desktopScroll('.region_list');
+
+        //list category menu
+        desktopScroll('.list_nav_wrap');
+    </script>
   </body>
 </html>
