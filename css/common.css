@@ -149,7 +149,12 @@ caption {
 }
 /* E: lightbox custom */
 
-.main_txt {
+.text_right {
+  text-align: right !important;
+}
+
+.main_txt,
+.main_color {
   color: #ff8611 !important;
 }
 
@@ -159,6 +164,10 @@ caption {
 
 .sub_txt {
   color: #828282 !important;
+}
+
+.sub_color {
+  color: #ff3d55;
 }
 
 .bold_txt,
@@ -278,7 +287,7 @@ caption {
 
 /*footer renewal (20210414) */
 .footer {
-  margin-top: 15px;
+  margin-top: 0;
   background-color: #fff;
   border-top: 1px solid #e3e3e3;
 }
@@ -429,22 +438,19 @@ caption {
   width: 1.1rem;
   height: 1.1rem;
   text-align: center;
-  line-height: 1rem;
+  line-height: 1.125rem;
   -webkit-transform: translate(0.95rem, -0.4rem);
   -ms-transform: translate(0.95rem, -0.4rem);
   transform: translate(0.95rem, -0.4rem);
 }
+
+.m_action_bar .action_icon_list .item_like .num.cnt2 {
+  width: 1.5rem;
+  border-radius: 1rem;
+}
 /* action bar renewal (20210416)*/
 
 /* 2021 리뉴얼 추가 */
-.main_color {
-  color: #ff8611;
-}
-
-.sub_color {
-  color: #ff3d55;
-}
-
 .page_title_area,
 .item_title_wrap {
   position: relative;
@@ -615,6 +621,11 @@ caption {
   border-radius: 8px;
   font-weight: 500;
   text-align: center;
+}
+
+.solid_btn.xs {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.8rem;
 }
 
 .solid_btn:focus {
@@ -1186,12 +1197,13 @@ caption {
     background: transparent;
   }
 }
+
 /* login input css */
 .form_danger_txt {
   font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 0.8px;
-  color: #ff3d55;
+  color: #ff8611;
   line-height: 1.2;
   margin-bottom: 1.3em;
   word-break: break-all;
@@ -1601,6 +1613,7 @@ input[type='checkbox']:checked {
 
 .main_popup .modal_body .swiper-wrapper {
   width: 100%;
+  background-color: transparent;
 }
 
 .main_popup .modal_body .swiper-wrapper .swiper-slide {
@@ -1934,6 +1947,12 @@ input[type='checkbox']:checked {
   margin-bottom: 0.3rem;
 }
 
+.m_item_scroll.active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+  transform: scale(1);
+}
+
 .m_item_scroll::-webkit-scrollbar {
   display: none; /* 스크롤 노출 유무 (작동엔 영향 없음) */
 }
@@ -2075,10 +2094,10 @@ input[type='checkbox']:checked {
 .block_box .item_info .item_title {
   font-size: 1rem;
   margin-bottom: 1.5rem;
-  height: 3.65rem;
+  height: 2.7rem;
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
@@ -2683,11 +2702,14 @@ input[type='checkbox']:checked {
 }
 
 .ac_menu_list li {
+  padding: 1rem 0.5rem;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.ac_menu_list li > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 1rem 0.5rem;
-  border-bottom: 1px solid #e3e3e3;
 }
 
 .ac_menu_list li:last-child {
@@ -4552,6 +4574,12 @@ input[type='checkbox']:checked {
   padding: 1rem 0.95rem;
 }
 
+.sub_info_wrap .edu-noti > .title {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+
 .sub_info_wrap .detail-txt li {
   margin-bottom: 0.2rem;
   display: -webkit-box;
@@ -4561,10 +4589,12 @@ input[type='checkbox']:checked {
 
 .sub_info_wrap .detail-txt li .title {
   width: 6rem;
+  font-size: 0.875rem;
 }
 
 .sub_info_wrap .detail-txt li .cont {
   width: 68%;
+  font-size: 0.875rem;
 }
 
 .tab_inner_box .content-box-white {
@@ -6489,10 +6519,14 @@ input[type='checkbox']:checked {
   padding: 1rem;
 }
 
-.refund_info > * {
-  font-size: 0.875rem !important;
-  line-height: 1.4 !important;
+.refund_info > *,
+.refund_info > * > *,
+.refund_info > * > * > * {
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif !important;
+  font-size: 0.92rem !important;
+  line-height: 1.5 !important;
   color: #828282 !important;
+  margin-bottom: 0.2rem;
 }
 
 /* refund_modal #app overriding */
