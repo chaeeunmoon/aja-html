@@ -1595,6 +1595,7 @@ input[type='checkbox']:checked {
   font-size: 1.7rem;
   font-weight: 900;
   color: #fff;
+  cursor: pointer;
 }
 
 #hero_modal .banner_content div {
@@ -1661,6 +1662,7 @@ input[type='checkbox']:checked {
 .main_popup .modal_footer .modal_close {
   position: relative;
   top: 1px;
+  cursor: pointer;
 }
 
 .main_popup .ck_today img {
@@ -6992,3 +6994,113 @@ input[type='checkbox']:checked {
   line-height: 1.4;
 }
 /*E: counsel style */
+
+/* S: media query */
+
+@media screen and (min-width: 1025px) {
+  .desktop_wrapper {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .desktop_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    max-width: 570px;
+    padding-top: 5rem;
+    margin: 0 0 0 10%;
+  }
+
+  .app {
+    position: relative;
+    width: 100%;
+    max-width: 428px;
+    background-color: #fff;
+    overflow-x: hidden;
+    border: 2px solid #e1e1e1;
+    z-index: 99;
+    z-index: 9999;
+    margin: 0 0 0 55%;
+  }
+
+  #navi-area,
+  .m_action_bar,
+  .list_nav_wrap,
+  .modal,
+  .fixed_btn_wrapper {
+    width: 100%;
+    max-width: 428px;
+    margin: 0 0 0 55%;
+  }
+
+  .pc_pop_modal {
+    display: block;
+    position: fixed;
+    top: 120px;
+    left: calc(65% + 223px);
+    z-index: 9999;
+  }
+
+  .pc_pop_modal > img {
+    width: 223px;
+  }
+
+  .pc_pop_close {
+    position: absolute;
+    width: 45px;
+    bottom: 50px;
+    right: 5px;
+  }
+
+  .desktop_bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: #f0f5f8;
+  }
+
+  .desktop_bg:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: -900px;
+    right: -5%;
+    width: 1200px;
+    height: 1200px;
+    background-color: #81d7d8;
+    border-radius: 50%;
+  }
+
+  .desktop_bg:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: -10%;
+    left: 2%;
+    width: 500px;
+    height: 500px;
+    background-color: #fff;
+    border-radius: 20%;
+    transform: rotate(45deg);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .pc_pop_modal,
+  .desktop_menu {
+    display: none;
+  }
+}
+/* E: media query */

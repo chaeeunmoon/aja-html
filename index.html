@@ -21,6 +21,49 @@
     <link rel="stylesheet" href="plugin/Swiper-slider/css/swiper.min.css" />
   </head>
   <body>
+      <style>
+      </style>
+    <div class="desktop_wrapper">
+        <div class="container">
+            <!--pc 메뉴-->
+            <style>
+                .logo_block .pc_logo {
+                    width: 280px;
+                }
+
+                .logo_block .logo_desc {
+                    margin-top: 1.3rem;
+                    font-size: 0.9375rem;
+                    font-weight: 400;
+                    color: #1c3b6c;
+                    line-height: 1.4;
+                }
+
+                .desktop_menu .search_block {
+                    
+                }
+            </style>
+            <div class="desktop_menu">
+                <div class="logo_block">
+                    <div class="pc_logo">
+                        <a href="/">
+                            <img src="images/pc_log.png" alt="ajaschool">
+                        </a>
+                    </div>
+                    <p class="logo_desc">주말이면 자녀들과 어디를 가야 좋을지 부모의 고민을 해결하고자 <br />
+                        아자스쿨에서는 검증된 프로그램을 제공합니다</p>
+                </div>
+                <div class="search_block">
+                    <div class="search_form">
+                        <form action="">
+                            <input type="text" name="" id="" placeholder="궁금하신 체험을 입력해주세요">
+                            <a href="#" class=""><img src="images/icon/ico_PC_search.png" alt="검색하기"></a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--모바일 화면-->     
+            <div class="app">
     <div id="wrap">
       <!--header (head.sub.php)-->
       <div id="header">
@@ -1066,7 +1109,6 @@
                 const x = e.pageX - slider.offsetLeft;
                 const walk = (x - startX) * 2;
                 slider.scrollLeft = scrollLeft - walk;
-                console.log(walk);
             });
         }
 
@@ -1086,5 +1128,22 @@
         //list category menu
         desktopScroll('.list_nav_wrap');
     </script>
+            </div>
+            <!--popup-->
+            <div class="pc_pop_modal">
+                <img src="images/banner/pc_popup.png" alt="여기 화면에서도 신청가능 하세요!">
+                <span class="pc_pop_close"><img src="images/icon/pop_bt.png" alt="닫기"></span>
+            </div>
+        </div>
+        <div class="desktop_bg">
+        </div>
+    </div>
   </body>
+  <script>
+      $(document).ready(function(){
+            $('.pc_pop_close').click(function(){
+                $('.pc_pop_modal').hide();
+            });
+      });
+  </script>
 </html>
