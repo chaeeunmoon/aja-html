@@ -16,61 +16,62 @@
     <!-- 추가 css-->
     <link rel="stylesheet" href="css/font-style.css" />
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/media-query.css" />
 
     <!-- plugin / 기존 파일 그대로 사용 -->
     <link rel="stylesheet" href="plugin/Swiper-slider/css/swiper.min.css" />
   </head>
   <body>
-      <style>
-      </style>
     <div class="desktop_wrapper">
-        <div class="container">
             <!--pc 메뉴-->
-            <style>
-                .logo_block .pc_logo {
-                    width: 280px;
-                }
-
-                .logo_block .logo_desc {
-                    margin-top: 1.3rem;
-                    font-size: 0.9375rem;
-                    font-weight: 400;
-                    color: #1c3b6c;
-                    line-height: 1.4;
-                }
-
-                .desktop_menu .search_block .search_form {
-                    position: relative;
-                    border: 2px solid #1c3b6c;
-                    border-radius: 60px;
-                    width: 570px;
-                    padding: 1.5rem 2rem;
-                    background-color: #fff;
-                }
-
-                .desktop_menu .search_block .search_form  .search_btn {
-                    position: absolute;
-                    right: 1.5rem;
-                    width: 50px;
-                }
-            </style>
             <div class="desktop_menu">
+                <!--logo-->
                 <div class="logo_block">
                     <div class="pc_logo">
                         <a href="/">
-                            <img src="images/pc_log.png" alt="ajaschool">
+                            <img src="images/pc_log.png" alt="아자스쿨">
                         </a>
                     </div>
                     <p class="logo_desc">주말이면 자녀들과 어디를 가야 좋을지 부모의 고민을 해결하고자 <br />
-                        아자스쿨에서는 검증된 프로그램을 제공합니다</p>
+                    아자스쿨에서는 검증된 프로그램을 제공합니다</p>
                 </div>
-                <div class="search_block">
+                <!--검색-->
+                <div class="pc_search_block">
                     <form action="">
                         <div class="search_form flex_block">
                             <input type="text" name="" id="" placeholder="궁금하신 체험을 입력해주세요">
                             <a href="#" class="search_btn"><img src="images/icon/ico_PC_search.png" alt="검색하기"></a>
                         </div>
+                        <div>
+                          <ul class="desktop_search_list"> 
+                            <li class="desktop_search_tag"><a href="#">역사체험</a></li>
+                            <li class="desktop_search_tag"><a href="#">4차산업</a></li>
+                            <li class="desktop_search_tag"><a href="#">대학탐방</a></li>
+                            <li class="desktop_search_tag"><a href="#">드론</a></li>
+                            <li class="desktop_search_tag"><a href="#">역사체험</a></li>
+                            <li class="desktop_search_tag"><a href="#">역사체험</a></li>
+                            <li class="desktop_search_tag"><a href="#">애니메이션센터</a></li>
+                            <li class="desktop_search_tag"><a href="#">미취학</a></li>
+                          </ul>
+                        </div>
                     </form>
+                </div>
+                <!--플랫폼 링크-->
+                <div class="pc_platform_block">
+                  <div class="platform_link_box">
+                    <a href="#"><img src="images/banner/pc_bn_online.png" alt="아자스쿨 | online 체험학습플랫폼"></a>
+                  </div>
+                  <div class="platform_link_box">
+                    <a href="#"><img src="images/banner/pc_bn_ofline.png" alt="아자스쿨 | offline 체험학습플랫폼"></a>
+                  </div>
+                </div>
+                <!--메뉴-->
+                <div class="pc_fnav_block">
+                    <ul class="pc_fnav_list">
+                        <li><a href="//www.instagram.com/ajaschool_kr/?hl=en" target="_blank"><img src="images/icon/ico_PC_sns01.png" alt="아자스쿨 인스타그램"></a></li>
+                        <li><a href="//pf.kakao.com/_xmEiFC" target="_blank"><img src="images/icon/ico_PC_sns02.png" alt="아자스쿨 카카오톡 채널"></a></li>
+                        <li><a href="//pf.kakao.com/_xmEiFC/chat" target="_blank"><img src="images/icon/ico_PC_qna.png" alt="1:1 문의"></a></li>
+                    </ul>
                 </div>
             </div>
             <!--모바일 화면-->     
@@ -1118,7 +1119,7 @@
                 isDragged = true;
                 e.preventDefault();
                 const x = e.pageX - slider.offsetLeft;
-                const walk = (x - startX) * 2;
+                const walk = (x - startX) * 2.5;
                 slider.scrollLeft = scrollLeft - walk;
             });
         }
@@ -1145,7 +1146,7 @@
                 <img src="images/banner/pc_popup.png" alt="여기 화면에서도 신청가능 하세요!">
                 <span class="pc_pop_close"><img src="images/icon/pop_bt.png" alt="닫기"></span>
             </div>
-        </div>
+            <!--배경-->
         <div class="desktop_bg">
         </div>
     </div>
@@ -1156,5 +1157,13 @@
                 $('.pc_pop_modal').hide();
             });
       });
+  </script>
+  <script>
+    $(document).ready(function(){
+      $('.ctg_wrapper').click(function(){
+          $(this).toggleClass('done');
+          console.log(width);
+      });
+    });
   </script>
 </html>

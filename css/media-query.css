@@ -1,0 +1,331 @@
+@charset "utf-8";
+
+/* image drag 막기 */
+img {
+  -webkit-user-drag: none;
+}
+
+/* S: media query */
+/* pc style (1024px ~ )  */
+@media screen and (min-width: 1024px) {
+  .desktop_wrapper {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    position: relative;
+  }
+
+  .app {
+    position: relative;
+    width: 100%;
+    max-width: 428px;
+    height: 100vh;
+    background-color: #fff;
+    overflow-x: hidden;
+    border-left: 2px solid #e1e1e1;
+    border-right: 2px solid #e1e1e1;
+    z-index: 9999;
+    margin: 0 0 0 58%;
+  }
+  /* fixed content 위치 조정 */
+  #navi-area,
+  .m_action_bar,
+  .list_nav_wrap,
+  .modal,
+  .fixed_btn_wrapper,
+  .list_nav_wrap.sticky,
+  .sticky_nav.sticky {
+    width: 100%;
+    max-width: 428px;
+    margin: 0 0 0 58%;
+  }
+
+  .pc_pop_modal {
+    display: block;
+    position: fixed;
+    top: 120px;
+    z-index: 9999;
+    margin: 0 0 0 calc(58% + 420px);
+  }
+
+  .pc_pop_modal > img {
+    width: 223px;
+  }
+
+  .pc_pop_close {
+    position: absolute;
+    width: 1.4rem;
+    bottom: 2.3rem;
+    right: 2px;
+  }
+
+  .desktop_bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    background-color: #f0f5f8;
+  }
+
+  .desktop_bg:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: -50vw;
+    right: -10vw;
+    width: 67vw;
+    height: 67vw;
+    background-color: #81d7d8;
+    border-radius: 50%;
+  }
+
+  .desktop_bg:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    bottom: -10vw;
+    left: -1vw;
+    width: 29vw;
+    height: 29vw;
+    background-color: #fff;
+    border-radius: 20%;
+    -webkit-transform: rotate(50deg);
+    -ms-transform: rotate(50deg);
+    transform: rotate(50deg);
+  }
+
+  /* desktop_menu style */
+  .desktop_menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    max-width: 600px;
+    width: 40%;
+    padding-bottom: 100px;
+    height: 100vh;
+    margin: 0 0 0 10%;
+  }
+
+  .desktop_menu .logo_block .pc_logo {
+    max-width: 280px;
+    width: 50%;
+    margin-top: 5vh;
+  }
+
+  .desktop_menu .logo_block .logo_desc {
+    margin-top: 1.3rem;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: #1c3b6c;
+    line-height: 1.4;
+  }
+
+  .desktop_menu .pc_search_block {
+    margin-top: 8.5vh;
+  }
+
+  .desktop_menu .pc_search_block .search_form {
+    position: relative;
+    width: 100%;
+    border: 2px solid #1c3b6c;
+    border-radius: 60px;
+    max-width: 600px;
+    padding: 1.3rem 2rem;
+    background-color: #fff;
+  }
+
+  .desktop_menu .pc_search_block .search_form input::-webkit-input-placeholder {
+    font-size: 1.05rem;
+    color: #75839e;
+  }
+
+  .desktop_menu .pc_search_block .search_form input::-moz-placeholder {
+    font-size: 1.05rem;
+    color: #75839e;
+  }
+
+  .desktop_menu .pc_search_block .search_form input:-ms-input-placeholder {
+    font-size: 1.05rem;
+    color: #75839e;
+  }
+
+  .desktop_menu .pc_search_block .search_form input::-ms-input-placeholder {
+    font-size: 1.05rem;
+    color: #75839e;
+  }
+
+  .desktop_menu .pc_search_block .search_form input,
+  .desktop_menu .pc_search_block .search_form input::placeholder {
+    font-size: 1.05rem;
+    color: #75839e;
+  }
+
+  .desktop_menu .pc_search_block .search_form .search_btn {
+    position: absolute;
+    right: 1.5rem;
+    width: 35px;
+    height: 35px;
+  }
+
+  .desktop_menu .pc_search_block .search_form .search_btn img {
+    width: 100%;
+  }
+
+  .desktop_search_list {
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .desktop_search_tag {
+    display: inline-block;
+    background-color: #fff;
+    font-size: 0.9375rem;
+    color: #75839e;
+    padding: 0.8rem 1.2rem;
+    margin: 0.3rem 0.35rem;
+    border-radius: 2rem;
+    -webkit-box-shadow: 2px 5px 10px -1px rgba(117, 131, 158, 0.4);
+    box-shadow: 2px 5px 10px -1px rgba(117, 131, 158, 0.4);
+  }
+
+  .desktop_menu .pc_platform_block {
+    margin-top: 3vh;
+    text-align: center;
+  }
+
+  .desktop_menu .platform_link_box {
+    display: inline-block;
+    width: 48%;
+    padding-right: 2%;
+  }
+
+  .pc_fnav_block {
+    position: absolute;
+    bottom: 0;
+    min-height: 100px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    padding: 1.5rem 0;
+  }
+
+  .pc_fnav_list {
+    width: 100%;
+    text-align: center;
+  }
+
+  .pc_fnav_list li {
+    display: inline-block;
+    margin: 0.2rem;
+  }
+}
+
+/* 1441px ~ */
+@media screen and (min-width: 1440px) {
+  .desktop_menu {
+    margin: 0 0 0 calc(50vw - 600px);
+  }
+
+  .pc_pop_close {
+    width: 2.8rem;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .pc_pop_modal {
+    display: none;
+  }
+}
+
+/* ipad pro ( width : 1024px ) */
+@media (min-width: 429px) and (max-width: 1024px) {
+  .app {
+    margin: 0 0 0 calc(100vw - 470px);
+  }
+  /* fixed content 위치 조정 */
+  #navi-area,
+  .m_action_bar,
+  .list_nav_wrap,
+  .modal,
+  .fixed_btn_wrapper,
+  .list_nav_wrap.sticky,
+  .sticky_nav.sticky {
+    margin: 0 0 0 calc(100vw - 470px);
+  }
+
+  .desktop_menu {
+    width: calc(100vw - 470px);
+    margin: 0;
+    padding: 0 2.5vw 0 50px;
+  }
+
+  .pc_pop_modal {
+    display: none;
+  }
+}
+
+/* tablet ( ~  1023px ) */
+@media (max-width: 1023px) {
+  .pc_pop_modal,
+  .desktop_menu {
+    display: none;
+  }
+}
+
+@media (max-height: 840px) {
+  .pc_fnav_block {
+    position: relative;
+  }
+}
+
+@media (min-width: 429px) and (max-width: 1023px) {
+  .app {
+    position: relative;
+    width: 100%;
+    max-width: 428px;
+    background-color: #fff;
+    overflow-x: hidden;
+    border: 2px solid #e1e1e1;
+    margin: 0 auto;
+  }
+
+  /* fixed content 위치 조정 */
+  #navi-area,
+  .m_action_bar,
+  .list_nav_wrap,
+  .modal,
+  .fixed_btn_wrapper {
+    width: 100%;
+    max-width: 428px;
+    margin: 0 auto;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+
+  body {
+    background-color: #f0f5f8;
+  }
+}
+
+/* phone (  ~ 428px ) */
+@media screen and (max-width: 428px) {
+  body {
+    background-color: #fff;
+  }
+
+  .app {
+    border: none;
+  }
+}
+/* E: media query */

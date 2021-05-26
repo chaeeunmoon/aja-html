@@ -16,243 +16,294 @@
     <!-- 추가 css-->
     <link rel="stylesheet" href="css/font-style.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/media-query.css">
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="js/jquery-1.8.3.min.js"></script>
 </head>
 
 <body>
-    <div id="wrap">
-        <!--header none-->
-        <!--content-->
-        <div id="content" class="m_wrap">
-            <!-- mobile/skin/shop/renewal/item.form.skin.php -->
-            <div class="search_area">
-                <div class="item_title_wrap">
-                    <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg"
-                            alt="뒤로가기" /></a>
-                    <h2 class="product_title">[특가할인] 대형 종이집 만들기 구름집fdfdfd</h2>
-                    <a class="search_i" href="/shop/search.php"><img src="images/icon/btn_search.png" alt="검색하기" /></a>
+    <div class="desktop_wrapper">
+        <!--pc 메뉴-->
+        <div class="desktop_menu">
+            <!--logo-->
+            <div class="logo_block">
+                <div class="pc_logo">
+                    <a href="/">
+                        <img src="images/pc_log.png" alt="아자스쿨">
+                    </a>
                 </div>
-                <div class="product_detail_wrap">
-                    <div class="product_thumb_wrap"><img src="images/sample/sample-01.jpg" alt="상품이미지"></div>
-                    <!-- 판매 기간 -->
-                    <div class="sale_time_block">
-                        <span class="time_icon"><img src="images/icon/ico_time.svg" alt="" /></span>
-                        <span class="time_txt">신청기간: 3일 7:35:33</span>
+                <p class="logo_desc">주말이면 자녀들과 어디를 가야 좋을지 부모의 고민을 해결하고자 <br />
+                    아자스쿨에서는 검증된 프로그램을 제공합니다</p>
+            </div>
+            <!--검색-->
+            <div class="pc_search_block">
+                <form action="">
+                    <div class="search_form flex_block">
+                        <input type="text" name="" id="" placeholder="궁금하신 체험을 입력해주세요">
+                        <a href="#" class="search_btn"><img src="images/icon/ico_PC_search.png" alt="검색하기"></a>
                     </div>
-                    <!-- 상품 정보 -->
-                    <div class='product_info_wrap'>
-                        <div class="info_label_block">
-                            <span class="item_label">서울</span>
-                            <span class="item_label">초등</span>
-                        </div>
-                        <div class="product_info_block">
-                            <h3 class="product_title">[특가할인] 대형 종이집 만들기 구름집</h3>
-                            <p class="sub_title">직접 꾸미는 우리아이 집</p>
-                            <div class="product_price_block">
-                                <span class="sale_percent">50%</span>
-                                <div>
-                                    <span class="origin_price">39000<span class="p_w">원</span></span>
-                                    <span class="main_price">20000<span class="p_w">원</span></span>
-                                </div>
-                            </div>
-                            <div class="info_btn_box">
-                                <!-- 찜하기 버튼 경우, active toggle -->
-                                <button class="i_btn"><span class="like_ico"></span> 찜하기</button>
-                                <button class="i_btn modal_btn" data-modal="sns_share"><img
-                                        src="images/icon/btn_share.svg" alt="찜하기"> 공유하기</button>
-                            </div>
-                            <!--S: sns 공유(디자인 유지)-->
-                            <div class="layer-popup-area" style="display:none ;">
-                                <div class="popup-content">
-                                    <div class="search-area result">
-                                        <div class="range">
-                                            <a href="javascript:void(0)" class="ico-popup-menu">아이콘</a>
-                                            <div class="center" style="margin-left: 10px;">
-                                                <p>
-                                                    <!-- <?php echo stripslashes($it['it_name']); ?> -->
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- <?php
-                                        $http_host = $_SERVER['HTTP_HOST'];
-                                        $request_uri = $_SERVER['REQUEST_URI'];
-                                        $SNS_URL = 'http://' . $http_host . $request_uri;
-                                    ?> -->
-                                    <div class="share-popup">
-                                        <div class="share-title">SNS로 공유하세요</div>
-                                        <div class="share-ico-list">
-                                            <ul>
-                                                <!-- <?php echo $sns_share_links; ?> -->
-                                                <li>
-                                                    <a class="ico-sns-big-url btn-copy" id="btnCopyClip">url</a>
-                                                    <a id="txtCopyClip" class="ico-sns-big-url" style="display: none;"
-                                                        onclick="not_copy();"></a>
-                                                </li>
-                                                <!--li><a class="ico-sns-big-facebook" href="#none">페이스북</a></li>
-                                                <li><a class="ico-sns-big-story" href="#none">스토리</a></li>
-                                                <li><a class="ico-sns-big-kakao" href="#none">카카오톡</a></li>
-                                                <li><a class="ico-sns-big-p" href="#none">p</a></li>
-                                                <li><a class="ico-sns-big-instagram" href="#none">인스타그램</a></li>
-                                                <li><a class="ico-sns-big-cafe" href="#none">네이버카페</a></li>
-                                                <li><a class="ico-sns-big-blog" href="#none">네이버블로그</a></li>
-                                                <li><a class="ico-sns-big-url" href="#none">url</a></li-->
-                                            </ul>
-                                        </div>
-                                        <p style="color:#fff;"><a id="clipURL" href="<?=$SNS_URL?>"
-                                                style="display:none; border: 1px solid silver; padding: 10px;"
-                                                onclick="return false;">
-                                                <?=$SNS_URL?>
-                                            </a></p>
-                                    </div>
-                                </div>
-                                <a href="javascript:void(0)" class="ico-popup-close"
-                                    style="top: 75px !important;">닫기</a>
-                                <div class="deam"></div>
-                            </div>
-                            <!--E: sns 공유-->
-                            <!-- 옵션창 -->
-                            <div id="product_option" class="modal round_modal">
-                                <div class="modal_content">
-                                    <div class="modal_body">
-                                        <!-- <div class="input_group">
-                                            <p class="input_title">신청기간</p>
-                                            <p class="info_txt">2021-04-06 (화) 3일 7:35:33</p>
-                                        </div> -->
-                                        <div class="input_group" style="display: none;">
-                                            <p class="input_title">교육일시</p>
-                                            <p class="info_txt">2021-04-06 (토) 18시 ~ 19시 30분</p>
-                                        </div>
-                                        <div class="input_group">
-                                            <p class="input_title">다른 교육일</p>
-                                            <select class="box_select" name="" id="" title="다른 교육일자">
-                                                <option value="">다른 교육일자</option>
-                                                <option value="">option1</option>
-                                            </select>
-                                        </div>
-                                        <div class="input_group">
-                                            <p class="input_title">옵션</p>
-                                            <select class="box_select" name="" id="" title="선택하세요">
-                                                <option value="">선택하세요</option>
-                                                <option value="">option1</option>
-                                            </select>
-                                        </div>
-                                        <div class="input_flex_group">
-                                            <p class="input_title">신청인원</p>
-                                            <div class="spinner rounded_cnt">
-                                                <a href="javascript:void(0)" class="btn btn-spinner-minus cnt_minus" alt="감 소">&nbsp;</a>
-                                                <input type="text" name="ct_qty[E1621336994][]" value="1" id="ct_qty" maxlength="4">
-                                                <a href="javascript:void(0)" class="btn btn-spinner-plus cnt_plus" alt="증 가">&nbsp;</a>
-                                            </div>
-                                        </div>
-                                        <div class="opt_list_wrap">
-                                            <div class="opt_list">
-                                                <p class="opt_title">교육금액</p>
-                                                <p class="opt_price">12600<span class="p_w">원</span></p>
-                                            </div>
-                                            <div class="opt_list">
-                                                <p class="opt_title">보험료</p>
-                                                <p class="opt_price">0<span class="p_w">원</span></p>
-                                            </div>
-                                        </div>
-                                        <div class="opt_price_wrap">
-                                            <p class="opt_title">총 교육금액</p>
-                                            <p class="opt_total_price">20000<span class="p_w">원</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="modal_footer">
-                                        <button class="modal_close solid_btn light">닫기</button>
-                                        <!-- 실제 구매 버튼 submit -->
-                                        <button class="solid_btn disable">구매하기</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div>
+                        <ul class="desktop_search_list">
+                            <li class="desktop_search_tag"><a href="#">역사체험</a></li>
+                            <li class="desktop_search_tag"><a href="#">4차산업</a></li>
+                            <li class="desktop_search_tag"><a href="#">대학탐방</a></li>
+                            <li class="desktop_search_tag"><a href="#">드론</a></li>
+                            <li class="desktop_search_tag"><a href="#">역사체험</a></li>
+                            <li class="desktop_search_tag"><a href="#">역사체험</a></li>
+                            <li class="desktop_search_tag"><a href="#">애니메이션센터</a></li>
+                            <li class="desktop_search_tag"><a href="#">미취학</a></li>
+                        </ul>
                     </div>
-                    <!-- 상품 상세정보 탭 -->
-                    <!-- mobile/skin/shop/renewal/item.form.info.skin.php -->
-                    <div class='product_tab_wrap'>
-                        <div class='tab-area type03 sticky_nav'>
-                            <ul id="tab-content-menu" class="tab_nav_wrap">
-                                <li class="menu on"><a href="javascript:void(0)">상세정보</a></li>
-                                <li class="menu"><a href="javascript:void(0);">교육후기<span>(52)</span></a></li>
-                                <li class="menu"><a href="javascript:void(0);">취소/환불</a></li>
-                                <li class="menu"><a href="javascript:void(0);">교육문의</a></li>
-                            </ul>
+                </form>
+            </div>
+            <!--플랫폼 링크-->
+            <div class="pc_platform_block">
+                <div class="platform_link_box">
+                    <a href="#"><img src="images/banner/pc_bn_online.png" alt="아자스쿨 | online 체험학습플랫폼"></a>
+                </div>
+                <div class="platform_link_box">
+                    <a href="#"><img src="images/banner/pc_bn_ofline.png" alt="아자스쿨 | offline 체험학습플랫폼"></a>
+                </div>
+            </div>
+            <!--메뉴-->
+            <div class="pc_fnav_block">
+                <ul class="pc_fnav_list">
+                    <li><a href="//www.instagram.com/ajaschool_kr/?hl=en" target="_blank"><img
+                                src="images/icon/ico_PC_sns01.png" alt="아자스쿨 인스타그램"></a></li>
+                    <li><a href="//pf.kakao.com/_xmEiFC" target="_blank"><img src="images/icon/ico_PC_sns02.png"
+                                alt="아자스쿨 카카오톡 채널"></a></li>
+                    <li><a href="//pf.kakao.com/_xmEiFC/chat" target="_blank"><img src="images/icon/ico_PC_qna.png"
+                                alt="1:1 문의"></a></li>
+                </ul>
+            </div>
+        </div>
+        <!--모바일 화면-->
+        <div class="app">
+            <div id="wrap">
+                <!--header none-->
+                <!--content-->
+                <div id="content" class="m_wrap">
+                    <!-- mobile/skin/shop/renewal/item.form.skin.php -->
+                    <div class="search_area">
+                        <div class="item_title_wrap">
+                            <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg"
+                                    alt="뒤로가기" /></a>
+                            <h2 class="product_title">[특가할인] 대형 종이집 만들기 구름집fdfdfd</h2>
+                            <a class="search_i" href="/shop/search.php"><img src="images/icon/btn_search.png" alt="검색하기" /></a>
                         </div>
-                        <!-- 상세정보 -->
-                        <div class="tab-content tab_wrap">
-                            <div class="rm_wrap" style="height: 700px;">
-                                <!--상세내역-->
-                                <div class="img_wrap">
-                                    <div style="text-align:center;" align="center">
-                                        <p style="text-align:center;border:0px;font-size:13.3333px;line-height:1.5;font-family:'나눔고딕', NanumGothic, '돋움', Dotum, '굴림', Gulim, sans-serif, 'Meiryo UI';vertical-align:baseline;color:rgb(34,34,34);"
-                                            align="center">&nbsp;<b style="font-family:'돋움', Dotum, Helvetica, sans-serif;font-size:12px;"><span
-                                                    style="font-size:11pt;">키즈런 신청 방법이 변경되었습니다!</span></b></p>
-                                    </div>
-                                    <div style="text-align:center;" align="center">
-                                        <div align="center" style="text-align:center;"><b><br></b></div>
-                                        <div align="center" style="text-align:center;"><b><span style="font-size:11pt;">아자스쿨에서</span></b></div>
-                                        <div align="center" style="text-align:center;"><b><span style="font-size:11pt;">&nbsp;이용권 구매 하시고</span></b>
-                                        </div>
-                                        <div align="center" style="text-align:center;"><b><span style="font-size:11pt;">키즈런 앱에서 장소와 날짜 신청하시면
-                                                    됩니다!</span></b></div>
-                                        <div align="center" style="text-align:center;"><br></div>
-                                        <div align="center" style="text-align:center;"><span style="color:rgb(255,0,0);font-size:12pt;"><b>이용권 날짜는 일정
-                                                    참고용 오니&nbsp;</b></span></div>
-                                        <div align="center" style="text-align:center;"><span style="color:rgb(255,0,0);font-size:12pt;"><b>상관 없이 구매
-                                                    해주시고&nbsp;</b></span></div>
-                                        <div align="center" style="text-align:center;"><span style="color:rgb(255,0,0);font-size:12pt;"><b>실제로 참여할 날짜는
-                                                    앱에서 선택해 주세요!&nbsp;</b></span></div>
-                                        <div align="center" style="text-align:center;"><br></div>
-                                        <div align="center" style="text-align:center;"><br></div>
-                                        <div align="center" style="text-align:center;"><b><span style="color:rgb(0,117,200);font-size:12pt;">아자스쿨에서 이용권
-                                                    구매 → 키즈런 앱 설치&nbsp;</span></b></div>
-                                        <div align="center" style="text-align:center;"><b><span style="color:rgb(0,117,200);font-size:12pt;">→ 이용권 주문번호
-                                                    입력 후 예약하기&nbsp;</span></b></div>
-                                        <div align="center" style="text-align:center;"><br></div>
-                                        <div align="center" style="text-align:center;"><b>자세한 신청방법은 아래 내용 참고해주세요!</b></div>
-                                    </div>
-                                    <div style="text-align:center;" align="center"><br></div>
-                                    <div style="text-align:center;" align="center"><br style="clear:both;"><img
-                                            src="http://www.ajaschool.com/data/editor/2103/3e9a4999982b63870eebb9dc074bee82_1616721265_2452.png"
-                                            title="3e9a4999982b63870eebb9dc074bee82_1616721265_2452.png"
-                                            alt="3e9a4999982b63870eebb9dc074bee82_1616721"><br style="clear:both;"><br style="clear:both;"><br
-                                            style="clear:both;"><br></div>
+                        <div class="product_detail_wrap">
+                            <div class="product_thumb_wrap"><img src="images/sample/sample-01.jpg" alt="상품이미지"></div>
+                            <!-- 판매 기간 -->
+                            <div class="sale_time_block">
+                                <span class="time_icon"><img src="images/icon/ico_time.svg" alt="" /></span>
+                                <span class="time_txt">신청기간: 3일 7:35:33</span>
+                            </div>
+                            <!-- 상품 정보 -->
+                            <div class='product_info_wrap'>
+                                <div class="info_label_block">
+                                    <span class="item_label">서울</span>
+                                    <span class="item_label">초등</span>
                                 </div>
-                                <!-- 지도 -->
-                                <div class="detail-map">
-                                    <div id="bottomMap"
-                                        style="border:1px solid #000; width:100%; height:400px; margin:auto;"></div>
-                                    <script>
-                                        var mapContainer = document.getElementById('bottomMap'), // 지도를 표시할 div 
-                                            mapOption = {
-                                                center: new daum.maps.LatLng(37.545603009882846, 126.95252894821037), // 지도의 중심좌표
-                                                level: 3 // 지도의 확대 레벨
-                                            };
+                                <div class="product_info_block">
+                                    <h3 class="product_title">[특가할인] 대형 종이집 만들기 구름집</h3>
+                                    <p class="sub_title">직접 꾸미는 우리아이 집</p>
+                                    <div class="product_price_block">
+                                        <span class="sale_percent">50%</span>
+                                        <div>
+                                            <span class="origin_price">39000<span class="p_w">원</span></span>
+                                            <span class="main_price">20000<span class="p_w">원</span></span>
+                                        </div>
+                                    </div>
+                                    <div class="info_btn_box">
+                                        <!-- 찜하기 버튼 경우, active toggle -->
+                                        <button class="i_btn"><span class="like_ico"></span> 찜하기</button>
+                                        <button class="i_btn modal_btn" data-modal="sns_share"><img src="images/icon/btn_share.svg"
+                                                alt="찜하기"> 공유하기</button>
+                                    </div>
+                                    <!--S: sns 공유(디자인 유지)-->
+                                    <div class="layer-popup-area" style="display:none ;">
+                                        <div class="popup-content">
+                                            <div class="search-area result">
+                                                <div class="range">
+                                                    <a href="javascript:void(0)" class="ico-popup-menu">아이콘</a>
+                                                    <div class="center" style="margin-left: 10px;">
+                                                        <p>
+                                                            <!-- <?php echo stripslashes($it['it_name']); ?> -->
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <?php
+                                                    $http_host = $_SERVER['HTTP_HOST'];
+                                                    $request_uri = $_SERVER['REQUEST_URI'];
+                                                    $SNS_URL = 'http://' . $http_host . $request_uri;
+                                                ?> -->
+                                            <div class="share-popup">
+                                                <div class="share-title">SNS로 공유하세요</div>
+                                                <div class="share-ico-list">
+                                                    <ul>
+                                                        <!-- <?php echo $sns_share_links; ?> -->
+                                                        <li>
+                                                            <a class="ico-sns-big-url btn-copy" id="btnCopyClip">url</a>
+                                                            <a id="txtCopyClip" class="ico-sns-big-url" style="display: none;"
+                                                                onclick="not_copy();"></a>
+                                                        </li>
+                                                        <!--li><a class="ico-sns-big-facebook" href="#none">페이스북</a></li>
+                                                            <li><a class="ico-sns-big-story" href="#none">스토리</a></li>
+                                                            <li><a class="ico-sns-big-kakao" href="#none">카카오톡</a></li>
+                                                            <li><a class="ico-sns-big-p" href="#none">p</a></li>
+                                                            <li><a class="ico-sns-big-instagram" href="#none">인스타그램</a></li>
+                                                            <li><a class="ico-sns-big-cafe" href="#none">네이버카페</a></li>
+                                                            <li><a class="ico-sns-big-blog" href="#none">네이버블로그</a></li>
+                                                            <li><a class="ico-sns-big-url" href="#none">url</a></li-->
+                                                    </ul>
+                                                </div>
+                                                <p style="color:#fff;"><a id="clipURL" href="<?=$SNS_URL?>"
+                                                        style="display:none; border: 1px solid silver; padding: 10px;"
+                                                        onclick="return false;">
+                                                        <?=$SNS_URL?>
+                                                    </a></p>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0)" class="ico-popup-close" style="top: 75px !important;">닫기</a>
+                                        <div class="deam"></div>
+                                    </div>
+                                    <!--E: sns 공유-->
+                                    <!-- 옵션창 -->
+                                    <div id="product_option" class="modal round_modal">
+                                        <div class="modal_content">
+                                            <div class="modal_body">
+                                                <!-- <div class="input_group">
+                                                        <p class="input_title">신청기간</p>
+                                                        <p class="info_txt">2021-04-06 (화) 3일 7:35:33</p>
+                                                    </div> -->
+                                                <div class="input_group" style="display: none;">
+                                                    <p class="input_title">교육일시</p>
+                                                    <p class="info_txt">2021-04-06 (토) 18시 ~ 19시 30분</p>
+                                                </div>
+                                                <div class="input_group">
+                                                    <p class="input_title">다른 교육일</p>
+                                                    <select class="box_select" name="" id="" title="다른 교육일자">
+                                                        <option value="">다른 교육일자</option>
+                                                        <option value="">option1</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input_group">
+                                                    <p class="input_title">옵션</p>
+                                                    <select class="box_select" name="" id="" title="선택하세요">
+                                                        <option value="">선택하세요</option>
+                                                        <option value="">option1</option>
+                                                    </select>
+                                                </div>
+                                                <div class="input_flex_group">
+                                                    <p class="input_title">신청인원</p>
+                                                    <div class="spinner rounded_cnt">
+                                                        <a href="javascript:void(0)" class="btn btn-spinner-minus cnt_minus"
+                                                            alt="감 소">&nbsp;</a>
+                                                        <input type="text" name="ct_qty[E1621336994][]" value="1" id="ct_qty"
+                                                            maxlength="4">
+                                                        <a href="javascript:void(0)" class="btn btn-spinner-plus cnt_plus"
+                                                            alt="증 가">&nbsp;</a>
+                                                    </div>
+                                                </div>
+                                                <div class="opt_list_wrap">
+                                                    <div class="opt_list">
+                                                        <p class="opt_title">교육금액</p>
+                                                        <p class="opt_price">12600<span class="p_w">원</span></p>
+                                                    </div>
+                                                    <div class="opt_list">
+                                                        <p class="opt_title">보험료</p>
+                                                        <p class="opt_price">0<span class="p_w">원</span></p>
+                                                    </div>
+                                                </div>
+                                                <div class="opt_price_wrap">
+                                                    <p class="opt_title">총 교육금액</p>
+                                                    <p class="opt_total_price">20000<span class="p_w">원</span></p>
+                                                </div>
+                                            </div>
+                                            <div class="modal_footer">
+                                                <button class="modal_close solid_btn light">닫기</button>
+                                                <!-- 실제 구매 버튼 submit -->
+                                                <button class="solid_btn disable">구매하기</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 상품 상세정보 탭 -->
+                            <!-- mobile/skin/shop/renewal/item.form.info.skin.php -->
+                            <div class='product_tab_wrap'>
+                                <div class='tab-area type03 sticky_nav'>
+                                    <ul id="tab-content-menu" class="tab_nav_wrap">
+                                        <li class="menu on"><a href="javascript:void(0)">상세정보</a></li>
+                                        <li class="menu"><a href="javascript:void(0);">교육후기<span>(52)</span></a></li>
+                                        <li class="menu"><a href="javascript:void(0);">취소/환불</a></li>
+                                        <li class="menu"><a href="javascript:void(0);">교육문의</a></li>
+                                    </ul>
+                                </div>
+                                <!-- 상세정보 -->
+                                <div class="tab-content tab_wrap">
+                                    <div class="rm_wrap" style="height: 700px;">
+                                        <!--상세내역-->
+                                        <div class="img_wrap">
+                                            <div style="text-align:center;" align="center">
+                                                <p style="text-align:center;border:0px;font-size:13.3333px;line-height:1.5;font-family:'나눔고딕', NanumGothic, '돋움', Dotum, '굴림', Gulim, sans-serif, 'Meiryo UI';vertical-align:baseline;color:rgb(34,34,34);"
+                                                    align="center">&nbsp;<b
+                                                        style="font-family:'돋움', Dotum, Helvetica, sans-serif;font-size:12px;"><span
+                                                            style="font-size:11pt;">키즈런 신청 방법이 변경되었습니다!</span></b></p>
+                                            </div>
+                                            <div style="text-align:center;" align="center">
+                                                <div align="center" style="text-align:center;"><b><br></b></div>
+                                                <div align="center" style="text-align:center;"><b><span
+                                                            style="font-size:11pt;">아자스쿨에서</span></b></div>
+                                                <div align="center" style="text-align:center;"><b><span
+                                                            style="font-size:11pt;">&nbsp;이용권 구매 하시고</span></b>
+                                                </div>
+                                                <div align="center" style="text-align:center;"><b><span style="font-size:11pt;">키즈런
+                                                            앱에서 장소와 날짜 신청하시면
+                                                            됩니다!</span></b></div>
+                                                <div align="center" style="text-align:center;"><br></div>
+                                                <div align="center" style="text-align:center;"><span
+                                                        style="color:rgb(255,0,0);font-size:12pt;"><b>이용권 날짜는 일정
+                                                            참고용 오니&nbsp;</b></span></div>
+                                                <div align="center" style="text-align:center;"><span
+                                                        style="color:rgb(255,0,0);font-size:12pt;"><b>상관 없이 구매
+                                                            해주시고&nbsp;</b></span></div>
+                                                <div align="center" style="text-align:center;"><span
+                                                        style="color:rgb(255,0,0);font-size:12pt;"><b>실제로 참여할 날짜는
+                                                            앱에서 선택해 주세요!&nbsp;</b></span></div>
+                                                <div align="center" style="text-align:center;"><br></div>
+                                                <div align="center" style="text-align:center;"><br></div>
+                                                <div align="center" style="text-align:center;"><b><span
+                                                            style="color:rgb(0,117,200);font-size:12pt;">아자스쿨에서 이용권
+                                                            구매 → 키즈런 앱 설치&nbsp;</span></b></div>
+                                                <div align="center" style="text-align:center;"><b><span
+                                                            style="color:rgb(0,117,200);font-size:12pt;">→ 이용권 주문번호
+                                                            입력 후 예약하기&nbsp;</span></b></div>
+                                                <div align="center" style="text-align:center;"><br></div>
+                                                <div align="center" style="text-align:center;"><b>자세한 신청방법은 아래 내용 참고해주세요!</b></div>
+                                            </div>
+                                            <div style="text-align:center;" align="center"><br></div>
+                                            <div style="text-align:center;" align="center"><br style="clear:both;"><img
+                                                    src="http://www.ajaschool.com/data/editor/2103/3e9a4999982b63870eebb9dc074bee82_1616721265_2452.png"
+                                                    title="3e9a4999982b63870eebb9dc074bee82_1616721265_2452.png"
+                                                    alt="3e9a4999982b63870eebb9dc074bee82_1616721"><br style="clear:both;"><br
+                                                    style="clear:both;"><br style="clear:both;"><br></div>
+                                        </div>
+                                        <!-- 지도 -->
+                                        <div class="detail-map">
+                                            <div id="bottomMap"
+                                                style="border:1px solid #000; width:100%; height:400px; margin:auto;"></div>
+                                            <script>
+                                                var mapContainer = document.getElementById('bottomMap'), // 지도를 표시할 div 
+                                                    mapOption = {
+                                                        center: new daum.maps.LatLng(37.545603009882846, 126.95252894821037), // 지도의 중심좌표
+                                                        level: 3 // 지도의 확대 레벨
+                                                    };
 
-                                        // 지도를 생성합니다    
-                                        var map = new daum.maps.Map(mapContainer, mapOption);
-                                        var coords = new daum.maps.LatLng(37.545603009882846, 126.95252894821037);
-
-                                        // 결과값으로 받은 위치를 마커로 표시합니다
-                                        var marker = new daum.maps.Marker({
-                                            map: map,
-                                            position: coords
-                                        });
-
-
-                                        // 주소-좌표 변환 객체를 생성합니다
-                                        geocoder = new daum.maps.services.Geocoder();
-
-                                        // 주소로 좌표를 검색합니다
-                                        geocoder.addressSearch('<?=$addr_url?>', function (result, status) {
-
-                                            // 정상적으로 검색이 완료됐으면 
-                                            if (status === daum.maps.services.Status.OK) {
-
-                                                var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+                                                // 지도를 생성합니다    
+                                                var map = new daum.maps.Map(mapContainer, mapOption);
+                                                var coords = new daum.maps.LatLng(37.545603009882846, 126.95252894821037);
 
                                                 // 결과값으로 받은 위치를 마커로 표시합니다
                                                 var marker = new daum.maps.Marker({
@@ -260,517 +311,565 @@
                                                     position: coords
                                                 });
 
-                                                // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-                                                map.setCenter(coords);
-                                            }
-                                        });
-                                    </script>
-                                </div>
-                            </div>
-                            <div class="rm_btn_wrap">
-                                <button class="more_btn outline_btn lg" onclick="readMore()"><span
-                                        class="toggle_txt">상세정보 더보기</span><span class="arrow"><img
-                                            src="images/icon/btn_more_main.png" alt=""></span></button>
-                            </div>
-                        </div>
-                        <!-- 교육후기 (스타일 수정)-->
-                        <!--이미지 확대 라이브러리 (lightbox)-->
-                        <link rel="stylesheet" href="plugin/lightbox/css/lightbox.min.css">
-                        <script src="plugin/lightbox/js/lightbox.min.js"></script>
-                        <!--이미지 확대 라이브러리 (lightbox)-->
-                        <div class="tab-content tab_inner_box" style="display: none;">
-                            <!-- 후기 총점 -->
-                            <div class="content-box-white item_review_box">
-                                <div class="flex_block item_title_block">
-                                    <p class="item_title">후기 <span class="num">5</span></p>
-                                    <div class="flex_block item_rating">
-                                        <div class="star_rating">
-                                            <span class="rating_active" style="width:86%">별점</span>
-                                        </div>
-                                        <span class="total_star_num">86</span>
-                                    </div>
-                                </div>
-                                <div>
-                                    <!-- <input type="text" class="outline_btn" name="" readonly="" placeholder="후기쓰기" onclick="shop_reply()"> -->
-                                    <a href="javascript:void(0)" onclick="shop_reply()" class="outline_btn lg">후기
-                                        작성하기</a>
-                                    <p class="item_review_info">후기를 작성해주시면 <span class="orange">500point 적립!</span></p>
-                                </div>
-                            </div>
-                            <!--교육후기 목록-->
-                            <div class="content-box-white" id="content-box-white">
-                                <div class="edu-detail-reply">
-                                    <div class="reply-list item_review_list">
-                                        <ul>
-                                            <li class="review_block">
-                                                <div class="flex_block">
-                                                    <div class="flex_block item_rating">
-                                                        <div class="star_rating">
-                                                            <span class="rating_active" style="width:86%">별점</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item_review_author"><span class="name">홍*동</span><span
-                                                            class="review_date">2021.04.19.</span></div>
-                                                </div>
-                                                <!--<button class="ico-reply-toggle">열기</button>-->
-                                                <div class="edu-reply list-tr">
-                                                    <p class="reply review_title"><a href="javascript:void(0)">초등학생
-                                                            프로그램에 미취학아동들이 많았네요.</a></p>
-                                                </div>
-                                                <div class="edu-reply content-tr">
-                                                    <div class="edu-reply content-tr">
-                                                        <p class="reply review_desc"><a href="javascript:void(0)">4학년
-                                                                아이가 미취학 아이들과 한조로 편성되어 있었네요. 다른 조에는 그나마 초등학생들이 있던거 같던데
-                                                                사전에 인적사항
-                                                                받으셨으면 고려하셨어야 한다고 생각합니다. 그리고
-                                                                너프건으로 예매를 했는데 다른 프로그램이 진행되었습니다.
-                                                                프로그램 운영에 문제가 있다고 봅니다.</a></p>
-                                                        <!--img-area-->        
-                                                        <div class="img-area review_img">
-                                                            <ul>
-                                                                <li>
-                                                                    <!--이미지 클릭 시 확대-->
-                                                                    <a href="images/sample/event-detail-sample.png"
-                                                                       data-lightbox="review_img">
-                                                                       <!--더보기 아이콘-->
-                                                                       <span class="review_more_icon">+</span>
-                                                                        <img
-                                                                            src="images/sample/event-detail-sample.png"></a>
-                                                                </li>
-                                                                <li>
-                                                                    <!--이미지 클릭 시 확대-->
-                                                                    <a href="images/sample/event-sample-01.jpg" data-lightbox="review_img">
-                                                                        <!--더보기 아이콘-->
-                                                                        <span class="review_more_icon">+</span>
-                                                                        <img src="images/sample/event-sample-01.jpg"></a>
-                                                                </li>
-                                                                <li></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div class="comment_btn">
-                                                        <a href="#" class="capsule_btn sm gray">수정</a>
-                                                        <a href="#" class="capsule_btn sm secondary">삭제</a>
-                                                    </div>
-                                            </li>
-                                            <li class="review_block">
-                                                <div class="flex_block">
-                                                    <div class="flex_block item_rating">
-                                                        <div class="star_rating">
-                                                            <span class="rating_active" style="width:86%">별점</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="item_review_author"><span class="name">홍*동</span><span class="review_date">2021.04.19.</span></div>
-                                                </div>
-                                                <!--<button class="ico-reply-toggle">열기</button>-->
-                                                <div class="edu-reply list-tr">
-                                                    <p class="reply review_title"><a href="javascript:void(0)">초등학생
-                                                            프로그램에 미취학아동들이 많았네요.</a></p>
-                                                </div>
-                                                <div class="edu-reply content-tr">
-                                                    <div class="edu-reply content-tr">
-                                                        <p class="reply review_desc"><a href="javascript:void(0)">4학년
-                                                                아이가 미취학 아이들과 한조로 편성되어 있었네요. 다른 조에는 그나마 초등학생들이 있던거 같던데
-                                                                사전에 인적사항
-                                                                받으셨으면 고려하셨어야 한다고 생각합니다. 그리고
-                                                                너프건으로 예매를 했는데 다른 프로그램이 진행되었습니다.
-                                                                프로그램 운영에 문제가 있다고 봅니다.</a></p>
-                                                        <!--img-area-->
-                                                        <div class="img-area review_img">
-                                                            <ul>
-                                                                <li>
-                                                                    <a href="images/sample/sample-04.png" data-lightbox="review_img">
-                                                                        <span class="review_more_icon">+</span>
-                                                                        <img src="images/sample/sample-04.png">
-                                                                    </a>
-                                                                </li>
-                                                                <li></li>
-                                                                <li></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                            </li>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 취소/환불 (스타일 수정)-->
-                        <div class="tab-content tab_inner_box" style="display: none;">
-                            <div class="content-box-white">
-                                <div class="item_title_block">
-                                    <p class="item_title">취소환불정책</p>
-                                </div>
-                                <!--취소환불 내용-->
-                                <div class="txt_editor_wrap">
-                                    <p style="font-size:14.6667px;line-height:1.8;"><span style="font-size:11pt;">5일 전 취소 :
-                                            전액 환불</span></p>
-                                    <p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;"><span
-                                                style="line-height:1.8;font-size:11pt;">4일 전 취소 : 90% 환불</span><br><span
-                                                style="line-height:1.8;font-size:11pt;">3일 전 취소 : 70% 환불</span></span></p>
-                                    <p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;">2일 전 취소 :
-                                            70% 환불<br><span style="line-height:1.8;font-size:11pt;"></span><span style="line-height:1.8;font-size:11pt;">1일
-                                                전 취소 : 환불 불가</span>&nbsp;</span>
-                                    </p>
-                                    <p style="font-size:14.6667px;line-height:1.8;"><span style="line-height:1.8;font-size:11pt;"></span></p>
-                                    <p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;"><span
-                                                style="line-height:1.8;font-size:11pt;">&nbsp; 당일 취소 : 환불 불가</span></span>
-                                    </p>
-                                    <p><span style="font-size:14.6667px;">&nbsp;</span></p>
-                                    <p style="line-height:2;">
-                                        <font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">[취소수수료 계산 기준]</span>
-                                        </font>
-                                    </p>
-                                    <p style="line-height:2;">
-                                        <font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">· 취소수수료는 신청금액을 기준으로
-                                                계산됩니다.</span></font>
-                                    </p>
-                                    <p style="line-height:2;">
-                                        <font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">· 일정변경을 위한 결제 취소 시에도
-                                                취소수수료가 부과됩니다.</span></font>
-                                    </p>
-                                    <p style="line-height:2;"><span style="font-family:'돋움', dotum;font-size:14.6667px;">·</span><span
-                                            style="font-family:'돋움', dotum;font-size:14.6667px;">&nbsp;</span><span style="font-size:14.6667px;">구매당일 취소시
-                                            전액환불됩니다.</span>
-                                        <font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font>
-                                    </p>
-                                    <p style="line-height:1.8;">
-                                        <font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font>
-                                    </p>
-                                    <p style="line-height:2;">
-                                        <font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">· 전체취소 시</span></font>
-                                    </p>
-                                    <p style="line-height:2;">
-                                        <font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">쿠폰 사용금액 → 결제금액 → 포인트
-                                                사용금액 순으로 차감 처리됩니다.</span></font>
-                                    </p>
-                                    <p style="line-height:1.8;">
-                                        <font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font>
-                                    </p>
-                                    <p style="line-height:2;"><span style="font-family:'돋움', dotum;font-size:14.6667px;">·
-                                            부분취소 시</span></p>
-                                    <p style="line-height:2;">
-                                        <font face="dotum, sans-serif"><span style="font-size:14.6667px;font-family:'돋움', dotum;">결제금액 → 쿠폰 사용금액 → 포인트
-                                                사용금액 순으로 차감 처리 됩니다.</span></font>
-                                    </p>
-                                    <p><span style="line-height:1.8;font-size:11pt;">
-                                            &#8203;</span>&nbsp;</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- 교육문의 (스타일 수정)-->
-                        <div class="tab-content tab_inner_box" style="display: none;">
-                            <div class="content-box-white item_review_box">
-                                <div class="item_title_block">
-                                    <p class="item_title">교육문의</p>
-                                </div>
-                                <div style="margin: 0.5rem 0 1rem;">
-                                    <!-- <input type="text" class="txt-reply" name="" readonly="" placeholder="문의쓰기" onclick="shop_itemqa_reply()"> -->
-                                    <!-- <a href="javascript:void(0)" onclick="shop_itemqa_reply()" class="outline_btn lg">문의하기</a> -->
-                                    <!--퍼블리싱용 버튼-->
-                                    <a href="itemqaform.html" class="outline_btn lg">문의하기</a>
-                                </div>
-                            </div>
-                            <div class="content-box-white">
-                                <div class="edu-detail-reply">
-                                    <div class="reply-list item_review_list">
-                                        <ul>
-                                            <li class="review_block">
-                                                <div class="flex_block" style="margin-bottom: 0.5rem;">
-                                                    <div class="item_review_author"><span class="name">홍*동</span><span class="review_date">2021.04.19.</span></div>
-                                                    <span class="inquiry_state_label">[ 답변전 ]</span>
-                                                </div>
-                                                <div class="edu-reply list-tr">
-                                                    <p class="reply inquiry_title">
-                                                        <img src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif" alt="비밀글" border="0">
-                                                        키즈런 장소 <span class="new_label">N</span>
-                                                    </p>
-                                                </div>
-                                                <div class="edu-reply content-tr">
-                                                    <p class="reply review_desc">비밀글로 보호된 문의입니다.</p>
-                                                </div>
-                                                <div class="comment_btn">
-                                                    <a href="#" class="capsule_btn sm secondary">삭제</a>
-                                                </div>
-                                                <!--관리자 답변-->
-                                                <div class="user-comment-adm inquir_answer_box">
-                                                    <p class="answer_name">관리자</p>
-                                                    <div class="answer_desc">
-                                                        <p>못하다 심장의 뜨거운지라, 이상은 이 듣는다. 고동을 없으면, 목숨이 청춘은 커다란 열락의 낙원을 속잎나고, 있는가? 청춘의 인간의 노래하며 있음으로써 꽃이 약동하다. 이상 무엇을 유소년에게서 이상 보배를 원질이
-                                                        때문이다. 보는 찾아다녀도, 못하다 창공에 굳세게 하였으며, 천하를 황금시대다. 굳세게 목숨을 아름답고 용감하고 끓는 길지 과실이 가는 쓸쓸하랴? 바이며, 안고, 별과 없는 하는 날카로우나 소금이라 눈에 힘있다.
-                                                        불어 못할 굳세게 우는 생생하며, 들어 때문이다. 설산에서 무엇이 용기가 듣기만 그것은 예수는 피에 피다. 같은 반짝이는 갑 역사를 그들의 부패를 천하를 실현에 피는 것이다. 우리 그들을 되려니와, 있는가?</p>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="review_block">
-                                                <div class="flex_block" style="margin-bottom: 0.5rem;">
-                                                    <div class="item_review_author"><span class="name">홍*동</span><span class="review_date">2021.04.19.</span></div>
-                                                    <span class="inquiry_state_label complete">[ 답변완료 ]</span>
-                                                </div>
-                                                <div class="edu-reply list-tr">
-                                                    <p class="reply inquiry_title">
-                                                        <img src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif" alt="비밀글" border="0">
-                                                         키즈런 장소 </p>
-                                                </div>
-                                                <div class="edu-reply content-tr">
-                                                    <p class="reply review_desc">비밀글로 보호된 문의입니다.</p>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
 
-                            </div>
-                        </div>
-                        <!--tab content end-->
-                        <!-- 추가 정보 -->
-                        <div class="content_wrap border_block">
-                            <div class="sub_info_wrap">
-                                <!--디자인 통일-->
-                                <div class=" edu-noti">
-                                    <p class="title">★ 교육정보</p>
-                                    <div class="detail-txt type01">
-                                        <ul>
-                                            <li><span class="title">강사명</span><span class="cont">역사체험 전문강사</span></li>
-                                            <li><span class="title">다음교육</span><span class="cont">
-                                                    2021-06-05 (토) 19시 ~ 20시 30분 </span></li>
-                                            <li><span class="title">교육대상</span><span class="cont">전연령</span></li>
-                                            <li><span class="title">교육장소</span><span class="cont">서울특별시 중구 정동 5-1 덕수궁 대한문</span></li>
-                                            <li><span class="title">최소인원</span><span class="cont">10명
-                                                    <!--  (최소인원보다 신청인원이 적을경우 교육은 자동 취소됩니다) -->
-                                                </span></li>
-                                            <li><span class="title">특이사항</span><span class="cont"><br>체험시간(11월부터) 19시~20시30분<br>투어 10분전까지 집결장소에 꼭
-                                                    도착해주십시오<br>초등학생 단독참여 불가, 1인당 1매구매<br>입장권 불포함</span></li>
-                                            <li><span class="title">꼭 읽어보세요</span><span class="cont">최소인원보다 신청인원이 적을 경우 교육은 자동 취소됩니다.</span></li>
+                                                // 주소-좌표 변환 객체를 생성합니다
+                                                geocoder = new daum.maps.services.Geocoder();
+
+                                                // 주소로 좌표를 검색합니다
+                                                geocoder.addressSearch('<?=$addr_url?>', function (result, status) {
+
+                                                    // 정상적으로 검색이 완료됐으면 
+                                                    if (status === daum.maps.services.Status.OK) {
+
+                                                        var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+
+                                                        // 결과값으로 받은 위치를 마커로 표시합니다
+                                                        var marker = new daum.maps.Marker({
+                                                            map: map,
+                                                            position: coords
+                                                        });
+
+                                                        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                                                        map.setCenter(coords);
+                                                    }
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="rm_btn_wrap">
+                                        <button class="more_btn outline_btn lg" onclick="readMore()"><span class="toggle_txt">상세정보
+                                                더보기</span><span class="arrow"><img src="images/icon/btn_more_main.png"
+                                                    alt=""></span></button>
+                                    </div>
+                                </div>
+                                <!-- 교육후기 (스타일 수정)-->
+                                <!--이미지 확대 라이브러리 (lightbox)-->
+                                <link rel="stylesheet" href="plugin/lightbox/css/lightbox.min.css">
+                                <script src="plugin/lightbox/js/lightbox.min.js"></script>
+                                <!--이미지 확대 라이브러리 (lightbox)-->
+                                <div class="tab-content tab_inner_box" style="display: none;">
+                                    <!-- 후기 총점 -->
+                                    <div class="content-box-white item_review_box">
+                                        <div class="flex_block item_title_block">
+                                            <p class="item_title">후기 <span class="num">5</span></p>
+                                            <div class="flex_block item_rating">
+                                                <div class="star_rating">
+                                                    <span class="rating_active" style="width:86%">별점</span>
+                                                </div>
+                                                <span class="total_star_num">86</span>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <!-- <input type="text" class="outline_btn" name="" readonly="" placeholder="후기쓰기" onclick="shop_reply()"> -->
+                                            <a href="javascript:void(0)" onclick="shop_reply()" class="outline_btn lg">후기
+                                                작성하기</a>
+                                            <p class="item_review_info">후기를 작성해주시면 <span class="orange">500point 적립!</span></p>
+                                        </div>
+                                    </div>
+                                    <!--교육후기 목록-->
+                                    <div class="content-box-white" id="content-box-white">
+                                        <div class="edu-detail-reply">
+                                            <div class="reply-list item_review_list">
+                                                <ul>
+                                                    <li class="review_block">
+                                                        <div class="flex_block">
+                                                            <div class="flex_block item_rating">
+                                                                <div class="star_rating">
+                                                                    <span class="rating_active" style="width:86%">별점</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item_review_author"><span class="name">홍*동</span><span
+                                                                    class="review_date">2021.04.19.</span></div>
+                                                        </div>
+                                                        <!--<button class="ico-reply-toggle">열기</button>-->
+                                                        <div class="edu-reply list-tr">
+                                                            <p class="reply review_title"><a href="javascript:void(0)">초등학생
+                                                                    프로그램에 미취학아동들이 많았네요.</a></p>
+                                                        </div>
+                                                        <div class="edu-reply content-tr">
+                                                            <div class="edu-reply content-tr">
+                                                                <p class="reply review_desc"><a href="javascript:void(0)">4학년
+                                                                        아이가 미취학 아이들과 한조로 편성되어 있었네요. 다른 조에는 그나마 초등학생들이 있던거 같던데
+                                                                        사전에 인적사항
+                                                                        받으셨으면 고려하셨어야 한다고 생각합니다. 그리고
+                                                                        너프건으로 예매를 했는데 다른 프로그램이 진행되었습니다.
+                                                                        프로그램 운영에 문제가 있다고 봅니다.</a></p>
+                                                                <!--img-area-->
+                                                                <div class="img-area review_img">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <!--이미지 클릭 시 확대-->
+                                                                            <a href="images/sample/event-detail-sample.png"
+                                                                                data-lightbox="review_img">
+                                                                                <!--더보기 아이콘-->
+                                                                                <span class="review_more_icon">+</span>
+                                                                                <img src="images/sample/event-detail-sample.png">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <!--이미지 클릭 시 확대-->
+                                                                            <a href="images/sample/event-sample-01.jpg"
+                                                                                data-lightbox="review_img">
+                                                                                <!--더보기 아이콘-->
+                                                                                <span class="review_more_icon">+</span>
+                                                                                <img src="images/sample/event-sample-01.jpg">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            <div class="comment_btn">
+                                                                <a href="#" class="capsule_btn sm gray">수정</a>
+                                                                <a href="#" class="capsule_btn sm secondary">삭제</a>
+                                                            </div>
+                                                    </li>
+                                                    <li class="review_block">
+                                                        <div class="flex_block">
+                                                            <div class="flex_block item_rating">
+                                                                <div class="star_rating">
+                                                                    <span class="rating_active" style="width:86%">별점</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="item_review_author"><span class="name">홍*동</span><span
+                                                                    class="review_date">2021.04.19.</span></div>
+                                                        </div>
+                                                        <!--<button class="ico-reply-toggle">열기</button>-->
+                                                        <div class="edu-reply list-tr">
+                                                            <p class="reply review_title"><a href="javascript:void(0)">초등학생
+                                                                    프로그램에 미취학아동들이 많았네요.</a></p>
+                                                        </div>
+                                                        <div class="edu-reply content-tr">
+                                                            <div class="edu-reply content-tr">
+                                                                <p class="reply review_desc"><a href="javascript:void(0)">4학년
+                                                                        아이가 미취학 아이들과 한조로 편성되어 있었네요. 다른 조에는 그나마 초등학생들이 있던거 같던데
+                                                                        사전에 인적사항
+                                                                        받으셨으면 고려하셨어야 한다고 생각합니다. 그리고
+                                                                        너프건으로 예매를 했는데 다른 프로그램이 진행되었습니다.
+                                                                        프로그램 운영에 문제가 있다고 봅니다.</a></p>
+                                                                <!--img-area-->
+                                                                <div class="img-area review_img">
+                                                                    <ul>
+                                                                        <li>
+                                                                            <a href="images/sample/sample-04.png"
+                                                                                data-lightbox="review_img">
+                                                                                <span class="review_more_icon">+</span>
+                                                                                <img src="images/sample/sample-04.png">
+                                                                            </a>
+                                                                        </li>
+                                                                        <li></li>
+                                                                        <li></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                    </li>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 취소/환불 (스타일 수정)-->
+                                <div class="tab-content tab_inner_box" style="display: none;">
+                                    <div class="content-box-white">
+                                        <div class="item_title_block">
+                                            <p class="item_title">취소환불정책</p>
+                                        </div>
+                                        <!--취소환불 내용-->
+                                        <div class="txt_editor_wrap">
+                                            <p style="font-size:14.6667px;line-height:1.8;"><span style="font-size:11pt;">5일 전 취소 :
+                                                    전액 환불</span></p>
+                                            <p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;"><span
+                                                        style="line-height:1.8;font-size:11pt;">4일 전 취소 : 90% 환불</span><br><span
+                                                        style="line-height:1.8;font-size:11pt;">3일 전 취소 : 70% 환불</span></span></p>
+                                            <p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;">2일 전 취소 :
+                                                    70% 환불<br><span style="line-height:1.8;font-size:11pt;"></span><span
+                                                        style="line-height:1.8;font-size:11pt;">1일
+                                                        전 취소 : 환불 불가</span>&nbsp;</span>
+                                            </p>
+                                            <p style="font-size:14.6667px;line-height:1.8;"><span
+                                                    style="line-height:1.8;font-size:11pt;"></span></p>
+                                            <p style="font-size:14.6667px;"><span style="line-height:1.8;font-size:11pt;"><span
+                                                        style="line-height:1.8;font-size:11pt;">&nbsp; 당일 취소 : 환불 불가</span></span>
+                                            </p>
+                                            <p><span style="font-size:14.6667px;">&nbsp;</span></p>
+                                            <p style="line-height:2;">
+                                                <font face="dotum, sans-serif"><span
+                                                        style="font-size:14.6667px;font-family:'돋움', dotum;">[취소수수료 계산 기준]</span>
+                                                </font>
+                                            </p>
+                                            <p style="line-height:2;">
+                                                <font face="dotum, sans-serif"><span
+                                                        style="font-size:14.6667px;font-family:'돋움', dotum;">· 취소수수료는 신청금액을 기준으로
+                                                        계산됩니다.</span></font>
+                                            </p>
+                                            <p style="line-height:2;">
+                                                <font face="dotum, sans-serif"><span
+                                                        style="font-size:14.6667px;font-family:'돋움', dotum;">· 일정변경을 위한 결제 취소 시에도
+                                                        취소수수료가 부과됩니다.</span></font>
+                                            </p>
+                                            <p style="line-height:2;"><span
+                                                    style="font-family:'돋움', dotum;font-size:14.6667px;">·</span><span
+                                                    style="font-family:'돋움', dotum;font-size:14.6667px;">&nbsp;</span><span
+                                                    style="font-size:14.6667px;">구매당일 취소시
+                                                    전액환불됩니다.</span>
+                                                <font face="dotum, sans-serif"><span
+                                                        style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font>
+                                            </p>
+                                            <p style="line-height:1.8;">
+                                                <font face="dotum, sans-serif"><span
+                                                        style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font>
+                                            </p>
+                                            <p style="line-height:2;">
+                                                <font face="dotum, sans-serif"><span
+                                                        style="font-size:14.6667px;font-family:'돋움', dotum;">· 전체취소 시</span></font>
+                                            </p>
+                                            <p style="line-height:2;">
+                                                <font face="dotum, sans-serif"><span
+                                                        style="font-size:14.6667px;font-family:'돋움', dotum;">쿠폰 사용금액 → 결제금액 → 포인트
+                                                        사용금액 순으로 차감 처리됩니다.</span></font>
+                                            </p>
+                                            <p style="line-height:1.8;">
+                                                <font face="dotum, sans-serif"><span
+                                                        style="font-size:14.6667px;font-family:'돋움', dotum;"><br></span></font>
+                                            </p>
+                                            <p style="line-height:2;"><span style="font-family:'돋움', dotum;font-size:14.6667px;">·
+                                                    부분취소 시</span></p>
+                                            <p style="line-height:2;">
+                                                <font face="dotum, sans-serif"><span
+                                                        style="font-size:14.6667px;font-family:'돋움', dotum;">결제금액 → 쿠폰 사용금액 → 포인트
+                                                        사용금액 순으로 차감 처리 됩니다.</span></font>
+                                            </p>
+                                            <p><span style="line-height:1.8;font-size:11pt;">
+                                                    &#8203;</span>&nbsp;</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 교육문의 (스타일 수정)-->
+                                <div class="tab-content tab_inner_box" style="display: none;">
+                                    <div class="content-box-white item_review_box">
+                                        <div class="item_title_block">
+                                            <p class="item_title">교육문의</p>
+                                        </div>
+                                        <div style="margin: 0.5rem 0 1rem;">
+                                            <!-- <input type="text" class="txt-reply" name="" readonly="" placeholder="문의쓰기" onclick="shop_itemqa_reply()"> -->
+                                            <!-- <a href="javascript:void(0)" onclick="shop_itemqa_reply()" class="outline_btn lg">문의하기</a> -->
+                                            <!--퍼블리싱용 버튼-->
+                                            <a href="itemqaform.html" class="outline_btn lg">문의하기</a>
+                                        </div>
+                                    </div>
+                                    <div class="content-box-white">
+                                        <div class="edu-detail-reply">
+                                            <div class="reply-list item_review_list">
+                                                <ul>
+                                                    <li class="review_block">
+                                                        <div class="flex_block" style="margin-bottom: 0.5rem;">
+                                                            <div class="item_review_author"><span class="name">홍*동</span><span
+                                                                    class="review_date">2021.04.19.</span></div>
+                                                            <span class="inquiry_state_label">[ 답변전 ]</span>
+                                                        </div>
+                                                        <div class="edu-reply list-tr">
+                                                            <p class="reply inquiry_title">
+                                                                <img src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif"
+                                                                    alt="비밀글" border="0">
+                                                                키즈런 장소 <span class="new_label">N</span>
+                                                            </p>
+                                                        </div>
+                                                        <div class="edu-reply content-tr">
+                                                            <p class="reply review_desc">비밀글로 보호된 문의입니다.</p>
+                                                        </div>
+                                                        <div class="comment_btn">
+                                                            <a href="#" class="capsule_btn sm secondary">삭제</a>
+                                                        </div>
+                                                        <!--관리자 답변-->
+                                                        <div class="user-comment-adm inquir_answer_box">
+                                                            <p class="answer_name">관리자</p>
+                                                            <div class="answer_desc">
+                                                                <p>못하다 심장의 뜨거운지라, 이상은 이 듣는다. 고동을 없으면, 목숨이 청춘은 커다란 열락의 낙원을 속잎나고, 있는가?
+                                                                    청춘의 인간의 노래하며 있음으로써 꽃이 약동하다. 이상 무엇을 유소년에게서 이상 보배를 원질이
+                                                                    때문이다. 보는 찾아다녀도, 못하다 창공에 굳세게 하였으며, 천하를 황금시대다. 굳세게 목숨을 아름답고 용감하고
+                                                                    끓는 길지 과실이 가는 쓸쓸하랴? 바이며, 안고, 별과 없는 하는 날카로우나 소금이라 눈에 힘있다.
+                                                                    불어 못할 굳세게 우는 생생하며, 들어 때문이다. 설산에서 무엇이 용기가 듣기만 그것은 예수는 피에 피다. 같은
+                                                                    반짝이는 갑 역사를 그들의 부패를 천하를 실현에 피는 것이다. 우리 그들을 되려니와, 있는가?</p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li class="review_block">
+                                                        <div class="flex_block" style="margin-bottom: 0.5rem;">
+                                                            <div class="item_review_author"><span class="name">홍*동</span><span
+                                                                    class="review_date">2021.04.19.</span></div>
+                                                            <span class="inquiry_state_label complete">[ 답변완료 ]</span>
+                                                        </div>
+                                                        <div class="edu-reply list-tr">
+                                                            <p class="reply inquiry_title">
+                                                                <img src="http://www.ajaschool.com/skin/shop/renewal/img/icon_secret.gif"
+                                                                    alt="비밀글" border="0">
+                                                                키즈런 장소
+                                                            </p>
+                                                        </div>
+                                                        <div class="edu-reply content-tr">
+                                                            <p class="reply review_desc">비밀글로 보호된 문의입니다.</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+            
+                                    </div>
+                                </div>
+                                <!--tab content end-->
+                                <!-- 추가 정보 -->
+                                <div class="content_wrap border_block">
+                                    <div class="sub_info_wrap">
+                                        <!--디자인 통일-->
+                                        <div class=" edu-noti">
+                                            <p class="title">★ 교육정보</p>
+                                            <div class="detail-txt type01">
+                                                <ul>
+                                                    <li><span class="title">강사명</span><span class="cont">역사체험 전문강사</span></li>
+                                                    <li><span class="title">다음교육</span><span class="cont">
+                                                            2021-06-05 (토) 19시 ~ 20시 30분 </span></li>
+                                                    <li><span class="title">교육대상</span><span class="cont">전연령</span></li>
+                                                    <li><span class="title">교육장소</span><span class="cont">서울특별시 중구 정동 5-1 덕수궁
+                                                            대한문</span></li>
+                                                    <li><span class="title">최소인원</span><span class="cont">10명
+                                                            <!--  (최소인원보다 신청인원이 적을경우 교육은 자동 취소됩니다) -->
+                                                        </span></li>
+                                                    <li><span class="title">특이사항</span><span class="cont"><br>체험시간(11월부터)
+                                                            19시~20시30분<br>투어 10분전까지 집결장소에 꼭
+                                                            도착해주십시오<br>초등학생 단독참여 불가, 1인당 1매구매<br>입장권 불포함</span></li>
+                                                    <li><span class="title">꼭 읽어보세요</span><span class="cont">최소인원보다 신청인원이 적을 경우 교육은
+                                                            자동 취소됩니다.</span></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--추천 상품-->
+                                <div class="reco_wrap border_block">
+                                    <div class="reco_title_block">
+                                        <p class="title">추천 교육</p>
+                                    </div>
+                                    <div class="reco_item">
+                                        <ul class="list_item_wrap square_item_list">
+                                            <li><a href="#">
+                                                    <div class="item_thumb">
+                                                        <img src="images/sample/sample-02.png" alt="">
+                                                    </div>
+                                                    <div class="item_info">
+                                                        <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                                                        <div class="item_price right_align">
+                                                            <!--원가-->
+                                                            <p class='origin_price'>26800</p>
+                                                            <!--할인율-->
+                                                            <span class='sale_percent'>50%</span>
+                                                            <!--판매가-->
+                                                            <span class='main_price'>12900</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                            <li><a href="#">
+                                                    <div class="item_thumb">
+                                                        <img src="images/sample/sample-02.png" alt="">
+                                                    </div>
+                                                    <div class="item_info">
+                                                        <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                                                        <div class="item_price right_align">
+                                                            <!--원가-->
+                                                            <p class='origin_price'>26800</p>
+                                                            <!--할인율-->
+                                                            <span class='sale_percent'>50%</span>
+                                                            <!--판매가-->
+                                                            <span class='main_price'>12900</span>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <!--추천 상품-->
-                        <div class="reco_wrap border_block">
-                            <div class="reco_title_block">
-                                <p class="title">추천 교육</p>
-                            </div>
-                            <div class="reco_item">
-                                <ul class="list_item_wrap square_item_list">
-                                    <li><a href="#">
-                                            <div class="item_thumb">
-                                                <img src="images/sample/sample-02.png" alt="">
-                                            </div>
-                                            <div class="item_info">
-                                                <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
-                                                <div class="item_price right_align">
-                                                    <!--원가-->
-                                                    <p class='origin_price'>26800</p>
-                                                    <!--할인율-->
-                                                    <span class='sale_percent'>50%</span>
-                                                    <!--판매가-->
-                                                    <span class='main_price'>12900</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li><a href="#">
-                                            <div class="item_thumb">
-                                                <img src="images/sample/sample-02.png" alt="">
-                                            </div>
-                                            <div class="item_info">
-                                                <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
-                                                <div class="item_price right_align">
-                                                    <!--원가-->
-                                                    <p class='origin_price'>26800</p>
-                                                    <!--할인율-->
-                                                    <span class='sale_percent'>50%</span>
-                                                    <!--판매가-->
-                                                    <span class='main_price'>12900</span>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
+                            <!-- 옵션창 open 버튼 -->
+                            <div class="fixed_btn_wrapper">
+                                <!--교육 마감시 .btn_end 추가-->
+                                <button class="lg_btn modal_btn" data-modal="product_option">교구 구매하기</button>
                             </div>
                         </div>
-                    </div>
-                    <!-- 옵션창 open 버튼 -->
-                    <div class="fixed_btn_wrapper">
-                        <!--교육 마감시 .btn_end 추가-->
-                        <button class="lg_btn modal_btn" data-modal="product_option">교구 구매하기</button>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!--E:content-->
-        <!--footer (tail.php) -->
-        <div class='footer' id="footer">
-            <footer>
-                <!--사업자 정보-->
-                <div class="company_info_wrap">
-                    <div class="info_header">
-                        <h6 class="info_title">아자스쿨(주) 사업자 정보 <span class="slide_arrow"><img
-                                    src='images/icon/btn_more_gray.png' alt="화살표"></span></h6>
-                    </div>
-                    <!--slide info-->
-                    <div class="info_body">
-                        <ul class="info_list">
-                            <li>서울특별시 마포구 마포대로 122 프론트원(FRONT1) 15F</li>
-                            <li>대표이사 : 황선하 / 사업자등록번호 : 548-87-00240</li>
-                            <li>통신판매업신고 : 2018-서울서초-01708 호</li>
-                            <li><a href="#" data-modal="business_information" class="modal_btn">사업자정보 ▶</a></li>
-                        </ul>
-                        <div class="call_info_box">
-                            <ul class="info_list">
-                                <li><span class="f_bold">전화문의 가능시간</span></li>
-                                <li><span class="f_bold">고객센터 </span> <a href="tel:02-866-7977">02-866-7977</a> / <a
-                                        href="mailto:help@ajaschool.co.kr">help@ajaschool.co.kr</a></li>
-                                <li><span class="f_bold">평일 :</span> 10:00 ~ 18:30 (점심시간: 12:30 ~ 13:30)</li>
+                <!--E:content-->
+                <!--footer (tail.php) -->
+                <div class='footer' id="footer">
+                    <footer>
+                        <!--사업자 정보-->
+                        <div class="company_info_wrap">
+                            <div class="info_header">
+                                <h6 class="info_title">아자스쿨(주) 사업자 정보 <span class="slide_arrow"><img
+                                            src='images/icon/btn_more_gray.png' alt="화살표"></span></h6>
+                            </div>
+                            <!--slide info-->
+                            <div class="info_body">
+                                <ul class="info_list">
+                                    <li>서울특별시 마포구 마포대로 122 프론트원(FRONT1) 15F</li>
+                                    <li>대표이사 : 황선하 / 사업자등록번호 : 548-87-00240</li>
+                                    <li>통신판매업신고 : 2018-서울서초-01708 호</li>
+                                    <li><a href="#" data-modal="business_information" class="modal_btn">사업자정보 ▶</a></li>
+                                </ul>
+                                <div class="call_info_box">
+                                    <ul class="info_list">
+                                        <li><span class="f_bold">전화문의 가능시간</span></li>
+                                        <li><span class="f_bold">고객센터 </span> <a href="tel:02-866-7977">02-866-7977</a> / <a
+                                                href="mailto:help@ajaschool.co.kr">help@ajaschool.co.kr</a></li>
+                                        <li><span class="f_bold">평일 :</span> 10:00 ~ 18:30 (점심시간: 12:30 ~ 13:30)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- fnb list -->
+                        <div>
+                            <ul class="fnb_wrap">
+                                <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=privacy">개인정보 취급방침</a></li>
+                                <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=provision">이용약관</a></li>
+                                <li class="fnb_link"><a href="#" data-modal="business_information" class="modal_btn">사업자 정보</a>
+                                </li>
+                                <li class="fnb_link"><a href="#" data-modal="kakao_inquiry" class="modal_btn">문의사항</a></li>
                             </ul>
                         </div>
+                        <!--copyright-->
+                        <div class="cpr_wrap">
+                            <p class="f_copyright">ⓒ 아자스쿨 주식회사</p>
+                        </div>
+                    </footer>
+                    <!--S: 위로가기 / 하단 바 (tail.php)-->
+                    <div id="navi-area">
+                        <!-- 보일때 -->
+                        <!-- <div id="navi-area" style="height:55px">  감춰져 있을때 -->
+                        <button type="button" class="ico-top" style="display: none;">위로 가기</button>
                     </div>
+                    <!--E: 위로가기 / 하단 바-->
                 </div>
-                <!-- fnb list -->
-                <div>
-                    <ul class="fnb_wrap">
-                        <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=privacy">개인정보 취급방침</a></li>
-                        <li class="fnb_link"><a href="<?=G5_URL?>/bbs/content.php?co_id=provision">이용약관</a></li>
-                        <li class="fnb_link"><a href="#" data-modal="business_information" class="modal_btn">사업자 정보</a>
-                        </li>
-                        <li class="fnb_link"><a href="#" data-modal="kakao_inquiry" class="modal_btn">문의사항</a></li>
-                    </ul>
-                </div>
-                <!--copyright-->
-                <div class="cpr_wrap">
-                    <p class="f_copyright">ⓒ 아자스쿨 주식회사</p>
-                </div>
-            </footer>
-            <!--S: 위로가기 / 하단 바 (tail.php)-->
-            <div id="navi-area">
-                <!-- 보일때 -->
-                <!-- <div id="navi-area" style="height:55px">  감춰져 있을때 -->
-                <button type="button" class="ico-top" style="display: none;">위로 가기</button>
+                <!--footer-->
             </div>
-            <!--E: 위로가기 / 하단 바-->
-        </div>
-        <!--footer-->
-    </div>
-    <!-- plugin js (기존 plugin 파일과 동일)-->
-    <script src="js/jquery-1.8.3.min.js"></script>
-    <!-- 위로가기 / 기존 소스  -->
-    <script>
-        $(document).ready(function () {
-            $(window).scroll(function () {
-                if ($(this).scrollTop() > 0) {
-                    $(".ico-top").fadeIn();
-                } else {
-                    $(".ico-top").fadeOut();
-                }
-            });
-            $(".ico-top").click(function () {
-                $('html, body').animate({ scrollTop: 0 }, 450);
-                return false;
-            });
-        });
-    </script>
-    <!-- 탭 / 기존 소스 -->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(document).on("click", "#tab-content-menu > li.menu", function () {
-                $("#tab-content-menu > li").removeClass("on");
-                $(".tab-content").hide();
-                var idx = $(this).index();
-                $(".tab-content").eq(idx).show();
-                $(this).addClass("on");
-                //$("#itemqaform").hide();
-                //$("#itemqa").show();
+            <!-- plugin js (기존 plugin 파일과 동일)-->
+            <script src="js/jquery-1.8.3.min.js"></script>
+            <!-- 위로가기 / 기존 소스  -->
+            <script>
+                $(document).ready(function () {
+                    $(window).scroll(function () {
+                        if ($(this).scrollTop() > 0) {
+                            $(".ico-top").fadeIn();
+                        } else {
+                            $(".ico-top").fadeOut();
+                        }
+                    });
+                    $(".ico-top").click(function () {
+                        $('html, body').animate({ scrollTop: 0 }, 450);
+                        return false;
+                    });
+                });
+            </script>
+            <!-- 탭 / 기존 소스 -->
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    $(document).on("click", "#tab-content-menu > li.menu", function () {
+                        $("#tab-content-menu > li").removeClass("on");
+                        $(".tab-content").hide();
+                        var idx = $(this).index();
+                        $(".tab-content").eq(idx).show();
+                        $(this).addClass("on");
+                        //$("#itemqaform").hide();
+                        //$("#itemqa").show();
 
-                //상세 탭 위치
-                var scrollY = $('.product_tab_wrap').offset().top;
-                // 클릭 시 위로 js
-                $('html, body').animate({ scrollTop: scrollY }, 450);
+                        //상세 탭 위치
+                        var scrollY = $('.product_tab_wrap').offset().top;
+                        // 클릭 시 위로 js
+                        $('html, body').animate({ scrollTop: scrollY }, 450);
 
-            });
-        });
-    </script>
-    <!--20210413 스크립트 추가-->
-    <script>
-        $(document).ready(function () {
-            $('.info_title').click(function () {
-                $('.info_body').slideToggle();
-                $(this).find('.slide_arrow').toggleClass('active');
-            });
-        });
-    </script>
-    <!--modal show/hide js-->
-    <script>
-        $(document).ready(function () {
-            $('.modal_close').click(function () {
-                $(".modal").hide();
-            });
+                    });
+                });
+            </script>
+            <!--20210413 스크립트 추가-->
+            <script>
+                $(document).ready(function () {
+                    $('.info_title').click(function () {
+                        $('.info_body').slideToggle();
+                        $(this).find('.slide_arrow').toggleClass('active');
+                    });
+                });
+            </script>
+            <!--modal show/hide js-->
+            <script>
+                $(document).ready(function () {
+                    $('.modal_close').click(function () {
+                        $(".modal").hide();
+                    });
 
-            $('.modal_btn').click(function () {
-                var modal = $(this).data('modal');
-                $("#" + modal).show();
-            });
+                    $('.modal_btn').click(function () {
+                        var modal = $(this).data('modal');
+                        $("#" + modal).show();
+                    });
 
-            // When the user clicks anywhere outside of the modal, close it  
-            window.onclick = function (e) {
-                var modal = document.querySelector('.modal');
-                if (modal) {
-                    if (e.target == modal) {
-                        modal.style.display = "none";
+                    // When the user clicks anywhere outside of the modal, close it  
+                    window.onclick = function (e) {
+                        var modal = document.querySelector('.modal');
+                        if (modal) {
+                            if (e.target == modal) {
+                                modal.style.display = "none";
+                            }
+                        }
+                    }
+
+                });
+            </script>
+            <!-- sticky_nav js -->
+            <script>
+                $(document).ready(function () {
+                    var nav = $('.sticky_nav');
+                    var navY = nav.offset().top;
+
+                    $(window).scroll(function () {
+                        if (window.pageYOffset > navY) {
+                            nav.addClass('sticky');
+                        } else {
+                            nav.removeClass('sticky');
+                        }
+                    });
+                });
+            </script>
+            <!-- sticky_nav js-->
+            <!-- read more js -->
+            <script>
+                function readMore() {
+                    var wrapper = $('.rm_wrap');
+                    // 더보기 전 높이 설정
+                    var minHeight = 700;
+
+                    if (wrapper.innerHeight() <= minHeight) {
+                        wrapper.css({
+                            'height': 'auto'
+                        });
+                        $('.more_btn .toggle_txt').html('상세정보 접기');
+                        $('.more_btn .arrow').toggleClass('active');
+                    } else {
+                        wrapper.css({
+                            'height': minHeight + 'px'
+                        });
+                        $('.more_btn .toggle_txt').html('상세정보 더보기');
+                        $('.more_btn .arrow').toggleClass('active');
                     }
                 }
-            }
-
-        });
-    </script>
-    <!-- sticky_nav js -->
-    <script>
-        $(document).ready(function () {
-            var nav = $('.sticky_nav');
-            var navY = nav.offset().top;
-
-            $(window).scroll(function () {
-                if (window.pageYOffset > navY) {
-                    nav.css({
-                        'position': 'fixed',
-                        'top': 0,
-                        'left': 0,
-                        'width': '100%',
-                        'z-index': '999'
-                    });
-                } else {
-                    nav.css({
-                        'position': 'static',
-                        'top': ''
-                    });
-                }
-            });
-        });
-    </script>
-    <!-- sticky_nav js-->
-    <!-- read more js -->
-    <script>
-        function readMore() {
-            var wrapper = $('.rm_wrap');
-            // 더보기 전 높이 설정
-            var minHeight = 700;
-
-            if (wrapper.innerHeight() <= minHeight) {
-                wrapper.css({
-                    'height': 'auto'
-                });
-                $('.more_btn .toggle_txt').html('상세정보 접기');
-                $('.more_btn .arrow').toggleClass('active');
-            } else {
-                wrapper.css({
-                    'height': minHeight + 'px'
-                });
-                $('.more_btn .toggle_txt').html('상세정보 더보기');
-                $('.more_btn .arrow').toggleClass('active');
-            }
-        }
-    </script>
-    <!-- read more js -->
+            </script>
+            <!-- read more js -->
+        </div>
+        <!--popup-->
+        <div class="pc_pop_modal">
+            <img src="images/banner/pc_popup.png" alt="여기 화면에서도 신청가능 하세요!">
+            <span class="pc_pop_close"><img src="images/icon/pop_bt.png" alt="닫기"></span>
+        </div>
+        <!--배경-->
+        <div class="desktop_bg">
+        </div>
+    </div>
+    
 </body>
 
 </html>
