@@ -3938,6 +3938,8 @@ input[type='checkbox']:checked {
 
 .step_content {
   float: left;
+  width: 100vw;
+  max-width: 428px;
   text-align: center;
 }
 /* E: step style */
