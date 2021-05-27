@@ -634,6 +634,7 @@
                 var index, height;
 
                 $('.step_nav_list').each(function () { index = $(this).find('.active').index() + 1; });
+
                 height = step_content.eq(index-1).height();
                 wrapper.css('height', height + 'px');
 
@@ -655,7 +656,14 @@
                 var step_content = $('.step_content');
 
                 var nav_list = $('.step_nav_list');
+                var nav_list_length = $('.step_nav_list li').length;
                 var index;
+
+                var percent = 100 / nav_list_length;
+
+                console.log(percent);
+
+                console.log(nav_list.length);
 
                 $(nav_list).each(function () { index = $(this).find('.active').index() + 1;});
 
@@ -667,13 +675,7 @@
                     $('#btn_submit').hide();
                 }
 
-                if (window.innerWidth < 428) {
-                    $('.slider').css('transform', 'translate(-' + 100 * index + 'vw)');
-                } else {
-                     $('.slider').css('transform', 'translate(-' + 428 * index + 'px)');
-                }
-
-                // $('.slider').css('transform', 'translate(-' + 100 * index + 'vw)');
+                $('.slider').css('transform', 'translate(-' + percent * index + '%)');
 
                 // active 초기화
                 $('.step_nav').removeClass('active');
@@ -685,9 +687,11 @@
             // 이전 js
             function prevStep(){
                 var step_content = $('.step_content');
-                var slider_width = 100 * step_content.length;
                 var nav_list = $('.step_nav_list');
+                var nav_list_length = $('.step_nav_list li').length;
                 var index;
+
+                var percent = 100 / nav_list_length;
 
                 $(nav_list).each(function () {index = $(this).find('.active').index();});
                 
@@ -705,11 +709,7 @@
                         $('.prev_step').addClass('disable');
                     } 
 
-                    if (window.innerWidth < 428) {
-                        $('.slider').css('transform', 'translate(-' + 100 * index + 'vw)');
-                    } else {
-                        $('.slider').css('transform', 'translate(-' + 428 * index + 'px)');
-                    }
+                    $('.slider').css('transform', 'translate(-' + percent * index + '%)');    
 
                     // active 초기화
                     $('.step_nav').removeClass('active');

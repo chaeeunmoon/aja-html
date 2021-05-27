@@ -1924,17 +1924,12 @@ input[type='checkbox']:checked {
   width: 24%;
 }
 
-.done .ctg_col:nth-child(5n) {
-  animation: none;
-}
-.ctg_col:nth-child(5n) {
-  animation: slide 1s ease infinite;
+.ctg_col.done {
+  animation: none !important;
 }
 
-.ctg_wrapper:focus .ctg_col:nth-child(5n),
-.ctg_wrapper:hover .ctg_col:nth-child(5n),
-.ctg_wrapper:active .ctg_col:nth-child(5n) {
-  animation: none;
+.ctg_col:nth-child(5n) {
+  animation: slide 1s ease infinite;
 }
 
 .ctg_col:focus,
@@ -3490,9 +3485,9 @@ input[type='checkbox']:checked {
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   background-color: #fff;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
+  -webkit-transition: padding 0.5s ease;
+  -o-transition: padding 0.5s ease;
+  transition: padding 0.5s ease;
 }
 
 .list_nav_wrap.sticky {
@@ -3522,6 +3517,9 @@ input[type='checkbox']:checked {
 .list_nav_wrap .nav_scroll_list .ctg_nav_item {
   width: 4rem;
   display: inline-block;
+  -webkit-transition: width 0.5s ease;
+  -o-transition: width 0.5s ease;
+  transition: width 0.5s ease;
 }
 
 .list_nav_item {
@@ -3911,6 +3909,7 @@ input[type='checkbox']:checked {
 .step_btn_wrapper {
   position: fixed;
   bottom: 0;
+  left: 0;
   width: 100%;
   padding: 0.4rem 0.8rem;
   text-align: right;
@@ -3939,7 +3938,6 @@ input[type='checkbox']:checked {
 
 .step_content {
   float: left;
-  width: 100vw;
   text-align: center;
 }
 /* E: step style */

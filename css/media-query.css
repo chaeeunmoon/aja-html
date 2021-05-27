@@ -24,7 +24,7 @@ img {
     position: relative;
     width: 100%;
     max-width: 428px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #fff;
     overflow-x: hidden;
     border-left: 2px solid #e1e1e1;
@@ -35,21 +35,24 @@ img {
   /* fixed content 위치 조정 */
   #navi-area,
   .m_action_bar,
-  .list_nav_wrap,
+  .list_nav_wrap.sticky,
   .modal,
   .fixed_btn_wrapper,
   .list_nav_wrap.sticky,
-  .sticky_nav.sticky {
+  .sticky_nav.sticky,
+  .step_btn_wrapper {
     width: 100%;
     max-width: 428px;
     margin: 0 0 0 58%;
+    border-left: 2px solid #e1e1e1;
+    border-right: 2px solid #e1e1e1;
   }
 
   .pc_pop_modal {
     display: block;
     position: fixed;
     top: 120px;
-    z-index: 9999;
+    z-index: 10000;
     margin: 0 0 0 calc(58% + 420px);
   }
 
@@ -227,6 +230,22 @@ img {
     display: inline-block;
     margin: 0.2rem;
   }
+
+  /* default css overriding */
+  .login_check_form {
+    width: 100%;
+    padding: 0;
+    border: none;
+  }
+
+  /* lightbox custom */
+  .lightboxOverlay {
+    z-index: 10001 !important;
+  }
+
+  .lightbox {
+    z-index: 10002 !important;
+  }
 }
 
 /* 1441px ~ */
@@ -254,11 +273,12 @@ img {
   /* fixed content 위치 조정 */
   #navi-area,
   .m_action_bar,
-  .list_nav_wrap,
+  .list_nav_wrap.sticky,
   .modal,
   .fixed_btn_wrapper,
   .list_nav_wrap.sticky,
-  .sticky_nav.sticky {
+  .sticky_nav.sticky,
+  .step_btn_wrapper {
     margin: 0 0 0 calc(100vw - 470px);
   }
 
@@ -294,16 +314,20 @@ img {
     max-width: 428px;
     background-color: #fff;
     overflow-x: hidden;
-    border: 2px solid #e1e1e1;
+    border-left: 2px solid #e1e1e1;
+    border-right: 2px solid #e1e1e1;
     margin: 0 auto;
   }
 
   /* fixed content 위치 조정 */
   #navi-area,
   .m_action_bar,
-  .list_nav_wrap,
+  .list_nav_wrap.sticky,
   .modal,
-  .fixed_btn_wrapper {
+  .fixed_btn_wrapper,
+  .list_nav_wrap.sticky,
+  .sticky_nav.sticky,
+  .step_btn_wrapper {
     width: 100%;
     max-width: 428px;
     margin: 0 auto;
@@ -311,6 +335,8 @@ img {
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
+    border-left: 2px solid #e1e1e1;
+    border-right: 2px solid #e1e1e1;
   }
 
   body {
