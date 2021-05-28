@@ -238,6 +238,10 @@ img {
     border: none;
   }
 
+  .layer-popup-area.page {
+    padding-top: 0;
+  }
+
   /* lightbox custom */
   .lightboxOverlay {
     z-index: 10001 !important;
@@ -312,6 +316,7 @@ img {
     position: relative;
     width: 100%;
     max-width: 428px;
+    min-height: 100vh;
     background-color: #fff;
     overflow-x: hidden;
     border-left: 2px solid #e1e1e1;

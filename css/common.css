@@ -407,6 +407,7 @@ caption {
   width: 100%;
   border-top: 2px solid #ff8611;
   background-color: #fff;
+  z-index: 9999;
 }
 
 .m_action_bar .action_icon_list {
@@ -4304,6 +4305,13 @@ input[type='checkbox']:checked {
 }
 /* E: board style */
 /* S: item style */
+.layer-popup-area {
+  width: 100% !important;
+  position: relative;
+  z-index: 99;
+  min-height: 100vh;
+}
+
 .product_detail_wrap {
   width: 100%;
   overflow: hidden;

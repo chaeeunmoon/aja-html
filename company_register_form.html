@@ -614,7 +614,7 @@
 		});
     </script>
     <!--약관 show/hide-->
-    <script>
+    <!-- <script>
         $(document).ready(function(){
             $('.rgs_more').click(function(){
                 var content = $(this).data('content');
@@ -622,7 +622,7 @@
                 $('.'+ content).slideToggle();
             });
         });
-    </script>
+    </script> -->
     <!--step js-->
     <script>
         $(document).ready(function () {
@@ -734,6 +734,14 @@
             $('.prev_step').click(function(e){
                 prevStep();
                 e.preventDefault();
+            });
+
+            //약관 show / hide
+            $('.rgs_more').click(function (e) {
+                var content = $(this).data('content');
+                $(this).toggleClass('active');
+                $('.' + content).slideToggle(); 
+                autoSize();
             });
 
             // 입력 수 제한
