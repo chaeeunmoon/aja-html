@@ -2189,7 +2189,7 @@ input[type='checkbox']:checked {
 
 .sale_percent {
   font-family: 'Roboto', sans-serif;
-  color: #ff3d55;
+  color: #ff8611;
   font-weight: 500;
   letter-spacing: -0.3px;
 }
@@ -2225,11 +2225,11 @@ input[type='checkbox']:checked {
 }
 
 .item_info .item_price.right_align {
-  text-align: right !important;
+  text-align: left !important;
 }
 
 .item_info .item_price.right_align .origin_price {
-  text-align: right !important;
+  text-align: left !important;
 }
 
 .item_info .item_price.right_align .main_price {
@@ -5600,7 +5600,7 @@ input[type='checkbox']:checked {
 }
 
 .payment_info_body .p_danger {
-  color: #ff3d55;
+  color: #ff8611;
 }
 
 .payment_info_body .bank_info_txt li {
