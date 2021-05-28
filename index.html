@@ -25,6 +25,10 @@
     <div class="desktop_wrapper">
             <!--pc 메뉴-->
             <div class="desktop_menu">
+                <!--admin link-->
+                <div class="text_right admin_link_block">
+                  <a href="./manager/shop_admin/"><img src="images/icon/btn_admin.png" alt="아자스쿨 관리자"></a>
+                </div>
                 <!--logo-->
                 <div class="logo_block">
                     <div class="pc_logo">
@@ -1088,6 +1092,7 @@
           let isDragged = false;
           let startX;
           let scrollLeft;
+          let querySelector = selector + ' a';
 
           slider.addEventListener("mousedown", function (e) {
             isDown = true;
@@ -1103,7 +1108,7 @@
 
           slider.addEventListener("mouseup", function (e) {
             isDown = false;
-            const elements = document.querySelectorAll("a");
+            const elements = document.querySelectorAll(querySelector);
             if (isDragged) {
               for (let i = 0; i < elements.length; i++) {
                 elements[i].addEventListener("click", preventClick);
@@ -1166,13 +1171,26 @@
       });
     
   </script>
+  <!--메인 팝업 추가 코드-->
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
   <!--pc 팝업 삭제 js-->
   <script>
-      $(document).ready(function(){
-            $('.pc_pop_close').click(function(){
-                $('.pc_pop_modal').hide();
-            });
-      });
+      $(document).ready(function () {
+          // 쿠키 체크
+          var cook = $.cookie('desktopPopup');
+
+          // 쿠키가 없으면 배너 노출
+          if (cook == 'hidden') {
+            $('.pc_pop_modal').hide();
+          } else {
+            $('.pc_pop_modal').show();
+          }
+
+          $('.pc_pop_close').click(function () {
+            $('.pc_pop_modal').hide();
+            $.cookie('desktopPopup', 'hidden', { expires: 1, path: '/' });
+          });
+        });
   </script>
   <!--카테고리 애니메이션 제어 js-->
   <script>

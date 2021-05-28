@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보수정</title>
+    <!--기존 css-->
+    <link rel="stylesheet" href="css/default.css">
+    <!-- 추가 css-->
+    <link rel="stylesheet" href="css/font-style.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/media-query.css">
+</head>
+<body>
+    <div class="desktop_wrapper">
+        <div class="app">
+            <div class="wrap">
+                <div class="layer-popup-area page">
+                    <!--header-->
+                    <div class='page_title_area'>
+                        <h2 class="page_title">정보수정</h2>
+                        <a class="close_btn" href="<?php echo $return_url ?>"><img src="images/icon/btn_close.png" alt="닫기"></a>
+                    </div>
+                    <!--content-->
+                    <div class="pw_wrappr">
+                        <form action="">
+                            <div class="tab-con" style="display:block;">
+                                <p class="pw_desc">비밀번호를 한번 더 입력해주세요. <br /> 회원님의 정보를 안전하게 보호하기 위해 비밀번호를 한번 더 확인합니다.<br /></p>
+                                <div class="input-wrap ck-mail">
+                                    <div class="line_input_group">
+                                        <label for="confirm_mb_password">비밀번호</label><input name="mb_password"
+                                            id="confirm_mb_password" required="" type="password" placeholder="8자리 이상 입력해 주세요">
+                                    </div>
+                                </div>
+                                <div class="pw_btn_wrapper flex_block">
+                                    <a href="javascript:void(0)" class="solid_btn lg light">취소</a>
+                                    <a href="javascript:fmemberconfirm_submit();" class="solid_btn lg">확인</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--E:content-->
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

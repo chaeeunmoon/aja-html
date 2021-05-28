@@ -117,10 +117,14 @@ img {
     margin: 0 0 0 10%;
   }
 
+  .desktop_menu .admin_link_block {
+    padding: 1rem 0;
+  }
+
   .desktop_menu .logo_block .pc_logo {
     max-width: 280px;
     width: 50%;
-    margin-top: 5vh;
+    margin-top: 3vh;
   }
 
   .desktop_menu .logo_block .logo_desc {
@@ -132,7 +136,7 @@ img {
   }
 
   .desktop_menu .pc_search_block {
-    margin-top: 8.5vh;
+    margin-top: 6vh;
   }
 
   .desktop_menu .pc_search_block .search_form {
@@ -261,11 +265,15 @@ img {
   .pc_pop_close {
     width: 2.8rem;
   }
+
+  .desktop_menu .pc_search_block {
+    margin-top: 8.5vh;
+  }
 }
 
 @media screen and (max-width: 1279px) {
   .pc_pop_modal {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -293,7 +301,7 @@ img {
   }
 
   .pc_pop_modal {
-    display: none;
+    display: none !important;
   }
 }
 

@@ -4307,9 +4307,14 @@ input[type='checkbox']:checked {
 /* S: item style */
 .layer-popup-area {
   width: 100% !important;
+  z-index: 9999;
+  min-height: 100vh;
+}
+
+.layer-popup-area.page {
   position: relative;
   z-index: 99;
-  min-height: 100vh;
+  background-color: #fff;
 }
 
 .product_detail_wrap {
