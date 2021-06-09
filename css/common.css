@@ -5388,6 +5388,10 @@ input[type='checkbox']:checked {
   display: inline-block;
 }
 
+.payment_wrap .btn_radio label {
+  width: 80%;
+}
+
 .agree_ck_wrap .ck_flex_wrap {
   display: -webkit-box;
   display: -ms-flexbox;
