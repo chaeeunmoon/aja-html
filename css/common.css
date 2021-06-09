@@ -5864,6 +5864,12 @@ input[type='checkbox']:checked {
   margin-top: 1rem;
 }
 
+.completed_txt_box .oc_desc.danger {
+  font-size: 1rem;
+  color: #ff8611;
+  font-weight: 500;
+}
+
 .order_box .payment_info_box {
   background-color: #f8f8fa;
   padding: 0.8rem 1rem;
