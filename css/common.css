@@ -654,6 +654,12 @@ caption {
   padding: 0.3rem 0.8rem;
 }
 
+.solid_btn.sm {
+  font-size: 0.9rem;
+  padding: 0.5rem 0.8rem;
+  margin: 0.2rem;
+}
+
 .solid_btn:focus {
   outline: none;
   border: 1px solid #ff8611;
@@ -4213,6 +4219,23 @@ input[type='checkbox']:checked {
   padding: 0 1.25rem;
 }
 
+.board_form_wrapper {
+  padding: 1.25rem;
+}
+
+.board_input_box {
+  width: 48%;
+}
+
+.board_input_box .btn_radio {
+  padding: 0 !important;
+}
+
+.board_input_box .btn_radio label {
+  font-size: 0.85rem;
+  padding: 0.4rem 0 0.4rem;
+}
+
 .board_list li {
   border-bottom: 1px solid #e0e0e0;
 }
@@ -4275,6 +4298,12 @@ input[type='checkbox']:checked {
 .board_sns_block {
   padding: 0.7rem;
   text-align: right;
+}
+
+.board_view_wrapper .board_btn_block {
+  padding: 0.7rem;
+  text-align: right;
+  border-top: 1px solid #d9d9d9;
 }
 
 .sns_link {
@@ -5185,11 +5214,32 @@ input[type='checkbox']:checked {
   line-height: 1.4;
 }
 
+.block_input_group input, 
 .box_input_group,
 .box_input {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 0.8rem;
+}
+
+.block_input_group label,
+.block_label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+}
+
+.block_input_group { margin-bottom: 1rem; }
+
+.block_input_group label:before,
+.block_label:before  {
+  content: '・';
+}
+
+.block_input_group input {
+  display: block;
+  width: 100%;
 }
 
 .pw_form_box.border_type {

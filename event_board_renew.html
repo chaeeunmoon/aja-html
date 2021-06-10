@@ -16,47 +16,80 @@
     <!-- 추가 css-->
     <link rel="stylesheet" href="css/font-style.css" />
     <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/media-query.css" />
   </head>
   <body>
-    
-    <div id="wrap">
-      <!--header (head.sub.php)-->
-      <div id="header">
-        <header>
-          <div class="h_top" id="page">
-            <div class="h_menu">
-              <a href="menu.html"
-                ><img src="images/icon/btn_menu.png" alt="회원정보"
-              /></a>
-            </div>
-            <h1 class="h_logo">
-              <a href="/"
-                ><img src="images/logo.png" title="체험교육 플랫폼 아자스쿨"
-              /></a>
-            </h1>
-            <a class="h_search" href="search.html"
-              ><img src="images/icon/btn_search.png" alt="검색"
-            /></a>
+    <div class="desktop_wrapper">
+      <!--pc 메뉴-->
+      <div class="desktop_menu">
+          <!--admin link-->
+          <div class="text_right admin_link_block">
+            <a href="./manager/shop_admin/"><img src="images/icon/btn_admin.png" alt="아자스쿨 관리자"></a>
           </div>
-        </header>
-        <nav class="m_navi scroll_wrapper" style="display: none">
-          <ul class="nav_wrapper">
-            <li class="nav_link active"><a href="#">아자탐구생활</a></li>
-            <li class="nav_link"><a href="#">맞춤검색</a></li>
-            <li class="nav_link"><a href="#">체험교구</a></li>
-            <li class="nav_link"><a href="#">쿠폰/이벤트</a></li>
-            <li class="nav_link"><a href="#">학교전용(단체용)</a></li>
-            <li class="nav_link"><a href="#">공지사항</a></li>
-          </ul>
-        </nav>
+          <!--logo-->
+          <div class="logo_block">
+              <div class="pc_logo">
+                  <a href="/">
+                      <img src="images/pc_log.png" alt="아자스쿨">
+                  </a>
+              </div>
+              <p class="logo_desc">주말이면 자녀들과 어디를 가야 좋을지 부모의 고민을 해결하고자 <br />
+              아자스쿨에서는 검증된 프로그램을 제공합니다</p>
+          </div>
+          <!--검색-->
+          <div class="pc_search_block">
+              <form action="">
+                  <div class="search_form flex_block">
+                      <input type="text" name="" id="" placeholder="궁금하신 체험을 입력해주세요">
+                      <a href="#" class="search_btn"><img src="images/icon/ico_PC_search.png" alt="검색하기"></a>
+                  </div>
+                  <div>
+                    <ul class="desktop_search_list"> 
+                      <li class="desktop_search_tag"><a href="#">역사체험</a></li>
+                      <li class="desktop_search_tag"><a href="#">4차산업</a></li>
+                      <li class="desktop_search_tag"><a href="#">대학탐방</a></li>
+                      <li class="desktop_search_tag"><a href="#">드론</a></li>
+                      <li class="desktop_search_tag"><a href="#">역사체험</a></li>
+                      <li class="desktop_search_tag"><a href="#">역사체험</a></li>
+                      <li class="desktop_search_tag"><a href="#">애니메이션센터</a></li>
+                      <li class="desktop_search_tag"><a href="#">미취학</a></li>
+                    </ul>
+                  </div>
+              </form>
+          </div>
+          <!--플랫폼 링크-->
+          <div class="pc_platform_block">
+            <div class="platform_link_box">
+              <a href="#"><img src="images/banner/pc_bn_online.png" alt="아자스쿨 | online 체험학습플랫폼"></a>
+            </div>
+            <div class="platform_link_box">
+              <a href="#"><img src="images/banner/pc_bn_ofline.png" alt="아자스쿨 | offline 체험학습플랫폼"></a>
+            </div>
+          </div>
+          <!--메뉴-->
+          <div class="pc_fnav_block">
+              <ul class="pc_fnav_list">
+                  <li><a href="//www.instagram.com/ajaschool_kr/?hl=en" target="_blank"><img src="images/icon/ico_PC_sns01.png" alt="아자스쿨 인스타그램"></a></li>
+                  <li><a href="//pf.kakao.com/_xmEiFC" target="_blank"><img src="images/icon/ico_PC_sns02.png" alt="아자스쿨 카카오톡 채널"></a></li>
+                  <li><a href="//pf.kakao.com/_xmEiFC/chat" target="_blank"><img src="images/icon/ico_PC_qna.png" alt="1:1 문의"></a></li>
+              </ul>
+          </div>
       </div>
-      <!--//header-->
+      <!--모바일 화면-->     
+      <div class="app">
+              
+    <div id="wrap">
       <!--content (bbs/board.php?bo_table=event)-->
       <div id="content" class="m_wrap">
+          <div class="page_title_area"><h2 class="page_title">이벤트 게시판</h2>
+              <a class="close_btn" href="/"><img src="http://www.ajaschool.com/theme/renewal/mobile/images/icon/btn_close.png" alt="닫기"></a>
+          </div>
           <div class="event_wrapper">
-                <div class="text_right" style="margin-bottom: 1rem;">
-                  <a href="#" class="solid_btn light xs">글쓰기</a>
+                <!--글쓰기 버튼 추가-->
+                <div class="text_right" style="margin-bottom: 1.3rem;">
+                  <a href="#" class="solid_btn light sm">글쓰기</a>
                 </div>
+                <!--글쓰기 버튼 추가-->
                 <div class="event_item">
                     <a href="#">
                         <div class="event_thumb">
@@ -191,5 +224,15 @@
       </div>
       <!--E: 위로가기 / 하단 바-->
     </div>
+      </div>
+      <!--popup-->
+      <div class="pc_pop_modal">
+          <img src="images/banner/pc_popup.png" alt="여기 화면에서도 신청가능 하세요!">
+          <span class="pc_pop_close"><img src="images/icon/pop_bt.png" alt="닫기"></span>
+      </div>
+      <!--배경-->
+  <div class="desktop_bg">
+  </div>
+</div>
   </body>
 </html>
