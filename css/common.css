@@ -4263,6 +4263,13 @@ input[type='checkbox']:checked {
 
 .board_content_block .board_detail {
   width: 100%;
+  padding: 1rem;
+}
+
+.board_content_block .board_detail > * {
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .board_sns_block {
