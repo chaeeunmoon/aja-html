@@ -3586,9 +3586,9 @@ input[type='checkbox']:checked {
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
   background-color: #fff;
-  -webkit-transition: padding 0.5s ease;
-  -o-transition: padding 0.5s ease;
-  transition: padding 0.5s ease;
+  -webkit-transition: padding, position 0.5s ease-in;
+  -o-transition: padding, position 0.5s ease-in;
+  transition: padding, position 0.5s ease-in;
 }
 
 .list_nav_wrap.sticky {
@@ -4706,6 +4706,9 @@ input[type='checkbox']:checked {
   border-bottom: 1px solid #e0e0e0;
   position: static;
   width: 100%;
+  -webkit-transition: position 0.5s ease-in;
+  -o-transition: position 0.5s ease-in;
+  transition: position 0.5s ease-in;
 }
 
 .sticky_nav.sticky {
