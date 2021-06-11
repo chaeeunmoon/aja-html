@@ -4233,7 +4233,14 @@ input[type='checkbox']:checked {
 
 .board_input_box .btn_radio label {
   font-size: 0.85rem;
-  padding: 0.4rem 0 0.4rem;
+  padding: 0.45rem 0 0.4rem;
+}
+
+.b_form_txt {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #828282;
+  margin-left: 1.3rem;
 }
 
 .board_list li {

@@ -82,48 +82,53 @@
           <div id="content" class="m_wrap">
                 <div class="page_title_area">
                     <a class="back_btn" href="javascript:history.back();"><img src="http://www.ajaschool.com/theme/renewal/mobile/images/icon/prev-arrow.svg" alt="뒤로가기"></a>
-                    <h2 class="page_title">공지사항 글쓰기</h2>
+                    <h2 class="page_title">이벤트 글쓰기</h2>
                     <a class="close_btn" href="/"><img src="http://www.ajaschool.com/theme/renewal/mobile/images/icon/btn_close.png" alt="닫기"></a>
                 </div>
                 <div class="board_form_wrapper">
                   <form action="">
                     <div class="block_input_group">
-                      <label for="is_subject">제목</label>
-                      <input id="is_subject" name="is_subject" type="text" placeholder="제목" value="">
+                      <label for="wr_subject">제목</label>
+                      <!-- <input id="wr_subject" name="is_subject" type="text" placeholder="제목" value=""> -->
+                      <input type="text" name="wr_subject" value="" placeholder="제목" id="wr_subject" required class="required" maxlength="255">
                     </div>
                     <div class="block_input_group">
                        <p class="block_label">게시일자</p>
                         <div class="flex_block">
-                           <input type="date" class="box_input">
+                           <input type="date" class="box_input" name="wr_2" id="wr_2">
                            <span style="font-size: 1rem; margin: 0 0.3rem;">~</span>
-                           <input type="date" class="box_input">
+                           <input type="date" class="box_input" name="wr_3" id="wr_3">
                         </div>
                     </div>
                     <div class="flex_block">
                         <div class="board_input_box">
                             <p class="block_label">글 구분</p>
-                            <div>
+                            <!-- <div>
                                 <input class="custom_cb" type="checkbox" name="f_html" id="f_html">
                                 <label for="f_html">html</label>
-                            </div>
+                            </div> -->
+                            <p class="b_form_txt">일반 글</p>
                         </div>
                         <div class="board_input_box">
                           <p class="block_label">종료 여부</p>
                           <div class="btn_radio sm">
-                            <input type="radio" name="f_radio" id="f_y">
-                            <label for="f_y">예</label>
-                            <input type="radio" name="f_radio" id="f_n">
-                            <label for="f_n">아니오</label>
+                            <input type="radio" name="wr_1" id="wr_y" value="Y" style="display:inline" class="required" required>
+                            <label for="wr_y">예</label>
+                            <input type="radio" name="wr_1" id="wr_n" value="N" style="display:inline" class="required" required>
+                            <label for="wr_n">아니오</label>
                         </div>
                       </div>
                     </div>
+                    <!--글작성-->
                     <div class="block_input_group">
                       <div class="pw_textarea">
-                        <textarea cols="5" rows="10" name="is_content" id="is_content"></textarea>
+                        <textarea cols="5" rows="10" name="is_content" id="is_content" placeholder="게시물을 입력해주세요."></textarea>
                       </div>
                     </div>
-                    <div>
-                        <button class="solid_btn lg">작성완료</button>
+                    <!--작성완료 버튼-->
+                    <div class="flex_block">
+                        <a href="./board.php?bo_table=notice" class="solid_btn lg light">목록</a>
+                        <input type="submit" class="solid_btn lg" value="작성완료">
                     </div>
                   </form>
                 </div>
