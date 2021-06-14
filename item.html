@@ -290,51 +290,6 @@
                                                     alt="3e9a4999982b63870eebb9dc074bee82_1616721"><br style="clear:both;"><br
                                                     style="clear:both;"><br style="clear:both;"><br></div>
                                         </div>
-                                        <!-- 지도 -->
-                                        <div class="detail-map">
-                                            <div id="bottomMap"
-                                                style="border:1px solid #000; width:100%; height:400px; margin:auto;"></div>
-                                            <script>
-                                                var mapContainer = document.getElementById('bottomMap'), // 지도를 표시할 div 
-                                                    mapOption = {
-                                                        center: new daum.maps.LatLng(37.545603009882846, 126.95252894821037), // 지도의 중심좌표
-                                                        level: 3 // 지도의 확대 레벨
-                                                    };
-
-                                                // 지도를 생성합니다    
-                                                var map = new daum.maps.Map(mapContainer, mapOption);
-                                                var coords = new daum.maps.LatLng(37.545603009882846, 126.95252894821037);
-
-                                                // 결과값으로 받은 위치를 마커로 표시합니다
-                                                var marker = new daum.maps.Marker({
-                                                    map: map,
-                                                    position: coords
-                                                });
-
-
-                                                // 주소-좌표 변환 객체를 생성합니다
-                                                geocoder = new daum.maps.services.Geocoder();
-
-                                                // 주소로 좌표를 검색합니다
-                                                geocoder.addressSearch('<?=$addr_url?>', function (result, status) {
-
-                                                    // 정상적으로 검색이 완료됐으면 
-                                                    if (status === daum.maps.services.Status.OK) {
-
-                                                        var coords = new daum.maps.LatLng(result[0].y, result[0].x);
-
-                                                        // 결과값으로 받은 위치를 마커로 표시합니다
-                                                        var marker = new daum.maps.Marker({
-                                                            map: map,
-                                                            position: coords
-                                                        });
-
-                                                        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-                                                        map.setCenter(coords);
-                                                    }
-                                                });
-                                            </script>
-                                        </div>
                                     </div>
                                     <div class="rm_btn_wrap">
                                         <button class="more_btn outline_btn lg" onclick="readMore()"><span class="toggle_txt">상세정보
@@ -826,11 +781,17 @@
                 $(document).ready(function () {
                     var nav = $('.sticky_nav');
                     var navY = nav.offset().top;
+                    var temp = nav.clone().addClass('temp');
+                    var parent = '.product_tab_wrap';
+
+                    console.log(temp);
 
                     $(window).scroll(function () {
                         if (window.pageYOffset > navY) {
+                            temp.prependTo(parent);
                             nav.addClass('sticky');
                         } else {
+                            temp.remove('.temp');
                             nav.removeClass('sticky');
                         }
                     });
