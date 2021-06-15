@@ -4512,6 +4512,18 @@ input[type='checkbox']:checked {
   transform: translate(-50%, -50%);
 }
 
+.soldout img {
+  width: 35%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 auto;
+  z-index: 99999;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .product_detail_wrap .sale_time_block {
   display: -webkit-box;
   display: -ms-flexbox;
