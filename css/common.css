@@ -1455,7 +1455,7 @@ input[type='checkbox']:checked {
 .modal {
   display: none;
   position: fixed;
-  z-index: 9999;
+  z-index: 999999;
   left: 0;
   top: 0;
   width: 100%;
@@ -1554,6 +1554,7 @@ input[type='checkbox']:checked {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  vertical-align: middle;
 }
 
 .modal.round_modal .modal_footer.center {
@@ -1562,9 +1563,21 @@ input[type='checkbox']:checked {
   justify-content: center;
 }
 
-.modal.round_modal .modal_footer .solid_btn {
+.modal.round_modal .modal_footer .solid_btn,
+#product_option.modal.round_modal .modal_footer #btn_area {
   width: 49%;
 }
+
+.modal.round_modal .modal_footer #btn_area > .solid_btn {
+  width: 100%;
+  display: block;
+  border: 1px solid #ff8711;
+}
+
+.modal.round_modal .modal_footer #btn_area > .solid_btn.disable {
+  border: 1px solid #9a9a9a;
+}
+
 /* iframe 모달*/
 
 .iframe_modal {
