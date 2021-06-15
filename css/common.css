@@ -154,8 +154,9 @@ caption {
 }
 /* E: lightbox custom */
 
-
-.temp { visibility: hidden; }
+.temp {
+  visibility: hidden;
+}
 
 .text_right {
   text-align: right !important;
@@ -188,6 +189,11 @@ caption {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.order-date {
+  font-size: 0.9rem;
+  padding: 0.2rem 0;
 }
 
 /* header */
@@ -5231,7 +5237,7 @@ input[type='checkbox']:checked {
   line-height: 1.4;
 }
 
-.block_input_group input, 
+.block_input_group input,
 .box_input_group,
 .box_input {
   border: 1px solid #e0e0e0;
@@ -5241,16 +5247,18 @@ input[type='checkbox']:checked {
 
 .block_input_group label,
 .block_label {
-    display: block;
-    font-size: 1rem;
-    font-weight: 500;
-    margin-bottom: 0.8rem;
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
 }
 
-.block_input_group { margin-bottom: 1rem; }
+.block_input_group {
+  margin-bottom: 1rem;
+}
 
 .block_input_group label:before,
-.block_label:before  {
+.block_label:before {
   content: '・';
 }
 
