@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>이벤트 공지사항</title>
+    <title>공지사항</title>
     <!--font 추가 (NotoSansKr, Roboto)-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -18,7 +18,6 @@
     <link rel="stylesheet" href="css/common.css" />
   </head>
   <body>
-    
     <div id="wrap">
       <!--header (head.sub.php)-->
       <div id="header">
@@ -50,36 +49,26 @@
           </ul>
         </nav>
       </div>
-      <!--//header-->
-      <!--content (bbs/board.php?bo_table=event)-->
+      <!--header-->
+      <!--content (bbs/board.php)-->
       <div id="content" class="m_wrap">
-          <div class="event_wrapper">
-                <div class="text_right" style="margin-bottom: 1rem;">
-                  <a href="#" class="solid_btn light xs">글쓰기</a>
+            <div class="item_title_wrap board_type">
+                <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
+                <h2 class="product_title">[기관대상] 청소년수련활동인증 안내</h2>
+            </div>
+            <div class="board_view_wrapper">
+                <div class="board_content_block">
+                    <!--게시글 내용--> 
+                    <div class="board_detail">
+                        <img src="images/sample/board-sample.jpg" alt="">
+                    </div>
+                    <!--sns 공유-->
+                    <div class="board_sns_block">
+                        <span class="sns_link"><a href="#"><img src="images/sns/ico_kakao.png" alt="카카오톡으로 공유"></a></span>
+                        <span class="sns_link"><a href="#"><img src="images/sns/ico_facebook.png" alt="페이스북으로 공유"></a></span>
+                    </div>
                 </div>
-                <div class="event_item">
-                    <a href="#">
-                        <div class="event_thumb">
-                            <img src="images/sample/event-sample-01.jpg" alt="">
-                        </div>
-                        <div class="event_info">
-                            <p class="title">애니메이션으로 떠나는 콘텐츠 테마 여행</p>
-                            <p class="event_date">2021-04 ~ 2021-05-30</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="event_item">
-                    <a href="#">
-                        <div class="event_thumb">
-                            <img src="images/sample/event-sample-02.jpg" alt="">
-                        </div>
-                        <div class="event_info">
-                            <p class="title">[무료] 애니메이션 제작 KIT로 우리 가족 모두 감독</p>
-                            <p class="event_date">2021-04 ~ 2021-05-30</p>
-                        </div>
-                    </a>
-                </div>
-          </div>
+            </div>
       </div>
       <!--content-->
       <!--footer (tail.php) -->
