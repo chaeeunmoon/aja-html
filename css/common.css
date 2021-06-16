@@ -7311,3 +7311,40 @@ input[type='checkbox']:checked {
   line-height: 1.4;
 }
 /*E: counsel style */
+
+/* S: pagination style */
+.round_pagination ul {
+  text-align: center;
+}
+
+.round_pagination li {
+  display: inline-block;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #aaa;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: 50%;
+}
+
+.round_pagination li.active {
+  background-color: #ff8611;
+  color: #fff;
+  border: 1px solid #ff8611;
+}
+
+.round_pagination li a {
+  display: block;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.round_pagination li.pg_arrow a {
+  font-family: 'CookieRun';
+}
+
+.round_pagination li a img {
+  height: 0.95rem;
+}
+/* S: pagination style */
