@@ -4243,6 +4243,16 @@ input[type='checkbox']:checked {
   padding: 0 1.25rem;
 }
 
+.board_wrapper .text_right {
+  display: block;
+  padding: 0.5rem 0;
+  margin-bottom: 0 !important;
+}
+
+.board_wrapper .text_right .solid_btn {
+  display: inline-block;
+}
+
 .board_form_wrapper {
   padding: 1.25rem;
 }
@@ -5266,6 +5276,9 @@ input[type='checkbox']:checked {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 0.8rem;
+  height: auto;
+  line-height: 1;
+  font-size: 0.9rem;
 }
 
 .block_input_group label,
