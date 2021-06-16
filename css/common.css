@@ -2280,7 +2280,7 @@ input[type='checkbox']:checked {
   font-size: 0.87rem;
   color: #686d71;
   letter-spacing: 0.2px;
-  padding: 0.2rem 0.5rem 0.35rem;
+  padding: 0.4rem 0.5rem 0.35rem;
   text-align: center;
   margin-right: 0.3rem;
 }

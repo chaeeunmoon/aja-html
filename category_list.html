@@ -254,22 +254,35 @@
               <style>
                   .round_pagination ul {
                     display: flex;
+                    justify-content: space-around;
+                    padding: 0.8rem 0;
                   }
 
-                  .round_pagination li a {
-                    font-size: 0.95rem;
+                  .round_pagination li {
+                      font-family: 'Roboto', sans-serif;
+                      font-size: 0.95rem;
+                      text-align: center;
+                      width: 2rem;
+                      height: 2rem;
+                      line-height: 2rem;
+                      border-radius: 50%;
+                  }
+
+                  .round_pagination li.active {
+                    background-color: #ff8611;
+                    color: #fff;
                   }
 
               </style>
               <!--페이지네이션-->
               <div class="round_pagination">
                   <ul>
-                    <li><a href="#">arrow</a></li></li>
-                    <li><a href="#">1</a></li></li>
+                    <li class="pg_arrow"><a href="#"><<span class="sr_only">이전</span></a></li></li>
+                    <li class="active"><a href="#">1</a></li></li>
                     <li><a href="#">2</a></li></li>
-                    <li><a href="#">3</a></li></li>
+                    <li><a href="#">...</a></li></li>
                     <li><a href="#">4</a></li></li>
-                    <li><a href="#">arrow</a></li></li>
+                    <li class="pg_arrow"><a href="#"><img src="images/icon/btn_next_gray.png" alt="다음"><span class="sr_only">다음</span></a></li></li>
                   </ul>
               </div>
             </div>
