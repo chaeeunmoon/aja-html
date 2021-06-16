@@ -2260,6 +2260,16 @@ input[type='checkbox']:checked {
   max-width: 200% !important;
 }
 
+.m_item_scroll .item_thumb > .label_soldout,
+.list_item_wrap .item_thumb > .label_soldout,
+.block_box a .item_thumb > .label_soldout {
+  position: absolute;
+  top: 0.55rem;
+  left: 0.55rem;
+  z-index: 1;
+  width: 38%;
+}
+
 .m_item_scroll .item_info,
 .list_item_wrap .item_info {
   width: 100%;
