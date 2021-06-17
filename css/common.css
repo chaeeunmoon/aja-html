@@ -4338,11 +4338,25 @@ input[type='checkbox']:checked {
   padding: 1rem;
 }
 
-.board_content_block .board_detail > * {
-  font-family: 'Roboto', 'Noto Sans KR', sans-serif;
-  font-size: 1rem;
-  line-height: 1.4;
+/* textEditor 수정 */
+.board_content_block .board_detail > *,
+.rm_wrap .img_wrap *,
+.txt_editor_wrap * {
+  font-family: 'Roboto', 'Noto Sans KR', sans-serif !important;
+  font-size: 0.95rem !important;
+  line-height: 1.5;
 }
+
+.rm_wrap .img_wrap > div,
+.rm_wrap .img_wrap > img,
+.txt_editor_wrap > img,
+.txt_editor_wrap > div,
+.board_content_block .board_detail > div,
+.board_content_block .board_detail img {
+  font-size: 0 !important;
+}
+
+/* E:textEditor 수정 */
 
 .board_sns_block {
   padding: 0.7rem;
@@ -4350,7 +4364,7 @@ input[type='checkbox']:checked {
 }
 
 .board_view_wrapper .board_btn_block {
-  padding: 0.7rem;
+  padding: 1rem 0.7rem;
   text-align: right;
   border-top: 1px solid #d9d9d9;
 }
@@ -4481,6 +4495,51 @@ input[type='checkbox']:checked {
 
 .comment_box .s_cmt {
   color: #828282 !important;
+}
+
+.txt_file_add {
+  font-size: 0.9rem;
+  margin: 0.2rem 0;
+}
+
+.attached_file_list {
+  padding: 0.8rem 1.25rem 0;
+}
+
+.attached_file_list li a {
+  margin-bottom: 0.7rem;
+  padding: 1rem;
+  border: 1px solid #ededed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  vertical-align: middle;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.attached_file_list li a div:first-child {
+  width: 80%;
+}
+
+.attached_file_list .a_title {
+  font-size: 0.9375rem;
+  color: #222;
+  line-height: 1.2;
+}
+
+.attached_file_list .a_sub_txt {
+  font-size: 0.8rem;
+  color: #828282;
+  margin-top: 0.5rem;
+}
+
+.attached_file_list .a_icon {
+  height: 1.3rem;
 }
 /* E: board style */
 /* S: item style */
@@ -4808,13 +4867,6 @@ input[type='checkbox']:checked {
 
 .rm_wrap .img_wrap {
   width: 100%;
-}
-
-.rm_wrap .img_wrap *,
-.txt_editor_wrap * {
-  font-family: 'Roboto', 'Noto Sans KR', sans-serif !important;
-  font-size: 0.95rem !important;
-  line-height: 1.5;
 }
 
 .rm_wrap .img_wrap img {
