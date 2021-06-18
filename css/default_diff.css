@@ -28,3 +28,15 @@ html,body {
 	-webkit-border-radius: 50%;
 	border-radius: 50%;
 }
+
+.tab-area {margin-bottom: 12px; background-color: #fff; border-bottom: 1px solid #dadada;}
+.tab-area>ul {display: table; width:100%; table-layout: fixed; padding: 0 7px;}
+.tab-area>ul>li {display: table-cell;}
+.tab-area>ul>li>a {display: block; padding: 11px 0; text-align: center; border-bottom: 4px; border-style: solid; border-color: #fff;}
+
+.tab-area.type03 {/*border-top: 1px solid #dadada;*/ margin-bottom: 0;}
+.tab-area.type03>ul {padding: 0;}
+.tab-area.type03>ul>li>a {position: relative; color:#888888; font-size: 13px; }
+.tab-area.type03>ul>li.on>a {color:#ff8711;  font-weight: 500; border-bottom: 3px solid #ff8711; position: relative;top: 1px;}
+.tab-area.type03>ul>li>a:before {content:""; display: block; width:0; height: 10px; /*border-left: 1px solid #d7d7d7;*/position: absolute; top:50%; left:0; margin-top: -5px;}
+.tab-area.type03>ul>li:first-child>a:before {content: none;}

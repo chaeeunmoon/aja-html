@@ -459,16 +459,8 @@ caption { display: none; }
   text-align: center;
   padding: 0.9rem 0;
 }
-
-.outline_btn:focus {
-  outline: none;
-}
-
-.outline_btn.blue {
-  border: 1px solid #668fbd !important;
-  color: #668fbd !important;
-}
-
+.outline_btn:focus {outline: none;}
+.outline_btn.blue {border: 1px solid #668fbd !important;color: #668fbd !important;}
 .outline_btn.lg,
 .solid_btn.lg {
   width: 100%;
@@ -476,7 +468,6 @@ caption { display: none; }
   display: block;
   padding: 0.95rem 2rem;
 }
-
 .capsule_btn.gray .more_icon {
   height: 0.8rem;
   -webkit-transform: rotate(90deg);
@@ -601,11 +592,8 @@ caption { display: none; }
   flex-wrap: wrap;
   margin: 0 auto;
 }
-
 .rgs_ctg_list .btn_radio { width: 33%; padding: 0.5rem 0.3rem; }
-
 .rgs_ctg_list.region_list .btn_radio { width: 25%;}
-
 .rgs_ctg_list .btn_radio label {
   width: 100%;
   background-color: #f8f8fa;
@@ -614,7 +602,6 @@ caption { display: none; }
   border: none;
   margin: 0;
 }
-
 .rgs_ctg_list .btn_radio input[type='radio']:focus + label,
 .rgs_ctg_list .btn_radio input[type='checkbox']:focus + label,
 .rgs_ctg_list .btn_radio input[type='radio']:checked + label,
@@ -645,7 +632,6 @@ caption { display: none; }
 .line_input_group { margin-bottom: 2em; }
 
 .flex_input_group { position: relative; }
-
 .flex_input_group .flex_btn {
   position: absolute;
   bottom: 0.5rem;
@@ -667,11 +653,8 @@ caption { display: none; }
 }
 
 .flex_block .btn_radio { width: 100%; padding: 1em 0 0 !important; }
-
 .flex_block .line_input_group { width: 45%; }
-
 .flex_block .input_group { width: 50%; }
-
 .flex_input_block .flex_btn { margin-left: 0.8rem; }
 
 .line_input_group label,
@@ -6115,19 +6098,13 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   font-size: 0.8rem;
   margin-top: 0.5rem;
 }
-
 .lecture_view_info .outline_btn {
   font-size: 0.8rem;
   font-weight: 400;
   margin-left: 0.3rem;
   padding: 0.25rem 0.6rem;
 }
-
-.lecture_view_info .outline_btn .play_icon img {
-  width: 0.6rem;
-  height: 0.6rem;
-}
-
+.lecture_view_info .outline_btn .play_icon img {width: 0.6rem;height: 0.6rem;}
 .outline_btn .play_icon img {
   width: 0.75rem;
   height: 0.75rem;
@@ -6135,33 +6112,20 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   position: relative;
   margin-left: 0.3rem;
 }
-
-.lecture_content_info .timeline {
-  padding: 0.85rem 1.25rem;
-  border-bottom: 1px solid #e1e1e1;
-}
-
+.lecture_content_info .timeline {padding: 0.85rem 1.25rem;border-bottom: 1px solid #e1e1e1;}
 .lecture_content_info .timeline .time:before {
   content: '·';
   color: #828282;
   margin: 0 0.25rem;
 }
-
-.lecture_content_info .timeline .timeline_txt {
-  font-size: 0.82rem;
-}
-
-.lecture_content_info .info_txt_block {
-  padding: 1.25rem;
-}
-
+.lecture_content_info .timeline .timeline_txt {font-size: 0.82rem;}
+.lecture_content_info .info_txt_block {padding: 1.25rem;}
 .lecture_content_info .info_txt_block .title {
   font-size: 1.05rem;
   font-weight: 500;
   line-height: 1.4;
   margin-bottom: 0.7rem;
 }
-
 .lecture_content_info .info_txt_block .desc {
   font-size: 0.85rem;
   line-height: 1.4;
@@ -6169,32 +6133,20 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 }
 /* receipt css */
 /* top */
-.receipt_wrapper .state_title_block .state_txt {
-  font-size: 0.9rem;
-  color: #0d0d0d;
-}
-
+.receipt_wrapper .state_title_block .state_txt {font-size: 0.9rem;color: #0d0d0d;}
 .receipt_wrapper .state_title_block .state_txt .date:before {
   content: '·';
   display: inline-block;
   margin: 0 0.2rem;
 }
-
 .receipt_wrapper .state_title_block .solid_btn {
   padding: 0.3rem 0.8rem;
   font-size: 0.85rem;
   text-indent: -1.5px;
 }
-
-.receipt_wrapper .state_title_block .solid_btn .close_icon img {
-  width: 0.75rem;
-  margin-left: 0.5rem;
-}
+.receipt_wrapper .state_title_block .solid_btn .close_icon img {width: 0.75rem;margin-left: 0.5rem;}
 /* receipt  content */
-.receipt_container {
-  margin-top: 1.25rem;
-}
-
+.receipt_container {margin-top: 1.25rem;}
 .receipt_container .receipt_header {
   background-color: #fff;
   border-radius: 1rem;
@@ -6206,12 +6158,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   border: 1px solid #eeeded;
   border-bottom: none;
 }
-
-.receipt_header .receipt_label_block {
-  background-color: #ff8611;
-  padding: 1rem;
-}
-
+.receipt_header .receipt_label_block {background-color: #ff8611;padding: 1rem;}
 .receipt_header .receipt_label_block .receipt_label_txt {
   font-size: 0.85rem;
   color: #fff;
