@@ -235,11 +235,12 @@ caption { display: none; }
 .m_action_bar {
   position: fixed;
   left: 0;
-  bottom: 0;
+  bottom: -3rem;
   width: 100%;
   border-top: 2px solid #ff8611;
   background-color: #fff;
   z-index: 9999;
+  padding-bottom: 3rem;
 }
 .m_action_bar .action_icon_list {
   width: 100%;
