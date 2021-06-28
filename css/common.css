@@ -4513,13 +4513,15 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   font-size: 1.2rem;
   font-weight: 600;
   text-align: center;
-  line-height: 1.4rem;
-  width: 1.4rem;
-  height: 1.4rem;
+  line-height: 1.6rem;
+  width: 1.6rem;
+  height: 1.6rem;
   border-radius: 50%;
 }
 
-.review_block .review_img ul li a img {
+.review_more_icon > img { width: 1.2rem !important; margin-top: 0.15rem; }
+
+.review_block .review_img ul li a > img {
   min-width: 100%;
   min-height: 100%;
   width: 100%;
