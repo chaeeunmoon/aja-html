@@ -1870,6 +1870,11 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   padding-bottom: 55%;
 }
 
+.horizontal_item_list .item_thumb > img {
+  width: 100%;
+  height: 100%;
+}
+
 .horizontal_item_list .item_info .item_title {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
