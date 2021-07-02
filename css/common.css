@@ -1066,6 +1066,9 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   letter-spacing: 0.5px;
   text-align: center;
 }
+
+#pop .modal_header .modal_title { padding: 0.5rem 0; }
+
 .modal_body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -5603,6 +5606,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .theme_state_list li .state_txt .num {
   color: #ffee79;
   margin-left: 0.3rem;
+  margin-right: 3px;
 }
 .theme_info_wrap {
   width: 100%;
@@ -5733,6 +5737,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .theme_item_box .point_coin .num {
   font-size: 1.125rem;
   font-weight: 600;
+  margin-right: 1px;
 }
 
 .theme_item_txt {
