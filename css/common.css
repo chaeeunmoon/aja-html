@@ -1551,7 +1551,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .category_list li .ctg_name,
 .ctg_nav_item .ctg_name {
   width: 100%;
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   color: #0d0d0d;
   text-align: center;
   font-weight: 500;
