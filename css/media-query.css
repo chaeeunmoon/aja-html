@@ -217,6 +217,7 @@ img {
   .pc_fnav_block {
     position: absolute;
     bottom: 0;
+    width: 100%;
     min-height: 100px;
     left: 50%;
     -webkit-transform: translateX(-50%);
