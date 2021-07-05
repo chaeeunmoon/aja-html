@@ -3706,6 +3706,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .event_item .event_info .title {
   font-size: 0.9375rem;
   font-weight: 500;
+  line-height: 1.4;
 }
 
 .event_item .event_info .event_date {
