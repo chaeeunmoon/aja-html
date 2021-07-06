@@ -1555,10 +1555,10 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   color: #0d0d0d;
   text-align: center;
   font-weight: 500;
-  -o-text-overflow: ellipsis;
+  /* -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
+  overflow: hidden; */
   margin-top: 1em;
 }
 
