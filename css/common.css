@@ -1032,48 +1032,15 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 
 /* Modal Content */
 .modal_content { margin: auto; z-index: 9999; }
-.modal_content.full_screen {
-  max-width: 100%;
-  width: 100%;
-  height: 100vh;
-  background-color: #ff8711;
-}
-.modal_content.center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
+.modal_content.full_screen { max-width: 100%; width: 100%; height: 100vh; background-color: #ff8711; }
+.modal_content.center { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%);}
 .modal_content.bottom { position: absolute; bottom: 0; left: 0; }
-.modal_header {
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  background-color: #fff;
-  border-bottom: 1px solid #e0e0e0;
-}
-.rounded_header {
-  position: relative;
-  background-color: #ff8711;
-  color: #fff;
-  border: none;
-}
-.modal_header .modal_title {
-  font-size: 1.25rem;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  text-align: center;
-}
+.modal_header { width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #fff; border-bottom: 1px solid #e0e0e0;}
+.rounded_header { position: relative; background-color: #ff8711; color: #fff; border: none;}
+.modal_header .modal_title { font-size: 1.25rem; font-weight: bold; letter-spacing: 0.5px; text-align: center;}
+#pop .modal_header .modal_title { padding: 1.2rem 0; }
 
-#pop .modal_header .modal_title { padding: 0.5rem 0; }
-
-.modal_body {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  background-color: #fff;
-}
+.modal_body { -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #fff;}
 /* round_modal*/
 .modal.round_modal .modal_content {
   width: 100%;
@@ -1095,27 +1062,15 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   justify-content: space-between;
   vertical-align: middle;
 }
-.modal.round_modal .modal_footer.center {
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
+.modal.round_modal .modal_footer.center { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center;}
 .modal.round_modal .modal_footer .solid_btn,
 #product_option.modal.round_modal .modal_footer #btn_area { width: 49%; }
-.modal.round_modal .modal_footer #btn_area > .solid_btn {
-  width: 100%;
-  display: block;
-  border: 1px solid #ff8711;
-}
+.modal.round_modal .modal_footer #btn_area > .solid_btn { width: 100%; display: block; border: 1px solid #ff8711;}
 .modal.round_modal .modal_footer #btn_area > .solid_btn.disable { border: 1px solid #9a9a9a; }
 
 /* iframe 모달*/
 .iframe_modal { background-color: #ff8711; }
-.iframe_modal .modal_content {
-  max-width: 100%;
-  width: 100%;
-  height: 100vh;
-}
+.iframe_modal .modal_content { max-width: 100%; width: 100%; height: 100vh;}
 .iframe_body,
 .iframe_body iframe > html { width: 100%; }
 .iframe_modal iframe,
@@ -1127,13 +1082,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   height: 100vh;
   border-top-left-radius: 3rem;
 }
-.iframe_modal .modal_header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 1rem 0;
-}
+.iframe_modal .modal_header { position: absolute; top: 0; left: 0; width: 100%; padding: 1rem 0;}
 .iframe_modal .modal_back { top: 0.9rem; }
 .iframe_modal .modal_body {
   height: 100vh;
@@ -1152,13 +1101,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 #hero_modal .modal_body,
 #hero_modal .modal_header { background-color: transparent; border-bottom: none; }
 #hero_modal .modal_header { padding: 0.8rem 1.2rem; }
-#hero_modal .modal_close {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.7rem;
-  font-weight: 900;
-  color: #fff;
-  cursor: pointer;
-}
+#hero_modal .modal_close { font-family: 'Roboto', sans-serif; font-size: 1.7rem; font-weight: 900; color: #fff; cursor: pointer;}
 #hero_modal .banner_content div { margin-bottom: 0.5rem; }
 
 /* main popup modal */
@@ -6277,7 +6220,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 }
 .refund_info {
   width: 100%;
-  max-height: 300px;
+  max-height: 200px;
   overflow-y: scroll;
   border: 1px solid #e1e1e1;
   border-radius: 0.5rem;
