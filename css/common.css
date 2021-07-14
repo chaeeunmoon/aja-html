@@ -107,6 +107,7 @@ caption { display: none; }
 .order-date { font-size: 0.9rem; padding: 0.2rem 0; }
 .mr_0 { margin-right: 0!important; }
 .ml_0 { margin-left: 0!important; }
+.mb_5 { margin-bottom: 0.5rem !important; }
 /* header */
 /* header top renewal (20210414) */
 #header {
