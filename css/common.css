@@ -1675,7 +1675,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   top: 0.55rem;
   left: 0.55rem;
   z-index: 1;
-  width: 38%;
+  width: 40%;
 }
 
 .m_item_scroll .item_info,
