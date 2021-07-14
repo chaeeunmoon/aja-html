@@ -108,6 +108,8 @@ caption { display: none; }
 .mr_0 { margin-right: 0!important; }
 .ml_0 { margin-left: 0!important; }
 .mb_5 { margin-bottom: 0.5rem !important; }
+.mt_5 { margin-top: 0.5rem !important; }
+.mt_1r { margin-top: 1rem !important; }
 /* header */
 /* header top renewal (20210414) */
 #header {
