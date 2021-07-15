@@ -1667,7 +1667,6 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 
 .square_item_list .item_thumb > img {
   height: 100%;
-  max-width: 200% !important;
 }
 
 .item_thumb > .label_soldout {
