@@ -5430,6 +5430,9 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   padding: 0.8rem 0 0.5rem;
 }
 
+.info-line2 { height: 100px !important; }
+#od_memo2 { padding: 0.8rem; height: 100px !important; font-size: 0.85rem !important; }
+
 /* orderform */
 /* E: orderform styel */
 /* S: orderform completed style */
