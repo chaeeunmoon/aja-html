@@ -2675,8 +2675,8 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 }
 .review_block .comment_btn { margin-top: 1rem; } 
 .review_block .no_review { font-size: 0.95rem; color: #828282; padding: 1.5rem 0; text-align: center; }
-.review_block .review_border_box { background-color: #f7f8fa; border-radius: 8px; margin-bottom: 0.5rem; padding: 1.5rem 0.5rem; font-size: 0.95rem; color: #828282; text-align: center; font-weight: 600; }
-.review_block .review_border_box span { font-weight: 600; }
+.review_border_box { padding: 1.5rem 0.5rem; font-size: 0.95rem; color: #828282; text-align: center; font-weight: 600; }
+.review_border_box span { font-weight: 600; }
 .tab_inner_box { padding-top: 0.8rem; }
 .item_review_box { border-bottom: 1px solid #e0e0e0; }
 .item_title_block { margin-bottom: 1.5rem; }
