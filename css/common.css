@@ -79,7 +79,9 @@ caption { display: none; }
 .text_overflow { -o-text-overflow: ellipsis; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
 .order-date { font-size: 0.9rem; padding: 0.2rem 0; }
 .mr_0 { margin-right: 0!important; }
+.mr_5 { margin-right: 0.5rem!important; }
 .ml_0 { margin-left: 0!important; }
+.ml_5 { margin-left: 0.5rem!important; }
 .mb_5 { margin-bottom: 0.5rem !important; }
 .mt_5 { margin-top: 0.5rem !important; }
 .mt_1r { margin-top: 1rem !important; }
