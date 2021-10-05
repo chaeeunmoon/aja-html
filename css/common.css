@@ -2053,6 +2053,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .list_banner_wrapper img { width: 100%; }
 .list_content { width: 100%; margin-top: 1.5rem; }
 .list_content .list_item_wrap li { padding-bottom: 0.9rem; margin-bottom: 1.2rem; }
+.empty_list { width: 100% !important; font-size: 1.1rem; color: #aaa; text-align: center; font-weight: 500; padding: 1.3rem 0; }
 .list_wrapper .square_item_list.list_item_wrap li { width: 47.5%; } 
 .list_wrapper .btn_wrapper { margin: 0.5rem 0; }
 /* lading style */
