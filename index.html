@@ -20,6 +20,7 @@
 
     <!-- plugin / 기존 파일 그대로 사용 -->
     <link rel="stylesheet" href="plugin/Swiper-slider/css/swiper.min.css" />
+    <script src="js/lazy-load.js"></script>
   </head>
   <body>
     <div class="desktop_wrapper">
@@ -197,7 +198,7 @@
                   <a href="category_list.html">
                     <div class="ctg_thumbnail">
                       <img
-                        src="images/category/ico_main_ctg_06_v4.jpg"
+                        src="images/category/ico_main_ctg_06.jpg"
                         alt="교과연계"
                       />
                     </div>
@@ -294,7 +295,7 @@
               <a href="best_list.html">
                 <p class="title_txt">이 체험 어때요?</p>
                 <span class="item_more"
-                  ><img src="images/icon/btn_more_black.png" alt="더보기"
+                  ><img class="lazy" data-src="images/icon/btn_more_black.png" loading='lazy' alt="더보기"
                 /></span>
               </a>
             </div>
@@ -303,7 +304,7 @@
                 <li>
                   <a href="item.html">
                     <div class="item_thumb">
-                      <img src="images/sample/sample-01.jpg" alt="" />
+                      <img class="lazy" data-src="images/sample/sample-01.jpg" loading='lazy' alt="" />
                     </div>
                     <div class="item_info">
                       <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
@@ -321,7 +322,25 @@
                 <li>
                   <a href="item.html">
                     <div class="item_thumb">
-                      <img src="images/sample/sample-02.png" alt="" />
+                      <img class="lazy" data-src="images/sample/sample-02.png" loading='lazy' alt="" />
+                    </div>
+                    <div class="item_info">
+                      <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                      <div class="item_price">
+                        <!--할인율-->
+                        <span class="sale_percent">50%</span>
+                        <!--원가-->
+                        <span class="origin_price">26800</span>
+                        <!--판매가-->
+                        <span class="main_price">12900</span>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="item.html">
+                    <div class="item_thumb">
+                      <img class="lazy" data-src="images/sample/sample-04.png" loading='lazy' alt="" />
                     </div>
                     <div class="item_info">
                       <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
@@ -352,7 +371,7 @@
                 <li>
                   <a href="item.html">
                     <div class="item_thumb">
-                      <img src="images/sample/sample-01.jpg" alt="" />
+                      <img class='lazy' data-src="images/sample/sample-01.jpg" alt="" />
                     </div>
                     <div class="item_info">
                       <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
@@ -370,7 +389,7 @@
                 <li>
                   <a href="item.html">
                     <div class="item_thumb">
-                      <img src="images/sample/sample-02.png" alt="" />
+                      <img class='lazy' data-src="images/sample/sample-02.png" alt="" />
                     </div>
                     <div class="item_info">
                       <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
@@ -388,7 +407,7 @@
                 <li>
                   <a href="item.html">
                     <div class="item_thumb">
-                      <img src="images/sample/sample-03.jpg" alt="" />
+                      <img class="lazy" data-src="images/sample/sample-03.jpg" alt="" />
                     </div>
                     <div class="item_info">
                       <p class="item_title">
@@ -889,13 +908,11 @@
     </div>
     <!--메인 팝업 추가 코드-->
     <!-- 메인 popup banner -->
-    <div id="main_popup" class="modal show main_popup">
+    <!-- <div id="main_popup" class="modal show main_popup">
       <div class="modal_content bottom">
         <div class="modal_body">
           <div class="swiper-container4">
-            <!-- Add Pagination -->
             <div class="swiper-pagination3 round_pagi popup_pagi"></div>
-            <!-- content-->
             <div class="swiper-wrapper">
               <div class="swiper-slide">
                 <a href="#"
@@ -927,7 +944,7 @@
           <span class="modal_close">닫기</span>
         </div>
       </div>
-    </div>
+    </div> -->
             </div>
             <!--popup-->
             <!--<div class="pc_pop_modal">
