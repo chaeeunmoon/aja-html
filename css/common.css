@@ -64,7 +64,8 @@ img {max-width: 100%; height: auto;}
 ul,ol,li { list-style: none; }
 a,a:hover,a:active,a:visited { color: inherit; text-decoration: none; }
 caption { display: none; }
-
+/* 이미지 선명 css */
+/*img { -webkit-transform: translateZ(0); transform: translateZ(0); }*/
 /* S: lightbox custom */
 .lb-nav a.lb-prev,
 .lb-nav a.lb-next { opacity: 1 !important; }
@@ -1319,7 +1320,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .list_item_wrap .item_thumb,
 .block_box a .item_thumb {
   position: relative;
-  overflow: hidden;
+  overflow: hidden !important;
   border-radius: 20px;
   background-color: #f8f7f5;
 }
@@ -1332,11 +1333,15 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   min-height: 100%;
   min-width: 100%;
   position: absolute;
+  top: 0;
+  left: 0;
+  /*
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  */
 }
 .square_item_list .item_thumb > img { height: 100%; }
 .item_thumb > .label_soldout { position: absolute; top: 0.55rem; left: 0.55rem; z-index: 1; width: 40%; }
