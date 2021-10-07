@@ -1,24 +1,58 @@
-//Reference : https://helloinyong.tistory.com/297
+//Reference : https://helloinyong.tistory.com/297 (2021-10-07)
 document.addEventListener("DOMContentLoaded", function() {
   var lazyloadImages;    
 
   if ("IntersectionObserver" in window) {
-    lazyloadImages = document.querySelectorAll(".lazy");
-    var imageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          var image = entry.target;
-          image.src = image.dataset.src;
-          image.classList.remove("lazy");
-          imageObserver.unobserve(image);
-        }
-      });
-    });
+	  function lazyload() {
+	  		lazyloadImages = document.querySelectorAll(".lazy");
+		    var imageObserver = new IntersectionObserver(function(entries, observer) {
+		      entries.forEach(function(entry) {
+		        if (entry.isIntersecting) {
+		          var image = entry.target;
+		          image.src = image.dataset.src;
+		          image.classList.remove("lazy");
+		          imageObserver.unobserve(image);
+		        }
+		      });
+		    });
 
-    lazyloadImages.forEach(function(image) {
-      imageObserver.observe(image);
-    });
-  } else {  
+		    lazyloadImages.forEach(function(image) {
+		      imageObserver.observe(image);
+		    });
+	  }		  
+	lazyload();
+
+
+	// Mutation Observer
+	function lazyObserver(el){
+		// 감시 대상
+		let target = document.querySelector(el);
+		// 감시자의 설정
+		let option = {
+		    attributes: true,
+		    childList: true,
+		    characterData: true
+		};
+
+		if(target){
+			// 감시자 인스턴스 만들기
+			let observer = new MutationObserver((mutations) => {
+				// 노드가 변경 됐을 때의 작업
+				lazyload();
+			});
+			// 대상 노드에 감시자 전달
+			observer.observe(target, option);
+		}	
+	}
+	
+	//list.php dynamic event binding
+	lazyObserver('#item-data-list');
+
+
+
+
+  } else {
+	  console.log('2');
     var lazyloadThrottleTimeout;
     lazyloadImages = document.querySelectorAll(".lazy");
     
@@ -47,4 +81,5 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("resize", lazyload);
     window.addEventListener("orientationChange", lazyload);
   }
+
 });
