@@ -66,6 +66,10 @@ a,a:hover,a:active,a:visited { color: inherit; text-decoration: none; }
 caption { display: none; }
 /* 이미지 선명 css */
 /*img { -webkit-transform: translateZ(0); transform: translateZ(0); }*/
+img { 
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+ }
 /* S: lightbox custom */
 .lb-nav a.lb-prev,
 .lb-nav a.lb-next { opacity: 1 !important; }
@@ -955,6 +959,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 #hero_modal .modal_header { padding: 0.8rem 1.2rem; }
 #hero_modal .modal_close { font-family: 'Roboto', sans-serif; font-size: 1.7rem; font-weight: 900; color: #fff; cursor: pointer;}
 #hero_modal .banner_content div { margin-bottom: 0.5rem; }
+#hero_modal .banner_content div img { width: 100% !important; }
 /* main popup modal */
 .main_popup { width: 100% !important; }
 .main_popup .modal_content,
