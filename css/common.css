@@ -1869,6 +1869,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .search_form input:-ms-input-placeholder,
 .search_form input::-ms-input-placeholder,
 .search_form input::placeholder { font-size: 1rem; font-weight: 400; color: #828282; }
+.search_form .search-txt { height: 1.36rem; }
 .search_form .search_btn img { width: 1.3rem; }
 .search_form .search_btn:focus { outline: none; }
 .search_form_wrap { margin-bottom: 2.5rem; }
