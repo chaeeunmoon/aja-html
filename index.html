@@ -966,6 +966,16 @@
   <!-- plugin js (기존 plugin 파일과 동일)-->
   <script src="js/jquery-1.8.3.min.js"></script>
   <script src="plugin/Swiper-slider/js/swiper.min.js"></script>
+  <!--ie 브라우저 체크-->
+  <script>
+    $(document).ready(function(){
+      if (navigator.userAgent.indexOf("Trident") > 0 || /MSIE \d |Trident.*rv:/.test(navigator.userAgent)){
+        console.log("exLog")
+        var url = 'https://www.ajaschool.com'; 
+        window.location = 'microsoft-edge:' + url //url : 이동할 주소 
+      }
+    });
+  </script>
   <!-- 위로가기 / 기존 소스  -->
   <script>
     $(document).ready(function () {
