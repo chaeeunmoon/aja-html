@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오</title>
+
+    <link rel="stylesheet" href="./css/portfolio-style.css">
+</head>
+<body>
+    <!--원본-->
+    <div class="viewer">
+        <div id="portfolio_skin" class="skin1 skin_viewer">
+            <div class="title">
+                <h2>아자스쿨 체험학습 보고서</h2>
+            </div>
+            <div class="form_block">
+                <span class="label_box">체험자</span>
+            </div>
+        </div>
+    </div>
+    
+    <div id="viewer"></div>
+    <button id="create_pdf">pdf 생성</button>
+    <!--추가-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script>
+        html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
+            //document.body.appendChild(canvas);
+            var imgData = canvas.toDataURL('image/png');
+            console.log(imgData);
+            console.log('load');
+        }); 
+        // pdf 저장 js 
+        $('#create_pdf').click(function () {
+            //pdf_wrap을 canvas객체로 변환
+            html2canvas($('#portfolio_skin')[0],{
+                scale: 5
+            }).then(function (canvas) {
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF('p', 'mm', 'a4');
+                const imgProps = pdf.getImageProperties(imgData);
+                const pdfWidth = pdf.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+                pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                pdf.save('download.pdf');
+            });
+        });
+    </script>
+</body>
+</html>
