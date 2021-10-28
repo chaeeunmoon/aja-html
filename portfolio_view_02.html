@@ -99,8 +99,9 @@
         <!--S: pdf skin-->
         <div class="pdf_skin">
             <div class="test_img"><img src="images/portfolio/skin_02.jpg" alt=""></div>
+            <!--이미지 로드-->
             <div id="img_viewer" style="text-align: center;"></div>
-
+            <!--html 파일-->
             <div class="viewer">
               <!--저장되는 pdf-->
               <div id="portfolio_skin" class="skin2 skin_viewer">
@@ -126,17 +127,72 @@
                         </tr>
                         <tr>
                           <th>체험내용</th>
-                          <td colspan="3"></td>
+                          <td colspan="3">
+                            <!--S:상품정보-->
+                            <section class="content_block">
+                              <div class="flex_block start">
+                                <div class="item_thumb">
+                                  <img src="images/sample/sample-01.jpg" alt="">
+                                </div>
+                                <div class="item_info">
+                                  <p class="sub_title">부천 플레이아쿠아리움</p>
+                                  <h5 class="title">씨워커(Sea Walker)체험</h5>
+                                  <p class="tag">액티비티, 부천,아쿠아리움, 플레이, 플레이아쿠아리움, 바다,물고기, 씨워크. BEST체험</p>
+                                </div>
+                              </div>
+                            </section>
+                            <!--E:상품정보-->
+                            <!--S:체험목표-->
+                            <section class="content_block">
+                              <p class="title">체험목표</p> 
+                              <p class="desc">
+                                아이들이물속의 다양한 물고기들과의교류로 인해 좀 더 다양한 경험을 제공해 드릴 수 있습니다.
+                                물에 대한 공포심을 없애는데 도와드리며, 자신감이 없는 아이들도 체험을 함으로써 할 수 있다는 자심감을 부요할 수 있습니다.
+                              </p>
+                            </section>
+                            <!--E:체험목표-->
+                            <!--S:체험내용-->
+                            <section class="content_block">
+                              <p class="title">체험내용</p>
+                              <p class="desc">
+                                아이들이물속의 다양한 물고기들과의교류로 인해 좀 더 다양한 경험을 제공해 드릴 수 있습니다.
+                                물에 대한 공포심을 없애는데 도와드리며, 자신감이 없는 아이들도 체험을 함으로써 할 수 있다는 자심감을 부요할 수 있습니다.
+                              </p>
+                            </section>
+                            <!--E:체험내용-->
+                            <!--S:체험내용-->
+                            <section class="content_block">
+                              <p class="title">교사코멘트</p>
+                              <p class="desc">
+                                처음엔 두렵지만 막상 들어가면 안정감을 가지고,
+                                시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
+                                물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
+                              </p>
+                            </section>
+                            <!--E:체험내용-->
+                          </td>
                         </tr>
                         <tr>
                           <th>체험소감</th>
-                          <td colspan="3"></td>
+                          <td colspan="3">
+                            <div class="review_img_wrap">
+                              <img src="images/sample/sample-01.jpg" alt="">
+                              <img src="images/sample/sample-02.png" alt="">
+                              <img src="images/sample/sample-03.jpg" alt="">
+                            </div>
+                            <div>
+                              처음엔 두렵지만 막상 들어가면 안정감을 가지고,
+                              시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
+                              물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
+                            </div>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
                   </section>
               </div>
               <!--E:viewer-->
+              <!--E:html 파일-->
             </div>
             <!--E:pdf_skin-->
         </div>
@@ -270,19 +326,19 @@
   <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <!--pdf download js-->
   <script>
-    //  html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
-    //    //document.body.appendChild(canvas);
-    //    var $img = new Image();
-    //    var imgData = canvas.toDataURL('image/png');
-    //    $img.src = imgData;
-    //    document.getElementById('img_viewer').appendChild($img);
-    //  });
+     html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
+       //document.body.appendChild(canvas);
+       var $img = new Image();
+       var imgData = canvas.toDataURL('image/png');
+       $img.src = imgData;
+       document.getElementById('img_viewer').appendChild($img);
+     });
        
-    // pdf 저장 js 
+    //pdf 저장 js 
     $('#create_pdf').click(function () {
       //pdf_wrap을 canvas객체로 변환
       html2canvas($('#portfolio_skin')[0], {
-        scale: 3
+        //scale: 3
       }).then(function (canvas) {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF('p', 'mm', 'a4');
