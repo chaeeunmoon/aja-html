@@ -137,7 +137,7 @@
 /*-----------E:skin1------------*/
 
 /*-----------S:skin2------------*/
-.skin2 { background-color: #FFD97B; }
+.skin2 { background-color: #FFD97B; padding-bottom: 2em; }
 .skin2 .table_wrapper { 
   padding: 0 2em;
 }
@@ -147,14 +147,30 @@
   border: 2px solid #003262;
   border-radius: 10px;
 }
-.skin2 .skin2_table > tr {
+.skin2 .skin2_table tr {
   border-bottom: 1px solid #003262;
+  padding: 0;
 }
-.skin2 .skin2_table > tr:last-of-type { 
+.skin2 .skin2_table tr:last-of-type { 
   border-bottom: none;
 }
-.skin2 .skin2_table > tr > th {
+.skin2 .skin2_table tr > th,
+.skin2 .skin2_table tr > td {
+  padding: 0.5em;
+}
+.skin2 .skin2_table tr > th {
+  font-size: 0.9em;
+  color: #003262;
   font-family: 'CookieRun' !important;
+  text-align: center;
+  border-right: 1px solid #003262;
+}
+.skin2 .skin2_table tr > th:nth-of-type(2) {
+  border-left: 1px solid #003262;
+}
+
+.skin2 .skin2_table tr > td {
+  font-size: 0.9em;
 }
 /*-----------E:skin2------------*/
 

@@ -118,15 +118,19 @@
                         </tr>
                         <tr>
                           <th>체험기간</th>
-                          <td>2021년 10월 1일</td>
+                          <td colspan="3">2021년 10월 1일</td>
+                        </tr>
+                        <tr>
+                          <th>체험장소</th>
+                          <td colspan="3">경기 부천시 조마루로 2 플레이아쿠아리움 부천</td>
                         </tr>
                         <tr>
                           <th>체험내용</th>
-                          <td></td>
+                          <td colspan="3"></td>
                         </tr>
                         <tr>
                           <th>체험소감</th>
-                          <td></td>
+                          <td colspan="3"></td>
                         </tr>
                       </tbody>
                     </table>
@@ -278,7 +282,7 @@
     $('#create_pdf').click(function () {
       //pdf_wrap을 canvas객체로 변환
       html2canvas($('#portfolio_skin')[0], {
-        scale: 5
+        scale: 3
       }).then(function (canvas) {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jsPDF('p', 'mm', 'a4');
