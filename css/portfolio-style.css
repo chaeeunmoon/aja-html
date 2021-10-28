@@ -143,9 +143,8 @@
 }
 .skin2 .skin2_table { 
   width: 100%;
-  border-collapse:collapse;
   background-color: #fff;
-  border: 3px solid #003262;
+  border: 2px solid #003262;
   border-radius: 10px;
 }
 .skin2 .skin2_table > tr {
@@ -155,7 +154,7 @@
   border-bottom: none;
 }
 .skin2 .skin2_table > tr > th {
-  
+  font-family: 'CookieRun' !important;
 }
 /*-----------E:skin2------------*/
 
