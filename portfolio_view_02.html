@@ -98,11 +98,11 @@
       <div id="content" class="m_wrap">
         <!--S: pdf skin-->
         <div class="pdf_skin">
-            <div class="test_img"><img src="images/portfolio/skin_02.jpg" alt=""></div>
+            <div class="test_img" style="position: absolute; opacity: 0;"><img src="images/portfolio/skin_02.jpg" alt=""></div>
             <!--이미지 로드-->
             <div id="img_viewer" style="text-align: center;"></div>
             <!--html 파일-->
-            <div class="viewer">
+            <div class="viewer" style="position: absolute; opacity: 0;">
               <!--저장되는 pdf-->
               <div id="portfolio_skin" class="skin2 skin_viewer">
                   <div class="title">
@@ -326,28 +326,28 @@
   <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <!--pdf download js-->
   <script>
-     html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
-       //document.body.appendChild(canvas);
-       var $img = new Image();
-       var imgData = canvas.toDataURL('image/png');
-       $img.src = imgData;
-       document.getElementById('img_viewer').appendChild($img);
-     });
-       
-    //pdf 저장 js 
-    $('#create_pdf').click(function () {
-      //pdf_wrap을 canvas객체로 변환
-      html2canvas($('#portfolio_skin')[0], {
-        //scale: 3
-      }).then(function (canvas) {
-        const imgData = canvas.toDataURL('image/png');
-        const pdf = new jsPDF('p', 'mm', 'a4');
-        const imgProps = pdf.getImageProperties(imgData);
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-        pdf.save('download.pdf');
-      });
+    html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
+      //document.body.appendChild(canvas);
+      var $img = new Image();
+      var imgData = canvas.toDataURL('image/png');
+      $img.src = imgData;
+      document.getElementById('img_viewer').appendChild($img);
     });
-  </script>
+      
+   //pdf 저장 js 
+   $('#create_pdf').click(function () {
+     //pdf_wrap을 canvas객체로 변환
+     html2canvas($('#portfolio_skin')[0], {
+       scale: 3
+     }).then(function (canvas) {
+       const imgData = canvas.toDataURL('image/png');
+       const pdf = new jsPDF('p', 'mm', 'a4');
+       const imgProps = pdf.getImageProperties(imgData);
+       const pdfWidth = pdf.internal.pageSize.getWidth();
+       const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+       pdf.save('download.pdf');
+     });
+   });
+ </script>
 </html>
