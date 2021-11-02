@@ -9,12 +9,16 @@
 }
 .viewer {
   position: absolute;
-  top: 5rem;
-  left: 0;
-  width: 90%;
+  width: 793.7007874px;
+  height: 1122.519685px;
   display: inline-block;
   text-align: center;
+  transform: scale(0.8);
+  border: 1px solid red;
+  background-color: #fff;
 }
+
+#portfolio_skin { min-height: 100%; }
 .skin_viewer { position: relative; }
 .pdf_btn_wrapper {  text-align: center; margin-top: 1rem; }
 .test_img { width: 90%; text-align: center; margin: 0 auto; }
@@ -33,24 +37,23 @@
 /*-----------E:기존 레이아웃2------------*/
 /*-----------S:skin1------------*/
 .skin1 { 
-  font-size: 10px;
   background-color: #fff;
-  padding: 1.5em;
+  padding: 3.5em;
   overflow-x: hidden;
+  font-size: 10px;
 }
 .skin1 .title > h2 {
-  font-size: 5em;
+  font-size: 3em;
   font-weight: 900;
   color: #7B53E8;
   position: relative;
-  padding: 0.8rem 0.5rem;
   display: block;
   opacity: 1;
 }
 .skin1 .title > h2 > sub {
-  font-size: 0.2rem;
+  font-size: 0.5em;
   position: absolute;
-  top: 3.2em;
+  top: 0;
   right: 0;
   color: #7B53E8;
 }
@@ -79,16 +82,14 @@
   border: 1px solid #7B53E8;
 }
 .skin1 .label_box {
-  width: 7.5em;
+  width: 7em;
   text-align: center;
-  padding: 3em 2em;
   color: #fff;
   font-weight: 600;
   background-color: #7B53E8;
   display: table;
 }
 .skin1 .form_block .label_box > span {
-  font-size: 0.05em;
   color: #fff;
   font-weight: 600;
   display: table-cell;
@@ -96,7 +97,6 @@
   vertical-align: middle;
 }
 .skin1 .form_block .form_desc {
-  font-size: 0.1em;
   line-height: 1.2;
   display: block;
   flex: 1;
