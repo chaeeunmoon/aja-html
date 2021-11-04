@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=3.0,user-scalable=no">
-  
+    
     <!-- https://programmingsummaries.tistory.com/298 -->
     <!--<meta name="viewport" content="target-densitydpi=device-dpi, user-scalable=0, initial-scale=1.0, minimum-scale=1.0,
     maximum-scale=1.0, width=device-width" />-->
@@ -17,6 +17,8 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
       rel="stylesheet"
     />
+    <!--noto font cdn-->  
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600&display=swap" rel="stylesheet">
     <!--기존 css-->
     <link rel="stylesheet" href="css/default_diff.css" />
     <!-- 추가 css-->
@@ -24,96 +26,53 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/media-query.css" />
     <link rel="stylesheet" href="css/portfolio-style.css" />
+    
   </head>
   <body>
-    <div id="portfolio_skin" class="viewer skin2" style="top: -0px; left: 0; z-index: 999999999999999; opacity: 1;">
+    <div id="portfolio_skin" class="viewer skin3" style="top: -0px; left: 0; z-index: 999999999999999; opacity: 1;">
       <!--저장되는 pdf-->
       <div class="page">
-          <div class="title">
-            <img src="images/portfolio/skin2/skin2-title.png" alt="">
-          </div>
-          <section class="table_wrapper">
-            <table class="skin2_table">
+        <div class="frame">
+          <section class="page_title">
+            <img src="images/portfolio/skin3/skin3-title.png" alt="">
+          </section>
+          <section class="row_form">
+            <div class="flex_block">
+              <dl>
+                <dt>체험자:</dt>
+                <dd>김아자</dd>
+              </dl>
+              <dl>
+                <dt>작성일:</dt>
+                <dd>2021년 10월 20일</dd>
+              </dl>  
+            </div>
+          </section>
+          <section class='row_form'>
+            <table class="skin3_table">
               <tbody>
                 <tr>
-                  <th>체험자</th>
-                  <td>김아자</td>
-                  <th>작성일</th>
+                  <td>체험기간</td>
                   <td>2021년 10월 18일</td>
                 </tr>
                 <tr>
-                  <th>체험기간</th>
-                  <td colspan="3">2021년 10월 1일</td>
-                </tr>
-                <tr>
-                  <th>체험장소</th>
-                  <td colspan="3">경기 부천시 조마루로 2 플레이아쿠아리움 부천</td>
-                </tr>
-                <tr>
-                  <th>체험내용</th>
-                  <td colspan="3">
-                    <!--S:상품정보-->
-                    <section class="content_block">
-                      <div class="flex_block start">
-                        <div class="item_thumb">
-                          <img src="images/sample/sample-01.jpg" alt="">
-                        </div>
-                        <div class="item_info">
-                          <p class="sub_title">부천 플레이아쿠아리움</p>
-                          <h5 class="title">씨워커(Sea Walker)체험</h5>
-                          <p class="tag">액티비티, 부천,아쿠아리움, 플레이, 플레이아쿠아리움, 바다,물고기, 씨워크. BEST체험</p>
-                        </div>
-                      </div>
-                    </section>
-                    <!--E:상품정보-->
-                    <!--S:체험목표-->
-                    <section class="content_block">
-                      <p class="title">체험목표</p> 
-                      <p class="desc">
-                        아이들이물속의 다양한 물고기들과의교류로 인해 좀 더 다양한 경험을 제공해 드릴 수 있습니다.
-                        물에 대한 공포심을 없애는데 도와드리며, 자신감이 없는 아이들도 체험을 함으로써 할 수 있다는 자심감을 부요할 수 있습니다.
-                      </p>
-                    </section>
-                    <!--E:체험목표-->
-                    <!--S:체험내용-->
-                    <section class="content_block">
-                      <p class="title">체험내용</p>
-                      <p class="desc">
-                        아이들이물속의 다양한 물고기들과의교류로 인해 좀 더 다양한 경험을 제공해 드릴 수 있습니다.
-                        물에 대한 공포심을 없애는데 도와드리며, 자신감이 없는 아이들도 체험을 함으로써 할 수 있다는 자심감을 부요할 수 있습니다.
-                      </p>
-                    </section>
-                    <!--E:체험내용-->
-                    <!--S:체험내용-->
-                    <section class="content_block">
-                      <p class="title">교사코멘트</p>
-                      <p class="desc">
-                        처음엔 두렵지만 막상 들어가면 안정감을 가지고,
-                        시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
-                        물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
-                      </p>
-                    </section>
-                    <!--E:체험내용-->
-                  </td>
-                </tr>
-                <tr>
-                  <th>체험소감</th>
-                  <td colspan="3">
-                    <div class="review_img_wrap">
-                      <img src="images/sample/sample-01.jpg" alt="">
-                      <img src="images/sample/sample-02.png" alt="">
-                      <img src="images/sample/sample-03.jpg" alt="">
-                    </div>
-                    <div>
-                      처음엔 두렵지만 막상 들어가면 안정감을 가지고,
-                      시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
-                      물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
-                    </div>
-                  </td>
+                  <td>체험장소</td>
+                  <td>경기 부천시 조마루로 2 플레이아쿠아리움 부천</td>
                 </tr>
               </tbody>
             </table>
           </section>
+          <section class="row_form">
+            <div class="item_box">
+              <div class="item_title">체험내용</div>
+              <div class="item_desc">
+                <article class="content_block">
+
+                </article>
+              </div>
+            </div>
+          </section>
+        </div>  
       </div>
       <!--E:viewer-->
     </div>
