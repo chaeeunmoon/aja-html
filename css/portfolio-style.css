@@ -17,7 +17,7 @@
   display: inline-block;
   text-align: center;
   background-color: #fff;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 .img_viewer { width: 90%; margin: 0 auto; }
 /* S:상품정보 */
