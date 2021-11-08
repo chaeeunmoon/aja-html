@@ -320,7 +320,7 @@ html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
  $('#create_pdf').click(function () {
   //방법 1 js
   html2canvas($('#portfolio_skin')[0]
-  ,{ scale: 5 }).then(function(canvas) {
+  ,{ scale: 2 }).then(function(canvas) {
     var margin = 20;
     var filename = 'eportfolio_' + Date.now() + '.pdf'; 
     var doc = new jsPDF('p', 'mm', 'a4'); 
@@ -332,7 +332,7 @@ html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
     var position = 0; 
     doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight); 
     heightLeft -= pageHeight; 
-    while (heightLeft >= 0) { 
+    while (heightLeft >= 10) { 
       //console.log('done');
       position = heightLeft - imgHeight; 
       doc.addPage(); 
