@@ -17,8 +17,9 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap"
       rel="stylesheet"
     />
-    <!--noto font cdn-->  
+    <!--S:add noto font cdn-->  
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+    <!--S:add noto font cdn-->
     <!--기존 css-->
     <link rel="stylesheet" href="css/default_diff.css" />
     <!-- 추가 css-->
@@ -329,7 +330,6 @@ html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
   //방법 1 js
   html2canvas($('#portfolio_skin')[0]
   ,{ scale: 2 }).then(function(canvas) {
-    //var margin = 20;
     var filename = 'eportfolio_' + Date.now() + '.pdf'; 
     var doc = new jsPDF('p', 'mm', 'a4'); 
     var imgData = canvas.toDataURL('image/png'); 
@@ -339,13 +339,17 @@ html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
     var heightLeft = imgHeight; 
     var position = 0; 
     doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight); 
+    console.log('1'+heightLeft);
     heightLeft -= pageHeight; 
+    console.log('2'+heightLeft);
     while (heightLeft >= 10) { 
-      //console.log('done');
+      console.log('3'+heightLeft);
       position = heightLeft - imgHeight; 
       doc.addPage(); 
       doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight); 
-      heightLeft -= pageHeight; 
+      console.log('4'+heightLeft);
+      heightLeft -= pageHeight;
+      console.log('5'+heightLeft); 
     }
       doc.save(filename);
     });
