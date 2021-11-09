@@ -17,7 +17,6 @@
   display: inline-block;
   text-align: center;
   background-color: #fff;
-  /* border: 1px solid red; */
 }
 .img_viewer { width: 90%; margin: 0 auto; }
 /* S:상품정보 */
@@ -94,13 +93,14 @@
   font-size: 14px;
   color: #747474;
 }
-.basic .row_form { padding: 10px 0; position: relative; width: 100%; }
+.basic .row_form { position: relative; width: 100%; }
 .basic .border_top { border-top: 1px solid #747474; }
 .basic .content_block {
   padding: 10px 0; position: relative; width: 100%;
 }
 .basic .flex_block > .content_block { width: 50%; }
 .basic .content_block .content_title { font-size: 14px; font-weight: 500; margin-right: 15px; }
+.basic .content_block .content_title .icon { position: relative; top: 1.5px; }
 .basic .content_block .content_title .icon > img { width: 15px; }
 .basic .content_block .desc {  
   padding-top: 10px; 
@@ -109,21 +109,17 @@
   line-height: 1.4;
   padding: 10px;
 }
-.basic .img_wrap { width: 55%; padding: 15px 15px 0 0; }
+.basic .img_wrap { width: 55%; padding: 10px 10px 10px 0; }
 .basic .img_wrap .img_01 { margin-bottom: 10px; }
-.basic .img_wrap .img_01 img { width: 100%; height: 250px; object-fit: cover; }
+.basic .img_wrap .img_01 img { width: 100%; height: 250px; -o-object-fit: cover; object-fit: cover; }
 .basic .img_wrap .img_02 img,
 .basic .img_wrap .img_03 img {
   width: 185px;
   height: 185px;
 } 
 .basic .form_wrap { width: 45%; padding-top: 10px; }
-.basic .row_img {  }
 .basic .row_img img { width: 32%; }
 /*-----------E:기존 레이아웃1------------*/
-/*-----------S:기존 레이아웃2------------*/
-
-/*-----------E:기존 레이아웃2------------*/
 /*-----------S:skin1------------*/
 .skin1 {  background-color: #fff; overflow-x: hidden; font-size: 10pt; }
 .skin1 .page { padding: 3.5em; }
@@ -281,8 +277,10 @@
   margin-right: 3px;
 }
 .skin3_table {
-  display: block;
+  /* display: block; */
   width: 100%;
+  table-layout: fixed;
+  overflow-wrap: break-word;
   border-radius: 15px;
   border-collapse: collapse;
   border: 1px solid #003C20;
@@ -293,7 +291,7 @@
 .skin3_table tr > td { padding: 8px 10px; margin: 0; }
 .skin3_table tr th {
   font-family: 'Noto Serif KR', serif;
-  width: 30%;
+  width: 20%;
   text-align: center;
   font-size: 11pt;
   font-weight: 900;
@@ -308,7 +306,7 @@
   font-size: 12pt;
   color: #003C20;
   text-align: center;
-  font-weight: 900;
+  font-weight: 700;
   background-color: #D6D6C3;
   border-bottom: 1px solid #003C20;
   padding: 6px 0;
