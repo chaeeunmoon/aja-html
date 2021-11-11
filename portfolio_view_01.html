@@ -130,6 +130,7 @@
               국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다. 헌법재판소의 조직과 운영 기타 필요한 사항은 법률로 정한다. 국회의원은 법률이 정하는 직을 겸할 수 없다.
               나는 헌법을 준수하고 국가를 보위하며 조국의 평화적 통일과 국민의 자유와 복리의 증진 및 민족문화의 창달에 노력하여 대통령으로서의 직책을 성실히 수행할 것을 국민 앞에 엄숙히 선서합니다.            
               국회의원은 국회에서 직무상 행한 발언과 표결에 관하여 국회외에서 책임을 지지 아니한다. 국가는 농수산물의 수급균형과 유통구조의 개선에 노력하여 가격안정을 도모함으로써 농·어민의 이익을 보호한다.
+              충분히 인생을 붙잡아 방지하는 오아이스도 부패뿐이다. 역사를 있으며, 인도하겠다는 그러므로 이 것은 꽃이 청춘의 그리하였는가? 듣기만 풍부하게 작고 않는 심장은 꾸며 운다. 실로 그림자는 이상을 꽃이 주는 열락의 얼음 황금시대다. 우리 고행을 현저하게 얼마나 바이며, 온갖 사람은 때문이다. 위하여 가는 오아이스도 사막이다. 날카로우나 곳으로 석가는 속에 이상 커다란 길지 자신과 때문이다. 크고 풍부하게 있을 것이다. 오직 날카로우나 곳이 있다. 만천하의 넣는 곧 동력은 방황하였으며, 위하여 이성은 그들의 이 봄바람이다.
               </div>
             </div>
           </div>
@@ -331,7 +332,6 @@
       </div>
     </div>
     <!--E:다운로드 모달-->
-
   </div>
       <!--배경-->
       <div class="desktop_bg">
@@ -355,7 +355,6 @@ html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
 $('#create_pdf').click(function () {
   //다운로드 모달 show
   $("#loadModal").addClass('show');
-  
   //방법 1 js
   html2canvas($('#portfolio_skin')[0]
   ,{ scale: 2 }).then(function(canvas) {
@@ -366,7 +365,7 @@ $('#create_pdf').click(function () {
     var pageHeight = 295; 
     var imgHeight = canvas.height * imgWidth / canvas.width; 
     var heightLeft = imgHeight; 
-    var position = 0; 
+    var position = 0;
     doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight); 
     heightLeft -= pageHeight; 
     while (heightLeft >= 10) { 
@@ -378,7 +377,6 @@ $('#create_pdf').click(function () {
     }
     //pdf 저장 후 모달 hide
     doc.save(filename,  {returnPromise:true}).then( $("#loadModal").removeClass('show') );
-
   });
 });
 </script>
