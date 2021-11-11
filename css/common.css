@@ -2329,7 +2329,8 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .txt_editor_wrap > img,
 .txt_editor_wrap > div,
 .board_content_block .board_detail > div,
-.board_content_block .board_detail img { font-size: 0 !important; }
+.board_content_block .board_detail img { font-size: 0 !important; line-height: 0 !important; }
+.board_content_block .board_detail > div > img { vertical-align: bottom;}
 /* E:textEditor 수정 */
 .board_sns_block { padding: 0.7rem; text-align: right; }
 .board_view_wrapper .board_btn_block { padding: 1rem 0.7rem; text-align: right; border-top: 1px solid #d9d9d9; }
