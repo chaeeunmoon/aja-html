@@ -19,6 +19,30 @@
   background-color: #fff;
 }
 .img_viewer { width: 90%; margin: 0 auto; }
+.text_line3 {
+  line-height: 1.4;
+  white-space: normal;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  max-height: 4.2em;
+}
+.text_line4 {
+  line-height: 1.4;
+  white-space: normal;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+  max-height: 5.6em;
+}
 /* S:상품정보 */
 .item_thumb { position: relative;  max-width: 100%; width: 72px; height: 72px; }
 .item_thumb > img {  max-width: 100%; width: 72px; }

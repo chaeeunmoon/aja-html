@@ -75,7 +75,7 @@ caption { display: none; }
 .black_txt { color: #0d0d0d !important; }
 .sub_txt { color: #828282 !important; }
 .sub_color { color: #ff3d55; }
-.bold_txt,.bold_txt a { font-weight: 600 !important;}
+.bold_txt,.bold_txt a { font-weight: 600 !important; }
 .text_overflow { -o-text-overflow: ellipsis; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
 .order-date { font-size: 0.9rem; padding: 0.2rem 0; }
 .mr_0 { margin-right: 0!important; }

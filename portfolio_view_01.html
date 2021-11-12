@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="css/portfolio-style.css" />
   </head>
   <body>
-    <div id="portfolio_skin" class="viewer skin1" style="top: -1200px; left: 0; z-index: 999999999999999; opacity: 1;">
+    <div id="portfolio_skin" class="viewer skin1" style="top: -120000px; left: 0; z-index: 999999999999999; opacity: 1;">
       <!--저장되는 pdf-->
       <div class="page">
         <div class="page_title">
@@ -80,7 +80,7 @@
           <!--체험묙표-->
           <div class="form_box">
             <div class="label_box">체험목표</div>
-            <div class="skin_box form_desc">
+            <div class="skin_box form_desc" id="txt_01">
               아이들이물속의 다양한 물고기들과의교류로 인해 좀 더 다양한 경험을 제공해 드릴 수 있습니다.
               물에 대한 공포심을 없애는데 도와드리며, 자신감이 없는 아이들도 체험을 함으로써 할 수 있다는 자심감을 부요할 수 있습니다.
             </div>
@@ -88,7 +88,7 @@
           <!--체험내용-->
           <div class="form_box">
             <div class="label_box">체험내용</div>
-            <div class="skin_box form_desc">
+            <div class="skin_box form_desc" id="txt_02">
               아이들이물속의 다양한 물고기들과의교류로 인해 좀 더 다양한 경험을 제공해 드릴 수 있습니다.
               물에 대한 공포심을 없애는데 도와드리며, 자신감이 없는 아이들도 체험을 함으로써 할 수 있다는 자심감을 부요할 수 있습니다.
             </div>
@@ -98,7 +98,7 @@
         <section class="row_form type_2">
           <div class="form_box">
             <div class="label_box">교사코멘트</div>
-            <div class="skin_box form_desc">
+            <div class="skin_box form_desc" id="txt_03">
               처음엔 두렵지만 막상 들어가면 안정감을 가지고,
               시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
               물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
@@ -122,7 +122,7 @@
                 <img src="images/sample/sample-02.png" alt="">
                 <img src="images/sample/sample-03.jpg" alt="">
               </div>
-              <div class="review_desc">
+              <div class="review_desc" id="txt_04">
                 처음엔 두렵지만 막상 들어가면 안정감을 가지고,
               시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
               물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
@@ -339,6 +339,37 @@
 </div>
 <!-- plugin js (기존 plugin 파일과 동일)-->
 <script src="js/jquery-1.8.3.min.js"></script>
+<script>
+$(document).ready(function(){  
+  // 글자 수 세기 js
+  function getTextLength(str){
+      var len = 0;
+      for(var i =0; i < str.length; i++){
+        if( escape(str.charAt(i)).length == 6 ){
+          len++;
+        }
+        len++;
+      }
+      return len;
+  }
+
+  var txt_01 = $("#txt_01").text();
+  var txt_02 = $("#txt_02").text();
+  var txt_03 = $("#txt_03").text();
+  var txt_04 = $("#txt_04").text();
+
+  console.log("체험목표    = " + getTextLength(txt_01));
+  console.log("체험내용    = " + getTextLength(txt_02));
+  console.log("교사코멘트  = " + getTextLength(txt_03));
+  console.log("체험소감    = " + getTextLength(txt_04));
+
+  console.log("txt_01 = " + txt_01);
+  console.log("txt_02 = " + txt_02);
+  console.log("txt_03 = " + txt_03);
+  console.log("txt_04 = " + txt_04);
+
+});
+</script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <!--pdf download js-->
@@ -367,14 +398,15 @@ $('#create_pdf').click(function () {
     var heightLeft = imgHeight; 
     var position = 0;
     doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight); 
-    heightLeft -= pageHeight; 
-    while (heightLeft >= 10) { 
+    heightLeft -= pageHeight;
+    while (heightLeft >= 10) {
       position = heightLeft - imgHeight; 
       doc.addPage(); 
       doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight); 
       console.log('4'+heightLeft);
       heightLeft -= pageHeight; 
     }
+    
     //pdf 저장 후 모달 hide
     doc.save(filename,  {returnPromise:true}).then( $("#loadModal").removeClass('show') );
   });
