@@ -205,9 +205,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /* -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1; */
   border: 1px solid #7B53E8;
   padding: 0;
 }
@@ -227,15 +224,14 @@
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+  padding: 0;
+  margin: 0;
 }
 .skin1 .form_block .form_desc {
   font-size: 10pt;
   line-height: 1.4;
   display: block;
-  /* -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1; */
-  padding: 0.45em;
+  padding: 5px 10px;
   margin-top: -0.2em;
 }
 .skin1 .form_block .form_desc.half { width: 253px; }
