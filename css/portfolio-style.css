@@ -220,9 +220,6 @@
   display: table;
   padding: 5px 10px;
 }
-.skin1 .flex_block .label_box {
-  margin: 0;
-}
 
 .skin1 .form_block .label_box > span {
   color: #fff;
