@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="css/portfolio-style.css" />
   </head>
   <body>
-    <div id="portfolio_skin" class="viewer skin1" style="top: 0px; left: 0; z-index: 999999999999999; opacity: 1;">
+    <div id="portfolio_skin" class="viewer skin1" style="top: -0px; left: 0; z-index: 999999999999999; opacity: 1;">
       <!--저장되는 pdf-->
       <div class="page">
         <div class="page_title">
@@ -383,17 +383,16 @@ $(document).ready(function(){
   var reviewOffset = $review.offset().top;
   var pageHeight = 1122.519685;
   var pageOffset = $("#portfolio_skin").offset().top + pageHeight;
-
   var reviewHeight = pageOffset - reviewOffset - margin; 
   
   console.log(reviewOffset);  
   console.log(pageOffset);
   console.log("review height = " + reviewHeight );
+
   $reviewDesc.css('height', 100);
   $review.css("height", reviewHeight);
-  //$review.css("overflow", "hidden");
 
-  ellipsisChecker(document.querySelector('.review_desc'));
+  //ellipsisChecker(document.querySelector('.review_desc'));
 
   if (reviewOffset - margin < pageOffset ){
     console.log('overflow');

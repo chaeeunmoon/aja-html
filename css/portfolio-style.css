@@ -207,6 +207,7 @@
       -ms-flex: 1;
           flex: 1;
   border: 1px solid #7B53E8;
+  padding: 0;
 }
 .skin1 .label_box {
   min-width: 6em;
@@ -216,6 +217,11 @@
   background-color: #7B53E8;
   display: table;
   padding: 5px 10px;
+}
+.skin1 .flex_block .label_box {
+  margin: 0;
+  -ms-flex-preferred-size: auto;
+      flex-basis: auto;
 }
 .skin1 .form_block .label_box > span {
   color: #fff;
@@ -269,7 +275,6 @@
 .skin2 .skin2_table tr th:nth-of-type(2n) { border-left: 2px solid #003262; }
 .skin2 .skin2_table tr { border-bottom: 2px solid #003262; }
 .skin2 .skin2_table tr:last-child { border-bottom: none; }
-
 .skin2 .content_block { padding: 0.5em; }
 .skin2 .content_block > .title {
   position: relative;
@@ -514,4 +519,3 @@
 }
 /*-----------E:spinner------------*/
 /*-----------E:loading modal------------*/
-
