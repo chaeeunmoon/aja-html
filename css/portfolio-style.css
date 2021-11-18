@@ -205,9 +205,9 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 1;
+  /* -webkit-box-flex: 1;
       -ms-flex: 1;
-          flex: 1;
+          flex: 1; */
   border: 1px solid #7B53E8;
   padding: 0;
 }
@@ -238,6 +238,7 @@
   padding: 0.45em;
   margin-top: -0.2em;
 }
+.skin1 .form_block .form_desc.half { width: 253px; }
 .skin1 .form_box {  position: relative; }
 .skin1 .form_box .form_desc { line-height: 1.5; padding: 17px 10px 10px; }
 .skin1 .form_box .label_box { position: relative; top: 10px; padding: 8px 10px; }
