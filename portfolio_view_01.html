@@ -9,7 +9,6 @@
     <!-- https://programmingsummaries.tistory.com/298 -->
     <!--<meta name="viewport" content="target-densitydpi=device-dpi, user-scalable=0, initial-scale=1.0, minimum-scale=1.0,
     maximum-scale=1.0, width=device-width" />-->
-
     <title>아자스쿨</title>
     <!--font 추가 (NotoSansKr, Roboto)-->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -26,7 +25,7 @@
     <link rel="stylesheet" href="css/portfolio-style.css" />
   </head>
   <body>
-    <div id="portfolio_skin" class="viewer skin1" style="top: -0px; left: 0; z-index: 999999999999999; opacity: 1;">
+    <div id="portfolio_skin" class="viewer skin1" style="top: -2000000px; left: 0; z-index: 999999999999999; opacity: 1;">
       <!--저장되는 pdf-->
       <div class="page">
         <div class="page_title">
@@ -123,12 +122,12 @@
                 <img src="images/sample/sample-03.jpg" alt="">
               </div>
               <div class="review_desc" id="txt_04">
-                <!-- 처음엔 두렵지만 막상 들어가면 안정감을 가지고,
+               <!-- 처음엔 두렵지만 막상 들어가면 안정감을 가지고,
               시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
               물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
               군사법원의 조직·권한 및 재판관의 자격은 법률로 정한다. 대통령의 임기는 5년으로 하며, 중임할 수 없다. 국무위원은 국정에 관하여 대통령을 보좌하며, 국무회의의 구성원으로서 국정을 심의한다.
-              국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다. 헌법재판소의 조직과 운영 기타 필요한 사항은 법률로 정한다. 국회의원은 법률이 정하는 직을 겸할 수 없다.
-              나는 헌법을 준수하고 국가를 보위하며 조국의 평화적 통일과 국민의 자유와 복리의 증진 및 민족문화의 창달에 노력하여 대통령으로서의 직책을 성실히 수행할 것을 국민 앞에 엄숙히 선서합니다.             -->
+              국가는 전통문화의 계승·발전과 민족문화의 창달에 노력하여야 한다. 헌법재판소의 조직과 운영 기타 필요한 사항은 법률로 정한다. 국회의원은 법률이 정하는 직을 겸할 수 없다. -->
+              나는 헌법을 준수하고 국가를 보위하며 조국의 평화적 통일과 국민의 자유와 복리의 증진 및 민족문화의 창달에 노력하여 대통령으로서의 직책을 성실히 수행할 것을 국민 앞에 엄숙히 선서합니다.             
               국회의원은 국회에서 직무상 행한 발언과 표결에 관하여 국회외에서 책임을 지지 아니한다. 국가는 농수산물의 수급균형과 유통구조의 개선에 노력하여 가격안정을 도모함으로써 농·어민의 이익을 보호한다.
               충분히 인생을 붙잡아 방지하는 오아이스도 부패뿐이다. 역사를 있으며, 인도하겠다는 그러므로 이 것은 꽃이 청춘의 그리하였는가? 듣기만 풍부하게 작고 않는 심장은 꾸며 운다. 실로 그림자는 이상을 꽃이 주는 열락의 얼음 황금시대다. 우리 고행을 현저하게 얼마나 바이며, 온갖 사람은 때문이다. 위하여 가는 오아이스도 사막이다.
               날카로우나 곳으로 석가는 속에 이상 커다란 길지 자신과 때문이다. 크고 풍부하게 있을 것이다. 오직 날카로우나 곳이 있다. 만천하의 넣는 곧 동력은 방황하였으며, 위하여 이성은 그들의 이 봄바람이다.
@@ -383,44 +382,70 @@ $(document).ready(function(){
   var $reviewDesc = document.querySelector(".review_desc");
   var reviewOffset = $review.offsetTop;
   var pageHeight = 1123;
-  var pageOffset = $("#portfolio_skin").offsetTop + pageHeight;
+  var pageOffset = document.querySelector("#portfolio_skin").offsetTop + pageHeight;
   var reviewHeight = pageOffset - reviewOffset - margin; 
 
-  console.log("review height = " + reviewHeight );
+  //console.log("review height = " + reviewHeight );
   //$review.css("height", reviewHeight);
+
+  console.log(reviewHeight);
   $review.style.height = reviewHeight;
   
-  console.log(document.getElementById("portfolio_skin").offsetHeight);  
-  var $page = document.createElement('div');
-  $page.classList.add('page');
+  //console.log(document.getElementById("portfolio_skin").offsetHeight);  
+  //var $page = document.createElement('div');
+  //$page.classList.add('page');
 
-  var reviewDesc = document.querySelector('.review_section').cloneNode(true);
-  $page.append(reviewDesc);
-  $("#portfolio_skin").append($page); 
+  //var reviewDesc = document.querySelector('.review_section').cloneNode(true);
+  //$page.append(reviewDesc);
+  //$("#portfolio_skin").append($page); 
 
-  if ( $("#portfolio_skin").height() > pageHeight ){
+  if ( $("#portfolio_skin").height() >= pageHeight ){
     console.log('overflow1');
+    var desc = "원대하고, 풀이 간에 사랑의 무엇이 못할 예가 황금시대다. 풀이 같이, 이 같은 듣는다. 때에, 뼈 착목한는 그들의 많이 평화스러운 것은 어디 풍부하게 위하여서. 사랑의 천자만홍이 피어나는 있는 듣기만 따뜻한 원질이 고행을 얼마나 황금시대다. 구하지 품으며, 그것은 피는 뭇 그들에게 할지니, 그리하였는가? 생의 얼마나 역사를 힘차게 몸이 사랑의 든 그들의 일월과 것이다. 천고에 모래뿐일 전인 풍부하게 있으며, 풀이 있을 기쁘며, 없는 것이다. 황금시대를 피는 군영과 얼마나 가치를 대한 그들은 힘있다. 위하여, 찬미를 풍부하게 눈이 그들에게 웅대한 이것이야말로 황금시대의 위하여서.";
+    var html = 
+    `<div class='page'>
+      <section class='row_form type_2'>
+        <div class='form_box'>
+          <div class='label_box'>체험소감</div>
+          <div class='skin_box form_desc review_wrap'>
+            <div class="review_desc" id="txt_04">
+				        `+ desc +`
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>`;
 
+    $("#portfolio_skin").append(html);
+
+    
   } else {
     console.log('one page');
-
   }
-
   /* E: custom page */
-
 });
 </script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <!--pdf download js-->
 <script>
-html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
-  //document.body.appendChild(canvas);
-  var $img = new Image();
-  var imgData = canvas.toDataURL('image/png');
-  $img.src = imgData;
-  document.getElementById('img_viewer').appendChild($img);
-});
+  document.addEventListener("DOMContentLoaded", function(){
+    setTimeout(function(){
+      var $page = document.querySelectorAll('.page');
+       for(var i = 0; i <= $page.length; i++){
+         console.log(i);
+         html2canvas($page[i]).then(canvas => {
+           //document.body.appendChild(canvas);
+           var $img = new Image();
+           var imgData = canvas.toDataURL('image/png');
+           $img.src = imgData;
+           document.getElementById('img_viewer').append($img);
+         })
+         .catch( error =>  console.log(error) );
+         console.log(i+' done');
+       }
+    }, 1500);
+  });
 
 //pdf 저장 js
 $('#create_pdf').click(function () {
