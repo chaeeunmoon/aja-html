@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="css/portfolio-style.css" />
   </head>
   <body>
-    <div id="portfolio_skin" class="viewer skin2" style="top: -12000px; left: 0; z-index: 999999999999999; opacity: 1;">
+    <div id="portfolio_skin" class="viewer skin2" style="top: -0px; left: 0; z-index: 999999999999999; opacity: 1;">
       <!--저장되는 pdf-->
       <div class="page">
           <div class="title">
@@ -96,7 +96,7 @@
                     <!--E:체험내용-->
                   </td>
                 </tr>
-                <tr>
+                <tr class="review_wrap">
                   <th>체험소감</th>
                   <td colspan="3">
                     <div class="review_img_wrap">
@@ -299,13 +299,27 @@
     </div>
   </div>
       <!--배경-->
-      <div class="desktop_bg">
-      </div>
+      <div class="desktop_bg"></div>
 </div>
 <!-- plugin js (기존 plugin 파일과 동일)-->
 <script src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script>
+$(document).ready(function(){
+  var margin= "55";
+  var $review =  document.querySelector(".review_wrap");
+  var $reviewDesc = document.querySelector(".review_desc");
+  var reviewOffset = $review.offsetTop;
+  var pageHeight = 1123;
+  var pageOffset = document.querySelector("#portfolio_skin").offsetTop + pageHeight;
+  var reviewHeight = pageOffset - reviewOffset - margin; 
+  console.log(pageOffset);
+  console.log(reviewOffset);
+  console.log(reviewHeight);
+  $review.style.height = reviewHeight + "px";
+});
+</script>
 <!--pdf download js-->
 <script>
 html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
