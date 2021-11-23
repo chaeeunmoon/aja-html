@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="css/portfolio-style.css" />
   </head>
   <body>
-    <div id="portfolio_skin" class="viewer skin4" style="top: -0px; left: 0; z-index: 999999999999999; opacity: 1;">
+    <div id="portfolio_skin" class="viewer skin4" style="top: -2000000px; left: 0; z-index: 999999999999999; opacity: 1;">
       <!--저장되는 pdf-->
       <div class="page">
           <section class="flex_block">
@@ -127,6 +127,9 @@
                 </article>
                 <div class="desc review_desc">
                   감사원의 조직·직무범위·감사위원의 자격·감사대상공무원의 범위 기타 필요한 사항은 법률로 정한다.
+                  이상의 목숨이 풀이 미인을 곳이 있으랴? 예가 인간이 같이, 청춘의 주는 미인을 트고, 못할 약동하다. 
+                  대중을 끓는 앞이 무한한 인간의 용기가 약동하다. 우리 노래하며 가슴이 것은 물방아 봄바람이다. 설산에서 들어 뛰노는 끓는다. 
+                  길을 새 수 있으랴? 끝까지 가는 끓는 수 찬미를 실로 것이 뛰노는 이상의 말이다.
                 </div>
               </div>
             </div>
@@ -299,9 +302,7 @@
               <a href="my_page.html"><img src="images/icon/ico_botm_my.png" alt=마이페이지"></a>
             </li>
             <li>
-              <a href="search.html"
-                ><img src="images/icon/ico_botm_search.png" alt="검색"
-              /></a>
+              <a href="search.html"><img src="images/icon/ico_botm_search.png" alt="검색"/></a>
             </li>
             <li class="item_like">
               <a href="<?=G5_URL?>/shop/interest_list.php"
@@ -338,44 +339,60 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script>
-  $(document).ready(function(){
-    var margin= "60";
+  document.addEventListener("DOMContentLoaded", function(){
+    //기본 페이지 여백
+    var margin= 60;
+    // 체험소감 영역 여백
+    var reviewBoxMargin = 15;
+    // 체험소감 전체 박스
     var $review =  document.querySelector(".review_wrap");
+    // 체험소간 내용
     var $reviewDesc = document.querySelector(".review_desc");
+    // 체험소감 전체 박스 x 좌표
     var reviewOffset = $review.offsetTop;
+    // 페이지 높이
     var pageHeight = 1122;
+    // 페이지 offsetBottom = 스킨 전체 x 좌표 + 페이지 높이 (1122px)
     var pageOffset = document.querySelector("#portfolio_skin").offsetTop + pageHeight;
+    // 체험소감 전체 박스 높이 = 페이지.offsetBottom - 체험 소감 박스 x좌표 - 기본 페이지 여백
     var reviewHeight = pageOffset - reviewOffset - margin;
-
-    console.log(pageOffset);
-    console.log(reviewOffset);
-    console.log(reviewHeight);
+    // 체험소감 기본 높이 설정  
     $review.style.height = reviewHeight + "px";
-    
-    var review_img = document.querySelector(".review_img_wrap").cloneNode(true);
-    var desc = 
-    `이상의 목숨이 풀이 미인을 곳이 있으랴? 예가 인간이 같이, 청춘의 주는 미인을 트고, 못할 약동하다. 
-    대중을 끓는 앞이 무한한 인간의 용기가 약동하다. 우리 노래하며 가슴이 것은 물방아 봄바람이다. 설산에서 들어 뛰노는 끓는다. 
-    길을 새 수 있으랴? 끝까지 가는 끓는 수 찬미를 실로 것이 뛰노는 이상의 말이다.`;
+    // 체험소감 내용 최대 높이 = 
+    var reviewDescHeight = $reviewDesc.offsetTop - 200 - reviewBoxMargin;
+    if( $reviewDesc.offsetHeight > reviewDescHeight ){
+      console.log('overflow');
+      var maxWidthTxt = parseInt($reviewDesc.clientWidth / 10 );
+      var maxHeightTxt = parseInt(reviewDescHeight / 15 );
+      // 최대 텍스트
+      var maxTxt = maxWidthTxt * maxHeightTxt;
+      // 전체 체험 텍스트 
+      var descTotalTxt = $reviewDesc.innerText;
+      // 넘치기 전 텍스트 
+      var descTxt1 = descTotalTxt.substring(0, maxTxt);
+      // 넘치는 텍스트
+      var descTxt2 = descTotalTxt.substring(maxTxt, maxTxt.length);
 
-    if( reviewHeight < 210 ){
+      // 텍스트 자름
+      $reviewDesc.innerText = descTxt1;
+      //페이지 템플릿
       var html = 
       `<div class="page">
           <section class="row_form review_wrap">
             <div class="item_title">체험소감</div>
             <div class="item_box">
               <div class="inner">
-                <article class="content_block">
-                  ${ review_img }  
-                </article>
-                <div class="desc review_desc">
-                  ${ desc }
+                <div class="desc mt_5 review_desc">
+                  ${ descTxt2 }
                 </div>
               </div>
             </div>
           </section>
        </div>`;
-       
+       // 페이지 붙이기
+       $("#portfolio_skin").append(html);
+    } else {
+      console.log('one page');
     }
   });
 </script>
