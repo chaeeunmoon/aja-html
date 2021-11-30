@@ -11,6 +11,8 @@
     <!-- 추가 css-->
     <link rel="stylesheet" href="css/font-style.css">
     <link rel="stylesheet" href="css/common.css">
+    <!-- plugin js (기존 plugin 파일과 동일)-->
+    <script src="js/jquery-1.8.3.min.js"></script>
     <!--기존 linke css-->
     <style>
         .webwidget_rating_sex {
@@ -155,7 +157,7 @@
                     </div>
                     <div class="pw_textarea">
                         <textarea cols="5" rows="10" placeholder="교육과 무관한 댓글, 악플은 삭제될 수 있습니다." name="is_content" id="is_content"></textarea>
-                        <p class="byte"><span>12</span>/ 600</p>
+                        <p class="byte"><span id="currentLength">12</span>/ 600</p>
                     </div>
                 </div>
                 <div class="pw_form_box border_type">
@@ -202,6 +204,22 @@
         </div>    
         <!--E:content-->
     </div>
+    <!--글자수 세기 js-->
+    <script>
+        $(document).ready(function(){
+            // textarea 작성 시
+            $("#is_content").keyup(function(){
+                // 글자 수
+                var inputLength = $(this).val().length;
+                // 600 글자수 제한 
+                if(inputLength > 600){
+                    $(this).val($(this).val().substring(0, 600));
+                }
+                // 현재 글자 수 나타내기
+                $('#currentLength').text(inputLength);
+            });   
+        });
+    </script>
 </body>
 
 </html>
