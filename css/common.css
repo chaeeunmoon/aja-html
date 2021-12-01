@@ -2843,7 +2843,35 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 }
 .itemuseform .item_decs_box { padding: 1rem 1.75rem;  }
 .itemuseform .pw_form_box { padding: 1.3rem 1.95rem; } 
-.itemuseform .pw_form_box.padding_scroll { padding: 1.3rem 0 1.3rem 1.95rem; }
+.itemuseform .pw_form_box.padding_scroll { padding: 1.3rem 0; }
+.itemuseform .pw_form_box.padding_scroll .pw_form_title { padding-left: 1.95rem; }
+.itemuseform .pw_form_box.padding_scroll .m_item_scroll { padding-left: 1.95rem; }
+.itemuseform .pw_form_box.padding_scroll .itemuseform_radio li { text-align: center; }
+.itemuseform .pw_form_box.padding_scroll .itemuseform_radio li .skin_ex { 
+  border:  2px solid #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 0;
+  font-size: 0;
+}
+.itemuseform .pw_form_box.padding_scroll .itemuseform_radio li .skin_ex img { height: 180px;  }
+.itemuseform_radio .btn_radio label { width: auto; padding: 0.5rem 0.8rem; cursor: pointer;  }
+.itemuseform_radio .btn_radio label:before {
+  content: '';
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  background-image: url(../images/icon/ico_checked_gray.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+  top: 2px;
+  margin-right: 0.5rem;
+}
+
+.itemuseform_radio .btn_radio input:checked + label:before {
+  background-image: url(../images/icon/ico_checked.png);
+}
 .label_icon { 
   display: inline-block; 
   font-size: 0.85rem; 
@@ -2857,7 +2885,6 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   top: -2px; 
 }
 .label_icon.info { background-color: #ff8611; color: #fff; }
-.itemuseform .itemuseform_radio label { border-radius: 15px; }
 /* E:portfolio update */
 /* E: item write form style */
 /* S: register completed style */

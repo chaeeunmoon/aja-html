@@ -46,6 +46,8 @@
           list-style: none !important;
       }
   </style>
+  <!--이미지 확대 라이브러리 (lightbox)-->
+  <link rel="stylesheet" href="plugin/lightbox/css/lightbox.min.css">
   </head>
   <body>
     <div class="desktop_wrapper">
@@ -245,62 +247,61 @@
                       <div class="">
                         <ul class="m_item_scroll itemuseform_radio">
                           <li>
-                            <div class="skin_ex" data-lightbox="skin_img">
+                            <a href="images/portfolio/port_skin01.jpg" class="skin_ex" data-lightbox="skin_img">
                               <img src='images/portfolio/port_skin01.jpg'>
+                            </a>
+                            <div class="btn_radio">
+                              <input type='radio' name='epot_type' id='epot_type1' value='1' checked>
+                              <label for='epot_type1'>선택</label>
                             </div>
-                            <label for='epot_type1' class="checked"></label>
-                            <input type='radio' name='epot_type' id='epot_type1' value='1' checked style='display:block !important;-webkit-appearance:radio;'>
                           </li>
                           <li>
-                            <div class="skin_ex">
-                              <img src='images/portfolio/port_skin01.jpg'>
+                            <a href="images/portfolio/port_skin02.jpg" class="skin_ex" data-lightbox="skin_img">
+                              <img src='images/portfolio/port_skin02.jpg'>
+                            </a>
+                            <div class="btn_radio">
+                              <input type='radio' name='epot_type' id='epot_type2' value='1'>
+                              <label for='epot_type2'>선택</label>
                             </div>
-                            <label for='epot_type2'><img style='height:170px;' src='images/portfolio/port_skin02.jpg'></label>
-                            <input type='radio' name='epot_type' id='epot_type2' value='1' style='display:block !important;-webkit-appearance:radio;'>
                           </li>
                           <li>
-                            <div class="skin_ex">
-                              <img src='images/portfolio/port_skin01.jpg'>
+                            <a href="images/portfolio/skin_01.jpg" class="skin_ex" data-lightbox="skin_img">
+                              <img src='images/portfolio/skin_01.jpg'>
+                            </a>
+                            <div class="btn_radio">
+                              <input type='radio' name='epot_type' id='epot_type3' value='1'>
+                              <label for='epot_type3'>선택</label>
                             </div>
-                            <label for='epot_type3'><img style='height:170px;' src='images/portfolio/skin_01.jpg'></label>
-                            <input type='radio' name='epot_type' id='epot_type3' value='1' style='display:block !important;-webkit-appearance:radio;'>
                           </li>
                           <li>
-                            <div class="skin_ex">
-                              <img src='images/portfolio/port_skin01.jpg'>
+                            <a href="images/portfolio/skin_02.jpg" class="skin_ex" data-lightbox="skin_img">
+                              <img src='images/portfolio/skin_02.jpg'>
+                            </a>
+                            <div class="btn_radio">
+                              <input type='radio' name='epot_type' id='epot_type4' value='1'>
+                              <label for='epot_type4'>선택</label>
                             </div>
-                            <label for='epot_type4'><img style='height:170px;' src='images/portfolio/skin_02.jpg'></label>
-                            <input type='radio' name='epot_type' id='epot_type4' value='1' style='display:block !important;-webkit-appearance:radio;'>
                           </li>
                           <li>
-                            <div class="skin_ex">
-                              <img src='images/portfolio/port_skin01.jpg'>
+                            <a href="images/portfolio/skin_03.jpg" class="skin_ex" data-lightbox="skin_img">
+                              <img src='images/portfolio/skin_03.jpg'>
+                            </a>
+                            <div class="btn_radio">
+                              <input type='radio' name='epot_type' id='epot_type5' value='1'>
+                              <label for='epot_type5'>선택</label>
                             </div>
-                            <label for='epot_type5'><img style='height:170px;' src='images/portfolio/skin_03.jpg'></label>
-                            <input type='radio' name='epot_type' id='epot_type5' value='1' style='display:block !important;-webkit-appearance:radio;'>
                           </li>
                           <li>
-                            <div class="skin_ex">
-                              <img src='images/portfolio/port_skin01.jpg'>
+                            <a href="images/portfolio/skin_04.jpg" class="skin_ex" data-lightbox="skin_img">
+                              <img src='images/portfolio/skin_04.jpg'>
+                            </a>
+                            <div class="btn_radio">
+                              <input type='radio' name='epot_type' id='epot_type6' value='1'>
+                              <label for='epot_type6'>선택</label>
                             </div>
-                            <label for='epot_type6'><img style='height:170px;' src='images/portfolio/skin_04.jpg'></label>
-                            <input type='radio' name='epot_type' id='epot_type6' value='1' style='display:block !important;-webkit-appearance:radio;'>
                           </li>
                         </ul>
                       </div>
-                      <!--타입선택 (기존 스타일 유지)-->
-                      <!-- <div style='display:flex; height:200px;justify-content:center;'>
-                          <div style='height:100%;display:flex;flex-direction:column; align-items:center; margin-right:25px;'>
-                              <label for='epot_type1'><img style='height:170px;' src='images/portfolio/port_skin01.jpg'></label>
-                              <input type='radio' name='epot_type' id='epot_type1' value='1'
-                                  style='display:block !important;-webkit-appearance:radio;'>
-                          </div>
-                          <div style='height:100%;display:flex;flex-direction:column; align-items:center;margin-left:25px;'>
-                              <label for='epot_type2'><img style='height:170px;' src='images/portfolio/port_skin02.jpg'></label>
-                              <input type='radio' name='epot_type' id='epot_type2' value='2'
-                                  style='display:block !important;-webkit-appearance:radio'>
-                          </div>
-                      </div> -->
                     </div>
                     <div class="fixed_btn_wrapper flex_block">
                         <a href="#" class="solid_btn light">취소</a>
@@ -323,6 +324,7 @@
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="js/rating_star.js"></script>
+    <script src="plugin/lightbox/js/lightbox.min.js"></script>
     <!--pc horizontal scroll js-->
     <script>
       document.addEventListener('DOMContentLoaded', function () {
