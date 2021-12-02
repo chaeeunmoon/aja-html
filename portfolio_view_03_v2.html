@@ -29,9 +29,9 @@
     <link rel="stylesheet" href="css/portfolio-style.css" />
   </head>
   <body>
-    <div id="portfolio_skin" class="viewer skin3" style="top: -20000000px; left: 0; z-index: 999999999999999; opacity: 1;">
+    <div id="portfolio_skin" class="viewer skin5" style="top: -20000000px; left: 0; z-index: 999999999999999; opacity: 1;">
       <!--저장되는 pdf-->
-      <div class="page">
+      <div class="skin_page">
         <div class="frame">
           <section class="page_title">
             <img src="images/portfolio/skin3/skin3-title.png" alt="체험학습 보고서">
@@ -49,7 +49,7 @@
             </div>
           </section>
           <section class='row_form'>
-            <table class="skin3_table">
+            <table class="skin5_table">
               <tbody>
                 <tr>
                   <th scope="col">체험기간</th>
@@ -368,7 +368,7 @@ $('#create_pdf').click(function () {
   //다운로드 모달 show
   $("#loadModal").addClass('show');
   //방법 1 js
-  const pageLength = $(".page").length;
+  const pageLength = $(".skin_page").length;
   console.log(pageLength);
   html2canvas($('#portfolio_skin')[0]
   ,{ scale: 2 }).then(function(canvas) {

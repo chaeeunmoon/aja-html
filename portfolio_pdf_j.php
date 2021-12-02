@@ -1,35 +1,37 @@
-<?php
-//============================================================+
-// File name   : example_054.php
-// Begin       : 2009-09-07
-// Last Update : 2013-05-14
-//
-// Description : Example 054 for TCPDF class
-//               XHTML Forms
-//
-// Author: Nicola Asuni
-//
-// (c) Copyright:
-//               Nicola Asuni
-//               Tecnick.com LTD
-//               www.tecnick.com
-//               info@tecnick.com
-//============================================================+
-
-/**
- * Creates an example PDF TEST document using TCPDF
- * @package com.tecnick.tcpdf
- * @abstract TCPDF - Example: XHTML Forms
- * @author Nicola Asuni
- * @since 2009-09-07
- */
+<?
 require_once('../common.php');
+$g5['title'] = "현장체험학습보고서";
 
-if (G5_IS_MOBILE) {
-	include_once(G5_MSHOP_PATH.'/portfolio_pdf_j.php');
-	return;
+include_once(G5_THEME_MOBILE_PATH.'/head.renewal.pop.php');
+
+?>
+
+<script type="text/javascript">
+//<![CDATA[
+function calcHeight() {
+  //find the height of the internal page
+
+  var the_height =
+    document.getElementById('the_iframe').contentWindow.
+  document.body.scrollHeight;
+
+  //change the height of the iframe
+  document.getElementById('the_iframe').height =
+    the_height;
+
+  //document.getElementById('the_iframe').scrolling = "no";
+  document.getElementById('the_iframe').style.overflow = "hidden";
 }
+//
+</script>
 
+<div class="layer-popup-area page">
+  <!--header-->
+  <?php include_once G5_THEME_MOBILE_PATH . '/head.title.pop.02.php'; ?>
+  <div id="content">
+
+
+    <?		
 $view = get_view($write, $board, $board_skin_path);
 
 $file_name = "eportfolio_".date('YmdHis').".pdf";
@@ -482,6 +484,18 @@ $pdf->Output($_SERVER['DOCUMENT_ROOT']."portfolio_view/portfolio_pdf_file/".$fil
 // END OF FILE
 //============================================================+
 ?>
-<script>
-	location.href="/portfolio_view/web/viewer.html?file=/portfolio_view/portfolio_pdf_file/<?=$file_name?>";
-</script>
+    <iframe src="/portfolio_view/web/viewer.html?file=/portfolio_view/portfolio_pdf_file/<?= $file_name ?>"
+      id="the_iframe" onload="calcHeight();" name="WrittenPublic" title="" frameborder="0" scrolling="no"
+      style="overflow-x:hidden; overflow:auto; width:100%; min-height:900px;"></iframe>
+
+
+
+
+
+
+
+  </div>
+</div>
+
+<?php include_once G5_THEME_MOBILE_PATH . '/tail.pop.php';
+?>
