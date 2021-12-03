@@ -71,15 +71,18 @@
                   </div>
                 </article>
                 <article class="content_block border">
+                    
                     <dl>
                       <dt>체험기간:</dt>
                       <dd>2021년 10월 18일 ~ 2021년 10월 20일</dd>
                     </dl>
+
                     <dl class="mb_0">
                       <dt>체험장소:</dt>
                       <dd>서울시 성동구 왕십리로222 한양대학교 사범대학 본관 501호</dd>
                     </dl>
                 </article>
+
                 <article class="content_block border">
                   <span class="block_title">체험목표</span>
                   <p class="desc text_line5">
@@ -89,6 +92,7 @@
                     4인 이하 소수정예 수업으로 집중력과 흥미를 한꺼번에 잡았습니다^^
                   </p>
                 </article>
+
                 <article class="content_block border">
                   <span class="block_title">체험내용</span>
                   <p class="desc text_line5">
@@ -101,6 +105,7 @@
                     -그날 배운 내용을 토대로 즐겁게 미션&게임하기
                   </p>
                 </article>
+
                 <article class="content_block border pb_0">
                   <span class="block_title">교사코멘트</span>
                   <p class="desc text_line5">
@@ -111,6 +116,7 @@
                     (4인이하 소수정예 수업으로 더욱더 알차게 돌아왔습니다)
                   </p>
                 </article>
+
               </div> 
             </div>
           </section>
@@ -134,6 +140,7 @@
               </div>
             </div>
           </section>
+
       </div>
       <!--E:viewer-->
     </div>
@@ -305,10 +312,7 @@
               <a href="search.html"><img src="images/icon/ico_botm_search.png" alt="검색"/></a>
             </li>
             <li class="item_like">
-              <a href="<?=G5_URL?>/shop/interest_list.php"
-                ><span class="num cnt2">14</span
-                ><img src="images/icon/ico_botm_select.png" alt="찜하기"
-              /></a>
+              <a href="<?=G5_URL?>/shop/interest_list.php"><span class="num cnt2">14</span><img src="images/icon/ico_botm_select.png" alt="찜하기"/></a>
             </li>
           </ul>
         </div>
@@ -338,69 +342,12 @@
 <script src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(){
-    //기본 페이지 여백
-    var margin= 60;
-    // 체험소감 영역 여백
-    var reviewBoxMargin = 15;
-    // 체험소감 전체 박스
-    var $review =  document.querySelector(".review_wrap");
-    // 체험소간 내용
-    var $reviewDesc = document.querySelector(".review_desc");
-    // 체험소감 전체 박스 x 좌표
-    var reviewOffset = $review.offsetTop;
-    // 페이지 높이
-    var pageHeight = 1122;
-    // 페이지 offsetBottom = 스킨 전체 x 좌표 + 페이지 높이 (1122px)
-    var pageOffset = document.querySelector("#portfolio_skin").offsetTop + pageHeight;
-    // 체험소감 전체 박스 높이 = 페이지.offsetBottom - 체험 소감 박스 x좌표 - 기본 페이지 여백
-    var reviewHeight = pageOffset - reviewOffset - margin;
-    // 체험소감 기본 높이 설정  
-    $review.style.height = reviewHeight + "px";
-    // 체험소감 내용 최대 높이 = 
-    var reviewDescHeight = $reviewDesc.offsetTop - 200 - reviewBoxMargin;
-    if( $reviewDesc.offsetHeight > reviewDescHeight ){
-      console.log('overflow');
-      var maxWidthTxt = parseInt($reviewDesc.clientWidth / 10 );
-      var maxHeightTxt = parseInt(reviewDescHeight / 15 );
-      // 최대 텍스트
-      var maxTxt = maxWidthTxt * maxHeightTxt;
-      // 전체 체험 텍스트 
-      var descTotalTxt = $reviewDesc.innerText;
-      // 넘치기 전 텍스트 
-      var descTxt1 = descTotalTxt.substring(0, maxTxt);
-      // 넘치는 텍스트
-      var descTxt2 = descTotalTxt.substring(maxTxt, maxTxt.length);
 
-      // 텍스트 자름
-      $reviewDesc.innerText = descTxt1;
-      //페이지 템플릿
-      var html = 
-      `<div class="page">
-          <section class="row_form review_wrap">
-            <div class="item_title">체험소감</div>
-            <div class="item_box">
-              <div class="inner">
-                <div class="desc mt_5 review_desc">
-                  ${ descTxt2 }
-                </div>
-              </div>
-            </div>
-          </section>
-       </div>`;
-       // 페이지 붙이기
-       $("#portfolio_skin").append(html);
-    } else {
-      console.log('one page');
-    }
-  });
-</script>
 <!--pdf download js-->
 <script>
   document.addEventListener("DOMContentLoaded", function(){
     setTimeout(function(){
-      var $page = $('.page');
+      var $page = $('.skin_page');
        for(var i = 0; i <= $page.length; i++){
          html2canvas($page[i]).then(canvas => {
            var $img = new Image();

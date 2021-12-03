@@ -44,6 +44,7 @@ select,input,textarea {
   cursor: pointer;
 }
 button { cursor: pointer;}
+select, option { color: #232323; }
 select::-ms-expand {display: block;}
 select:active,select:focus { border: 1px solid #ff8611; }
 input::-webkit-input-placeholder {
