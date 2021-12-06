@@ -2885,7 +2885,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   position: relative;
   top: -2px; 
 }
-.label_icon.info { background-color: #ff8611; color: #fff; }
+.label_icon.info { background-color: #bbbbbb; color: #fff; }
 /* E:portfolio update */
 /* E: item write form style */
 /* S: register completed style */
