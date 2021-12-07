@@ -2855,6 +2855,8 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   padding: 0;
   font-size: 0;
 }
+.theme_info_header .pw_form_title { padding-left: 0.5rem !important; }
+.itemuseform .ex_img > img { max-width: 150px; }
 .itemuseform .pw_form_box.padding_scroll .itemuseform_radio li .skin_ex img { height: 180px;  }
 .itemuseform_radio .btn_radio label { width: auto; padding: 0.5rem 0.8rem; cursor: pointer;  }
 .itemuseform_radio .btn_radio label:before {
@@ -3235,6 +3237,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .theme_state_list li .state_txt { font-size: 0.92rem; color: #fff; text-align: center; padding: 0.3rem 0; }
 .theme_state_list li .state_txt .num { color: #ffee79; margin-left: 0.3rem; margin-right: 3px; }
 .theme_info_wrap { width: 100%; position: relative; padding: 0 1.25rem; }
+.theme_info_wrap .theme_info_header { cursor: pointer; }
 .theme_info_wrap .theme_info_header .title {
   font-size: 0.85rem;
   color: #fff;

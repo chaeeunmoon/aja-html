@@ -300,13 +300,24 @@
   border: 2px solid #003262;
   border-radius: 15px;
 }
+.skin4 .skin4_table > tbody { 
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.skin4 .skin4_table > tbody > .aca_name { min-width: 200px; }
 .skin4 .skin4_table tr th,
 .skin4 .skin4_table tr td {
   padding: 7px 10px;
   font-size: 10pt;
   line-height: 1.4;
 }
-.skin4 .skin4_table tr td { vertical-align: top; }
+.skin4 .skin4_table tr td { vertical-align: top; min-width: 200px; }
 .skin4 .skin4_table tr th {
   width: 90px;
   font-size: 12pt;

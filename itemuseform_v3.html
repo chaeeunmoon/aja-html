@@ -248,8 +248,32 @@
                           </div>
                       </div>
                     </div>
+                    <style>
+                      .info_wrapper { 
+                        display: inline-block;
+                        position: relative;
+                      }
+                    </style>
                     <div class="pw_form_box border_type padding_scroll">
-                      <p class="pw_form_title">보고서 스킨 선택 <span class="label_icon info ml_5">!</span></p>
+                        <!--S:hint-->
+                        <div class="theme_info_wrap">
+                          <div class="theme_info_header">
+                              <p class="pw_form_title">보고서 스킨 선택 <span class="label_icon info ml_5">!</span>
+                          </div>
+                          <div class="theme_info_body" style="display: none;">
+                              <div class="theme_info_title flex_block">
+                                  <p class="title">보고서 안내</p>
+                                  <span class="close_icon close_btn"><img src="./images/icon/btn_close.png" alt="닫기"></span>
+                              </div> 
+                              <ul class="theme_info_list">
+                                  <li><p class="info_txt">작성해주신 후기는 현장체험활동보고서의 <span class="main_txt">체험소감</span>으로 작성됩니다.</p></li>
+                                  <li><p class="info_txt"><span class="main_txt">마이페이지 > 현장체험활동보고서</span>에서 확인할 수 있습니다.</p></li>
+                                  <li><p class="info_txt">현장체험학습보고서를 관리해보세요!</p></li>
+                              </ul>          
+                          </div>
+                      </div>
+                        <!--E:hint-->
+                      </p>
                       <div class="">
                         <ul class="m_item_scroll itemuseform_radio">
                           <li>
@@ -327,16 +351,6 @@
       <div class="desktop_bg">
       </div>
     </div>  
-    <!--S:modal-->
-    <div class="modal" id="hint_modal">
-      <div class="modal_content">
-        <div class="modal_body">
-           <p>작성해주신 후기는 체험학습 보고서로도 출력될 수 있습니다.</p>
-           
-        </div>
-      </div>
-    </div>
-    <!--E:modal-->
     <!-- plugin js (기존 plugin 파일과 동일)-->
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="js/rating_star.js"></script>
@@ -432,6 +446,18 @@
             });
           });
       });
+    </script>
+    <!--안내 내용 show/hide-->
+    <script>
+        $(document).ready(function(){
+            $('.theme_info_header').click(function(){
+                $('.theme_info_body').show();
+            });
+
+            $('.theme_info_title .close_btn').click(function () {
+                $('.theme_info_body').hide();
+            });
+        });
     </script>
   </body>
 </html>
