@@ -2857,7 +2857,8 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 }
 .theme_info_header .pw_form_title { padding-left: 0.5rem !important; }
 .itemuseform .ex_img > img { max-width: 150px; }
-.itemuseform .pw_form_box.padding_scroll .itemuseform_radio li .skin_ex img { height: 180px;  }
+.itemuseform .pw_form_box.padding_scroll .itemuseform_radio li .skin_ex { width: 120px; margin: 0 auto;  }
+.itemuseform .pw_form_box.padding_scroll .itemuseform_radio li .skin_ex img { width: 100%;  }
 .itemuseform_radio .btn_radio label { width: auto; padding: 0.5rem 0.8rem; cursor: pointer;  }
 .itemuseform_radio .btn_radio label:before {
   content: '';
@@ -2888,6 +2889,15 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   top: -2px; 
 }
 .label_icon.info { background-color: #bbbbbb; color: #fff; }
+.itemuseform_radio .skin_desc { 
+  font-size: 0.9rem; 
+  margin-bottom: 0.4rem; 
+  text-align: center; 
+  border-radius: 15px;
+  padding: 0.3rem ;
+  color: #75839e;
+  font-weight: 500;
+}
 /* E:portfolio update */
 /* E: item write form style */
 /* S: register completed style */
