@@ -2917,6 +2917,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .epot_radio_custom label {
   border-radius: 8px;
   padding: 0.8rem 0;
+  cursor: pointer;
 }
 /* E:portfolio update */
 /* E: item write form style */
