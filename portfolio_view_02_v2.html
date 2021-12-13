@@ -103,7 +103,6 @@
                       </div>
                     </section>
                     <!--E:체험내용-->
-
                   </td>
                 </tr>
                 <tr class="review_wrap">
@@ -115,6 +114,24 @@
                       <img src="images/sample/sample-03.jpg" alt="">
                     </div>
                     <div class="review_desc">
+                      처음엔 두렵지만 막상 들어가면 안정감을 가지고,
+                      시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
+                      물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
+                      처음엔 두렵지만 막상 들어가면 안정감을 가지고,
+                      시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
+                      물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
+                      처음엔 두렵지만 막상 들어가면 안정감을 가지고,
+                      시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
+                      물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
+                      처음엔 두렵지만 막상 들어가면 안정감을 가지고,
+                      시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
+                      물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
+                      처음엔 두렵지만 막상 들어가면 안정감을 가지고,
+                      시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
+                      물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
+                      처음엔 두렵지만 막상 들어가면 안정감을 가지고,
+                      시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
+                      물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
                       처음엔 두렵지만 막상 들어가면 안정감을 가지고,
                       시간가는 줄 모르게 재미있게 즐기는 모습에 보람을 느낍니다.
                       물 속이 즐겁다면 나중에 스쿠버다이빙 자격증도 도전해보세요!
@@ -346,6 +363,53 @@ $(document).ready(function(){
 });
 </script> -->
 <!--pdf download js-->
+<!--pdf 글자수 자르기-->
+<script>
+  $(window).bind("load", function() {
+      var $page = $('.skin_page');
+      var pageBottom = $page.offset().top + 1122 - 30;
+      var $reviewDesc = $('.review_desc');
+      var reviewDescTop = $reviewDesc.offset().top;
+      var reviewSpace = pageBottom - reviewDescTop;
+
+      if( reviewSpace < $reviewDesc.outerHeight() ){
+        //overflow
+      var maxWidthTxt = parseInt($reviewDesc.outerWidth() / 10 );
+      var maxHeightTxt = parseInt( reviewSpace / 15 );
+      // 최대 텍스트
+      var maxTxt = maxWidthTxt * maxHeightTxt;
+      // 전체 체험 텍스트 
+      var descTotalTxt = $reviewDesc.text();
+      // 넘치기 전 텍스트 
+      var descTxt1 = descTotalTxt.substring(0, maxTxt);
+      // 넘치는 텍스트
+      var descTxt2 = descTotalTxt.substring(maxTxt, maxTxt.length);
+      // 텍스트 자름
+      $reviewDesc.text(descTxt1);
+      //페이지 템플릿
+      var html = 
+      `<div class="skin_page">
+        <section class="table_wrapper mt_1r">
+        	<table class="skin4_table">
+                <tbody>
+                	<tr>
+                      <th>체험소감</th>
+                      <td colspan="3">
+                        <div class="review_desc">
+                          ${ descTxt2 }
+                        </div>
+                      </td>
+                  </tr>
+                </tbody>
+          </table>
+        </section>
+        <p class="skin_paging">- <span class="num">2</span> -</p>
+      </div>`;
+       // 페이지 붙이기
+       $("#portfolio_skin").append(html);
+      }
+  });
+</script>
 <script>
 html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
   //document.body.appendChild(canvas);

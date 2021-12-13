@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="css/portfolio-style.css" />
   </head>
   <body>
-    <div id="portfolio_skin" class="viewer skin1" style="top: -120000px; left: 0; z-index: 999999999999999; opacity: 1;">
+    <div id="portfolio_skin" class="viewer skin1" style="top: -0px; left: 0; z-index: 999999999999999; opacity: 1;">
       <!--저장되는 pdf-->
       <div class="skin_page">
         <section class="page_title">
@@ -122,7 +122,39 @@
               <span class="icon"><img src="images/portfolio/basic/ico_epot_student.png" alt=""></span>
               학습자 코멘트
             </div>
-            <div class="desc">
+            <div class="desc review_desc">
+              돋고, 이 현저하게 끓는다. 
+              뭇 영원히 우리 더운지라 미인을 끓는 아름다우냐? 
+              그들은 불러 가치를 약동하다.
+              맺어, 타오르고 천자만홍이 용기가 우리의 쓸쓸하랴?
+              길지 인간의 하여도 공자는 바이며, 곳으로 그림자는 끓는 황금시대다. 
+              그들을 기관과 되는 바이며, 못하다 꽃이 가장 것은 약동하다.
+              곳으로 찾아 거선의 청춘이 교향악이다. 놀이 눈에 모래뿐일 스며들어 뿐이다. 
+              위하여서 것은 꽃이 주며, 아름답고 영락과 이 따뜻한 사막이다.
+              돋고, 이 현저하게 끓는다. 
+              뭇 영원히 우리 더운지라 미인을 끓는 아름다우냐? 
+              그들은 불러 가치를 약동하다.
+              맺어, 타오르고 천자만홍이 용기가 우리의 쓸쓸하랴?
+              길지 인간의 하여도 공자는 바이며, 곳으로 그림자는 끓는 황금시대다. 
+              그들을 기관과 되는 바이며, 못하다 꽃이 가장 것은 약동하다.
+              곳으로 찾아 거선의 청춘이 교향악이다. 놀이 눈에 모래뿐일 스며들어 뿐이다. 
+              위하여서 것은 꽃이 주며, 아름답고 영락과 이 따뜻한 사막이다.
+              돋고, 이 현저하게 끓는다. 
+              뭇 영원히 우리 더운지라 미인을 끓는 아름다우냐? 
+              그들은 불러 가치를 약동하다.
+              맺어, 타오르고 천자만홍이 용기가 우리의 쓸쓸하랴?
+              길지 인간의 하여도 공자는 바이며, 곳으로 그림자는 끓는 황금시대다. 
+              그들을 기관과 되는 바이며, 못하다 꽃이 가장 것은 약동하다.
+              곳으로 찾아 거선의 청춘이 교향악이다. 놀이 눈에 모래뿐일 스며들어 뿐이다. 
+              위하여서 것은 꽃이 주며, 아름답고 영락과 이 따뜻한 사막이다.
+              돋고, 이 현저하게 끓는다. 
+              뭇 영원히 우리 더운지라 미인을 끓는 아름다우냐? 
+              그들은 불러 가치를 약동하다.
+              맺어, 타오르고 천자만홍이 용기가 우리의 쓸쓸하랴?
+              길지 인간의 하여도 공자는 바이며, 곳으로 그림자는 끓는 황금시대다. 
+              그들을 기관과 되는 바이며, 못하다 꽃이 가장 것은 약동하다.
+              곳으로 찾아 거선의 청춘이 교향악이다. 놀이 눈에 모래뿐일 스며들어 뿐이다. 
+              위하여서 것은 꽃이 주며, 아름답고 영락과 이 따뜻한 사막이다.
               돋고, 이 현저하게 끓는다. 
               뭇 영원히 우리 더운지라 미인을 끓는 아름다우냐? 
               그들은 불러 가치를 약동하다.
@@ -326,6 +358,49 @@
 <script src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script>
+  $(window).bind("load", function() {
+      var $page = $('.skin_page');
+      var pageBottom = $page.offset().top + 1122 - 50;
+      var $reviewDesc = $('.review_desc');
+      var reviewDescTop = $reviewDesc.offset().top;
+      var reviewSpace = pageBottom - reviewDescTop;
+
+      if( reviewSpace < $reviewDesc.outerHeight() ){
+        //overflow
+      var maxWidthTxt = parseInt($reviewDesc.outerWidth() / 10 );
+      var maxHeightTxt = parseInt( reviewSpace / 15 );
+      // 최대 텍스트
+      var maxTxt = maxWidthTxt * maxHeightTxt;
+      // 전체 체험 텍스트 
+      var descTotalTxt = $reviewDesc.text();
+      // 넘치기 전 텍스트 
+      var descTxt1 = descTotalTxt.substring(0, maxTxt);
+      // 넘치는 텍스트
+      var descTxt2 = descTotalTxt.substring(maxTxt, maxTxt.length);
+      // 텍스트 자름
+      $reviewDesc.text(descTxt1);
+      //페이지 템플릿
+      var html = 
+      `<div class="skin_page">
+        <section class="row_form">
+          <article class="content_block border_top">
+            <div class="content_title">
+              <span class="icon"><img src="images/portfolio/basic/ico_epot_student.png" alt=""></span>
+              학습자 코멘트
+            </div>
+            <div class="desc review_desc">
+              ${ descTxt2  }
+            </div>
+          </article>
+        </section>
+        <p class="skin_paging">- <span class="num">2</span> -</p>
+      </div>`;
+       // 페이지 붙이기
+       $("#portfolio_skin").append(html);
+      }
+  });
+</script>
 <!--pdf download js-->
 <script>
 html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {

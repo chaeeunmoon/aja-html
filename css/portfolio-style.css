@@ -2,6 +2,7 @@
 /*-----------S:common------------*/
 .pb_0 { padding-bottom: 0 !important; }
 .pt_0 { padding-top: 0 !important; }
+.mt_1r {margin-top: 1rem !important;}
 .inline_block { display: inline-block !important; }
 .flex_block.top { -webkit-box-align: start !important; -ms-flex-align: start !important; align-items: start !important; }
 .pdf_skin {
@@ -98,7 +99,8 @@
 .skin_page {
   position: relative;
   width: 100%;
-  height: 1122.519685px;
+  min-height: 1122.519685px;
+  max-height: 1123px;
   overflow: hidden;
 }
 .skin_page .skin_paging { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); font-weight: 500; }
@@ -361,7 +363,7 @@
 /*-----------S:skin3------------*/
 /* .skin5 { background-color: #EDE7D5; } */
 .skin5 .skin_page { padding: 15px; background-color: #EDE7D5;}
-.skin5 .skin_page .frame { border: 2px solid #003C20; border-radius: 15px; padding: 15px;}
+.skin5 .skin_page .frame { border: 2px solid #003C20; border-radius: 15px; padding: 15px; min-height: 1070px;}
 .skin5 .page_title { text-align: center; padding-bottom: 10px; }
 .skin5 .row_form { padding: 8px 0; }
 .skin5 .content_block { padding: 5px 0; }

@@ -342,7 +342,49 @@
 <script src="js/jquery-1.8.3.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script>
+  $(window).bind("load", function() {
+      var $page = $('.skin_page');
+      var margin = 70;
+      var pageBottom = $page.offset().top + 1122 - margin;
+      var $reviewDesc = $('.review_desc');
+      var reviewDescTop = $reviewDesc.offset().top;
+      var reviewSpace = pageBottom - reviewDescTop;
 
+      if( reviewSpace < $reviewDesc.outerHeight() ){
+        //overflow
+      var maxWidthTxt = parseInt($reviewDesc.outerWidth() / 10 );
+      var maxHeightTxt = parseInt( reviewSpace / 15 );
+      // 최대 텍스트
+      var maxTxt = maxWidthTxt * maxHeightTxt;
+      // 전체 체험 텍스트 
+      var descTotalTxt = $reviewDesc.text();
+      // 넘치기 전 텍스트 
+      var descTxt1 = descTotalTxt.substring(0, maxTxt);
+      // 넘치는 텍스트
+      var descTxt2 = descTotalTxt.substring(maxTxt, maxTxt.length);
+      // 텍스트 자름
+      $reviewDesc.text(descTxt1);
+      //페이지 템플릿
+      var html = 
+      `<div class='skin_page'>
+        <section class="row_form review_wrap">
+            <div class="item_title">체험소감</div>
+            <div class="item_box">
+              <div class="inner">
+                <div class="desc review_desc mt_5">
+                  ${ descTxt2 }
+                </div>
+              </div>
+            </div>
+          </section>
+      <p class="skin_paging">- <span class="num">2</span> -</p>
+    </div>`;
+       // 페이지 붙이기
+       $("#portfolio_skin").append(html);
+      }
+  });
+</script>
 <!--pdf download js-->
 <script>
   document.addEventListener("DOMContentLoaded", function(){

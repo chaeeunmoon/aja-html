@@ -348,20 +348,50 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 <script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script>
-  $(document).ready(function(){
-    var margin= "55";
-    var $review =  document.querySelector(".review_wrap");
-    var $reviewDesc = document.querySelector(".review_desc");
-    var reviewOffset = $review.offsetTop;
-    var pageHeight = 1123;
-    var pageOffset = document.querySelector("#portfolio_skin").offsetTop + pageHeight;
-    var reviewHeight = pageOffset - reviewOffset - margin - 50; 
-    console.log(pageOffset);
-    console.log(reviewOffset);
-    console.log(reviewHeight);
-    $review.style.height = reviewHeight + "px";
+  $(window).bind("load", function() {
+      var $page = $('.skin_page');
+      var margin = 70;
+      var pageBottom = $page.offset().top + 1122 - margin;
+      var $reviewDesc = $('.review_desc');
+      var reviewDescTop = $reviewDesc.offset().top;
+      var reviewSpace = pageBottom - reviewDescTop;
+
+      if( reviewSpace < $reviewDesc.outerHeight() ){
+        //overflow
+      var maxWidthTxt = parseInt($reviewDesc.outerWidth() / 9 );
+      var maxHeightTxt = parseInt( reviewSpace / 15 );
+      // 최대 텍스트
+      var maxTxt = maxWidthTxt * maxHeightTxt;
+      // 전체 체험 텍스트 
+      var descTotalTxt = $reviewDesc.text();
+      // 넘치기 전 텍스트 
+      var descTxt1 = descTotalTxt.substring(0, maxTxt);
+      // 넘치는 텍스트
+      var descTxt2 = descTotalTxt.substring(maxTxt, maxTxt.length);
+      // 텍스트 자름
+      $reviewDesc.text(descTxt1);
+      //페이지 템플릿
+      var html = 
+      `<div class='skin_page'>
+        <div class="frame">
+          <section class="row_form review_wrap">
+            <div class="item_box">
+              <div class="item_title">체험소감</div>
+              <div class="item_desc">
+                <div class="review_desc">
+                  ${ descTxt2 }
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>  
+      <p class="skin_paging">- <span class="num">2</span> -</p>
+    </div>`;
+       // 페이지 붙이기
+       $("#portfolio_skin").append(html);
+      }
   });
-  </script>
+</script>
 <!--pdf download js-->
 <script>
 html2canvas(document.querySelector("#portfolio_skin")).then(canvas => {
