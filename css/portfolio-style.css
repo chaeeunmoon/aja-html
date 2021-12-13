@@ -94,7 +94,7 @@
       justify-content: space-around;
   padding-bottom: 1em;
 }
-.review_img_wrap > img { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; max-width: 200px; }
+.review_img_wrap > img { -webkit-box-flex: 1; -ms-flex: 1; flex: 1; max-width: 200px; max-height: 200px; width: auto; height: auto; }
 .skin_page {
   position: relative;
   width: 100%;
