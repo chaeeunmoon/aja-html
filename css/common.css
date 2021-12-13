@@ -482,6 +482,13 @@ box-sizing: border-box;
   background-color: #fff !important;
   color: #828282 !important;
 }
+.btn_radio input[type='radio']:disabled  + label, 
+.btn_radio input[type='checkbox']:disabled  + label,
+.btn_radio input[type='radio']:disabled  + label:hover, 
+.btn_radio input[type='checkbox']:disabled  + label:hover { 
+  background-color: #f0f0f0 !important; 
+  color: #ABABAB !important; 
+}
 .secondary .btn_radio input[type='radio']:not(:checked) + label,
 .secondary .btn_radio input[type='radio']:not(:checked) + label:hover,
 .secondary .btn_radio input[type='checkbox']:not(:checked) + label,
@@ -2876,6 +2883,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .itemuseform_radio .btn_radio input:checked + label:before {
   background-image: url(../images/icon/ico_checked.png);
 }
+.itemuseform_radio .btn_radio input[type='radio']:disabled + label:before { background-image: url('../images/icon/ico_checked_disabled.png') !important; }
 .label_icon { 
   display: inline-block; 
   font-size: 0.85rem; 

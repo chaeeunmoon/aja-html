@@ -478,5 +478,18 @@
             });
         });
     </script>
+    <!--후기만 작성 라디오 체크 js-->
+    <script>
+      $(document).ready(function(){
+          $('input:radio[name="epot_check"]').change(function(){
+            if( $("#epot_check_N").is(':checked') ){
+                $('input:radio[name="epot_type"]').prop('checked', false);
+                $('input:radio[name="epot_type"]').attr('disabled', true);
+            } else {
+                $('input:radio[name="epot_type"]').attr('disabled', false);
+            }
+          });
+      });
+    </script>
   </body>
 </html>
