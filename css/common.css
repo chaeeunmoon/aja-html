@@ -1404,6 +1404,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   margin-bottom: 0.3em;
   margin-top: 0.2rem;
 }
+.origin_price.none { text-decoration: none !important; }
 .main_price { font-family: 'Roboto', 'Noto Sans KR', sans-serif; color: #232323; font-weight: 500; letter-spacing: -0.3px; }
 .item_info .item_price .sale_percent { font-size: 1.25rem; margin-right: 5px; }
 .item_info .item_price .main_price { font-size: 1.25rem; margin-right: 3px; }
