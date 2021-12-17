@@ -2341,7 +2341,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .board_content_block .board_detail > div { margin-bottom: -3px; }
 .board_content_block .board_detail > div,
 .board_content_block .board_detail > div a,
-.board_content_block .board_detail img { font-size: 0; line-height: 0 !important; }
+.board_content_block .board_detail img { font-size: 0 !important; line-height: 0 !important; }
 .board_content_block .board_detail > div > img { vertical-align: bottom;}
 /* E:textEditor 수정 */
 .board_sns_block { padding: 0.7rem; text-align: right; }
