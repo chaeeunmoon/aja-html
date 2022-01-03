@@ -414,11 +414,11 @@ img {
     position: absolute;
     bottom: 0;
     left: -10px;
-    max-width: 450px;
+    max-width: 400px;
   }
 
   .desktop_bg.new_year .tiger_block .tiger {
-    max-width: 450px;
+    max-width: 400px;
     width: 100%;
   }
 
