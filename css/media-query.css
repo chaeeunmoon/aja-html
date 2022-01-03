@@ -104,6 +104,36 @@ img {
     transform: rotate(50deg);
   }
 
+  .desktop_bg.new_year {
+    background-image: url('../images/pc/bg_img.jpg');
+  }
+
+  .desktop_bg.new_year .tiger {
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    max-width: 450px;
+  }
+
+  .desktop_bg.new_year:after {
+    /* background-color: #FBF3E4; */
+    /* background-color: #FBAB7E;
+    background-image: linear-gradient(70deg, #FBAB7E 0%, #F7CE68 100%); */
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    /* background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%); */
+    box-shadow: 0 10px 30px rgb(255 155 106 / 50%), 0 3px 15px rgb(256 256 256);
+  }
+
+  .desktop_bg.new_year:before {
+    width: 100vw;
+    height: 250px;
+    bottom: 0;
+    left: 0;
+    transform: rotate(0);
+    background-color: transparent;
+    background-image: url('../images/pc/mountain.png');
+  }
+
   /* desktop_menu style */
   .desktop_menu {
     position: fixed;
@@ -303,6 +333,10 @@ img {
 
   .pc_pop_modal {
     display: none !important;
+  }
+
+  .desktop_bg.new_year .tiger {
+    display: none;
   }
 }
 
