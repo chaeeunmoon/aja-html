@@ -407,7 +407,7 @@ img {
 @media screen and (min-width: 1024px) {
   
   .desktop_bg.new_year {
-    background-image: url('../images/pc/bg_img.jpg');
+    background-image: url('../images/desktop_bg/bg_img.jpg');
   }
 
   .desktop_bg.new_year .tiger_block {
@@ -446,7 +446,7 @@ img {
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url('../images/pc/mountain.png');
+    background-image: url('../images/desktop_bg/mountain.png');
   }
 
 }
