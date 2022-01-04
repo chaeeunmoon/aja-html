@@ -52,7 +52,7 @@
                     </div>
                     <div class="pc_logo">
                         <a href="/">
-                            <img src="images/pc_log_v2.png" alt="아자스쿨">
+                            <img src="images/pc_logo_newyear.png" alt="아자스쿨">
                         </a>
                     </div>
                     <p class="logo_desc">
@@ -112,9 +112,9 @@
                 ><img src="images/icon/btn_menu.png" alt="회원정보"
               /></a>
             </div>
-            <h1 class="h_logo">
+            <h1 class="h_logo new_year">
               <a href="/"
-                ><img src="images/logo.png" title="체험교육 플랫폼 아자스쿨"
+                ><img src="images/pc_logo_newyear.png" title="체험교육 플랫폼 아자스쿨"
               /></a>
             </h1>
             <a class="h_search" href="search.html"
@@ -1111,16 +1111,16 @@
       });
 
       if ($('.swiper-container4 .swiper-slide').length > 1) {
-        var swiper4 = new Swiper('.swiper-container4', {
-          autoplay: {
-            delay: 2300,
-            disableOnInteraction: false,
-          },
-          pagination: {
-            el: '.swiper-pagination3',
-          },
-          loop: true,
-        });
+        // var swiper4 = new Swiper('.swiper-container4', {
+        //   autoplay: {
+        //     delay: 2300,
+        //     disableOnInteraction: false,
+        //   },
+        //   pagination: {
+        //     el: '.swiper-pagination3',
+        //   },
+        //   loop: true,
+        // });
       }
     });
   </script>
@@ -1273,6 +1273,36 @@
           }
         }
       }
+    });
+  </script>
+  <script>
+    $(document).ready(function(){
+        //S:모바일 기기 감지
+        const isMobile = /iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent);
+        if(isMobile){
+            console.log('mobile');
+            var swiper4 = new Swiper('.swiper-container4', {
+              autoplay: false,
+              pagination: {
+                el: '.swiper-pagination3',
+              },
+              loop: true,
+            });
+
+        } else {
+            console.log('web');
+            var swiper4 = new Swiper('.swiper-container4', {
+              autoplay: {
+                delay: 2300,
+                disableOnInteraction: false,
+              },
+              pagination: {
+                el: '.swiper-pagination3',
+              },
+              loop: true,
+            });
+        }
+    //E:모바일 기기 감지
     });
   </script>
 </html>
