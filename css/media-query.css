@@ -304,6 +304,7 @@ img {
   .pc_pop_modal {
     display: none !important;
   }
+
 }
 
 /* tablet ( ~  1023px ) */
@@ -401,3 +402,61 @@ img {
 }
 /* E:webkit image rendering edit */
 /* E: media query */
+
+/* S: desktop_bg thema */
+@media screen and (min-width: 1024px) {
+  
+  .desktop_bg.new_year {
+    background-image: url('../images/desktop_bg/bg_img.jpg');
+  }
+
+  .desktop_bg.new_year .tiger_block {
+    position: absolute;
+    bottom: 0;
+    left: -10px;
+    max-width: 400px;
+  }
+
+  .desktop_bg.new_year .tiger_block .tiger {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .desktop_bg.new_year .tiger_block .greeting {
+    max-width: 150px;
+    position: relative;
+    left: 2rem;
+  }
+
+  .desktop_bg.new_year:after {
+    background-image: -o-linear-gradient(330deg, #f6d365 0%, #fda085 100%);
+    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    -webkit-box-shadow: 0 10px 30px rgb(255 155 106 / 50%), 0 3px 15px rgb(256 256 256);
+            box-shadow: 0 10px 30px rgb(255 155 106 / 50%), 0 3px 15px rgb(256 256 256);
+  }
+
+  .desktop_bg.new_year:before {
+    width: 100vw;
+    height: 250px;
+    bottom: 0;
+    left: 0;
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+            transform: rotate(0);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('../images/desktop_bg/mountain.png');
+  }
+
+}
+
+@media screen and (max-width: 1280px){
+  .desktop_bg.new_year .tiger_block { max-width: 250px; }
+  .desktop_bg.new_year .tiger_block .greeting { max-width: 100px; }
+}
+
+@media screen and (max-width: 1024px){
+  .desktop_bg.new_year .tiger_block { display: none; }
+}
+/* E: desktop_bg thema */
