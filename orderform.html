@@ -64,5 +64,52 @@
             </div>   
         </form>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--inAcaAge, initValue 오류 수정-->
+    <!-- <?php if ($it_edu_sub_information02 == "Y") {?> -->
+    <script>
+        // select box에 값 넘겨주기
+        function inAcaAge() {
+          // 체험생 수 -> 수량에서 가져옴
+          var od_cnt1v = $('#od_cnt1v').val();
+          for (var i = 0; i < od_cnt1v; i++) {
+            var aca_input = document.getElementsByName("aca_age[]")[i].value;
+            if (aca_input && $('#aca_year' + i).length > 0) {
+              var arr = aca_input.split('-');
+              $('#aca_year' + i).val(arr[0]);
+              $('#aca_month' + i).val(arr[1]);
+              $('#aca_day' + i).val(arr[2]);
+            }
+          }
+        }
+        
+        //input에 값 넘겨주기
+        function outAcaAge() {
+          // 체험생 수 -> 수량에서 가져옴
+          var od_cnt1v = $('#od_cnt1v').val();
+          for (var i = 0; i < od_cnt1v; i++) {
+            var aca_input = document.getElementsByName("aca_age[]")[i];
+            if($('#aca_year' + i).length > 0){
+                var aca_year = $('#aca_year' + i).val();
+                var aca_month = $('#aca_month' + i).val();
+                var aca_day = $('#aca_day' + i).val();
+                if (aca_year && aca_month && aca_day) {
+                  var aca_birth = aca_year + '-' + aca_month + '-' + aca_day;
+                  $(aca_input).val(aca_birth);
+                }
+            }
+          }
+        }
+        /* S: 체험생 생년월일 수정 : 2021-10-22 */
+        $(document).on('change', '#chagemv .birth_box', function() {
+          outAcaAge();
+        });
+        /* E: 체험생 생년월일 수정 : 2021-10-22 */
+        
+        // $(window).load(function() {
+        //   inAcaAge();
+        // });
+    </script>
+    <!-- <?php } ?> -->
 </body>
 </html>
