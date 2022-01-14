@@ -369,6 +369,7 @@ box-sizing: border-box;
   text-align: center;
   border-radius: 8px;
   padding: 0.9rem 0;
+  cursor: pointer;
 }
 .lg_btn:hover { background-color: #ff8611; }
 .lg_btn span { font-weight: bold; }
