@@ -66,12 +66,6 @@ ul,ol,li { list-style: none; }
 a,a:hover,a:active,a:visited { color: inherit; text-decoration: none; }
 caption { display: none; }
 /* 이미지 선명 css */
-.square_item_list .item_thumb > img,
-.horizontal_item_list .item_thumb > img,
-.product_thumb_wrap > img,
-.board_content_block .board_detail img {
-  image-rendering: -webkit-optimize-contrast !important;
-}
 /* S: lightbox custom */
 .lb-nav a.lb-prev,
 .lb-nav a.lb-next { opacity: 1 !important; }
@@ -2347,7 +2341,11 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .board_content_block .board_detail > div { margin-bottom: -3px; }
 .board_content_block .board_detail > div,
 .board_content_block .board_detail > div a,
-.board_content_block .board_detail img { font-size: 0 !important; line-height: 0 !important; }
+.board_content_block .board_detail img { 
+  font-size: 0 !important; 
+  line-height: 0 !important; 
+  image-rendering: -webkit-optimize-contrast !important;
+}
 .board_content_block .board_detail > div > img { vertical-align: bottom;}
 /* E:textEditor 수정 */
 .board_sns_block { padding: 0.7rem; text-align: right; }
