@@ -3089,6 +3089,16 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .order_box .product_info_wrap .product_info .price_divider { font-size: 1rem; color: #e0e0e0; position: relative; top: -1px; }
 .order_box .product_info_wrap .product_info .before_price { font-size: 0.8rem; text-decoration: line-through; color: #828282; }
 .order_box .product_info_wrap .product_info .product_info_percent { font-size: 1rem; font-weight: bold; color: #ff8611; }
+.product_opt_dl dt,
+.product_opt_dl dd {
+    font-size: 0.85rem;
+    color: #828282;
+}
+.product_opt_dl dd { margin-top: 0.2rem; line-height: 1.2; }
+.product_opt_dl dt:before {
+    content: '·';
+    margin-right: 0.3rem;
+}
 /* product info */
 .content_footer {
   display: -webkit-box;
