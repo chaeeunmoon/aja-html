@@ -805,7 +805,8 @@ box-sizing: border-box;
 .spinner.rounded_cnt .cnt_minus,
 .spinner.rounded_cnt .cnt_plus { font-family: 'Roboto', 'Noto Sans KR', sans-serif !important; height: 2.5rem !important; display: inline-block; }
 /* 생년월일 */
-.birth_box {
+.birth_box,
+.time_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -814,7 +815,8 @@ box-sizing: border-box;
   justify-content: space-between;
   margin-top: 1.5em;
 }
-.birth_box select {
+.birth_box select,
+.time_box select {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 0.7rem 0.5rem;
@@ -823,7 +825,11 @@ box-sizing: border-box;
   -moz-appearance: button;
   appearance: button;
 }
-.birth_box select:focus { outline: none; border-color: #ff8611; }
+.time_box select { width: 48%; padding: 0.8rem 0.6rem; -webkit-appearance: none;  -moz-appearance: none;  appearance: none; }
+.time_box .hyphen { font-size: 1.1rem; margin-top: 0.8rem; }
+.birth_box select:focus,
+.time_box select:focus { outline: none; border-color: #ff8611; }
+.birth_box .year,
 .birth_box .birth_year { width: 40%; }
 input[type='checkbox']:checked { background-color: #ff8611; }
 /* custom checkbox */
