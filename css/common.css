@@ -807,7 +807,8 @@ box-sizing: border-box;
 .spinner.rounded_cnt .cnt_plus { font-family: 'Roboto', 'Noto Sans KR', sans-serif !important; height: 2.5rem !important; display: inline-block; }
 /* 생년월일 */
 .birth_box,
-.time_box {
+.time_box,
+.grade_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -817,7 +818,8 @@ box-sizing: border-box;
   margin-top: 1.5em;
 }
 .birth_box select,
-.time_box select {
+.time_box select,
+.grade_box select {
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 0.7rem 0.5rem;
@@ -827,11 +829,26 @@ box-sizing: border-box;
   appearance: button;
 }
 .time_box select { width: 48%; padding: 0.8rem 0.6rem; -webkit-appearance: none;  -moz-appearance: none;  appearance: none; }
+.grade_box select { width: 48%; padding: 0.8rem 0.6rem; }
 .time_box .hyphen { font-size: 1.1rem; margin-top: 0.8rem; }
 .birth_box select:focus,
-.time_box select:focus { outline: none; border-color: #ff8611; }
+.time_box select:focus, .grade_box select:focus { outline: none; border-color: #ff8611; }
 .birth_box .year,
 .birth_box .birth_year { width: 40%; }
+.grade_box .grade_input { font-size: 1rem; width: 48%; padding: 0 0.5rem; }
+.grade_box .grade_input input {
+  display: inline-block;
+  width: 75%;
+  text-align: center;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px;
+  padding: 0.83rem 0.5rem;
+  margin-right: 0.5rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 input[type='checkbox']:checked { background-color: #ff8611; }
 /* custom checkbox */
 .ck_flex_wrap {
