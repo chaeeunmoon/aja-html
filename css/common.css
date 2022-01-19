@@ -1271,7 +1271,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   overflow: hidden;
 }
 .ctg_nav_item .ctg_name { margin-top: 0.5rem; font-weight: 400; }
-.category_list li.default .ctg_thumbnail { border: 1px dashed #fd8e58; }
+/* .category_list li.default .ctg_thumbnail { border: 1px dashed #bebebe; } */
 
 .m_title_wrapper { padding: 0.9em 1.7em; }
 .m_title_wrapper.link_title a {
