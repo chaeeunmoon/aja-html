@@ -925,7 +925,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .modal_header { width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #fff; border-bottom: 1px solid #e0e0e0;}
 .rounded_header { position: relative; background-color: #ff8711; color: #fff; border: none;}
 .modal_header .modal_title { font-size: 1.25rem; font-weight: bold; letter-spacing: 0.5px; text-align: center;}
-#pop .modal_header .modal_title { padding: 1.5rem 0; }
+/* #pop .modal_header .modal_title { padding: 1.5rem 0; } */
 .modal_body { -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #fff;}
 /* round_modal*/
 .modal.round_modal .modal_content {
