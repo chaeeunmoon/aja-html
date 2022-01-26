@@ -338,6 +338,7 @@ img {
   #navi-area,
   .m_action_bar,
   .list_nav_wrap.sticky,
+  .modal,
   .fixed_btn_wrapper,
   .list_nav_wrap.sticky,
   .sticky_nav.sticky,
@@ -349,14 +350,6 @@ img {
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    border-left: 2px solid #e1e1e1;
-    border-right: 2px solid #e1e1e1;
-  }
-  
-  .modal {
-    width: 100%;
-    max-width: 428px;
-    margin: 0 auto;
     border-left: 2px solid #e1e1e1;
     border-right: 2px solid #e1e1e1;
   }
