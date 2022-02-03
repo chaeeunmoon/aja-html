@@ -3330,6 +3330,9 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .completed_txt_box .oc_title { font-size: 1.1rem; font-weight: 600; text-align: center; margin-bottom: 0.5rem; }
 .completed_txt_box .oc_desc { font-size: 0.82rem; color: #828282; text-align: center; margin-top: 1rem; }
 .completed_txt_box .oc_desc.danger { font-size: 1rem; color: #ff8611; font-weight: 500; }
+.oc_warning_box { padding: 0.7rem; background-color: #FFE4E0; border-radius: 12px; margin-bottom: 1rem;}
+.oc_warning_box .oc_desc.oc_warning_code { color: #FB5A5F; font-size: 1.1rem; font-weight: 600; text-align: center; }
+.oc_warning_box .oc_desc.oc_warning_desc { color: #FB5A5F; font-size: 0.9rem; margin-top: 0.5rem; text-align: center; }
 .order_box .payment_info_box { background-color: #f8f8fa; padding: 0.8rem 1rem; margin-bottom: 1.4rem; border-radius: 0.9rem; }
 .order_box .payment_info_box .pay_info_list { margin-bottom: 0; }
 /* E: orderform completed style */
