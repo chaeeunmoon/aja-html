@@ -3271,6 +3271,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   width: auto;
   height: auto;
   padding: 0.25rem 18px 0.25rem 0.5rem;
+  cursor: pointer;
 }
 .coupon_box .coupon_btn:before { top: 30%; }
 .coupon_price { font-size: 0.9rem; }
