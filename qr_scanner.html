@@ -254,12 +254,17 @@ function printScanResultPretty(codeId, decodedText, decodedResult) {
 }
 
 
-
+      var codeId = 0;
       function onScanSuccess(decodedText, decodedResult) {
         // Handle on success condition with the decoded text or result.
         console.log(`Scan result: ${decodedText}`, decodedResult);
         // ...
-        html5QrcodeScanner.clear();
+        if (lastMessage !== decodedText) {
+			      lastMessage = decodedText;
+            printScanResultPretty(codeId, decodedText, decodedResult);
+            ++codeId;
+		    }
+        //html5QrcodeScanner.clear();
         // ^ this will stop the scanner (video feed) and clear the scan area.
       }
 
