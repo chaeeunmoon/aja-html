@@ -6,6 +6,20 @@ img {
 }
 
 /* S: media query */
+/* font responsive */
+html { font-size: 17px; }
+@media (max-width: 375px) { html {font-size: 16px;} }
+@media (max-width: 320px) { html { font-size: 14px;} }
+@media (max-width: 300px) { html {font-size: 12px;} }
+
+@media (max-width: 1910px) and (min-width: 1024px) and (min-aspect-ratio: 16/10) {
+  html { font-size: 16px; }
+}
+
+@media (max-width: 1280px) and (min-width: 1024px) and (min-aspect-ratio: 16/10) {
+  html { font-size: 15px; }
+}
+
 /* pc style (1024px ~ )  */
 @media screen and (min-width: 1024px) {
   .desktop_wrapper {
@@ -276,6 +290,12 @@ img {
   .pc_pop_modal {
     display: none !important;
   }
+}
+
+/* 비율 조정  */
+@media (max-width: 1910px) and (min-width: 1024px) and (min-aspect-ratio: 16/10) {
+  .desktop_menu .platform_link_box { width: 45%; }
+  .desktop_menu .pc_search_block { margin-top: 5vh; }
 }
 
 /* ipad pro ( width : 1024px ) */
