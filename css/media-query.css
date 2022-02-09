@@ -12,12 +12,20 @@ html { font-size: 17px; }
 @media (max-width: 320px) { html { font-size: 14px;} }
 @media (max-width: 300px) { html {font-size: 12px;} }
 
-@media (max-width: 1910px) and (min-width: 1024px) and (min-aspect-ratio: 16/10) {
+@media (max-width: 1910px) and (min-width: 1281px) and (min-aspect-ratio: 16/10) {
   html { font-size: 16px; }
 }
 
 @media (max-width: 1280px) and (min-width: 1024px) and (min-aspect-ratio: 16/10) {
   html { font-size: 15px; }
+}
+
+@media (max-width: 1910px) and (min-width: 1024px) and (min-aspect-ratio: 4/3){
+  html { font-size: 15px; }
+}
+
+@media (max-width: 1280px) and (min-width: 1024px) and (min-aspect-ratio: 4/3){
+  html { font-size: 14.5px; }
 }
 
 /* pc style (1024px ~ )  */
@@ -286,16 +294,29 @@ html { font-size: 17px; }
   }
 }
 
+@media (min-width: 1024px) and (max-width: 1440px) {
+
+  .desktop_menu .logo_block .pc_logo a img { max-width: 14.5rem; }
+  
+  .desktop_menu .pc_platform_block { margin-top: 2vh; }
+  .desktop_menu .platform_link_box { width: 43%; }
+  .desktop_menu .pc_search_block { margin-top: 3vh; }
+  
+  .desktop_menu .pc_search_block .search_form { padding: 1.2rem 2rem; }
+  .desktop_search_tag { margin: 0.2rem; }
+
+  .pc_fnav_block { padding: 1.1rem 0; } 
+  .pc_fnav_list li img { max-width: 8rem; }
+  
+  .desktop_menu .admin_link_block { padding-bottom: 0; }
+  .desktop_menu .admin_link_block a img { width: 170px; }
+}
+
 @media screen and (max-width: 1279px) {
   .pc_pop_modal {
     display: none !important;
   }
-}
 
-/* 비율 조정  */
-@media (max-width: 1910px) and (min-width: 1024px) and (min-aspect-ratio: 16/10) {
-  .desktop_menu .platform_link_box { width: 45%; }
-  .desktop_menu .pc_search_block { margin-top: 5vh; }
 }
 
 /* ipad pro ( width : 1024px ) */
@@ -335,7 +356,7 @@ html { font-size: 17px; }
   }
 }
 
-@media (max-height: 840px) {
+@media (max-height: 820px) {
   .pc_fnav_block {
     position: relative;
   }
