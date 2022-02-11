@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>교육신청</title>
+    <title>구독서비스/교육리스트</title>
     <!--font 추가 (NotoSansKr, Roboto)-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -16,6 +16,30 @@
     <!-- 추가 css-->
     <link rel="stylesheet" href="css/font-style.css">
     <link rel="stylesheet" href="css/common.css">
+
+    <style>
+        .subscription_state_box {
+            border: 2px solid #ff8611;
+            padding: 1.2rem;
+            border-radius: 0.95rem;
+            background-color: #fff;
+            margin-bottom: 1rem;
+        }
+        .subscription_state_box .title_box {
+            padding-bottom: 0.8rem;
+        }
+
+        .subscription_state_box .item_name {
+            font-family: 'CookieRun';
+            font-size: 1.4375rem;
+            color: #232323;
+        }
+
+        .subscription_state_box .order_date {
+            font-size: 0.9rem;
+            color: #828282;
+        }
+    </style>
 </head>
 
 <body>
@@ -23,15 +47,25 @@
         <!--header-->
         <div class='page_title_area'>
             <a class="back_btn" href="javascript:history.back();"><img src="images/icon/prev-arrow.svg" alt="뒤로가기" /></a>
-            <h2 class="page_title">교육신청</h2>
+            <h2 class="page_title">구독서비스/교육리스트</h2>
             <a class="close_btn" href="<?php echo $return_url ?>"><img src="images/icon/btn_close.png" alt="닫기"></a>
         </div>
         <!--content-->
         <div class="order_wrapper confirm_wrapper">
-            <div class="confirm_state_block flex_block">
+            <div class="subscription_state_box">
+                <div class="flex_block title_box">
+                    <p class="item_name">라이트 구독중</p>
+                    <a href="#" class="capsule_btn gray sm mr_0">카드정보</a>
+                </div>
+                <div class="flex_block">
+                    <p class="order_date">결제일 : 2022-03-28 </p>
+                    <p class="order_date">구독현황 : 65 </p>
+                </div>
+            </div>
+            <!-- <div class="confirm_state_block flex_block">
                 <span class="state_title">신청완료 교육</span>
                 <p class="state_txt"><span class="num">2</span>건</p>
-            </div>
+            </div> -->
             <div class="confirm_box_wrap">
                 <ul class="confirm_box_list">
                     <li class="confirm_box order_box">

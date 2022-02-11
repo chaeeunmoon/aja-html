@@ -13,6 +13,20 @@
     <!-- 추가 css-->
     <link rel="stylesheet" href="css/font-style.css">
     <link rel="stylesheet" href="css/common.css">
+    <style>
+        .subscription_state { 
+            font-family: 'Roboto', 'Noto Sans KR', sans-serif !important;
+            background-color: #fff;
+            font-size: 0.85rem !important;
+            font-weight: 600;
+            padding: 0.25rem 0.5rem 0.2rem;
+            border-radius: 0.5rem;
+            color: #FD3A69;
+            border: 2px solid #FD3A69;
+        }
+        .subscription_state.premium { border: 2px solid #892CDC; color: #892CDC !important; }
+        .subscription_state.light { border: 2px solid #185ADB; color: #185ADB !important; }
+    </style>
 </head>
 <body>
     <!-- 마이페이지 -->
@@ -23,8 +37,11 @@
         </div>
         <div class="mypage_body">
             <div class="account_info">
+                <!-- <p>
+                    <span class="subscription_state mb_5">구독중</span>
+                </p> -->
                 <div class="flex_block">
-                    <h4 class="account_name">김아자<span>님</span></h4>
+                    <h4 class="account_name">coconu<span>님</span></h4>
                     <a href="/bbs/member_confirm.php?url=/bbs/register_form_aja.php" class="capsule_btn gray sm">정보수정</a>
                 </div>  
                 <p class="id_email">ajaschool123@gmail.com</p>
@@ -37,6 +54,12 @@
                             <p class="state_num">25</p>
                         </a>
                     </div>
+                    <!-- <div class="state_box">
+                        <a href="#none">
+                            <p class="state_title">구독 현황</p>
+                            <p class="state_num">25</p>
+                        </a>
+                    </div> -->
                     <div class="state_box">
                         <a href="#none">
                             <p class="state_title">완료한 체험</p>
@@ -62,24 +85,36 @@
                 <div class="ac_menu_wrap">
                     <ul class="shadow_box ac_menu_list">
                         <li>
-                            <div class="img_title"><img src="images/icon/ico_my_select.png" alt="">찜한 교육</div>
-                            <!-- <p class="account_txt"><a href="shop/interest_list.php">26<span class="black">건</span></a></p> -->
+                            <a href="subscription_list.html">
+                                <div class="img_title"><img src="images/icon/ico_sitemap_ctg_70.svg" alt="">구독서비스</div>
+                                <!-- <p class="account_txt"><span class="subscription_state premium">프리미엄</span></p> -->
+                                <p class="account_txt">프리미엄</p> 
+                                <!--<p class="account_txt">26<span class="black">건</span></p>-->
+                            </a>
                         </li>
                         <li>
-                            <div class="img_title"><img src="images/icon/ico_my_portfolio.png" alt="">성장앨범</div>
-                            <!-- <p class="account_txt"><a href="bbs/board_j.php?bo_table=epot">17<span class="black">건</span></a></p> -->
+                            <a href="#">
+                                <div class="img_title"><img src="images/icon/ico_my_select.png" alt="">찜한 교육</div>
+                                <p class="account_txt">26<span class="black">건</span></p> 
+                            </a>
                         </li>
                         <li>
-                            <div class="img_title"><img src="images/icon/ico_my_portfolio.png" alt="">체험학습보고서</div>
-                            <!-- <p class="account_txt"><a href="bbs/board_j.php?bo_table=epot">17<span class="black">건</span></a></p> -->
+                            <a href="#">
+                                <div class="img_title"><img src="images/icon/ico_my_portfolio.png" alt="">체험학습보고서</div>
+                                <p class="account_txt">17<span class="black">건</span></p> 
+                            </a>
                         </li>
                         <li>
-                            <div class="img_title"><img src="images/icon/ico_my_test.png" alt="">적성검사</div>
-                            <!-- <p class="account_txt"><a href="shop/mypage_tryouts.php">3<span class="black">건</span></a></p> -->
+                            <a href="#">
+                                <div class="img_title"><img src="images/icon/ico_my_test.png" alt="">적성검사</div>
+                                <p class="account_txt">3<span class="black">건</span></p>    
+                            </a>
                         </li>
                         <li>
-                            <div class="img_title"><img src="images/icon/ico_my_dream.png" alt="">나의 꿈 체험</div>
-                            <!-- <p class="account_txt"><a href="dream/ability_info.php?job_no=19">빅데이터전문가</a></p> -->
+                            <a href="#">
+                                <div class="img_title"><img src="images/icon/ico_my_dream.png" alt="">나의 꿈 체험</div>
+                                <p class="account_txt">빅데이터전문가</p>
+                            </a>
                         </li>
                     </ul>
                 </div>
