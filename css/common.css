@@ -2376,6 +2376,9 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   line-height: 0 !important; 
   image-rendering: -webkit-optimize-contrast !important;
 }
+
+.rm_wrap .img_wrap img { vertical-align: bottom; }
+
 .board_content_block .board_detail > div > img { vertical-align: bottom;}
 /* E:textEditor 수정 */
 .board_sns_block { padding: 0.7rem; text-align: right; }
