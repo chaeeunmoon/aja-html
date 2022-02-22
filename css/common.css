@@ -3969,4 +3969,62 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .round_pagination li a { display: block; line-height: 2rem; text-align: center; }
 .round_pagination li.pg_arrow a { font-family: 'CookieRun'; }
 .round_pagination li a img { height: 0.95rem; }
-/* S: pagination style */
+/* E: pagination style */
+/* S: subscription style */
+.card_block { padding: 1.1rem 0.8rem !important; }
+
+.card_block .card_name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card_block .card_num {
+  font-size: 0.85rem;
+  color: #828282;
+}
+
+.card_block .card_icon {
+  border: 1px solid #E1E1E1;
+  padding: 0.7rem;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+}
+
+.card_block .card_icon > img { width: 1.8rem; }
+
+.subscription_label {
+  display: inline-block; 
+   padding: 0.3rem 0.7rem 0.35rem;
+   background-color: #E6F0FF;
+   color: #2279FF;
+   font-size: 0.78rem;
+   font-weight: 500;
+   border-radius: 30px;
+   margin-bottom: 0.6rem;
+}
+
+.right { text-align: right; }
+
+.light_btn {
+  display: inline-block;
+  border: 1px solid #E1E1E1;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+}
+
+.address_box {
+ background-color: #fff;
+ border: 1px solid #E1E1E1;
+ padding: 1.5rem 1rem;
+ border-radius: 1rem;
+}
+
+.btn_input_wrap input[type="text"] { width: 58%; }
+
+.order_btn_block {
+  text-align: center;
+  padding-top: 1rem;
+}
+/* E: subscription style */
