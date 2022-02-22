@@ -85,51 +85,6 @@
             <a class="close_btn" href="javascript:history.back();"><img src="images/icon/btn_close.png" alt="닫기"></a>
           </div>
           <!-- E: header -->
-          <style>
-              .subscription_info {
-                  background-color: #FD9925;
-                  border-radius: 1.3rem;
-                  padding: 1.2rem 1rem;
-              }
-              
-              .subscription_info .item_name {
-                font-family: 'CookieRun';
-                font-size: 1.4375rem;
-                color: #fff; 
-                padding-left: 0.4rem;
-              }
-
-              .subscription_info .date { 
-                font-size: 0.9rem; 
-                color: #fff;
-                margin-top: 0.7rem;
-                padding-left: 0.4rem;
-              }
-
-              .subscription_info .cancel_btn {
-                  font-size: 0.83rem;
-                  padding: 0.5rem 0.7rem 0.3rem;
-                  background-color: #9E744D;
-                  border-radius: 1rem;
-                  color: #fff;
-              }
-
-              .subscription_info .subscription_state {
-                  background-color: #F48511;
-                  border-radius: 1.3rem;
-                  padding: 0.8rem 0;
-                  margin-top: 1.2rem;
-              }
-
-              .subscription_info .subscription_state .state_box {
-                border-right: 1px solid #E47807;
-              }
-
-              .subscription_info .subscription_state .state_box:last-of-type {
-                  border-right: none;
-              }
-
-          </style>
           <!--content-->
           <div class="order_wrapper confirm_wrapper">
             <div class="subscription_info">
@@ -155,8 +110,30 @@
             </div>
             <ul class="block_menu_wrap">
                 <li class="block_menu">
-                    <a href="#">
-                                   
+                    <a href="subscriptioncard.html" class="flex_block">
+                       <div class="flex_block">
+                           <img class="menu_icon" src="images/icon/pay_ico_07.png" alt="">
+                           <p class="menu_txt">카드정보</p>
+                       </div>     
+                       <img src="images/icon/btn_next_gray.png" alt="">       
+                    </a>
+                </li>
+                <li class="block_menu">
+                    <a href="subscriptionaddress.html" class="flex_block">
+                       <div class="flex_block">
+                           <img class="menu_icon" src="images/icon/pay_ico_08.png" alt="">
+                           <p class="menu_txt">배송지 수정</p>
+                       </div>     
+                       <img src="images/icon/btn_next_gray.png" alt="">       
+                    </a>
+                </li>
+                <li class="block_menu">
+                    <a href="#" class="flex_block">
+                       <div class="flex_block">
+                           <img class="menu_icon" src="images/icon/ico_subscription_03.png" alt="">
+                           <p class="menu_txt">이달의 체험 신청</p>
+                       </div>     
+                       <img src="images/icon/btn_next_gray.png" alt="">       
                     </a>
                 </li>
             </ul>

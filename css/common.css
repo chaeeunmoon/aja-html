@@ -4027,4 +4027,65 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   text-align: center;
   padding-top: 1rem;
 }
+.subscription_info {
+  background-color: #FD9925;
+  border-radius: 1.3rem;
+  padding: 1.2rem 1rem;
+}
+
+.subscription_info .item_name {
+font-family: 'CookieRun';
+font-size: 1.4375rem;
+color: #fff; 
+padding-left: 0.4rem;
+}
+
+.subscription_info .date { 
+font-size: 0.9rem; 
+color: #fff;
+margin-top: 0.7rem;
+padding-left: 0.4rem;
+}
+
+.subscription_info .cancel_btn {
+  font-size: 0.83rem;
+  padding: 0.5rem 0.7rem 0.3rem;
+  background-color: #9E744D;
+  border-radius: 1rem;
+  color: #fff;
+}
+
+.subscription_info .subscription_state {
+  background-color: #F48511;
+  border-radius: 1.3rem;
+  padding: 0.8rem 0;
+  margin-top: 1.2rem;
+}
+
+.subscription_info .subscription_state .state_box {
+border-right: 1px solid #E47807;
+}
+
+.subscription_info .subscription_state .state_box:last-of-type {
+  border-right: none;
+}
+
+.block_menu_wrap { margin-top: 1rem; }
+.block_menu_wrap .block_menu { 
+  border: 1px solid #E1E1E1;
+  background-color: #fff;
+  border-radius: 1.3rem;
+  padding: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.block_menu_wrap .block_menu .menu_icon {
+   height: 1.5rem;
+   margin-right: 0.8rem;
+}
+
+.block_menu_wrap .block_menu .menu_txt {
+   font-size: 1.25rem;
+   font-weight: 600;
+}
 /* E: subscription style */
