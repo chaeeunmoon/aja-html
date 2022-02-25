@@ -1734,7 +1734,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .point_list_wrap .shadow_box { width: 47%; }
 .point_list_wrap .img_title { padding-bottom: 0.8rem; }
 .point_list_wrap .img_title img { width: 2.2rem; }
-.account_txt { font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: bold; }
+.account_txt { font-family: 'Roboto', sans-serif; font-size: 1rem; font-weight: bold; text-align: right; }
 .account_txt .black { color: #0d0d0d; font-weight: bold; }
 .account_txt.center { text-align: center; }
 .ac_menu_list { padding: 1rem 1.2rem; }
