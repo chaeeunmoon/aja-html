@@ -1851,7 +1851,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   justify-content: space-between;
 }
 .menu_nav_list li a .img_title { font-size: 1rem; font-weight: 400; color: #0d0d0d; vertical-align: middle; }
-.menu_nav_list li a .img_title img { width: 1.8rem; }
+.menu_nav_list li a .img_title img { width: 1.8rem; position: relative; top: -0.1rem; }
 .menu_nav_list li a .nav_arrow img { height: 0.85rem; }
 .region_list_wrap { width: 100%; }
 .label_list_wrap {
@@ -4085,6 +4085,8 @@ border-right: 1px solid #E47807;
 .block_menu_wrap .block_menu .menu_icon {
    height: 1.5rem;
    margin-right: 0.8rem;
+   position: relative;
+   top: -0.1rem;
 }
 
 .block_menu_wrap .block_menu .menu_txt {
