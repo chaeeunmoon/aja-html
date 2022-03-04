@@ -4093,4 +4093,26 @@ border-right: 1px solid #E47807;
    font-size: 1.25rem;
    font-weight: 600;
 }
+
+.subscription_menu {
+  background-color: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 0.6rem;
+  padding: 1.2rem 0;
+}
+.subscription_menu .menu_link {
+  text-align: center;
+  flex: 1;
+}
+.subscription_menu .menu_link:nth-of-type(2) {
+  border-left: 1px solid #e1e1e1;
+  border-right: 1px solid #e1e1e1;
+}
+.subscription_menu .menu_link img { height: 1.6rem; }
+.subscription_menu .menu_link .link_txt {
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 0.68rem;
+}
 /* E: subscription style */
