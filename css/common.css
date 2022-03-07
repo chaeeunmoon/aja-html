@@ -4102,7 +4102,9 @@ border-right: 1px solid #E47807;
 }
 .subscription_menu .menu_link {
   text-align: center;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .subscription_menu .menu_link:nth-of-type(2) {
   border-left: 1px solid #e1e1e1;
@@ -4115,4 +4117,39 @@ border-right: 1px solid #E47807;
   font-weight: 600;
   margin-top: 0.68rem;
 }
+.subscription_item_wrap { margin-top: 2rem; }
+.subscription_title  {
+  font-family: 'CookieRun';
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+.subscription_item {
+  border: 1px solid #e1e1e1;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+.subscription_item.light { background-color: #2FBAB3; }
+.subscription_item.premium { background-color: #9888F1; }
+.subscription_item .item_header { padding: 0.8rem 1rem; color: #fff }
+.subscription_item .item_header .title { font-family: 'CookieRun'; font-size: 1.2rem; }
+.subscription_item .item_header .cancel_link { font-size: 0.85rem; cursor: pointer; }
+.subscription_item .item_header .cancel_link img {
+  height: 0.82rem;
+  position: relative;
+  top: 1.5px;
+  margin-left: 3px;
+}
+.subscription_item .item_body {
+  background-color: #fff;
+  width: 100%;
+  border-top-left-radius: 0.8rem;
+  padding: 1.3rem;
+}
+.subscription_item .item_body .btn_wrapper { margin-top: 1.2rem; }
+.subscription_item .item_body .item_info { margin-bottom: 1rem; }
+.subscription_item .item_body .item_info .title,
+.subscription_item .item_body .item_info .data { font-size: 0.9rem; color: #828282; }
+.subscription_item .item_body .item_info .data { color: #828282; }
+.subscription_item .item_body .item_info .data a { font-size: 1rem; font-weight: 600; color: #ff8611; }
 /* E: subscription style */
