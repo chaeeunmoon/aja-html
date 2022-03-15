@@ -2097,7 +2097,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .list_banner_wrapper,
 .list_banner_wrapper img { width: 100%; }
 .list_content { width: 100%; margin-top: 1.5rem; }
-.list_content .list_item_wrap li { padding-bottom: 0.9rem; margin-bottom: 1.2rem; }
+.list_content .list_item_wrap li { position: relative; padding-bottom: 0.9rem; margin-bottom: 1.2rem; }
 .empty_list { width: 100% !important; font-size: 1.1rem; color: #aaa; text-align: center; font-weight: 500; padding: 1.3rem 0; }
 .list_wrapper .square_item_list.list_item_wrap li { width: 47.5%; } 
 .list_wrapper .btn_wrapper { margin: 0.5rem 0; }
@@ -4152,4 +4152,16 @@ border-right: 1px solid #E47807;
 .subscription_item .item_body .item_info .data { font-size: 0.9rem; color: #828282; }
 .subscription_item .item_body .item_info .data { color: #828282; }
 .subscription_item .item_body .item_info .data a { font-size: 1rem; font-weight: 600; color: #ff8611; }
+.list_item_wrap .label_completion { 
+  position: absolute;
+  top: 0.55rem;
+  left: 0.55rem;
+  z-index: 1;
+  background: #E6F0FF;
+  color: #2279FF;
+  padding: 0.4rem 0.6rem 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 30px;
+}
 /* E: subscription style */
