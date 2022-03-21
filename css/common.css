@@ -2269,6 +2269,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   transform: translateY(-50%);
 }
 .rgs_btn .mail img { width: 1.5rem; left: 1rem; }
+.rgs_btn .company img { width: 2.05rem; left: 0.8rem; }
 .rgs_btn .txt { margin-left: 1.3rem; font-size: 0.95rem; letter-spacing: 0.3px; font-weight: 600; }
 .rgs_btn.naver_btn { background-color: #1ec800; border-color: #1ec800; color: #fff; }
 .rgs_btn.kakao_btn { background-color: #ffe11d; border-color: #ffe11d; color: #3a1d18; }
