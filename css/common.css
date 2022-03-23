@@ -2664,12 +2664,12 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   transition: all 0.3s;
 }
 .tab_nav_wrap li.on a { border-bottom: 2px solid #ff8611 !important; }
-.rm_wrap { width: 100%; height: 700px; overflow: hidden; padding: 1.8rem 0.9rem 1rem; }
+.rm_wrap { width: 100%; height: 700px; overflow: hidden; padding: 1rem 0.7rem 1rem; }
 .rm_wrap .img_wrap { width: 100%; }
 .rm_wrap .img_wrap img { 
   width: 100%;
   vertical-align: bottom;
-  image-rendering: -webkit-optimize-contrast;
+  /* image-rendering: -webkit-optimize-contrast; */
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
   -webkit-backface-visibility: hidden;
