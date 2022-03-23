@@ -2376,9 +2376,6 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   line-height: 0 !important; 
   image-rendering: -webkit-optimize-contrast !important;
 }
-
-.rm_wrap .img_wrap img { vertical-align: bottom; }
-
 .board_content_block .board_detail > div > img { vertical-align: bottom;}
 
 .img_blank_wrap { position: relative;  font-size: 0; z-index: 999; }
@@ -2669,7 +2666,15 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .tab_nav_wrap li.on a { border-bottom: 2px solid #ff8611 !important; }
 .rm_wrap { width: 100%; height: 700px; overflow: hidden; padding: 1.8rem 0.9rem 1rem; }
 .rm_wrap .img_wrap { width: 100%; }
-.rm_wrap .img_wrap img { width: 100%; }
+.rm_wrap .img_wrap img { 
+  width: 100%;
+  vertical-align: bottom;
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
 .rm_btn_wrap { width: 100%; background-color: #fff; padding: 0.8rem 0.9rem; }
 .more_btn {
   display: -webkit-box;
