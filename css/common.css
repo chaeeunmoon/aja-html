@@ -578,6 +578,12 @@ box-sizing: border-box;
 .flex_input_group input:placeholder { font-size: 1rem; color: #bebebe; }
 .line_input_group input:focus,
 .flex_input_group input:focus { outline: none; border-bottom: 1px solid #ff8611 !important; }
+.input_group .input_desc, 
+.line_input_group .input_desc {
+  font-size: 0.9rem;
+  color: #FFB72B;
+  margin: 0.7rem 0.2rem;
+}
 /* 휴대폰 정보 입력 */
 .phone_input_box {
   padding: 1em 0;
