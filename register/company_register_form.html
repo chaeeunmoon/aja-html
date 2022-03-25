@@ -9,10 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Roboto:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
     <!--기존 css-->
-    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="../css/default.css">
     <!-- 추가 css-->
-    <link rel="stylesheet" href="css/font-style.css">
-    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="../css/font-style.css">
+    <link rel="stylesheet" href="../css/common.css">
     <!--inline css-->
 </head>
 <body>
@@ -42,6 +42,61 @@
                             <!--정보-->
                             <div class="slide_step_container">
                                 <div class="slider">
+                                    <div class="step_content">
+                                        <p class="step_title">회사정보를 입력해주세요</p>
+                                        <div class="rgs_wrapper">
+                                            <div class="rgs_group">
+                                                <!-- <div class="line_input_group">
+                                                    <label class="input_label" for="mb_cmp_name">대표자명</label>
+                                                    <input type="text" id="mb_cmp_name" name="mb_cmp_name" placeholder="이름 (대표자)"
+                                                        value="">
+                                                </div> -->
+                                                <div class="input_group">
+                                                    <label class="input_title" for="mb_7c">회사명</label>
+                                                    <div class="btn_radio">
+                                                        <input type="radio" id="mb_gubun1" name="mb_11" class="mb_11"
+                                                            value="corporate">
+                                                        <label for="mb_gubun1">법인사업자</label>
+                                                        <input type="radio" id="mb_gubun2" name="mb_11" class="mb_11"
+                                                            value="individual" checked="">
+                                                        <label for="mb_gubun2">개인사업자</label>
+                                                    </div>
+                                                    <div class="line_input_group">
+                                                        <input class="" type="text" id="mb_7c" name="mb_7c" placeholder="회사명" value="">
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="input_group">
+                                                    <div class="btn_radio">
+                                                        <input type="radio" id="mb_gubun1" name="mb_11" class="mb_11"
+                                                            value="corporate">
+                                                        <label for="mb_gubun1">법인사업자</label>
+                                                        <input type="radio" id="mb_gubun2" name="mb_11" class="mb_11"
+                                                            value="individual" checked="">
+                                                        <label for="mb_gubun2">개인사업자</label>
+                                                    </div>
+                                                </div> -->
+                                                <div class="line_input_group">
+                                                    <label class="input_title" for="mb_7d">설립연도</label>
+                                                    <input type="text" id="mb_7d" name="mb_7d" placeholder="예)2016.06" value="">
+                                                </div>
+                                                <div class="line_input_group">
+                                                    <label class="input_title" for="mb_7d">주소</label>
+                                                    <div class="flex_input_block" style="margin-bottom: 1em;">
+                                                        <input type="text" style="width: 60%;" name="mb_zip" id="reg_mb_zip"
+                                                            value="" maxlength="6" placeholder="우편번호">
+                                                        <button type="button" class="btn_rounded sm_btn flex_btn"
+                                                            onclick="win_zip('fregisterform', 'mb_zip', 'mb_addr1', 'mb_addr2', 'mb_addr3', 'mb_addr_jibeon');">주소
+                                                            검색</button>
+                                                    </div>
+                                                    <input type="text" name="mb_addr1" id="reg_mb_addr1" value="" placeholder="주소">
+                                                    <!-- <input type="text" name="mb_addr3" value="" id="reg_mb_addr3" readonly="readonly"> -->
+                                                    <!-- <input type="hidden" name="mb_addr_jibeon" value=""> -->
+                                                    <input type="text" name="mb_addr2" value="" id="reg_mb_addr2"
+                                                        placeholder="상세주소를 입력하세요">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!--필수정보-->
                                     <div class="step_content">
                                         <p class="step_title">필수정보를 입력해주세요</p>
@@ -94,7 +149,7 @@
                                         </div>
                                     </div>
                                     <!--사업자정보-->
-                                    <div class="step_content">
+                                    <!-- <div class="step_content">
                                         <p class="step_title">회사정보를 입력해주세요</p>
                                         <div class="rgs_wrapper">
                                             <div class="rgs_group">
@@ -138,7 +193,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <!--사업자정보-->
                                     <div class="step_content">
                                         <p class="step_title">회사정보를 입력해주세요</p>
@@ -501,7 +556,7 @@
         </div>
     </div>
     <!-- plugin js (기존 plugin 파일과 동일)-->
-    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="../js/jquery-1.8.3.min.js"></script>
     <!--전체동의 js(기존 css)-->
     <script>
         $(document).on("click", "#all_check", function() {
