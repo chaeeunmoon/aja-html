@@ -1379,14 +1379,26 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   position: absolute;
   top: 0;
   left: 0;
-  /*
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate3d(-50%, -50%, 0);
-  -ms-transform: translate3d(-50%, -50%, 0);
-  transform: translate3d(-50%, -50%, 0);
-  */
+  z-index: 9;
 }
+
+.m_item_scroll .item_thumb .best_item ,
+.list_item_wrap .item_thumb .best_item ,
+.block_box a .item_thumb .best_item { 
+  position: absolute;
+  z-index: 99;
+  right: 0.15em;
+  bottom: 0.15em;
+}
+.m_item_scroll .item_thumb .best_item > img,
+.list_item_wrap .item_thumb .best_item > img,
+.block_box a .item_thumb .best_item > img {
+  width: 3.25rem;
+}
+
+.horizontal_item_list .item_thumb .best_item { right: 0.25em; bottom: 0.25em; }
+.horizontal_item_list .item_thumb .best_item > img { width: 4.25rem; }
+
 .square_item_list .item_thumb > img { height: 100%; }
 .item_thumb > .label_soldout { position: absolute; top: 0.55rem; left: 0.55rem; z-index: 1; width: 40%; }
 .m_item_scroll .item_info,
