@@ -496,6 +496,37 @@
           </div>
         </section>
         <!--E: 신규 OPEN 체험-->
+        <!--S: 고플 리스트-->
+        <section class="m_section">
+          <div class="m_scroll_wrapper">
+            <div class="m_title_wrapper link_title">
+                <a href="#">
+                  <p class="title_txt">아자 고플!</p><span class="item_more"><img class="lazy" data-src="images/icon/btn_more_black.png" loading='lazy' alt="더보기"/></span>
+                </a>
+            </div>
+            <div class="item_wrapper">
+              <ul class="m_item_scroll horizontal_item_list youtube_section">
+                <li>
+                  <div class="item_thumb">
+                    <img class="lazy" data-src="images/sample/item-sample-01.png" loading='lazy' alt="" />
+                  </div>
+                  <div class="item_info">
+                    <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                  </div>
+                </li>
+                <li>
+                  <div class="item_thumb">
+                    <img class="lazy" data-src="images/sample/item-sample-02.png" loading='lazy' alt="" />
+                  </div>
+                  <div class="item_info">
+                    <p class="item_title">마인드컬러링 AR(색칠공부 2종)</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <!--E: 고플 리스트-->
         <!--S: 무료 검사 3가지 (꿈 검사, 감성, 적성)-->
         <section class="m_section">
           <div>
@@ -1233,6 +1264,8 @@
           desktopScroll('.ctg_wrapper');
 
         }
+
+        desktopScroll('.youtube_section');
 
         if (document.querySelector('.m_item_scroll.horizontal_item_list')) {
           // 이 체험 어때요

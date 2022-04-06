@@ -1400,7 +1400,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .horizontal_item_list .item_thumb .best_item > img { width: 4.25rem; }
 
 .square_item_list .item_thumb > img { height: 100%; }
-.item_thumb > .label_soldout { position: absolute; top: 0.55rem; left: 0.55rem; z-index: 1; width: 40%; }
+.item_thumb > .label_soldout { position: absolute; top: 0.55rem; left: 0.55rem; z-index: 10; width: 40%; }
 .m_item_scroll .item_info,
 .list_item_wrap .item_info {
   width: 100%;
