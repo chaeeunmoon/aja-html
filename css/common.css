@@ -85,6 +85,9 @@ caption { display: none; }
 .mt_5 { margin-top: 0.5rem !important; }
 .mt_1r { margin-top: 1rem !important; }
 .pt_0 { padding-top: 0 !important; }
+
+.p_relative { position: relative !important; }
+.p_absolute { position: absolute !important; }
 /* header */
 /* header top renewal (20210414) */
 #header {
@@ -628,6 +631,7 @@ box-sizing: border-box;
   letter-spacing: 0.5px;
   margin-bottom: 0.5em;
 }
+.input_title .sub_txt { font-size: 0.85rem; color: #828282; }
 .box_select {
   width: 100%;
   min-height: 2rem;
@@ -4199,6 +4203,7 @@ border-right: 1px solid #E47807;
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);        
 }
+
 .youtube_wrapper {
   width: 100%;
   position: relative;
@@ -4218,3 +4223,35 @@ border-right: 1px solid #E47807;
   padding-bottom: 56.25%;
 }
 /* E: youtube style */
+/* S: live search style */
+.live_search_block {
+  position: absolute;
+  width: 100%;
+  height: 20vh;
+  overflow-y: scroll;
+  border: 1px solid #e0e0e0;
+  border-radius: 1rem;
+  background-color: #fff;
+  top: 3rem;
+  left: 0;
+  -webkit-box-shadow: 2px 5px 8px rgb(0 0 0 / 5%);
+  box-shadow: 2px 5px 8px rgb(0 0 0 / 5%);
+  padding: 0.8rem;
+}
+.live_search_block .search_keyword { border-bottom: 1px dashed #e0e0e0; }
+.live_search_block .search_keyword:last-of-type { border-bottom: none; }
+.live_search_block .search_keyword a {
+  width: 100%;
+  display: inline-block;
+  font-size: 0.92rem;
+  padding: 0.8em 0.5em;
+  color: #828282;
+}
+.live_search_block .search_keyword a:hover { color: #232323; font-weight: 600; }
+.live_search_block::-webkit-scrollbar { width: 0.6rem;}
+/* Handle */
+.live_search_block::-webkit-scrollbar-thumb { background: #51b1a3; border-radius: 1rem;}
+.live_search_block::-webkit-scrollbar-track { background: #e4f4f2; border-radius: 1rem;}
+.live_search_block .no_result { font-size: 1rem; text-align: center; font-weight: 500; color: #828282; padding: 3rem 0; }
+.live_search_block .no_result > img { position: relative; top: 0.25rem; margin-right: 0.3rem; }
+/* E: live search style */
