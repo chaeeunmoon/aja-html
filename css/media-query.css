@@ -277,6 +277,12 @@ html { font-size: 17px; }
   .lightbox {
     z-index: 10002 !important;
   }
+
+  /* pc 브라우저 이미지 랜더링 설정 */
+  .rm_wrap .img_wrap img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+
 }
 
 /* 1441px ~ */
