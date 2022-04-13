@@ -1473,7 +1473,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 .horizontal_item_list li { width: 85%; height: auto; }
 .horizontal_item_list .item_thumb:after { padding-bottom: 55%; }
 .horizontal_item_list .item_thumb > img { width: 100%; height: 100%; }
-.horizontal_item_list .item_info .item_title.one_line { display: block !important; -o-text-overflow: ellipsis; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+.horizontal_item_list .item_info .item_title.one_line { height: auto !important; display: block !important; -o-text-overflow: ellipsis; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
 .vertical_item_list li { width: 65%; margin-right: 1.4em; padding-right: 0; }
 /*  아자탐구생활 */
 .aja_center li a { border: 1px solid #e1e1e1; border-radius: 25px; }
