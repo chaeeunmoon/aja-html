@@ -1303,7 +1303,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
 }
 .m_title_wrapper .title_txt > .sub_txt { 
   font-family: 'CookieRun';
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #828282;
   margin-left: 0.4rem;
 }
