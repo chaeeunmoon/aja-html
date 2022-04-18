@@ -437,6 +437,7 @@ box-sizing: border-box;
   font-size: 1rem;
   padding: 0.5rem 0 0.6rem;
   border-radius: 3rem;
+  cursor: pointer;
 }
 .capsule_btn.main { color: #ff8611 !important; border: 1px solid #ff8611 !important;}
 .capsule_btn.secondary { background-color: #f7f8fa; border-color: #f7f8fa; }
