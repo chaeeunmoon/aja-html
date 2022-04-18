@@ -373,6 +373,7 @@ box-sizing: border-box;
   padding: 0.9rem 0;
   cursor: pointer;
   transition: width 0.3s ease-in;
+  z-index: 9999;
 }
 .lg_btn:hover { background-color: #ff8611; }
 .lg_btn span { font-weight: bold; }
@@ -4200,6 +4201,15 @@ border-right: 1px solid #E47807;
   font-size: 0.75rem;
   font-weight: 500;
   border-radius: 30px;
+}
+
+.talk_link {
+  position: absolute;
+  top: -3.9rem;
+  left: 0.75rem;
+}
+.talk_link a > img {
+  width: 7.5rem;
 }
 /* E: subscription style */
 /* S: youtube style */
