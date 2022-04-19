@@ -4205,11 +4205,11 @@ border-right: 1px solid #E47807;
 
 .talk_link {
   position: absolute;
-  top: -3.9rem;
+  top: -3.5rem;
   left: 0.75rem;
 }
 .talk_link a > img {
-  width: 7.5rem;
+  width: 6.5rem;
 }
 /* E: subscription style */
 /* S: youtube style */
