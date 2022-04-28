@@ -1380,6 +1380,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   overflow: hidden !important;
   border-radius: 20px;
   background-color: #f8f7f5;
+  z-index: 99;
 }
 .m_item_scroll .item_thumb:after,
 .list_item_wrap .item_thumb:after,
