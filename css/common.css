@@ -415,6 +415,7 @@ box-sizing: border-box;
   font-weight: bold;
   text-align: center;
   padding: 0.9rem 0;
+  cursor: pointer;
 }
 .outline_btn:focus {outline: none;}
 .outline_btn.blue {border: 1px solid #668fbd !important;color: #668fbd !important;}
