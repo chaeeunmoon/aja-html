@@ -4172,7 +4172,16 @@ border-right: 1px solid #E47807;
 .subscription_item.light { background-color: #2FBAB3; }
 .subscription_item.premium { background-color: #9888F1; }
 .subscription_item .item_header { padding: 0.8rem 1rem; color: #fff }
-.subscription_item .item_header .title { font-family: 'CookieRun'; font-size: 1.2rem; }
+.subscription_item .item_header .title { 
+  font-family: 'CookieRun'; 
+  font-size: 1.1rem;
+  width: 80%;
+  height: 1.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+}
 .subscription_item .item_header .cancel_link { font-size: 0.85rem; cursor: pointer; }
 .subscription_item .item_header .cancel_link img {
   height: 0.82rem;
