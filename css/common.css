@@ -344,6 +344,10 @@ box-sizing: border-box;
   border-top: 1px solid #e0e0e0;
   padding: 0.4rem;
 }
+.fixed_btn_wrapper.none_btn {
+  border: none;
+  background-color: none;
+}
 .fixed_btn_wrapper.flex_type {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4221,6 +4225,10 @@ border-right: 1px solid #E47807;
 }
 .talk_link a > img {
   width: 6.5rem;
+}
+
+.fixed_btn_wrapper.none_btn .talk_link {
+  top: -6.35rem;
 }
 /* E: subscription style */
 /* S: youtube style */
