@@ -2865,7 +2865,7 @@ input[type='checkbox']:checked { background-color: #ff8611; }
   line-height: 1rem;
   border-radius: 0.2rem;
   position: relative;
-  top: -0.2rem;
+  top: -0.1rem;
   margin-left: 5px;
 }
 .inquir_answer_box { padding: 1.5rem 1.25rem 1.25rem; background-color: #f7f8fa; margin-top: 1rem; border-radius: 1rem; }
