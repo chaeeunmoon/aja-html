@@ -136,6 +136,18 @@
         </nav>
       </div>
       <!--//header-->
+      <div id="loading_wrapper" class="loading_wrapper">
+        <div class="loading">
+          <span class="flower">Loading&#8230;</span>
+          <span class="flower">Loading&#8230;</span>
+          <span class="flower">Loading&#8230;</span>
+        </div>
+      </div>
+      <script>
+        window.onload = function() {
+            document.getElementById('loading_wrapper').style.display = "none";
+        }
+      </script>
       <!--content-->
       <div id="content" class="m_wrap">
         <!--S: hero banner-->
