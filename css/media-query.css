@@ -375,7 +375,7 @@ html { font-size: 17px; }
     max-width: 428px;
     min-height: 100vh;
     background-color: #fff;
-    overflow-x: hidden;
+    overflow: hidden;
     border-left: 2px solid #e1e1e1;
     border-right: 2px solid #e1e1e1;
     margin: 0 auto;
